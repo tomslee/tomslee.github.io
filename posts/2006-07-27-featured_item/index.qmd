@@ -1,0 +1,23 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2006-07-27 21:15:00
+title: Featured Item
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+I'm a featured item in the [rabble bookstore](http://www.rabble.ca/bookstore/). Nice.
+
+
+		

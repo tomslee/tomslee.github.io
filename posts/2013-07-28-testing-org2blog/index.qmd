@@ -1,0 +1,26 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2013-07-28 23:31:00
+title: Testing org2blog
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+I've been using the wonderful [org mode](http://orgmode.org/) more and more over the last year, but only now that [org2blog](https://github.com/punchagan/org2blog) has support for the new org-mode exporter am I trying it to blog with. 
+
+ 
+
+Many thanks to Puneeth Chaganti for org2blog, and the remarkable [collection of developers](http://orgmode.org/org.html#History-and-Acknowledgments) who have turned org-mode into a swiss army knife of text tools without it becoming hideously deformed in the process. 
+
+		

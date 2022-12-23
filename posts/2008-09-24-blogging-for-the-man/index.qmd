@@ -1,0 +1,25 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2008-09-24 22:47:52
+title: Blogging for the Man
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+I recently volunteered for extra work for no extra pay, so my day job now includes blogging. Not interesting to most people who read this, or indeed to anyone not intrigued by the mysteries of BlackBerry programming or data synchronization with the occasional smartphone-market comment thrown in. But it's [here](http://iablog.sybase.com/tslee/) anyway.
+
+And for more compulsive volunteering, you can watch my attempt to get people to vote for the admirable Cindy Jacobsen as our local candidate in the Canadian election [here](http://www.cindyjacobsen.ca).
+
+
+		

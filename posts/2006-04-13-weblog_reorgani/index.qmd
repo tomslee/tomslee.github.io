@@ -1,0 +1,28 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2006-04-13 00:13:27
+title: Weblog reorganization
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+I'm trying a new way tp make this weblog work with the book. This is why it's good to start before the book gets published - it takes me months to figure this stuff out. 
+
+
+
+
+Anyway, there is now a category for each chapter (see over there on the right, unless you're using an RSS reader, which you probably are), and any material relevant will be categorized by chapter. What that means is that the pages over on my [book site](http://www.tomslee.net/index.html) can have links that go straight to some relevant material. I've added some links to the [table of contents page](http://www.tomslee.net/toc.html) and the [links page](http://www.tomslee.net/links.html). I hope these will get expanded in the next few weeks and months, especially as I finished the index tonight, so it's one step closer to actually being printed.
+
+
+		

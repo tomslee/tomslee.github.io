@@ -1,0 +1,23 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2012-06-25 21:44:08
+title: Open Data at Crooked Timber
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+Prompted by the flurry of activity around here, Henry Farrell of the highly-regarded Crooked Timber blog has organized a seminar on Open Data. In Timber-speak a seminar is a series of posts over the course of a week or so by a variety of guest bloggers, together with comments from the CT crowd, who are a very smart crowd indeed. So I'm thrilled at [the seminar](http://crookedtimber.org/2012/06/25/open-data-seminar/), and even more thrilled to be the first contributor; my contribution is [Seeing Like a Geek](http://crookedtimber.org/2012/06/25/seeing-like-a-geek/).
+
+
+		

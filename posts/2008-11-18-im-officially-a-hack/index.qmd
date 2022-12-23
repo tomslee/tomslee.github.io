@@ -1,0 +1,23 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2008-11-18 22:34:40
+title: I'm officially a hack!
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+I have an opinion piece at the world's best and most scurrilous Information Technology rag, The Register. See [The Long Fail](http://www.theregister.co.uk/2008/11/18/tom_slee_long_tail/).
+
+
+		

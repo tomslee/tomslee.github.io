@@ -1,0 +1,33 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2008-10-15 21:54:27
+title: 'Graph Time: Canadian Election'
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+A graph of what Canadian voters did yesterday, and what the House of Commons looks like now.
+
+[![Commons2008](http://whimsley.typepad.com/.a/6a00d83451d3b369e20105358fe6dc970c-800wi)](http://whimsley.typepad.com/.a/6a00d83451d3b369e20105358fe6dc970c-pi)
+  
+
+
+  
+
+
+  
+
+
+
+		

@@ -1,0 +1,33 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2007-04-06 18:22:17
+title: Radical Transparency? Not so much
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+In the middle of another fine piece from Nicholas Carr, here is [Radical Transparency](http://www.longtail.com/the_long_tail/2006/11/in_praise_of_ra.html) at work.
+
+<blockquote>Asked how it uses water and electricity at its sites, Google executive Rhett Weiss said, "We're in a highly competitive industry and, frankly, one or two little pieces of information like that in the hands of our competitors can do us considerable damage. So we can't discuss it."
+> 
+> </blockquote>
+
+
+
+
+Link: [Rough Type: Nicholas Carr's Blog: The real Web 2.0](http://www.roughtype.com/archives/2007/04/the_real_web_20.php).
+
+
+
+		

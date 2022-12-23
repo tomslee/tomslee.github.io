@@ -1,0 +1,22 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2016-05-06 20:42:23
+title: Airbnb data collection code and city stats
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				Over the last couple of years I've continued to tweak my Airbnb data collection code and run it against a number of cities. Anyone interested can see a partial list [here](http://tomslee.net/airbnb-data), and if there's a city you would like me to post data for, you can make a request here.
+
+Some time ago I made the GitHub project private, as there's obviously a potential for Airbnb to identify patterns and shut down attempts to scrape data. But enough people keep asking for it that I'm opening it up again, and you can find it [here](https://github.com/tomslee/airbnb-data-collection) if you are interested. I make no claims to elegance or good practices in the code, but it's worked for me.
+
+		

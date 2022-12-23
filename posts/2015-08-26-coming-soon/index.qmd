@@ -1,0 +1,22 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2015-08-26 17:09:32
+title: Coming soon...
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				From [OR Books](http://www.orbooks.com/), this November, assuming I can get the corrections done in time.
+
+
+
+[![wiym_cover](http://whimsley.s3.amazonaws.com/wordpress/wp-content/uploads/2015/08/wiym_cover.jpg)](http://whimsley.s3.amazonaws.com/wordpress/wp-content/uploads/2015/08/wiym_cover.jpg)		

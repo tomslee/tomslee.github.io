@@ -1,0 +1,36 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2013-11-20 03:22:39
+title: 'This Week in the Sharing Economy: The Move to Professionalism'
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				In separate announcements, two of the most well-capitalized sharing-economy companies (Lyft and Airbnb) announced moves away from their "sharing" and co-operative roots. I suggested they would at the end of [this post](http://tomslee.net/2013/09/some-obvious-things-about-internet-reputation-systems.html):
+
+
+<blockquote>To be successful, the venture-capital-funded "sharing economy" will be forced to lose all those aspects of informal sharing that makes "sharing" attractive, and to keep those aspects that erode neighbourhoods, erode employment rights, and remove basic standards. And if they succeed, they will have used the language of sharing to bring about an unregulated, free-market, neoliberal economy.</blockquote>
+
+
+In September Lyft, Sidecar, and Uber (with its Uber X service) were [approved](http://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M077/K112/77112285.PDF) in California as a new class of "Transportation Network Companies". Now both Lyft and Sidecar have [done away with](http://www.latimes.com/business/technology/la-fi-tn-lyft-minimum-fares-california-20131115,0,1699156.story?track%3Drss#axzz2kuZtrVvW) the pretence that the money passing from passenger to driver was a "donation" and have instituted a system of formal fares (as Uber already does). The idea that passengers may pay more or less than the suggested donation, which is a part of the casual and informal nature of the exchanges that sharing economy companies appeal to, is now gone for Californians.
+
+In a separate move, Lyft has instituted a new "surge pricing" initiative, which amounts to requiring a 25% additional payment to drivers during periods of heavy demand. Similar to Uber's surge pricing, this move appeals directly to price as a means of rationing, and assumes that drivers are motivated primarily by money, despite the heavy use of community-focused language that Lyft uses in its marketing. We'll have to see if the attempt by Taxi companies to [raise money](http://www.bizjournals.com/sanfrancisco/blog/2013/11/uber-lyft-andreessen-sidecar-uberx.html) to push back gains any momentum.
+
+These moves are part of a rapid shift of the Venture Capital-funded part of the transport side of the sharing economy. They follow the [sale](http://allthingsd.com/20130712/lyft-sells-zimride-carpool-service-to-rental-car-giant-enterprise/) of Lyft's original Zimride Carpool service to rental-car giant Enterprise in July, the [sale](http://gigaom.com/2013/01/02/avis-budget-snaps-up-car-sharing-leader-zipcar-for-500m/) of Zipcar to Avis Budget in January, and the [shift](http://tomslee.net/2013/10/relayrides-gigaom.html) of RelayRides to longer-term rentals. The moves are a fascinating contrast to the success of French company Blablacar, which has a model much closer to the original carpool idea, is growing by leaps and bounds, and is [now](http://www.telegraph.co.uk/finance/newsbysector/transport/10454869/Car-share-business-BlaBlaCar-coming-to-Britain.html) moving into the UK.
+
+The best treatment I've seen of the latest changes in this transport area is by [Liz Gannes](http://allthingsd.com/20131116/competition-brings-lyft-sidecar-and-uber-closer-to-cloning-each-other-and-cabs/?mod%3Dtweet) at _All Things D_.
+
+The other big announcement came from Airbnb, at a press conference at their very [fancy](http://officesnapshots.com/2011/11/08/exclusive-first-look-at-airbnbs-amazing-new-offices/) headquarters. In addition to announcing new versions of their mobile apps, CEO Brian Chesky stepped away from his "our hosts are regular people" line to [tell them](http://mashable.com/2013/11/12/airbnb-ios-android-apps/) "You're in the business of hospitality". Airbnb is bringing back a program calls Superhost, which "is meant to identify and reward some of the platform's most active and highly recommended hosts"; as well as offering a Host Rewards Program to encourage people to rent more often. So again there is a move away from regular people "occasionally" renting a room out and earning a little extra money, to a revenue model that is driven by higher volume hosts. Airbnb already relies on these increasingly professional hosts for a significant chunk of its revenue as I showed in [my look](http://tomslee.net/2013/11/airbnb-business-in-new-york-revisited.html) at its New York data: that trend is only going to accelerate.
+
+Again, this week's steps are part of a rapid movement. Over the last year Airbnb has moved towards a more formal security and identification system, demanding government documents as proof of identity along with the usual Facebook information. Not, it seems, that relying on positive reviews is [foolproof](http://pandodaily.com/2013/11/18/airbnb-host-left-violated-after-busting-fanny-pack-clad-male-prostitutes-in-her-apartment/), as a Washington DC woman found out recently. Airbnb Brian Chesky increasingly refers to his hosts as "micro-entrepreneurs": emphasizing the market-driven view of the business that he has, and again moving away from a community model of sharing. The term started, I think, with TaskRabbit, another "sharing" company that is walking the same path: less community, more [temp agency](http://techcrunch.com/2013/07/08/taskrabbit-confirms-layoffs-as-it-realigns-to-focus-on-mobile-and-enterprise/) in Rabbit's clothing.
+
+Push back from cities from [Berlin and Paris](http://www.dailymail.co.uk/travel/article-2507146/End-holiday-rental-Berlin-Paris-look-follow-New-York-banning-short-self-catering-stays.html) to [Roanoke City in Virginia](http://www.wdbj7.com/video/Bed-and-breakfast-owners-violating-Roanoke-City-law/-/20128758/23036348/-/1099snrz/-/index.html) to [Grand Rapids](http://www.mlive.com/news/grand-rapids/index.ssf/2013/11/4_thoughts_on_airbnb_regulatio.html) [in Michigan](http://www.mlive.com/news/grand-rapids/index.ssf/2013/11/airbnb_and_other_short-term_re.html) to [Vancouver](http://vancouver.24hrs.ca/2013/11/18/vancouver-goes-after-online-apartment-rental-site-airbnb) is growing, and the New York Case continues to roll on, with [one notorious Airbnb landlord](http://skift.com/2013/11/19/airbnbs-most-notorious-landlord-settles-with-new-york-city/) settling with the city. The danger here is that Airbnb's hubris will damage other, less arrogant and less revenue-hungry companies who have engaged in apartment rentals for years (including the lovely one in Rome I was lucky enough to rent last spring) and that the venture capitalists, instead of bringing in a new level of sharing, will clumsily damage [what's already there](http://www.alternet.org/environment/real-sharing-economy-booming-and-its-not-one-venture-capitalists-are-cashing).		

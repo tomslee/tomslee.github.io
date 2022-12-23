@@ -1,0 +1,26 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2014-03-02 01:19:08
+post_format:
+- Aside
+title: Me on CBC Radio
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+Self-promotion alert: around 8:30 to 9am on Monday morning I'm going to be on CBC Radio's [The Current](http://www.cbc.ca/thecurrent/) with the admirable Anna Maria Tremonti to take part in a panel discussion about "the sharing economy".
+
+I'll be the grumpy one.
+
+		

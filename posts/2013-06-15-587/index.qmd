@@ -1,0 +1,55 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2013-06-15 18:47:24
+title: Yes, the Apache Foundation Should Dump Accumulo
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				This post follows on from [my previous one](http://tomslee.net/2013/06/should-the-apache-foundation-stop-hosting-accumulo.html), which has the background and links. In brief, the Apache Foundation is hosting the Accumulo project. Accumulo is software created by the NSA and handed to Apache, and it is at the heart of the NSA's surveillance technology stack. Now that we know about the use of the technology, Apache has the opportunity to distance itself from the NSA surveillance scandal, and should do so.
+
+How should we think about the role of Apache in the NSA surveillance scandal? Perhaps a good place to look is the work of respected open internet advocates like the [OpenNet Initiative](https://opennet.net/). So let's do that.
+
+A couple of years ago Helmin Noman and Jillian York of the OpenNet Initiative published a bulletin called [West Censoring East: The Use of Western Technologies by Middle East Censors, 2010-2011](https://opennet.net/west-censoring-east-the-use-western-technologies-middle-east-censors-2010-2011). The bulletin documented network filtering of the internet by national governments, and "the use of American- and Canadian-made software for the purpose of government-level filtering in the Middle East and North Africa". The goal of the report was to inform a "genuine discussion of the ethics and practice of providing national censorship technology and services". Just to be clear, and for what little it is worth, the report seems admirable to me. The ethical stances it takes were reiterated by Rebecca MacKinnon when she wrote about it last year in her influential book "The Consent of the Networked". What's interesting now is to read the report, read the ethical stances it takes regarding the provision of services by Western companies to authoritarian actions by national governments, and apply those lessons to Apache and the NSA. The parallels are, I hope, obvious.
+
+The report concludes that "Western companies are playing a role in the national politics of many countries around the world. By making their software available to the regimes, they are potentially taking sides against citizens and activists who are prevented from accessing and disseminating content thanks in part to filtering software." The authors complain that "companies appear to have done little to curb the use of their tools–if not offering them outright for that purpose–for government-level censorship. These companies seem not to have adopted policies and procedures to safeguard freedom of expression in the event that states rather than parents and schools use their tools, as their products are being openly used by several state-run ISPs to limit what citizens can and cannot access online." The final sentence states that "Such companies must recognize the role their tools play in the international landscape and set forth policies that protect Internet users' right to free expression–or at least put them on record about the role that they play."
+
+The technologies that the companies are providing are general purpose technologies: almost everyone would agree that internet filtering technologies have valid uses by parents and schools, for example. It's not the technology itself that is offensive, at least to anyone who is not happy with the idea of kindergarten kids stumbling across violent pornographic images. It's the relationship between the companies and their customers: the companies are providing a service, knowing the use to which it is going to be put. The report expects companies to think about the use of their tools and to take action to prevent them being used in ways that curb freedoms. It expects companies to limit the use of their tools.
+
+The role of Apache as the host of the NSA-initiated Accumulo project is directly parallel to the role of western companies providing filtering software that is used by authoritarian regimes to curb freedom of speech. So, in the light of the OpenNet report, how would the continued hosting of Accumulo look?
+
+
+
+	
+  * Is Apache providing a service to the NSA? Yes it is. Some people have been telling me that it's not, or that it is but it's unimportant. Both of which seem positively bizarre to me. The NSA took a deliberate decision, after developing Accumulo, that the best way forward was to open source it and look to a private vendor ([sqrrl](http://sqrrl.com)) to continue to provide a distribution that matches their needs. Apache is instrumental in carrying forward that plan.
+
+	
+  * The NSA could get their software some other way. This is irrelevant. The OpenNet Report does not let McAfee off the hook because Symantec provides a similar service, and we should not let Apache off the hook either.
+
+	
+  * The Accumulo software is general purpose: does that matter? No it doesn't matter. First, it's not _that_ general purpose: it's not like lightbulbs, it is general purpose data collection and data analysis software in the middle of a controversy over data collection and data analysis, and it's general purpose for anyone who has a data centre and a few petabytes of data to process, and who requires detailed access controls over who can see that. That's not very general. Second, Apache _now_ knows the uses to which the software is being put, just like the companies providing software to the governments of the Middle East knew how their software was being used once OpenNet reported on it.
+
+	
+  * Why go after Apache, when they are one of the good guys? Because their declared mandate and their broad membership makes it more likely that they will take a stand. It's not "going after Apache", it's getting Apache to do the right thing. It won't stop the NSA but it limits the breadth of collaboration. I don't particularly think of Apache as "one of the good guys" because the whole good guys/bad guys way of thinking seems to lead naturally to double standards, but I'm not out to get them, I just hope they do the right thing now they see how their efforts are being used.
+
+
+Especially for people outside the USA, putting pressure on an international organization seems a useful way to go. If anyone is interested in taking this up, maybe we can put together a petition at least. Please contact me in the comments if you are interested.
+
+
+Created: 2013-06-15 Sat 14:44
+
+
+
+
+[Emacs](http://www.gnu.org/software/emacs/) 24.3.1 ([Org](http://orgmode.org) mode 8.0.3)
+
+		

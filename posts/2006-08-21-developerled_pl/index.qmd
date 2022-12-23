@@ -1,0 +1,31 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2006-08-21 09:16:47
+title: Developer-led Planning
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+[Scott Piatkowski](http://piatkowski.blogspot.com/2006/08/you-can-always-go-downtown.html) highlights a paragraph from the local paper that reminds us how market-driven and developer-driven much of Southern Ontario's recent city growth has been.
+
+
+<blockquote>"Historically, in the early 90s, (the idea) was to strip away bureaucracy to make it easy for business to come down and open up without all the red tape," city planner Cory Bluhm said yesterday. "What we've learned from this is the opposite is now the way to go. Residents now expect the city to play a role in shaping the downtown."
+> 
+> </blockquote>
+
+About time, I'd say. The only thing worse than city hall is no city hall. [Here](http://www.kitchener.ca/urbandesign.html) is the full report that he is talking about.  
+
+
+
+		

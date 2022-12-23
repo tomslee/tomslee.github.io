@@ -1,0 +1,20 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2014-11-27 14:07:10
+post_format:
+- Link
+title: Merci, Le Figaro...
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				...pour [celui ci](http://www.lefigaro.fr/immobilier/2014/11/27/05002-20141127ARTFIG00177--quel-prix-les-parisiens-louent-sur-airbnb.php), mais ceci est un blog canadien, pas un blog américain. Merci aussi à [Yann Guégan](http://dansmonlabo.com/2014/11/24/airbnb-la-carte-des-prix-de-location-a-paris-et-ce-quon-y-apprend-415/)**.**		

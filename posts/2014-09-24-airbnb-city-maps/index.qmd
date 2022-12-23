@@ -1,0 +1,18 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2014-09-24 02:08:52
+title: Airbnb City Maps
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				Inspired by the (much better!) [maps](http://maps.amsterdam.nl/airbnb/?LANG=en) of Amsterdam listings, [here](http://tomslee.net/airbnb-data) are some of my surveys of Airbnb cities converted to Google Fusion Tables. Data is obtained to the best of my ability, and I believe it is statistically pretty good, but I can make no guarantees as to its accuracy. Always visit the actual page for any individual listing.		

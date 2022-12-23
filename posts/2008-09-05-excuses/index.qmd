@@ -1,0 +1,33 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2008-09-05 00:51:00
+title: Excuses
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+I do actually like to write. You know: think a bit, put some words down, shuffle them around, and try to put them in front of an audience. I like it a lot. I've even been doing a four day week for the last couple of years and my nearest and dearest have taken the belt tightening so I can spend more time at it.
+
+But that's not how it's working out.
+
+First, work (you know, the stuff that pays the bills) got really busy. Not that there's anything wrong with that. I work with good people and it's interesting in it's own way. I even intermittently [Blog for the Man](http://iablog.sybase.com/tslee), and if you want to know about writing database applications on mobile devices I can tell you a few things about it. So I'm not complaining. Never mind, I said to myself. These things happen. This too shall pass and then I'll get to do some writing.
+
+Then I went on holiday to England to see the place and my Mum and siblings. Not that there's anything wrong with that either - hello everyone, it was great to see you - but that's my big chunk of time gone for this year. Ah well. When I get back and everyone is in school/university things will be quiet and I'll get to do some writing.
+
+But now there's going to be an election. No, not that one, a Canadian election. So I'll be running around delivering flyers, trying to build web sites, and so on for the New Democrats. 
+
+Not that there's anything wrong with that. But don't expect anything much from me until after October 14. Maybe then I'll have a little time to do some writing.
+
+
+		

@@ -1,0 +1,98 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2010-07-26 20:40:57
+title: Jottings on Facebook, Wikipedia, Content Farms
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				I was thinking of writing about this, but the always-on-the-ball and perceptive Ivor Tossell beat me to it and did it better in [this morning's Grope and Flail](http://www.theglobeandmail.com/news/technology/ivor-tossell/facebook-cant-love-it-cant-live-without-it/article1650080/) so I'll point to him instead. Now that half a billion of us are Facebook users, how do we think about the Web 2.0 phenomenon? Do we think of it as the friendly publican who provides a place for us to talk, or as a dynamic and fascinating landscape to move in, or as the provider of a necessary service like our ISP or cable company? Turns out it's more of the latter. We use Facebook despite, not because of, our relationship to the company. Here is Tossell.
+
+
+
+
+<blockquote>Last week, the American Customer Satisfaction Index, a venerable consumer survey, for the first time published findings on consumer satisfaction with social networks. Facebook scored remarkably poorly, squeaking in at the bottom of the category, just ahead of MySpace, which is about as pleasant as a monster-truck rally.
+> 
+> 
+
+> 
+> “This puts Facebook in the bottom 5 per cent of all measured private-sector companies, and in the same range as airlines and cable companies, two perennially low-scoring industries with terrible customer satisfaction,” reported the ACSI.
+> 
+> 
+
+> 
+> Airlines and cable companies!
+> 
+> 
+
+> 
+> This doesn’t square with the mythologies that have grown around social networks, which usually tell us that these websites have personality-altering, life-changing properties that transform formerly mild-mannered citizens into hyperconnected life-sharers. Right now, Facebook is trying to turn this milestone into a public-relations exercise about the stories of transformation that Facebook has brought about.
+> 
+> 
+
+> 
+> This misses the point. The simple fact is that – like an airline or a cable company – Facebook is useful.
+> 
+> 
+</blockquote>
+
+
+
+
+The survey is also written about at [PC Mag](http://www.pcmag.com/article2/0,2817,2366730,00.asp).
+
+Also in today's Globe, an [interview](http://www.theglobeandmail.com/news/technology/wikipedians-do-it-for-love-really/article1652015/) with chief Wikifiddler Sue Gardner. While I'm generally a Web 2.0 curmudgeon I do like Wikipedia a lot, and Gardner brings out what's best about it. It has stayed non-commercial, and that has been the key to its success and to the loyalty of those who contribute to it. It's non-commercial nature also makes it something of a rarity. I particularly like this:
+
+
+
+
+<blockquote>“Wikipedia is like the National Parks Service. The Internet is a vast space and it will only continue to grow, but in the vastness you still need space for parks or public libraries.”</blockquote>
+
+
+
+
+
+
+
+One issue that concerns Gardner is the non-representative nature of Wikifiddlers:
+
+
+
+
+<blockquote>Also challenging Wikipedia-as-democratic-paradise is the fact that 87 per cent of Wikipedians are male (the average is a 25-year-old engineering student). Most come from affluent countries that afford them the technology and leisure time to sit computer-side, without pay.
+> 
+> 
+</blockquote>
+
+
+
+
+<blockquote>Ms. Gardner’s goal is to correct that imbalance: “My vision for Wikipedia is for it to be the sum of all the world’s knowledge,” she says simply, taking a sip of her Fresca. “To do that, I want more women, more older people, more people from Africa!”
+> 
+> 
+</blockquote>
+
+
+
+
+Where are the women? It turns out that a lot of them are working at commercial content farms. These fast-food  (ehow.com, about.com, and so on) pay people to provide material that they can then use to sell ads. The last six months has seen a flurry of interest in these outfits, who churn out thousands of articles a day to collect Google search results. A survey of articles is [here](http://reinventingthenewsroom.wordpress.com/2009/12/15/the-furor-over-content-farms/). The revelation that Google's latest Search Stories video inadvertently shows how ubiquitous they have become is [at TechCrunch](http://techcrunch.com/2010/07/23/content-farms/).
+
+
+
+
+A "day in the life" piece by a Andria Krewson, a contributor to one of these farms, explains how they work. She makes the point that "Demand Media doesn't need help with public relations from me. They're compiling comments in an internal forum from their writers about why they love Demand Studios. And plenty of people have commented. They appear to be overwhelmingly women, often with children, often English majors or journalism students, looking for a way to do what they love and make a little money at it." Unlike Wikipedia of course. Still, I agree with the popular take that Demand Media and its competitors are a Bad Thing. But are they the way of the future?
+
+
+
+
+
+		

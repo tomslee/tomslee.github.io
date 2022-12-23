@@ -1,0 +1,319 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2007-03-23 16:20:12
+title: The Long Tail 11.1 - Living in a Niche Culture (1)
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+This is another part of my critical reader's companion to _The Long Tail_, and it discusses the first part of Chapter 11 - Living in a Niche Culture. Part 0 is [here](http://whimsley.typepad.com/whimsley/2007/02/my_next_several.html). You can find a complete list of the Long Tail pieces [here](http://whimsley.typepad.com/whimsley/2007/03/the_long_tail_l.html).
+
+
+
+
+* * *
+
+We're getting towards the end of
+the book now, and it is moving on from the core material to some
+speculative asides about broader issues. The material in this chapter
+illustrates the reasons for the book's success and also one of its most
+pervasive weaknesses - which is all about the meaning of the title.
+Throughout the book, Chris Anderson uses the phrase "The Long Tail" to
+mean several different things.
+
+
+
+
+  1. 
+It's a business model (create a profitable business by "selling less of more")
+
+
+
+  2. It's a commentary on the benefits of Internet commerce (online commerce is more diverse than those old physical shelves)
+
+
+
+  3. 
+It's a trendspotting book about changes to contemporary culture (the end of the hit parade, the fall of the blockbuster)  
+
+
+
+
+
+
+The shift back and forth between these different meanings is what makes
+the book so frustrating. Anderson wants to eat his cake and have it too
+- which is the theme for this posting.
+
+
+
+
+
+When it suits, Anderson can be very cautious about what he means by
+"The Long Tail". Witness two entries in his blog. First, here's part of
+his [response](http://www.longtail.com/the_long_tail/2006/07/factchecking_my.html) to Lee Gomes's article, which I've mentioned a few times:
+
+
+
+
+<blockquote>First, the book doesn't claim that there are any cases where sales of products _not_
+available in the dominant bricks-and-mortar retailer in a sector (my
+definition of "tail") are larger than the sales of products that _are_
+available in that retailer ("head")... Which is why the language Gomes
+cites from the book jacket is actually all phrased in the future
+conditional tense ("What happens when the combined value of all the
+millions of items that may sell only a few copies equals or exceeds the
+value of a few items that sell millions each?").
+> 
+> </blockquote>
+
+That "future conditional" thing is really a bit precious isn't it? 
+
+
+
+
+Or here, in a post he calls [What The Long Tail Isn't](http://longtail.typepad.com/the_long_tail/2005/06/what_the_long_t.html):
+
+
+
+
+<blockquote>There are many distortions of the term, but the most common
+one is to use it as a newly-positive synonym for "fringe"... for Long
+Tail effects to work, you need both a head of relatively few hits _and_ a tail of many niches, so that recommendations and other filters can lead consumers from one to the other.
+> 
+> 
+
+> 
+> A tail without a head is too noisy and apparently random to get
+consumer traction; people need to start with the familiar and then
+move, via trusted recommendations, to the unfamiliar. Likewise a head
+without a tail is too limited in choice; the odds of finding a niche
+you want are too low to bother exploring much beyond what you already
+know.
+
+> 
+> 
+
+> 
+> Thus the two big Long Tail opportunities are:
+
+> 
+> 
+
+> 
+>   1. 
+Aggregating hits and niches into a one big curve, from head to tail.
+
+> 
+
+>   2. 
+Creating content and products that can plug into someone else's aggregated curve.
+
+> 
+</blockquote>
+
+He goes on to list some other things that "The Long Tail Isn't":
+
+
+
+
+  * **Commodification** - The LT is about nicheification, which is [different](http://longtail.typepad.com/the_long_tail/2005/03/long_tail_vs_bo.html).
+
+
+
+
+  * 
+**Simple variety**
+- Offering a few different choices or a bit of customization (like the
+sandwich filling options in the risible example above) is not enough.
+Long Tail effects kick in when you're expanding variety and choice by
+orders of magnitude--from 10x to infinity.
+
+
+
+
+  * **The case for an all amateur, self-published future**
+- The LT will probably have as much commercial content as ever. It will
+just be joined by far more amateur fare, forming a relatively seamless
+continuum from [pros to ams](http://longtail.typepad.com/the_long_tail/2005/01/the_proam_revol.html).
+
+
+
+
+  * **The actual end of hits**
+- The LT ends the tyranny of hits, shifting the market equally to
+niches. But it certainly acknowledges that some things will continue to
+be a lot more popular than others. Powerlaw distributions are as
+natural as diversity itself.
+
+
+
+  * **A focus on small markets at the exclusion of large ones** - Again, you need both hits _and** **_niches to allow the filters and recommendation engines to work, driving demand down the curve from the known to the unknown.
+
+
+
+
+  * **Just any powerlaw**
+- Powerlaws are ubiquitous. Long Tails are not. The first shows up
+anywhere you have variety, inequality, and network effects (word of
+mouth). The second requires massive variety and a wide range between
+the hits and niches. After all, many short tails are simply truncated
+powerlaw distributions. They just aren't, er, long.
+
+
+
+
+Mr. Anderson wants to have it both ways. 
+
+
+
+
+He wants to disown
+the wilder uses of his catch phrase, ignoring the fact that the
+catchiness is the core of its popularity and influence. Also, he is not
+immune to misusing the phrase himself. He wants to say that "offering a
+few choices or a bit of customization" is not Long Tail - yet he writes
+about twenty varieties of flour as the "Long Tail of flour" [11], or
+customized T-shirts as the "Long Tail of fashion " [50]. He disowns "a
+focus on small markets at the exclusion of large ones", and yet writes
+that microbreweries are the "Long Tail of beer" [50]. He says that
+"just any powerlaw" is not a long tail and yet describes cities as "The
+Long Tail of urban space" [150] and Al Qaeda as "The Long Tail of
+national security" [50]? If it wasn't for the aura of universality that
+such misuses create then the thesis of the book would have attracted
+much less attention than it has. 
+
+
+
+
+
+The first section of Chapter 11 is about The History of House Sound of Chicago,
+a book by Stuart Cosgrove. The emergence of this form of music in the
+early 1980s, from the embers of disco, is the story of a "proto-Long
+Tail music culture" [177]. Mr. Anderson backs up the claim by reference
+to the three forces of the Long Tail from Chapter 4: 
+
+
+
+
+  * "It
+started with the spread of affordable technology, from mixing decks to
+multitrack recorders. That's the first force of the Long Tail, the
+democratization of the tools of production." [178]
+
+
+  * An explosion
+of records created the need for a way for people to get to them: "Which
+is exactly what clubs and warehouse parties offered, thus providing the
+necessary second force -- democratized distribution" [179]
+
+
+  * 
+The "hyperspecialized genres" of house music were identified by a
+proliferation of distinct record labels, sometimes owned by the same
+company: "Indie record labels are like tags, providing clues to which
+microgenre a track is likely to be" [179]. This "connects supply and
+demand" which is his third force.
+
+
+
+
+Does Chicago House music have anything to do with the Long Tail? Well,
+what I know about House music could fit on a single 45rpm label, but
+the answer is clearly No. 
+
+
+
+
+The
+story of the House Sound of Chicago is a familiar story about the
+emergence of a subculture in a particular physical place and time - it
+is an example of variety and minority-interest culture emerging from
+the very offline, physical proximity whose limitations he decries in
+the remainder of the book. 
+
+
+
+
+Looking back at the criteria for
+something to be Long Tail, there is nothing here about either
+"Aggregating hits and niches into a one big curve, from head to tail"
+or "Creating content and products that can plug into someone else's
+aggregated curve." Whereas Anderson claims that The Long Tail is not "a
+focus on small markets at the exclusion of large ones", the indie music
+he is invoking did just that. As for his "three forces": folk music in
+the broadest sense has always been produced by cheap technology, from
+harmonicas to fiddles to guitars to whistles, so there is nothing new
+there. Using clubs and parties as a way to share and provide access to
+music? Been done for hundreds or thousands of years. And the idea of
+labels as being "like tags" is simply a way of relating the culture of
+music to the culture his core audience is familiar with, which is the
+online computer world.
+
+
+
+
+
+Elsewhere, Anderson laments that the physical world limits cultural
+diversity because of what we might call the Bollywood Problem: culture
+that appeals to a specific group of widely dispersed people has to
+reach a certain threshold of appeal in a single locale before
+being viable, and so might be viable nowhere (well, in North America
+anyway). One of the many things he neglects about the cultural
+phenomena at the core of his book is the fact that much of culture is
+not a "market" with distinct supply and demand. Culture as a
+participatory activity involves an intermingling of supply and demand,
+and it is precisely the specific nature of physical environments that
+leads to the development of new genres and flavours of music, whether
+it's Northern Soul or the [collectivist music ethic](http://www.thismagazine.ca/issues/2004/11/collectivesouls.php) that started in Montreal with [Godspeed You! Black Emperor](http://www.google.ca/url?sa=t&ct=res&cd=1&url=http%3A%2F%2Fbrainwashed.com%2Fgodspeed%2F&ei=j_YDRo2ANaD2gAK-3KjzAw&usg=__VgyPIEW03ZstsP4zyPuAeuWLm7o=&sig2=5hYayvwy3Hh5w5Pr-ruBUw) and has now given us the snow-influenced [best band in the world](http://www.slate.com/id/2161645/) and has also travelled down the 401 to Toronto to produce the almost-great [Broken Social Scene](http://www.arts-crafts.ca/bss/).
+
+
+
+
+From "Or" Culture to "And" Culture
+[180-182] continues with the big statements that Anderson disowns
+elsewhere, starting off with "The Long Tail is nothing more than
+infinite choice" [180]. Once people get on the internet "they don't
+just go from one media outlet to another -- they simply scatter.
+Infinite choice equals ultimate fragmentation" [181]. Yet he
+simultaneously wants to say that this is "simply a rebalancing of the
+equation, an evolution from an 'Or' era of hits or niches (mainstream culture vs. subcultures) to an 'And' era... Mass culture will not fall, it will simply get less mass." [182] 
+
+
+
+
+So
+if "Mass culture will not fall" and the Long Tail is not "The actual
+end of hits" then why does he entitle a chapter "The Rise and Fall of
+the Hit", or title sections "Who Killed the Hit Album?" [33] or "The
+End of the Hit Parade" [31]? or write "We are turning from a mass
+market back into a niche nation" [40]. Parsing "The End of the Hit
+Parade" carefully (there is no tense, not even future conditional), you
+could argue that ending the Hit Parade is different from Hits
+themselves, but I think it's fair to say, in a book as rhetorical as
+this one, the author is out to create an impression that we are on the
+edge of a bigger transition than a mere rebalancing of the equation. 
+
+
+
+
+I'd
+like to say that Mr. Anderson needs to make up his mind, but plainly he
+doesn't need to at all. The ability to switch back and forth between
+eschatology and business models is what gives the book its appeal, and
+he's done very well by it. The fact that it is inconsistent to the
+point of foolishness appears not to matter. Too bad.
+
+
+		

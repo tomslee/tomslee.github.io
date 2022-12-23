@@ -1,0 +1,23 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2012-02-06 14:18:09
+title: ''
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+I've screwed up the comments trying to move to Disqus so I don't have to deal with the 10/1 spam to real-comment ratio that Typepad lets through. Hope to have it sorted soon, when usual crappy service will be resumed.
+
+
+		

@@ -1,0 +1,25 @@
+---
+title: "About Tom Slee"
+about: 
+  template: trestles
+execute:
+  echo: false
+---
+
+Professional product manager by day, amateur writer and data analyst by night.
+
+## Self promotion
+
+-   [Resume](posts/2021-12-12_resume/index.qmd "Resume")
+
+-   [Publications and media](posts/2021-12-10-publications/index.qmd "Publications and media")
+
+## Location
+
+I live in Kitchener-Waterloo, Ontario, which is also home to *Thomas Slee Drive* and *Thomas Slee Park*. Sadly, the names are just a very unlikely coincidence.
+
+```{python}
+from ipyleaflet import Map
+m = Map(center=(43.37456, -80.43575),zoom=17)
+m
+```

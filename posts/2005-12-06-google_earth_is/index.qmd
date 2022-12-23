@@ -1,0 +1,23 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2005-12-06 22:57:45
+title: Google Earth is a timesink
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+I found out this evening that Google Earth has a [data update](http://bbs.keyhole.com/ubb/showthreaded.php/Cat/0/Number/219154/an/latest/page/0#219154) that covers many cities in the UK. Well, that was my evening wasted. You can now see the whole area where I grew up in detail, right down to the car in my Mum's driveway (of a couple of years ago). Very addictive.
+
+
+		

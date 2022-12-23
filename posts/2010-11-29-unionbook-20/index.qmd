@@ -1,0 +1,28 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2010-11-29 21:28:40
+title: Unionbook
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+I know, I'm all sceptical about this web stuff. But Unionbook looks like an interesting initiative. Developed using [Ning](http://www.ning.com) (a commercial platform) it provides a useful set of social networking tools for union members. You can find it at [http://www.unionbook.org](http://www.unionbook.org).
+
+
+
+
+via [cyberunions.org](http://cyberunions.org/2010/08/20/unionbook-2-0/) and Max Lombardi
+
+
+		

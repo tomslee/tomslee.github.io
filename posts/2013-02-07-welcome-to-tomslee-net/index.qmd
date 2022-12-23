@@ -1,0 +1,18 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2013-02-07 02:30:18
+title: Welcome to tomslee.net
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				I've moved my site here from whimsley.typepad.com. This site contains the complete blog (including comments) from the Typepad site, but many of the links will take you back to the old place, which exists in archived state. There are RSS and email subscription buttons up there on the right.		

@@ -1,0 +1,25 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2008-06-01 17:05:31
+title: Email Blogging test
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+  
+
+Don't read this. I am just checking that I can email to the blog.
+
+
+		

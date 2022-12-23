@@ -1,0 +1,36 @@
+project:
+  type: website
+  output-dir: _site
+  preview:
+    port: 4444
+    browser: true
+
+website:
+  title: "Tom Slee"
+  description: "Personal web site"
+  navbar:
+    background: secondary
+    pinned: true
+    left:
+      - text: Home
+        href: index.qmd
+      - text: About
+        href: about.qmd
+      - text: Essays
+        href: essays.qmd
+      - text: "Whimsley (blog archive)"
+        href: blog.qmd
+      - icon: github
+        href: https://github.com/tomslee
+      - icon: twitter
+        href: https://twitter.com/whimsley
+
+
+format:
+  html:
+    theme: litera
+    css: styles.css
+    toc: true
+
+editor: visual
+

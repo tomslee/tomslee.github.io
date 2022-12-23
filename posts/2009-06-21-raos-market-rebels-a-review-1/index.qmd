@@ -1,0 +1,44 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2009-06-21 13:37:46
+title: 'Review: Market Rebels, by Hayagreeva Rao'
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+_Market Rebels: How Activists Make or Break Radical Innovations_, Hayagreeva Rao, Princeton University Press 2009
+
+* * *
+
+For decades, economists have extended their intellectual reach beyond mere money in an attempt to encompass all the social sciences in their analytical framework. But now the boot is on the other foot and it looks like even core economic observations may be better explained by other social sciences. Robert Solow apparently said that attempts to explain differences in economic growth across countries typically end in "a blaze of amateur sociology". The focus on psychology in explanations of the banking crash shows that growth is not the only area of economics where the discipline runs out of steam before reaching its destination. The rise of behavioural economics, surely a last-gasp attempt by economists to match their models to the real world without changing departments, suggests that the condition goes deep. 
+
+Despite its title, Hayagreeva Rao's _Market Rebels_ ([Open Library link](http://openlibrary.org/b/OL21097110M/Market-rebels), [publisher's page](http://press.princeton.edu/titles/8732.html)) challenges the economic analysis of innovations. At 180 pages and full of case studies it's easy to read quickly, but I was so taken by it that I went through it a second time and found much that I had missed. Rao does not hammer the reader over the head with the implications of his case studies, but for me as a non-sociologist and non-economist the implications are huge and I'll be thinking about the book for a long time.
+
+The case studies are diverse, but are centered around a single claim: the "joined hands of activists" play an important part in the creation, diffusion, and blocking of innovations. Collective action matters. Rao describes how hobbyists were key to the cultural acceptance of the car and the development of the personal computer; how microbrewers brought diversity back to beer; how nouvelle cuisine grew from the rebellious student movements of Paris 1968; how shareholder activism has pushed large companies to change behaviours; how community activists attempted to stall the spread of chain stores and then of big-box stores; how the green movement blocked the development of biotechnology in Europe. These studies, many based on his own research, help to bring activist groups and their campaigns out from the wings and into the spotlight as we think about innovation and social change, and by doing so Rao is performing a valuable service.
+
+The book is not strong on systematic analysis. The closest he gets to describing what determines whether movements succeed or fail is that successful movements must create "hot causes" and "cool mobilizations". Both concepts are tied in to the concept of "identity", which for Rao is the underlying motive that causes people to join with or against social movements. A "hot cause" is the spark that successful activists use to light a fire. It's a lightning-rod incident or issue that arouses strong emotions such as pride or anger. Examples include the frustrated demonization of "big beer" by real ale enthusiasts; the outrageous bonus paid to Home Depot CEO Robert Nardelli which crystallized the shareholder rights movement. But "hot causes" by themselves are not enough for a prolonged campaign. "Cool mobilizations" are actions that keep a movement going forward by "engaging audiences in new behaviors and new experiences that are improvisational and insurgent". Examples include setting up a microbrewery or formulating shareholder resolutions. The concepts are useful, but it's a shame Rao doesn't have a stronger turn of phrase. Naming concepts can be key to owning them, and "hot cause" and "cool mobilization" are too literal and clumsy to take on the weight they need. But this is a detail (and I don't have better ideas).
+
+For someone who has spent most of their non-fiction reading time reading economics and economics-inspired books in recent years, Rao's is a welcome and refreshing change. Economic analysis too-often reduces the political left-right split to the false dichotomy of market vs state, but this reduction maps badly on to the real experience of political activism. Those who protest Monsanto's private-sector use of genetic engineering are often the same as those who protest state-driven wars. Many of those who oppose new Wal-Mart stores also oppose the extension of surveillance powers by the state. Where do such activists see themselves in a market vs state debate? For many, they don't: market vs state is not what it's about. So it's not surprising that economists have a blind spot when it comes to social movements, and that the discipline systematically minimizes their impact. By putting social movements at the centre of his stories, Rao shows that they can and do have an influence, and that they deserve a place in any serious look at institutions that shape social change.
+
+Although he says almost nothing about the Internet and digital collaboration, _Market Rebels_' focus on innovations makes the book obviously relevant. Rao's analysis is a welcome alternative to the usual focus of widely-read writers like Yochai Benkler and Clay Shirky. These writers take the economics point of view and focus on issues such information as a public good, lowering transaction costs for online exchanges, and the vanishingly small marginal cost of reproduction of digital information. Rao's unspoken counterargument, which convinces me, is that group formation is not a problem of information, it's a problem of identity. If he is right then although we can expect to see many examples of successful groups in the online world, we won't see not a huge flowering of groupiness compared to the information-starved analogue world.
+
+What's more, if Rao is right and initiatives such as Wikipedia, blogging and the Open Source movement really are social movements, then they may have a limited lifespan. Digital activist identity is a rebellious and anti-establishement stance, but such a stance can only be maintained while the movement is oppositional. Open Source, with a longer history behind it than Wikipedia or blogging, has changed its identity to being more professionalized, more establishment. Its participants are less likely to be the radicals of yesteryear. Once Wikipedia is established as a success for a few years, rebellion becomes irrelevant as a motive and one may wonder whether the activists will find the "cool mobilizations" to maintain involvement and participation.
+
+If there is an economics tie-in with Rao's analysis, it's with the analysis of identity pioneered by Rachel Kranton and Robert Akerlof (and which I sketched in the final chapter of _[No One Makes You Shop at Wal-Mart](http://www.tomslee.net/)_). Rao does little to pick apart the concept of identity and it looks to me like the K&A analysis would have been helpful to him. For Kranton and Akerlof, identity is a set of social categories (car enthusiast, green activist), a set of prescriptions that go along with those categories, and a set of costs and benefits associated with following or not following these prescriptions. We each choose an identity from the range that society provides ("environmentalist", "conservative", etc). Forcing this choice is the object behind Rao's "hot cause": the lightning-rod issue that polarizes participants into supporters and opponents ("which side are you on, boys, which side are you on?", as the greatest living American sings). Once you have chosen an identity, you must affirm it by following the prescriptions associated with that identity (shopping at independent stores, eating nouvelle cuisine, etc) or you pay the price of dissonance if you take actions that go against those prescriptions (shopping at W
+al-Mart, eating classical cuisine). Creating a strong set of such prescriptions is the essence of Rao's "cool mobilizations", which serve to maintain a sense of solidarity and identity among movement members. 
+
+One of the more common criticisms of _No One Makes You Shop at Wal-Mart_ was that, although I argued in favour of collective action as a corrective force to free markets, I had little to say about what forms that action should take. It's a fair knock, and I'm happy that I can now point such readers to Rao's book. Not only does he take on several of the issues that I cover (Wal-Mart and big-box stores, biotechnology, real ale) but he takes them much further than I could ever had done, and in a wonderfully specific and constructive way that provides concrete guidance to activists. I take my hat off to him.
+
+
+		

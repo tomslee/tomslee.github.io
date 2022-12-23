@@ -1,0 +1,29 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2006-03-12 12:01:31
+title: Sea Squirt
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+Best sentences of the day:
+
+<blockquote>The juvenile sea squirt wanders through the sea searching for a suitable rock or hunk of coral to cling to and make its home for life. For this task, it has a rudimentary nervous system. When it finds its spot and takes root, it doesn't need its brain anymore, so it eats it! (It's rather like getting tenure.)
+> 
+> </blockquote>
+
+Daniel C. Dennett, _Consciousness Explained_, p. 177.
+
+
+		

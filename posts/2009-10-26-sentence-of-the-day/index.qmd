@@ -1,0 +1,30 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2009-10-26 22:17:03
+title: Sentence of the day
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+From the [official Google blog](http://googleblog.blogspot.com/2009/10/energy-secretary-chu-visits-googleplex.html):
+
+
+
+
+<blockquote>During a fireside chat with Googlers and our CEO Eric Schmidt, Secretary Chu talked about what it will take to create a clean energy revolution.
+> 
+> </blockquote>
+
+
+		

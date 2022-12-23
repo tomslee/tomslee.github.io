@@ -1,0 +1,34 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2009-09-21 11:52:48
+title: "Netflix Prize: Congratulations to BellKor's Pragmatic Chaos"
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+The Netflix Prize wound up a couple of months ago, but the winner was just late last week and the prize was awarded today.  
+  
+The official announcement is here: [Netflix Prize: Forum / Grand Prize awarded to team BellKor’s Pragmatic Chaos](http://www.netflixprize.com//community/viewtopic.php?id=1537)  
+
+
+<blockquote></blockquote>
+
+  
+  
+
+
+![](http://img.zemanta.com/pixy.gif?x-id=2648670a-6389-884f-b32b-d607998db258)
+
+
+		

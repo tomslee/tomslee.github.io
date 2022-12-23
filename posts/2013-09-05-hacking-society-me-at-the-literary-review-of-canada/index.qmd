@@ -1,0 +1,23 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2013-09-05 02:19:24
+title: '"Hacking Society": me at the Literary Review of Canada'
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				I am thrilled to have a long review of three "internet and society" books in the always-excellent [Literary Review of Canada](http://reviewcanada.ca/). It's online at [http://reviewcanada.ca/magazine/2013/09/hacking-society/](http://reviewcanada.ca/magazine/2013/09/hacking-society/).
+
+Books covered are: _Networked: The New Social Operating System _by Lee Rainie and Barry Wellman; _Black Code: Inside the Battle for Cyberspace_ by Ronald J. Deibert, and _Coding Freedom: The Ethics and Aesthetics of Hacking_ by E. Gabriella Coleman.
+
+
+		

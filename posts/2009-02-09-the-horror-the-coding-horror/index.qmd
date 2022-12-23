@@ -1,0 +1,38 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2009-02-09 15:04:21
+title: The Horror, The (Coding) Horror
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+Who are all you People?
+
+  
+
+
+Tramping over the flowerbeds, messing up the front porch, and sticking a big spike in my previously smooth and uneventful traffic logs?
+
+  
+
+
+What's that? Jeff Atwood [sent you](http://www.codinghorror.com/blog/archives/001224.html)? Sounds like a dodgy character to me.
+
+  
+
+
+Well OK. You can look aound if you like. Just clean up after yourselves, that's all. And don't eat anything from the kitchen. You'll regret it.
+
+
+		

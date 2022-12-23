@@ -1,0 +1,23 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2011-03-07 12:24:28
+title: Someone needs to change their name
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+I have a Google Alert that sends me an email when the name "Tom Slee" is mentioned on the Internet, which is why I read [this piece](http://www.gurufocus.com/news.php?id=124931) on the failure of auditors during the financial crash. Very nice work, Mr. Slee (no relation).
+
+
+		

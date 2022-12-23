@@ -1,0 +1,34 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2010-12-16 21:20:26
+title: Crowdsourcing Government Cuts
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+Here's a tasty dollop of web-friendly populism from south of the border. Those Republicans want less government, and they're crowdsourcing it, mass-collaboration style. Here's [Scott Aaronson](http://scottaaronson.com/blog/?p=476):
+
+
+
+
+<blockquote>the incoming Republican majority in Congress has a new initiative called [YouCut](http://republicanwhip.house.gov/YouCut/Review.htm), which lets ordinary Americans like me propose government programs for termination.  So imagine how excited I was to learn that YouCut’s first target—yes, its first target—was that notoriously bloated white elephant, the National Science Foundation.  Admittedly, I’ve already tried to save NSF from some wasteful expenditures, in my occasional role as an NSF panel member.  But this is my first chance to join in as a plain US citizen.</blockquote>
+
+
+
+
+<blockquote>  
+</blockquote>
+
+
+		

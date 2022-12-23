@@ -1,0 +1,501 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2013-02-26 03:58:44
+title: Notes on Identity, Institutions, and Uprisings
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+
+
+
+## Table of Contents
+
+
+
+
+
+
+
+
+	
+  * Introduction
+
+	
+  * Facebook as a "free space"
+
+	
+  * Connecting Identity to Rational Choice?
+
+	
+  * Identity Cascades
+
+	
+  * Free Spaces and Screening
+
+	
+  * Institutions and Challenges
+
+	
+  * Conclusions
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Introduction
+
+
+
+
+
+
+_Finishing up what I said I'd finish a couple of months ago, this is a shorter version of a paper on "[Identity, Institutions, and Uprisings](http://papers.ssrn.com/abstract=2116471)" with __less mathematics, no references (see the link above) and more opinionating. __Also, a longer version of what I'm going to say at [Theorizing the Web 2013](http://www.theorizingtheweb.org/2013/) in __a few days._
+
+There is a theoretical side to the "Facebook Revolution" debate about the role of digital technologies in the 2011 "Arab Spring" uprisings, and it boils down to two ways of looking at things: the micro and the macro. On the one hand, we have the rational choice, agent-based approach and on the other we have more traditional sociological approaches based on larger-scale social structures.
+
+If you look at some of the key characteristics of the uprisings, it looks like a win for the micro side.
+<table rules="groups" border="2" frame="hsides" cellpadding="6" cellspacing="0" align="center" >Theories, and North African uprisings. 
+
+<tr >
+Event
+Micro
+Macro
+</tr>
+
+<tbody >
+<tr >
+
+<td class="left" >Sudden uprising (cascade)
+</td>
+
+<td class="left" >Y
+</td>
+
+<td class="left" >N
+</td>
+</tr>
+<tr >
+
+<td class="left" >Lack of strong opposition movement
+</td>
+
+<td class="left" >Y
+</td>
+
+<td class="left" >N
+</td>
+</tr>
+<tr >
+
+<td class="left" >Network technologies
+</td>
+
+<td class="left" >Y
+</td>
+
+<td class="left" >N
+</td>
+</tr>
+</tbody>
+<tbody >
+<tr >
+
+<td class="left" >Score
+</td>
+
+<td class="left" >3
+</td>
+
+<td class="left" >0
+</td>
+</tr>
+</tbody>
+</table>
+The single most dramatic thing about the "Arab Spring" uprisings was their unexpected suddenness. They fit the "information cascade" models developed by Timur Kuran, Suzanne Lohmann and others to describe the equally dramatic and sudden 1989 uprisings in Eastern Europe. Nothing on the "macro" side matches the elegant explanation of sudden, discontinuous change given by the micro-theorists.
+
+Related to this suddenness is the lack of a strong opposition movement before the uprising. It's not that there was _no_ opposition, but there was nothing of the strength to indicate a coming crisis. The cascade theories have no need, or even place, for organizations or movements: these are population dynamics models, with no structure bigger than the networked individual. Meanwhile, the leading sociological theories deal with movements, organizations, and resource mobilization. Score two to the micro-theorists.
+
+Finally, we have the role of digital technologies, which segues naturally to network models of society. Talk of information technologies leads equally naturally to a focus on information diffusion across networks, in which increased connectivity lowering barriers to collaboration, discussion, and information sharing. And the macro-theorists again seem to have little on their side to cope with these kinds of ideas.
+
+It looks like a shut-out win for the micro-theorists; the language of networks and information replaces the language of social movements and repertoires of performance, and with that comes the inevitable idea that with a new kind of theory we are we seeing a new kind of uprising, in which self-organizing networks based on digital technologies take centre stage…
+
+But you will have realized by now that this is a setup for me to argue that there's another way of looking at these events, so let's get to it.
+
+The key success of micro-level theory is the explanation of cascades, which is a natural consequence of any model that has multiple equilibria. Just because of that success, we don't need to go whole hog and take on board the ideas of information-driven and network-sustained change. I want to argue that we can take the concepts that sociological research has shown to be important, and move them into the realm of rational choice models. And when we do, we not only get population dynamics and cascades, but we also get explanations for several other aspects of dissent and uprisings that networks and information-based theories can't deliver.
+
+Is there a downside? Of course there is. Behind the scenes, it's often the case that rational choice theorists like long equations while sociologists love long words. Rational choice theorists see the sociologists' concepts as fuzzy, while the sociologists see the incentives of rational choice models as simplistic. What I have to offer demands _both_ long equations _and_ long words, and is open to being criticism for being simultaneously simplistic and fuzzy. Ah well.
+
+
+
+
+
+
+
+
+
+
+
+
+## Facebook as a "free space"
+
+
+
+
+
+
+Let's start with a question. Zeynep Tufekci is a sociologist who was in Egypt right after the January 2011 uprisings, interviewing participants. Here's what she says:
+
+
+<blockquote>When I was in post-Mubarak Cairo, my hosts kept pointing in amazement to various street corners where fierce political discussions were being held and often whispered, before remembering they could now speak up and adjusting their voice, "You never saw this. Nobody ever discussed politics openly, ever." Then they would pause and add, "Well, except online, of course. We all discussed politics online."</blockquote>
+
+
+So the question is that final sentence. Why is it that, prior to the revolution, people could discuss politics online but not elsewhere? What made "online" a venue where those discussions could take place? It's not just ease of communication, because if you want to communicate you can stand on a busy street corner – as people were doing when Tufekci visited.
+
+The key thing is that communication online was, for some reason, safe, while communication on the street was not. It's not just that communication among like-minded people was possible, but that the "online" spaces were a venue where such communication did not have the same  consequences. Somehow, the speech was hidden from those in power. It was a trusted environment.
+
+Now while the logic of networks is a good way to explain easy communication, it doesn't lend itself to discussions of trust. Fortunately sociologists have long been aware of the importance of these "free spaces" in which dissenting voices can communicate. Here are Francesca Polletta and James Jasper in a 2001 paper:
+
+
+<blockquote>Concepts of "submerged networks", "halfway houses", "free spaces", "havens", "sequestered social sites", and "abeyance structures" describe institutions removed from the physical and ideological control of those in power, for example the black church before the civil rights movement and literary circles in communist Eastern Europe. Such institutions… represent a "free space" in which people can develop counterhegemonic ideas and oppositional identities.</blockquote>
+
+
+So these notions of "free spaces" have been around for some time and surely fit something about the way that online political discussion worked in Egypt. Free spaces are institutions (in a broad sense of the term) that are not outlawed, but which appeal to outsiders of society rather than to those who identify with the powers-that-be. They manage to be transparent to their members while being opaque to officialdom.
+
+More generally, following Charles Tilly and Sidney Tarrow, we can think of institutions in  authoritarian states as being of three kinds.
+<table rules="groups" border="2" frame="hsides" cellpadding="6" cellspacing="0" align="center" >Types of institution in authoritarian states 
+
+<tr >
+Institution
+High Status
+Low Status
+</tr>
+
+<tbody >
+<tr >
+
+<td class="left" >Prescribed
+</td>
+
+<td class="left" >Y
+</td>
+
+<td class="left" >Y/N
+</td>
+</tr>
+<tr >
+
+<td class="left" >Tolerated
+</td>
+
+<td class="left" >N
+</td>
+
+<td class="left" >Y
+</td>
+</tr>
+<tr >
+
+<td class="left" >Forbidden
+</td>
+
+<td class="left" >N
+</td>
+
+<td class="left" >N
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+	
+  * _Prescribed institutions_ are the mainstream and establishment institutions of society. They may include the education system, organizations like the army, and also things like national celebrations. Some of these institutions include people of all levels of status, while some are restricted to high-status individuals and families.
+
+	
+  * _Tolerated institutions_ are legal, but their membership is limited to lower-status individuals. In some countries these would include religious institutions associated with minority groups, perhaps some artistic and cultural institutions, and workplace organizations in countries where they can exist outside official control. These are the venues that, according to Polletta and Jasper, can provide spaces for dissent. Obviously there is a wide range of what institutions are tolerated and what are forbidden. North Korea has a lot fewer "tolerated" institutions than 1980 Poland.
+
+	
+  * _Forbidden institutions_ are those that are not permitted in authoritarian societies. Opposition political parties, independent unions, that sort of thing.
+
+
+But how do these institutions become "removed from the physical and ideological control of those in power"? The answer lies in what Polletta & Jasper call "collective identity". Tolerated institutions –whether subcultures, groups, or whatever – build up their own practices to establish autonomy.
+
+Collective identity is "an individual's cognitive, moral, and emotional connection with a broader community, category, practice, or institution." It gets expressed in "cultural materials—names, narratives, symbols, verbal styles, rituals, clothing, and so on." And these expressions provide boundary-setting rituals and institutions that separate challengers from those in power, and so can strengthen internal solidarity.
+
+Examples of "free spaces" in authoritarian societies abound. In his book _Exit-Voice Dynamics and the Collapse of East Germany_, Steven Pfaff highlights the importance of some very narrow institutions that he calls "Niche society". These are "pockets of private life, around home, car and allotment" where people could voice their disenchantment and cynicism. A broader form of dissent took place in institutions of youth culture: despite party efforts to establish bands and music venues for German youth, many sought out more alternative forms of music, and clashes took place  between fans and police at concerts. Music events are not, at least publicly, political events and so while the events might not be forbidden, you would not find party supporters taking part. Finally, Pfaff notes that "Dissent could only take place in gaps in the system of social control that dissidents could exploit. In the GDR this principally meant the churches." Again, churches are an example of an institution that was legal, but which naturally separated society's outsiders from those in power.
+
+
+
+
+
+
+
+
+
+
+
+
+## Connecting Identity to Rational Choice?
+
+
+
+
+
+
+So now we seem to have two separate sets of ideas. On the one hand we have a theory of uprisings that makes no use of sociological concepts. On the other hand, to explain pre-uprising dissent we need to look at sociological ideas such as institutions and identity. Obviously there is a bridge that must be built if we are to connect these seemingly separate theoretical islands. Can the gap be bridged? Well yes it can, thanks to the "identity economics" work of George Akerlof and Rachel Kranton, who argue that identity provides a key motivation for many social situations. They  take the concept of identity seriously, and simplify it to fit it into a tractable micro-level model. Identity, they say, has three parts to it.
+
+
+
+	
+  * First is a set of social categories: for us, those categories are "government supporter" or "opponent".
+
+	
+  * Next, each of these identities has a set of attributes associated with it. These vary from society to society. Economic status is one, religious or ethnic or gender identities are others.
+
+	
+  * And finally, each identity has a set of norms of behavior: in this case we simplify the options to "conform" to society's expectations or "dissent".
+
+
+Individuals then have two choices to make. First, they need to adopt an identity: _G_overnment or _O_pposition? Next, if they are oppositional they need to decide whether to engage in active dissent or to conform to official expectations. If we arrange the population according to status, then those at the lower status choose _O_ (_O_ has a higher utility), and people with higher status choose _G_. Here is a graph that shows a case where the switchover appears at the mid-point.
+
+[caption id="attachment_504" align="aligncenter" width="450"][![b-utility](http://tomslee.net/wordpress/wp-content/uploads/2013/02/b-utility-300x225.png)](http://tomslee.net/wordpress/wp-content/uploads/2013/02/b-utility.png) Utility and identity in an authoritarian society[/caption]
+
+
+
+
+
+In some times and places, no one gives a hoot which identity you adopt, while at other times and places it can be a matter of life or death. I'll call this scaling of the difference between _O_ and _G_ the _identity polarization_ of society, and we'll be needing this concept a lot.
+
+
+
+
+Identity is one of the two things we need to explain "free spaces" but before we go to the other, let's take a short detour. One of the key successes of information-driven rational choice models was the fact that they yield cascades. Can our identity-driven model also give cascades? Funny you should ask…
+
+
+
+
+
+
+
+
+
+
+
+
+## Identity Cascades
+
+
+
+
+
+
+Here is a cascade.
+
+
+
+
+[caption id="attachment_505" align="aligncenter" width="450"][![b-cascade](http://tomslee.net/wordpress/wp-content/uploads/2013/02/b-cascade-300x225.png)](http://tomslee.net/wordpress/wp-content/uploads/2013/02/b-cascade.png) A cascade. The yellow line and the yellow dot are equilibria of the model.[/caption]
+
+If you want to know the gory details, including what the "hegemony" label on the x axis means, you have to go and read the paper. But see that there are two equilibria here. One is a stable authoritarian state, with zero activity (the yellow line at the right) and a high government hegemony. The other is a state in crisis, with a high level of dissent (the yellow dot where the lines cross). And a small change in society can lead to a sudden  discontinuous switch from one to the other: a _cascade_.
+
+
+
+
+To generate multiple equilibria you need some form of externality: some way in which one person's actions influence those around them. This model generates cascades by asserting that active dissent increases the identity polarization of society: _the more active dissent there is, the more it matters which side you are on_. It's not so much an information cascade as an _identity cascade_.
+
+Although this is a rational choice model, it does not invoke networks, and information is not central to the argument. In most cascade models the cascade is generated by two things:
+
+
+
+	
+  * active dissent reveals information, about the state of the society or about the beliefs of other people. This is the "preference falsification" argument.
+
+	
+  * there is safety in numbers: the more people protesting, the safer it is to protest.
+
+
+I've criticized these ideas [here](http://tomslee.net/2012/12/what-cascade-theories-leave-out.html), but is there any evidence to suggest that identity does get polarized as a result of dissent? Anecdotally, there is. Here is a Marxist radical speaking about Paris, 1968:
+
+
+<blockquote>I was completely surprised by 1968… I had an idea of the revolutionary process and it was nothing like this. I saw students building barricades, but these were people who knew nothing of revolution. They were not even political. There was no organisation, no planning.</blockquote>
+
+
+In the lead-up to 1968, French students were not revolutionaries who had falsified their true preferences in order to conform to society's expectations. What happened was that during the riots, identity (status quo or radical?) became a central issue, and individuals had to decide "which side are you on?", and many students switched their identities from mildly status-quo to enthusiastic barricade-builder.
+
+A switch in identity happens when people are pulled along by those around them. As Dennis Chong (1991) writes of the US Civil Rights movement: "friendship and familial, religious, and professional relationships create an array of ongoing exchanges, obligations and expectations that individual."
+
+In his book on the fall of the GDR, Steven Pfaff repeatedly invokes the "preference falsification" model, but he often steps outside it too. In fact, my biased reading of it is that he sometimes resorts to the preference falsification model because of a lack of alternatives, not because the evidence pulls him that way. But when he writes that "By 1989 official socialist ideology, along with its clear articulation of the nature of injustice, had become a threat to the system it was meant to legitimate" he is talking about a crisis of identity. The crisis served to "focus diffuse grievances", uniting "a host of disparate concerns into 'moral anger"'. This is the crystallization of identities into the two polar choices: "Which side are you on?"
+
+The "identity cascade" model also makes a closer connection between dynamics and the efforts of protesters. I'll return to this later, but one of the things that protesters do in uprisings is lay claim to the symbols of national identity. Whether it's Gandhi's Salt March or GDR protesters choosing the 40th anniversary of the founding of the country, struggles over the meaning of identity become central at times of crisis. If information revelation was all that were needed, there would be no role for the displays of "worthiness, unity, numbers and commitment" that characterize political protest. An identity-driven approach makes this link clear, within a rational choice framework.
+
+(Another nice thing is that within the identity cascade model there is a natural categorization of the kind of events that can precipitate a cascade. A shock to the norms associated with opposition, a change in socio-economic conditions that places more people into the "outsider" category, or a change in state policy (perestroika) all emerge as triggers for cascades. See the paper for more.)
+
+
+
+
+
+
+
+
+
+
+
+
+## Free Spaces and Screening
+
+
+
+
+
+
+With that diversion over, let's return to the topic of free spaces. How do we get from the language of Polletta and Jasper to the world of rational choice? There is a natural correspondence in the concept of _screening_: a mechanism that imposes differential costs for two different groups, so that (in a "separating" equilibrium) one group finds it worthwhile to pay the cost, while the other does not. Here, the identity-driven costs of being a member of "tolerated" institution screens out those with the status quo (_G_) identity.
+
+Just as Akerlof and Kranton simplified identity so that it could be squeezed into a rational choice picture, so we have to simplify the idea of an institution. Henceforth, then, an institution _I_ is characterized by three things:
+
+
+
+	
+  * _Status (x):_ This is the natural membership of the institution. We can say that the _identity of the institution_ is the optimal identity of an individual with status _x_
+
+	
+  * _Breadth (δ):_ Individuals with status in [x - δ, x + δ] are members of _I_. The "niche society" institutions of the GDR have a very narrow breadth, while events such as national celebrations include all of society.
+
+	
+  * _Membership discrimination (m):_ Some institutions do not discriminate between the two identities, but some do. A discriminating institution demands a cost of membership for individuals whose identity differs from the identity of the institution.
+
+
+With this idea, you can build a model in which there is a range of institutions that even a strong state will not monitor, because the cost of monitoring is greater than the benefit in terms of dissent that is quieted. These institutions provide the free space for dissent to persist even under conditions of strong government.
+
+
+
+
+
+
+
+
+Here are some screening institutions
+
+
+
+
+[caption id="attachment_506" align="aligncenter" width="450"][![b-screening-institutions](http://tomslee.net/wordpress/wp-content/uploads/2013/02/b-screening-institutions-300x225.png)](http://tomslee.net/wordpress/wp-content/uploads/2013/02/b-screening-institutions.png) Screening institutions.[/caption]
+
+
+
+
+The screening institutions are those inside the lozenge shapes. Along the x axis is the status, so all these institutions are "tolerated" in that they are entirely within the "outsider" low-status zone. The broader the reach of the institution (that's the "_δ_" in the graph) the less scope there is for these institutions. Finally, and it's beyond what I can explain in this part, there is a limit to the size of the "public sphere" that also limits the available institutions.
+
+So what this shows is that the economic concept of screening brings to the identity-driven rational choice model the idea of free spaces, well established within the sociological literature. To go back to the beginning of this essay, the existence of such spaces is something that the network models, with their focus on costs of communication, don't seem well equipped to describe. So now we have a single theory that covers both uprisings and pre-revolutionary dissent, instead of two (one micro, one macro). We can now see that the "free spaces" of online dissent are similar to, and exist for the same reasons as, other free spaces that have existed in the past. Even in Egypt, the role of the Ultras football fans can fit within this model, the football stadium terraces providing a "tolerated" institution within which dissent could be expressed. The model also argues that the key facet of online spaces is not their technological nature, but the fact that they were adopted by, and associated with, the broadly anti-establishment demographic of urban youth. Navigating the discussion spaces of the online world is easy if you have friends who are taking part: not so easy if you are a government official trying to pose as a disenfranchised youth. The technology of social media is _epiphenomenal_. In broad strokes, this is an argument I made some time ago [here](http://tomslee.net/2011/02/more-egypt-more-facebook.html): it's only taken two years for me to work it out properly.
+
+Institutions and Challenges
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The final case to look at is when a social movement challenges a weak government. The goal is to put the government in a "dictator's dilemma". The idea that clamping down on dissent has the possibility of drawing attention to it, and perhaps fanning the flames, is an old one. Here is a recent statement:
+
+
+<blockquote>[S]ometimes repression inspires more mobilization; and sometimes it effectively quashes movements or pushes them underground. Sometimes repressive forces are successful in characterizing protesters as legitimate targets of repression, and other times they deligitimize the State and increase the legitimacy of the social movements.
+– Cristina Flesher Fominaya and Lesley Wood</blockquote>
+
+
+Or, going back a little further:
+
+
+<blockquote>Censorship makes every banned text, bad or good, into an extraordinary text.
+– Karl Marx</blockquote>
+
+
+The contrasting fortunes of the GDR protests and the Tienanmen Square protests in 1989 are the best known example of this dual possibility.
+
+When they believe the time is right, social movements may actively seek to provoke a crisis (contrary to the "safety in numbers" cost minimization that the information cascade theorists tend to favour). Famously, here is Gandhi:
+
+
+<blockquote>The function of a civil resistance is to provoke response and we will continue to provoke until they respond or change the law. – M. K. Gandhi</blockquote>
+
+
+We can bring this idea of provocation into a micro model if we bring in a unitary social movement and invoke an interdependency between identity polarization and government coercion. Again, the mathematics is in the paper.
+
+The question we ask is "if you were an organized opposition, what institution would you target, so that a clampdown would cause polarization?" The idea is that clampdown on a mainstream institution would be more likely to polarize society, by disturbing even the government's own supporters, than clamping down on an "outsider" institution. Again, the opposition has to make a payment to appropriate a mainstream institution, because of membership selectivity. They have to pass with the identity of a status quo supporter. They need to appeal to mainstream sensibilities and to establish legitimacy. Under the right circumstances, an opposition will pay the cost of provocation, because they anticipate that a government response will weaken, not strengthen, the government's level of control. Here is a figure showing a set of institutions that can be used by an opposition to provoke a crisis.
+
+
+
+
+[caption id="attachment_507" align="aligncenter" width="450"][![Institutions that may provoke a crisis](http://tomslee.net/wordpress/wp-content/uploads/2013/02/b-opp-provocative-institutions-300x225.png)](http://tomslee.net/wordpress/wp-content/uploads/2013/02/b-opp-provocative-institutions.png) Institutions that may provoke a crisis[/caption]
+
+
+
+
+The institutions that may provoke a crisis are those within the central closed shape, bounded clockwise by light blue (on top), green, red, and purple. Some of these institutions are "tolerated" institutions to the left of the x* line, with oppositional identities; for these institutions there is no membership cost to be paid by the opposition. Others are "prescribed" institutions that have a mainstream identity. The opposition must pay the price of appropriating these institutions: participating in them in such a way as to provoke the government.
+
+An example of this behaviour comes again from the GDR uprisings of 1989, as described by Steven Pfaff. The opposition chose the celebrations of the GDR's fortieth anniversary – a mainstream institution – in which to provoke a response. The government did respond, but "its brutal attacks on peaceful protesters during the fortieth anniversary … probably activated what might have otherwise remained despairing, but inert, citizens."
+
+The opposition made explicit attempts to portray themselves as mainstream Germans, adopting the simple slogan of "Wir sind das volk" ("We are the people").
+
+
+<blockquote>"Wir sind das volk" [was] a thin claim, but an uncomplicated "us versus them" message, a claim to political identity that could bridge lines of class, education, neighborhood, and so on. – Steven Pfaff</blockquote>
+
+
+In previous times, other uprisings have explicitly chosen mainstream or sometimes tolerated institutions as a means of provocation. Gandhi's use of the Salt March, the Chinese students' use of the death of Hu Yaobang and Tienanmen Square, the Egyptian protesters appropriation of National Police Day and Tahrir Square all follow this pattern.
+
+There are claims that digital technologies at times of crisis can act in this manner. Ethan Zuckerman has popularized the idea as a "Cute Cat" theory: that mainstream institutions provide a venue for dissent that cannot be shut down without polarizing society. The theory here provides at best limited and conditional support for the idea. Digital technologies were not used as a mechanism of provocation, but played a supporting role. The "cute cat" idea has credence only if the government is not able to silence dissent in a more selective manner than shutting down the entire internet or phone service within the country.
+
+My favourite example is the French "Banquet Campaign" of 1848. Republicans were campaigning for universal male suffrage against an intransigent government that had banned political meetings. Faced with the problem of organizing an opposition in such an environment, they organized banquets. On the 18th of July in Mâcon, Burgundy, five hundred tables were set up for three thousand guests with stands for three thousand more, ostensibly as a celebration of local literary star Alphonse de Lamartine. Lamartine was not just a literary star though, he was also a well-known republican, and the authorities knew that the banquet was a cover for political agitation. But the authorities judged that interfering with the banquets would inflame the situation rather than succeed in suppressing the protest, and so let the banquet proceed. With the success of the Mâcon banquet, the "Campagne des banquets" was launched, and banquets were held around the country. This is the high wire act that governments and opposition walk at times of crisis – when to push ahead, when to hold back, and what tactics may be effective – and is the kind of dance that social movement studies have helped to elucidate. The campaign continued until February of the next year, when the government decided it had no choice but to escalate. The banquets were outlawed, a hastily organized protest brought people into the streets of Paris on February 22, a confrontation between the Municipal Guard and the marchers spilled over into riots, everything got out of hand, and the King fled Paris. Within a few weeks governments were toppled in Milan, Venice, Naples, Palermo, Vienna, Prague, Budapest, Krakow, and Berlin. I like to think that the graph above captures a little of that drama.
+
+
+## Conclusions
+
+
+What I've tried to do here is follow the Akerlof & Kranton example of taking the rich sociological concepts of identity seriously, and used it to construct a rational choice model of uprisings that complements, rather than competes with, sociological models. I've added some dynamics to the approach, and brought in a modelling of institutions to build on the notion of collective identity as a motivating force for protest.
+
+The results are that the theory recovers the key facet of other rational choice models of uprisings, which is cascades, but with a different interpretation. Here it is "identity cascades" rather than "information cascades" that drive the sudden change. Beyond cascades, the theory shows how screening provides a mechanism for the existence of "free space" institutions in which dissent can be sustained, even in authoritarian regimes. Finally, it shows how an organized opposition may appropriate mainstream institutions with the explicit intent of provoking a crisis, putting the government in a "dictator's dilemma" in which neither responding nor failing to respond is a good option.
+
+
+
+
+
+
+
+
+
+
+
+
+(Written in [Org](http://orgmode.org) version 7.9.3f with [Emacs](http://www.gnu.org/software/emacs/) version 23)
+
+
+
+
+
+		

@@ -1,0 +1,21 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2015-03-06 21:58:29
+published: false
+title: AWS S3 test
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				A test of the S3 plugin.
+
+[![survey_99_Portland_2015-02-22_multilister_income](http://whimsley.s3.amazonaws.com/wordpress/wp-content/uploads/2015/03/survey_99_Portland_2015-02-22_multilister_income.png)](http://whimsley.s3.amazonaws.com/wordpress/wp-content/uploads/2015/03/survey_99_Portland_2015-02-22_multilister_income.png)		

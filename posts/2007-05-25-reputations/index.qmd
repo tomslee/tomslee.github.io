@@ -1,0 +1,34 @@
+---
+author: Tom Slee
+categories:
+- blog archive
+date: 2007-05-25 22:18:08
+title: Reputations
+---
+
+::: {.callout-note}
+
+This page has been migrated from an earlier version of this site. 
+Links and images may be broken.
+
+:::
+
+
+
+				
+
+Regarding reputation-building on the Internet, Clive Thompson [writes](http://www.wired.com/wired/archive/15.04/wired40_ceo.html) approvingly that 
+
+<blockquote>network algorithms do not favor the cagey or secretive. They favor the prolific, the outgoing, the shameless.
+> 
+> </blockquote>
+
+Said another way, network algorithms do not favour the quiet or the reflective. They favour the loud-mouthed, the self-promoting, the flashy.
+
+
+
+
+O brave new world that has such algorithms in it.
+
+
+		
