@@ -10,9 +10,9 @@ Professional product manager by day, amateur writer and data analyst by night.
 
 ## Self promotion
 
--   [Resume](posts/2021-12-12_resume/index.qmd "Resume")
+-   [Resume](about/2021-12-12_resume/index.qmd "Resume")
 
--   [Publications and media](posts/2021-12-10-publications/index.qmd "Publications and media")
+-   [Publications and media](about/2021-12-10-publications/index.qmd "Publications and media")
 
 ## Location
 
@@ -23,3 +23,7 @@ from ipyleaflet import Map
 m = Map(center=(43.37456, -80.43575),zoom=17)
 m
 ```
+
+## Contact
+
+tom\@tomslee.net

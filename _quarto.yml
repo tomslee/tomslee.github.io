@@ -9,7 +9,7 @@ website:
   title: "Tom Slee"
   description: "Personal web site"
   navbar:
-    background: secondary
+    # background: secondary
     pinned: true
     left:
       - text: Home
