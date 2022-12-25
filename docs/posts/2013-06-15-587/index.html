@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Tom Slee">
+<meta name="dcterms.date" content="2013-06-15">
+
+<title>Tom Slee - Yes, the Apache Foundation Should Dump Accumulo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Tom Slee</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../essays.html">
+ <span class="menu-text">Essays</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html">
+ <span class="menu-text">Whimsley (blog archive)</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/tomslee"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/whimsley"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Yes, the Apache Foundation Should Dump Accumulo</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">blog archive</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Tom Slee </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 15, 2013</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This page has been migrated from an earlier version of this site. Links and images may be broken.</p>
+</div>
+</div>
+<pre><code>            This post follows on from [my previous one](http://tomslee.net/2013/06/should-the-apache-foundation-stop-hosting-accumulo.html), which has the background and links. In brief,&nbsp;the Apache Foundation is hosting the Accumulo project. Accumulo is software&nbsp;created by the NSA and handed to Apache, and it is at the heart of the NSA's surveillance technology&nbsp;stack. Now that we know about the use of the technology, Apache has the&nbsp;opportunity to distance itself from the NSA surveillance scandal, and should&nbsp;do so.</code></pre>
+<p>How should we think about the role of Apache in the NSA surveillance scandal?&nbsp;Perhaps a good place to look is the work of respected open internet advocates&nbsp;like the <a href="https://opennet.net/">OpenNet Initiative</a>. So let’s do that.</p>
+<p>A couple of years ago Helmin Noman and Jillian York of the OpenNet Initiative&nbsp;published a bulletin called <a href="https://opennet.net/west-censoring-east-the-use-western-technologies-middle-east-censors-2010-2011">West Censoring East: The Use of Western&nbsp;Technologies by Middle East Censors, 2010-2011</a>. The bulletin documented&nbsp;network filtering of the internet by national governments, and “the use of&nbsp;American- and Canadian-made software for the purpose of government-level&nbsp;filtering in the Middle East and North Africa”. The goal of the report was to&nbsp;inform a “genuine discussion of the ethics and practice of providing national&nbsp;censorship technology and services”. Just to be clear, and for what little it is worth, the report seems&nbsp;admirable to me. The ethical stances it takes were reiterated by Rebecca MacKinnon when she wrote about it last year in her influential book “The Consent of the Networked”. What’s interesting now is to read the report, read the&nbsp;ethical stances it takes regarding the provision of services by Western&nbsp;companies to authoritarian actions by national governments, and apply those&nbsp;lessons to Apache and the NSA. The parallels are, I hope, obvious.</p>
+<p>The report concludes that “Western companies are playing a role in the&nbsp;national politics of many countries around the world. By making their software&nbsp;available to the regimes, they are potentially taking sides against citizens&nbsp;and activists who are prevented from accessing and disseminating content&nbsp;thanks in part to filtering software.” The authors complain that “companies&nbsp;appear to have done little to curb the use of their tools–if not offering&nbsp;them outright for that purpose–for government-level censorship. These&nbsp;companies seem not to have adopted policies and procedures to safeguard&nbsp;freedom of expression in the event that states rather than parents and schools&nbsp;use their tools, as their products are being openly used by several state-run&nbsp;ISPs to limit what citizens can and cannot access online.” The final sentence&nbsp;states that “Such companies must recognize the role their tools play in the&nbsp;international landscape and set forth policies that protect Internet users’&nbsp;right to free expression–or at least put them on record about the role that&nbsp;they play.”</p>
+<p>The technologies that the companies are providing are general purpose&nbsp;technologies: almost everyone would agree that internet filtering technologies&nbsp;have valid uses by parents and schools, for example. It’s not the technology&nbsp;itself that is offensive, at least to anyone who is not happy with the idea of&nbsp;kindergarten kids stumbling across violent pornographic images. It’s the&nbsp;relationship between the companies and their customers: the companies are&nbsp;providing a service, knowing the use to which it is going to be put. The&nbsp;report expects companies to think about the use of their tools and to take&nbsp;action to prevent them being used in ways that curb freedoms. It expects&nbsp;companies to limit the use of their tools.</p>
+<p>The role of Apache as the host of the NSA-initiated Accumulo project is&nbsp;directly parallel to the role of western companies providing filtering&nbsp;software that is used by authoritarian regimes to curb freedom of speech. So,&nbsp;in the light of the OpenNet report, how would the continued hosting of Accumulo&nbsp;look?</p>
+<ul>
+<li><p>Is Apache providing a service to the NSA? Yes it is. Some people have been&nbsp;telling me that it’s not, or that it is but it’s unimportant. Both of which&nbsp;seem positively bizarre to me. The NSA took a deliberate decision, after&nbsp;developing Accumulo, that the best way forward was to open source it and&nbsp;look to a private vendor (<a href="http://sqrrl.com">sqrrl</a>) to continue to provide a distribution that&nbsp;matches their needs. Apache is instrumental in carrying forward that plan.</p></li>
+<li><p>The NSA could get their software some other way. This is irrelevant. The&nbsp;OpenNet Report does not let McAfee off the hook because Symantec provides a similar&nbsp;service, and we should not let Apache off the hook either.</p></li>
+<li><p>The Accumulo software is general purpose: does that matter? No it doesn’t&nbsp;matter. First, it’s not <em>that</em> general purpose: it’s not like lightbulbs, it is general&nbsp;purpose data collection and data analysis software in the middle of a&nbsp;controversy over data collection and data analysis, and it’s general purpose for&nbsp;anyone who has a data centre and a few petabytes of data to process, and who&nbsp;requires detailed access controls over who can see that. That’s not very&nbsp;general. Second, Apache <em>now</em> knows the uses to which the software is being&nbsp;put, just like the companies providing software to the governments of the&nbsp;Middle East knew how their software was being used once OpenNet reported on&nbsp;it.</p></li>
+<li><p>Why go after Apache, when they are one of the good guys? Because their&nbsp;declared mandate and their broad membership makes it more likely that they will&nbsp;take a stand. It’s not “going after Apache”, it’s getting Apache to do the&nbsp;right thing. It won’t stop the NSA but it limits the breadth of&nbsp;collaboration. I don’t particularly think of Apache as “one of the good&nbsp;guys” because the whole good guys/bad guys way of thinking seems to lead naturally to double standards, but I’m not out to get them, I just hope they do the right&nbsp;thing now they see how their efforts are being used.</p></li>
+</ul>
+<p>Especially for people outside the USA, putting pressure on an international organization seems a useful way to go. If anyone is interested in taking this up, maybe we can put together a petition at least. Please contact me in the comments if you are interested.</p>
+<p>Created: 2013-06-15 Sat 14:44</p>
+<p><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.0.3)</p>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

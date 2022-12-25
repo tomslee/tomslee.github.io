@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Tom Slee">
+<meta name="dcterms.date" content="2009-03-03">
+
+<title>Tom Slee - Mr.&nbsp;Amazon’s Bookshop: Recommending the Big Sellers</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Tom Slee</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../essays.html">
+ <span class="menu-text">Essays</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html">
+ <span class="menu-text">Whimsley (blog archive)</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/tomslee"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/whimsley"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Mr.&nbsp;Amazon’s Bookshop: Recommending the Big Sellers</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">blog archive</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Tom Slee </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 3, 2009</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"></a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This page has been migrated from an earlier version of this site. Links and images may be broken.</p>
+</div>
+</div>
+<section id="section" class="level1">
+<h1></h1>
+<p>[This is the eleventh episode of <em>Mr.&nbsp;Amazon’s Bookshop</em>. A list of all episodes is <a href="http://whimsley.typepad.com/whimsley/2008/12/mr-amazons-bookshop.html">here</a>; the previous episode is <a href="http://whimsley.typepad.com/whimsley/2009/02/mr-amazons-bo-2.html">here</a>. In the previous episode Kylie began to think that Mr.&nbsp;Amazon might be “just like the bastard publishers”, pushing big sellers at customers rather than promoting books like her own novel <em>The Adventures of Wazzock</em>. Meanwhile, Whimsley was becoming increasingly befuddled by the swirl of activity around him. His befuddlement even interfered with his sleep….]</p>
+<p>I had trouble sleeping that night. It wasn’t just the heat mixing with the cat-urine-induced damp of the carpets to produce the acidic tang that so characterizes Whimsley Hall in the summer; I find that odour reminds me of my own childhood and is surprisingly comforting. No, Kylie’s virulence had quite upset me and my usual tonics did not seem to relax me as they usually do. But finally I slept fitfully, only to dream…</p>
+<p>I looked out of my bedroom window to see a book lying in the middle of the vegetable garden. As I watched, the book opened and a vine grew from its spine, each page becoming a leaf. The vine sprouted pods periodically along its length, and each one erupted to vomit a new book onto the ground. These new books sprouted vines in turn, and the vegetable garden was soon a mass of twisting green creepers, writhing ever closer to the walls of Whimsley Hall. Before I knew what was happening, they were appearing at the window, and each leaf bore the face of Mr.&nbsp;Amazon. “If you like vegetables”, said one, “maybe you would be interested in this,” and the leaf rotted on the stalk, emitting a stench of rotten turnip. “If you like books”, said another “maybe you would like a phonograph, or some toys, or some gourmet groceries”, and an avalanche of bread, mechanical devices, soup, toy soldiers, and other contrivances flooded the floor of my bedroom. “It’s a new economy of abundance!” crowed a face to my left; “It’s a world of choice!” cheered one to my right. More and more, faster and faster, the faces wriggled and wormed their way over the windowsill, in through the ceiling, up through the floor, until I could hardly move</p>
+<p>I woke suddenly, tangled in the bedclothes, sweating and shaking. The room was empty, the window closed, the night quiet. I squirmed out from the sheets, ran to the window and stared out, but everything was peaceful. Reassured but exhausted, I put my nightcap back on my head and returned to my bed, and drifted back to slumber. But just as I was about to lose consciousness, I thought I heard Mr.&nbsp;Amazon’s voice again. “If you want a vision of the future, imagine a human trying on a new boot - forever.”</p>
+<p>The following day dawned grey and wet. The rain battered the windows, and I felt a mixture of relief and disappointment as I realized Kylie was unlikely to venture all the way from the village to Whimsley Hall today, but before I had even started in on my kippers there was a knock at the window.</p>
+<p>“What’re you doing Mr.&nbsp;W? Me and the imbecile had been busy for hours. Come and have a look.”</p>
+<p>I ran to the door, and sure enough, steam was billowing from the stable chimney. The differ was running. I stood straight, called for an umbrella, and set out to join the urchins. Jennie the one-legged housekeeper carried the umbrella for me so that I could finish my kippers and tea on the way over. The umbrella kept knocking against my head as she bounced up and down. It really is most inconvenient to keep her on sometimes, but one does what one can.</p>
+<p>“So tell me,” I demanded as I strode - impressively I’m sure - into the stables. “What have you been doing with my differ?”</p>
+<p>“Well,” started Kylie, “the undersized lamebrain here was watching you when you set up your dials to send the questions to Mr.&nbsp;Amazon. So we worked out how to send our own questions. And we chose another book, and we grew a shop from it. We did the same as you did: choose one book as the seed; visit about a thousand times. Each visit, we look at summat between 0 and 20 books, and the shortarse wrote down all the output.” She pointed at Edmund, asleep in the corner. “This time we chose something called <em>The Shack</em> by William Paul Young. It’s a one of a kind invitation to journey to the very heart of God, and a lot of people seem to like it. So we’ve got the whole bookshop down in your notebook. You’ll be needing some new cats by the way.” She gestured to a damp pile of fur on the floor opposite the dials.</p>
+<p>“And what did you find?”</p>
+<p>“In short, a lot. Here, why don’t I pour you a drink and you can take a seat while I tell you all about it.” She poured what looked like a stiff gin into a cup and handed it over.</p>
+<p>I took the drink with thanks, and sat attentively.</p>
+<p>“First things first. In the <em>Shack</em> shop, we spent half the time looking at books in the top 2204 sellers, which is pretty much just the same as the <em>Special Topics in Calamity Physics</em> book shop. And four fifths of the time is spent in the top 22,700, which is five thousand less than yesterday’s bookshop, and there’s only one in ten views that are outside the top one hundred grand. So that’s slanted even more to the best sellers than the <em>Special Topics</em> shop.”</p>
+<p>“You’ve obviously been busy,” I was having a hard time following all these numbers, but Kylie ploughed on remorselessly.</p>
+<p>“So dummkopf here, he’s pumping the bellows like mad and writing it all down and he says ‘Let’s do some more Kylie!’, so we did. He’s quite the bundle of energy this kid”, She punched him amiably in the stomach and Edmund stirred in his sleep. “I’ll show you the results here.”</p>
+<p>A sheet of paper in my notebook had a summary of each of the shops they had created, the median sales rank, and the time spent in browsing around the top 100,000 sellers. Here it is.</p>
+<p><strong>Store Median Top 100K Seed Book</strong><br>
+7 1742 87.5 Testimony<br>
+4 2007 91.4 The Lucky One<br>
+9 2113 89.4 The Shock Doctrine<br>
+10 2113 87.6 Special Topics in Calamity Physics<br>
+12 2191 86.5 Our Mutual Friend<br>
+1 2192 89.8 The Shack<br>
+29 2238 98.3 Bones<br>
+20 2276 88.2 The Shock Doctrine<br>
+22 2388 88.5 The Long Tail<br>
+17 2471 92.5 Our Mutual Friend<br>
+8 2650 86.6 Conservatism That Can Win Again<br>
+21 2808 90.4 The Conscience of a Liberal<br>
+24 2888 90.1 The Long Tail<br>
+27 3135 88.8 The Long Tail<br>
+5 3158 96.0 Seven Habits of Highly Successful People<br>
+19 3380 89.1 The Long Tail<br>
+6 3438 91.2 No One Makes You Shop at Wal-Mart<br>
+14 3487 88.2 The Conscience of a Liberal<br>
+25 3610 88.3 The Long Tail<br>
+23 3627 93.3 The Long Tail<br>
+26 3681 91.5 The Long Tail<br>
+18 4060 84.8 The Conscience of a Liberal<br>
+13 4101 88.0 Surrender is Not an Option<br>
+16 5326 90.0 Riddley Walker<br>
+30 5750 87.9 Graph Drawing<br>
+28 6117 88.3 The Secret History<br>
+2 6222 86.2 How To Eat<br>
+15 7231 84.6 Our Mutual Friend<br>
+31 7583 100 The Secret History<br>
+2 17794 76.3 Last Best Gifts<br>
+11 51992 58.5 The Dilbert Principle</p>
+<p>I pored over the numbers, unsure what to make of them. “So explain, snotnose” I grumbled. Somehow this venture did not feel entirely mine any more.</p>
+<p>“It’s like this,” the vixen explained, slightly patronizingly I felt, “We did a number of books as seeds to see how things went differently depending on your starting point.”</p>
+<p>“But some have the same book name.”</p>
+<p>“That’s because each bookshop may go different ways, depending on what choices the cat tells you to make, and we wanted to see if the results depended a lot on what book you start with. So would you always get the same shop if you start with one book.”</p>
+<p>“And do you?”</p>
+<p>“Sometimes yes, sometimes no. Like, we did <em>Our Mutual Friend</em> twice because we both did Charles Dickens at school and hated it. Can’t that man say anything in less than twenty pages? And you can see that one of them ended up with a median of 2471 and one with a median of over 7,000. That’s quite a difference on this list. And we did <em>The Long Tail</em> quite a few times because Mr.&nbsp;Amazon told me about that when I asked him how he could help <em>The Adventures of Wazzock</em> to get what it deserves. But in the end, with a few exceptions it doesn’t make much difference what book you start with. You’ll spend at least half your time in the top 10,000 books, which is like browsing around the heavy traffic area of a regular bookshop. And you’ll spend almost all your time in the top 100,000, so you don’t really see much that you wouldn’t see in a normal bookshop.”</p>
+<p>“What about these exceptions you mention?”</p>
+<p>“There are three that are different, and all for the same reason. Look at these bottom three in the list. <em>The Secret History</em>, <em>Last Best Gifts</em>, and <em>The Dilbert Principle</em>.”</p>
+<p>“What about them?”</p>
+<p>“Well <em>The Dilbert Principle</em> is the book that spends most of its time out in the outsider part of the shop, beyond the 100 grand mark. Any idea why?”</p>
+<p>“Well I have heard that Dilbert is an humorous illustration of some kind. Isn’t that right?”</p>
+<p>“Yeah, so what you get is, you bounce around a lot of other comic books. Every one of the top 14 books is a Dilbert book and from what I can tell all but two of the top 80 are comics. There’s not really any one big bestseller in comics, so that’s why you spend so much time in the outsider books.”</p>
+<p>“And what about <em>Last Best Gifts</em>?”</p>
+<p>“A bit different. It’s basically an academic book and you end up going round a lot of other academic books. You don’t always do that - like Graph Theory is pretty much like a bestseller - but <em>Last Best Gifts</em> seems to just wander the academic ghetto. What a bunch of losers!”</p>
+<p>“And <em>The Secret History</em>?”</p>
+<p>“Now that one is very strange.” Kylie frowned and scratched her stomach, contemplating the oddities of the world. “This shop has the least number of books of all. Ten thousand different views and there’s only 14 different books in the lot! The reason is that early on it gets into books by this bloke Christopher Moore who, it says here, writes offbeat humour. And then all the recommendations are for other Christopher Moore books. And the really odd thing is that none of those books appear in any of the other bookshops. You either like Christopher Moore or you don’t I guess.”</p>
+<p>“So what have we learned?”</p>
+<p>“Well, first that it’s really easy to get distracted by these little stories of what makes one bookshop different from another.”</p>
+<p>“And second?”</p>
+<p>“That’ll have to wait until tomorrow. I’m hungry and I’m going to steal some lunch.” And with that she stalked, hands deep in pockets, down the drive towards the village.</p>
+</section>
+<section id="section-1" class="level1">
+<h1></h1>
+<p><img src="http://img.zemanta.com/pixy.gif?x-id=07521fc8-8743-49a2-a6ce-b8ea486acd57" class="img-fluid"></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

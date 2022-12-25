@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Tom Slee">
+<meta name="dcterms.date" content="2006-07-03">
+
+<title>Tom Slee - Have Your Robots Talk to My Robots</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Tom Slee</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../essays.html">
+ <span class="menu-text">Essays</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html">
+ <span class="menu-text">Whimsley (blog archive)</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/tomslee"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/whimsley"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Have Your Robots Talk to My Robots</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">blog archive</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Tom Slee </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">July 3, 2006</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This page has been migrated from an earlier version of this site. Links and images may be broken.</p>
+</div>
+</div>
+<p>Here’s a draft of something I’ve been working on over the weekend…</p>
+<p>On a hot summer’s day a few years ago I was waiting at a train station in the UK. The train was late. A voice came over the public address system saying “We apologize for the late arrival of the 10:30 to Brighton”. Fair enough. Then ten minutes later, the same voice, in the same intonation, said the same words: “We apologize for the late arrival of the 10:30 train to Brighton”. Ten minutes more, the same thing. And so on for an hour or so until the train finally arrived.</p>
+<p>What stayed with me was not the lateness of the train — the day was so hot that tracks were buckling and we knew on setting off that we were in for delays — it was that announcement. The words themselves sounded like an apology, but, just like “your call is important to us”, the message that came through to me was the exact opposite of what the words themselves said.</p>
+<hr>
+<p>Literature scholars have a notion of something called “<a href="http://online.sfsu.edu/~kbach/perform.html">performative language</a>”. The idea is that while most utterances simply talk about the world (“That daisy is yellow”) others actually perform an action. “I resign”, when spoken to your boss, is not just a statement, it is an action that changes your status from employed to unemployed. “I do” when said in the right place and in front of the right audience, actually changes the speaker’s status from unmarried to married.</p>
+<p>“We apologize” can be a performative utterance. When offered in the correct way, saying you’re sorry is not just a statement about the world, it is an act: the act of apologizing. But it’s not always a performative utterance. It needs two things to make it so.</p>
+<p>First, and most obviously, someone needs to say it. Without an apologizer, there can be no apology. An automated system cannot apologize.</p>
+<p>It could be argued that on that railway platform, even though there was no human individual speaking, the one making the apology was the company. The recorded voice actually comes from the railway company, and was simply transmitted by the automatic system, just like a letter carrier delivers a letter. But it turns out there is a problem with this too, and the problem is cost.</p>
+<p>Apologizing, as we all know, can be a difficult thing to do, and that difficulty is part and parcel of the act of apologizing. Imagine receiving an apology for a deeply painful betrayal delivered casually, in a way that made it clear it carried no more emotional cost than commenting on the weather. You would understand immediately that it was not an apology at all, even if it contained the words “I apologize”. It is “cheap talk”, and while it could be an attempt to get you to be quiet and leave the offender alone, or to postpone the inevitable recriminations, or one of several other things, cheap talk can’t be an apology.</p>
+<p>So when an automated system says “we apologize” then there is, in fact, no apology happening, no matter how often it says it. When the only action it takes to deliver the words is pushing a button somewhere, at the most, then the statement is “cheap talk”: cost-free communication that should carry no weight.</p>
+<hr>
+<p>We are getting to understand the business of “speech without a speaker”. When we hear an automated voice saying “Your call is important to us” most of us do receive the real message. We know that if our call was really important then there would be a person there to receive it. The words are not the message; the automated system that delivers it is.</p>
+<p>We understand that the letters we get from company CEOs offering us new deals do not, of course, come from the CEO at all. He (or occasionally she) may not even have read it, let alone written it. May not even know of its existence.</p>
+<p>“Have a nice day” is a variant on the same theme: the phrase is often said by a real person, so it seems like there is a speaker, but if the hapless individual behind the till is reciting a script, and if delivering that script is a condition of their employment, then they are not really the speaker; they are simply passing on a message from someone else. And that someone else has no interest in the niceness (or otherwise) of your day: it is simply a calculated policy to give the appearance of friendliness.</p>
+<p>On occasion, of course, someone behind a till is in a friendly mood, and actually gives the words real meaning. But most of us can tell the difference between such a sincere utterance and someone delivering a programmed script.</p>
+<p>But while we are adjusting to the problem of speech without a speaker, we have not really started adjusting to the other changes that cheap communications technology are bringing. We know that our mediums of communication are changing, with new forms of internet-based communications mutating every few years, from e-mail to instant messaging to weblogs and more. What we need to adjust to is the way that the economics of these new media change the meaning of the messages we send and receive.</p>
+<p>Many of us do adjust to these changes in meaning in our personal communications. A Christmas letter sent by e-mail to a long list of recipients means less to us than an individually handwritten letter. But our social systems are slower to change. In particular, there are forms of legal communication that have built into them an assumption of cost, but which can now be made very cheaply.</p>
+<hr>
+<p>A new communication mutant was described recently by Mark Rasch, former head of the US Justice Department’s computer crime unit, in <a href="http://www.theregister.co.uk/2006/04/06/world_of_warcraft_case">The Register</a>, an online journal of technology comment. Rasch writes about “robolawyers” or “lawyerbots”: programs designed to search the Internet for suspected violations of a company’s copyright or trademark. A lawyerbot can be designed not only to detect possible violations, perhaps by searching for keywords or combinations of words, it can also be designed to send out legal warnings (Rasch calls them “takedown notices”) to the owners and hosts of the sites involved.</p>
+<p>The legality of these automated takedown notices has not been tested. But they don’t have to go to court to be effective. Internet Service Providers and other web site hosts such as eBay don’t like the possibility of lawsuits, and their legal liability for the content of the sites that they host is uncertain, so these notices are often enough to persuade them to take down the problematic material, regardless of whether there is anything wrong with it or not.</p>
+<p>Rasch writes about Brian Kopp, who wrote a book based on the popular online game “World of Warcraft” and offered it for sale on the eBay auction site. The book was, by all accounts, in the spirit of those “Dummies” guides that tell you how to use Microsoft Word and other software products – an unauthorized third party guide, but not defamatory or illegal. Once Kopp posted his book, however, eBay began receiving a stream of “takedown notices” telling them that the book violated the rights of Blizzard, the company that owns World of Warcraft, and that they should remove it from their site. eBay responded by not only removing the book, but cancelling Kopp’s account so that he could not auction anything else either.</p>
+<p>It is impossible to know for sure whether there were any real people involved at any stages of this campaign against Brian Kopp (who is almost certainly real, although not a very good writer). Rasch notes that Kopp’s eBay auction generated “a slew of takedown notices from various parties. As soon as he reposted the auction, it generated a new takedown notice. Human lawyers are generally not that efficient. So these autonomous agents may in fact be the ones generating these takedown notices.” So did any real person at Blizzard know they were sending takedown notices to Mr.&nbsp;Kopp? Quite possibly not. Had anyone (apart from a computer) “read” his book? Probably not. Did an individual at eBay weigh the evidence and decide what action to take, or does eBay have a program to disable accounts if it receives a sufficient number of complaints? Unclear.</p>
+<p>The fact that legal letters rarely go to court, and the fact that they can be generated programmatically, means that automated legal notices are likely to increase. We are already subject to automated legal checks whenever we install new software, in those End User License Agreements that we have to say we’ve read even though we obviously haven’t, and even though they are not designed to be read. Increasingly, those agreements include clauses that let software report back to the company that made it about the use we make of it, or details about our computer. Such information can have legitimate uses, enabling better fixing of software problems for example, but it can also have illegitimate uses.</p>
+<p>There is an assumption in our legal system that a legal notice follows some kind of investigation, however cursory, on the part of the party that issues it. That is, it is a document to be taken seriously. But auto-generated and widely distributed legal notices are “cheap talk”, and their increasing ease of generation means that, like the apology at the railway station, they should be treated as meaningless.</p>
+<hr>
+<p>It would be easy to dismiss Brian Kopp’s case as absurd if it wasn’t so clearly a harbinger of things to come. As lawyerbots proliferate, companies will find it worthwhile to develop other lawyerbots to handle incoming “letters” and we will have legal communications that nobody writes and nobody reads. If a letter is delivered and nobody reads it, does it carry any meaning? If lawyerbots were just sending meaningless messages back and forth, nothing would be lost except for a bit of Internet bandwidth, but it seems that the legal system has not yet adjusted to this new mutant, and so such communications can be damaging.</p>
+<p>Increasing automation means that forms of communications are mutating ever more quickly. Some developments are not difficult to foresee. As with all things computer-related, it is clear that automated communication is going to be more common – a <em>lot</em> more common – in the future than it is now. The near future will bring automated translation software that can provide good enough translation in a wider and wider set of circumstances. It will also bring speech comprehension software, and text-to-speech software of increasing subtlety: no more jerky sentences with those pasted together words – the audio equivalent of the ransom note pasted together from newspapers. Put them all together and programs will soon be carrying out conversations with people around the world, persuading us to part with our money in new and grammatically sophisticated ways, using voices designed to exploit our sympathies and prejudices.</p>
+<p>Except they are not voices and not conversations at all, they just sound like they are. We need to be consistently on our guard if we are to avoid becoming confused by these mutant communications. As a first step, we need to acknowledge that machine-delivered apologies are not apologies, no matter how sincere they sound. And we need to decide that lawyerbot-delivered threats and warnings carry as much weight as the cost of delivering them, which is zero.</p>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

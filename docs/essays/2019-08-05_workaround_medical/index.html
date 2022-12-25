@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Tom Slee">
+<meta name="dcterms.date" content="2019-08-05">
+
+<title>Tom Slee - Workarounds and Medical Machine Learning</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Tom Slee</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../essays.html">
+ <span class="menu-text">Essays</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html">
+ <span class="menu-text">Whimsley (blog archive)</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/tomslee"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/whimsley"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#adversarial-examples" id="toc-adversarial-examples" class="nav-link active" data-scroll-target="#adversarial-examples">Adversarial examples</a></li>
+  <li><a href="#workarounds" id="toc-workarounds" class="nav-link" data-scroll-target="#workarounds">Workarounds</a></li>
+  <li><a href="#two-sides-of-the-same-coin" id="toc-two-sides-of-the-same-coin" class="nav-link" data-scroll-target="#two-sides-of-the-same-coin">Two sides of the same coin</a></li>
+  <li><a href="#governing-machine-learning" id="toc-governing-machine-learning" class="nav-link" data-scroll-target="#governing-machine-learning">Governing machine learning</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Workarounds and Medical Machine Learning</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Essays</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Tom Slee </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 5, 2019</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<p><em>A recent paper highlights “adversarial attacks” by physicians as a threat to medical machine learning. Its recommendations may do more harm than good.</em></p>
+<section id="adversarial-examples" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="adversarial-examples">Adversarial examples</h2>
+<p>The rise of deep learning has been accompanied by a fascination with “adversarial examples”: the classic cases are striking because they cause amazingly accurate machine learning models to make amazingly stupid mistakes. A carefully designed tweak invisible to the human eye may cause an image-recognition system to mistake what is “obviously” a picture of a macaw for a picture of a bookcase.</p>
+<p></p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="./2019-ai-adversarial-macaw.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure 1: A slight perturbation of this picture of a macaw causes it to be classified as a bookcase.</figcaption><p></p>
+</figure>
+</div>
+<p>In the few years since their discovery, adversarial examples have been shown to be both ubiquitous and difficult to prevent. These “adversarial attacks”, as they are also called, cast a doubt over whether deep learning systems can survive in the real world. Deep learning systems seem to have the potential for great accuracy over some dimensions, but also great fragility in others.</p>
+<div class="page-columns page-full"><p>The real-world implications of adversarial examples are going to be important topics over the next few years. One example of things to come is a recent paper in the prestigious Science magazine warning about <a href="https://science.sciencemag.org/content/363/6433/1287">Adversarial attacks on medical machine learning</a> (<a href="https://www.ehidc.org/sites/default/files/resources/files/Adversarial%20attacks%20on%20medical%20machine%20learning.pdf">full text PDF</a>)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. It’s no surprise that healthcare has been highlighted: investment in deep learning systems for healthcare is already massive. High-profile successes in “better than human” diagnosis from medical images, and the potential for extracting useful information from electronic health records have made for something of a gold rush. Eric Topol’s new book <a href="https://www.basicbooks.com/titles/eric-topol/deep-medicine/9781541644649/">Deep Medicine</a> charts some of the potential. However, the authors of the Science paper warn, the billions of dollars flowing through healthcare systems provide obvious incentives for “attackers” to corrupt the system for fraudulent purposes. If adversarial attacks are easy to make and difficult to defend against, then the promise of medical machine learning may never be realized.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Samuel G. Finlayson, John D. Bowers, Joichi Ito, Jonathan L. Zittrain, Andrew L. Beam, Isaac S. Kohane, “Adversarial attacks on medical machine learning”, Science, 22 March 2019, p 1287.</p></li></div></div>
+<p>The Science paper, by researchers from Harvard and MIT, is my main topic here, but first we need to talk about a seemingly-humdrum topic that gets much less attention, but which turns out to be closely related.</p>
+</section>
+<section id="workarounds" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="workarounds">Workarounds</h2>
+<p>An adversarial attack is an input crafted intentionally to force a model to make a mistake. A workaround is the opposite: an input crafted intentionally to force a model to <em>correct</em> a mistake.</p>
+<p>A schematic example is shown below. The data points are shown with their “true” values of blue or orange, and the background shade marks the regions categorized by the model as “blue” or “orange”. The model has a high accuracy: most of the actually-blue dots lie in the categorized-as-blue region, and most of the actually-orange points lie in the categorized-as-orange region. But even the best machine learning systems are statistical engines with non-zero error rates, so you can see a few incorrectly classified examples in the diagram too.</p>
+<p>The adversarial example (red arrow) changes the input for a correctly-classified “orange” data point so that it is incorrectly classified as blue. The workaround (green arrow) changes the input for an “orange” data point that is incorrectly classified as “blue” so that it is classified correctly.</p>
+<p><a id="org447a402"></a></p>
+<p></p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="./tensorflow-playground.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure 2: Schematic view of a machine learning model, showing an adversarial example and a workaround. The image was built from <a href="https://playground.tensorflow.org">Tensorflow Playground</a>).</figcaption><p></p>
+</figure>
+</div>
+<p>Adversarial examples may be novel, but workaroudns have become routine in the automated workplace. Automation shifts decision-making from “front line” workers to computerized systems, but as these systems have entered the workplace, many professionals have learned a new and often unacknowledged skill: they have become experts at making automated decision systems work properly.</p>
+<p>As just one example, legal scholar Jennifer Raso explored the changing jobs of Ontario welfare case workers when an automated decision system was introduced in a <a href="https://ssrn.com/abstract=3062620">prize-winning paper</a>. Instead of making their own judgments about client needs, the role of case workers is now to enter data into an algorithmic scoring system (not deep learning), which makes entitlement decisions according to well-defined rules. She writes about how social service case workers responded:</p>
+<blockquote class="blockquote">
+<p>While new technologies may attempt to deskill and decentre front-line decision-makers, transforming them into data entry clerks, caseworkers learn how to expertly translate and input client data to produce decisions that more closely match their interpretation of clients’ needs and welfare laws.</p>
+</blockquote>
+<p>The importance of workarounds will be familiar to anyone who has read James C. Scott’s <a href="https://yalebooks.yale.edu/book/9780300078152/seeing-state">Seeing Like a State</a>. Heavily designed schemes to improve the human condition assume, and impose, a simplified and idealized representation of working and living that neglects the unruly irregularities of real life. These systems rely on a certain level of workaround to function: people prepared to bend the official rules in order to get their work done. There is a reason that the “work to rule” has been successful in labour disputes as a form of protest.</p>
+<p>The American healthcare system is no exception. The rigidities of automated billing systems recently produced a memorable essay by Atul Gawande entitled <a href="https://www.newyorker.com/magazine/2018/11/12/why-doctors-hate-their-computers">Why Doctors Hate Their Computers</a>, documenting many of the challenges experienced by physicians as new decision support systems have been introduced, and the ingenious but often costly workarounds they have had to undertake in order to deliver high quality care to their patients.</p>
+<p>Will workarounds be needed for the next generation of deep learning medical systems? History suggests that they will. There is a long history of technical innovations that are designed around idealized and simplified models of behaviour, and which underestimate the complexities of “edge cases” in real life. Witness the over-enthusiasm around self-driving cars a couple of years ago, that is now being confronted with the messiness of reality.</p>
+<p>From a researcher’s point of view, adversarial examples are fascinating cases that raise a multitude of new questions: so much so that several papers <em>per day</em> are now published on the topic. Workarounds, in contrast, are boring. They raise few questions. They are merely machine learning residue—what’s left over after the algorithm has made its best attempt, hopefully cleared up by the next iteration of the model.</p>
+<p></p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="./david-evans-paper-count.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure 3: The rise in “adversarial example” publications, from <a href="https://www.youtube.com/watch?v=sFhD6ABghf8">this talk by David Evans</a>.</figcaption><p></p>
+</figure>
+</div>
+<p>From an end user’s point of view, things look different. Faced with getting their job done and a decision system that seems to have taken a bad decision, they are not in a position to improve the model: they can either follow often a maze of twisty passages in an attempt to get an exception or they can fudge the input and move on. Workarounds are far more interesting than adversarial examples, for all their exoticism.</p>
+</section>
+<section id="two-sides-of-the-same-coin" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="two-sides-of-the-same-coin">Two sides of the same coin</h2>
+<p>The previous section presented adversarial attacks and workarounds as opposites, whcih holds true in a laboratory environment where the “correct” result for each individual data point is known and particularly in the classic cases where the “correct” result is, to a human, obvious and uncontroversial. In real-world environments things are different. Machine learning systems are statistical beasts, and however accurate they may be over a large data set, statistics cannot tell us whether any one individual data point is handled correctly or not. In many cases the “true” value for an individual case is not available at all. This difference between the world of the laboratory and that of production environments is noted by the Harvard / MIT researchers:</p>
+<blockquote class="blockquote">
+<p>[T]he ground truth in medical diagnoses is often ambiguous, meaning that for many cases no individual human can definitively assign the true label between, say, “benign” and “cancerous” on a photograph of a mole.</p>
+</blockquote>
+<p>The figure below is the same as the previous one, but now the two individual data points are coloured grey, showing that we do not know their “true” value. All of a sudden, instead of being opposites, there is no difference between the adversarial example and the workaround.</p>
+<p>(The diagram is misleading in an important way: in a two-dimensional space only a few of the dots are close to a boundary, and that boundarey is with just one other class. It would be reasonable to think that the problem is irrelevant for most inputs that lie comfortably within one region or another. In the many-dimensional space in which machine-learning models operate, it turns out that <em>all</em> dots are close to boundaries with <em>all other classes</em>: the situation for machine learning is therefore much <em>more</em> severe than the diagram suggests.)</p>
+<p><a id="orgac29a52"></a></p>
+<p></p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="./tensorflow-playground-2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption margin-caption">Figure 4: In a real-world deployment, it may be impossible to distinguish between an input that is “truly orange” and one that is “truly blue”.</figcaption><p></p>
+</figure>
+</div>
+<p>Surprisingly, machine learning gives no definition to distinguish unambiguously between an adversarial example and a workaround. A standard definition in papers is something like “an input to a machine learning model that an attacker has intentionally designed to cause the model to make a mistake”, but assigning “intent” is outside the scope of machine learning, and a “mistake” is, as we have seen, often not decidable in any individual case.</p>
+<p>Some machine learning practitioners have gone so far as to define “attacks” as any attempt by a subject to influence the outcome of a machine learning system, but that makes an attacker of anyone who has put effort into writing an appealing resume in the hopes of getting a job. Adversarial examples and workarounds are both just optimization attempts: intentional changes to inputs in order to generate desired outputs.</p>
+<p>But don’t take all this from me: if you want to hear an expert opinion on the definition problem, see <a href="https://www.youtube.com/watch?v=sFhD6ABghf8">this keynote talk by David Evans</a> (especially the first ten minutes) from which much of the last few paragraphs is taken.</p>
+<p>When it comes to medicine, physicians face incentives to engage in workarounds as well as in adversarial attacks. The Science article is not completely silent on the topic of workarounds: it references a survey carried out by the American Medical Association from almost 20 years ago, described in a titled <a href="https://jamanetwork.com/journals/jama/fullarticle/192577">Physician Manipulation of Reimbursement Rules for Patients: Between a Rock and a Hard Place</a>, but the remainder of the Science article focuses almost exclusively on the problem of adversarial attacks by healthcare providers.</p>
+<p>The “physician manipulation” article outlines the frustrations physicians face when trying to provide care for their patients:</p>
+<blockquote class="blockquote">
+<p>In some cases, physicians may feel trapped between professional obligations to advocate for their patients and conflicting contractual obligations to follow coverage rules. It has been suggested that some insurers are “gaming” patients and physicians—tricking them into paying for covered services by routinely denying coverage but then approving services that are subsequently appealed, knowing that time and other constraints will prevent some appeals.</p>
+</blockquote>
+<p>Any attempt to tackle the threat of adversarial attacks will also penalize workarounds: designing proper rules for machine learning systems starts with recognizing the problems, and an exclusive focus on adversarial attacks fails to do so.</p>
+</section>
+<section id="governing-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="governing-machine-learning">Governing machine learning</h2>
+<p>When it comes to interventions, the Harvard / MIT researchers make two recommendations. The first is to procrastinate: to avoid stifling innovation by prematurely enforcing demands for robustness. The second is to increase IT-driven supervision of medical practitioners, storing “hashes” of images to check that they are not “tampered” with during processing.</p>
+<p>To take the second suggestion first: the proposal will crack down on “adversarial attacks” but will also prevent workarounds. As such, it removes room for doctors’ discretion and judgement. Good physician performance will be measured by accurate data entry rather than creative problem solving, and such measures would prevent physician pushback against any payment-minimizing moves by insurance companies. It reduces the role of physician from a professional responsible for diagnosis and prescription (which most would see as their primary roles), to that of a managed and supervised data entry technician. Any assessment of medical machine learning must address the potential consequences of deskilling among physicians.</p>
+<p>The billing system, whether or not it is driven by deep learning, is a site of tension, at which <em>all</em> parties seek to find their best outcomes. To treat the problems around billing systems as security problems in which the healthcare provider is the most likely attacker is to adopt the perspective of the insurance company or the vendor that provides them with a deep learning system.</p>
+<p>In fairness, the authors do point out that the American medical claims approval process is plagued by many competing financial interests, “providers [i.e.&nbsp;doctors and hospitals] seeking to maximize and payers [insurance companies] seeking to minimize reinbursement”, but for the bulk of the article, and in the recommendations, the problem of “attacks” by insurance companies is neglected.</p>
+<p>A more productive approach would be to adopt a game-theoretical perspective, where strategic considerations by all parties lead to some equilibrium outcome. As I’ve <a href="https://ssrn.com/abstract=3363342">written elsewhere</a>, most machine learning systems of any interest are <em>incentive incompatible</em>, and medical systems are no different. The subjects who provide the inputs and the consumers of the outputs have different and conflicting interests.</p>
+<p>In such an arrangement costly governance measures are not just likely, but inevitable, and that leads us to what’s wrong with the first recommendation: procrastination. To encourage deployment without proper costing of governance is to underestimate implementation costs: it’s building in debt, committing institutions that deploy these systems to unknown but significant future costs, and painting a false picture of efficiency gains. It tilts the cost comparison between physician-diagnosis and machine-diagnosis in favour of the machine (or, more accurately, its vendor), and more-or-less guarantees buyer’s remorse.</p>
+<p>There is no one-size fits all solution, of course. The right form of governance for EHR-based methods would be different to that for medical image diagnostics. But a prerequisite for any progress must be to acknowledge all the incentives in the system, to attempt to estimate the true costs of implementation, and not to overlook the humble but essential role of the workaround.</p>
+
+
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

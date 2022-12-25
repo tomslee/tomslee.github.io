@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Tom Slee">
+<meta name="dcterms.date" content="2006-08-31">
+
+<title>Tom Slee - Software Featuritis, or Why Checklists are Bad</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Tom Slee</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../essays.html">
+ <span class="menu-text">Essays</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html">
+ <span class="menu-text">Whimsley (blog archive)</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/tomslee"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/whimsley"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Software Featuritis, or Why Checklists are Bad</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">blog archive</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Tom Slee </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 31, 2006</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This page has been migrated from an earlier version of this site. Links and images may be broken.</p>
+</div>
+</div>
+<p>Here is a common-sense approach to software development, which I’ll call the checklist approach:</p>
+<ol type="1">
+<li><p>Propose a new feature.</p></li>
+<li><p>Ask if the feature is useful.</p></li>
+<li><p>If the feature is useful, implement it.</p></li>
+</ol>
+<p>This essay uses shows why the checklist approach fails: why adding useful new features to a software product can make the overall product less useful to end users. This is a phenomenon I like to call <em>featuritis</em>.</p>
+<p>At its simplest, a software product is a set of n independent features (i = 1,…, n). Each feature has a utility to the customer of ui. The overall utility of the software product to the customer is therefore</p>
+<p>U = Sum( ui )</p>
+<p>This tells you to keep adding features to the software to increase its utility, end of story. Not very interesting.</p>
+<p>But software is not quite so simple as this. Each feature has not only a utility, but also a cost – ci. This is the cost to the end user—not the developer—of using or deciding not to use the feature. The cost may include the time taken to find out about a feature, deciding how to use it, whether it is the right feature to use (among the options available), difficulty exploring and evaluating the feature, and so on.</p>
+<p>With this cost added in, the overall utility of the software product to the end user is</p>
+<p>U = Sum( ui - ci )</p>
+<p>Let’s keep things really simple, and assume that all features have the same utility (u). We can’t do this for the cost though: the cost of using a feature inevitably depends on the total number of features in the product. This may be because it takes longer to find information about a particular feature in the documentation or user interface, or because it is more difficult to decide if this is the right feature to use among those that are present, or a host of other reasons (more on this below). So the cost of finding out about a feature is (c * n).</p>
+<p>The overall utility of the software is then</p>
+<p>U = Sum( u - c * n )</p>
+<p>or, as all the terms are equal,</p>
+<p>U = n ( u - c * n )</p>
+<p>Which looks like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="http://whimsley.typepad.com/photos/uncategorized/image1_1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Image1_1</figcaption><p></p>
+</figure>
+</div>
+<p>The utility function increases up to a maximum at n = ( u / 2 c ), and then decreases: that is, beyond a certain point, adding new features actually makes the software less useful. In other words, software is vulnerable to featuritis: it can become so complex that its complexity makes it useless. It may contain useful features, but finding these needles in the haystack of the product is frustratingly difficult. Experience tells us that this is a reasonable, if not surprising, result.</p>
+<p>What is more, adding features _that are useful in and of themselves _can still introduce featuritis. For a feature to be useful, its utility (u) must be greater than the cost of finding out about it (c * n). So using this model, features will be added to the software until the following condition is met</p>
+<p>n = u / c.</p>
+<p>which is where the line crosses the x axis. The maximum utility of the software occurs at half this value (n = u / 2 c): if we continue to add features until the last feature is only just useful, the overall utility of the software will be U = 0. If features were stopped at (u / 2 c), the utility would be U = ( u2 / 4 c ). Even a useful feature degrades the usability of other product features, by making them harder to use (increasing the cost of using them).</p>
+<p>It follows that checklist driven software development will lead to poor software. Checklists are simply lists of useful features, without any consideration of the costs they introduce to the customer. A longer checklist is often assumed to be intrinsically better than a short checklist, but we have just seen that this may not be so.</p>
+<p>What it is about this very simple model that produces these results? The key assumption is that features have independent utilities, but that the costs of using features are not independent. In economists’ jargon, features exert a negative externality on each other. Is there a reason to think this might be true?</p>
+<p>The independence of feature utility is simply a matter of defining a feature<br>
+properly. For example, if a very common scenario requires two “features” (A and B) then the utility of feature A depends very much on whether feature B is present or not. By itself, the utility of feature A may be very low – you can’t do much with it by itself. Once feature B is present, though, feature A becomes very useful. They are not independent features. The problem here is that “features” A and B are incomplete, and so are really part of a single properly-defined “feature”. The model requires that we define features in terms of tasks that customers can carry out. The model does not tell us to implement 5/6 of a feature and then not implement the last sixth because of complexity worries.</p>
+<p>The second assumption is that the cost of using a feature is dependent on other product features. The idea of a cost of using a feature is a very general one, and is not only “how long does it take to locate this feature in the documentation?”. It may also reflect the confusion and uncertainty introduced by a plethora of choices. For example, if there are multiple ways of carrying out a task, the customer must decide which way is the best. If there are other features that appear to be related, the customer must investigate those (and discard them) before deciding on a course of action. If there are prerequisite features that must be understood, the customer must learn these also. They must spend time evaluating the alternatives. It seems reasonable to assume that the cost of wisely using an appropriate feature does depend on the overall complexity (number of features) in the product. The job of user interface designers and documentation teams is, at least in part, to minimize this destructive interference between product features. Good UI and documentation can help postpone the point at which featuritis sets in, but can’t hold it back for ever.</p>
+<p>Of course, while simplified models like this might help us watch out for certain kinds of trap, they can’t help us decide which specific features to include, and which to discard. Also, there is not much to be gained from trying to pinpoint the particular u and c associated with features or products. Despite the equations, it is a qualitative model and cannot be easily quantified in a useful manner. Finally, while it is certainly true that ui and ci are far from constant in any product, there is probably not a lot to be gained by trying to refine their representation. As soon as models like this are made more complex, the result is a very open-ended and conditional prediction. Building fine software products can’t be reduced to equations.</p>
+<p>But I do think the central ideas are broadly correct: complexity does influences cost and utility in different ways, software does tend to become overly complex. and—most importantly—asking “is this a useful feature?” is not the right way to develop good products.</p>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

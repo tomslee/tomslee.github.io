@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Tom Slee">
+<meta name="dcterms.date" content="2009-10-25">
+
+<title>Tom Slee - Netflix Prize: Was The Napoleon Dynamite Problem Solved?</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Tom Slee</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../essays.html">
+ <span class="menu-text">Essays</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html">
+ <span class="menu-text">Whimsley (blog archive)</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/tomslee"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/whimsley"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Netflix Prize: Was The Napoleon Dynamite Problem Solved?</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">blog archive</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Tom Slee </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">October 25, 2009</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This page has been migrated from an earlier version of this site. Links and images may be broken.</p>
+</div>
+</div>
+<p>I just gave a talk at <a href="http://iablog.sybase.com/tslee/2009/10/google-street-view-reaches-sybase-waterloo">work</a> on “Recommender Systems and the Netflix Prize”, and included the two major popular articles about the prize in its final year or so. One was in Wired Magazine and one was in the New York Times., and each focused on one outstanding problem that the competitors faced. Wired looked at the quirkiness of users as they rate movies, and the NYT focused on the difficulty of predicting ratings for a handful of divisive movies.</p>
+<p>Now that the contest is over we can answer the question, “were those problems solved?”</p>
+<p>Let’s start with the Wired article. Entitled “This Psychologist Might Outsmart the Math Brains Competing for the Netflix Prize” [<a href="http://www.wired.com/techbiz/media/magazine/16-03/mf_netflix">link</a>] it interviewed Gavin Potter, aka “Just a guy in a garage”. Here’s the hook:</p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>The computer scientists and statisticians at the top of the leaderboard have developed elaborate and carefully tuned algorithms for representing movie watchers by lists of numbers, from which their tastes in movies can be estimated by a formula. Which is fine, in Gavin Potter’s view — except people aren’t lists of numbers and don’t watch movies as if they were.</p>
+</blockquote>
+</blockquote>
+<p>Potter is focusing on effects like the Kahneman-Tversky anchoring effect:</p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>If a customer watches three movies in a row that merit four stars — say, the Star Wars trilogy — and then sees one that’s a bit better — say, Blade Runner — they’ll likely give the last movie five stars. But if they started the week with one-star stinkers like the Star Wars prequels, Blade Runner might get only a 4 or even a 3. Anchoring suggests that rating systems need to take account of inertia — a user who has recently given a lot of above-average ratings is likely to continue to do so. Potter finds precisely this phenomenon in the Netflix data; and by being aware of it, he’s able to account for its biasing effects and thus more accurately pin down users’ true tastes.</p>
+</blockquote>
+</blockquote>
+<p>Well Potter didn’t win, but did these kind of ideas help when it came to the winning submission? The answer is yes. The winning teams worked these kind of patterns, which are independent of particular user-movie combinations, into their models through the bland name of “baseline predictors”.</p>
+<p>Any model has to predict ratings that individual users will give for particular movies. A very simple baseline predictor could take the average of all the ratings for that movie, take the average of all ratings given by the user in question, and split the difference. So if the movie has an average rating of 3.45 and the user has rated all the movies he/she/they have watched with an average of 2.55, then the model would predict a rating of 3. This includes some minimal level of user-quirkiness (are they a high or low rater?), some level of information about the movie (is it rated highly or not?) yet has nothing to say about how this particular user is expected to react to this particular movie.</p>
+<p>In their winning submission, the BellKor team [<a href="http://www.netflixprize.com/assets/GrandPrize2009_BPC_BellKor.pdf">PDF link</a>] list their major improvements in the final year of the competition, and the first item they give is improved baseline predictors. In particular,</p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>Much of the temporal variability in the data is included within the baseline predictors, through two major temporal effects. The first addresses the fact that an item’s popularity may change over time. For example, movies can go in and out of popularity as triggered by external events such as the appearance of an actor in a new movie. This is manifested in our models by treating the item bias as a function of time. The second major temporal effect allows users to change their baseline ratings over time. For example, a user who tended to rate an average movie “4 stars”, may now rate such a movie “3 stars”. This may reflect several factors including a natural drift in a user’s rating scale, the fact that ratings are given in the context of other ratings that were given recently and also the fact that the identity of the rater within a household can change over time…</p>
+<p>It was brought to our attention by our colleagues at the Pragmatic Theory team (PT) that the number of ratings a user gave on a specific day explains a significant portion of the variability of the data during that day.</p>
+</blockquote>
+</blockquote>
+<p>A model with these variations, and no specific user-movie considerations (i.e., one that is useless for presenting a list of recommendations to a user) actually ends up being significantly more accurate than Netflix’s own Cinematch algorithm was at the beginning of the competition.</p>
+<p>So score one for the winners – they solved the user-quirkiness problem.</p>
+<p>The second article was in the New York Times and was called “If You Liked This, You’re Sure to Love That” [<a href="http://www.nytimes.com/2008/11/23/magazine/23Netflix-t.html">link</a>]. Its focus was not the quirkiness of users, but unpredictable movies. Author Clive Thompson interviewed Len Bertoni, a leading contestant:</p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>The more Bertoni improved upon Netflix, the harder it became to move his number forward. This wasn’t just his problem, though; the other competitors say that their progress is stalling, too, as they edge toward 10 percent. Why?</p>
+<p>Bertoni says it’s partly because of “Napoleon Dynamite,” an indie comedy from 2004 that achieved cult status and went on to become extremely popular on Netflix. It is, Bertoni and others have discovered, maddeningly hard to determine how much people will like it. When Bertoni runs his algorithms on regular hits like “Lethal Weapon” or “Miss Congeniality” and tries to predict how any given Netflix user will rate them, he’s usually within eight-tenths of a star. But with films like “Napoleon Dynamite,” he’s off by an average of 1.2 stars…</p>
+<p>And while “Napoleon Dynamite” is the worst culprit, it isn’t the only troublemaker. A small subset of other titles have caused almost as much bedevilment among the Netflix Prize competitors. When Bertoni showed me a list of his 25 most-difficult-to-predict movies, I noticed they were all similar in some way to “Napoleon Dynamite” — culturally or politically polarizing and hard to classify, including “I Heart Huckabees,” “Lost in Translation,” “Fahrenheit 9/11,” “The Life Aquatic With Steve Zissou,” “Kill Bill: Volume 1” and “Sideways.”</p>
+<p>So this is the question that gently haunts the Netflix competition, as well as the recommendation engines used by other online stores like Amazon and iTunes. Just how predictable is human taste, anyway? And if we can’t understand our own preferences, can computers really be any better at it?</p>
+</blockquote>
+</blockquote>
+<p>The reason Napoleon Dynamite is a problem is not because it’s the most difficult movie to predict – it isn’t – but because it’s difficult to predict <strong>and</strong> it was rated by a lot of people. A movie that is difficult to predict but which is rated by only a handful of users will contribute very little to the total error in a model.</p>
+<p>Well, now the competition is done, the complete data set and the predictions of the winning submission are available for download [<a href="http://archive.ics.uci.edu/ml/datasets/Netflix+Prize">link</a>], so download them I did, loaded them into a <a href="http://www.sybase.ca/products/databasemanagement/sqlanywhere">SQL Anywhere</a> database, and graphed the results. Here is a plot of the remaining error for each movie against the total number of ratings for that movie, for all 17770 movies. Napoleon Dynamite is the red dot.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="http://whimsley.typepad.com/.a/6a00d83451d3b369e20120a61ece12970b-pi"><img src="http://whimsley.typepad.com/.a/6a00d83451d3b369e20120a6762ae6970c-pi.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">grand_prize_erorr_vs_rating_count</figcaption><p></p>
+</figure>
+</div>
+<p>With 116,362 ratings, Napoleon Dynamite has a higher error than any other movie rated more than 50,000 times. I’s RMSE is 1.1934: just as bad as it was for Len Bertoni when the original article was written.</p>
+<p>So there you go: user quirkiness was resolved, at least the the extent that was needed to win the prize, while quirky movies remained stubbornly unpredictable till the end.</p>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
