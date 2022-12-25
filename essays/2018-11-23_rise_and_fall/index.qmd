@@ -7,7 +7,7 @@ date: 2018-11-23
 draft: false
 publishDate: 2018-11-23
 title: The Rise and Fall of the Sharing Economy
-url_pdf: pdf/Pras_Essay_Symposium-2018_Slee.pdf
+image: Hotel_Victoria-Jungfrau.jpg
 ---
 
 ::: {.callout-note}
