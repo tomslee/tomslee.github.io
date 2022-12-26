@@ -4,6 +4,7 @@ listing:
   contents: essays
   type: grid
   sort: "date desc"
+  fields: [date, title, author, image, reading-time]
 ---
 
-Finished essays, or nearly so. Some published elsewhere, some not.
+Finished, or nearly so. Some published elsewhere, some not.

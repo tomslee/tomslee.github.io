@@ -5,6 +5,7 @@ categories:
 author: 
 - Graeme MacQueen
 - Tom Slee
+# abstract-title: Abstract
 abstract: >
     It has long been known that ants fight "wars", but any relationship to human wars has often been treated as a curiosity or loose analogy. Here, we take the relationship seriously.
     First, we show that "ant wars" are mass, organized, mutual, and lethal conflict between communities, and hence that current definitions of human wars encompass ant wars.
@@ -17,6 +18,8 @@ toc-title: Contents
 # citation-location: margin
 # cap-location: margin
 image: ant.jpg
+title-block-banner: true
+reading-time: true
 ---
 
 # Introduction
