@@ -2,7 +2,7 @@
 author:
 - Tom Slee
 categories:
-- essays
+- Essays
 date: 2018-11-23
 draft: false
 publishDate: 2018-11-23
