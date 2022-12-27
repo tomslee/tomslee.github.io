@@ -1,6 +1,5 @@
 project:
   type: website
-  # output-dir: _site
   output-dir: docs
   preview:
     port: 4444
@@ -10,7 +9,7 @@ website:
   title: "Tom Slee"
   description: "Personal web site"
   navbar:
-    # background: secondary
+    # background: 
     pinned: true
     left:
       - text: Home
@@ -19,13 +18,15 @@ website:
         href: about.qmd
       - text: Essays
         href: essays.qmd
+      - text: "Ridehail Lab"
+        href: https://tomslee.github.io/ridehail/lab/
       - text: "Whimsley (blog archive)"
         href: blog.qmd
+    right:
       - icon: github
         href: https://github.com/tomslee
       - icon: twitter
         href: https://twitter.com/whimsley
-
 
 format:
   html:
