@@ -6,7 +6,7 @@ author:
 - Graeme MacQueen
 - Tom Slee
 description: >
-    We take seriously the idea that ants fight wars, and ask: "How does that change how we think of war itself?"
+    We take wars between ant colonies seriously, and ask: "How should ant wars change how we think of war itself?"
 abstract: >
     It has long been known that ants fight "wars", but any relationship to human wars has often been treated as a curiosity or loose analogy. Here, we take the relationship seriously.
     First, we show that "ant wars" are mass, organized, mutual, and lethal conflict between communities, and hence that current definitions of human wars encompass ant wars.
