@@ -5,7 +5,8 @@ categories:
 author: 
 - Graeme MacQueen
 - Tom Slee
-# abstract-title: Abstract
+description: >
+    We take seriously the idea that ants fight wars, and ask: "How does that change how we think of war itself?"
 abstract: >
     It has long been known that ants fight "wars", but any relationship to human wars has often been treated as a curiosity or loose analogy. Here, we take the relationship seriously.
     First, we show that "ant wars" are mass, organized, mutual, and lethal conflict between communities, and hence that current definitions of human wars encompass ant wars.
@@ -20,7 +21,17 @@ toc-title: Contents
 image: ant.jpg
 title-block-banner: true
 reading-time: true
+number-sections: true
+number-depth: 1
+callout-appearance: simple
 ---
+
+::: {.callout-note}
+You can also read this essay as a [PDF](War as a system in nature.pdf). 
+:::
+::: {.callout-note}
+This essay is also posted [at SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4262518).
+:::
 
 # Introduction
 

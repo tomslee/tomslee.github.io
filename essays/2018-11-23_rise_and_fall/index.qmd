@@ -11,15 +11,9 @@ image: Hotel_Victoria-Jungfrau.jpg
 ---
 
 ::: {.callout-note}
-
-This page has been migrated from an earlier version of this site. 
-Links and images may be broken.
-
+Essay based on a presentation to the Symposium of the Ernst Schmidheiny Foundation,
+Friday November 23, 2018. 9:20am—10am.
 :::
-
-
-*Essay based on a presentation to the Symposium of the Ernst Schmidheiny Foundation,
-Friday November 23, 2018. 9:20am—10am.*
 
 Introduction
 ============
