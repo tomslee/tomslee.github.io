@@ -1,13 +1,27 @@
 ---
-author: Tom Slee
+title: Uber transit pitch misses the mark
 date: "2021-03-29"
-image: rpjscarboroughbusstop01.jpg
+author: Tom Slee
 categories:
 - Essays
-title: Uber transit pitch misses the mark
+description: An op-ed, published in the Toronto Star on March 29, 2021
+# reference-location: margin
+# citation-location: margin
+# cap-location: margin
+# Page layout
+title-block-banner: true
+reading-time: true
+number-sections: true
+number-depth: 1
+callout-appearance: simple
+image: rpjscarboroughbusstop01.jpg
+toc: true
+toc-title: Contents
 ---
 
-*This op-ed was [published in the Toronto Star](https://www.thestar.com/opinion/contributors/2021/03/29/ubers-public-transit-pitch-misses-the-target.html) on March 29, 2021.*
+::: {.callout-note}
+This op-ed was [published in the Toronto Star](https://www.thestar.com/opinion/contributors/2021/03/29/ubers-public-transit-pitch-misses-the-target.html) on March 29, 2021.
+:::
 
 Ontario Transportation Minister Caroline Mulroney delivered a clear message to Mayor John Tory last August: for Toronto to receive emergency TTC funding in the wake of Covid-19, it must investigate replacing some bus routes by subsidized Uber rides. Now a [new paper](https://www.uber.com/us/en/transit/horizons-paper/) has done that investigation, and it shows that Uber is not fit for the job. What's odd is that the report comes from Uber itself.
 

@@ -1,22 +1,23 @@
 ---
-author:
-- Tom Slee
+title: The Rise and Fall of the Sharing Economy
+author: Tom Slee
 categories:
 - Essays
 date: 2018-11-23
-draft: false
-publishDate: 2018-11-23
-title: The Rise and Fall of the Sharing Economy
+description: >
+    A presentation to the Symposium of the Ernst Schmidheiny Foundation,
+    Friday November 23, 2018.
 image: Hotel_Victoria-Jungfrau.jpg
+title-block-banner: true
+reading-time: true
+number-sections: true
+number-depth: 1
+callout-appearance: simple
+toc: true
+toc-title: Contents
 ---
 
-::: {.callout-note}
-Essay based on a presentation to the Symposium of the Ernst Schmidheiny Foundation,
-Friday November 23, 2018. 9:20am—10am.
-:::
-
-Introduction
-============
+# Introduction
 
 It is now ten years since some of the best known Sharing Economy
 companies were founded, and about six years since the name "Sharing

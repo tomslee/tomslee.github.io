@@ -1,28 +1,31 @@
 ---
-categories:
-- Essays
-title: The Incompatible incentives of private sector AI
+title: The incompatible incentives of private sector AI
 author: Tom Slee
 date: 2019-08-20
+categories:
+- Essays
+description: A contribution to The Oxford Handbook of Ethics of Artificial Intelligence, Oxford University Press 2019
+abstract: >
+    Algorithms that sort people into categories are plagued by incompatible incentives. While more accurate algorithms may address problems of statistical bias and unfairness, they cannot solve the ethical challenges that arise from incompatible incentives.
+    Subjects of algorithmic decisions seek to optimize their outcomes, but such efforts may degrade the accuracy of the algorithm. To maintain their accuracy, algorithms must be accompanied by supplementary rules: "guardrails""that dictate the limits of acceptable behaviour by subjects. Algorithm owners are drawn into taking on the tasks of governance, managing and validating the behaviour of those who interact with their systems.
+    The governance role offers temptations to indulge in regulatory arbitrage. If governance is left to algorithm owners, it may lead to arbitrary and restrictive controls on individual behaviour. The goal of algorithmic governance by automated decision systems, social media recommender systems, and rating systems is a mirage, retreating into the distance whenever we seem to approach it.
 toc: true
 toc-title: Contents
 reference-location: margin
 citation-location: margin
 # cap-location: margin
+title-block-banner: true
+reading-time: true
+number-sections: true
+number-depth: 1
+callout-appearance: simple
 ---
 
-**Abstract**
-
-::: ABSTRACT
-<div>
-
-</div>
-
-*Algorithms that sort people into categories are plagued by incompatible incentives. While more accurate algorithms may address problems of statistical bias and unfairness, they cannot solve the ethical challenges that arise from incompatible incentives.*
-
-*Subjects of algorithmic decisions seek to optimize their outcomes, but such efforts may degrade the accuracy of the algorithm. To maintain their accuracy, algorithms must be accompanied by supplementary rules: "guardrails""that dictate the limits of acceptable behaviour by subjects. Algorithm owners are drawn into taking on the tasks of governance, managing and validating the behaviour of those who interact with their systems.*
-
-*The governance role offers temptations to indulge in regulatory arbitrage. If governance is left to algorithm owners, it may lead to arbitrary and restrictive controls on individual behaviour. The goal of algorithmic governance by automated decision systems, social media recommender systems, and rating systems is a mirage, retreating into the distance whenever we seem to approach it.*
+::: {.callout-note}
+You can also read this essay as a [PDF](slee_oup_private_sector_ai.pdf). 
+:::
+::: {.callout-note}
+This essay is also posted [at SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3363342).
 :::
 
 ## Performances and ethics {#performances-and-ethics}

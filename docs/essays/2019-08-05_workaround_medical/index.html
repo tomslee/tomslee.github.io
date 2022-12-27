@@ -8,6 +8,7 @@
 
 <meta name="author" content="Tom Slee">
 <meta name="dcterms.date" content="2019-08-05">
+<meta name="description" content="Adversarial examples are surprisingly similar to workarounds that fix mistakes. There are consequences.">
 
 <title>Tom Slee - Workarounds and Medical Machine Learning</title>
 <style>
@@ -93,9 +94,15 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Essays</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="https://tomslee.github.io/ridehail/lab/">
+ <span class="menu-text">Ridehail Lab</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../../blog.html">
  <span class="menu-text">Whimsley (blog archive)</span></a>
   </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/tomslee"><i class="bi bi-github" role="img">
 </i> 
@@ -113,7 +120,49 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Workarounds and Medical Machine Learning</h1>
+                  <div>
+        <div class="description">
+          <p>Adversarial examples are surprisingly similar to workarounds that fix mistakes. There are consequences.</p>
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Essays</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Tom Slee </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 5, 2019</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  <div>
+    <div class="abstract">
+      <div class="abstract-title">Abstract</div>
+      <p>A recent paper highlights “adversarial attacks” by physicians as a threat to medical machine learning. Its recommendations may do more harm than good.</p>
+    </div>
+  </div>
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -121,74 +170,41 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#adversarial-examples" id="toc-adversarial-examples" class="nav-link active" data-scroll-target="#adversarial-examples">Adversarial examples</a></li>
-  <li><a href="#workarounds" id="toc-workarounds" class="nav-link" data-scroll-target="#workarounds">Workarounds</a></li>
-  <li><a href="#two-sides-of-the-same-coin" id="toc-two-sides-of-the-same-coin" class="nav-link" data-scroll-target="#two-sides-of-the-same-coin">Two sides of the same coin</a></li>
-  <li><a href="#governing-machine-learning" id="toc-governing-machine-learning" class="nav-link" data-scroll-target="#governing-machine-learning">Governing machine learning</a></li>
+  <li><a href="#adversarial-examples" id="toc-adversarial-examples" class="nav-link active" data-scroll-target="#adversarial-examples"><span class="toc-section-number">1</span>  Adversarial examples</a></li>
+  <li><a href="#workarounds" id="toc-workarounds" class="nav-link" data-scroll-target="#workarounds"><span class="toc-section-number">2</span>  Workarounds</a></li>
+  <li><a href="#two-sides-of-the-same-coin" id="toc-two-sides-of-the-same-coin" class="nav-link" data-scroll-target="#two-sides-of-the-same-coin"><span class="toc-section-number">3</span>  Two sides of the same coin</a></li>
+  <li><a href="#governing-machine-learning" id="toc-governing-machine-learning" class="nav-link" data-scroll-target="#governing-machine-learning"><span class="toc-section-number">4</span>  Governing machine learning</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Workarounds and Medical Machine Learning</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">Essays</div>
-  </div>
-  </div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Tom Slee </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">August 5, 2019</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-</header>
-
-<p><em>A recent paper highlights “adversarial attacks” by physicians as a threat to medical machine learning. Its recommendations may do more harm than good.</em></p>
-<section id="adversarial-examples" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="adversarial-examples">Adversarial examples</h2>
+<section id="adversarial-examples" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Adversarial examples</h1>
 <p>The rise of deep learning has been accompanied by a fascination with “adversarial examples”: the classic cases are striking because they cause amazingly accurate machine learning models to make amazingly stupid mistakes. A carefully designed tweak invisible to the human eye may cause an image-recognition system to mistake what is “obviously” a picture of a macaw for a picture of a bookcase.</p>
-<p></p>
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
 <p><img src="./2019-ai-adversarial-macaw.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption margin-caption">Figure 1: A slight perturbation of this picture of a macaw causes it to be classified as a bookcase.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 1: A slight perturbation of this picture of a macaw causes it to be classified as a bookcase.</figcaption><p></p>
 </figure>
 </div>
 <p>In the few years since their discovery, adversarial examples have been shown to be both ubiquitous and difficult to prevent. These “adversarial attacks”, as they are also called, cast a doubt over whether deep learning systems can survive in the real world. Deep learning systems seem to have the potential for great accuracy over some dimensions, but also great fragility in others.</p>
-<div class="page-columns page-full"><p>The real-world implications of adversarial examples are going to be important topics over the next few years. One example of things to come is a recent paper in the prestigious Science magazine warning about <a href="https://science.sciencemag.org/content/363/6433/1287">Adversarial attacks on medical machine learning</a> (<a href="https://www.ehidc.org/sites/default/files/resources/files/Adversarial%20attacks%20on%20medical%20machine%20learning.pdf">full text PDF</a>)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. It’s no surprise that healthcare has been highlighted: investment in deep learning systems for healthcare is already massive. High-profile successes in “better than human” diagnosis from medical images, and the potential for extracting useful information from electronic health records have made for something of a gold rush. Eric Topol’s new book <a href="https://www.basicbooks.com/titles/eric-topol/deep-medicine/9781541644649/">Deep Medicine</a> charts some of the potential. However, the authors of the Science paper warn, the billions of dollars flowing through healthcare systems provide obvious incentives for “attackers” to corrupt the system for fraudulent purposes. If adversarial attacks are easy to make and difficult to defend against, then the promise of medical machine learning may never be realized.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Samuel G. Finlayson, John D. Bowers, Joichi Ito, Jonathan L. Zittrain, Andrew L. Beam, Isaac S. Kohane, “Adversarial attacks on medical machine learning”, Science, 22 March 2019, p 1287.</p></li></div></div>
+<p>The real-world implications of adversarial examples are going to be important topics over the next few years. One example of things to come is a recent paper in the prestigious Science magazine warning about <a href="https://science.sciencemag.org/content/363/6433/1287">Adversarial attacks on medical machine learning</a> (<a href="https://www.ehidc.org/sites/default/files/resources/files/Adversarial%20attacks%20on%20medical%20machine%20learning.pdf">full text PDF</a>)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. It’s no surprise that healthcare has been highlighted: investment in deep learning systems for healthcare is already massive. High-profile successes in “better than human” diagnosis from medical images, and the potential for extracting useful information from electronic health records have made for something of a gold rush. Eric Topol’s new book <a href="https://www.basicbooks.com/titles/eric-topol/deep-medicine/9781541644649/">Deep Medicine</a> charts some of the potential. However, the authors of the Science paper warn, the billions of dollars flowing through healthcare systems provide obvious incentives for “attackers” to corrupt the system for fraudulent purposes. If adversarial attacks are easy to make and difficult to defend against, then the promise of medical machine learning may never be realized.</p>
 <p>The Science paper, by researchers from Harvard and MIT, is my main topic here, but first we need to talk about a seemingly-humdrum topic that gets much less attention, but which turns out to be closely related.</p>
 </section>
-<section id="workarounds" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="workarounds">Workarounds</h2>
+<section id="workarounds" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Workarounds</h1>
 <p>An adversarial attack is an input crafted intentionally to force a model to make a mistake. A workaround is the opposite: an input crafted intentionally to force a model to <em>correct</em> a mistake.</p>
 <p>A schematic example is shown below. The data points are shown with their “true” values of blue or orange, and the background shade marks the regions categorized by the model as “blue” or “orange”. The model has a high accuracy: most of the actually-blue dots lie in the categorized-as-blue region, and most of the actually-orange points lie in the categorized-as-orange region. But even the best machine learning systems are statistical engines with non-zero error rates, so you can see a few incorrectly classified examples in the diagram too.</p>
 <p>The adversarial example (red arrow) changes the input for a correctly-classified “orange” data point so that it is incorrectly classified as blue. The workaround (green arrow) changes the input for an “orange” data point that is incorrectly classified as “blue” so that it is classified correctly.</p>
-<p><a id="org447a402"></a></p>
-<p></p>
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
 <p><img src="./tensorflow-playground.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption margin-caption">Figure 2: Schematic view of a machine learning model, showing an adversarial example and a workaround. The image was built from <a href="https://playground.tensorflow.org">Tensorflow Playground</a>).</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 2: Schematic view of a machine learning model, showing an adversarial example and a workaround. The image was built from <a href="https://playground.tensorflow.org">Tensorflow Playground</a>).</figcaption><p></p>
 </figure>
 </div>
 <p>Adversarial examples may be novel, but workaroudns have become routine in the automated workplace. Automation shifts decision-making from “front line” workers to computerized systems, but as these systems have entered the workplace, many professionals have learned a new and often unacknowledged skill: they have become experts at making automated decision systems work properly.</p>
@@ -200,29 +216,26 @@ ul.task-list li input[type="checkbox"] {
 <p>The American healthcare system is no exception. The rigidities of automated billing systems recently produced a memorable essay by Atul Gawande entitled <a href="https://www.newyorker.com/magazine/2018/11/12/why-doctors-hate-their-computers">Why Doctors Hate Their Computers</a>, documenting many of the challenges experienced by physicians as new decision support systems have been introduced, and the ingenious but often costly workarounds they have had to undertake in order to deliver high quality care to their patients.</p>
 <p>Will workarounds be needed for the next generation of deep learning medical systems? History suggests that they will. There is a long history of technical innovations that are designed around idealized and simplified models of behaviour, and which underestimate the complexities of “edge cases” in real life. Witness the over-enthusiasm around self-driving cars a couple of years ago, that is now being confronted with the messiness of reality.</p>
 <p>From a researcher’s point of view, adversarial examples are fascinating cases that raise a multitude of new questions: so much so that several papers <em>per day</em> are now published on the topic. Workarounds, in contrast, are boring. They raise few questions. They are merely machine learning residue—what’s left over after the algorithm has made its best attempt, hopefully cleared up by the next iteration of the model.</p>
-<p></p>
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
 <p><img src="./david-evans-paper-count.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption margin-caption">Figure 3: The rise in “adversarial example” publications, from <a href="https://www.youtube.com/watch?v=sFhD6ABghf8">this talk by David Evans</a>.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 3: The rise in “adversarial example” publications, from <a href="https://www.youtube.com/watch?v=sFhD6ABghf8">this talk by David Evans</a>.</figcaption><p></p>
 </figure>
 </div>
 <p>From an end user’s point of view, things look different. Faced with getting their job done and a decision system that seems to have taken a bad decision, they are not in a position to improve the model: they can either follow often a maze of twisty passages in an attempt to get an exception or they can fudge the input and move on. Workarounds are far more interesting than adversarial examples, for all their exoticism.</p>
 </section>
-<section id="two-sides-of-the-same-coin" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="two-sides-of-the-same-coin">Two sides of the same coin</h2>
+<section id="two-sides-of-the-same-coin" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Two sides of the same coin</h1>
 <p>The previous section presented adversarial attacks and workarounds as opposites, whcih holds true in a laboratory environment where the “correct” result for each individual data point is known and particularly in the classic cases where the “correct” result is, to a human, obvious and uncontroversial. In real-world environments things are different. Machine learning systems are statistical beasts, and however accurate they may be over a large data set, statistics cannot tell us whether any one individual data point is handled correctly or not. In many cases the “true” value for an individual case is not available at all. This difference between the world of the laboratory and that of production environments is noted by the Harvard / MIT researchers:</p>
 <blockquote class="blockquote">
 <p>[T]he ground truth in medical diagnoses is often ambiguous, meaning that for many cases no individual human can definitively assign the true label between, say, “benign” and “cancerous” on a photograph of a mole.</p>
 </blockquote>
 <p>The figure below is the same as the previous one, but now the two individual data points are coloured grey, showing that we do not know their “true” value. All of a sudden, instead of being opposites, there is no difference between the adversarial example and the workaround.</p>
 <p>(The diagram is misleading in an important way: in a two-dimensional space only a few of the dots are close to a boundary, and that boundarey is with just one other class. It would be reasonable to think that the problem is irrelevant for most inputs that lie comfortably within one region or another. In the many-dimensional space in which machine-learning models operate, it turns out that <em>all</em> dots are close to boundaries with <em>all other classes</em>: the situation for machine learning is therefore much <em>more</em> severe than the diagram suggests.)</p>
-<p><a id="orgac29a52"></a></p>
-<p></p>
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
 <p><img src="./tensorflow-playground-2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption margin-caption">Figure 4: In a real-world deployment, it may be impossible to distinguish between an input that is “truly orange” and one that is “truly blue”.</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 4: In a real-world deployment, it may be impossible to distinguish between an input that is “truly orange” and one that is “truly blue”.</figcaption><p></p>
 </figure>
 </div>
 <p>Surprisingly, machine learning gives no definition to distinguish unambiguously between an adversarial example and a workaround. A standard definition in papers is something like “an input to a machine learning model that an attacker has intentionally designed to cause the model to make a mistake”, but assigning “intent” is outside the scope of machine learning, and a “mistake” is, as we have seen, often not decidable in any individual case.</p>
@@ -235,8 +248,8 @@ ul.task-list li input[type="checkbox"] {
 </blockquote>
 <p>Any attempt to tackle the threat of adversarial attacks will also penalize workarounds: designing proper rules for machine learning systems starts with recognizing the problems, and an exclusive focus on adversarial attacks fails to do so.</p>
 </section>
-<section id="governing-machine-learning" class="level2">
-<h2 class="anchored" data-anchor-id="governing-machine-learning">Governing machine learning</h2>
+<section id="governing-machine-learning" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Governing machine learning</h1>
 <p>When it comes to interventions, the Harvard / MIT researchers make two recommendations. The first is to procrastinate: to avoid stifling innovation by prematurely enforcing demands for robustness. The second is to increase IT-driven supervision of medical practitioners, storing “hashes” of images to check that they are not “tampered” with during processing.</p>
 <p>To take the second suggestion first: the proposal will crack down on “adversarial attacks” but will also prevent workarounds. As such, it removes room for doctors’ discretion and judgement. Good physician performance will be measured by accurate data entry rather than creative problem solving, and such measures would prevent physician pushback against any payment-minimizing moves by insurance companies. It reduces the role of physician from a professional responsible for diagnosis and prescription (which most would see as their primary roles), to that of a managed and supervised data entry technician. Any assessment of medical machine learning must address the potential consequences of deskilling among physicians.</p>
 <p>The billing system, whether or not it is driven by deep learning, is a site of tension, at which <em>all</em> parties seek to find their best outcomes. To treat the problems around billing systems as security problems in which the healthcare provider is the most likely attacker is to adopt the perspective of the insurance company or the vendor that provides them with a deep learning system.</p>
@@ -249,7 +262,12 @@ ul.task-list li input[type="checkbox"] {
 </section>
 
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Samuel G. Finlayson, John D. Bowers, Joichi Ito, Jonathan L. Zittrain, Andrew L. Beam, Isaac S. Kohane, “Adversarial attacks on medical machine learning”, Science, 22 March 2019, p 1287.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
