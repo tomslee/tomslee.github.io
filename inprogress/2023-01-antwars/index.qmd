@@ -1,0 +1,203 @@
+---
+title: "Ant Wars and Human Wars"
+author: 
+  - Graeme MacQueen
+  - Tom Slee
+description: >
+    If we accept that ant colonies fight each other in deadly and organized wars, then we can no longer think of war as a peculiarly human activity. Does this change how we think of war itself?
+date: last-modified
+categories:
+- In progress
+toc-title: Contents
+# reference-location: margin
+# citation-location: margin
+# cap-location: margin
+image: weaver_ants_5.png
+title-block-banner: true
+reading-time: true
+number-sections: true
+number-depth: 2
+callout-appearance: simple
+fig-cap-location: bottom
+format:
+  html: 
+    toc: true
+    title-block-banner: DarkCyan
+    published-title: Last updated
+#  pdf:
+#    toc: true
+#    number-sections: true
+#    colorlinks: true
+---
+
+References and sources for this essay can all be found in the longer companion piece, *War as a system in nature* ([SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4262518 "SSRN version of War as a System in Nature"), [personal site](https://tomslee.github.io/essays/2022-12-antwar/ "personal site")).
+
+# Ants fight wars
+
+It's common knowledge that ant societies are amazing, displaying many behaviours that are otherwise seen only in human societies. They grow crops and they herd animals for milk, (fungus and aphids or caterpillars, respectively). They build settlements that resemble our cities, with road networks, waste management systems, temperature control, and defence capabilities. And, of course, they fight what look like wars.
+
+## Weaver ant wars
+
+Let's get specific. Here is a two-minute video in which David Attenborough describes how a colony of weaver ants colony in the Australian tropical rain forest battles to protect its fortress from another colony.
+
+{{< video https://youtu.be/SdpGAdB_zpc start="94" >}}
+
+This conflict not only looks like a war, it also fits definitions of a war commonly used by social scientists. The Stanford Encyclopaedia of Philosophy defines wars as "large-scale armed conflicts between organized groups". International relations theorists use very similar definitions, like: "large-scale organized violence between political units".
+
+Let's walk through the weaver ant video again, and see how each of these qualities is satisfied. Attenborough's narration is in the captions, and our commentary is side by side with the image.
+
+::: {layout-ncol="2"}
+![The rich territory of a successful colony draws ... destructive enemies. Raiders from a neighbouring weaver ant colony looking to expand their own empire...](weaver_ants_1.png){#fig-weaver-ants-1}
+
+Not all ants have well-defined territories, but weaver ants live in colonies with up to half a million members. The colonies are in the tree canopies of tropical jungles, and they are dense enough that their well-marked and patrolled borders but up against each other, in a similar way to nation states borders filling out the continents of the world. This territorialilty is one aspect of being a political unit.
+
+![Invaders are quickly spotted! The guard releases pheromones to alert the rest of the colony.](weaver_ants_2.png){#fig-weaver-ants-2}
+
+The attacking colony is carrying out a coordinated attack. The defenders have organized themselves to take on different roles in their colony. The queen ant has a special role as the layer of eggs, but the worker ants are also organized into so-called "casts". They are either minors (which mainly look after the brood) or majors, which are twice as big and sometimes called "soldiers". The border is guarded by older major ants. These are all aspects of organization, one of the characteristics of war.
+
+![They stream out of the nest to defend their home...](weaver_ants_3.png){#fig-weaver-ants-3}
+
+Here's another aspect of organization: a coordinated response. The pheromone signal calls out or "recruits" other ants to defend the colony; it's a mobilization of defences through the use of signals, showing efficient and effective purposeful communication between different groups of ants within the colony.
+
+![If the home defences fail, the colony will be wiped out!](weaver_ants_4.png){#fig-weaver-ants-4}
+
+In her 2021 book *War: How Conflict Shaped Us*, historian Margaret MacMillan says that wars are distinguished from bar fights by their scale. Here we have the potential, and sometimes the reality, for hundreds of thousands of deaths if the colony falls -- surely enough to qualify as "mass" violence.
+
+![Some of the defenders deploy their most potent weapon. They squirt formic acid. The stinging liquid halts the invaders in their tracks.](weaver_ants_5.png){#fig-weaver-ants-5}
+
+This squirting of formic acid can kill multiple ants at a distance. It is, as Attenborough calls it, a weapon. Other ants have specialized mandibles , or stings, sprays, and foams. Some ants even use chemicals that induce panic in a whole colony: a form of weapon of mass desctruction. There are defenses too, such as the biomineral armour that enhances the strength of the exoskeleton in leafcutter ants. So even though these are part of the body of the ant rather than being a prosthetic device, the level of lethality at work is enough to call these weapons.
+
+![And now the home guard can go on the offensive.](weaver_ants_6.png){#fig-weaver-ants-6}
+
+Here again we see organization, in the form of coordinated action among the defenders as they drive off the invaders. We've seen specialized tasks (guards), coordinated large-scale actions (invasion, defence), mobilization, and small-scale teamwork. This is organized violence. Also: a component of the definition is that the violence (or at least the potential for it) is mutual. The war is [between]{.underline} combatant political units. The home guard going on the offensive makes clear that the violence in this conflict is indeed mutual.
+
+![Home and territory are secure once again. A colony may lose many workers in defence of its home, but their sacrifice helps safeguard the next generation.](weaver_ants_7.png){#fig-weaver-ants-7}
+
+The two biggest names in the study of ants are surely E. O. Wilson and Bert Holldobler. They write that "The colony is the unit of meaning in the lives of ants. The workers' loyalty to it is nearly total", and here we see ants dying for the greater good and for the future of the colony. Surely these colonies count as political units.
+:::
+
+In short, this weaver ant conflict has all the makings of what we would call a war.
+
+## Other ant wars
+
+There are about 20,000 species of ants in the world, so there's no one form of ant war. But weaver ants are not the only ones to engage in conflicts that fit this definition of a war. Here are some other ant wars
+
+-   Wood ants live in the temperate climes of Europe, and form huge colonies with many queens and many nests. They cover some areas so densely that, like weaver ants, their territories cover the available ground. During winter they hibernate and boundaries become blurred. In the spring they fight until boundaries are re-established, after which they commonly live side by side for the rest of the summer. Sometimes they will use the bodies of vanquished colonies as food to build up their nutritional stores after the winter.
+
+-   Leafcutter ants have the most sophisticated of all ant societies, and live in the tropics of the Americas. Their colonies have a single queen, multiple castes, and elaborate fungus farming. They will skirmish with nearby colonies, but also have to fight off invading army ants, which don't maintain a static colony but maraud through the jungle as a column on the move.
+
+-   Argentine ants were exported around the world on ships, and have grown to establish what are called "supercolonies", with many nests, many queens, and up to a trillion workers. There is a massive supercolony, called the Large Colony, in California, from the Bay Area down to San Diego. Then there is a war in the San Diego area that has probably led to a million casualties a month (?) for the last hundred years.
+
+-   Interspecies wars. One difference between ant wars and human wars is that some ant wars, like the leafcutters and army ants, are between different species. Is this still a war? If you watched the Lord of the Rings and didn't complain about that being the War of the Ring, you've already accepted the principle. Ant wars between species are perhaps "asymmetric warfare" like that carried out in Afghanistan over the last 20 years, between armies using very different technologies and with very different resource bases.
+
+-   Colony size and war. The variety of ant behaviour is endless. But as a generality we can say that the larger the colony size, the more likely to engage in war. War between colonies of the same species generally occurs when the colonies are dense enough that they have to compete for resources.
+
+It's common to think of war as uniquely human. As epigraph to Chapter 1 of the book we mentioned above, Margaret MacMillan chose a quotation from Frederic Manning: "War is waged by men; not by beasts, or by gods. It is a peculiarly human activity." She goes on to say that (p xi): "War raises fundamental questions about what it is to be human and about the essence of human society".
+
+But war is not peculiarly human. Humans have been fighting wars for perhaps 12,000 years, since the birth of agriculture, but ants have been fighting for perhaps 5,000 times longer than that. And if we count the number of wars or the deaths of organisms, the number of human deaths is a rounding error compared to those of ants. War has been, we could argue, a peculiarly formic activity for most of its history, and humans have only recently joined in. And if that's the case, how can questions about war tell us about what it is to be human?
+
+# Asking questions about wars
+
+Still, it is fair to ask "so what?" Isn't ant war just a curiosity? A surface similarity? After all, when we think about human wars, we do not seek simply to classify events as "war" or "not-war". We want to answer urgent questions, like: how do wars come about? what effects do wars have? how can wars be avoided or limited? how are wars won and lost? Addressing these questions leads us inevitably to the worlds of international relations, social institutions, human history, ethics, human nature, the nation state, technological innovation, law, diplomacy, and more. Aren't these, as MacMillan suggests, uniquely human topics?
+
+So here is the next point we wish to make: *all those questions we ask about human wars can be asked of ant wars too, and the answers are not so different*.
+
+As preface to this point, we'd like to highlight three themes that run through all these cases.
+
+One is that, when it comes to ants, the causes of particular wars and effects of particular wars are not of such interest. What's more interesting is that there is an ecosystem and its inhabitants, that generates what we might call a war system: particular forms of ant society which may coexist peacefully for extended periods but which also periodically erupt into actual wars, and which are shaped by those wars. There is a focus on the co-evolution of war and other aspects of ant societies. There is similar talk of human war too, of course: think of Charles Tilly's aphorism "War made the state and the state made war", but the perspective of war as a system is more obvious in the world of insects.
+
+The second is that humans have, throughout history, tried to separate war from peace. This seems like a uniquely human thing to do. But we'll see that ants too have found ways to draw "bright lines" between war and peace. Perhaps this has something to say about modern strands of thought that treat war and peace simply as poles on a "spectrum of conflict" with "grey zones" intermediate between them, or which reject efforts to control and limit war as wishful thinking.
+
+The third is a perspective of "convergent evolution". Here we don't mean a biological determinism, but evolution in a broader sense. Here is a beautiful paragraph by Canadian author Ronald Wright, which was invoked by Gowdy and Kroll who wrote about ant agriculture:
+
+> What took place in the early 1500s was truly exceptional, something that had never happened before and never will again. Two cultural experiments, running in isolation for 15,000 years or more, at last came face to face. Amazingly, after all that time, each could recognize the other's institutions. When Cortés landed in Mexico he found roads, canals, cities, palaces, schools, law courts, markets, irrigation works, kings, priests, temples, peasants, artisans, armies, astronomers, merchants, sports, theatre, art, music, and books. High civilization, differing in detail but alike in essentials, had evolved independently on both sides of the earth.
+
+The similarities between Tenochtitlán and Madrid were not just metaphors or similes: the two developed independently, with a common underlying dynamic generating similar outcomes even in these two different environments. So, we would argue, war is a system that has developed independently to be hosted in both ant and human societies.
+
+With those themes in mind, let's take a tour around war studies. For social scientists, approaches to understanding war take place at three levels: the individual, the society of which they are a part, and the international system of nation states. We'll look at each, starting at the largest.
+
+## The international relations of ant colonies
+
+### Ant colonies are neo-realist states
+
+We start at the level of the international system of states. There are competing schools of thought in international relations, one of which is neo-realism. It treats the international system as anarchic, in the sense that there is no governing authority. For neo-realists, each state is a black box with a primary goal of survival. In pursuing these goals, neo-realists treat states as rational actors in a "utility maximizing" game theory sense, acting in the face of incomplete information about the intentions and resources of other states.
+
+Weaver ant colonies inhabit an anarchic ecosystem of colonies, with no governing authority. Unencumbered by domestic politics or moral considerations, they act of out self-interest, with survival as the only metric of success. Ant colonies -- or at least the colonies of territorial ants such as weaver ants -- are the ultimate neo-realist nation state.
+
+The one neo-realist assumption that may raise a question is whether ant colonies can be thought of as rational actors. Neo-realist nation states (or their leadership) take decisions, and weigh the costs and benefits of their actions. A "strategy" at the level of a nation state is the result of some form of deliberation. Ant colonies have no such deliberative qualities, no leadership to decide on a strategy, and no hierarchy to implement it. Ant colonies arrive at similar behaviour by traveling along a different path: millions of years of trial and error. It has been known since the evolutionary biologist John Maynard Smith used game theory to understand animal behaviour that the results of game theory can be derived from rational decision making or from evolutionary game theory, and these lead to the same strategies.
+
+We find it interesting, as an example from an international perspective, that the boundaries between weaver ant colonies may be stable for a number of years, during which time the colonies exemplify the old human adage "if you want peace, prepare for war". But ants also show this prescription is fragile in the face of shocks. When a colony dies, or when particularly favourable conditions lead to population growth, wars break out, and they may be dramatic. We can think of wars (the events) as the periodic change in state of the underlying system from a state of cold war, characterized by military preparedness and well-defined, guarded boundaries, to "hot" war, the change being precipitated by some shock to the ecosystem.
+
+### Ants are diplomats
+
+Wars are costly events, and not to be undertaken lightly even by unsentimental neo-realist states. After a brutal war, even the victor may be left weakened and vulnerable. While the international system of human nation states may be anarchic, and while the intentions of other states may be uncertain, communication between states and intelligence gathering combine to help avoid unnecessary wars, and to avoid the unintentional escalation of small conflicts into all-out war.
+
+Ants do not sit at tables and draft treaties, but they do communicate with the effect of avoiding or minimizing wars.
+
+Weaver ants ensure that everyone knows where territories start and end. Each colony marks the edges of their territory with brownish spots containing territorial pheromones unique to each colony, and older colony members actively patrol and monitor this boundary. The area outside the boundary may become a strip of "no ant land" which other colonies actively avoid.
+
+There are other examples. Australian meat ants live in open savannah woodland in nests near eucalyptus trees, and each nest is the focus of a well-defined network of trails and foraging sites that define a stable territory. The colonies range in population from 10,000 to over 300,000 ants. When meat ants encounter ants from other colonies, they raise their gaster (hind end) and "posture aggressively", but rarely engage in violence. Meat ants also engage in collective displays: for example they gather around food trees and make collective displays. These ritualized displays serve to resolve boundary disputes and clarify each colony's territory without the cost of conflict.
+
+More dramatic is the example of "honeypot ants" of the southern US, which live in colonies with foraging areas that often overlap, leading to confrontations. To resolve these encounters, they often stage "tournaments", involving hundreds of workers from opposing colonies and lasting several days. Individual ants square off in contested zones and stage numerous one-on-one confrontations, each of which last between ten and thirty seconds. These appear to be dominance contests, with posturing and pushing but little or no serious fighting. ("The ants challenge one another back and forth across the disputed field in the manner of medieval knights, one on one.")
+
+Bert Holldobler, who observed this behaviour, argues that these contests enable each colony to assess the size and strength of the opposing colony. If one colony concludes that it has superiority in numbers at a scale of ten to one or more, it will often invade and destroy the weaker colony.
+
+## War and ant society
+
+The middle level of analysis is at the level of the state: its politics, its economics, and its social structure.
+
+### The military industrial insect complex
+
+We have already quoted the well-known aphorism from historian and sociologist Charles Tilly that "War made the state and the state made war", which captures the way that, over time, war has both shaped and been shaped by the organization of individual societies.
+
+In ants, war is one of the forces driving the formation of new "castes". Among ants, function is often connected to physical type or state and the term "caste" has been used for a long time, for better or worse, to express this convergence. "A caste is any set of a particular morphological type, age group, or physiological state (such as inseminated versus barren) that performs specialized labour in the colony".
+
+Among the workers, who are all female, the most common morphological types are minor, media and major, which have differing body size and other specialized physical attributes. The difference in size between minor and major nestmates reaches an apex in marauder ants, where the major ants may weigh five hundred times more than a minor, and where the minor may ride on the head of the major.
+
+War is "a strong and recurrent pressure" driving the development of distinct castes in a species, "including the evolution of a functionally specialized and large soldier caste". As an aside: The nature of division of labour is still controversial. Deborah Gordon argues that "'Division of labour' is a misleading way to describe the organization of tasks in social insect colonies, because there is little evidence for persistent individual specialization in task." Robert Jeanne responds that "Division of labour is not a process or a misleading concept". Either way, the topic is lively.
+
+Consider three ant species of the genus *Camponotus*, which live in the southern United States and are subject to predatory raids by army ants. One of those species responds to raids by flight, evacuating the nest and carrying their brood with them. The other two species respond by fighting, with the majors taking a leading role. All three species have "major" and "minor" castes, but in the one that flees the majors are only slightly larger than the minors. In those that fight, the majors are much larger. The researchers conclude that the army ant raids are sufficient to produce this specialization.
+
+Ants have not only developed a distinct soldier "caste" in some species, but have also equipped them with specialized technologies, designed to be effective against specific groups of foes. Science journalist Erich Hoyt wrote about formic war in his book, The Earth Dwellers, and he distinguishes "mandibular techniques" from "chemical warfare." Under the first category (see p. 206) he says:
+
+> "Hatchet-shaped mandibles can slice through the chitinous exoskeleton or chop off the legs of an opponent." (Examples include many Pheidole species as well as leaf cutters.)"Saber- or hook-shaped mandibles with pointed tips that turn in at the end." "When an enemy ant gets its head or body caught inside these jaws, the result is instant death." (Examples include various of the "swarm-raiding and column-raiding army ants, and some of the notorious slave-making species.") "Trap mandibles, as used by the dacetine tribe and some of the ponerines, consist of elongated mandibles that snap shut convulsively, impaling prey or enemies on the sharp teeth at or near the tip."
+
+Other species of the genus Camponatus have developed more dramatic technologies.
+
+> Two huge glands, filled with toxic secretions, run from the bases of the mandibles all the way to the posterior tip of the body. When the ants are pressed hard during combat...they contract their abdominal muscles violently, bursting open the body wall and spraying the secretions onto the foe.
+
+Across humans and ants, war has driven changes in society to enable it to put all its weight behind the achievement of a single goal, demanding increasingly specialized roles and communication techniques, and changing the relationship among members of society. One has achieved this goal through a centralized state and the other through decentralized coordination.
+
+### Ants are patriots
+
+Some sociologists have studied how states maintain political cohesion during the trauma of warfare by developing and promoting a culture of national identity. Nations develop a clear sense of who is part of the nation and who is not: an in-group/out-group separation. Patriotic discourses of common origin and shared blood relationship are common (terms like "motherland") even when there is no historical or material basis for it. During a war, each side may produce propaganda to emphasize how different "we" are from "them".
+
+To return to the weaver ants: the colonies are too big for any kind of personal identification, so how do they know who to fight? For ants, the cue is a complex cuticular hydrocarbon (CHC) profile on the waxy surface of the hard outer cuticle. When ants meet, they sense each other's CHC profile through their antennas. The CHC profile is sometimes called an "odour" although the sense involved is somewhere between taste, scent, and touch.
+
+One species where this is developed to a remarkable extent is the Argentine ant. The largest supercolonies may have a million nests, and spread over thousands of kilometers. Move a"Large Colony" Argentine ant 800 kilometres from San Francisco to San Diego and she will still be "home", accepted by surrounding ants. On the other hand, move an ant a few centimetres across an invisible (to humans) border in the outskirts of San Diego, and she will probably be killed by the members of the neighbouring Lake Hodges colony.
+
+Aside: for decades it was thought that this cohesion of purpose among colony members was driven by kin selection. The most vocal proponent of that idea was the late E.O. Wilson, whose book Sociobiology became controversial. What's less well known is that he later led the countercharge among biologists and questioned his own theories, saying that kin selection is not enough to explain the behaviour entomologists were observing, and promoting the idea that natural selection may operate at the level of the colony -- the "superorganism" -- rather than the individual ant. If that's correct, then the CHC profile could be seen as a marker of cultural identity -- a distinguishing characteristic that serves not only as a marker of identity but defines it, and which is actively maintained through exchange throughout the members of a colony. The colony is making a cultural investment in maintaining a common identity among its members: a social infrastructure of cohesion.
+
+Whatever the truth: nothing of what we say here depends on any particular evolutionary theory.
+
+## The psychology of war
+
+Finally we go to the level of the individual. Human societies have historically separated warlike behaviour from peacetime. The men of some tribes who head off to war take part in rituals before going, to prepare them psychologically to take on a role that is different to that at home. The professional army is another way to draw a dividing line. Accompanied by ideals and myths of heroic behaviour.
+
+In ants, there is also a trigger that sets off warlike behaviour on the part of individual ants. This is the use of pheromones and other recruitment behaviour that we see in weaver ants and many others. There are two domains of behaviour, with different norms, different characteristics.
+
+Unlike in humans, essentially nothing is told of the experiences of ants. Do they have experiences at all? Here the practice of entomologists borrowing terminology from human wars comes to a halt. The contrast is dramatic. Self-sacrifice in wartime is seen, when carried out by humans, as an expression of bravery and nobility sufficient to prompt some of our most universal and challenging stories of what it means to be human. The same action carried out by ants is simply "stereotyped behaviour" with no implications of "intent" or internal states. The use of the words "alarm" and "excite", both of which can also be applied to inanimate objects, is as close as most studies go.
+
+We confess that it is not always easy, at least for those of us who are not ant specialists, to see where the stereotyped behaviour ends and intelligent decision-making begins. We are told, for example, that "one fire-ant worker straggling close by is enough to trigger a violent response" in the woodland ant. Here are found, presumably, both the cue and the stereotyped behaviour, but the behaviour evoked may be quite complex. The worker ant, having encountered the fire-ant and identified it, (i) touches it to acquire its odour; (ii) lays down a chemical trail; (iii) rushes up to nestmates one at a time as she hurries back to the nest. Then, as part of this same sequence of actions, both "soldiers" (majors) and ordinary workers quickly attack the enemy and kill it, after which they search the area for further members of the fire-ant nest. This may end the matter, but in some cases a wider engagement may take place.
+
+Try as they might, entomologists cannot entirely escape interpretation. By avoiding any mention of intent or of internal states, researchers implicitly treat ants as information-processing and algorithm-following automata, a stance that blends smoothly into agent-based computer simulations of ant behaviour. Yet ants are not interchangeable; they are individuals, with memories of their own unique life histories. They memorize complex foraging routes for periods of weeks, distinguish among complex pheromone profiles (see above), and undertake sequences of context-dependent decisions. A forest-dwelling African ponerine ant "memorizes the detailed outline of tree crowns beneath which it passes on outgoing trips, then integrates and reverses the information upon its return to run a straight line home".
+
+Current trends in modern war fighting may be heading in the opposite direction, turning human soldiers into information-processing manageable units. Chemical-induced behaviour changes have long been common in human warriors of course, from Dutch courage to ritual consumption of intoxicants to today's medically-tuned performance enhancers. Technological innovations continue to replace or control human soldiers by computer-assisted decision-making, policy-implementing workflows, or automated weaponry, all seeking to render redundant the psychology of the battlefield.
+
+# Conclusions
+
+So we see, at each level, that ant wars and human wars are examples of a single phenomenon that has evolved separately, "hosted" in different species. That in both cases it goes beyond wars as events, and is an entire system of organization that persists through both "hot state" of war and cold state of peacetime. That it encompasses economics, politics, sociology, culture, psychology, military strategy, technology in both cases.
+
+What is war? It is a system in nature.
+
+Let's look at one specific question. Grey zones and the "spectrum of conflict". There is an idea that limiting or bounding war is quaint and outdated. Yet ants are not quaint, far from it. And repeatedly we see that they build walls between the states of peace and war. It's not a continuum. Without those bright lines, we run the risk of more frequent and costly wars that are not favourable for long-term survival.

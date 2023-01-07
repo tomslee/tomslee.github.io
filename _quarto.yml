@@ -9,7 +9,7 @@ website:
   title: "Tom Slee"
   description: "Personal web site"
   navbar:
-    # background: 
+    background: DarkCyan
     pinned: true
     left:
       - text: Home
@@ -18,6 +18,8 @@ website:
         href: about.qmd
       - text: Essays
         href: essays.qmd
+      - text: In progress
+        href: inprogress.qmd
       - text: "Ridehail Lab"
         href: https://tomslee.github.io/ridehail/lab/
       - text: "Whimsley (blog archive)"

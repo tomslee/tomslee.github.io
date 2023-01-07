@@ -1,0 +1,11 @@
+---
+title: "In progress"
+listing:
+  contents: inprogress
+  type: grid
+  sort: "date desc"
+  fields: [date, title, author, description, image, reading-time]
+  categories: false
+---
+
+Sketches, scraps, and so on. Prone to revision at any time.
