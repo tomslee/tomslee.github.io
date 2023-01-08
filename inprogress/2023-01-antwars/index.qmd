@@ -4,7 +4,7 @@ author:
   - Graeme MacQueen
   - Tom Slee
 description: >
-    We can no longer think of war as a peculiarly human activity. How does this change the ways we think of war itself?
+    War is not a peculiarly human activity. Does this change the ways we think of war?
 date: last-modified
 categories:
 - In progress
@@ -39,7 +39,7 @@ References and sources for this essay can all be found in the much longer compan
 
 # Ants fight wars
 
-It's common knowledge that ant societies are amazing. Ants are simple creatures which seem to have nothing in common with us sophisticated humans, yet somehow they grow crops and they herd animals for milk, (fungus and aphids or caterpillars, respectively). They build cities with road networks, waste management systems, temperature control, and public health systems including the use of antibiotics.
+It's common knowledge that ant societies are amazing. Ants are simple creatures which seem to have nothing in common with us sophisticated humans, yet somehow they grow crops and they tend and milk herds of animals. They build cities with populations in the millions, complete with road networks, waste management systems, temperature control, and public health systems.
 
 And, of course, they fight what look like wars.
 
@@ -97,11 +97,9 @@ There are about 20,000 species of ants in the world, so there's no one form of a
 
 -   One difference between ant wars and human wars is that all human wars are between members of the same species, but some ant wars, like those between the leafcutters and army ants, are between different species. Is this still a war? If you watched the *Lord of the Rings* and didn't complain about the phrase "the War of the Ring", you've already accepted the principle. Perhaps it makes sense to think of inter-species ant wars as "asymmetric warfare" between armies using different technologies and resource bases, like that carried out in Afghanistan over the last 20 years.
 
-It's still common to think of war as a uniquely human phenomenon. As epigraph to Chapter 1 of the book we mentioned above, Margaret MacMillan chose a quotation from Frederic Manning: "War is waged by men; not by beasts, or by gods. It is a peculiarly human activity." She goes on to say that (p xi): "War raises fundamental questions about what it is to be human and about the essence of human society".
-
-But war is not peculiarly human. Humans have been fighting wars for perhaps 12,000 years, since the birth of agriculture. Ants have been fighting for perhaps 5,000 times longer than that. And if we count the number of wars or the deaths of organisms, the number of human deaths is a rounding error compared to those of ants. War has been, we could argue, a peculiarly formic activity for most of its history; one that humans have only recently started to learn. And if that's the case, how can questions about war tell us about what it is to be human?
-
 # Asking questions about wars
+
+It's still common to think of war as a uniquely human phenomenon. As epigraph to Chapter 1 of the book we mentioned above, Margaret MacMillan chose a quotation from Frederic Manning: "War is waged by men; not by beasts, or by gods. It is a peculiarly human activity." She goes on to say that (p xi): "War raises fundamental questions about what it is to be human and about the essence of human society". But ants show that war is not a "peculiarly human activity".
 
 Still, it is fair to ask "so what?" Isn't ant war just a curiosity? A surface similarity?
 
@@ -109,17 +107,15 @@ After all, when we think about human wars, we do not seek simply to classify eve
 
 So here is the next point we wish to make: *all those questions we ask about human wars can be asked of ant wars too, and the answers are not so different*.
 
-As preface to this point, we'd like to highlight three themes that run through all these cases.
+As preface to this point, we'd like to highlight two themes that run through all these cases.
 
-One is that, when it comes to ants, the causes of particular wars and effects of particular wars are not of such interest. What's more interesting is that there is an ecosystem and its inhabitants, that generates what we might call a war system: particular forms of ant society which may coexist peacefully for extended periods but which also periodically erupt into actual wars, and which are shaped by those wars. There is a focus on the co-evolution of war and other aspects of ant societies. There is similar talk of human war too, of course: think of Charles Tilly's aphorism "War made the state and the state made war", but the perspective of war as a system is more obvious in the world of insects.
+The first is that they encourage a "system viewpoint". The causes of particular ant wars and the effects of particular ant wars are not of as much interest as when we consider human wars. What's more interesting is that there is an ecosystem and there are inhabitants, and that these generate particular forms of ant society, which may coexist peacefully for extended periods but which also periodically erupt into actual wars, and which are shaped by those wars. Instead of thinking about causes and effects, the end result is a focus on the co-evolution of war and other aspects of ant societies. This is not unheard of among those who study human war of course: think of Charles Tilly's aphorism "War made the state and the state made war", but the perspective of war as a system is more obvious in the world of insects.
 
-The second is that humans have, throughout history, tried to separate war from peace. This seems like a uniquely human thing to do. But we'll see that ants too have found ways to draw "bright lines" between war and peace. Perhaps this has something to say about modern strands of thought that treat war and peace simply as poles on a "spectrum of conflict" with "grey zones" intermediate between them, or which reject efforts to control and limit war as wishful thinking.
-
-The third is a perspective of "convergent evolution". Here we don't mean a biological determinism, but evolution in a broader sense. Here is a beautiful paragraph by Canadian author Ronald Wright, which was invoked by Gowdy and Kroll who wrote about ant agriculture:
+The second, related theme, is a perspective of "convergent evolution" between ant and human societies. Here we don't mean a biological determinism, but evolution in a broader sense. Here is a beautiful paragraph by Canadian author Ronald Wright, which was invoked by Gowdy and Kroll who wrote about ant agriculture:
 
 > What took place in the early 1500s was truly exceptional, something that had never happened before and never will again. Two cultural experiments, running in isolation for 15,000 years or more, at last came face to face. Amazingly, after all that time, each could recognize the other's institutions. When Cortés landed in Mexico he found roads, canals, cities, palaces, schools, law courts, markets, irrigation works, kings, priests, temples, peasants, artisans, armies, astronomers, merchants, sports, theatre, art, music, and books. High civilization, differing in detail but alike in essentials, had evolved independently on both sides of the earth.
 
-The similarities between Tenochtitlán and Madrid were not just metaphors or similes: the two developed independently, with a common underlying dynamic generating similar outcomes even in these two different environments. So, we would argue, war is a system that has developed independently to be hosted in both ant and human societies.
+The similarities between Tenochtitlán and Madrid were not just metaphors or similes: the two developed independently, with a common underlying dynamic generating similar outcomes even in these two different environments. So, we would argue, war is a single thing: a system that has developed independently to be hosted in both ant and human societies.
 
 With those themes in mind, let's take a tour around war studies. For social scientists, approaches to understanding war take place at three levels: the individual, the society of which they are a part, and the international system of nation states. We'll look at each, starting at the largest.
 
@@ -169,9 +165,9 @@ Several species in south-east Asia, including one called *Colobopsis explodens*,
 
 There is a symbiotic nature to the species's investment in technology and their tendency to engage in war that mirrors the military industrial complex: those who fight will develop weapons, but equally, those who invest in weapons are the ones that fight. Across humans and ants, war has accompanied changes in society, developing increasingly specialized roles and communication techniques, changing the relationships among members of society.
 
-### Ants are patriots
+### Culture wars
 
-Some sociologists have studied how nation states maintain political cohesion during the trauma of warfare by developing and promoting a culture of national identity. Nations develop a clear sense of who is part of the nation and who is not: an *in-group/out-group separation*. Patriotic discourses of common origin and shared blood relationship are common (terms like "motherland") even when there is no historical or material basis for it. During a war, each side may produce propaganda to emphasize how different "we" are from "them".
+Sociologists have studied how nation states maintain political cohesion during the trauma of warfare by developing and promoting a culture of national identity. Nations develop a clear sense of who is part of the nation and who is not: an *in-group/out-group separation*. Patriotic discourses of common origin and shared blood relationship are common (terms like "motherland") even when there is no historical or material basis for it. During a war, each side may produce propaganda to emphasize how different "we" are from "them".
 
 To return to the weaver ants: the colonies are too big for any kind of personal identification, so how do they know who to fight? For ants, the cue is a complex cuticular hydrocarbon (CHC) profile on the waxy surface of the hard outer cuticle. When ants meet, they sense each other's CHC profile through their antennas. The CHC profile is sometimes called an "odour" although the sense involved is somewhere between taste, scent, and touch.
 
@@ -197,6 +193,34 @@ Try as they might, entomologists cannot entirely escape interpretation. By avoid
 
 Ironically, current trends in modern war fighting may be heading in the opposite direction, turning human soldiers into information-processing manageable units. Chemical-induced behaviour changes have long been common in human warriors of course, from Dutch courage to ritual consumption of intoxicants to today's medically-tuned performance enhancers. Technological innovations continue to replace or control human soldiers by computer-assisted decision-making, policy-implementing workflows, or automated weaponry, all seeking to render redundant the psychology of the battlefield.
 
-# Conclusions
+# So what?
 
-So we see, at each level, that ant wars and human wars are examples of a single phenomenon that has evolved separately, "hosted" in different species. That in both cases it goes beyond wars as events, and is an entire system of organization that persists through both "hot state" of war and cold state of peacetime. That it encompasses economics, politics, sociology, culture, psychology, military strategy, technology in both cases. War is a system, in nature.
+Let's finish by returning to this question of "so what?" We'd like to suggest two possibilities, one fairly specific, and one more general.
+
+## Bright lines or spectrum of conflict?
+
+To return to the definition at the beginning of this essay, any such list of attributes has nothing to say about an important question. One is that war and peace are just poles at the ends of a spectrum of scale, organization, weaponry, and so on. The other is that war and peace are two distinct domains.
+
+In her book *How Everything Became War and the Military Became Everything*, law professor Rosa Brooks gives examples of how humans have drawn bright lines between war and peace throughout history. We have built rituals that help warriors switch between their normal frame of mind to one where they are ready to kill and to die: as just one example she describes Navajo soldiers who adopted a different dialect when setting out on raids, and who would draw a line in the desert on the way home, stepping over it and resuming their common language on the way home. Nation states have had rituals too, such as the practice of governments formally declaring war, again marking a sharp transition from one state to another. And at the international level, at least since Franz Lieber and Bertha von Suttner in the 19th century there have been attempts to create rules for the making and conduct of war, separate from the rules for conduct in peacetime. The dividing lines can never be completely sharp at any of these scales, but the attempts to separate two domains, with different rules for each, is inseparable from the names war and peace themeselves.
+
+But there's an influential strand of thought that such efforts have outlived their time. In her conclusion (p 345), Brooks writes: "The best route to upholding human rights and the rule of law lies in recognizing that war and peace are not binary opposites, but lie along a continuum". Among military theorists, and particularly American military theorists, there has been a flourishing of talk about the spectrum of conflict, asymmetric warfare, and grey zones between war and peace.
+
+Many have said that the attempts are a misplaced sentiment. Pancho Villa said "It seems to me a funny thing to make rules about war. It is not a game." White House Counsel Alberto Gonzalez was said that in the War on Terror, the Geneva Conventions are "quaint".
+
+So perhaps it is relevant that ants have found ways to draw "bright lines" between war and peace. We've seen some in this essay already. During recruitment and mobilization, ants switch from one mental state to another. August Forel, an early entomologist, described how ants of the genus *Polyergus* would raid ants of another genus, during which "the battle-fury sometimes becomes terrible; they snap right and left with their jaws and abandon all distinction between friend and foe. They are like mad creatures." At the level of the colony, the sharp territorial and in-group/out-group boundaries have helped to reduce uncertainty about the onset of war. At the level of the international system, the tournaments and displays create a mechanism for clarifying the decision: are we fighting a war or not?
+
+As with humans, ants attempt to circumvent the boundary between war and peace. Some use a form of deception: "propaganda chemicals" which introduce confusion by mimicking alarm pheromones of the target species, or which cause ants to lose their ability to distinguish their own nest mates and attack each other.
+
+Still, the many elements of boundary construction do not become irrelevant. In general the dike holds, despite the holes in it, separating the two domains.
+
+The bright lines are not quaint, and they are not "funny things". If ants have developed these lines, it is because they aid in survival of those who do.
+
+## Coda
+
+The variety and richness of ant behaviour seems limitless. Entomologists continue to make new and surprising discoveries all the time. We feel we've just scratched the surface of the topic. It seems to us that looking at ant wars, so familiar and yet so alien, prompt us to look at human war from a different vantage point, and that new vantage points have the potential to generate new hypotheses and new insights about human wars.
+
+We hope these efforts show that what has been called "reciprocal illumination" is a real possibility. And given the tragic destructiveness of human wars, any opportunities for illumination should not be ignored.
+
+But even if concrete insights are not forthcoming, we think there is another reason to take ant wars seriously. Humans have been fighting wars for perhaps 12,000 years, since the beginnings of agriculture and fixed communities. Ants have been fighting wars for perhaps 60 million years, a period 5,000 times longer. Whether we count the number of wars or the deaths of organisms, human war is a rounding error compared to ant wars. War has been, we could argue, a peculiarly formic activity for most of its history; one that humans have only recently started to learn.
+
+Treating war as a system in nature is one more small step away from seeing the world from a human-centric fashion. We've started to see language, emotions, and intelligence in other species, and these discoveries prompt thoughts about the value of these other species and their contributions to the variety of the world, while showing us that we're not as special as we'd sometimes like to think. Perhaps understanding that war is also not unique to humans will help us a little further along that path.
