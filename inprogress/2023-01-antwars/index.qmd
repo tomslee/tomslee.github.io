@@ -39,13 +39,13 @@ References and sources for this essay can all be found in the much longer compan
 
 # Ants fight wars
 
-It's common knowledge that ant societies are amazing. Ants are simple creatures which seem to have nothing in common with us sophisticated humans, yet somehow they grow crops and they tend and milk herds of animals. They build cities with populations in the millions, complete with road networks, waste management systems, temperature control, and public health systems.
+Ants are simple creatures which seem to have nothing in common with us sophisticated humans, yet somehow they grow crops and they tend and milk herds of animals. They build cities with populations in the millions, complete with road networks, waste management systems, temperature control, and public health systems.
 
 And, of course, they fight what look like wars.
 
 ## Weaver ant wars
 
-Let's get specific. Here is a two-minute video in which David Attenborough describes a colony of weaver ants in the Australian tropics battling to protect its fortress from another colony.
+Here's an example: a two-minute video in which David Attenborough describes a colony of weaver ants in the Australian tropics battling to "protect its fortress" from another colony.
 
 {{< video https://youtu.be/SdpGAdB_zpc start="94" >}}
 
