@@ -18,7 +18,7 @@ website:
         href: about.qmd
       - text: Essays
         href: essays.qmd
-      - text: In progress
+      - text: In Progress
         href: inprogress.qmd
       - text: "Ridehail Lab"
         href: https://tomslee.github.io/ridehail/lab/
