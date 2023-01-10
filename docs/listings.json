@@ -500,7 +500,7 @@
       "/essays/2022-12-antwar/index.html",
       "/essays/2021-03-29-ubertransit/index.html",
       "/posts/2021-02-10-uber-earnings/index.html",
-      "/posts/2021-02-28-houses-of-cards/index.html",
+      "/inprogress/2021-02-28-houses-of-cards/index.html",
       "/essays/2019-08-oup_private_sector_ai/index.html",
       "/essays/2019-08-05_workaround_medical/index.html",
       "/essays/2018-11-23_rise_and_fall/index.html",
@@ -986,7 +986,8 @@
   {
     "listing": "/inprogress.html",
     "items": [
-      "/inprogress/2023-01-antwars/index.html"
+      "/inprogress/2023-01-antwars/index.html",
+      "/inprogress/2021-02-28-houses-of-cards/index.html"
     ]
   }
 ]

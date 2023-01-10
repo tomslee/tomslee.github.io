@@ -1,15 +1,38 @@
 ---
-categories:
-- Scraps
 title: Advertising, news, and houses of cards
+description: > 
+    Social media platforms offer only a simplistic idea of the boundaries around speech.
 author: Tom Slee
 toc: true
 date: 2021-02-08 
+categories:
+- in progress
+toc-title: Contents
+# reference-location: margin
+# citation-location: margin
+# cap-location: margin
+image: header.png
+title-block-banner: true
+reading-time: true
+number-sections: true
+number-depth: 2
+callout-appearance: simple
+fig-cap-location: bottom
+format:
+  html: 
+    toc: true
+    title-block-banner: DarkCyan
+    published-title: Last updated
+comments:
+  hypothesis: true
 ---
 
+::: {.callout-note appearance="simple"}
 State: very rough first draft.
+:::
 
-## Advertising: give the people what they don't want {#advertising-give-the-people-what-they-don-t-want}
+
+# Advertising: give the people what they don't want {#advertising-give-the-people-what-they-don-t-want}
 
 We are in a strange place when two of the world's most valuable and influential companies make their money by delivering a product that nobody wants. Facebook and Google are not alone: advertising has long been a business model for media organizations of all kinds, but that only emphasizes the peculiarity of the model. We go to these companies for something else, and *put up* with advertising in order to get it.
 
@@ -29,7 +52,7 @@ And news companies:
 -   *The Globe and Mail:* "To inspire and inform Canadians through courageous, empathetic, and honest journalism."
 -   *The Guardian:* "Our values were set out by CP Scott in his centenary leader in 1921. They are: honesty, integrity, courage, fairness, and a sense of duty to the reader and the community."
 
-## In conflict with independence and authenticity {#in-conflict-with-independence-and-authenticity}
+# In conflict with independence and authenticity {#in-conflict-with-independence-and-authenticity}
 
 Delivering advertising is not just different to the stated mission of each of these companies, it's in conflict. We look to news organizations for integrity and independence from financial manipulation. We look to social media companies for authenticity. As paid content, advertising plays by completely different rules.
 
@@ -43,7 +66,7 @@ But in the case of news and of social media the blurring has more consequence, b
 
 Keeping the boundary intact has been particularly important to newspapers, because a "free press" is not just an industry, it has an explicit role in many democratics countries as a means of preserving a variety of perspectives and holding power to account. The news industry gets special consideration because of the importance of a free and independent press: protection of sources, access to government, some level of immunity from prosecution. To justify this special treatment they have responsibilities to present the news fairly.
 
-## Governance: not a classification problem {#governance-not-a-classification-problem}
+# Governance: not a classification problem {#governance-not-a-classification-problem}
 
 The partial, flawed, but still important, ways in which the news industry / free press has struggled around these boundaries helps provide a perspective on the challenge facing social media.
 
@@ -65,7 +88,7 @@ Managing this "speech" demanded public outrage, the Levison public inquiry, the 
 
 From regulation to self-regulatory rules to norms to typographic conventions, the boundary-drawing mechanisms are flawed and imperfect, but together they provide a complex, multi-layered system that helps maintain an independent press in many countries.
 
-### Lessons {#lessons}
+## Lessons {#lessons}
 
 One lesson of the media regulation picture is that the problem is not one of classification, which is one reason why it is not a problem that automated methods can solve. There is no rule that says what is acceptable and what is not: the landscape evolves over time through a series of individual cases, each challenged, disputed, and argued over. The next section explores this in more detail.
 
@@ -73,7 +96,7 @@ Another lesson is that we cannot look to "values" or "culture" or to putting goo
 
 News governance is like a house of cards: it makes no sense to think of good cards or bad. The constuction is a continual effort to balance each card with another as we build the house higher and higher. Move one, and other cards fall over. The existing landscapes of media governance in different countries may be incomplete houses of cards, but we should not lose track of the fact that what there is comes from decades, in some cases centuries, of continual tension and conflict at every level.
 
-## Social media and the news {#social-media-and-the-news}
+# Social media and the news {#social-media-and-the-news}
 
 The social media industries set out to demolish the old industries, confident that they could do a better job of providing what society wants while also making money. Down with the gatekeepers! Democratize the public square! Move fast and break things!
 
@@ -89,7 +112,7 @@ Beyond a certain point doesn't help, when developing governance tools, to look m
 
 If social media has built a better mousetrap, as commentators such as *The Globe and Mail's* Andrew Coyne suggest, it's not built a better news-delivering mousetrap, it has built a better advertising-delivering mousetrap. One of the ways that newspapers make a living is, as said above, by bundling lots of non-news content along with the straight news; Facebook and Google have massively extended the range of experience that can be bundled together with advertising, and that is not the same thing.
 
-## Coyne again {#coyne-again}
+# Coyne again {#coyne-again}
 
 Let's go back to Coyne and Owen. The rules for journalism and news are different to those for other forms of speech. The press has rights and responsibilities that are peculiar to it, however imperfectly this system works. We must talk, not about "content" or "information", but news and journalism and how this public good gets produced.
 
@@ -103,7 +126,7 @@ The idea is that FPB are connectors, bringing people to the news. "Facebook and 
 
 Everyone selling advertising needs something to sell it against. Google sells ads against YouTube, against search results, against email, and acts as a global online ad broker to sell against everyone else's content too. Similarly with Facebook. No longer is advertising the place for Leopold Bloom, a famous fictional nobody, walking the streets of Dublin to make a living: now advertising runs the world.
 
-## What would social media governance look like? {#what-would-social-media-governance-look-like}
+# What would social media governance look like? {#what-would-social-media-governance-look-like}
 
 Once we get rid of the idea of "content" or "speech" we have to realise that we are dealing with many different governance problems, each of which demands its own intricate framework of opposing and constantly-shifting pressures to establish anything like a balance.
 
@@ -121,7 +144,7 @@ Advertising to children, to people in distress, to other vulnerable people, to p
 
 (Here is something I don't understand. When we notice bias in ads, it often seems unimportant. Displaying this advertisement or that probably does not qualify as a decision with significant impact on the individual, for example under GDPR information processing rules. Advertisements do not seem to have the weight to support the globally important companies and upheavals that are taking place.)
 
-## Bundles and subsidies {#bundles-and-subsidies}
+# Bundles and subsidies {#bundles-and-subsidies}
 
 Newspapers work by cross-subsidising the material they publish. By bundling different kinds of thing together, they can survive on a combination of subscriptions and ads. Maybe you throw out the lifestyle section and I throw out the sports, but they come together as part of the bundle. Pick that bundle apart and the whole enterprise fails. The scoops give the enterprise standing, but it is not enough to sustain the newspapers by themselves.
 
@@ -139,7 +162,7 @@ What we have learned over the last decade is that the "community governance" mod
 
 As we have seen with news, drawing eyeballs is not enough of a measure of success.
 
-## What do we lose? {#what-do-we-lose}
+# What do we lose? {#what-do-we-lose}
 
 **What do we lose if we lose newspapers? We lose a fragile and imperfect but valuable house of cards. We don't just lose a product to be replaced by another -- a BlackBerry to be replaced by an iPhone, an old mousetrap replaced by a better. What we lose is a system of governance, and the platforms have nothing with which to replace it.**
 
