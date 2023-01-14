@@ -8,6 +8,8 @@ project:
 website:
   title: "Tom Slee"
   description: "Personal web site"
+  twitter-card: true
+  favicon: logo.png
   navbar:
     background: DarkCyan
     pinned: true
