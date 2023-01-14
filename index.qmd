@@ -16,6 +16,6 @@ title-block-banner: true
 toc: false
 ---
 
-Welcome to my web site. Here is a list of new and recently-updated essays, posts, and "in progress" writing. 
+Welcome to my web site. Here is a list of new and recently-updated essays, posts, and "in progress" writing.
 
 -- Tom Slee
