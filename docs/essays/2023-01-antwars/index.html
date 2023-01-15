@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Graeme MacQueen">
+<meta name="author" content="Tom Slee">
+<meta name="dcterms.date" content="2023-01-15">
+<meta name="description" content="What can wars between ant colonies tell us about human wars?">
+
+<title>Tom Slee - Ant Wars and Human Wars</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<style>
+    .quarto-title-block .quarto-title-banner {
+      background: DarkCyan;
+    }
+    </style>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta name="twitter:title" content="Tom Slee - Ant Wars and Human Wars">
+<meta name="twitter:description" content="What can wars between ant colonies tell us about human wars?">
+<meta name="twitter:image" content="weaver_ants_5.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Tom Slee</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../essays.html">
+ <span class="menu-text">Essays</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../inprogress.html">
+ <span class="menu-text">In Progress</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://tomslee.github.io/ridehail/lab/">
+ <span class="menu-text">Ridehail Lab</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html">
+ <span class="menu-text">Whimsley (blog archive)</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/tomslee"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/whimsley"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Ant Wars and Human Wars</h1>
+                  <div>
+        <div class="description">
+          <p>What can wars between ant colonies tell us about human wars?</p>
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">in progress</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Authors</div>
+      <div class="quarto-title-meta-contents">
+               <p>Graeme MacQueen </p>
+               <p>Tom Slee </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Last updated</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 15, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  <div>
+    <div class="abstract">
+      <div class="abstract-title"></div>
+      <p>War is often thought of as being uniquely human, but large-scale organized violent conflicts between ant colonies are just as much “wars” as those between nation states.We justify this claim and explore some of its implications. Most concretely, ant wars cast doubt on a strand of thought, particularly prominent among US military theorists, which sees war and peace as poles on a continuous spectrum of conflict, and which dismisses as naive the idea of war and peace as separate domains.</p>
+    </div>
+  </div>
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#ants-fight-wars" id="toc-ants-fight-wars" class="nav-link active" data-scroll-target="#ants-fight-wars"><span class="toc-section-number">1</span>  Ants fight wars</a>
+  <ul class="collapse">
+  <li><a href="#weaver-ant-wars" id="toc-weaver-ant-wars" class="nav-link" data-scroll-target="#weaver-ant-wars"><span class="toc-section-number">1.1</span>  Weaver ant wars</a></li>
+  <li><a href="#other-ant-wars" id="toc-other-ant-wars" class="nav-link" data-scroll-target="#other-ant-wars"><span class="toc-section-number">1.2</span>  Other ant wars</a></li>
+  </ul></li>
+  <li><a href="#asking-questions-about-wars" id="toc-asking-questions-about-wars" class="nav-link" data-scroll-target="#asking-questions-about-wars"><span class="toc-section-number">2</span>  Asking questions about wars</a>
+  <ul class="collapse">
+  <li><a href="#the-international-relations-of-ant-colonies" id="toc-the-international-relations-of-ant-colonies" class="nav-link" data-scroll-target="#the-international-relations-of-ant-colonies"><span class="toc-section-number">2.1</span>  The international relations of ant colonies</a>
+  <ul class="collapse">
+  <li><a href="#ant-colonies-are-neo-realist-states" id="toc-ant-colonies-are-neo-realist-states" class="nav-link" data-scroll-target="#ant-colonies-are-neo-realist-states">Ant colonies are neo-realist states</a></li>
+  <li><a href="#ants-are-diplomats" id="toc-ants-are-diplomats" class="nav-link" data-scroll-target="#ants-are-diplomats">Ants are diplomats</a></li>
+  </ul></li>
+  <li><a href="#war-and-ant-society" id="toc-war-and-ant-society" class="nav-link" data-scroll-target="#war-and-ant-society"><span class="toc-section-number">2.2</span>  War and ant society</a>
+  <ul class="collapse">
+  <li><a href="#the-military-industrial-complex" id="toc-the-military-industrial-complex" class="nav-link" data-scroll-target="#the-military-industrial-complex">The military industrial complex</a></li>
+  <li><a href="#culture-wars" id="toc-culture-wars" class="nav-link" data-scroll-target="#culture-wars">Culture wars</a></li>
+  </ul></li>
+  <li><a href="#the-psychology-of-ant-war" id="toc-the-psychology-of-ant-war" class="nav-link" data-scroll-target="#the-psychology-of-ant-war"><span class="toc-section-number">2.3</span>  The psychology of ant war</a></li>
+  </ul></li>
+  <li><a href="#so-what" id="toc-so-what" class="nav-link" data-scroll-target="#so-what"><span class="toc-section-number">3</span>  So what?</a>
+  <ul class="collapse">
+  <li><a href="#bright-lines-or-spectrum-of-conflict" id="toc-bright-lines-or-spectrum-of-conflict" class="nav-link" data-scroll-target="#bright-lines-or-spectrum-of-conflict"><span class="toc-section-number">3.1</span>  Bright lines or spectrum of conflict?</a></li>
+  <li><a href="#coda" id="toc-coda" class="nav-link" data-scroll-target="#coda"><span class="toc-section-number">3.2</span>  Coda</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<div class="callout-note callout callout-style-simple">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>References and sources for this essay can be found in the much longer companion piece, <em>War as a system in nature</em> (<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4262518" title="SSRN version of War as a System in Nature">SSRN</a>, <a href="https://tomslee.github.io/essays/2022-12-antwar/" title="personal site">personal site</a>).</p>
+</div>
+</div>
+</div>
+<div>
+<p>A PDF version of this essay can be found <a href="./antwars.pdf">here</a></p>
+</div>
+<section id="ants-fight-wars" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Ants fight wars</h1>
+<p>Ants seem to be simple creatures, far removed from us sophisticated humans, yet somehow they work together to grow crops, to farm herds of animals, and to live in cities with populations in the millions, complete with road networks, waste management systems, temperature control, and public health systems.</p>
+<p>And, like us, ants fight wars.</p>
+<section id="weaver-ant-wars" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="weaver-ant-wars"><span class="header-section-number">1.1</span> Weaver ant wars</h2>
+<p>Here’s an example: a two-minute video in which David Attenborough describes a colony of weaver ants in the Australian tropics battling to “protect its fortress” from another colony.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/SdpGAdB_zpc?start=94" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>This conflict not only looks like a war, it also fits the definitions of war commonly used by social scientists when they talk of human wars. The key elements of most definitions are scale, lethality (through the use of weapons), organization, and the fact that the conflict takes place between “political units”: the violence is mutual and it serves a purpose for each of the communities involved.</p>
+<p>Let’s walk through the weaver ant video again, and see how each of these qualities is satisfied. Attenborough’s narration is in the captions, and our commentary follows each scene.</p>
+<p>To set the scene: weaver ants live in colonies with populations that may reach half a million. The colonies are in the tree canopies of tropical jungles, and are dense enough that their well-marked and patrolled borders butt up against each other, filling the available space just as nation state territories fill out the continents of the world. This territorialilty is one aspect of being a political unit.</p>
+<div id="fig-weaver-ants-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="weaver_ants_1.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: The rich territory of a successful colony draws … destructive enemies. Raiders from a neighbouring weaver ant colony looking to expand their own empire…</figcaption><p></p>
+</figure>
+</div>
+<p><a href="#fig-weaver-ants-1">Figure&nbsp;1</a> shows ants from one colony intentionally crossing the border into the territory of another in a coordinated fashion. (We will come back to that word “intention”.) Here is the first indication of organized violence.</p>
+<div id="fig-weaver-ants-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="weaver_ants_2.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: Invaders are quickly spotted! The guard releases pheromones to alert the rest of the colony.</figcaption><p></p>
+</figure>
+</div>
+<p><a href="#fig-weaver-ants-2">Figure&nbsp;2</a> shows how the weaver ants of the home colony are organized to play specialized roles. Specialization is even built into their bodies. The queen has a special role as the layer of eggs, but even though they are all half-sisters there are two distinct sizes of worker ant. The “minors” mainly look after the brood, while the “majors”, which are twice as big and sometimes called “soldiers”, carry out other tasks. Older major ants act as border guards. Again, these are all aspects of organization, one of the characteristics of war.</p>
+<div id="fig-weaver-ants-3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="weaver_ants_3.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3: They stream out of the nest to defend their home…</figcaption><p></p>
+</figure>
+</div>
+<p><a href="#fig-weaver-ants-3">Figure&nbsp;3</a> shows communication at work, another aspect of organization. The guard’s pheromone signal alerts other ants, “recruiting” them to defend the colony in a form of efficient and effective purposeful communication between different groups of ants within the colony.</p>
+<div id="fig-weaver-ants-4" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="weaver_ants_4.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4: If the home defences fail, the colony will be wiped out!</figcaption><p></p>
+</figure>
+</div>
+<p>In her 2021 book <em>War: How Conflict Shaped Us</em>, historian Margaret MacMillan says that wars are distinguished from bar fights by their scale. In narrating <a href="#fig-weaver-ants-4">Figure&nbsp;4</a>, Attenborough tells us that the colony might be wiped out. That’s the potential for, and sometimes the reality of, hundreds of thousands of deaths – surely enough to qualify as “mass” violence.</p>
+<div id="fig-weaver-ants-5" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="weaver_ants_5.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;5: Some of the defenders deploy their most potent weapon. They squirt formic acid. The stinging liquid halts the invaders in their tracks.</figcaption><p></p>
+</figure>
+</div>
+<p><a href="#fig-weaver-ants-5">Figure&nbsp;5</a> brings us to weapons. Ant weapons differ from human weapons in that they are part of the body rather than being a prosthetic device. Still, this targeted adaptation equips the ant with the ability to inflict damage on multiple enemies, at a distance. The level of lethality at work is enough that we would agree with Attenborough when he calls these adaptations “weapons”.</p>
+<div id="fig-weaver-ants-6" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="weaver_ants_6.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6: And now the home guard can go on the offensive.</figcaption><p></p>
+</figure>
+</div>
+<p>One not-so-obvious component of definitions of war is that the violence (or at least the potential for it) is <em>mutual</em>. One-sided violence in the ant world is usually called predation: war takes <u>between</u> political units. In <a href="#fig-weaver-ants-6">Figure&nbsp;6</a>, the home guard goes on the offensive. The organized violence in this conflict is indeed mutual.</p>
+<div id="fig-weaver-ants-7" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="weaver_ants_7.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;7: Home and territory are secure once again. A colony may lose many workers in defence of its home, but their sacrifice helps safeguard the next generation.</figcaption><p></p>
+</figure>
+</div>
+<p>For decades, the late E. O. Wilson and Bert Holldobler were the foremost authorities in the study of ants. They wrote that “The colony is the unit of meaning in the lives of ants. The workers’ loyalty to it is nearly total”, and in <a href="#fig-weaver-ants-7">Figure&nbsp;7</a> we see worker ants that have died for the greater good and for the future of the colony. Surely these colonies count as political units.</p>
+<p>In short, this weaver ant conflict has all the makings of what we would call a war.</p>
+</section>
+<section id="other-ant-wars" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="other-ant-wars"><span class="header-section-number">1.2</span> Other ant wars</h2>
+<p>There are about 20,000 species of ants in the world, so there’s no one form of ant war. But weaver ants are not the only ones to engage in conflicts that fit this definition of a war. Here are some other ant wars</p>
+<ul>
+<li><p>In the temperate climes of Europe, wood ants form colonies which, like weaver ants in the tropics, expand until they border on each other. During winter the wood ants hibernate and boundaries between the colonies become blurred. In the spring they fight until boundaries are re-established, after which they commonly live side by side for the rest of the summer. The spring battles may be mere skirmishes, but in some cases they lead to the destruction of one colony, with the victorious colony using the bodies of vanquished ants as food to build up their nutritional stores after the winter.</p></li>
+<li><p>In the 19th century, Argentine ants were accidentally exported around the world on ships, and they have settled in so well in their new homes that they have established what are called “supercolonies”, with thousands of nests, thousands of queens, and up to a trillion workers. There is a massive supercolony in California, which stretches from the Bay Area down to San Diego. But near San Diego it borders another colony where a war between the two is in progress, which has killed millions of ants each month for the last hundred years. By number of casualties, it is more deadly than any other known war.</p></li>
+<li><p>In the tropics of the Americas, Leafcutter ants construct the most sophisticated of all ant societies. Their colonies have a single queen and are maintained by several different castes of worker ant of massively different sizes, which practise an elaborate form of fungus farming (see <a href="#fig-leafcutter-ants">Figure&nbsp;8</a>). They fight nearby colonies, but they also have to fight off invading colonies of army ants, which don’t maintain a static nest but maraud through the jungle as a column of hundreds of thousands of ants on the move. Leafcutters adopt different tactics depending on the enemy: when fighting other leafcutter ant colonies, minor workers do most of the fighting, but when army ants invade it is the majors who play the most important roles.</p></li>
+</ul>
+<div id="fig-leafcutter-ants" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Hitchiking_leafcutter_ant.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;8: Two leafcutter ants of the genus <em>Atta</em>. Credit: Kathy &amp; sam from Beaverton OR, USA, CC BY 2.0 <a href="https://creativecommons.org/licenses/by/2.0" class="uri">https://creativecommons.org/licenses/by/2.0</a>, via Wikimedia Commons</figcaption><p></p>
+</figure>
+</div>
+<p>One difference between ant wars and human wars is that all human wars are between members of the same species, but some ant wars, like those between the leafcutters and army ants, are between different species. Is this still a war? If you watched the <em>Lord of the Rings</em> and didn’t complain about the phrase “the War of the Ring”, you’ve already accepted the principle. Perhaps it makes sense to think of inter-species ant wars as “asymmetric warfare” between armies using different technologies and resource bases, like that carried out in Afghanistan over the last 20 years.</p>
+</section>
+</section>
+<section id="asking-questions-about-wars" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Asking questions about wars</h1>
+<p>As epigraph to Chapter 1 of her book “War”, Margaret MacMillan chose a quotation from Frederic Manning: “War is waged by men; not by beasts, or by gods. It is a peculiarly human activity.” She goes on to say that (p xi): “War raises fundamental questions about what it is to be human and about the essence of human society”. The idea that war is uniquely human, and tied to our humanity, is widespread, but ants show that war is not a “peculiarly human activity”.</p>
+<p>Still, it is fair to ask “so what?” Isn’t ant war just a curiosity? A surface similarity? After all, when we think about human wars, we do not seek simply to classify events as “war” or “not-war”. We want to answer urgent questions, like: how do wars come about? what effects do wars have? how can wars be avoided or limited? how are wars won and lost? Addressing these questions leads us inevitably to the worlds of international relations, social institutions, human history, ethics, human nature, the nation state, technological innovation, law, diplomacy, and more. Aren’t these, as MacMillan suggests, uniquely human topics?</p>
+<p>So here is the next point we wish to make: <em>all those questions we ask about human wars can be asked of ant wars too, and the answers are not so different</em>. We will go through a list of topics, but as preface we’d like to highlight two themes that run through all of them.</p>
+<p>The first is that any study of ants encourages a “system viewpoint” of war. The causes and effects of particular wars are not of as much interest when we look at ants. In ants, there is an ecosystem and there are inhabitants, and these generate particular forms of ant society, and in some ant species these societies periodically engage in and are shaped by wars. Instead of thinking about causes and effects, the focus is on the co-evolution of war and other aspects of ant societies: wars are just one aspect of a bigger system. This approach is not unheard of among those who study human war of course: think of historian and sociologist Charles Tilly’s aphorism “War made the state and the state made war”, but the perspective of war as a system is more obvious in the world of insects.</p>
+<p>The second theme is a perspective of “convergent evolution” between ant and human societies. Here we don’t mean a biological determinism, but evolution in a broader sense. Here is a beautiful paragraph by Canadian author Ronald Wright, invoked by John Gowdy and Lisi Krall writing about the origins of ants’ ultrasocial behaviour:</p>
+<blockquote class="blockquote">
+<p>What took place in the early 1500s was truly exceptional, something that had never happened before and never will again. Two cultural experiments, running in isolation for 15,000 years or more, at last came face to face. Amazingly, after all that time, each could recognize the other’s institutions. When Cortés landed in Mexico he found roads, canals, cities, palaces, schools, law courts, markets, irrigation works, kings, priests, temples, peasants, artisans, armies, astronomers, merchants, sports, theatre, art, music, and books. High civilization, differing in detail but alike in essentials, had evolved independently on both sides of the earth.</p>
+</blockquote>
+<p>The similarities between Tenochtitlán and Madrid were not just metaphors or similes. The two are examples of a single thing – a city – which has developed independently, and is hosted in, different societies. A common underlying dynamic generates similar outcomes even in these two different environments. So, we would argue, war is a single thing: a system that has developed independently, hosted in both ant and human societies.</p>
+<p>With those themes in mind, let’s take a tour around the study of war. Approaches to understanding war take place at three levels: the international system of nation states, the nature of the states that make up this system, and the nature of the individuals that make up those states.</p>
+<section id="the-international-relations-of-ant-colonies" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="the-international-relations-of-ant-colonies"><span class="header-section-number">2.1</span> The international relations of ant colonies</h2>
+<section id="ant-colonies-are-neo-realist-states" class="level3">
+<h3 class="anchored" data-anchor-id="ant-colonies-are-neo-realist-states">Ant colonies are neo-realist states</h3>
+<p>We start at the level of the international system of states, and with the neo-realist perspective. This is one of several schools of thought in international relations. It treats the international system as anarchic, in the sense that there is no governing authority. It also treats each state as a black box (ignoring any internal structure) and as a “rational” actor pursuing its own self-interest in a utility-maximizing game-theoretic sense, acting in the face of incomplete information about the intentions and resources of other states.</p>
+<p>To return to the weaver ants: here is an anarchic ecosystem of colonies, with no governing authority. Unencumbered by domestic politics or moral considerations, they act of out self-interest, with survival as the only metric of success. Ant colonies – or at least the colonies of territorial ants such as weaver ants – are the ultimate neo-realist nation state.</p>
+<p>Does it make any sense to think of ant colonies as rational actors? After all, neo-realist nation states (or their leadership) take decisions, and weigh the costs and benefits of their actions. A “strategy” at the level of a nation state is the result of some form of deliberation, and of course ant colonies have no such deliberative qualities, no leadership to decide on a strategy, and no hierarchy to implement it. Yet ant colonies do arrive at similar behaviour even though they may travel along a different path. It has been known since the work of evolutionary biologist John Maynard Smith that many results of game theory can be achieved via two approaches: so-called rational decision making or evolutionary strategies. So there is no contradiction in saying that ant colonies act as rational agents despite their lack of ability to reflect and decide.</p>
+<p>Weaver ants may tell us something about the outcomes of neo-realist strategies. In defending their boundaries and developing a capacity for armed response, weaver ant colonies adopt a strategy of deterrence, following the old human adage “if you want peace, prepare for war”. But they also show the limitations of this adage: when a colony dies, or when particularly favourable conditions lead to population growth, wars break out, and they may be dramatic. Deterrence-based peace persists only in conjunction with occasional outbreaks of war, otherwise the investments in preserving deterrence-based peace are wasteful. We can think of individual ant wars as occasional changes in the state of an underlying war system: from a cold state, characterized by military preparedness, to a hot state of active war, the change being precipitated by a shock to the ecosystem.</p>
+</section>
+<section id="ants-are-diplomats" class="level3">
+<h3 class="anchored" data-anchor-id="ants-are-diplomats">Ants are diplomats</h3>
+<p>Wars are costly events, and not to be undertaken lightly even by unsentimental neo-realist states. After a brutal war, even the victor may be left weakened and vulnerable. While the international system of human nation states may be anarchic, and while the intentions of other states may be uncertain, communication between states and intelligence gathering combine to help avoid unnecessary wars, and to avoid the unintentional escalation of small conflicts into all-out war.</p>
+<p>Ants do not sit at tables and draft treaties, but they do communicate with the effect of avoiding or minimizing wars.</p>
+<p>Weaver ants ensure that everyone knows where territories start and end in what looks like the outcome of a diplomatic agreement. The marking and patrolling of boundaries is accompanied by a strip between colonies that may become a “no ant land” which both colonies actively avoid.</p>
+<p>There are other strategies too. Australian meat ants live in nests near eucalyptus trees, ranging in population from 10,000 to over 300,000 ants. When they encounter ants from other colonies, they raise their gaster (hind end) and posture aggressively, but rarely engage in violence. This signalling is not only individual: meat ants also gather around their food trees and engage in collective displays to warn off potential enemies. Like military exercises, these displays serve to demonstrate strength. As such, they help to solve boundary disputes and clarify each colony’s territory without the cost of conflict.</p>
+<p>Even more dramatic are the “honeypot ants” of the southern US. They live in colonies with foraging areas that often overlap, leading to disputes about control over the food source. To resolve these disputes, honeypot ants stage “tournaments”, in which hundreds of individual ants square off in contested zones and stage one-on-one confrontations, each of which last between ten and thirty seconds. These tournaments may last several days, with posturing and pushing but little or no serious fighting. (“The ants challenge one another back and forth across the disputed field in the manner of medieval knights, one on one.”)</p>
+<p>Bert Holldobler, who observed this behaviour, argues that these contests enable each colony to assess the size and strength of the opposing colony. The tournament may decide which colony holds the resource, without too much violence. But we should not idealize these diplomatic efforts: if one colony concludes that it has superiority in numbers at a scale of ten to one or more, it may invade and destroy the weaker colony, carrying off worker ants and brood to their own colony.</p>
+</section>
+</section>
+<section id="war-and-ant-society" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="war-and-ant-society"><span class="header-section-number">2.2</span> War and ant society</h2>
+<p>The middle level of analysis is at the level of the individual state: its politics, its economics, and its social structure.</p>
+<section id="the-military-industrial-complex" class="level3">
+<h3 class="anchored" data-anchor-id="the-military-industrial-complex">The military industrial complex</h3>
+<p>We have already quoted the aphorism that “War made the state and the state made war”, which captures the way that, over time, war has both shaped and been shaped by the organization of individual societies.</p>
+<p>For ants, war is one of the forces driving the formation of new “castes”, a term which has been used for a long time, for better or worse, to describe the development of distinct types within a single colony. Among the workers, who are all female, the most common types are minor and major, with differing body size and other specialized physical attributes. The difference in size between minor and major nestmates reaches an apex in marauder ants, where the major ants may weigh five hundred times more than a minor, and where the minor may ride on the head of the major.</p>
+<p>Consider three ant species of the genus <em>Camponotus</em>, which live in the southern United States and are subject to predatory raids by army ants. One species responds to raids by evacuating the nest, the other two respond by fighting. All three species have “major” and “minor” castes, but in the one that flees the majors are only slightly larger than the minors. In those that fight, the majors are much larger.</p>
+<p>Size is not the only specialization that has developed: some species of ants have also developed weapon technologies. The weaver ants have their formic spreays, other species have specialized mandibles, stings, foams. Some ants even use chemicals that induce panic in a whole colony: a weapon of mass destruction. There are defenses too, such as the biomineral armour that enhances the strength of the exoskeleton in leafcutter ants. Several species in south-east Asia, including one called <em>Colobopsis explodens</em>, have developed a dramatic technology: some minor workers have two large two glands filled with toxic secretions. During combat these ants contract their abdominal muscles and literally explode, in a kamikaze act, spreading deadly secretions onto the foe.</p>
+<p>There is a symbiotic nature to the species’s investment in technology and their tendency to engage in war that mirrors the military industrial complex: those who fight will develop weapons, but equally, those who invest in weapons are the ones that fight. Across humans and ants, war has accompanied changes in society, developing increasingly specialized roles and communication techniques, changing the relationships among members of society.</p>
+</section>
+<section id="culture-wars" class="level3">
+<h3 class="anchored" data-anchor-id="culture-wars">Culture wars</h3>
+<p>Sociology shows how nation states maintain political cohesion during the trauma of warfare by developing and promoting a culture of national identity. Nations develop a clear sense of who is part of the nation and who is not: an <em>in-group/out-group separation</em>. Patriotic discourses of common origin and shared blood relationship are common (terms like “motherland”) even when there is no historical or material basis for it. During a war, each side may produce propaganda to emphasize how different “we” are from “them”.</p>
+<p>To return to the weaver ants: the colonies are too big for any kind of personal identification, so how do they know which ants to fight? The cue lies in the waxy surface of the hard outer cuticle. When ants meet, they touch each other with antennas and sense a “cuticular hydrocarbon” or CHC profile. The CHC profile is sometimes called an “odour” although the sense involved is somewhere between taste, scent, and touch.</p>
+<p>The largest supercolonies of the Argentine ant may have a million nests, and spread over thousands of kilometers. Move a”Large Colony” Argentine ant 800 kilometres from San Francisco to San Diego and she will still be “home”, accepted by surrounding ants. On the other hand, move an ant a few centimetres across an invisible (to humans) border in the outskirts of San Diego, and she will probably be killed by the members of the neighbouring Lake Hodges colony.</p>
+<p>For decades it was thought that this cohesion of purpose among colony members was explained by kin selection. The most prominent proponent of that idea was the late E.O. Wilson, whose book <em>Sociobiology</em> became controversial for arguing that the same logic shaped human societies. What’s less well known is that Wilson later led a countercharge among biologists and questioned his own theories, saying that even in ants, kin selection is not enough to explain the behaviour entomologists were observing.</p>
+<p>His alternative idea is that natural selection may operate at the level of the colony – the “superorganism” – rather than the individual ant. If that’s correct, then the CHC profile serves not only as a marker of identity but also defines it, and is actively maintained through exchange throughout the members of a colony. The colony is making a cultural investment in maintaining a common identity among its members: it is developing a social infrastructure of cohesion.</p>
+<p>Nothing of what we say here depends on any particular evolutionary theory, we are just describing what entomologists observe, but the possibility that ant evolve cultures is one that seems compelling to me.</p>
+</section>
+</section>
+<section id="the-psychology-of-ant-war" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="the-psychology-of-ant-war"><span class="header-section-number">2.3</span> The psychology of ant war</h2>
+<p>Finally we go to the level of the individual. Human societies have historically separated warlike behaviour from peacetime behaviour: the rules and norms of war are different to those of peacetime. The pheromones used by ants to recruit and mobilize an army is also a trigger that sets off warlike behaviour on the part of individual ants: as in humans, there are two domains of behaviour.</p>
+<p>While the psychology of the human warrior has a long and deep history, essentially nothing is told of the experiences of ants. Do they have experiences at all? Here the practice of entomologists borrowing terminology from human wars comes to a halt. The contrast is dramatic. Self-sacrifice in human war is seen as an expression of bravery and nobility sufficient to prompt some of our most universal and challenging stories of what it means to be human. The same action carried out by ants is simply “stereotyped behaviour” with no implications of “intent” or internal states.</p>
+<p>We are told, for example, that “one fire-ant worker straggling close by is enough to trigger a violent response” in the woodland ant: a cue and a stereotyped response. But the response evoked may be quite complex. The worker ant, having encountered the fire-ant and identified it, (i) touches it to acquire its odour; (ii) lays down a chemical trail; (iii) rushes up to nestmates one at a time as she hurries back to the nest. Then, as part of this same sequence of actions, both “soldiers” (majors) and ordinary workers quickly attack the enemy and kill it, after which they search the area for further members of the fire-ant nest. This may end the matter, but in some cases a wider engagement may take place. It is not easy for us to see where the stereotyped behaviour ends and intelligent decision-making begins.</p>
+<p>Try as they might, entomologists cannot entirely escape interpretation. By avoiding any mention of intent or of internal states, researchers implicitly treat ants as information-processing and algorithm-following automata, a stance that blends smoothly into agent-based computer simulations of ant behaviour. Yet ants are not interchangeable; they are individuals, with memories of their own unique life histories. They memorize complex foraging routes for periods of weeks, distinguish among complex pheromone profiles, and undertake sequences of context-dependent decisions. A forest-dwelling African ponerine ant memorizes the detailed outline of tree crowns beneath which it passes on outgoing trips, then reverses the information to run a straight line home.</p>
+<p>Current trends in modern war fighting may instead be rendering redundant the psychology of the battlefield, turning human soldiers into information-processing units. Chemical-induced behaviour changes have long been common in human warriors of course, from Dutch courage to ritual consumption of intoxicants to today’s medically-tuned performance enhancers. And now technological innovations are replacing soldiers’ judgement with computer-augmented decision-making and policy-implementing workflows, or replacing the soldiers entirely, with automated weaponry.</p>
+</section>
+</section>
+<section id="so-what" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> So what?</h1>
+<p>We finish by returning to the question of “so what?” We’d like to suggest two possibilities, one fairly specific, and one more general.</p>
+<section id="bright-lines-or-spectrum-of-conflict" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="bright-lines-or-spectrum-of-conflict"><span class="header-section-number">3.1</span> Bright lines or spectrum of conflict?</h2>
+<p>To return to the definition at the beginning of this essay, defining war by a list of attributes does not help to distinguish between two perspectives on warfare. One is that war and peace are just poles at the ends of a spectrum of scale, organization, weaponry, and so on. The other is that war and peace are two distinct domains.</p>
+<p>In her book <em>How Everything Became War and the Military Became Everything</em>, law professor Rosa Brooks gives examples of how humans have drawn bright lines between war and peace throughout history. We have built rituals that help warriors switch between their normal frame of mind to one where they are ready to kill and to die: as just one example she describes Navajo soldiers who adopted a different dialect when setting out on raids, and who would draw a line in the desert on the way home, stepping over it and resuming their common language on the way home. Nation states have had rituals too, such as the practice of governments formally declaring war, again marking a sharp transition from one state to another. And at the international level, at least since Franz Lieber and Bertha von Suttner in the 19th century there have been attempts to create rules for the making and conduct of war, separate from the rules for conduct in peacetime. The dividing lines can never be completely sharp at any of these scales, but the attempts to separate two domains, with different rules for each, is inseparable from the names war and peace themeselves.</p>
+<p>But there’s an influential strand of thought that such efforts have outlived their time. In her conclusion (p 345), Brooks writes: “The best route to upholding human rights and the rule of law lies in recognizing that war and peace are not binary opposites, but lie along a continuum”. Among military theorists, and particularly American military theorists, there has been a flourishing of talk about the spectrum of conflict, asymmetric warfare, and grey zones between war and peace.</p>
+<p>Many, from all sides of the political spectrum, have dismissed attempts to limit and control war. Pancho Villa said “It seems to me a funny thing to make rules about war. It is not a game.” White House Counsel Alberto Gonzalez said that, in the War on Terror, the Geneva Conventions are “quaint”.</p>
+<p>So perhaps it is relevant that ants have found ways to draw “bright lines” between war and peace. We’ve seen some in this essay already. During recruitment and mobilization, ants switch from one mental state to another. August Forel, an early entomologist, described how ants of the genus <em>Polyergus</em> would raid ants of another genus, during which “the battle-fury sometimes becomes terrible; they snap right and left with their jaws and abandon all distinction between friend and foe. They are like mad creatures.” At the level of the colony, the sharp territorial and in-group/out-group boundaries have helped to reduce uncertainty about the onset of war. At the level of the international system, the tournaments and displays create a mechanism for clarifying the decision: are we fighting a war or not?</p>
+<p>As with humans, ants do attempt to blur the boundary between war and peace. Some use forms of deception: “propaganda chemicals” which introduce confusion by mimicking alarm pheromones of the target species, or which cause ants to lose their ability to distinguish their own nest mates and attack each other. Still, the many elements of boundary construction do not become irrelevant. In general the dike holds, despite the holes in it, separating the two domains. The bright lines are not quaint, and they are not “funny things”. If ants have developed these lines, it is because they aid in survival of those who do. We ignore them at our peril.</p>
+</section>
+<section id="coda" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="coda"><span class="header-section-number">3.2</span> Coda</h2>
+<p>The variety and richness of ant behaviour seems limitless. Entomologists continue to make new and surprising discoveries all the time and we feel that we’ve just scratched the surface of the topic. It seems to us that looking at ant wars, so familiar and yet so alien, prompt us to look at human war from a different vantage point, and that new vantage points have the potential to generate new hypotheses and new insights about human wars.</p>
+<p>We hope these efforts show that what Ted Schultz and others from the Smithsonian Museum of Natural History call “reciprocal illumination” between those who study humans and those who study insects is a real possibility. And given the tragic destructiveness of human wars, any opportunities for illumination should not be ignored.</p>
+<p>But even if concrete insights are not forthcoming, we think there is another reason to take ant wars seriously. Humans have been fighting wars for perhaps 12,000 years, since the beginnings of agriculture and fixed communities. Ants have been fighting wars for perhaps 60 million years, a period 5,000 times longer. Whether we count the number of wars or the deaths of organisms, human war is a rounding error compared to ant wars. War has been, we could argue, a peculiarly formic activity for most of its history; one that humans have only recently started to learn.</p>
+<p>Treating war as a system in nature is one more small step away from an anthropocentric view of the world. We’ve started to see language, emotions, and intelligence in other species, and these discoveries prompt thoughts about the value of these other species and their contributions to the variety of the world, while showing us that we’re not as special as we’d sometimes like to think. Perhaps understanding that war is also not unique to humans will help us a little further along that path.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">2023, Tom Slee</div>   
+  </div>
+</footer>
+
+
+
+</body></html>

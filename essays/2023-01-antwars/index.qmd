@@ -8,9 +8,9 @@ description: >
 abstract: >
     War is often thought of as being uniquely human, but large-scale organized violent conflicts between ant colonies are just as much "wars" as those between nation states.We justify this claim and explore some of its implications. Most concretely, ant wars cast doubt on a strand of thought, particularly prominent among US military theorists, which sees war and peace as poles on a continuous spectrum of conflict, and which dismisses as naive the idea of war and peace as separate domains.
 abstract-title: ""
-date: last-modified
+date: 2023-01-15
 categories:
-- in progress
+- essays
 bibliography: antwar-bibliography.bib
 toc-title: Contents
 # reference-location: margin
