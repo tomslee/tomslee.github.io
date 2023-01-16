@@ -1,14 +1,14 @@
 ---
-title: "Ant Wars and Human Wars"
+title: "From Ant Wars to Human Wars"
 author: 
   - Graeme MacQueen
   - Tom Slee
 description: >
-    What can wars between ant colonies tell us about human wars?
+    What do wars between ant colonies tell us about human wars?
 abstract: >
-    War is often thought of as being uniquely human, but large-scale organized violent conflicts between ant colonies are just as much "wars" as those between nation states.We justify this claim and explore some of its implications. Most concretely, ant wars cast doubt on a strand of thought, particularly prominent among US military theorists, which sees war and peace as poles on a continuous spectrum of conflict, and which dismisses as naive the idea of war and peace as separate domains.
+    War is often thought of as a peculiarly human activity, but conflicts between ant colonies are just as much "wars" as those between nation states. We justify this claim and explore some of its implications. Most concretely, ant wars cast doubt on the idea -- particularly prominent among US military theorists -- that war and peace are just poles on a spectrum of conflict, and that thinking of war and peace as separate domains is outdated and naive.
 abstract-title: ""
-date: 2023-01-15
+date: 2023-01-16
 categories:
 - essays
 bibliography: antwar-bibliography.bib
@@ -40,9 +40,11 @@ comments:
 References and sources for this essay can be found in the much longer companion piece, *War as a system in nature* ([SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4262518 "SSRN version of War as a System in Nature"), [personal site](https://tomslee.github.io/essays/2022-12-antwar/ "personal site")).
 :::
 
-::: {.content-visible when-format="html"}
+::::: {.content-visible when-format="html"}
+::: {.callout-note appearance="simple"}
 A PDF version of this essay can be found [here](./antwars.pdf)
 :::
+:::::
 
 # Ants fight wars
 
