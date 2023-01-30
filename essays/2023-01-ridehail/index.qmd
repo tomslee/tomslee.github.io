@@ -1,14 +1,14 @@
 ---
-title: High Emissions and Low Pay 
-subtitle: Uber is Still Taking Regulators for a Ride
+title: "High Emissions and Low Pay: Uber is Still Taking Regulators for a Ride"
 author: Tom Slee
 date: 2023-01-30
 categories:
   - Essays
 description: A report for RideFairTO
 abstract: >
-  Full-time Uber drivers in Toronto are taking home less than $8 per hour. Computer simulations show that the Ontario government's claim to provide a minimum wage based on "engaged time" will do nothing to improve the lot of drivers. Further: Uber will always be an emissions-heavy approach to transit, as Uber drivers have passengers in the car for less than 60% of the time. The pursuit of ridehail convenience comes at the cost of more emissions: each minute cut from Uber wait times adds 1600 vehicles to Toronto roads. 
+  Full-time Uber drivers in Toronto are taking home less than $8 per hour. Computer simulations show that the Ontario government's claim to provide a minimum wage based on "engaged time" will do nothing to improve the lot of drivers. Uber will always be an emissions-heavy mode of transit, as drivers have passengers in the car for less than 60% of the time. The pursuit of ridehail convenience comes at the cost of more emissions: each minute cut from Uber wait times adds 1600 vehicles to Toronto roads. 
 abstract-title: In brief
+image: front_image.png
 toc: true
 toc-title: Contents
 reference-location: margin
