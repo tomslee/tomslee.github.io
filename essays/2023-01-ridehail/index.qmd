@@ -54,7 +54,7 @@ The unique nature of "gig work" as practiced by Uber and other platform companie
 
 -   *Piece rate payment.* Platform companies have made every attempt to avoid classifying their workers as employees with an hourly pay rate. Instead, the gig-work model is to pay workers only while engaged in a task.
 
-Like many other jurisdictions, the Province of Ontario and the City of Toronto are introducing policies to accommodate "gig work" into the broader framework of labour standards, and to align the operations of Private Transportation Companies (PTCs) with public priorities concerning transit, including efficiency, congestion, emissions, accessibility and more. Through computer simulations that capture poorly-understood dynamics of gig work, this report addresses these two current policy directions:
+    Like many other jurisdictions, the Province of Ontario and the City of Toronto are introducing policies to accommodate "gig work" into the broader framework of labour standards, and to align the operations of Private Transportation Companies (PTCs) with public priorities concerning transit, including efficiency, congestion, emissions, accessibility and more. Through computer simulations that capture poorly-understood dynamics of gig work, this report addresses these two current policy directions:
 
 -   *Congestion and emissions.* The City of Toronto takes seriously Uber's claim that it can reduce emissions through fleet electrification (City of Toronto 2021b), and is "seeking to update by-laws to achieve vehicle electrification and emissions reductions targets for the vehicle-for-hire industry". Can Uber and Lyft drive sustainable transit in Toronto?
 
@@ -74,7 +74,7 @@ One goal of the simulation is to check intuition-based claims. Some policy discu
 
 A simple model that is independent of a particular city geography and road layout is easier for comparisons of the ridehail experience among cities. Also, a computer simulation allows "what if?" questions that may provide insights into the trade-offs faced by platform companies, municipal governments, drivers and passengers.
 
-![A City in the simulation is simply a square, with C blocks on each side.](fig1.png){#fig-1 width=70%}
+![A City in the simulation is simply a square, with C blocks on each side.](fig1.png){#fig-1 width="50%"}
 
 The ridehail simulation has three components, each of which is described below:
 
@@ -128,7 +128,7 @@ Each simulation is a sequence of moves. In each move, vehicles travel one block,
 
 -   Any trip that reaches its destination terminates.
 
-![A city of 20 by 20 blocks, showing 160 vehicles (triangles) in phases P1 (red), P2 (orange), and P3 (green). The red diamonds are trip origins, and the green circles are trip destinations.](fig2.png){#fig-2 width=70%}
+![A city of 20 by 20 blocks, showing 160 vehicles (triangles) in phases P1 (red), P2 (orange), and P3 (green). The red diamonds are trip origins, and the green circles are trip destinations.](fig2.png){#fig-2 width="70%"}
 
 At the end of each move, the simulation records and optionally plots the state of each vehicle and statistics about the overall system (fraction of vehicles in each phase, for example). Figure 2 illustrates a simulation in progress.
 
@@ -140,7 +140,7 @@ The spirit of the simulation is to be as simple as possible, so that it can be c
 
 Many cities have a central "downtown" zone where the demand for ridehail traffic is high, surrounded by suburban areas where demand is lower. For example, 60% of trips in Metro Toronto originate within "Old Toronto" and East York, even though these two make up less than 20% of the total Metro area. This inhomogeneity is built into the model as two *zones*. A central zone has sides *C/2* (so, one quarter of the city's area) and has a higher rate of trip requests than the surrounding area, as shown in Figure 3 below. The trip destinations remain randomly distributed around the whole city. With an inhomogeneity of zero, the central zone is the same as the rest, with an inhomogeneity of one all trip requests take place in the central zone. In this way, and in the spirit of keeping the model as simple and parsimonious as possible, a single inhomogeneity parameter between zero and one captures the two zones.
 
-![The red dots show the origin of trips in a small "two-zone" city if eight blocks. The central area has a higher demand than outlying suburbs.](fig3.png){#fig-3 width=70%}
+![The red dots show the origin of trips in a small "two-zone" city if eight blocks. The central area has a higher demand than outlying suburbs.](fig3.png){#fig-3 width="50%"}
 
 The second extension, discussed in the section on Engaged Time standards below, is to allow vehicles to enter and leave the system in response to price and demand.
 
@@ -158,8 +158,20 @@ The simulation is also available at a web site, where the configuration is set i
 
 Important data comes from a 2019 study by the City of Toronto and an update in 2021 (Policy & Innovation Transportation Services 2019, 2021). The November 2021 update chose Thursday Feb 6, 2020 as a representative day to assess the overall state of ridehail in Toronto, pre-pandemic (p25). Relevant statistics from this study are shown in Table 1.
 
-Metro Toronto has an area of 625 square kilometres (= 25km\*25 km). In the simulation it is represented as a 60 by 60 grid. Traffic speeds are taken as an average of 30 km/h (including all stops for pickups) so each block represents 50 seconds of travel. 55% of all trips start in a central zone, and the average trip length is 20 minutes.
+| Quantity                                        |             Value |    Simulation |
+|----------------------------------|------------------:|------------------:|
+| Trips completed (R)                             | 193,902 (135/min) |        135 \* |
+| Average trip length (L)                         |            8.13km | 20 minutes \* |
+| Average vehicle speed (v)                       |           31 km/h |    30 km/h \* |
+| Percent of time: Period 1 (available for trip)  |             40.5% |           40% |
+| Percent of time: Period 2 (en-route to pick-up) |             11.2% |           12% |
+| Percent of time: Period 3 (with passenger)      |             48.3% |           48% |
+| Active vehicles (N)                             |              6200 |          6000 |
 
+: Table 1: Statistics for Uber trips in Toronto on Feb 6, 2020. The values come from the City of Toronto study on platform transit companies.\
+\* = input value
+
+Metro Toronto has an area of 625 square kilometres (= 25km\*25 km). In the simulation it is represented as a 60 by 60 grid. Traffic speeds are taken as an average of 30 km/h (including all stops for pickups) so each block represents 50 seconds of travel. 55% of all trips start in a central zone, and the average trip length is 20 minutes.
 
 Figure 4 shows that this simplified model can simulate an environment the scale of Toronto on a single laptop computer. It shows the results of several simulations, each with 135 trips per minute, or 200,000 in the whole day. The number of vehicles is varied, from 2000 to 10,000. The actual number of drivers on a given day will depend on the price set by the PTC, so each number of vehicles represents a possible outcome. Each simulation takes about ten minutes to reach a steady state, at which point we can take averages of the fraction of vehicles in each of the *P1*, *P2*, *P3* phases, along with average wait times.
 
@@ -167,7 +179,7 @@ The actual number of drivers (6000), utilization rate (48%), and *P2* value (12%
 
 # Ride Hailing cannot provide low-emissions transit {#ride-hailing-cannot-provide-low-emissions-transit}
 
-![Simulating Toronto: Wait times and vehicle phases for Feb 6, 2020. The figures at 6000 vehicles match the reported values for that day.](fig4.png){#fig-4 width=70%}
+![Simulating Toronto: Wait times and vehicle phases for Feb 6, 2020. The figures at 6000 vehicles match the reported values for that day.](fig4.png){#fig-4 width="100%"}
 
 Figure 4 highlights the trade-off at the heart of the ground transportation industry.
 
@@ -177,7 +189,7 @@ In the middle of the graph, around 6000 vehicles, the *P1* value is lower and th
 
 Below 4000 vehicles, there are too few vehicles to keep up with demand. The *P1* value hits zero (drivers are *always* busy) but the wait time goes off the charts as drivers cannot keep up with demand. The system never reaches a steady state.
 
-![The Australian Cycling Promotion Fund is one of several groups to have produced photos like this, showing the relative space efficiency of different modes of transport. This is reproduced from the Human Transit blog of Jarrett Walker.](fig5.jpg){#fig-5 width=70%}
+![The Australian Cycling Promotion Fund is one of several groups to have produced photos like this, showing the relative space efficiency of different modes of transport. This is reproduced from the Human Transit blog of Jarrett Walker.](fig5.jpg){#fig-5 width="100%"}
 
 The tension between driver and passenger interests here is clear. Passengers want a short wait time, but this requires a high proportion of drivers waiting for a trip, not being paid.
 
@@ -189,19 +201,38 @@ A trip by Uber is always going to produce even more emissions and take even more
 
 Uber claims it can resolve the tension by operating more efficiently and supporting a higher level of demand. Compared to taxis, whose numbers are regulated, Uber has consistently operated at higher levels of demand in major cities, but after almost ten years there is no evidence that the higher demand is the result of greater efficiency. Instead, the demand is produced mainly by lower prices, which in turn are a result of subsidised fares (Horan 2017). Uber's record of continuing losses is shown in Figure 6.
 
-![Uber's losses over the last 7 years.](fig6.png){#fig-6 width=70%}
+![Uber's losses over the last 7 years.](fig6.png){#fig-6 width="100%"}
 
 It is true that with higher demand, a ridehail system can support a given wait time with fewer vehicles per trip: it generates higher utilization rates, but there are limits to this argument.
 
 Figure 7 shows utilization rates and vehicles per trip (per minute) to sustain a six-minute wait time in a Toronto-like environment. It shows that an increase in demand does increase utilization, but there is a levelling off as demand increases. Even if the trip volume in Toronto were to increase to 200,000 per day (a 50% increase over the pre-pandemic numbers), the utilization rate would still increase to only 54% if wait time were kept at the same value.
 
-Other cities, with New York City and San Francisco as outliers, have utilization rates (by time) of 50 to 60%.[^ridehail-1] Toronto has a level of demand that is lower than Chicago, which may provide a reasonable upper bound to what can be expected of around 60%.
+Other cities, with New York City and San Francisco as outliers, have utilization rates (by time) of 50 to 60%.[^1] Toronto has a level of demand that is lower than Chicago, which may provide a reasonable upper bound to what can be expected of around 60%.
 
-[^ridehail-1]: Utilization rates measured by distance may be slightly larger, as drivers drive slower when not engaged in a trip.
+[^1]: Utilization rates measured by distance may be slightly larger, as drivers drive slower when not engaged in a trip.
+
+| City    | Year | Time or distance? | Utilization rate |
+|---------|------|-------------------|------------------|
+| Chicago |      |                   |                  |
+| Chicago |      |                   |                  |
+| Boston  |      |                   |                  |
+| Boston  |      |                   |                  |
+|         |      |                   |                  |
+|         |      |                   |                  |
+|         |      |                   |                  |
+|         |      |                   |                  |
+|         |      |                   |                  |
+|         |      |                   |                  |
+|         |      |                   |                  |
+|         |      |                   |                  |
+|         |      |                   |                  |
+|         |      |                   |                  |
+
+: Table 2: Utilization rates for Uber in USA cities. Rates measured by distance will be higher than those measured by time as drivers cover more distance in a given time when engaged in a trip. 2019 valus are from an Uber-commissioned report by Fehr & Peers; 2017 values from a report by Bruce Schaller, and 2015 values from a report by Judd Cramer and Alan B. Krueger for the NBER. The 2020 values for Seattle come from reports by Hyman et al (2020a) and by Parrot & Reich (2020b).
 
 There are two ways that utilization rates may exceed these estimates. The first is for the number of drivers to be limited, so that wait times are longer. The second is for trips to concentrate even more heavily into the high traffic central zone. But this central core is well served by mass transit, and any gain in ridehail trips would be achieved by taking riders away from mass transit and putting them in cars (Young, Allen, and Farber 2020), and adding to problems of congestion (Erhardt et al. 2019).
 
-![The number of vehicles N and utilization rate P3 required to support a wait time of 6 minutes (w=0.30).  While the utilization rate (P3) does increase with demand, the improvements level off as demand increases.  Meanwhile, the number of vehicles required keeps growing (green line, at left).](fig7.png){#fig-7 width=70%}
+![The number of vehicles N and utilization rate P3 required to support a wait time of 6 minutes (w=0.30). While the utilization rate (P3) does increase with demand, the improvements level off as demand increases. Meanwhile, the number of vehicles required keeps growing (green line, at left).](fig7.png){#fig-7 width="100%"}
 
 Without these changes, at least 40% of a vehicle's time will be spent deadheading. There is no efficient solution to emissions through ride hailing.
 
@@ -245,9 +276,9 @@ Drivers are earning revenue only for the 48% of time that they are carrying pass
 
 $$I\  = \ \$ 42.04\ *\ 0.48\  = \ \$ 20.18\ /\ \text{hour}$$
 
-Drivers also have costs. These include fixed costs c~*f*~ (such as the purchase of a car), and marginal cost of operations *c~o~* (fuel, insurance, maintenance, cleaning, etc.).[^ridehail-2] Revenue Canada gives a "reasonable per-kilometre allowance" of 55c per kilometre to account for fuel, insurance, maintenance and depreciation. Although ridehail drivers may have additional costs as a result of commercial insurance, additional cleaning fees, and driving predominantly in a low-speed urban environment, we adopt this figure.
+Drivers also have costs. These include fixed costs c~*f*~ (such as the purchase of a car), and marginal cost of operations *c~o~* (fuel, insurance, maintenance, cleaning, etc.).[^2] Revenue Canada gives a "reasonable per-kilometre allowance" of 55c per kilometre to account for fuel, insurance, maintenance and depreciation. Although ridehail drivers may have additional costs as a result of commercial insurance, additional cleaning fees, and driving predominantly in a low-speed urban environment, we adopt this figure.
 
-[^ridehail-2]: The distinction between fixed and marginal costs is not absolute, but depends on the timeframe under consideration. If a driver rents a car for a month, it becomes a fixed cost for that month (the rent will be paid, regardless of whether the driver drives or not). Considered over a longer time, the decision to rent a car in order to take part in ridehail is a marginal cost.
+[^2]: The distinction between fixed and marginal costs is not absolute, but depends on the timeframe under consideration. If a driver rents a car for a month, it becomes a fixed cost for that month (the rent will be paid, regardless of whether the driver drives or not). Considered over a longer time, the decision to rent a car in order to take part in ridehail is a marginal cost.
 
 During the *P1* period ("available for trip"), drivers do drive less (although they may still run their engine even when parked, to run air conditioning in summer or heating in winter). From figures given in the Big Data report, we compute that drivers cover 0.3 times as many km per hour as when *en route* or driving with a passenger. With a speed of 31 km/h while in periods *P1* and *P2*, and an effective speed of 10km/h in *P1*, this translates into a cost of \$12.28 per hour.
 
@@ -261,7 +292,7 @@ Estimates of gig-work incomes have varied widely, with two major sources of disa
 
 Uber drivers range from the casual driver who uses a personal car for a few hours a week, to full-time drivers putting in over 40 hours per week and for whom the car is primarily a means of making money. There is certainly room for debate about whether the full cost of car ownership is appropriate to include for the casual driver, but here the topic is *minimum* wage, not average wage, and the focus needs to be on those full-time drivers for whom the full costs of vehicle ownership, depreciation and maintenance are part of the job. This set of full-time workers also includes drivers who split their time between gig work tasks (for example, meal delivery and ridehail), but spend a full working week as gig workers.
 
-![ In Chicago, full-time drivers (defined as those who drive over 275 trips per month), make up only about one in six drivers, but are responsible for over 40% of trips.](fig8.png){#fig-8 width=70%}
+![In Chicago, full-time drivers (defined as those who drive over 275 trips per month), make up only about one in six drivers, but are responsible for over 40% of trips.](fig8.png){#fig-8 width="100%"}
 
 Despite Uber's popular image as a platform for casual drivers, full-time drivers provide the core of the service. Figure 8, based on Chicago data (City of Chicago 2022), shows that full-time drivers provide between a third and a half of all trips.
 
@@ -313,7 +344,7 @@ In a simulation, the average driver income for the system as a whole is tracked,
 
 ## Pay is not affected by fare changes {#pay-is-not-affected-by-fare-changes}
 
-![ "Before" and "After" a change in fare. While the change affects the number of vehicles and passenger wait times, driver income does not change.](fig9.png){#fig-9 width=70%}
+!["Before" and "After" a change in fare. While the change affects the number of vehicles and passenger wait times, driver income does not change.](fig9.png){#fig-9 width="100%"}
 
 As Uber and other gig-economy platforms do not limit driver supply, a rise in "engaged time" pay increases the number of drivers on the platform, but does not translate into increased earnings for individual drivers.
 

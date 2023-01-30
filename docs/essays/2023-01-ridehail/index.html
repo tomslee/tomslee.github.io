@@ -255,10 +255,8 @@ ul.task-list li input[type="checkbox"] {
 <p>The unique nature of “gig work” as practiced by Uber and other platform companies is now well known. It has two main distinguishing features:</p>
 <ul>
 <li><p><em>Free entry and exit.</em> Platform companies design their systems to allow easy entry and exit of workers. Uber, for example, attempts to make sign-up as a driver as easy as possible. And once a driver is signed up, starting work is simply a matter of opening an app on a phone.</p></li>
-<li><p><em>Piece rate payment.</em> Platform companies have made every attempt to avoid classifying their workers as employees with an hourly pay rate. Instead, the gig-work model is to pay workers only while engaged in a task.</p></li>
-</ul>
-<p>Like many other jurisdictions, the Province of Ontario and the City of Toronto are introducing policies to accommodate “gig work” into the broader framework of labour standards, and to align the operations of Private Transportation Companies (PTCs) with public priorities concerning transit, including efficiency, congestion, emissions, accessibility and more. Through computer simulations that capture poorly-understood dynamics of gig work, this report addresses these two current policy directions:</p>
-<ul>
+<li><p><em>Piece rate payment.</em> Platform companies have made every attempt to avoid classifying their workers as employees with an hourly pay rate. Instead, the gig-work model is to pay workers only while engaged in a task.</p>
+<p>Like many other jurisdictions, the Province of Ontario and the City of Toronto are introducing policies to accommodate “gig work” into the broader framework of labour standards, and to align the operations of Private Transportation Companies (PTCs) with public priorities concerning transit, including efficiency, congestion, emissions, accessibility and more. Through computer simulations that capture poorly-understood dynamics of gig work, this report addresses these two current policy directions:</p></li>
 <li><p><em>Congestion and emissions.</em> The City of Toronto takes seriously Uber’s claim that it can reduce emissions through fleet electrification (City of Toronto 2021b), and is “seeking to update by-laws to achieve vehicle electrification and emissions reductions targets for the vehicle-for-hire industry”. Can Uber and Lyft drive sustainable transit in Toronto?</p></li>
 <li><p><em>The growth of precarious work.</em> In its “Working for Workers Act, 2022”, also called the “Digital Platform Workers’ Rights Act”, the Government of Ontario introduced a “minimum wage” standard. It states that “minimum wage shall be paid for each work assignment performed by a worker”, which has been interpreted as covering only “engaged time”. What are the actual levels of pay for Uber drivers, and how will “engaged time” regulations affect driver income?</p></li>
 </ul>
@@ -273,7 +271,7 @@ ul.task-list li input[type="checkbox"] {
 <p>A simple model that is independent of a particular city geography and road layout is easier for comparisons of the ridehail experience among cities. Also, a computer simulation allows “what if?” questions that may provide insights into the trade-offs faced by platform companies, municipal governments, drivers and passengers.</p>
 <div id="fig-1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="fig1.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p><img src="fig1.png" class="img-fluid figure-img" style="width:50.0%"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;1: A City in the simulation is simply a square, with C blocks on each side.</figcaption><p></p>
 </figure>
 </div>
@@ -331,7 +329,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Many cities have a central “downtown” zone where the demand for ridehail traffic is high, surrounded by suburban areas where demand is lower. For example, 60% of trips in Metro Toronto originate within “Old Toronto” and East York, even though these two make up less than 20% of the total Metro area. This inhomogeneity is built into the model as two <em>zones</em>. A central zone has sides <em>C/2</em> (so, one quarter of the city’s area) and has a higher rate of trip requests than the surrounding area, as shown in Figure 3 below. The trip destinations remain randomly distributed around the whole city. With an inhomogeneity of zero, the central zone is the same as the rest, with an inhomogeneity of one all trip requests take place in the central zone. In this way, and in the spirit of keeping the model as simple and parsimonious as possible, a single inhomogeneity parameter between zero and one captures the two zones.</p>
 <div id="fig-3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="fig3.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p><img src="fig3.png" class="img-fluid figure-img" style="width:50.0%"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;3: The red dots show the origin of trips in a small “two-zone” city if eight blocks. The central area has a higher demand than outlying suburbs.</figcaption><p></p>
 </figure>
 </div>
@@ -347,6 +345,59 @@ ul.task-list li input[type="checkbox"] {
 <section id="simulating-ridehail-in-toronto" class="level2" data-number="3.7">
 <h2 data-number="3.7" class="anchored" data-anchor-id="simulating-ridehail-in-toronto"><span class="header-section-number">3.7</span> Simulating ridehail in Toronto</h2>
 <p>Important data comes from a 2019 study by the City of Toronto and an update in 2021 (Policy &amp; Innovation Transportation Services 2019, 2021). The November 2021 update chose Thursday Feb 6, 2020 as a representative day to assess the overall state of ridehail in Toronto, pre-pandemic (p25). Relevant statistics from this study are shown in Table 1.</p>
+<table class="table">
+<caption>Table 1: Statistics for Uber trips in Toronto on Feb 6, 2020. The values come from the City of Toronto study on platform transit companies.<br>
+* = input value</caption>
+<colgroup>
+<col style="width: 47%">
+<col style="width: 26%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Quantity</th>
+<th style="text-align: right;">Value</th>
+<th style="text-align: right;">Simulation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Trips completed (R)</td>
+<td style="text-align: right;">193,902 (135/min)</td>
+<td style="text-align: right;">135 *</td>
+</tr>
+<tr class="even">
+<td>Average trip length (L)</td>
+<td style="text-align: right;">8.13km</td>
+<td style="text-align: right;">20 minutes *</td>
+</tr>
+<tr class="odd">
+<td>Average vehicle speed (v)</td>
+<td style="text-align: right;">31 km/h</td>
+<td style="text-align: right;">30 km/h *</td>
+</tr>
+<tr class="even">
+<td>Percent of time: Period 1 (available for trip)</td>
+<td style="text-align: right;">40.5%</td>
+<td style="text-align: right;">40%</td>
+</tr>
+<tr class="odd">
+<td>Percent of time: Period 2 (en-route to pick-up)</td>
+<td style="text-align: right;">11.2%</td>
+<td style="text-align: right;">12%</td>
+</tr>
+<tr class="even">
+<td>Percent of time: Period 3 (with passenger)</td>
+<td style="text-align: right;">48.3%</td>
+<td style="text-align: right;">48%</td>
+</tr>
+<tr class="odd">
+<td>Active vehicles (N)</td>
+<td style="text-align: right;">6200</td>
+<td style="text-align: right;">6000</td>
+</tr>
+</tbody>
+</table>
 <p>Metro Toronto has an area of 625 square kilometres (= 25km*25 km). In the simulation it is represented as a 60 by 60 grid. Traffic speeds are taken as an average of 30 km/h (including all stops for pickups) so each block represents 50 seconds of travel. 55% of all trips start in a central zone, and the average trip length is 20 minutes.</p>
 <p>Figure 4 shows that this simplified model can simulate an environment the scale of Toronto on a single laptop computer. It shows the results of several simulations, each with 135 trips per minute, or 200,000 in the whole day. The number of vehicles is varied, from 2000 to 10,000. The actual number of drivers on a given day will depend on the price set by the PTC, so each number of vehicles represents a possible outcome. Each simulation takes about ten minutes to reach a steady state, at which point we can take averages of the fraction of vehicles in each of the <em>P1</em>, <em>P2</em>, <em>P3</em> phases, along with average wait times.</p>
 <p>The actual number of drivers (6000), utilization rate (48%), and <em>P2</em> value (12%) are captured well by the simulation as one of the possible states for a day with 200,000 trips in Toronto. (The wait time of 5.4 minutes is not comparable to Uber’s definition, which leaves some time unaccounted for --- see above). These particular values are the result of the price and commission set by Uber.</p>
@@ -356,7 +407,7 @@ ul.task-list li input[type="checkbox"] {
 <h1 data-number="4"><span class="header-section-number">4</span> Ride Hailing cannot provide low-emissions transit</h1>
 <div id="fig-4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="fig4.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p><img src="fig4.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;4: Simulating Toronto: Wait times and vehicle phases for Feb 6, 2020. The figures at 6000 vehicles match the reported values for that day.</figcaption><p></p>
 </figure>
 </div>
@@ -366,7 +417,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Below 4000 vehicles, there are too few vehicles to keep up with demand. The <em>P1</em> value hits zero (drivers are <em>always</em> busy) but the wait time goes off the charts as drivers cannot keep up with demand. The system never reaches a steady state.</p>
 <div id="fig-5" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="fig5.jpg" class="img-fluid figure-img" style="width:70.0%"></p>
+<p><img src="fig5.jpg" class="img-fluid figure-img" style="width:100.0%"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;5: The Australian Cycling Promotion Fund is one of several groups to have produced photos like this, showing the relative space efficiency of different modes of transport. This is reproduced from the Human Transit blog of Jarrett Walker.</figcaption><p></p>
 </figure>
 </div>
@@ -378,17 +429,114 @@ ul.task-list li input[type="checkbox"] {
 <p>Uber claims it can resolve the tension by operating more efficiently and supporting a higher level of demand. Compared to taxis, whose numbers are regulated, Uber has consistently operated at higher levels of demand in major cities, but after almost ten years there is no evidence that the higher demand is the result of greater efficiency. Instead, the demand is produced mainly by lower prices, which in turn are a result of subsidised fares (Horan 2017). Uber’s record of continuing losses is shown in Figure 6.</p>
 <div id="fig-6" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="fig6.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p><img src="fig6.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;6: Uber’s losses over the last 7 years.</figcaption><p></p>
 </figure>
 </div>
 <p>It is true that with higher demand, a ridehail system can support a given wait time with fewer vehicles per trip: it generates higher utilization rates, but there are limits to this argument.</p>
 <p>Figure&nbsp;7 shows utilization rates and vehicles per trip (per minute) to sustain a six-minute wait time in a Toronto-like environment. It shows that an increase in demand does increase utilization, but there is a levelling off as demand increases. Even if the trip volume in Toronto were to increase to 200,000 per day (a 50% increase over the pre-pandemic numbers), the utilization rate would still increase to only 54% if wait time were kept at the same value.</p>
 <div class="page-columns page-full"><p>Other cities, with New York City and San Francisco as outliers, have utilization rates (by time) of 50 to 60%.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Toronto has a level of demand that is lower than Chicago, which may provide a reasonable upper bound to what can be expected of around 60%.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Utilization rates measured by distance may be slightly larger, as drivers drive slower when not engaged in a trip.</p></li></div></div>
+<table class="table">
+<caption>Table 2: Utilization rates for Uber in USA cities. Rates measured by distance will be higher than those measured by time as drivers cover more distance in a given time when engaged in a trip. 2019 valus are from an Uber-commissioned report by Fehr &amp; Peers; 2017 values from a report by Bruce Schaller, and 2015 values from a report by Judd Cramer and Alan B. Krueger for the NBER. The 2020 values for Seattle come from reports by Hyman et al (2020a) and by Parrot &amp; Reich (2020b).</caption>
+<thead>
+<tr class="header">
+<th>City</th>
+<th>Year</th>
+<th>Time or distance?</th>
+<th>Utilization rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Chicago</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Chicago</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Boston</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Boston</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p>There are two ways that utilization rates may exceed these estimates. The first is for the number of drivers to be limited, so that wait times are longer. The second is for trips to concentrate even more heavily into the high traffic central zone. But this central core is well served by mass transit, and any gain in ridehail trips would be achieved by taking riders away from mass transit and putting them in cars (Young, Allen, and Farber 2020), and adding to problems of congestion (Erhardt et al.&nbsp;2019).</p>
 <div id="fig-7" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="fig7.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p><img src="fig7.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;7: The number of vehicles N and utilization rate P3 required to support a wait time of 6 minutes (w=0.30). While the utilization rate (P3) does increase with demand, the improvements level off as demand increases. Meanwhile, the number of vehicles required keeps growing (green line, at left).</figcaption><p></p>
 </figure>
 </div>
@@ -430,7 +578,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Uber drivers range from the casual driver who uses a personal car for a few hours a week, to full-time drivers putting in over 40 hours per week and for whom the car is primarily a means of making money. There is certainly room for debate about whether the full cost of car ownership is appropriate to include for the casual driver, but here the topic is <em>minimum</em> wage, not average wage, and the focus needs to be on those full-time drivers for whom the full costs of vehicle ownership, depreciation and maintenance are part of the job. This set of full-time workers also includes drivers who split their time between gig work tasks (for example, meal delivery and ridehail), but spend a full working week as gig workers.</p>
 <div id="fig-8" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="fig8.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p><img src="fig8.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;8: In Chicago, full-time drivers (defined as those who drive over 275 trips per month), make up only about one in six drivers, but are responsible for over 40% of trips.</figcaption><p></p>
 </figure>
 </div>
@@ -473,7 +621,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="6.2" class="anchored" data-anchor-id="pay-is-not-affected-by-fare-changes"><span class="header-section-number">6.2</span> Pay is not affected by fare changes</h2>
 <div id="fig-9" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="fig9.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p><img src="fig9.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;9: “Before” and “After” a change in fare. While the change affects the number of vehicles and passenger wait times, driver income does not change.</figcaption><p></p>
 </figure>
 </div>
