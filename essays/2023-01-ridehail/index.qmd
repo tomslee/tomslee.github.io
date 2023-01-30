@@ -11,14 +11,16 @@ abstract-title: In brief
 image: front_image.png
 toc: true
 toc-title: Contents
+toc-location: left
 reference-location: margin
-citation-location: margin
+# citation-location: margin
 # cap-location: margin
 title-block-banner: true
 reading-time: true
 number-sections: true
 number-depth: 2
 callout-appearance: simple
+bibliography: bibliography.bib
 ---
 
 ::: callout-note
@@ -31,7 +33,7 @@ The "Uber Files" revelations of summer 2022 showed that the company "broke laws,
 
 Unfortunately, Uber continues to take governments for a ride. This report addresses two topics:
 
--   **Emissions.** Uber makes big but vague promises about its impact on the environment, with its tagline "Your city. Our promise. Uber will be a zero-emission platform by 2040" (Uber, Inc. 2022c)). The City of Toronto takes this claim seriously by pursuing collaborative "emissions reductions targets" (City of Toronto 2021b).
+-   **Emissions.** Uber makes big but vague promises about its impact on the environment, with its tagline "Your city. Our promise. Uber will be a zero-emission platform by 2040" [@uber_inc_our_2022]). The City of Toronto takes this claim seriously by pursuing collaborative "emissions reductions targets" [@city_of_toronto_update_2021].
 
     Our computer simulations show that Uber vehicles in Toronto, which had a passenger in the car less than half the time in 2020, are unlikely to ever have passengers in the car for more than 60% of the time. At least 40% of the time, Uber vehicles in Toronto will be driving empty.
 
@@ -55,7 +57,7 @@ The unique nature of "gig work" as practiced by Uber and other platform companie
 
     Like many other jurisdictions, the Province of Ontario and the City of Toronto are introducing policies to accommodate "gig work" into the broader framework of labour standards, and to align the operations of Private Transportation Companies (PTCs) with public priorities concerning transit, including efficiency, congestion, emissions, accessibility and more. Through computer simulations that capture poorly-understood dynamics of gig work, this report addresses these two current policy directions:
 
--   *Congestion and emissions.* The City of Toronto takes seriously Uber's claim that it can reduce emissions through fleet electrification (City of Toronto 2021b), and is "seeking to update by-laws to achieve vehicle electrification and emissions reductions targets for the vehicle-for-hire industry". Can Uber and Lyft drive sustainable transit in Toronto?
+-   *Congestion and emissions.* The City of Toronto takes seriously Uber's claim that it can reduce emissions through fleet electrification [@city_of_toronto_update_2021], and is "seeking to update by-laws to achieve vehicle electrification and emissions reductions targets for the vehicle-for-hire industry". Can Uber and Lyft drive sustainable transit in Toronto?
 
 -   *The growth of precarious work.* In its "Working for Workers Act, 2022", also called the "Digital Platform Workers' Rights Act", the Government of Ontario introduced a "minimum wage" standard. It states that "minimum wage shall be paid for each work assignment performed by a worker", which has been interpreted as covering only "engaged time". What are the actual levels of pay for Uber drivers, and how will "engaged time" regulations affect driver income?
 
@@ -63,9 +65,9 @@ The role of Uber drivers waiting, unpaid, for the platform to assign them a trip
 
 # Computer simulation {#computer-simulation}
 
-Discussion and debate concerning Uber and other PTCs is vigorous but often hampered by lack of reliable data. The problem is made worse by the compromised nature of research based on negotiated or commissioned access to PTC data. The obvious conflicts of interest for researchers who benefit from access to corporate data (and sometimes direct payment) while claiming to be objective, were described some years ago by the International Labour Organization and others (Berg and Johnston 2019) but the recent "Uber Files" revelations provided essential confirmation and specifics (Lawrence 2022; Mojtehedzadeh 2022; The International Consortium of Investigative Journalists 2022).
+Discussion and debate concerning Uber and other PTCs is vigorous but often hampered by lack of reliable data. The problem is made worse by the compromised nature of research based on negotiated or commissioned access to PTC data. The obvious conflicts of interest for researchers who benefit from access to corporate data (and sometimes direct payment) while claiming to be objective, were described some years ago by the International Labour Organization and others [@berg2019] but the recent "Uber Files" revelations provided essential confirmation and specifics [@lawrence2022]; [@mojtehedzadeh_uber_2022]; [@the_international_consortium_of_investigative_journalists_uber_2022]).
 
-Some cities have negotiated or required access to ridehail data from the PTCs, but that data is not always accessible to the broader public. In those few cases where cities do make data public, most prominently Chicago (City of Chicago 2022) and New York City (New York City Open Data 2022), key elements are missing, such as the time that drivers spend on the platform but without a trip. The City of Toronto is now collecting detailed data from ridehail platforms, including time spent without a trip, but this data is not currently available for outside analysis beyond the City and its partners.
+Some cities have negotiated or required access to ridehail data from the PTCs, but that data is not always accessible to the broader public. In those few cases where cities do make data public, most prominently Chicago [@cityofchicago2022] and New York City [@new_york_city_open_data_uber_2022], key elements are missing, such as the time that drivers spend on the platform but without a trip. The City of Toronto is now collecting detailed data from ridehail platforms, including time spent without a trip, but this data is not currently available for outside analysis beyond the City and its partners.
 
 This report attempts to address the lack of reliable data. It presents a simple computer simulation of a ridehail system in a city, which can be calibrated against broad aggregate data, which are more widely available than detailed statistics. The simulation is intended to be as simple as possible while still capturing the essential elements of a ridehail system.
 
@@ -109,7 +111,7 @@ Two other phrases common in the industry are also used. The combination of *P1* 
 
 A trip has an *origin* and a *destination*. In the simplest simulation, each is chosen randomly from intersections in the city, except that the two locations cannot be the same.
 
-Each vehicle can take only one trip at a time. This can represent one passenger or a group of passengers, but it does not include "shared trips" such as the Uber Pool service where passengers request trips separately but share a vehicle for some portion of the trip. Ridehail operators have repeatedly tried to introduce such systems but, even before Covid, such shared trips made up a small portion of the total trips, and even when a passenger requested an "Uber Pool" trip they often ended up not sharing the vehicle (Policy & Innovation Transportation Services 2019). The simulation focuses entirely on "UberX-like" systems.
+Each vehicle can take only one trip at a time. This can represent one passenger or a group of passengers, but it does not include "shared trips" such as the Uber Pool service where passengers request trips separately but share a vehicle for some portion of the trip. Ridehail operators have repeatedly tried to introduce such systems but, even before Covid, such shared trips made up a small portion of the total trips, and even when a passenger requested an "Uber Pool" trip they often ended up not sharing the vehicle [@policy__innovation_transportation_services_transportation_2019]. The simulation focuses entirely on "UberX-like" systems.
 
 From the passenger's point of view, trip time is in one of two phases: waiting or traveling. For randomly-selected trip origins and destinations, the average trip length in a city with *C* blocks along each side is *C/2*.
 
@@ -147,15 +149,15 @@ The use of random locations for trip destinations implies an average trip length
 
 ## Implementation {#implementation}
 
-The simulation is implemented in the Python programming language, and the code is available on GitHub [here](https://github.com/tomslee/ridehail) (Slee 2022b). It can be run as a desktop application from a command line but is also available at a web site, [here](https://tomslee.github.io/ridehail/lab/) (Slee 2022a).
+The simulation is implemented in the Python programming language, and the code is available on GitHub [here](https://github.com/tomslee/ridehail). It can be run as a desktop application from a command line but is also available at a web site, [here](https://tomslee.github.io/ridehail/lab/).
 
 Simulations using the desktop application are controlled by a configuration file, which at its simplest specifies the size of the city (number of blocks on each side), the base demand rate (number of trip requests each move), and the number of vehicles.
 
-The simulation is also available at a web site, where the configuration is set in the browser. The simulation runs in the browser (not at a server), using the Pyodide python distribution (The Pyodide development team 2022), and is the same code as the desktop. The web site is currently a "laboratory", which allows experimentation but does not provide a way to save results. All results in this report are taken from desktop simulations.
+The simulation is also available at a web site, where the configuration is set in the browser. The simulation runs in the browser (not at a server), using the Pyodide python distribution [@thepyodidedevelopmentteam2022], and is the same code as the desktop. The web site is currently a "laboratory", which allows experimentation but does not provide a way to save results. All results in this report are taken from desktop simulations.
 
 ## Simulating ridehail in Toronto {#simulating-ridehail-in-toronto}
 
-Important data comes from a 2019 study by the City of Toronto and an update in 2021 (Policy & Innovation Transportation Services 2019, 2021). The November 2021 update chose Thursday Feb 6, 2020 as a representative day to assess the overall state of ridehail in Toronto, pre-pandemic (p25). Relevant statistics from this study are shown in Table 1.
+Important data comes from a 2019 study by the City of Toronto and an update in 2021 [@policyinnovationtransportationservices2021; @policyinnovationtransportationservices2019]. The November 2021 update chose Thursday Feb 6, 2020 as a representative day to assess the overall state of ridehail in Toronto, pre-pandemic (p25). Relevant statistics from this study are shown in Table 1.
 
 | Quantity                                        |             Value |    Simulation |
 |----------------------------------|------------------:|------------------:|
@@ -198,7 +200,7 @@ The Province of Ontario and the City of Toronto invest in public transit for man
 
 A trip by Uber is always going to produce even more emissions and take even more road space than a trip by a private car because Uber drivers spend half their time "deadheading'.
 
-Uber claims it can resolve the tension by operating more efficiently and supporting a higher level of demand. Compared to taxis, whose numbers are regulated, Uber has consistently operated at higher levels of demand in major cities, but after almost ten years there is no evidence that the higher demand is the result of greater efficiency. Instead, the demand is produced mainly by lower prices, which in turn are a result of subsidised fares (Horan 2017). Uber's record of continuing losses is shown in Figure 6.
+Uber claims it can resolve the tension by operating more efficiently and supporting a higher level of demand. Compared to taxis, whose numbers are regulated, Uber has consistently operated at higher levels of demand in major cities, but after almost ten years there is no evidence that the higher demand is the result of greater efficiency. Instead, the demand is produced mainly by lower prices, which in turn are a result of subsidised fares [@horan2017]. Uber's record of continuing losses is shown in Figure 6.
 
 ![Uber's losses over the last 7 years.](fig6.png){#fig-6 width="100%"}
 
@@ -210,26 +212,28 @@ Other cities, with New York City and San Francisco as outliers, have utilization
 
 [^1]: Utilization rates measured by distance may be slightly larger, as drivers drive slower when not engaged in a trip.
 
-| City    | Year | Time or distance? | Utilization rate |
-|---------|------|-------------------|------------------|
-| Chicago |      |                   |                  |
-| Chicago |      |                   |                  |
-| Boston  |      |                   |                  |
-| Boston  |      |                   |                  |
-|         |      |                   |                  |
-|         |      |                   |                  |
-|         |      |                   |                  |
-|         |      |                   |                  |
-|         |      |                   |                  |
-|         |      |                   |                  |
-|         |      |                   |                  |
-|         |      |                   |                  |
-|         |      |                   |                  |
-|         |      |                   |                  |
+| City          | Year  | Time or distance? | Utilization rate |
+|---------------|-------|-------------------|-----------------:|
+| Chicago       | 2015  | Distance          |              59% |
+| Chicago       | 2019  | Distance          |              55% |
+| Boston        | 2016  | Time              |              47% |
+| Boston        | 2019  | Distance          |              55% |
+| Los Angeles   | 2016  | Time              |              42% |
+| Los Angeles   | 2019  | Distance          |              60% |
+| New York City | 2016  | Time              |              51% |
+| New York City | 2017  | Distance          |              59% |
+| San Francisco | 2016  | Time              |              55% |
+| San Francisco | 2017  | Distance          |              67% |
+| San Francisco | 2019  | Distance          |              64% |
+| Seattle       | 2016  | Time              |              44% |
+| Seattle       | 2019  | Distance          |              53% |
+| Seattle       | 2020a | Time              |              60% |
+| Seattle       | 2020b | Time              |              51% |
+| Washington DC | 2019  | Distance          |              55% |
 
-: Table 2: Utilization rates for Uber in USA cities. Rates measured by distance will be higher than those measured by time as drivers cover more distance in a given time when engaged in a trip. 2019 valus are from an Uber-commissioned report by Fehr & Peers; 2017 values from a report by Bruce Schaller, and 2015 values from a report by Judd Cramer and Alan B. Krueger for the NBER. The 2020 values for Seattle come from reports by Hyman et al (2020a) and by Parrot & Reich (2020b).
+: Table 2: Utilization rates for Uber in USA cities. Rates measured by distance will be higher than those measured by time as drivers cover more distance in a given time when engaged in a trip. 2019 valus are from an Uber-commissioned report [@balding_estimated_2019]; 2017 values from a report by Bruce Schaller [@schaller_empty_2017], and 2015 values from an NBER report by [@cramer_disruptive_2016]. The 2020 values for Seattle come from reports by [@hyman_platform_2020] and by [@parrott_minimum_2020].
 
-There are two ways that utilization rates may exceed these estimates. The first is for the number of drivers to be limited, so that wait times are longer. The second is for trips to concentrate even more heavily into the high traffic central zone. But this central core is well served by mass transit, and any gain in ridehail trips would be achieved by taking riders away from mass transit and putting them in cars (Young, Allen, and Farber 2020), and adding to problems of congestion (Erhardt et al. 2019).
+There are two ways that utilization rates may exceed these estimates. The first is for the number of drivers to be limited, so that wait times are longer. The second is for trips to concentrate even more heavily into the high traffic central zone. But this central core is well served by mass transit, and any gain in ridehail trips would be achieved by taking riders away from mass transit and putting them in cars [@young2020], and adding to problems of congestion [@erhardt2019].
 
 ![The number of vehicles N and utilization rate P3 required to support a wait time of 6 minutes (w=0.30). While the utilization rate (P3) does increase with demand, the improvements level off as demand increases. Meanwhile, the number of vehicles required keeps growing (green line, at left).](fig7.png){#fig-7 width="100%"}
 
@@ -241,7 +245,7 @@ The short wait time has been one of the main reasons for Uber's popularity. But 
 
 Figure 4, above, shows that a wait time of 6.4 minutes rather than 5.4 minutes would remove 1200 vehicles from the system, and increase utilization rate to 60%. If Uber seeks to reduce wait time by another minute, to 4.4 minutes, it will add another 2000 vehicles to Toronto roads, with their attendant congestion and emissions. As an average, we can say that each minute of reduced wait time adds 1600 vehicles to the streets of Toronto.
 
-Uber could add thousands of empty vehicles to the streets of Toronto at a time when the city is looking to achieve a 65% reduction in transportation emissions by 2030 (City of Toronto 2021a). It is known that, broadly speaking, Uber competes with public transit for ridership (J. D. Hall, Palsson, and Price 2018).
+Uber could add thousands of empty vehicles to the streets of Toronto at a time when the city is looking to achieve a 65% reduction in transportation emissions by 2030 (City of Toronto 2021a). It is known that, broadly speaking, Uber competes with public transit for ridership [@hall2018].
 
 To meet its environmental goals, the City of Toronto should limit the role of Uber and Lyft to services that are ancillary to, not competitive with, public transit.
 
@@ -257,7 +261,7 @@ If passengers are charged an effective price per minute fare *p*, with the rideh
 
 $$I\  = \ P_{3}\ .\ p\ .\ (1\ –\ m)$$
 
-Prices for a trip (again, pre-pandemic) were taken from taxi aggregation sites and media reports. These are Uber's "up-front" fare structure (Uber, Inc. 2022b). Of these, the base fare and booking fee go to Uber, and the company also takes a commission on the cost per minute and per km.
+Prices for a trip (again, pre-pandemic) were taken from taxi aggregation sites and media reports. These are Uber's "up-front" fare structure [@uber_inc_frequently_2022]. Of these, the base fare and booking fee go to Uber, and the company also takes a commission on the cost per minute and per km.
 
 From these figures, the fare for the average 16-minute, 8 km ride would be
 
@@ -267,7 +271,7 @@ For pay purposes, this needs to be converted into a total fare per hour:
 
 $$\$ 14.61\ *\ 60\ /\ 16\  = \ \$ 54.60$$
 
-Uber reported its "take rate" for global mobility services in Q1 2020 as 23% (see the 2020 column in the quarterly earnings announcement for Q1 2021 "Take Rates" table (Uber, Inc. 2021)). Uber does not release its city-by-city take rates, and has become increasingly opaque as to the amount it takes, so this global estimate is the best available. Estimated average driver income while driving passengers (I~P3~), before costs, is therefore
+Uber reported its "take rate" for global mobility services in Q1 2020 as 23% (see the 2020 column in the quarterly earnings announcement for Q1 2021 "Take Rates" table [@uber_inc_uber_2021]). Uber does not release its city-by-city take rates, and has become increasingly opaque as to the amount it takes, so this global estimate is the best available. Estimated average driver income while driving passengers (I~P3~), before costs, is therefore
 
 $$I_{P3}\  = \ 77\%\ *\ \$ 54.60\  = \ \$ 42.04$$
 
@@ -287,13 +291,13 @@ $$I\  = \ \$ 20.18\  - \ \$ 12.28\  = \ \$ 7.90$$
 
 ## Inclusion of P1 time and costs {#inclusion-of-p1-time-and-costs}
 
-Estimates of gig-work incomes have varied widely, with two major sources of disagreement: what expenses to count, and whether to include time between gigs ("*P1* time") as hours worked. For example, two competing reports on the situation in Seattle adopted different approaches (Hyman et al. 2020; Parrott and Reich 2020). This report makes a case for including all *P1* time, and for including a full set of driver costs, when the purpose is to provide a minimum wage.
+Estimates of gig-work incomes have varied widely, with two major sources of disagreement: what expenses to count, and whether to include time between gigs ("*P1* time") as hours worked. For example, two competing reports on the situation in Seattle adopted different approaches [@hyman2020; @parrott2020]. This report makes a case for including all *P1* time, and for including a full set of driver costs, when the purpose is to provide a minimum wage.
 
 Uber drivers range from the casual driver who uses a personal car for a few hours a week, to full-time drivers putting in over 40 hours per week and for whom the car is primarily a means of making money. There is certainly room for debate about whether the full cost of car ownership is appropriate to include for the casual driver, but here the topic is *minimum* wage, not average wage, and the focus needs to be on those full-time drivers for whom the full costs of vehicle ownership, depreciation and maintenance are part of the job. This set of full-time workers also includes drivers who split their time between gig work tasks (for example, meal delivery and ridehail), but spend a full working week as gig workers.
 
 ![In Chicago, full-time drivers (defined as those who drive over 275 trips per month), make up only about one in six drivers, but are responsible for over 40% of trips.](fig8.png){#fig-8 width="100%"}
 
-Despite Uber's popular image as a platform for casual drivers, full-time drivers provide the core of the service. Figure 8, based on Chicago data (City of Chicago 2022), shows that full-time drivers provide between a third and a half of all trips.
+Despite Uber's popular image as a platform for casual drivers, full-time drivers provide the core of the service. Figure 8, based on Chicago data [@cityofchicago2022], shows that full-time drivers provide between a third and a half of all trips.
 
 There are a number of justifications for including the full *P1* time in the estimate of hours worked, especially for full-time drivers:
 
@@ -317,9 +321,9 @@ The estimates here reflect the pre-pandemic situation. The post-pandemic world i
 
 # "Engaged time" standards do not work for gig workers {#engaged-time-standards-do-not-work-for-gig-workers}
 
-The approach of the Digital Platform Workers' Rights Act (Legislative Assembly of Ontario 2022) to a "right to minimum wage" for gig-workers fails, not just because the numbers are too low, but because the principle of addressing only "engaged time" is mistaken.
+The approach of the Digital Platform Workers' Rights Act [@legislative_assembly_of_ontario_working_2022] to a "right to minimum wage" for gig-workers fails, not just because the numbers are too low, but because the principle of addressing only "engaged time" is mistaken.
 
-The question of "engaged time" wage extends far beyond Ontario. Seattle recently introduced a minimum wage for Uber drivers based on engaged time (Herbold and Lewis 2022). In its "Frequently Asked Questions -- Worker Protections", Uber UK explains its approach to the National Living Wage (Uber, Inc. 2022a):
+The question of "engaged time" wage extends far beyond Ontario. Seattle recently introduced a minimum wage for Uber drivers based on engaged time [@herbold_payup_2022]. In its "Frequently Asked Questions -- Worker Protections", Uber UK explains its approach to the National Living Wage [@uber_inc_frequently_2022]:
 
 > You earn the National Living Wage from the time you accept a trip on the app to the point at which the trip is completed: this is called the engaged time. 
 >
@@ -357,9 +361,9 @@ It may seem contradictory to claim that Uber has been subsidising drivers by tak
 
 ## Model validation {#model-validation}
 
-A recent study from California provides validation of the model's findings (McCullough et al. 2022). There, a platform-company funded ballot initiative (Proposition 22) at least temporarily classified ride-hail drivers as independent contractors, ensuring that compensation and benefits were based on engaged time rather than hours worked. The National Equity Atlas partnered with a drivers' union, Rideshare Drivers United, to obtain real-time measures of earnings and benefits in key markets. They found that drivers took home, on average, net earnings of US\$6.20 per hour; half that amount if drivers had to pay health benefits out of pocket. Only 10% of drivers were able to access the company's portable health benefits plan, as eligibility was set at a minimum of 25 hours engaged time per week.
+A recent study from California provides validation of the model's findings [@mccullough_prop_2022]. There, a platform-company funded ballot initiative (Proposition 22) at least temporarily classified ride-hail drivers as independent contractors, ensuring that compensation and benefits were based on engaged time rather than hours worked. The National Equity Atlas partnered with a drivers' union, Rideshare Drivers United, to obtain real-time measures of earnings and benefits in key markets. They found that drivers took home, on average, net earnings of US\$6.20 per hour; half that amount if drivers had to pay health benefits out of pocket. Only 10% of drivers were able to access the company's portable health benefits plan, as eligibility was set at a minimum of 25 hours engaged time per week.
 
-The insensitivity of driver income to the fare per trip is consistent with research from Uber itself (J. V. Hall, Horton, and Knoepﬂe 2021). With minor differences, the same principle applies to other "gig-economy" platforms, whether it is meal delivery, food delivery, or another task. The "engaged rate" has little to do with the actual hourly rate. Workers in a gig-economy model can never advance so long as entry and exit is free.
+The insensitivity of driver income to the fare per trip is consistent with research from Uber itself [@hall_pricing_2021]. With minor differences, the same principle applies to other "gig-economy" platforms, whether it is meal delivery, food delivery, or another task. The "engaged rate" has little to do with the actual hourly rate. Workers in a gig-economy model can never advance so long as entry and exit is free.
 
 # Conclusions {#conclusions}
 
@@ -383,76 +387,10 @@ Enshrining the concept of "engaged time" into law could accelerate the transform
 
 There are better paths forward for gig workers, opening up the possibility of a better wage. Here are some examples.
 
-1.  *Real hourly pay for gig workers (the EU model).* In several European countries, Gig employers have begun paying gig workers at hourly rates, as legal and regulatory frameworks evolve. Just Eat, for example, uses employee models in countries where required (certain jurisdictions in continental Europe, Israel, parts of the UK), while in other jurisdictions they list drivers as independent contractors (Just Eat Takeaway.com 2021). In Norway, Foodora delivery drivers working more than 10 hours per week were able to negotiate real hourly rates (not just for engaged time) with extra pay per delivery (Eurofound 2022).  Scheduling deliveries remains the responsibility of the employer - who is thus incentivized to minimise unengaged/wait time (Butler 2021). 
+1.  *Real hourly pay for gig workers (the EU model).* In several European countries, Gig employers have begun paying gig workers at hourly rates, as legal and regulatory frameworks evolve. Just Eat, for example, uses employee models in countries where required (certain jurisdictions in continental Europe, Israel, parts of the UK), while in other jurisdictions they list drivers as independent contractors [@just_eat_takeawaycom_annual_2021]. In Norway, Foodora delivery drivers working more than 10 hours per week were able to negotiate real hourly rates (not just for engaged time) with extra pay per delivery [@eurofound_collective_2022]  Scheduling deliveries remains the responsibility of the employer - who is thus incentivized to minimise unengaged/wait time (Butler 2021). 
 
-2.  *Restrict supply to meet demand (the New York City model).* In the wake of driver protests, New York adopted a series of regulations in 2018 to accomplish a minimum pay standard for all for-hire vehicles, to ensure drivers took home at least \$17.22 per hour after expenses (r[ecently raised by 5.3%](https://gothamist.com/news/it-will-take-care-of-our-family-nycs-for-hire-vehicle-drivers-get-53-raise)).  New licenses were paused and the City's Taxi and Limousine Commission assesses every six months whether additional licenses are needed, issuing new licenses for the first time in four years in August 2022 (restricted to electric vehicles). Per minute and per mile rates based on recent estimates of engaged time, [measured and adjusted approximately every six months](https://www1.nyc.gov/site/tlc/about/driver-pay-rates.page). Wait times remain well within the 4.5 to 6.6 minute range considered acceptable by the City (NYC Taxi and Limousine Commission 2022).
+2.  *Restrict supply to meet demand (the New York City model).* In the wake of driver protests, New York adopted a series of regulations in 2018 to accomplish a minimum pay standard for all for-hire vehicles, to ensure drivers took home at least \$17.22 per hour after expenses ([recently raised by 5.3%](https://gothamist.com/news/it-will-take-care-of-our-family-nycs-for-hire-vehicle-drivers-get-53-raise)).  New licenses were paused and the City's Taxi and Limousine Commission assesses every six months whether additional licenses are needed, issuing new licenses for the first time in four years in August 2022 (restricted to electric vehicles). Per minute and per mile rates based on recent estimates of engaged time, [measured and adjusted approximately every six months](https://www1.nyc.gov/site/tlc/about/driver-pay-rates.page). Wait times remain well within the 4.5 to 6.6 minute range considered acceptable by the City [@nyc_taxi_and_limousine_commission_august_2022].
 
 # The author {#the-author}
 
-*Tom Slee has a PhD in theoretical chemistry, and has worked in the software industry for 30 years. His interest in what was then called the Sharing Economy led to the publication of "What's Yours is Mine: Against the Sharing Economy" (OR Books, 2016), which was translated into seven languages. A data-driven investigation of Airbnb was reported in the New York Times* *(Bromwich 2016). He lives and works in Waterloo, Ontario.*
-
-# Bibliography {#bibliography}
-
-Berg, Janine, and Hannah Johnston. 2019. "Too Good to Be True? A Comment on Hall and Krueger's Analysis of the Labor Market for Uber's Driver-Partners." *ILR Review* 72(1): 39--68.
-
-Bromwich, Jonah Engel. 2016. "Airbnb Purged New York Listings to Create a Rosier Portrait, Report Says." *The New York Times*. https://www.nytimes.com/2016/02/12/business/airbnb-purged-new-york-listings-to-create-a-rosier-portrait-report-says.html (October 28, 2022).
-
-Butler, Sarah. 2021. "Just Eat to Offer 1,500 Liverpool Couriers Minimum Hourly Rate and Sick Pay." *The Guardian*. https://www.theguardian.com/business/2021/apr/21/just-eat-to-offer-1500-liverpool-couriers-minimum-hourly-rate-and-sick-pay (October 27, 2022).
-
-City of Chicago. 2022. "Transportation Network Providers - Trips." *Chicago Data Portal*. https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips/m6dm-c72p (August 16, 2022).
-
-City of Toronto. 2021a. *TransformTO Net Zero Strategy: A Climate Action Pathway to 2030 and Beyond*.
-
----------. 2021b. *Update on Outstanding Vehicle-for-Hire Directives*. http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2021.GL27.19 (August 13, 2022).
-
-Erhardt, Gregory D. et al. 2019. "Do Transportation Network Companies Decrease or Increase Congestion?" *Science Advances* 5(5): eaau2670.
-
-Eurofound. 2022. "Collective agreement between Foodora and the United Federation of Trade Unions (Fellesforbundet)." https://www.eurofound.europa.eu/fi/data/platform-economy/initiatives/collective-agreement-between-foodora-and-the-united-federation-of-trade-unions-fellesforbundet (October 27, 2022).
-
-Hall, Jonathan D., Craig Palsson, and Joseph Price. 2018. "Is Uber a Substitute or Complement for Public Transit?" *Journal of Urban Economics* 108: 36--50.
-
-Hall, Jonathan V, John J Horton, and Daniel T Knoepﬂe. 2021. "Pricing in Designed Markets: The Case of Ride-Sharing.": 54.
-
-Herbold, Lisa, and Andrew Lewis. 2022. "PayUp Legislation - Council \| Seattle.Gov." *Seattle City Council*. https://www.seattle.gov/council/issues/payup (October 28, 2022).
-
-Horan, Hubert. 2017. *Will the Growth of Uber Increase Economic Welfare?* Rochester, NY: Social Science Research Network. SSRN Scholarly Paper. https://papers.ssrn.com/abstract=2933177 (September 19, 2018).
-
-Hyman, Louis et al. 2020. "Platform Driving In Seattle." https://ecommons.cornell.edu/handle/1813/74305 (October 4, 2021).
-
-Just Eat Takeaway.com. 2021. *Annual Report 2021*. Just Eat Takeaway.com. https://s3.eu-central-1.amazonaws.com/takeaway-corporatewebsite-dev/JET-JV2021-080322.pdf#page=7 (October 27, 2022).
-
-Lawrence, Felicity. 2022. "Uber Paid Academics Six-Figure Sums for Research to Feed to the Media." *The Guardian*. https://www.theguardian.com/news/2022/jul/12/uber-paid-academics-six-figure-sums-for-research-to-feed-to-the-media (August 7, 2022).
-
-Legislative Assembly of Ontario. 2022. *Working for Workers Act, 2022*. https://www.ola.org/en/legislative-business/bills/parliament-42/session-2/bill-88 (August 7, 2022).
-
-McCullough, Eliza et al. 2022. *Prop 22 Depresses Wages and Deepens Inequities for California Workers*. National Equity Atlas. https://nationalequityatlas.org/prop22-paystudy (October 27, 2022).
-
-Mojtehedzadeh, Sara. 2022. "The Uber Files: A Kill Switch, Intense Lobbying and Driver Exploitation. Leaked Documents Reveal 'Cutthroat' Tactics That Built Ride-Hailing Empire." *The Toronto Star*. https://www.thestar.com/news/investigations/2022/07/10/uber-files-reveal-playbook-that-fueled-ride-share-firms-rise.html (August 13, 2022).
-
-New York City Open Data. 2022. "Uber Data." *New York City Open Data*. https://data.cityofnewyork.us/Transportation/uber-Data/gre9-vvjv (August 16, 2022).
-
-NYC Taxi and Limousine Commission. 2022. *August 2022 For-Hire Vehicle License Review*. New York City Taxi and Limousine Commission and Department of Transportation. https://www1.nyc.gov/assets/tlc/downloads/pdf/license-pause-report-2022-08.pdf (October 27, 2022).
-
-Parrott, James A., and Michael Reich. 2020. *A Minimum Compensation Standard for Seattle TNC Drivers*. Cnter for New York City Affairs. https://irle.berkeley.edu/files/2020/07/Parrott-Reich-Seattle-Report_July-2020.pdf (October 4, 2021).
-
-Policy & Innovation Transportation Services. 2019. *The Transportation Impacts of Vehicle-for-Hire in the City of Toronto*. City of Toronto. https://www.toronto.ca/wp-content/uploads/2019/06/96c7-Report_v1.0_2019-06-21.pdf (December 16, 2021).
-
----------. 2021. *The Transportation Impacts of Vehicle-for-Hire in the City of Toronto: October 2018 to July 2021*. City of Toronto. https://www.toronto.ca/wp-content/uploads/2021/11/98cd-VFHTransportationImpacts2021-11-23.pdf (December 16, 2021).
-
-Slee, Tom. 2022a. "Ridehail Laboratory." https://tomslee.github.io/ridehail/lab/ (August 7, 2022).
-
----------. 2022b. "Ridehail Simulation." https://github.com/tomslee/ridehail (August 7, 2022).
-
-The International Consortium of Investigative Journalists. 2022. "The Uber Files." https://www.icij.org/investigations/uber-files/ (August 7, 2022).
-
-The Pyodide development team. 2022. "Pyodide/Pyodide." https://doi.org/10.5281/zenodo.5156931 (August 7, 2022).
-
-Uber, Inc. 2021. "Uber Announces Results for First Quarter 2021." https://investor.uber.com/news-events/news/press-release-details/2021/Uber-Announces-Results-for-First-Quarter-2021/ (October 27, 2022).
-
----------. 2022a. "Frequently Asked Questions - Worker Protections." *Uber Blog*. https://www.uber.com/blog/driver-worker-faq/ (October 28, 2022).
-
----------. 2022b. "How Are Fares Calculated? - Uber Help." *Uber*. https://help.uber.com/riders/article/how-are-fares-calculated-?nodeId=d2d43bbc-f4bb-4882-b8bb-4bd8acf03a9d (October 27, 2022).
-
----------. 2022c. "Our Road to Zero Emissions." *Uber*. https://www.uber.com/ca/en/about/sustainability/ (November 29, 2021).
-
-Young, Mischa, Jeff Allen, and Steven Farber. 2020. "Measuring When Uber Behaves as a Substitute or Supplement to Transit: An Examination of Travel-Time Differences in Toronto." *Journal of Transport Geography* 82: 102629.
+*Tom Slee has a PhD in theoretical chemistry, and has worked in the software industry for 30 years. His interest in what was then called the Sharing Economy led to the publication of "What's Yours is Mine: Against the Sharing Economy" (OR Books, 2016), which was translated into seven languages. A data-driven investigation of Airbnb was reported in the New York Times* *. He lives and works in Waterloo, Ontario.*
