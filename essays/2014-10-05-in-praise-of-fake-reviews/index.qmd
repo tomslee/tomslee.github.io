@@ -232,7 +232,3 @@ And maybe a "fake review" should be seen as a commitment on the part of the rest
 Ratings do not always mean what data scientists would like them to mean. Human expressions are protean, and no attempt by Yelp or others to pin them down will succeed completely. There is something postmodern about ratings, just as any other human expression. We imbue them with meaning and intent outside of what the system wants, and there is no objective fact behind it all that is the "true" rating. *Il n'y a pas de hors-click*.
 
 Reputation is a multi-faceted, qualitative concept. It has been pushed through a meat-grinder by digital reputation systems and has come out the other side homogenized, devoid of texture, but easier to digest. There's nothing inherently wrong with reputation systems by themselves, but giving them too much authority or influence will inevitably throw up bad incentives on the part of the system owner and those taking part in the reviews. Before we declare "fake reviews" to be a crime or an obvious case of bad morals, we at least need to demand some accountability from reputation site owners.
-
-## Footnotes:
-
-1 
