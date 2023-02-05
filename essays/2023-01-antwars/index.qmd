@@ -10,7 +10,8 @@ abstract: >
 abstract-title: ""
 date: 2023-01-16
 categories:
-- essays
+- Essays
+- Ant Wars
 bibliography: antwar-bibliography.bib
 toc-title: Contents
 # reference-location: margin

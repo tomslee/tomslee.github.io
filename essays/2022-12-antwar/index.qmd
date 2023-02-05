@@ -2,6 +2,7 @@
 title: War as a system in nature
 categories:
 - Essays
+- Ant Wars
 author: 
 - Graeme MacQueen
 - Tom Slee
