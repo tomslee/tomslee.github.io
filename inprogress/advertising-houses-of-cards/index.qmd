@@ -4,14 +4,15 @@ description: >
     Social media platforms offer only a simplistic idea of the boundaries around speech.
 author: Tom Slee
 toc: true
-date: 2021-02-08 
+date: last-modified
 categories:
-- in progress
+- In Progress
+- Reputation
 toc-title: Contents
 # reference-location: margin
 # citation-location: margin
 # cap-location: margin
-image: header.png
+image: header.jpg
 title-block-banner: true
 reading-time: true
 number-sections: true
@@ -29,7 +30,10 @@ comments:
 
 ::: {.callout-note appearance="simple"}
 State: very rough first draft.
+
 :::
+
+![Yonge Street, Toronto, 1980s? Image credit: [Jamie Bradburn and The Torontoist](https://torontoist.com/2010/08/historicst_making_yonge_street_more_of_a_fun_street/) ](header.jpg)
 
 
 # Advertising: give the people what they don't want {#advertising-give-the-people-what-they-don-t-want}
