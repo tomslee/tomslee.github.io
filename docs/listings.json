@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/2023-02-ridehail-chicago/index.html",
       "/posts/2021-02-10-uber-earnings/index.html",
       "/posts/2018-elpais-transport/index.html",
       "/posts/2017-10-09-airbnb-data-collection-announcement/index.html",
@@ -491,18 +492,20 @@
       "/essays/2021-03-29-ubertransit/index.html",
       "/essays/2019-08-oup_private_sector_ai/index.html",
       "/essays/2019-08-05_workaround_medical/index.html",
-      "/essays/2018-11-23_rise_and_fall/index.html"
+      "/essays/2018-11-23_rise_and_fall/index.html",
+      "/essays/2014-10-05-in-praise-of-fake-reviews/index.html"
     ]
   },
   {
     "listing": "/index.html",
     "items": [
+      "/inprogress/ridehail-chicago/index.html",
+      "/inprogress/advertising-houses-of-cards/index.html",
       "/essays/2023-01-ridehail/index.html",
       "/essays/2023-01-antwars/index.html",
       "/essays/2022-12-antwar/index.html",
       "/essays/2021-03-29-ubertransit/index.html",
       "/posts/2021-02-10-uber-earnings/index.html",
-      "/inprogress/2021-02-28-houses-of-cards/index.html",
       "/essays/2019-08-oup_private_sector_ai/index.html",
       "/essays/2019-08-05_workaround_medical/index.html",
       "/essays/2018-11-23_rise_and_fall/index.html",
@@ -548,6 +551,7 @@
       "/posts/2014-11-22-why-canada-should-de-activate-uber/index.html",
       "/posts/2014-11-09-lucky-me/index.html",
       "/posts/2014-10-05-in-praise-of-fake-reviews/index.html",
+      "/essays/2014-10-05-in-praise-of-fake-reviews/index.html",
       "/posts/2014-09-24-uber-drivers-organizing/index.html",
       "/posts/2014-09-24-airbnb-city-maps/index.html",
       "/posts/2014-09-16-all-sharing-economy-all-the-time/index.html",
@@ -988,7 +992,8 @@
   {
     "listing": "/inprogress.html",
     "items": [
-      "/inprogress/2021-02-28-houses-of-cards/index.html"
+      "/inprogress/ridehail-chicago/index.html",
+      "/inprogress/advertising-houses-of-cards/index.html"
     ]
   }
 ]

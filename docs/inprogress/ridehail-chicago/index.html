@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Tom Slee">
+<meta name="dcterms.date" content="2023-02-05">
+<meta name="description" content="What open data from Chicago tells us about the Uber driver population.">
+
+<title>Tom Slee - Uber in Chicago</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<style>
+    .quarto-title-block .quarto-title-banner {
+      background: DarkCyan;
+    }
+    </style>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta name="twitter:title" content="Tom Slee - Uber in Chicago">
+<meta name="twitter:description" content="What open data from Chicago tells us about the Uber driver population.">
+<meta name="twitter:image" content="monthly_trips.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Tom Slee</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../essays.html">
+ <span class="menu-text">Essays</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../inprogress.html">
+ <span class="menu-text">In Progress</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://tomslee.github.io/ridehail/lab/">
+ <span class="menu-text">Ridehail Lab</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html">
+ <span class="menu-text">Whimsley (blog)</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/tomslee"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/whimsley"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Uber in Chicago</h1>
+                  <div>
+        <div class="description">
+          <p>What open data from Chicago tells us about the Uber driver population.</p>
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">In Progress</div>
+                <div class="quarto-category">Uber</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Tom Slee </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Last updated</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 5, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#the-ridehail-market-has-not-recovered-from-covid" id="toc-the-ridehail-market-has-not-recovered-from-covid" class="nav-link active" data-scroll-target="#the-ridehail-market-has-not-recovered-from-covid"><span class="toc-section-number">1</span>  The ridehail market has not recovered from Covid</a>
+  <ul class="collapse">
+  <li><a href="#trips-are-at-about-two-thirds-of-pre-covid-volume" id="toc-trips-are-at-about-two-thirds-of-pre-covid-volume" class="nav-link" data-scroll-target="#trips-are-at-about-two-thirds-of-pre-covid-volume"><span class="toc-section-number">1.1</span>  Trips are at about two-thirds of pre-Covid volume</a></li>
+  <li><a href="#active-drivers-are-also-at-about-two-thirds-of-pre-covid-numbers" id="toc-active-drivers-are-also-at-about-two-thirds-of-pre-covid-numbers" class="nav-link" data-scroll-target="#active-drivers-are-also-at-about-two-thirds-of-pre-covid-numbers"><span class="toc-section-number">1.2</span>  Active drivers are also at about two-thirds of pre-Covid numbers</a></li>
+  <li><a href="#loss-of-rush-hour-trips-is-a-big-contributor" id="toc-loss-of-rush-hour-trips-is-a-big-contributor" class="nav-link" data-scroll-target="#loss-of-rush-hour-trips-is-a-big-contributor"><span class="toc-section-number">1.3</span>  Loss of rush-hour trips is a big contributor</a></li>
+  </ul></li>
+  <li><a href="#the-diverse-driver-population" id="toc-the-diverse-driver-population" class="nav-link" data-scroll-target="#the-diverse-driver-population"><span class="toc-section-number">2</span>  The diverse driver population</a>
+  <ul class="collapse">
+  <li><a href="#full-time-drivers-provide-about-40-of-all-trips" id="toc-full-time-drivers-provide-about-40-of-all-trips" class="nav-link" data-scroll-target="#full-time-drivers-provide-about-40-of-all-trips"><span class="toc-section-number">2.1</span>  Full-time drivers provide about 40% of all trips</a></li>
+  <li><a href="#many-drivers-are-new" id="toc-many-drivers-are-new" class="nav-link" data-scroll-target="#many-drivers-are-new"><span class="toc-section-number">2.2</span>  Many drivers are new</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<div class="callout-note callout callout-style-simple">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>State: working draft.</p>
+<p>Reader highlights and annotations enabled through <a href="https://web.hypothes.is/">hypothes.is</a> - see the floating annotation sidebar at the top right.</p>
+</div>
+</div>
+</div>
+<p>The City of Chicago collects data from ridehail platforms and makes it available as open data. The data cover all transportation network company or “TNC” trips, but the TNC market is mainly Uber, so that’s what I am going to call it.</p>
+<p>Each month, Chicago publishes data on <a href="https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Drivers/j6wf-834c">drivers</a> and on <a href="https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips/m6dm-c72p">trips</a>. Unfortunately, there is no data on utilization rates, but this is enough to tell us quite a bit about the state of the ridehail market. No individual drivers are identified.</p>
+<p>The data for December 2022 was just released a couple of days ago. Let’s take a look.</p>
+<section id="the-ridehail-market-has-not-recovered-from-covid" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> The ridehail market has not recovered from Covid</h1>
+<div class="callout-note callout callout-style-simple">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Despite what the company says, the Uber ridehail market has not recovered from the effects of the pandemic.</p>
+</div>
+</div>
+</div>
+<section id="trips-are-at-about-two-thirds-of-pre-covid-volume" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="trips-are-at-about-two-thirds-of-pre-covid-volume"><span class="header-section-number">1.1</span> Trips are at about two-thirds of pre-Covid volume</h2>
+<p>The number of trips, which grew to almost 10 million per month in 2018 and then levelled off, was unsurprisingly hammered by Covid in February and then March of 2020. Since then it has been picking up, but it is still only about 2/3 of its pre-pandemic volume, and while the trip volume is still increasing it has a long way to go if it is ever to reach those numbers.</p>
+<div id="fig-monthly-trips" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="monthly_trips.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: The number of trips per month in Chicago<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="active-drivers-are-also-at-about-two-thirds-of-pre-covid-numbers" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="active-drivers-are-also-at-about-two-thirds-of-pre-covid-numbers"><span class="header-section-number">1.2</span> Active drivers are also at about two-thirds of pre-Covid numbers</h2>
+<p>The number of active drivers (that is, drivers taking at least one trip in a month) follows a similar trend (see <a href="#fig-active-drivers">Figure&nbsp;2</a>): rising to a high of about 70,000 in 2018 and 2019, plateauing, plummeting to below 20,000 in March 2020, and climbing back slowly to around 50,000 today. Again, there is a long way to go if the driver population is to recover to previous numbers.</p>
+<div id="fig-active-drivers" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="active_drivers.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: The number of active drivers in Chicago<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></figcaption><p></p>
+</figure>
+</div>
+<p>So when Uber CEO Dara Khosrowshaki, in August 2022, <a href="https://www.bbc.com/news/business-62396648">says</a> that “more people are earning on Uber today than before the pandemic”, it’s easy to think that there are more Uber ridehail drivers than before, but city-on-city that’s not the case.</p>
+</section>
+<section id="loss-of-rush-hour-trips-is-a-big-contributor" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="loss-of-rush-hour-trips-is-a-big-contributor"><span class="header-section-number">1.3</span> Loss of rush-hour trips is a big contributor</h2>
+<p><a href="#fig-trips-per-hour">Figure&nbsp;3</a> shows the number of trips each hour during the day, for February 6 of each year. (I chose February 6 to match a report from the City of Toronto <span class="citation" data-cites="policyinnovationtransportationservices2021">(<a href="#ref-policyinnovationtransportationservices2021" role="doc-biblioref"><strong>policyinnovationtransportationservices2021?</strong></a>)</span>). The overall drop in trip volume is clear, as is the particular drop around the peak commuter hours of 8-10am and 4-7pm. This is no surprise: in many big cities commuter traffic at rush hour has not recovered. The December 2022 data is not that different in this respect. I’ll look for this year’s February 6 data when the City of Chicago releases it, probably at the end of March.</p>
+<div id="fig-trips-per-hour" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="trips_per_hour.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3: Trips per hour, on February 6 of each year.</figcaption><p></p>
+</figure>
+</div>
+<p>In short: the ridehail market was hit hard by the pandemic and, like many other aspects of city centre working life, has not recovered.</p>
+</section>
+</section>
+<section id="the-diverse-driver-population" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> The diverse driver population</h1>
+<p>Much of the talk (and research!) about Uber drivers ends up providing “typical” wages or other average numbers. But the diversity of the driver population cannot be ignored. Instead of treating Uber drivers as one big homogeneous lump, we can at least split them into two (representing the poles of experience).</p>
+<section id="full-time-drivers-provide-about-40-of-all-trips" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="full-time-drivers-provide-about-40-of-all-trips"><span class="header-section-number">2.1</span> Full-time drivers provide about 40% of all trips</h2>
+<p><a href="#fig-driver-trips-per-month">Figure&nbsp;4</a> shows the number of trips for each active driver, in December 2022.</p>
+<div id="fig-driver-trips-per-month" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="driver_trips_per_month.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4: The number of trips per month driven by active drivers in Chicago</figcaption><p></p>
+</figure>
+</div>
+<p>From Chicago trip data, the average trip duration is just under 20 minutes. There’s no information provided on how much of each hour a driver is engaged with a passenger and how much is “dead-heading”, but in other cities it’s between 50% and 60% of the time, so on average a driver can undertake about two trips per hour. If we think of a 32 hour work week as the dividing line for “full-time” work, then we can say that full-time drivers are those who take 275 trips or more in a month.</p>
+<p><a href="#fig-driver-fulltime-parttime">Figure&nbsp;5</a> shows that those full-time drivers make up a small proportion of Uber drivers in Chicago – only about one in eight is full-time – but those drivers are responsible for 40% of all trips. In addition, these full-time drivers are more likely to drive in off-peak hours: without them, Uber could not provide a reliable, round-the-clock service.</p>
+<div id="fig-driver-fulltime-parttime" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="driver_fulltime_parttime.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;5: Only one-in-eight active Uber drivers in Chicago are full-time, but they provide about 40% of the trips</figcaption><p></p>
+</figure>
+</div>
+<p>In reports on Uber driver earnings, one of the big questions is how to evaluate driver costs. Gas, tolls, per-kilometre wear-and-tear and cleaning are common to all drivers, but should we include the other costs of car ownership? And what about insurance? There’s a case to be made that casual drivers who already own a car for personal use would have to pay these costs anyway, so they should not count towards cost of work (for example, <span class="citation" data-cites="hyman2020">(<a href="#ref-hyman2020" role="doc-biblioref"><strong>hyman2020?</strong></a>)</span>). But at least for full-time drivers, many of whom buy or lease a vehicle specifically for their gig work, these costs must be considered. That’s how we came up with our figure of $8 per hour for full-time driver income in Toronto in our recent report <span class="citation" data-cites="slee_tom_2023">(<a href="#ref-slee_tom_2023" role="doc-biblioref">Slee 2023</a>)</span>, which was written up in the Globe and Mail last week <span class="citation" data-cites="subramaniam_uber_2023">(<a href="#ref-subramaniam_uber_2023" role="doc-biblioref">Subramaniam 2023</a>)</span>.</p>
+<p>There are more sophisticated ways to slice up a distribution like this, but moving to “part-time” and “full-time” is a big step beyond treating all Uber drivers the same, and I do hope the debate at least takes on that one level of complexity.</p>
+</section>
+<section id="many-drivers-are-new" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="many-drivers-are-new"><span class="header-section-number">2.2</span> Many drivers are new</h2>
+<p>Another way to profile drivers is by how long they have been on the platform. The Chicago data lists the first month on the platform for each driver active in a given month, and that is enough to get a profile. The figures below show a few different perspectives, but the overall message is that driver churn on Uber remains large. A common response to any publication of low incomes is that drivers wouldn’t be doing the job if that’s all they earned (no one makes you drive for Uber) – but these numbers show that most drivers do, in fact, leave after a short time. The Uber driver market is not full of happy drivers.</p>
+<p><a href="#fig-driver-longevity">Figure&nbsp;6</a> shows that most Uber drivers are new. The typical driver (yes, contradicting what I said above) has been on the platform for only 7 months, and the average is less than two years.</p>
+<div id="fig-driver-longevity" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="driver_longevity.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6: Longevity distribution of active drivers in Chicago</figcaption><p></p>
+</figure>
+</div>
+<p>The numbers have changed over time – in the early days when many drivers tried Uber and dropped it the quit rate was even higher – but <a href="#fig-driver-longevity-trips">Figure&nbsp;7</a> shows that half of all trips are provided by drivers with less than a year’s experience.</p>
+<div id="fig-driver-longevity-trips" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="driver_longevity_trips.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;7: Many trips are provided by new drivers</figcaption><p></p>
+</figure>
+</div>
+<p>A third way to look at driver churn is through the fraction of drivers still active after a year. <a href="#fig-driver-churn">Figure&nbsp;8</a> shows that only about one in six drivers remains active after a year. (This may seem to contradict the numbers above, but it doesn’t. The proportion of drivers that start in a given month and are still active after a year is different to the proportion of drivers in a given month who have been on the platform for more than a year.)</p>
+<div id="fig-driver-churn" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="driver_churn.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;8: Driver churn</figcaption><p></p>
+</figure>
+</div>
+
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-slee_tom_2023" class="csl-entry" role="doc-biblioentry">
+Slee, Tom. 2023. <span>“Tom <span>Slee</span> - <span>High</span> <span>Emissions</span> and <span>Low</span> <span>Pay</span>: <span>Uber</span> Is <span>Still</span> <span>Taking</span> <span>Regulators</span> for a <span>Ride</span>.”</span> <a href="https://tomslee.github.io/essays/2023-01-ridehail/">https://tomslee.github.io/essays/2023-01-ridehail/</a>.
+</div>
+<div id="ref-subramaniam_uber_2023" class="csl-entry" role="doc-biblioentry">
+Subramaniam, Vanmala. 2023. <span>“Uber Drivers Earn Less Than $8 Per Hour, Says New Report from Gig Worker Advocacy Group - <span>The</span> <span>Globe</span> and <span>Mail</span>.”</span> <em>The Globe and Mail</em>, January, B1. <a href="https://www.theglobeandmail.com/business/article-uber-drivers-pay-toronto/">https://www.theglobeandmail.com/business/article-uber-drivers-pay-toronto/</a>.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Regarding the outliers in Q2 2018, there is a note on the City of Chicago web site:</p>
+<blockquote class="blockquote">
+<p>[S]ome vehicle records for Q2 2018 (April-June) were reported for the quarter as a whole, rather than for individual months. For purposes of this dataset, those records have been assigned to 2018-06 (June). Therefore, some caution in interpreting this month and the quarter as a whole is advised.</p>
+</blockquote>
+<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></li>
+<li id="fn2"><p>Regarding the outliers in Q2 2018, there is a note on the City of Chicago web site:</p>
+<blockquote class="blockquote">
+<p>[S]ome vehicle records for Q2 2018 (April-June) were reported for the quarter as a whole, rather than for individual months. For purposes of this dataset, those records have been assigned to 2018-06 (June). Therefore, some caution in interpreting this month and the quarter as a whole is advised.</p>
+</blockquote>
+<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">2023, Tom Slee</div>   
+  </div>
+</footer>
+
+
+
+</body></html>
