@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Tom Slee">
+<meta name="dcterms.date" content="2023-03-28">
+<meta name="description" content="A computer simulation of ridehail vehicles and trips in a city">
+
+<title>Tom Slee - A Simple Simulation of Ridehail Systems</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<style>
+    .quarto-title-block .quarto-title-banner {
+      background: DarkCyan;
+    }
+    </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../styles.css">
+<meta name="twitter:title" content="Tom Slee - A Simple Simulation of Ridehail Systems">
+<meta name="twitter:description" content="A computer simulation of ridehail vehicles and trips in a city">
+<meta name="twitter:image" content="header.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Tom Slee</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../essays.html">
+ <span class="menu-text">Essays</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../inprogress.html">
+ <span class="menu-text">In Progress</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://tomslee.github.io/ridehail/lab/">
+ <span class="menu-text">Ridehail Lab</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html">
+ <span class="menu-text">Whimsley (blog)</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/tomslee"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/whimsley"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">A Simple Simulation of Ridehail Systems</h1>
+                  <div>
+        <div class="description">
+          <p>A computer simulation of ridehail vehicles and trips in a city</p>
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">In Progress</div>
+                <div class="quarto-category">Uber</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Tom Slee </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Last updated</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">March 28, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  <div>
+    <div class="abstract">
+      <div class="abstract-title">Abstract</div>
+      <p>A simple simulation of ridehailing in a city is presented. The simplest version of the simulation is described solely by the size of the city and average trip duration, the number of vehicles (supply), and the rate of trip requests (demand). The results enable the relationships among these parameters, as well as wait times and vehicle utilization rates, to be explored. Extensions describe equilibration of supply under price changes, and the impact of inhomogeneous demand. The goal of the simulation is to assist with policy choices and discussions in the contentious but data-poor topic of ridehailing.</p>
+    </div>
+  </div>
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">1</span>  Introduction</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods"><span class="toc-section-number">2</span>  Methods</a>
+  <ul class="collapse">
+  <li><a href="#city" id="toc-city" class="nav-link" data-scroll-target="#city"><span class="toc-section-number">2.1</span>  City</a></li>
+  <li><a href="#vehicles" id="toc-vehicles" class="nav-link" data-scroll-target="#vehicles"><span class="toc-section-number">2.2</span>  Vehicles</a></li>
+  <li><a href="#trips" id="toc-trips" class="nav-link" data-scroll-target="#trips"><span class="toc-section-number">2.3</span>  Trips</a></li>
+  <li><a href="#the-simulation" id="toc-the-simulation" class="nav-link" data-scroll-target="#the-simulation"><span class="toc-section-number">2.4</span>  Simulation</a></li>
+  <li><a href="#identities" id="toc-identities" class="nav-link" data-scroll-target="#identities"><span class="toc-section-number">2.5</span>  Identities</a></li>
+  <li><a href="#extensions" id="toc-extensions" class="nav-link" data-scroll-target="#extensions"><span class="toc-section-number">2.6</span>  Regions in the city</a></li>
+  <li><a href="#equilibration" id="toc-equilibration" class="nav-link" data-scroll-target="#equilibration"><span class="toc-section-number">2.7</span>  Equilibration</a></li>
+  <li><a href="#simplification" id="toc-simplification" class="nav-link" data-scroll-target="#simplification"><span class="toc-section-number">2.8</span>  Simplification</a></li>
+  <li><a href="#implementation" id="toc-implementation" class="nav-link" data-scroll-target="#implementation"><span class="toc-section-number">2.9</span>  Implementation</a></li>
+  </ul></li>
+  <li><a href="#simulating-ridehail-in-toronto" id="toc-simulating-ridehail-in-toronto" class="nav-link" data-scroll-target="#simulating-ridehail-in-toronto"><span class="toc-section-number">3</span>  Simulating ridehail in Toronto</a>
+  <ul class="collapse">
+  <li><a href="#reference-values" id="toc-reference-values" class="nav-link" data-scroll-target="#reference-values"><span class="toc-section-number">3.1</span>  Reference values</a></li>
+  <li><a href="#inhomogeneity" id="toc-inhomogeneity" class="nav-link" data-scroll-target="#inhomogeneity"><span class="toc-section-number">3.2</span>  Inhomogeneity</a></li>
+  <li><a href="#what-if-questions" id="toc-what-if-questions" class="nav-link" data-scroll-target="#what-if-questions"><span class="toc-section-number">3.3</span>  What if? questions</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="toc-section-number">4</span>  References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>Discussion about Uber and other Platform Transit Companies (PTCs) or Transportation Network Providers (TNCs) is vigorous but often hampered by lack of reliable data. The problem is made worse by the compromised nature of research based on negotiated or commissioned access to PTC data.</p>
+<p>Some cities have negotiated or required access to ridehail data from PTCs, but that data is not always accessible to the broader public. In those few cases where cities do make data public, most prominently Chicago <span class="citation" data-cites="cityofchicago2022">(<a href="#ref-cityofchicago2022" role="doc-biblioref">City of Chicago 2022</a>)</span> and New York City <span class="citation" data-cites="newyorkcityopendata2022">(<a href="#ref-newyorkcityopendata2022" role="doc-biblioref">New York City Open Data 2022</a>)</span>, key elements are missing, such as the time that drivers spend on the platform but without a trip.</p>
+<p>This paper attempts to compensate for the lack of reliable data. It presents a simple computer simulation of a ridehail system in a city, which can be calibrated against broad aggregate data that is more widely available than detailed statistics. The simulation is intended to be as simple as possible while still capturing the essential elements of a ridehail system.</p>
+<p>The simplest version of the simulation is described by the size of the city and average trip duration, the number of vehicles (supply), and the rate of trip requests (demand). The results enable the relationships among these parameters, as well as wait times and vehicle utilization rates, to be explored. Extensions describe equilibration of supply under price changes, and the impact of inhomogeneous demand.</p>
+<p>One goal of the simulation is to check intuition-based claims. Some policy discussions have led to talk at cross purposes with different unstated assumptions underlying rival claims, such as the relationship between the number of idle drivers and wait times or the effect of price changes on driver incomes. Both of these are discussed below.</p>
+<p>A second goal is to enable comparison of the ridehail experience among cities, which is easier with a simple model independent of specific geography and road layout.</p>
+<p>Also, a computer simulation allows “what if?” questions that may provide insights into the trade-offs faced by platform companies, municipal governments, drivers and passengers.</p>
+</section>
+<section id="methods" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Methods</h1>
+<p>The ridehail simulation has three components, each of which is described below:</p>
+<ul>
+<li><p>A geographical area. This is called a <em>City</em>, as most discussions about ridehail systems have focused on cities as the unit of comparison, but it need not be an actual “city”.</p></li>
+<li><p>Vehicles. These drive around the city, respond to trip requests, and carry passengers from the trip origin to the trip destination.</p></li>
+<li><p>Trips. These start as trip requests, and have an origin and destination within the city.</p></li>
+</ul>
+<section id="city" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="city"><span class="header-section-number">2.1</span> City</h2>
+<p>A city is represented as a square grid of streets, creating uniformly-sized “blocks”. The square is, however, “wrapped”, so that a vehicle going off the top of the city appears at the bottom, and a vehicle going off the right of the city appears on the left.</p>
+<p>This is not as unrealistic as it may first appear: in the real world, drivers are not bound by city boundaries: some trips will begin inside the city and finish outside, while others will start outside and terminate inside the boundaries. The “wrapped” layout can be thought of as an area with a constant population of vehicles, and a flux of vehicles leaving and entering through the edges of the area under consideration.</p>
+<div id="fig-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="fig1.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: A City in the simulation is simply a square, with C blocks on each side.</figcaption><p></p>
+</figure>
+</div>
+<p>In this simplest model of a city, all locations are identical. A city with distinct zones is described as an extension, below.</p>
+<p>The unit of travel is a single block, and may be thought of as a distance, a time, or a combination of the two. It is often taken as a minute of travel time, but this is not a requirement.</p>
+</section>
+<section id="vehicles" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="vehicles"><span class="header-section-number">2.2</span> Vehicles</h2>
+<p>Vehicles all drive at the same speed, and are always in one of three “phases”, which are commonly used in discussions of ridehail systems.</p>
+<ul>
+<li><p>In phase <span class="math inline">\(P1\)</span>, the driver is logged into a ridehail app, their vehicle is available for the platform to assigned it to trips, but they do not have an assigned trip. In this phase the vehicle drives randomly around the city. Vehicles in <em>P1</em> are also sometimes called “idle”.</p></li>
+<li><p>In phase <span class="math inline">\(P2\)</span>, the platform has assigned a vehicle to a trip, the vehicle has accepted the assignment, and it drives towards the trip origin by the shortest route to pick up the passenger. This route may involve going “off the edge” of the city and appearing at the opposite side. <em>P2</em> is sometimes called <em>en route</em> to picking up the passenger.</p></li>
+<li><p>In phase <span class="math inline">\(P3\)</span>, a vehicle has picked up one or more passengers and is driving by the shortest route to the destination.</p></li>
+</ul>
+<p>Once a trip is complete, the vehicle returns to <span class="math inline">\(P1\)</span>, waiting for the next trip request.</p>
+<p>These phases are related to other terms common in the industry. The combination of <span class="math inline">\(P1\)</span> and <span class="math inline">\(P2\)</span> phases, when a driver has no passenger in the car, is sometimes referred to as <em>deadheading</em> time. The combination of <span class="math inline">\(P2\)</span> and <span class="math inline">\(P3\)</span> phases, when a driver is assigned to a trip (and is either <em>en route</em> or with a passenger), is sometimes called <em>engaged time</em>. Evaluated across the whole driver population, the proportion of time drivers spend in <span class="math inline">\(P3\)</span> is also called the <em>utilization rate</em> for the system. The proportion of time drivers spend in <span class="math inline">\(P1\)</span> is the <em>excess capacity</em> of the system.</p>
+</section>
+<section id="trips" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="trips"><span class="header-section-number">2.3</span> Trips</h2>
+<p>Each trip has an <em>origin</em> and a <em>destination</em>. In the simplest simulation, each is chosen randomly from intersections in the city, except that the two locations cannot be the same.</p>
+<p>Each vehicle can take only one trip at a time. The trip may represent one passenger or a group of passengers, but does not include “shared trips” with multiple stops, such as the Uber Pool service where passengers request trips separately but share a vehicle for some portion of the trip. Ridehail operators have repeatedly tried to introduce such systems but, even before Covid, such shared trips made up a small portion of the total trips, and even when a passenger requested an “Uber Pool” trip they often ended up not sharing the vehicle <span class="citation" data-cites="policyinnovationtransportationservices2019">(<a href="#ref-policyinnovationtransportationservices2019" role="doc-biblioref">Policy &amp; Innovation Transportation Services 2019</a>)</span>. The simulation focuses entirely on “UberX-like” systems.</p>
+<p>From the passenger’s point of view, trip time is in one of two phases: <em>waiting</em> or <em>traveling</em>. For randomly-selected trip origins and destinations, the average trip length in a city with <span class="math inline">\(C\)</span> blocks along each side is <span class="math inline">\(C/2\)</span>.</p>
+<p>The “wait time” reported here, (<span class="math inline">\(W\)</span>) which is the time between placing a trip request and setting off to the destination, is different to that commonly used by Uber. With wait time defined as it is here, all the time of a trip (from request to arrival at the destination) is assigned to either waiting or travelling. For Uber, the wait time is the time elapsed until the driver appears at the location, but that leaves an unassigned “grey zone” period between driver arrival and the start of the trip, which may include time for the passenger to come out onto the street, time to find the vehicle (or for the driver to pick out the passenger), to possibly put luggage in the trunk, and to get in the vehicle. Unless otherwise stated, “wait time” refers to the model-based time, not the Uber-reported time.</p>
+</section>
+<section id="the-simulation" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="the-simulation"><span class="header-section-number">2.4</span> Simulation</h2>
+<p>Each simulation is a sequence of moves. In each move, vehicles travel one block, from one intersection to the next. A typical move involves the following events:</p>
+<ul>
+<li><p>Any new trip requests are generated.</p></li>
+<li><p>Available vehicles are assigned to trips. The trip is assigned to the nearest available vehicle in <span class="math inline">\(P1\)</span>, and if there are multiple vehicles at the same distance from the trip origin, one is selected at random. Vehicles always accept trip assignments.</p></li>
+<li><p>Vehicles move from one intersection to the next. Each vehicle chooses a direction and moving a block to the next intersection. For vehicles in <span class="math inline">\(P1\)</span>, the direction is random; for vehicles in <span class="math inline">\(P2\)</span> and <span class="math inline">\(P3\)</span>, the direction is towards the trip origin or destination, as applicable.</p></li>
+<li><p>Any trip that reaches its destination terminates.</p></li>
+</ul>
+<div id="fig-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="fig2.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: A city of 20 by 20 blocks, showing 160 vehicles (triangles) in phases <span class="math inline">\(P1\)</span> (red), <span class="math inline">\(P2\)</span> (orange), and <span class="math inline">\(P3\)</span> (green). The red diamonds are trip origins, and the green circles are trip destinations.</figcaption><p></p>
+</figure>
+</div>
+<p>At the end of each move, the simulation records and optionally plots the state of each vehicle and statistics about the overall system (fraction of vehicles in each phase, for example). <a href="#fig-2">Figure&nbsp;2</a> illustrates a simulation in progress.</p>
+<p>This framework is sufficient to simulate a city with a fixed supply of vehicles, and fixed demand (rate of requests). For some of the results below, this is all that is needed. For some other topics, the simulation has to be extended.</p>
+</section>
+<section id="identities" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="identities"><span class="header-section-number">2.5</span> Identities</h2>
+<p>With the trip and vehicle phases defined as they are here, there are three identities that are always obeyed by simulations that establish a steady state.</p>
+<p>The first identity says that the time that vehicles spend with passengers on board is the same as the time that passengers spend riding in vehicles</p>
+<p><span class="math display">\[
+N \times P3 = D \times L
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><p><span class="math inline">\(N\)</span> is the number of vehicles, which represents the supply of vehicles</p></li>
+<li><p><span class="math inline">\(P3\)</span> is the fraction of time vehicles have passengers</p></li>
+<li><p><span class="math inline">\(D\)</span> is the rate of trip requests, which represents the demand for trips</p></li>
+<li><p><span class="math inline">\(L\)</span> is the average trip duration.</p></li>
+</ul>
+<p>A second identity says that, again as long as the system is in a steady state, the time vehicles spend <em>en route</em> to trip origins is the same as the time passengers spend waiting to be picked up.</p>
+<p><span class="math display">\[
+N \times P2 = D \times W
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><p><span class="math inline">\(P2\)</span> is the fraction of time vehicles spend <em>en route</em> to picking up passengers</p></li>
+<li><p><span class="math inline">\(W\)</span> is the average wait time.</p></li>
+</ul>
+</section>
+<section id="extensions" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="extensions"><span class="header-section-number">2.6</span> Regions in the city</h2>
+<p>The spirit of the simulation is to be as simple as possible, so that it can be calibrated using the very limited high-level public data available and so that it can be used comparatively. However, two extensions are necessary for some applications.</p>
+<p>Many cities have a central “downtown” zone where the demand for ridehail traffic is high, surrounded by suburban areas where demand is lower. For example, 60% of trips in Metro Toronto originate within “Old Toronto” and East York, even though these two make up less than 20% of the total Metro area. This inhomogeneity is built into the model as two <em>zones</em>. A central zone has sides <span class="math inline">\(C/2\)</span> (so, one quarter of the city’s area) and has a higher rate of trip requests than the surrounding area, as shown in <a href="#fig-3">Figure&nbsp;3</a> below. The trip destinations remain randomly distributed around the whole city. With an inhomogeneity of zero, the central zone is the same as the rest, with an inhomogeneity of one all trip requests take place in the central zone. In this way, and in the spirit of keeping the model as simple and parsimonious as possible, a single inhomogeneity parameter between zero and one captures the two zones.</p>
+<div id="fig-3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="fig3.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3: The red dots show the origin of trips in a small “two-zone” city if eight blocks. The central area has a higher demand than outlying suburbs.</figcaption><p></p>
+</figure>
+</div>
+<p>The second extension, discussed in the section on Engaged Time standards below, is to allow vehicles to enter and leave the system in response to price and demand.</p>
+<p>The use of random locations for trip destinations implies an average trip length of <span class="math inline">\(C/2\)</span> (regardless of inhomogeneity). To model an area where the average trip length may differ from this, a maximum trip length can be set, with trips distributed randomly over intersections within that distance.</p>
+</section>
+<section id="equilibration" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="equilibration"><span class="header-section-number">2.7</span> Equilibration</h2>
+<p>A distinguishing feature of the gig economy model is that once drivers are signed up they are generally free to enter or leave active status simply by opening the application. The platform’s ability to expand or shrink the supply of drivers in response to demand, whether in the short term (“surge pricing” and its descendants) or in the longer term through changes in commission and incentives, has been central to their success.</p>
+<p>Equilibration of supply has been added to the model (vehicles entering and leaving “active” status). The demand for trips is currently treated as exogenous.</p>
+<p>A simplified formula for average net income <span class="math inline">\(I\)</span> is as follows:</p>
+<p><span class="math display">\[
+I = I_0 - c
+  = P3 \cdot p \cdot (1 - f) - c
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><p><span class="math inline">\(I_0\)</span> is gross income</p></li>
+<li><p><span class="math inline">\(p\)</span> is the price of a trip (fare per block)</p></li>
+<li><p><span class="math inline">\(f\)</span> is the platform commission, as a fraction of the fare</p></li>
+<li><p><span class="math inline">\(c\)</span> is the marginal cost of operating the vehicle</p></li>
+</ul>
+<p>If the average net income is above a threshold <span class="math inline">\(w_0\)</span>, called the <em>reservation wage</em>, then there is money to be made and vehicles will enter the market. If the average net income is below the reservation wage, some vehicles will leave. The reservation wage is determined by external factors such as the state of the labour market, which determines what other options are open to drivers apart from ridehail and hence how much they have to earn in order to find ridehail worthwhile.</p>
+<p>If vehicles enter, the additional supply of drivers provides additional competition for the available rides, the utilization rate <span class="math inline">\(P3\)</span> falls, and so the average income also falls. If vehicles leave, there is less competition for the available rides, the utilization rate and average income increase. When the average income matches the reservation wage, the system is at equilibrium.</p>
+<p>Vehicles entering and leaving the arena looks like a dynamic process, but there is no attempt to model time in the approach to equilibrium. The rate at which vehicles enter and leave is set purely for convenience. In principle, the parameters could be set to describe short term (surge pricing) or longer term equilibration (drivers deciding to sign up to the platform or leaving it).</p>
+</section>
+<section id="simplification" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="simplification"><span class="header-section-number">2.8</span> Simplification</h2>
+<p>The model is obviously a dramatic simplification of reality. There is no treatment of cancelled trips, of distinctions among drivers, of information asymmetries and special driver incentives, or of many other factors that go to make up the complex world of ridehailing. The distribution of trip durations is roughly normal, which is different from the actual distribution. Most simulations are run with no account taken for different driver speed when idle compared to when engaged on a trip. But in some ways this oversimplification is a strength: there is so little public data available regarding the specifics of ridehail markets that any more complex model would be overfitted. Many published reports and papers have relied either on access to Uber’s data or on driver surveys to collect data. The former has obvious conflict of interest problems and the latter is always going to be partial. The challenge, in fact, is to find enough reliable data to calibrate even this simplified model against reality. A second benefit is that by having a small number of parameters we can address some of the questions asked in public and policy circles, which relate to overall gross features of the system. How does wait time depend on demand? What are the likely consequences of a price increase? More generally, how to the basic variables of the system affect each other. Finally, a simple model should allow comparison among cities, based on their values of the basic parameters.</p>
+</section>
+<section id="implementation" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="implementation"><span class="header-section-number">2.9</span> Implementation</h2>
+<p>The simulation is implemented in the Python programming language, and the code is available on GitHub at <a href="https://github.com/tomslee/ridehail" class="uri">https://github.com/tomslee/ridehail</a>. It can be run as a desktop application from a command line (tested on Windows and on Linux) but a subset can be explored interactively online at <a href="https://tomslee.github.io/ridehail/lab/" class="uri">https://tomslee.github.io/ridehail/lab/</a>.</p>
+<p>Simulations using the desktop application are controlled by a configuration file, which at its simplest specifies the size of the city (number of blocks on each side), the base demand rate (number of trip requests each move), and the number of vehicles. Currently there are almost 50 configuration parameters governing (beyond the basic simulation), logging, animation, sequence, equilibration, shocks and more.</p>
+<p>A subset of the simulation is also available at a web site, where the configuration is set in the browser. The simulation runs in the browser (not at a server), using the Pyodide python distribution <span class="citation" data-cites="thepyodidedevelopmentteam2022">(<a href="#ref-thepyodidedevelopmentteam2022" role="doc-biblioref">The Pyodide development team 2022</a>)</span>, and is the same code as the desktop. The web site is currently a “laboratory”, which allows experimentation but does not provide a way to save results. All results in this paper are taken from desktop simulations.</p>
+</section>
+</section>
+<section id="simulating-ridehail-in-toronto" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Simulating ridehail in Toronto</h1>
+<p>The ridehail market in Metropolitan Toronto was chosen as a test arena. The city has released important data in a 2019 study by the City of Toronto <span class="citation" data-cites="policyinnovationtransportationservices2019">(<a href="#ref-policyinnovationtransportationservices2019" role="doc-biblioref">Policy &amp; Innovation Transportation Services 2019</a>)</span> and an update in 2021 <span class="citation" data-cites="policyinnovationtransportationservices2021">(<a href="#ref-policyinnovationtransportationservices2021" role="doc-biblioref">Policy &amp; Innovation Transportation Services 2021</a>)</span>, here called <em>Toronto 2019</em> and <em>Toronto 2021</em>.</p>
+<p>Metro Toronto has a population of 3 million people. It consists of the City of Toronto and surrounding urban areas (Scarborough, Etobicoke, York, East York, and North York and is intermediate in size between the old City of Toronto and the Greater Toronto Area (population 6 million). Metro Toronto (henceforth just “Toronto”) has an area of 630 square kilometres ( <span class="math inline">\(\approx 25 \times 25 km\)</span>)</p>
+<section id="reference-values" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="reference-values"><span class="header-section-number">3.1</span> Reference values</h2>
+<p>In <em>Toronto 2021</em>, the authors chose Thursday Feb 6, 2020 as a representative day to assess the overall state of ridehail in Toronto, pre-pandemic (p25). Can the model reproduce important aspects of this day? Although the date is now three years in the past, any reference to “Toronto” here implies “Toronto on February 6, 2020”. Relevant statistics from this study are shown in Table 1.</p>
+<table class="table">
+<caption>Table 1: Statistics for Uber trips in Toronto on Feb 6, 2020. The values come from the City of Toronto study on platform transit companies.</caption>
+<thead>
+<tr class="header">
+<th>Quantity</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Trips completed (D)</td>
+<td style="text-align: right;">193,902 (135/min)</td>
+</tr>
+<tr class="even">
+<td>Average trip length (L)</td>
+<td style="text-align: right;">8.13km</td>
+</tr>
+<tr class="odd">
+<td>Average vehicle speed (v)</td>
+<td style="text-align: right;">31 km/h</td>
+</tr>
+<tr class="even">
+<td>Percent of time: Period 1 (available for trip)</td>
+<td style="text-align: right;">40.5%</td>
+</tr>
+<tr class="odd">
+<td>Percent of time: Period 2 (en-route to pick-up)</td>
+<td style="text-align: right;">11.2%</td>
+</tr>
+<tr class="even">
+<td>Percent of time: Period 3 (with passenger)</td>
+<td style="text-align: right;">48.3%</td>
+</tr>
+<tr class="odd">
+<td>Active vehicles per hour</td>
+<td style="text-align: right;">6200</td>
+</tr>
+</tbody>
+</table>
+<p>Several adjustments are needed to turn these raw values into quantities that can be used to calibrate the model.</p>
+<p>There is a regular churn of active vehicles, so the reported number of active vehicles per hour overestimates the number on the streets at any one time. Using the distribution of vehicle hours from the Toronto 2021 report suggests that 40% of all vehicles will leave during any given hour, so that to maintain a steady volume of traffic a corresponding number will enter. The number of active vehicles at any one time is therefore 6200 * 100 / 140 = 4400.</p>
+<p>For these numbers to fit Identity I, we take the following as reference values:</p>
+<table class="table">
+<caption>Reference values for an average hour of ridehail traffic in Toronto on Feb 6, 2020</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 24%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Quantity</th>
+<th style="text-align: center;">Symbol</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Average number of active vehicles</td>
+<td style="text-align: center;"><span class="math inline">\(N\)</span></td>
+<td style="text-align: right;">4500</td>
+</tr>
+<tr class="even">
+<td>Demand (trip requests per minute)</td>
+<td style="text-align: center;"><span class="math inline">\(D\)</span></td>
+<td style="text-align: right;">135 per minute</td>
+</tr>
+<tr class="odd">
+<td>Average trip duration</td>
+<td style="text-align: center;"><span class="math inline">\(L\)</span></td>
+<td style="text-align: right;">16 minutes</td>
+</tr>
+<tr class="even">
+<td>Percent of time: Period 1 (available for trip)</td>
+<td style="text-align: center;"><span class="math inline">\(P1\)</span></td>
+<td style="text-align: right;">40.5%</td>
+</tr>
+<tr class="odd">
+<td>Percent of Percent of time: Period 2 (en-route to pick-up)</td>
+<td style="text-align: center;"><span class="math inline">\(P2\)</span></td>
+<td style="text-align: right;">11.2%</td>
+</tr>
+<tr class="even">
+<td>Percent of time: Period 3 (with passenger)</td>
+<td style="text-align: center;"><span class="math inline">\(P3\)</span></td>
+<td style="text-align: right;">48.3%</td>
+</tr>
+<tr class="odd">
+<td>Average wait time</td>
+<td style="text-align: center;"><span class="math inline">\(W\)</span></td>
+<td style="text-align: right;">3.7 minutes</td>
+</tr>
+<tr class="even">
+<td>Average wait fraction</td>
+<td style="text-align: center;"><span class="math inline">\(W / L\)</span></td>
+<td style="text-align: right;">0.23</td>
+</tr>
+</tbody>
+</table>
+<p>At 31 km/hour, it takes 48.4 minutes to cross the city. In the simulation Toronto is represented as a 48 by 48 grid, so that each block represents a minute of travel. Calibration was carried out in two steps: first a “homogeneous model”, with trip origins and destinations placed randomly, with a maximum duration of 32 minutes (to match the average duration of 16 minutes).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="toronto_calibration_homogeneous.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">First calibration of Toronto ridehail simulation: homogeneous model</figcaption><p></p>
+</figure>
+</div>
+<p><a href="#fig-7">Figure&nbsp;5</a> shows that this simplified model can simulate an environment the scale of Toronto on a single laptop computer. It shows the results of several simulations, each with 135 trips per minute, or 200,000 in the whole day. The number of vehicles is varied, from 2000 to 7,000. For each value, a simulation of 500 blocks is carried out, with the results averaged over the final 100 blocks. The time for each simulation depends on the number of vehicles: for 5000 vehicles the simulation takes about NN minutes on a Dell XPS 13 9380 laptop.</p>
+<p>At low vehicle counts, there are too few vehicles to sustain a steady state. Vehicles are busy all the time (<span class="math inline">\(P1 = 0\)</span>), trip requests go unanswered for longer and longer (the wait fraction <span class="math inline">\(W\)</span> is literally off the chart. Things fall apart: the drivers cannot keep up with the requests.</p>
+<p>At vehicle counts above 3000, a steady state is achieved. With more vehicles, the utilization rate <span class="math inline">\(P3\)</span> falls and the excess capacity <span class="math inline">\(P1\)</span> rises, as more vehicles compete for the available trips. The wait time <span class="math inline">\(W\)</span> does decrease as the number of vehicles increases, but is a small fraction of the trip duration even at 3000 vehicles, and the dispatch time <span class="math inline">\(P2\)</span> is correspondingly low.</p>
+<p>The simulation in Figure 4 is carried out with Toronto as a homogeneous city: trip origins and destinations are both chosen randomly. This model correctly reproduces the <span class="math inline">\(P3\)</span> value at the <span class="math inline">\(N = 4500\)</span> mark. In some ways this is just a check that eliminates some bugs: the identity is satisfied by any steady-state behavior, regardless of geometry.</p>
+</section>
+<section id="inhomogeneity" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="inhomogeneity"><span class="header-section-number">3.2</span> Inhomogeneity</h2>
+<p>While the utilization rate <span class="math inline">\(P3\)</span> is determined by supply, demand, and trip duration alone, so that a homogeneous model of Toronto delivers the correct ratio of <span class="math inline">\(P3\)</span> to <span class="math inline">\(N\)</span>, <span class="math inline">\(P2\)</span> time isunderestimated in the homogeneous model. Identity II fixes the <span class="math inline">\(W/P2\)</span> ratio, but not the absolute value of either of those quantities. To get this value correct we must allow inhomogeneity of trip distributions.</p>
+<p><a href="#fig-inhomog">Figure&nbsp;4</a> shows the vehicle phases as a function of inhomogeneity, using the fixed demand of 135 trips per minute and a fixed supply of 4500 vehicles derived from <a href="#fig-7">Figure&nbsp;5</a></p>
+<p>Just over half of all trips (55%) start in the central area of the old City of Toronto, which takes (reference needed) about half the time.</p>
+<div id="fig-inhomog" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="toronto_calibration_inhomogeneous.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4: Second step of Toronto ridehail calibration: wait times and inhomogeneity</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="what-if-questions" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="what-if-questions"><span class="header-section-number">3.3</span> What if? questions</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="toronto_vehicle_count.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">How things depend on vehicle count</figcaption><p></p>
+</figure>
+</div>
+<p>Figure 7 shows the utilization rates and vehicles required to sustain a 3.7 wait time <span class="math inline">\(W\)</span> in Toronto. It shows that an increase in demand does increase utilization, but there is a levelling off as demand increases. Even if the trip volume in Toronto were to increase to 200,000 per day (a 50% increase over the pre-pandemic numbers), the utilization rate would still increase to only 54% if wait time were kept at the same value.</p>
+<p>Other cities, with New York City and San Francisco as outliers, have utilization rates (by time) of 50 to 60%. Toronto has a level of demand that is lower than Chicago, which may provide a reasonable upper bound to what can be expected of around 60%.</p>
+<table class="table">
+<caption>Table 2: Utilization rates for Uber in USA cities. Rates measured by distance will be higher than those measured by time as drivers cover more distance in a given time when engaged in a trip. 2019 values are from an Uber-commissioned report <span class="citation" data-cites="balding2019">(<a href="#ref-balding2019" role="doc-biblioref">Balding et al. 2019</a>)</span>; 2017 values from a report by Bruce Schaller <span class="citation" data-cites="schaller2017">(<a href="#ref-schaller2017" role="doc-biblioref">Schaller 2017</a>)</span>, and 2015 values from an NBER report by <span class="citation" data-cites="cramer2016">(<a href="#ref-cramer2016" role="doc-biblioref">Cramer and Krueger 2016</a>)</span>. The 2020 values for Seattle come from reports by <span class="citation" data-cites="hyman2020">(<a href="#ref-hyman2020" role="doc-biblioref">Hyman et al. 2020</a>)</span> and by <span class="citation" data-cites="parrott2020">(<a href="#ref-parrott2020" role="doc-biblioref">Parrott and Reich 2020</a>)</span>.</caption>
+<thead>
+<tr class="header">
+<th>City</th>
+<th>Year</th>
+<th>Time or distance?</th>
+<th style="text-align: right;">Utilization rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Chicago</td>
+<td>2015</td>
+<td>Distance</td>
+<td style="text-align: right;">59%</td>
+</tr>
+<tr class="even">
+<td>Chicago</td>
+<td>2019</td>
+<td>Distance</td>
+<td style="text-align: right;">55%</td>
+</tr>
+<tr class="odd">
+<td>Boston</td>
+<td>2016</td>
+<td>Time</td>
+<td style="text-align: right;">47%</td>
+</tr>
+<tr class="even">
+<td>Boston</td>
+<td>2019</td>
+<td>Distance</td>
+<td style="text-align: right;">55%</td>
+</tr>
+<tr class="odd">
+<td>Los Angeles</td>
+<td>2016</td>
+<td>Time</td>
+<td style="text-align: right;">42%</td>
+</tr>
+<tr class="even">
+<td>Los Angeles</td>
+<td>2019</td>
+<td>Distance</td>
+<td style="text-align: right;">60%</td>
+</tr>
+<tr class="odd">
+<td>New York City</td>
+<td>2016</td>
+<td>Time</td>
+<td style="text-align: right;">51%</td>
+</tr>
+<tr class="even">
+<td>New York City</td>
+<td>2017</td>
+<td>Distance</td>
+<td style="text-align: right;">59%</td>
+</tr>
+<tr class="odd">
+<td>San Francisco</td>
+<td>2016</td>
+<td>Time</td>
+<td style="text-align: right;">55%</td>
+</tr>
+<tr class="even">
+<td>San Francisco</td>
+<td>2017</td>
+<td>Distance</td>
+<td style="text-align: right;">67%</td>
+</tr>
+<tr class="odd">
+<td>San Francisco</td>
+<td>2019</td>
+<td>Distance</td>
+<td style="text-align: right;">64%</td>
+</tr>
+<tr class="even">
+<td>Seattle</td>
+<td>2016</td>
+<td>Time</td>
+<td style="text-align: right;">44%</td>
+</tr>
+<tr class="odd">
+<td>Seattle</td>
+<td>2019</td>
+<td>Distance</td>
+<td style="text-align: right;">53%</td>
+</tr>
+<tr class="even">
+<td>Seattle</td>
+<td>2020a</td>
+<td>Time</td>
+<td style="text-align: right;">60%</td>
+</tr>
+<tr class="odd">
+<td>Seattle</td>
+<td>2020b</td>
+<td>Time</td>
+<td style="text-align: right;">51%</td>
+</tr>
+<tr class="even">
+<td>Washington DC</td>
+<td>2019</td>
+<td>Distance</td>
+<td style="text-align: right;">55%</td>
+</tr>
+</tbody>
+</table>
+<p>There are two ways that utilization rates may exceed these estimates. The first is for the number of drivers to be limited, so that wait times are longer. The second is for trips to concentrate even more heavily into the high traffic central zone. But this central core is well served by mass transit, and any gain in ridehail trips would be achieved by taking riders away from mass transit and putting them in cars <span class="citation" data-cites="young2020">(<a href="#ref-young2020" role="doc-biblioref">Young, Allen, and Farber 2020</a>)</span>, and adding to problems of congestion <span class="citation" data-cites="erhardt2019">(<a href="#ref-erhardt2019" role="doc-biblioref">Erhardt et al. 2019</a>)</span>.</p>
+<div id="fig-7" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="wait_times.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;5: The number of vehicles <span class="math inline">\(N\)</span> and utilization rate <span class="math inline">\(P3\)</span> required to support a wait time of 3.7 minutes (<span class="math inline">\(W =0.23\)</span>). While the utilization rate (<span class="math inline">\(P3\)</span>) does increase with demand, the improvements level off at levels of demand far below the current Toronto level of 135 requests per minute. Meanwhile, the number of vehicles required keeps growing linearly (purple line: different axis).</figcaption><p></p>
+</figure>
+</div>
+<p>Without these changes, the ridehail system has at least 40% excess capacity (vehicles not engaged in driving passengers or en route to pick passengers). There is no efficient solution to emissions through ride hailing.</p>
+</section>
+</section>
+<section id="references" class="level1" data-number="4">
+
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">4 References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-balding2019" class="csl-entry" role="doc-biblioentry">
+Balding, Melissa, Teresa Whinery, Eleanor Leshner, and Eric Womeldohrf. 2019. <span>“Estimated TNC Share of VMT in Six US Metropolitan Regions.”</span> <a href="https://drive.google.com/file/d/1FIUskVkj9lsAnWJQ6kLhAhNoVLjfFdx3/view?usp=embed_facebook">https://drive.google.com/file/d/1FIUskVkj9lsAnWJQ6kLhAhNoVLjfFdx3/view?usp=embed_facebook</a>.
+</div>
+<div id="ref-cityofchicago2022" class="csl-entry" role="doc-biblioentry">
+City of Chicago. 2022. <span>“Transportation Network Providers - Trips.”</span> <a href="https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips/m6dm-c72p">https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips/m6dm-c72p</a>.
+</div>
+<div id="ref-cramer2016" class="csl-entry" role="doc-biblioentry">
+Cramer, Judd, and Alan B Krueger. 2016. <span>“Disruptive Change in the Taxi Business: The Case of Uber.”</span>
+</div>
+<div id="ref-erhardt2019" class="csl-entry" role="doc-biblioentry">
+Erhardt, Gregory D., Sneha Roy, Drew Cooper, Bhargava Sana, Mei Chen, and Joe Castiglione. 2019. <span>“Do Transportation Network Companies Decrease or Increase Congestion?”</span> <em>Science Advances</em> 5 (5): eaau2670. <a href="https://doi.org/10.1126/sciadv.aau2670">https://doi.org/10.1126/sciadv.aau2670</a>.
+</div>
+<div id="ref-hyman2020" class="csl-entry" role="doc-biblioentry">
+Hyman, Louis, Erica L. Groshen, Adam Seth Litwin, Martin T. Wells, Kwelina P. Thompson, and Kyrylo Chernyshov. 2020. <span>“Platform Driving In Seattle,”</span> July. <a href="https://ecommons.cornell.edu/handle/1813/74305">https://ecommons.cornell.edu/handle/1813/74305</a>.
+</div>
+<div id="ref-newyorkcityopendata2022" class="csl-entry" role="doc-biblioentry">
+New York City Open Data. 2022. <span>“Uber Data.”</span> <a href="https://data.cityofnewyork.us/Transportation/uber-Data/gre9-vvjv">https://data.cityofnewyork.us/Transportation/uber-Data/gre9-vvjv</a>.
+</div>
+<div id="ref-parrott2020" class="csl-entry" role="doc-biblioentry">
+Parrott, James A., and Michael Reich. 2020. <span>“A Minimum Compensation Standard for Seattle TNC Drivers.”</span> <a href="https://irle.berkeley.edu/files/2020/07/Parrott-Reich-Seattle-Report_July-2020.pdf">https://irle.berkeley.edu/files/2020/07/Parrott-Reich-Seattle-Report_July-2020.pdf</a>.
+</div>
+<div id="ref-policyinnovationtransportationservices2019" class="csl-entry" role="doc-biblioentry">
+Policy &amp; Innovation Transportation Services. 2019. <span>“The Transportation Impacts of Vehicle-for-Hire in the City of Toronto.”</span> <a href="https://www.toronto.ca/wp-content/uploads/2019/06/96c7-Report_v1.0_2019-06-21.pdf">https://www.toronto.ca/wp-content/uploads/2019/06/96c7-Report_v1.0_2019-06-21.pdf</a>.
+</div>
+<div id="ref-policyinnovationtransportationservices2021" class="csl-entry" role="doc-biblioentry">
+———. 2021. <span>“The Transportation Impacts of Vehicle-for-Hire in the City of Toronto: October 2018 to July 2021.”</span> <a href="https://www.toronto.ca/wp-content/uploads/2021/11/98cd-VFHTransportationImpacts2021-11-23.pdf">https://www.toronto.ca/wp-content/uploads/2021/11/98cd-VFHTransportationImpacts2021-11-23.pdf</a>.
+</div>
+<div id="ref-schaller2017" class="csl-entry" role="doc-biblioentry">
+Schaller, Bruce. 2017. <span>“Unsustainable? The Growth of App-Based Ride Services and Traffic, Travel and the Future of New York City.”</span> <a href="http://www.schallerconsult.com/rideservices/unsustainable.pdf">http://www.schallerconsult.com/rideservices/unsustainable.pdf</a>.
+</div>
+<div id="ref-thepyodidedevelopmentteam2022" class="csl-entry" role="doc-biblioentry">
+The Pyodide development team. 2022. <em>Pyodide/Pyodide</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.5156931">https://doi.org/10.5281/zenodo.5156931</a>.
+</div>
+<div id="ref-young2020" class="csl-entry" role="doc-biblioentry">
+Young, Mischa, Jeff Allen, and Steven Farber. 2020. <span>“Measuring When Uber Behaves as a Substitute or Supplement to Transit: An Examination of Travel-Time Differences in Toronto.”</span> <em>Journal of Transport Geography</em> 82 (January): 102629. <a href="https://doi.org/10.1016/j.jtrangeo.2019.102629">https://doi.org/10.1016/j.jtrangeo.2019.102629</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">2023, Tom Slee</div>   
+  </div>
+</footer>
+
+
+
+</body></html>

@@ -1,0 +1,13 @@
+Earnings date,Location,Report title,Authors,Uber-funded?,Access to Uber data,Report Date,Earnings (currency/hr),Earnings ($US/hr)
+2020-02-01,Toronto,High Emissions and Low Pay,Slee,FALSE,FALSE,2023-01-01,$7.90,$5.93
+,USA,An Analysis of the Labor Market for Uber’s Driver-Partners in the United States,Hall & Krueger,TRUE,TRUE,2015-01-01,$20.00,$20.00
+,Seattle,Platform Driving in Seattle,Hyman et al,TRUE,TRUE,2020-10-01,$23.25,$23.25
+,Seattle,A Minimum Compensation Standard for Seattle TNC Drivers,Parrott & Reich,FALSE,FALSE,2020-07-01,$9.73,$9.73
+,,Uber and the Labor Market,Mishel,FALSE,FALSE,2018-05-01,$11.77,$11.77
+,Sydney,The Labour Market for Uber Drivers in Australia,"Alexander, Borland et al",FALSE,TRUE,2022-02-01,$21.00,$15.54
+,London,Uber Happy? Work and Wellbeing in the “Gig Economy”,"Berger, Benedikt et al",TRUE,TRUE,2018-10-01,$11.00,$14.63
+,Australia,Subsidising Billionaires: Simulating the Net Incomes of UberX Drivers in Australia,Stanford,FALSE,FALSE,2018-03-01,$14.62,$10.82
+2021-06-01,Chicago,How much do rideshare drivers earn? More than you might think,Anderson Economic Group,TRUE,TRUE,2022-04-01,$34.00,$34.00
+2019-12-01,Chicago,How much do rideshare drivers earn? More than you might think,Anderson Economic Group,TRUE,TRUE,2022-04-01,$18.00,$18.00
+,California,Prop 22 Depresses Wages and Deepens Inequities for California Workers,McCullough et al,FALSE,FALSE,2022-09-01,$6.20,$6.20
+2017-01-01,USA,"The Economics of Ride Hailing: Driver Revenue, Expenses and Taxes",Zoepf et al,FALSE,FALSE,2018-02-01,$3.37,$3.37

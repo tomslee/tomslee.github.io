@@ -1,0 +1,30 @@
+---
+title: "Uber driver earnings"
+author: "Tom Slee"
+---
+
+Estimates of Uber driver earnings depend on whether the researcher gets access to Uber data.
+
+```{r}
+#| label: fig-driver-earnings
+#| fig-cap: Uber driver earnings as estimated by several reports
+#| warning: false
+#| eval: false
+
+librarian::shelf(tidyverse, janitor, ggplot2, ggthemes)
+
+tb <- read_csv("./inprogress/ridehail-driver-earnings/uber-driver-earnings.csv",
+               col_type = "DcccllDnn") %>%
+    clean_names()
+
+p <- ggplot(data=tb, mapping=aes(x=report_date, y=earnings_us_hr, colour=uber_funded, ))
+
+p + geom_point(size=2) +
+  labs(title="Reported earnings of Uber drivers",
+       subtitle="Uber-supported is TRUE if the report authors were funded by or employed by Uber,\nor if Uber granted the authors access to company data sets",
+       x="Date",
+       y="Earnings ($US/hr)") +
+  guides(colour=guide_legend(title="Uber-supported?")) +
+  scale_colour_tableau(palette="Tableau 10")
+
+```
