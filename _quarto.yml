@@ -4,6 +4,9 @@ project:
   preview:
     port: 4444
     browser: true
+  render:
+    - "*.qmd"
+    - "!inprogress/ridehail-driver-earnings/"
 
 website:
   title: "Tom Slee"

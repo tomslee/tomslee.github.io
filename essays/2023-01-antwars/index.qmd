@@ -41,11 +41,11 @@ comments:
 References and sources for this essay can be found in the much longer companion piece, *War as a system in nature* ([SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4262518 "SSRN version of War as a System in Nature"), [personal site](https://tomslee.github.io/essays/2022-12-antwar/ "personal site")).
 :::
 
-::::: {.content-visible when-format="html"}
+::: {.content-visible when-format="html"}
 ::: {.callout-note appearance="simple"}
 A PDF version of this essay can be found [here](./antwars.pdf)
 :::
-:::::
+:::
 
 # Ants fight wars
 
@@ -61,35 +61,35 @@ Here's an example: a two-minute video in which David Attenborough describes a co
 
 This conflict not only looks like a war, it also fits the definitions of war commonly used by social scientists when they talk of human wars. The key elements of most definitions are scale, lethality (through the use of weapons), organization, and the fact that the conflict takes place between "political units": the violence is mutual and it serves a purpose for each of the communities involved.
 
-Let's walk through the weaver ant video again, and see how each of these qualities is satisfied. Attenborough's narration is in the captions, and our commentary follows each scene. 
+Let's walk through the weaver ant video again, and see how each of these qualities is satisfied. Attenborough's narration is in the captions, and our commentary follows each scene.
 
 To set the scene: weaver ants live in colonies with populations that may reach half a million. The colonies are in the tree canopies of tropical jungles, and are dense enough that their well-marked and patrolled borders butt up against each other, filling the available space just as nation state territories fill out the continents of the world. This territorialilty is one aspect of being a political unit.
 
-![The rich territory of a successful colony draws ... destructive enemies. Raiders from a neighbouring weaver ant colony looking to expand their own empire...](weaver_ants_1.png){#fig-weaver-ants-1 width=70%}
+![The rich territory of a successful colony draws ... destructive enemies. Raiders from a neighbouring weaver ant colony looking to expand their own empire...](weaver_ants_1.png){#fig-weaver-ants-1 width="70%"}
 
 @fig-weaver-ants-1 shows ants from one colony intentionally crossing the border into the territory of another in a coordinated fashion. (We will come back to that word "intention".) Here is the first indication of organized violence.
 
-![Invaders are quickly spotted! The guard releases pheromones to alert the rest of the colony.](weaver_ants_2.png){#fig-weaver-ants-2 width=70%}
+![Invaders are quickly spotted! The guard releases pheromones to alert the rest of the colony.](weaver_ants_2.png){#fig-weaver-ants-2 width="70%"}
 
 @fig-weaver-ants-2 shows how the weaver ants of the home colony are organized to play specialized roles. Specialization is even built into their bodies. The queen has a special role as the layer of eggs, but even though they are all half-sisters there are two distinct sizes of worker ant. The "minors" mainly look after the brood, while the "majors", which are twice as big and sometimes called "soldiers", carry out other tasks. Older major ants act as border guards. Again, these are all aspects of organization, one of the characteristics of war.
 
-![They stream out of the nest to defend their home...](weaver_ants_3.png){#fig-weaver-ants-3 width=70%}
+![They stream out of the nest to defend their home...](weaver_ants_3.png){#fig-weaver-ants-3 width="70%"}
 
 @fig-weaver-ants-3 shows communication at work, another aspect of organization. The guard's pheromone signal alerts other ants, "recruiting" them to defend the colony in a form of efficient and effective purposeful communication between different groups of ants within the colony.
 
-![If the home defences fail, the colony will be wiped out!](weaver_ants_4.png){#fig-weaver-ants-4 width=70%}
+![If the home defences fail, the colony will be wiped out!](weaver_ants_4.png){#fig-weaver-ants-4 width="70%"}
 
 In her 2021 book *War: How Conflict Shaped Us*, historian Margaret MacMillan says that wars are distinguished from bar fights by their scale. In narrating @fig-weaver-ants-4, Attenborough tells us that the colony might be wiped out. That's the potential for, and sometimes the reality of, hundreds of thousands of deaths -- surely enough to qualify as "mass" violence.
 
-![Some of the defenders deploy their most potent weapon. They squirt formic acid. The stinging liquid halts the invaders in their tracks.](weaver_ants_5.png){#fig-weaver-ants-5 width=70%}
+![Some of the defenders deploy their most potent weapon. They squirt formic acid. The stinging liquid halts the invaders in their tracks.](weaver_ants_5.png){#fig-weaver-ants-5 width="70%"}
 
 @fig-weaver-ants-5 brings us to weapons. Ant weapons differ from human weapons in that they are part of the body rather than being a prosthetic device. Still, this targeted adaptation equips the ant with the ability to inflict damage on multiple enemies, at a distance. The level of lethality at work is enough that we would agree with Attenborough when he calls these adaptations "weapons".
 
-![And now the home guard can go on the offensive.](weaver_ants_6.png){#fig-weaver-ants-6 width=70%}
+![And now the home guard can go on the offensive.](weaver_ants_6.png){#fig-weaver-ants-6 width="70%"}
 
 One not-so-obvious component of definitions of war is that the violence (or at least the potential for it) is *mutual*. One-sided violence in the ant world is usually called predation: war takes [between]{.underline} political units. In @fig-weaver-ants-6, the home guard goes on the offensive. The organized violence in this conflict is indeed mutual.
 
-![Home and territory are secure once again. A colony may lose many workers in defence of its home, but their sacrifice helps safeguard the next generation.](weaver_ants_7.png){#fig-weaver-ants-7 width=70%}
+![Home and territory are secure once again. A colony may lose many workers in defence of its home, but their sacrifice helps safeguard the next generation.](weaver_ants_7.png){#fig-weaver-ants-7 width="70%"}
 
 For decades, the late E. O. Wilson and Bert Holldobler were the foremost authorities in the study of ants. They wrote that "The colony is the unit of meaning in the lives of ants. The workers' loyalty to it is nearly total", and in @fig-weaver-ants-7 we see worker ants that have died for the greater good and for the future of the colony. Surely these colonies count as political units.
 
@@ -105,7 +105,7 @@ There are about 20,000 species of ants in the world, so there's no one form of a
 
 -   In the tropics of the Americas, Leafcutter ants construct the most sophisticated of all ant societies. Their colonies have a single queen and are maintained by several different castes of worker ant of massively different sizes, which practise an elaborate form of fungus farming (see @fig-leafcutter-ants). They fight nearby colonies, but they also have to fight off invading colonies of army ants, which don't maintain a static nest but maraud through the jungle as a column of hundreds of thousands of ants on the move. Leafcutters adopt different tactics depending on the enemy: when fighting other leafcutter ant colonies, minor workers do most of the fighting, but when army ants invade it is the majors who play the most important roles.
 
-![Two leafcutter ants of the genus *Atta*. Credit: Kathy & sam from Beaverton OR, USA, CC BY 2.0 <https://creativecommons.org/licenses/by/2.0>, via Wikimedia Commons](Hitchiking_leafcutter_ant.png){#fig-leafcutter-ants width=70%}
+![Two leafcutter ants of the genus *Atta*. Credit: Kathy & sam from Beaverton OR, USA, CC BY 2.0 <https://creativecommons.org/licenses/by/2.0>, via Wikimedia Commons](Hitchiking_leafcutter_ant.png){#fig-leafcutter-ants width="70%"}
 
 One difference between ant wars and human wars is that all human wars are between members of the same species, but some ant wars, like those between the leafcutters and army ants, are between different species. Is this still a war? If you watched the *Lord of the Rings* and didn't complain about the phrase "the War of the Ring", you've already accepted the principle. Perhaps it makes sense to think of inter-species ant wars as "asymmetric warfare" between armies using different technologies and resource bases, like that carried out in Afghanistan over the last 20 years.
 
