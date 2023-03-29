@@ -194,7 +194,7 @@ div.csl-indent {
   <div>
     <div class="abstract">
       <div class="abstract-title">Abstract</div>
-      <p>A simple simulation of ridehailing in a city is presented. The simplest version of the simulation is described solely by the size of the city and average trip duration, the number of vehicles (supply), and the rate of trip requests (demand). The results enable the relationships among these parameters, as well as wait times and vehicle utilization rates, to be explored. Extensions describe equilibration of supply under price changes, and the impact of inhomogeneous demand. The goal of the simulation is to assist with policy choices and discussions in the contentious but data-poor topic of ridehailing.</p>
+      <p>A simple simulation of ridehailing in a city is presented. The simplest version of the simulation is described solely by the size of the city and average trip duration, the number of vehicles (supply), and the rate of trip requests (demand). The results enable the relationships among these parameters, as well as wait times and vehicle utilization rates, to be explored. Extensions describe equilibration of supply under price changes, and the impact of inhomogeneous demand. The goal of the simulation is to assist with policy choices and discussions in the contentious but data-poor topic of ridehailing. An application to Toronto shows that a one-minute reduction of wait time adds 1500 vehicles to the streets, and that even with an increase in demand of 50% utilization rates are unlikely to exceed 60%.</p>
     </div>
   </div>
   
@@ -222,8 +222,10 @@ div.csl-indent {
   <li><a href="#simulating-ridehail-in-toronto" id="toc-simulating-ridehail-in-toronto" class="nav-link" data-scroll-target="#simulating-ridehail-in-toronto"><span class="toc-section-number">3</span>  Simulating ridehail in Toronto</a>
   <ul class="collapse">
   <li><a href="#reference-values" id="toc-reference-values" class="nav-link" data-scroll-target="#reference-values"><span class="toc-section-number">3.1</span>  Reference values</a></li>
-  <li><a href="#inhomogeneity" id="toc-inhomogeneity" class="nav-link" data-scroll-target="#inhomogeneity"><span class="toc-section-number">3.2</span>  Inhomogeneity</a></li>
-  <li><a href="#what-if-questions" id="toc-what-if-questions" class="nav-link" data-scroll-target="#what-if-questions"><span class="toc-section-number">3.3</span>  What if? questions</a></li>
+  <li><a href="#calibration-i-supply-demand-and-utilization-rate" id="toc-calibration-i-supply-demand-and-utilization-rate" class="nav-link" data-scroll-target="#calibration-i-supply-demand-and-utilization-rate"><span class="toc-section-number">3.2</span>  Calibration I: supply, demand, and utilization rate</a></li>
+  <li><a href="#calibration-ii-wait-times-and-dispatch-times" id="toc-calibration-ii-wait-times-and-dispatch-times" class="nav-link" data-scroll-target="#calibration-ii-wait-times-and-dispatch-times"><span class="toc-section-number">3.3</span>  Calibration II: wait times and dispatch times</a></li>
+  <li><a href="#application-i-wait-times-and-excess-capacity" id="toc-application-i-wait-times-and-excess-capacity" class="nav-link" data-scroll-target="#application-i-wait-times-and-excess-capacity"><span class="toc-section-number">3.4</span>  Application I: wait times and excess capacity</a></li>
+  <li><a href="#application-ii-demand-and-utilization-rates" id="toc-application-ii-demand-and-utilization-rates" class="nav-link" data-scroll-target="#application-ii-demand-and-utilization-rates"><span class="toc-section-number">3.5</span>  Application II: demand and utilization rates</a></li>
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="toc-section-number">4</span>  References</a></li>
   </ul>
@@ -422,9 +424,9 @@ I = I_0 - c
 <table class="table">
 <caption>Reference values for an average hour of ridehail traffic in Toronto on Feb 6, 2020</caption>
 <colgroup>
-<col style="width: 50%">
-<col style="width: 24%">
-<col style="width: 24%">
+<col style="width: 47%">
+<col style="width: 26%">
+<col style="width: 26%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -476,40 +478,54 @@ I = I_0 - c
 </tr>
 </tbody>
 </table>
-<p>At 31 km/hour, it takes 48.4 minutes to cross the city. In the simulation Toronto is represented as a 48 by 48 grid, so that each block represents a minute of travel. Calibration was carried out in two steps: first a “homogeneous model”, with trip origins and destinations placed randomly, with a maximum duration of 32 minutes (to match the average duration of 16 minutes).</p>
-<div class="quarto-figure quarto-figure-center">
+</section>
+<section id="calibration-i-supply-demand-and-utilization-rate" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="calibration-i-supply-demand-and-utilization-rate"><span class="header-section-number">3.2</span> Calibration I: supply, demand, and utilization rate</h2>
+<p>At 31 km/hour, it takes 48.4 minutes to cross the city. In the simulation Toronto is represented as a 48 by 48 grid, so that each block represents a minute of travel. Trips start and finish at random locations but with a maximum duration of 32 minutes, which yields an average duration of 16 minutes to match the observed duration. The demand for trips was fixed at the observed average value of 135 trips per minute.</p>
+<div id="fig-toronto-homogeneous" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="toronto_calibration_homogeneous.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">First calibration of Toronto ridehail simulation: homogeneous model</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4: First calibration of Toronto ridehail simulation: homogeneous model</figcaption><p></p>
 </figure>
 </div>
-<p><a href="#fig-7">Figure&nbsp;5</a> shows that this simplified model can simulate an environment the scale of Toronto on a single laptop computer. It shows the results of several simulations, each with 135 trips per minute, or 200,000 in the whole day. The number of vehicles is varied, from 2000 to 7,000. For each value, a simulation of 500 blocks is carried out, with the results averaged over the final 100 blocks. The time for each simulation depends on the number of vehicles: for 5000 vehicles the simulation takes about NN minutes on a Dell XPS 13 9380 laptop.</p>
+<p><a href="#fig-toronto-homogeneous">Figure&nbsp;4</a> shows the results of a sequence of simulations, with the number of vehicles varied from 2000 to 7,000. For each value of <span class="math inline">\(N\)</span>, a simulation of 500 blocks duration was carried out, with the results averaged over the final 100 blocks. The time for each simulation depends on the number of vehicles: for 5000 vehicles the simulation takes about NN minutes on a Dell XPS 13 9380 laptop: this simplified model can simulate an environment the scale of Toronto on a single laptop computer.</p>
 <p>At low vehicle counts, there are too few vehicles to sustain a steady state. Vehicles are busy all the time (<span class="math inline">\(P1 = 0\)</span>), trip requests go unanswered for longer and longer (the wait fraction <span class="math inline">\(W\)</span> is literally off the chart. Things fall apart: the drivers cannot keep up with the requests.</p>
 <p>At vehicle counts above 3000, a steady state is achieved. With more vehicles, the utilization rate <span class="math inline">\(P3\)</span> falls and the excess capacity <span class="math inline">\(P1\)</span> rises, as more vehicles compete for the available trips. The wait time <span class="math inline">\(W\)</span> does decrease as the number of vehicles increases, but is a small fraction of the trip duration even at 3000 vehicles, and the dispatch time <span class="math inline">\(P2\)</span> is correspondingly low.</p>
-<p>The simulation in Figure 4 is carried out with Toronto as a homogeneous city: trip origins and destinations are both chosen randomly. This model correctly reproduces the <span class="math inline">\(P3\)</span> value at the <span class="math inline">\(N = 4500\)</span> mark. In some ways this is just a check that eliminates some bugs: the identity is satisfied by any steady-state behavior, regardless of geometry.</p>
+<p>This model correctly reproduces the <span class="math inline">\(P3\)</span> value of 0.48 with a supply of <span class="math inline">\(N = 4500\)</span> vehicles. In some ways this is just a check that eliminates some bugs: the identity is satisfied by any steady-state behavior, regardless of geometry. The chart confirms that the utilization rate depends solely on vehicle supply <span class="math inline">\(N\)</span>, trip demand <span class="math inline">\(D\)</span>, and trip duration <span class="math inline">\(L\)</span>, but not on finer features of the city geography.</p>
 </section>
-<section id="inhomogeneity" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="inhomogeneity"><span class="header-section-number">3.2</span> Inhomogeneity</h2>
-<p>While the utilization rate <span class="math inline">\(P3\)</span> is determined by supply, demand, and trip duration alone, so that a homogeneous model of Toronto delivers the correct ratio of <span class="math inline">\(P3\)</span> to <span class="math inline">\(N\)</span>, <span class="math inline">\(P2\)</span> time isunderestimated in the homogeneous model. Identity II fixes the <span class="math inline">\(W/P2\)</span> ratio, but not the absolute value of either of those quantities. To get this value correct we must allow inhomogeneity of trip distributions.</p>
-<p><a href="#fig-inhomog">Figure&nbsp;4</a> shows the vehicle phases as a function of inhomogeneity, using the fixed demand of 135 trips per minute and a fixed supply of 4500 vehicles derived from <a href="#fig-7">Figure&nbsp;5</a></p>
-<p>Just over half of all trips (55%) start in the central area of the old City of Toronto, which takes (reference needed) about half the time.</p>
+<section id="calibration-ii-wait-times-and-dispatch-times" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="calibration-ii-wait-times-and-dispatch-times"><span class="header-section-number">3.3</span> Calibration II: wait times and dispatch times</h2>
+<p>The homogeneous model of Toronto, with trip origins and destinations distributed randomly over the whole city, delivers the correct ratio of <span class="math inline">\(P3\)</span> to <span class="math inline">\(N\)</span>. However, the homogeneous model underestimates dispatch time <span class="math inline">\(P2\)</span> and wait time <span class="math inline">\(W\)</span> compared to the observed results. Identity II fixes the <span class="math inline">\(W/P2\)</span> ratio, but not the absolute value of either of those quantities. To get this value correct we must allow inhomogeneity of trip distributions.</p>
 <div id="fig-inhomog" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="toronto_calibration_inhomogeneous.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4: Second step of Toronto ridehail calibration: wait times and inhomogeneity</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;5: Second step of Toronto ridehail calibration: wait times and inhomogeneity</figcaption><p></p>
 </figure>
 </div>
+<p><a href="#fig-inhomog">Figure&nbsp;5</a> shows the vehicle phases as a function of inhomogeneity, using the fixed demand of 135 trips per minute and a fixed supply of 4500 vehicles derived from <a href="#fig-toronto-homogeneous">Figure&nbsp;4</a>. The Figure shows that the utilization rate <span class="math inline">\(P3\)</span> is independent of inhomogeneity, as expected. An inhomogeneity of 0.4 reproduces the observed values of <span class="math inline">\(P2\)</span> and <span class="math inline">\(W\)</span>, and hence <span class="math inline">\(P1\)</span>, completing the essential descriptive statistics of Toronto’s ridehail market.</p>
+<p>An inhomogeneity of 0.4 means that 60% of trip origins are distributed randomly over the entire city, while 40% are constrained to within the central square, of size <span class="math inline">\(C/2 \times C/2\)</span>. Hence, 55% of all trips start in the central “downtown area”. This corresponds roughly to the old City of Toronto (reference needed for travel times).</p>
 </section>
-<section id="what-if-questions" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="what-if-questions"><span class="header-section-number">3.3</span> What if? questions</h2>
-<div class="quarto-figure quarto-figure-center">
+<section id="application-i-wait-times-and-excess-capacity" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="application-i-wait-times-and-excess-capacity"><span class="header-section-number">3.4</span> Application I: wait times and excess capacity</h2>
+<p><a href="#fig-toronto-final">Figure&nbsp;6</a> shows simulations for the calibrated Metro Toronto model, with varying numbers of vehicles <span class="math inline">\(N\)</span> from 2000 to 7000. The actual number on Feb 6, 2020 was <span class="math inline">\(N=4500\)</span>, as discussed above.</p>
+<div id="fig-toronto-final" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="toronto_vehicle_count.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">How things depend on vehicle count</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6: How things depend on vehicle count</figcaption><p></p>
 </figure>
 </div>
-<p>Figure 7 shows the utilization rates and vehicles required to sustain a 3.7 wait time <span class="math inline">\(W\)</span> in Toronto. It shows that an increase in demand does increase utilization, but there is a levelling off as demand increases. Even if the trip volume in Toronto were to increase to 200,000 per day (a 50% increase over the pre-pandemic numbers), the utilization rate would still increase to only 54% if wait time were kept at the same value.</p>
-<p>Other cities, with New York City and San Francisco as outliers, have utilization rates (by time) of 50 to 60%. Toronto has a level of demand that is lower than Chicago, which may provide a reasonable upper bound to what can be expected of around 60%.</p>
+<p>The model makes explicit and quantitative the trade-off between short wait times and additional vehicles on the streets. <a href="#fig-toronto-final">Figure&nbsp;6</a> shows that a decrease in wait times of one minute (from 4.2 to 3.2 minutes, or <span class="math inline">\(W\)</span> = 0.26 to 0.20, bracketing the observed average of 3.7 minutes), at a fixed demand of 135 trips per minute, adds approximately 1500 vehicles to the streets (from 3800 to 5300) with attendant congestion and pollution.</p>
+</section>
+<section id="application-ii-demand-and-utilization-rates" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="application-ii-demand-and-utilization-rates"><span class="header-section-number">3.5</span> Application II: demand and utilization rates</h2>
+<p>In 2017, the New York Times published a story that highlighted the tradeoff between wait times and utilization rates, including an animation that inspired the model presented here. Uber responded with a blog post claiming that the story missed the effect of demand: that with additional demand, both wait times and utilization rates could increase in a virtuous cycle. While Uber provided charts to back up the claim, they noticeably lacked any numbers on the Y axes. Since that time, there has been little discussion of the claim.</p>
+<p><a href="#fig-fixed-wait-time">Figure&nbsp;7</a> shows the utilization rates and vehicle counts required to sustain a 3.7 minute wait time $W$ in Toronto.</p>
+<div id="fig-fixed-wait-time" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="wait_times.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;7: The number of vehicles <span class="math inline">\(N\)</span> and utilization rate <span class="math inline">\(P3\)</span> required to support a wait time of 3.7 minutes (<span class="math inline">\(W =0.23\)</span>). While the utilization rate (<span class="math inline">\(P3\)</span>) does increase with demand, the improvements level off at levels of demand far below the current Toronto level of 135 requests per minute. Meanwhile, the number of vehicles required keeps growing linearly (purple line: different axis).</figcaption><p></p>
+</figure>
+</div>
 <table class="table">
 <caption>Table 2: Utilization rates for Uber in USA cities. Rates measured by distance will be higher than those measured by time as drivers cover more distance in a given time when engaged in a trip. 2019 values are from an Uber-commissioned report <span class="citation" data-cites="balding2019">(<a href="#ref-balding2019" role="doc-biblioref">Balding et al. 2019</a>)</span>; 2017 values from a report by Bruce Schaller <span class="citation" data-cites="schaller2017">(<a href="#ref-schaller2017" role="doc-biblioref">Schaller 2017</a>)</span>, and 2015 values from an NBER report by <span class="citation" data-cites="cramer2016">(<a href="#ref-cramer2016" role="doc-biblioref">Cramer and Krueger 2016</a>)</span>. The 2020 values for Seattle come from reports by <span class="citation" data-cites="hyman2020">(<a href="#ref-hyman2020" role="doc-biblioref">Hyman et al. 2020</a>)</span> and by <span class="citation" data-cites="parrott2020">(<a href="#ref-parrott2020" role="doc-biblioref">Parrott and Reich 2020</a>)</span>.</caption>
 <thead>
@@ -619,13 +635,8 @@ I = I_0 - c
 </tr>
 </tbody>
 </table>
+<p><a href="#fig-fixed-wait-time">Figure&nbsp;7</a> shows that an increase in demand does increase utilization, but that utilization levels off as demand increases. Even if the trip volume in Toronto were to increase to 200,000 per day (a 50% increase over the pre-pandemic numbers), the utilization rate would still increase to only 54% if wait time were kept at the same value. Other cities, with New York City and San Francisco as outliers, have utilization rates (by time) of 50 to 60%. Toronto has a level of demand that is lower than Chicago, which may provide a reasonable upper bound to what can be expected of around 60%.</p>
 <p>There are two ways that utilization rates may exceed these estimates. The first is for the number of drivers to be limited, so that wait times are longer. The second is for trips to concentrate even more heavily into the high traffic central zone. But this central core is well served by mass transit, and any gain in ridehail trips would be achieved by taking riders away from mass transit and putting them in cars <span class="citation" data-cites="young2020">(<a href="#ref-young2020" role="doc-biblioref">Young, Allen, and Farber 2020</a>)</span>, and adding to problems of congestion <span class="citation" data-cites="erhardt2019">(<a href="#ref-erhardt2019" role="doc-biblioref">Erhardt et al. 2019</a>)</span>.</p>
-<div id="fig-7" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="wait_times.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;5: The number of vehicles <span class="math inline">\(N\)</span> and utilization rate <span class="math inline">\(P3\)</span> required to support a wait time of 3.7 minutes (<span class="math inline">\(W =0.23\)</span>). While the utilization rate (<span class="math inline">\(P3\)</span>) does increase with demand, the improvements level off at levels of demand far below the current Toronto level of 135 requests per minute. Meanwhile, the number of vehicles required keeps growing linearly (purple line: different axis).</figcaption><p></p>
-</figure>
-</div>
 <p>Without these changes, the ridehail system has at least 40% excess capacity (vehicles not engaged in driving passengers or en route to pick passengers). There is no efficient solution to emissions through ride hailing.</p>
 </section>
 </section>
