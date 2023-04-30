@@ -1,0 +1,95 @@
+---
+title: "What Kind of Thing is Artificial Intelligence?"
+author: Tom Slee
+description: >
+    There are other ways to think about AI than like an organism
+abstract: >
+    An abstract
+abstract-title: ""
+date: last-updated
+categories:
+- In Progress
+- Technology
+toc-title: Contents
+# reference-location: margin
+# citation-location: margin
+# cap-location: margin
+image: weaver_ants_5.png
+title-block-banner: true
+reading-time: true
+number-sections: true
+number-depth: 2
+callout-appearance: simple
+fig-cap-location: bottom
+format:
+  html: 
+    toc: true
+    title-block-banner: DarkCyan
+    published-title: Last updated
+comments:
+  hypothesis: true
+#  pdf:
+#    toc: true
+#    number-sections: true
+#    colorlinks: true
+---
+
+# Too much organism
+
+Much of the thinking about AI presents it as an agent or an organism, if not now then sometime. Just putting it on the scale of intelligence along with humans, dogs and other things with brains does it. After all, many things process information without being organisms. Let's think more broadly about the kind of thing AI might be. Or, to be more specific, the kind of thing an LLM might be.
+
+# Could it be like a corporation?
+
+There is talk about the rights that an AI might have, but it's worth remembering we've already given rights to non-human entities: corporations. They can own things, they can speak, they can create things, they can be guilty of crimes, they can act in the world as entities with a purpose. They are already a superintelligence. We may even wonder if we have been displaced by them -- not that we have vanished, but that the interests served in the world are primarily those of corporations, and only secondarily those of humans who engage with them.
+
+There's an idea that the Corporate AGI is just a collection of people, and that it's a shorthand for those people acting collectively. So it's not really "non-human". But we've known since Mancur Olson 60 years ago that the actions of a group do not necessarily reflect the interests or intentions of its members, and hence that successful groups are acting in their "own" interests.
+
+We also sometimes think that a corporation is an extension of its CEO - the Steve Jobs theory perhaps. But most CEOs operate within narrow limits, and spend much of their time listening to important customers complain to them. Further, power within large corporations is diffused among contending subgroups.
+
+A better way to think of a corporation might be like as a superorganism, like an ant colony (see below). A corporation is made of several things. It is partly made of people, but these might better be thought of as human resources or assets, that it wields. The corporation needs people, sure, and acts through them, but these people are not autonomous - they are the vessels through which the corporation acts. Increasingly, corporations are socio-human-technical creations. Their actions are shaped by their internal structure, but the legal and business environment in which they operate, by their use of resources, by their communication and decision-making systems. Some technical, some not. The structures and practices of corporations are increasingly shaped by their technical systems, processes brought into conformity and universality. The digital nervous system that runs through the whole organization.
+
+As with an ant colony, information and intelligence and agency are all decentralized in a corporation. But humans are unusual in the centralized nature of our intention and intelligence. An octopus, for example, has more neurons in its tentacles: they are somewhere between a limb and a separate agent.
+
+In the end, though, it is the corporation that survives and prospers or not. Individuals come and go, just as our cells come and go, but like the Argo, it continues even though all of its parts might be replaced.
+
+Who is the tail and who is the dog?
+
+# Ant colonies
+
+As mentioned, ant colonies may have some lessons to teach us about AI.
+
+First, they show that decisions require no decision-maker. The colony acts as an agent but there is no central decision-making body. The queen ant is just a layer of eggs. Ant colonies have invented agriculture, antibiotics, roads, rich communications, the ability to identify individuals they have never met. They have invented war, and not just in a surface manner, but with diplomacy, military-industrial complexes, intelligence gathering, territoriality, specialization, technological innovation, weapons of mass destruction, military tactics, and more.
+
+Yet there is no decider. There is much talk of AGI and consciousness, but consciousness is only one way of solving problems, as Daniel Dennett says. Colonies are not conscious, and yet they act in their own interest as political units.
+
+# Cartesian theatre
+
+We can argue, with Dennett and others, that the Cartesian theatre idea of human consciousness is an illusion. There is no central place in the brain where our senses and experiences come together to create a coherent consciousness. There is no little homunculus inside us, of any kind. Our brain is, as Lisa Feldman Barrett says, a network.
+
+Still, it seems clear that we are more like single coherent things than are cities or corporations or ant colonies or even octopuses, all of which lack, even more than we do, the unity of experience that we seem to have. And all of which lack the centralized locus of "intent" that drives their behaviour.
+
+Ant is is necessary to remind ourselves that these things do not have values or points of view in the way that we do. They are not the kind of thing that has values, any more than ant colonies have values. The idea of corporate speech suggests that there is a speaker -- that there is a roughly constant thing with a thought process that is doing the speaking. But there is not.
+
+The fact that AI and corporations communicate through words adds to the illusion, but it does remain an illusion.
+
+It's worth reminding ourselves that we are less like ourselves than we might like to think.
+
+Just as our own consciousness is an illusion, so the idea that our speech represents merely the external manifestation of an internally coherent thought or belief is often mistaken. Or the idea that our emotions have a place in the brain that represents them.
+
+Many of our utterances are reactions or reflexes: responses to particular prompts that are more like muscular reactions than like considered statements of belief.
+
+My mother has dementia. Her ability to speak of her time teaching English as a Foreign Language depends on prompts. Asked if she remembers teaching, she will say No. But when we say "that's a nice sweatshirt" she looked at it and said "NATECLA. (National Association of Teaching English and other Community Languages to Adults) I used to be a member, when I taught English in South Leeds".
+
+# Continuity
+
+One thing AI lacks is a memory of its experiences. We might say "I am a friendly person". If we do, we expect it to reflect a roughly constant aspect of our character. AI clearly has no such consistency. It doesn't say "I am a squirrel" and then think "Wait, I just said I am a frog to this other person. I obviously can't be both a squirrel and a frog." Consistency and continuity are not things that AIs have.
+
+To even say an LLM has biases is not much use. It falls into an anthropomorphic view of a constant atomic thing, and suggests a consistent set of attitudes that it does not have.
+
+There is no singular "I" behind the speech of AI, and this is a source of confusion and frustration.
+
+# Scraps
+
+# What kind of thing is AI?
+
+So if AI is not an organism, then what kind of thing is it?

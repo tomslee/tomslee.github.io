@@ -170,12 +170,12 @@
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 
-\renewcommand{\today}{3/28/23}
+\renewcommand{\today}{4/2/23}
 \newcommand{\runninghead}{A Preprint }
 \title{A Simple Simulation of Ridehail Systems}
 \author{
 \textbf{Tom Slee}\\}
-\date{3/28/23}
+\date{4/2/23}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -187,9 +187,12 @@ these parameters, as well as wait times and vehicle utilization rates,
 to be explored. Extensions describe equilibration of supply under price
 changes, and the impact of inhomogeneous demand. The goal of the
 simulation is to assist with policy choices and discussions in the
-contentious but data-poor topic of ridehailing.
+contentious but data-poor topic of ridehailing. An application to
+Toronto shows that a one-minute reduction of wait time adds 1500
+vehicles to the streets, and that even with an increase in demand of
+50\% utilization rates are unlikely to exceed 60\%.
 \end{abstract}
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, frame hidden, borderline west={3pt}{0pt}{shadecolor}, enhanced, sharp corners, breakable, interior hidden]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, breakable, sharp corners, enhanced, interior hidden, frame hidden, borderline west={3pt}{0pt}{shadecolor}]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Contents}
 {
@@ -201,10 +204,10 @@ contentious but data-poor topic of ridehailing.
 \section{Introduction}\label{introduction}}
 
 Discussion about Uber and other Platform Transit Companies (PTCs) or
-Transportation Network Providers (TNCs) is vigorous but often hampered
-by lack of reliable data. The problem is made worse by the compromised
-nature of research based on negotiated or commissioned access to PTC
-data.
+Transportation Network Providers (TNCs) that provide ride-sharing or
+ridehail services is vigorous but often hampered by lack of reliable
+data, a problem is made worse by the compromised nature of research
+based on negotiated or commissioned access to PTC data.
 
 Some cities have negotiated or required access to ridehail data from
 PTCs, but that data is not always accessible to the broader public. In
@@ -216,16 +219,18 @@ spend on the platform but without a trip.
 This paper attempts to compensate for the lack of reliable data. It
 presents a simple computer simulation of a ridehail system in a city,
 which can be calibrated against broad aggregate data that is more widely
-available than detailed statistics. The simulation is intended to be as
-simple as possible while still capturing the essential elements of a
-ridehail system.
+available than detailed statistics. The model simulates a number
+ridehail vehicles driving around a city, being assigned trip requests,
+picking up passengers and dropping them off at their destinations. It is
+intended to be as simple as possible while still capturing the essential
+elements of a ridehail system.
 
-The simplest version of the simulation is described by the size of the
-city and average trip duration, the number of vehicles (supply), and the
-rate of trip requests (demand). The results enable the relationships
-among these parameters, as well as wait times and vehicle utilization
-rates, to be explored. Extensions describe equilibration of supply under
-price changes, and the impact of inhomogeneous demand.
+The simplest simulation is defined by the size of the city, the average
+trip duration, the number of vehicles (supply), and the rate of trip
+requests (demand). The results enable the relationships among these
+parameters, as well as wait times and vehicle utilization rates, to be
+explored. Extensions account for uneven trip distributions, and
+equilibration of supply under price changes.
 
 One goal of the simulation is to check intuition-based claims. Some
 policy discussions have led to talk at cross purposes with different
@@ -684,9 +689,9 @@ For these numbers to fit Identity I, we take the following as reference
 values:
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4795}}
-  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2603}}
-  >{\raggedleft\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2603}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4722}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2639}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2639}}@{}}
 \caption{Reference values for an average hour of ridehail traffic in
 Toronto on Feb 6, 2020}\tabularnewline
 \toprule()
@@ -725,13 +730,12 @@ Average wait fraction & \(W / L\) & 0.23 \\
 \subsection{Calibration I: supply, demand, and utilization
 rate}\label{calibration-i-supply-demand-and-utilization-rate}}
 
-At 31 km/hour, it takes 48.4 minutes to cross the city. In the
-simulation Toronto is represented as a 48 by 48 grid, so that each block
-represents a minute of travel. Trips start and finish at random
-locations but with a maximum duration of 32 minutes, which yields an
-average duration of 16 minutes to match the observed duration. The
-demand for trips was fixed at the observed average value of 135 trips
-per minute.
+At 31 km/hour, it takes 48 minutes to cross the city. In the simulation
+Toronto is represented as a 48 by 48 grid, so that each block represents
+a minute of travel. Trips start and finish at random locations but with
+a maximum duration of 32 minutes, which yields an average duration of 16
+minutes to match the observed duration. The demand for trips was fixed
+at the observed average value of 135 trips per minute.
 
 \begin{figure}
 
@@ -745,13 +749,13 @@ ridehail simulation: homogeneous model}
 \end{figure}
 
 Figure~\ref{fig-toronto-homogeneous} shows the results of a sequence of
-simulations, with the number of vehicles varied from 2000 to 7,000. For
-each value of \(N\), a simulation of 500 blocks duration was carried
-out, with the results averaged over the final 100 blocks. The time for
-each simulation depends on the number of vehicles: for 5000 vehicles the
-simulation takes about NN minutes on a Dell XPS 13 9380 laptop: this
-simplified model can simulate an environment the scale of Toronto on a
-single laptop computer.
+simulations, in which the number of vehicles \(N\) is varied from 2000
+to 7,000. For each value of \(N\), a simulation of 500 blocks duration
+was carried out, with the results averaged over the final 100 blocks.
+The time for each simulation depends on the number of vehicles: for 5000
+vehicles the simulation takes about 15 minutes on a Dell XPS 13 9380
+laptop. The first result is that this simplified model can simulate an
+environment the scale of Toronto on a single laptop computer.
 
 At low vehicle counts, there are too few vehicles to sustain a steady
 state. Vehicles are busy all the time (\(P1 = 0\)), trip requests go
@@ -759,12 +763,13 @@ unanswered for longer and longer (the wait fraction \(W\) is literally
 off the chart. Things fall apart: the drivers cannot keep up with the
 requests.
 
-At vehicle counts above 3000, a steady state is achieved. With more
-vehicles, the utilization rate \(P3\) falls and the excess capacity
-\(P1\) rises, as more vehicles compete for the available trips. The wait
-time \(W\) does decrease as the number of vehicles increases, but is a
-small fraction of the trip duration even at 3000 vehicles, and the
-dispatch time \(P2\) is correspondingly low.
+At vehicle counts above 3000, the drivers can keep up with requests and
+the system achieves a steady state. As \(N\) is increased further, the
+utilization rate \(P3\) falls and the excess capacity \(P1\) rises, as
+more vehicles compete for the available trips. The wait time \(W\)
+decreases as the number of vehicles increases, but is a small fraction
+of the trip duration even at 3000 vehicles, and the dispatch time \(P2\)
+is correspondingly low.
 
 This model correctly reproduces the \(P3\) value of 0.48 with a supply
 of \(N = 4500\) vehicles. In some ways this is just a check that
@@ -781,7 +786,7 @@ times}\label{calibration-ii-wait-times-and-dispatch-times}}
 The homogeneous model of Toronto, with trip origins and destinations
 distributed randomly over the whole city, delivers the correct ratio of
 \(P3\) to \(N\). However, the homogeneous model underestimates dispatch
-time \(P2\) and wait time \(W\) compared to the observed results.
+time \(P2\) and wait time \(W\) compared to the observed values.
 Identity II fixes the \(W/P2\) ratio, but not the absolute value of
 either of those quantities. To get this value correct we must allow
 inhomogeneity of trip distributions.
@@ -801,10 +806,10 @@ Figure~\ref{fig-inhomog} shows the vehicle phases as a function of
 inhomogeneity, using the fixed demand of 135 trips per minute and a
 fixed supply of 4500 vehicles derived from
 Figure~\ref{fig-toronto-homogeneous}. The Figure shows that the
-utilization rate \(P3\) is independent of inhomogeneity, as expected. An
-inhomogeneity of 0.4 reproduces the observed values of \(P2\) and \(W\),
-and hence \(P1\), completing the essential descriptive statistics of
-Toronto's ridehail market.
+utilization rate \(P3\) is independent of inhomogeneity, as expected,
+while the other values change. An inhomogeneity of 0.4 reproduces the
+observed values of \(P2\) and \(W\), and hence \(P1\), completing the
+essential descriptive statistics of Toronto's ridehail market.
 
 An inhomogeneity of 0.4 means that 60\% of trip origins are distributed
 randomly over the entire city, while 40\% are constrained to within the
@@ -812,9 +817,9 @@ central square, of size \(C/2 \times C/2\). Hence, 55\% of all trips
 start in the central ``downtown area''. This corresponds roughly to the
 old City of Toronto (reference needed for travel times).
 
-\hypertarget{the-tension-between-wait-times-and-excess-capacity}{%
-\subsection{The tension between wait times and excess
-capacity}\label{the-tension-between-wait-times-and-excess-capacity}}
+\hypertarget{application-i-wait-times-and-excess-capacity}{%
+\subsection{Application I: wait times and excess
+capacity}\label{application-i-wait-times-and-excess-capacity}}
 
 Figure~\ref{fig-toronto-final} shows simulations for the calibrated
 Metro Toronto model, with varying numbers of vehicles \(N\) from 2000 to
@@ -839,9 +844,9 @@ the observed average of 3.7 minutes), at a fixed demand of 135 trips per
 minute, adds approximately 1500 vehicles to the streets (from 3800 to
 5300) with attendant congestion and pollution.
 
-\hypertarget{does-increased-volume-produce-higher-utilization-rates}{%
-\subsection{Does increased volume produce higher utilization
-rates}\label{does-increased-volume-produce-higher-utilization-rates}}
+\hypertarget{application-ii-demand-and-utilization-rates}{%
+\subsection{Application II: demand and utilization
+rates}\label{application-ii-demand-and-utilization-rates}}
 
 In 2017, the New York Times published a story that highlighted the
 tradeoff between wait times and utilization rates, including an
@@ -930,6 +935,9 @@ Without these changes, the ridehail system has at least 40\% excess
 capacity (vehicles not engaged in driving passengers or en route to pick
 passengers). There is no efficient solution to emissions through ride
 hailing.
+
+\hypertarget{conclusions}{%
+\section{Conclusions}\label{conclusions}}
 
 \hypertarget{references}{%
 \section*{References}\label{references}}
