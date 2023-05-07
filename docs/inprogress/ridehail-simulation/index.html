@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Tom Slee">
-<meta name="dcterms.date" content="2023-04-30">
+<meta name="dcterms.date" content="2023-05-07">
 <meta name="description" content="Computer simulations of ridehail traffic and trips in a simplified city">
 
 <title>Tom Slee - Simple Simulations of Ridehail Traffic and Trips</title>
@@ -184,7 +184,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Last updated</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">April 30, 2023</p>
+        <p class="date">May 7, 2023</p>
       </div>
     </div>
     
@@ -246,6 +246,18 @@ div.csl-indent {
 
 
 
+<div>
+<div class="callout-note callout callout-style-simple">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><a href="./ridehail.pdf">Download a PDF version of this essay</a>.</p>
+</div>
+</div>
+</div>
+</div>
 <section id="introduction" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
 <p>Discussion about how Uber and other Platform Transit Companies (PTCs) should fit into the city transit landscape is vigorous but often hampered by lack of reliable data.</p>
@@ -356,7 +368,7 @@ N \times P2 = D \times W
 </section>
 <section id="implementation" class="level2" data-number="2.7">
 <h2 data-number="2.7" class="anchored" data-anchor-id="implementation"><span class="header-section-number">2.7</span> Implementations</h2>
-<p>The simulation is implemented in the Python programming language, and the code is available on GitHub at <a href="https://github.com/tomslee/ridehail" class="uri">https://github.com/tomslee/ridehail</a>. It can be run as a desktop application from a command line (tested on Windows and on Linux) but a subset can be explored interactively online at <a href="https://tomslee.github.io/ridehail/lab/" class="uri">https://tomslee.github.io/ridehail/lab/</a>.</p>
+<p>The simulation is implemented in the Python programming language, and the code is available on GitHub at <a href="https://github.com/tomslee/ridehail" class="uri">https://github.com/tomslee/ridehail</a>. It can be run as a desktop application from a command line (tested on Windows and on Linux) and a subset can be explored more interactively online at <a href="https://tomslee.github.io/ridehail/lab/" class="uri">https://tomslee.github.io/ridehail/lab/</a>.</p>
 <p>Simulations using the desktop application are controlled by a configuration file, which at its simplest specifies the size of the city (number of blocks on each side), the base demand rate (number of trip requests each move), and the number of vehicles. Currently there are almost 50 configuration parameters governing (beyond the basic simulation), logging, animation, sequence, equilibration, shocks and more.</p>
 <p>A subset of the simulations is also available on the web at <a href="https://tomslee.github.io/ridehail/lab/" class="uri">https://tomslee.github.io/ridehail/lab/</a> , where the configuration is set in the browser. The simulations run in the browser (not at a server), using the Pyodide python distribution <span class="citation" data-cites="thepyodidedevelopmentteam2022">(<a href="#ref-thepyodidedevelopmentteam2022" role="doc-biblioref">The Pyodide development team 2022</a>)</span>, using the same underlying code as the desktop but with different configuration and animation options. The web site is currently a playground or laboratory, which allows experimentation but does not provide a way to save results. All results in this paper are taken from desktop simulations.</p>
 </section>

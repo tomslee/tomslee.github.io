@@ -6,7 +6,7 @@ description: >
 abstract: >
     An abstract
 abstract-title: ""
-date: last-updated
+date: last-modified
 categories:
 - In Progress
 - Technology

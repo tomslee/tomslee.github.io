@@ -49,6 +49,12 @@ format:
 bibliography: references.bib
 ---
 
+::: {.content-visible when-format="html"}
+::: {.callout-note appearance="simple"}
+[Download a PDF version of this essay](./ridehail.pdf).
+:::
+:::
+
 # Introduction
 
 Discussion about how Uber and other Platform Transit Companies (PTCs) should fit into the city transit landscape is vigorous but often hampered by lack of reliable data.
@@ -179,7 +185,7 @@ The use of random locations for trip destinations implies an average trip length
 
 ## Implementations {#implementation}
 
-The simulation is implemented in the Python programming language, and the code is available on GitHub at <https://github.com/tomslee/ridehail>. It can be run as a desktop application from a command line (tested on Windows and on Linux) but a subset can be explored interactively online at <https://tomslee.github.io/ridehail/lab/>.
+The simulation is implemented in the Python programming language, and the code is available on GitHub at <https://github.com/tomslee/ridehail>. It can be run as a desktop application from a command line (tested on Windows and on Linux) and a subset can be explored more interactively online at <https://tomslee.github.io/ridehail/lab/>.
 
 Simulations using the desktop application are controlled by a configuration file, which at its simplest specifies the size of the city (number of blocks on each side), the base demand rate (number of trip requests each move), and the number of vehicles. Currently there are almost 50 configuration parameters governing (beyond the basic simulation), logging, animation, sequence, equilibration, shocks and more.
 

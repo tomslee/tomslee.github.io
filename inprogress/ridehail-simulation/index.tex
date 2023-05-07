@@ -5,7 +5,8 @@
 %
 \documentclass[
   letterpaper,
-]{article}
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -18,8 +19,6 @@
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-  \setmainfont[]{Latin Modern Roman}
-  \setmathfont[]{Latin Modern Math}
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -99,10 +98,7 @@
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
-\usepackage{arxiv}
-\usepackage{orcidlink}
-\usepackage{amsmath}
-\usepackage[T1]{fontenc}
+\KOMAoption{captions}{tableheading}
 \makeatletter
 \makeatother
 \makeatletter
@@ -161,7 +157,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={A Simple Simulation of Ridehail Systems},
+  pdftitle={Simple Simulations of Ridehail Traffic and Trips},
   pdfauthor={Tom Slee},
   colorlinks=true,
   linkcolor={blue},
@@ -170,29 +166,26 @@
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 
-\renewcommand{\today}{4/2/23}
-\newcommand{\runninghead}{A Preprint }
-\title{A Simple Simulation of Ridehail Systems}
-\author{
-\textbf{Tom Slee}\\}
-\date{4/2/23}
+\title{Simple Simulations of Ridehail Traffic and Trips}
+\author{Tom Slee}
+\date{4/30/23}
+
 \begin{document}
 \maketitle
 \begin{abstract}
-A simple simulation of ridehailing in a city is presented. The simplest
-version of the simulation is described solely by the size of the city
-and average trip duration, the number of vehicles (supply), and the rate
-of trip requests (demand). The results enable the relationships among
-these parameters, as well as wait times and vehicle utilization rates,
-to be explored. Extensions describe equilibration of supply under price
-changes, and the impact of inhomogeneous demand. The goal of the
-simulation is to assist with policy choices and discussions in the
-contentious but data-poor topic of ridehailing. An application to
-Toronto shows that a one-minute reduction of wait time adds 1500
-vehicles to the streets, and that even with an increase in demand of
-50\% utilization rates are unlikely to exceed 60\%.
+Simple simulations of ridehailing traffic and trips in a city are
+presented, with the goal of informing policy choices and discussions in
+the contentious but data-poor topic of ridehailing. In the simplest
+simulation, a city is composed of a square grid of uniform blocks,
+ridehail vehicles travel randomly around the streets until assigned to a
+trip, and trips start and end at random locations. Extensions describe
+equilibration of supply under price changes, and the impact of
+inhomogeneous demand. Despite the many approximations employed, the
+simulations allow the relationships between quantities of interest to
+city planners and others to be explored: vehicle utilization rates,
+vehicle ``idle'' time, passenger wait time, and trip demand.
 \end{abstract}
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, breakable, sharp corners, enhanced, interior hidden, frame hidden, borderline west={3pt}{0pt}{shadecolor}]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, boxrule=0pt, enhanced, interior hidden, borderline west={3pt}{0pt}{shadecolor}, sharp corners, breakable]}{\end{tcolorbox}}\fi
 
 \renewcommand*\contentsname{Contents}
 {
@@ -203,11 +196,14 @@ vehicles to the streets, and that even with an increase in demand of
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-Discussion about Uber and other Platform Transit Companies (PTCs) or
-Transportation Network Providers (TNCs) that provide ride-sharing or
-ridehail services is vigorous but often hampered by lack of reliable
-data, a problem is made worse by the compromised nature of research
-based on negotiated or commissioned access to PTC data.
+Discussion about how Uber and other Platform Transit Companies (PTCs)
+should fit into the city transit landscape is vigorous but often
+hampered by lack of reliable data.
+
+Some individual researchers have been granted privileged access to
+company data, have been commissioned to carry out research, or have been
+compensated for their work. Research carried out under these conditions
+is not replicable and is fraught with conflicts of interest.
 
 Some cities have negotiated or required access to ridehail data from
 PTCs, but that data is not always accessible to the broader public. In
@@ -217,40 +213,45 @@ Data 2022), key elements are missing, such as the time that drivers
 spend on the platform but without a trip.
 
 This paper attempts to compensate for the lack of reliable data. It
-presents a simple computer simulation of a ridehail system in a city,
-which can be calibrated against broad aggregate data that is more widely
-available than detailed statistics. The model simulates a number
-ridehail vehicles driving around a city, being assigned trip requests,
-picking up passengers and dropping them off at their destinations. It is
-intended to be as simple as possible while still capturing the essential
-elements of a ridehail system.
+presents a set of simple computer simulations of ridehail traffic and
+trips in a city, which can be calibrated against broad aggregate data
+that is more widely available than detailed statistics. The models
+simulate a number ridehail vehicles driving around a city, being
+assigned trip requests, picking up passengers and dropping them off at
+their destinations. They are intended to be as simple as possible while
+still capturing the essential characteristics of a ridehail system.
 
-The simplest simulation is defined by the size of the city, the average
-trip duration, the number of vehicles (supply), and the rate of trip
-requests (demand). The results enable the relationships among these
+The simplest simulation is defined solely by the size of the city, the
+average trip duration, the number of vehicles (supply), and the rate of
+trip requests (demand). The results enable the relationships among these
 parameters, as well as wait times and vehicle utilization rates, to be
 explored. Extensions account for uneven trip distributions, and
 equilibration of supply under price changes.
 
-One goal of the simulation is to check intuition-based claims. Some
-policy discussions have led to talk at cross purposes with different
-unstated assumptions underlying rival claims, such as the relationship
-between the number of idle drivers and wait times or the effect of price
-changes on driver incomes. Both of these are discussed below.
+The simulation approach has several goals:
 
-A second goal is to enable comparison of the ridehail experience among
-cities, which is easier with a simple model independent of specific
-geography and road layout.
-
-Also, a computer simulation allows ``what if?'' questions that may
-provide insights into the trade-offs faced by platform companies,
-municipal governments, drivers and passengers.
+\begin{itemize}
+\item
+  To check intuition-based claims. Some policy discussions have led to
+  talk at cross purposes with different unstated assumptions underlying
+  rival claims, such as the relationship between the number of idle
+  drivers and wait times or the effect of price changes on driver
+  incomes. Both of these are discussed below.
+\item
+  To ask ``what if?'' questions that may provide insights into the
+  trade-offs faced by platform companies, municipal governments, drivers
+  and passengers. Toronto is used as a laboratory for these questions.
+\item
+  To enable comparison of the ridehail experience among cities, which is
+  easier with a simple model independent of specific geography and road
+  layout.
+\end{itemize}
 
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
 
-The ridehail simulation has three components, each of which is described
-below:
+The ridehail simulations have three components, each of which is
+described below:
 
 \begin{itemize}
 \item
@@ -266,20 +267,20 @@ below:
 \end{itemize}
 
 \hypertarget{city}{%
-\subsection{City}\label{city}}
+\subsection{Cities}\label{city}}
 
-A city is represented as a square grid of streets, creating
-uniformly-sized ``blocks''. The square is, however, ``wrapped'', so that
-a vehicle going off the top of the city appears at the bottom, and a
-vehicle going off the right of the city appears on the left.
+A city is a square grid of identical streets, creating uniformly-sized
+``blocks''.
 
-This is not as unrealistic as it may first appear: in the real world,
-drivers are not bound by city boundaries: some trips will begin inside
-the city and finish outside, while others will start outside and
-terminate inside the boundaries. The ``wrapped'' layout can be thought
-of as an area with a constant population of vehicles, and a flux of
-vehicles leaving and entering through the edges of the area under
-consideration.
+The square is, ``wrapped'', so that a vehicle going off the top of the
+city appears at the bottom, and a vehicle going off the right of the
+city appears on the left (topologically, it is a torus). This is not as
+unrealistic as it may first appear: in the real world, drivers are not
+bound by city boundaries: some trips begin inside the city and finish
+outside, while others start outside and terminate inside the boundaries.
+The ``wrapped'' layout can be thought of as an area with a constant
+population of vehicles, sustained through a flux of vehicles leaving and
+entering through the edges of the area under consideration.
 
 \begin{figure}
 
@@ -287,23 +288,23 @@ consideration.
 
 }
 
-\caption{\label{fig-1}A City in the simulation is simply a square, with
-C blocks on each side.}
+\caption{\label{fig-1}A City in the simulation is simply a square of
+uniform streets, with C blocks on each side.}
 
 \end{figure}
 
-In this simplest model of a city, all locations are identical. A city
-with distinct zones is described as an extension, below.
+In this simplest model of a city, all locations are identical.
 
-The unit of travel is a single block, and may be thought of as a
+The unit of travel is a single block. A block may be thought of as a
 distance, a time, or a combination of the two. It is often taken as a
 minute of travel time, but this is not a requirement.
 
 \hypertarget{vehicles}{%
 \subsection{Vehicles}\label{vehicles}}
 
-Vehicles all drive at the same speed, and are always in one of three
-``phases'', which are commonly used in discussions of ridehail systems.
+Vehicles all drive at the same constant speed, and each vehicle is
+always in one of three ``phases'', which are commonly used in
+discussions of ridehail systems.
 
 \begin{itemize}
 \item
@@ -311,7 +312,7 @@ Vehicles all drive at the same speed, and are always in one of three
   vehicle is available for the platform to assigned it to trips, but
   they do not have an assigned trip. In this phase the vehicle drives
   randomly around the city. Vehicles in \emph{P1} are also sometimes
-  called ``idle''.
+  called ``idle'' or ``available'' for trip requests.
 \item
   In phase \(P2\), the platform has assigned a vehicle to a trip, the
   vehicle has accepted the assignment, and it drives towards the trip
@@ -334,9 +335,9 @@ combination of \(P2\) and \(P3\) phases, when a driver is assigned to a
 trip (and is either \emph{en route} or with a passenger), is sometimes
 called \emph{engaged time}. Evaluated across the whole driver
 population, the proportion of time drivers spend in \(P3\) is also
-called the \emph{utilization rate} for the system. The proportion of
-time drivers spend in \(P1\) is the \emph{excess capacity} of the
-system.
+called the \emph{utilization rate} for the system. In this article, the
+proportion of time drivers spend in \(P1\) is called the \emph{excess
+supply} of the system.
 
 \hypertarget{trips}{%
 \subsection{Trips}\label{trips}}
@@ -345,25 +346,25 @@ Each trip has an \emph{origin} and a \emph{destination}. In the simplest
 simulation, each is chosen randomly from intersections in the city,
 except that the two locations cannot be the same.
 
-Each vehicle can take only one trip at a time. The trip may represent
-one passenger or a group of passengers, but does not include ``shared
-trips'' with multiple stops, such as the Uber Pool service where
-passengers request trips separately but share a vehicle for some portion
-of the trip. Ridehail operators have repeatedly tried to introduce such
-systems but, even before Covid, such shared trips made up a small
-portion of the total trips, and even when a passenger requested an
-``Uber Pool'' trip they often ended up not sharing the vehicle (Policy
-\& Innovation Transportation Services 2019). The simulation focuses
-entirely on ``UberX-like'' systems.
-
 From the passenger's point of view, trip time is in one of two phases:
 \emph{waiting} or \emph{traveling}. For randomly-selected trip origins
-and destinations, the average trip length in a city with \(C\) blocks
-along each side is \(C/2\).
+and destinations, the average trip length \(L\) in a city with \(C\)
+blocks along each side is \(C/2\).
 
-The ``wait time'' reported here, (\(W\)) which is the time between
-placing a trip request and setting off to the destination, is different
-to that commonly used by Uber. With wait time defined as it is here, all
+The simulations focus entirely on ``UberX-like'' systems in which each
+vehicle takes only one trip at a time. The trip may represent one
+passenger or a group of passengers, but does not include ``shared
+trips'' with multiple stops, such as the Uber Pool service (now ``UberX
+Share'') where passengers request trips separately but share a vehicle
+for some portion of the trip. Ridehail operators have repeatedly tried
+to introduce such systems but, even before Covid, they made up a small
+portion of the total trips, and even when a passenger requested an
+``Uber Pool'' trip they often ended up not sharing the vehicle (Policy
+\& Innovation Transportation Services 2019).
+
+The ``wait time'' used here (\(W\)) is the time between placing a trip
+request and setting off to the destination. This measure is different to
+that commonly used by Uber. With wait time defined as it is here, all
 the time of a trip (from request to arrival at the destination) is
 assigned to either waiting or travelling. For Uber, the wait time is the
 time elapsed until the driver appears at the location, but that leaves
@@ -371,11 +372,14 @@ an unassigned ``grey zone'' period between driver arrival and the start
 of the trip, which may include time for the passenger to come out onto
 the street, time to find the vehicle (or for the driver to pick out the
 passenger), to possibly put luggage in the trunk, and to get in the
-vehicle. Unless otherwise stated, ``wait time'' refers to the
-model-based time, not the Uber-reported time.
+vehicle. Uber currently (April 30, 2023) does not allow drivers to
+cancel a trip until they have waited 5 minutes,(Uber, Inc. 2023) so this
+``grey zone'' can be a substantial portion of the total trip time.
+Unless otherwise stated, ``wait time'' refers to the model-based time,
+not the Uber-reported time.
 
 \hypertarget{the-simulation}{%
-\subsection{Simulation}\label{the-simulation}}
+\subsection{Simulations}\label{the-simulation}}
 
 Each simulation is a sequence of moves. In each move, vehicles travel
 one block, from one intersection to the next. A typical move involves
@@ -412,10 +416,10 @@ destinations.}
 
 \end{figure}
 
-At the end of each move, the simulation records and optionally plots the
-state of each vehicle and statistics about the overall system (fraction
-of vehicles in each phase, for example). Figure~\ref{fig-2} illustrates
-a simulation in progress.
+Figure~\ref{fig-2} illustrates a simulation in progress. At the end of
+each move, the simulation records and optionally plots the state of each
+vehicle and statistics about the overall system (fraction of vehicles in
+each phase, for example).
 
 This framework is sufficient to simulate a city with a fixed supply of
 vehicles, and fixed demand (rate of requests). For some of the results
@@ -425,17 +429,17 @@ has to be extended.
 \hypertarget{identities}{%
 \subsection{Identities}\label{identities}}
 
-With the trip and vehicle phases defined as they are here, there are
-three identities that are always obeyed by simulations that establish a
-steady state.
+With the trip and vehicle phases defined as they are here, there are two
+identities that are always obeyed by simulations that establish a steady
+state.
 
 The first identity says that the time that vehicles spend with
 passengers on board is the same as the time that passengers spend riding
 in vehicles
 
-\[
+\begin{equation}\protect\hypertarget{eq-NP3}{}{
 N \times P3 = D \times L
-\]
+}\label{eq-NP3}\end{equation}
 
 where:
 
@@ -456,9 +460,9 @@ A second identity says that, again as long as the system is in a steady
 state, the time vehicles spend \emph{en route} to trip origins is the
 same as the time passengers spend waiting to be picked up.
 
-\[
+\begin{equation}\protect\hypertarget{eq-NP2}{}{
 N \times P2 = D \times W
-\]
+}\label{eq-NP2}\end{equation}
 
 where:
 
@@ -471,11 +475,11 @@ where:
 \end{itemize}
 
 \hypertarget{extensions}{%
-\subsection{Regions in the city}\label{extensions}}
+\subsection{Regions}\label{extensions}}
 
-The spirit of the simulation is to be as simple as possible, so that it
-can be calibrated using the very limited high-level public data
-available and so that it can be used comparatively. However, two
+The spirit of the simulations is to be as simple as possible, so that
+they can be calibrated using the very limited high-level public data
+available and so that they can be used comparatively. However, two
 extensions are necessary for some applications.
 
 Many cities have a central ``downtown'' zone where the demand for
@@ -515,92 +519,8 @@ where the average trip length may differ from this, a maximum trip
 length can be set, with trips distributed randomly over intersections
 within that distance.
 
-\hypertarget{equilibration}{%
-\subsection{Equilibration}\label{equilibration}}
-
-A distinguishing feature of the gig economy model is that once drivers
-are signed up they are generally free to enter or leave active status
-simply by opening the application. The platform's ability to expand or
-shrink the supply of drivers in response to demand, whether in the short
-term (``surge pricing'' and its descendants) or in the longer term
-through changes in commission and incentives, has been central to their
-success.
-
-Equilibration of supply has been added to the model (vehicles entering
-and leaving ``active'' status). The demand for trips is currently
-treated as exogenous.
-
-A simplified formula for average net income \(I\) is as follows:
-
-\[
-I = I_0 - c
-  = P3 \cdot p \cdot (1 - f) - c
-\]
-
-where:
-
-\begin{itemize}
-\item
-  \(I_0\) is gross income
-\item
-  \(p\) is the price of a trip (fare per block)
-\item
-  \(f\) is the platform commission, as a fraction of the fare
-\item
-  \(c\) is the marginal cost of operating the vehicle
-\end{itemize}
-
-If the average net income is above a threshold \(w_0\), called the
-\emph{reservation wage}, then there is money to be made and vehicles
-will enter the market. If the average net income is below the
-reservation wage, some vehicles will leave. The reservation wage is
-determined by external factors such as the state of the labour market,
-which determines what other options are open to drivers apart from
-ridehail and hence how much they have to earn in order to find ridehail
-worthwhile.
-
-If vehicles enter, the additional supply of drivers provides additional
-competition for the available rides, the utilization rate \(P3\) falls,
-and so the average income also falls. If vehicles leave, there is less
-competition for the available rides, the utilization rate and average
-income increase. When the average income matches the reservation wage,
-the system is at equilibrium.
-
-Vehicles entering and leaving the arena looks like a dynamic process,
-but there is no attempt to model time in the approach to equilibrium.
-The rate at which vehicles enter and leave is set purely for
-convenience. In principle, the parameters could be set to describe short
-term (surge pricing) or longer term equilibration (drivers deciding to
-sign up to the platform or leaving it).
-
-\hypertarget{simplification}{%
-\subsection{Simplification}\label{simplification}}
-
-The model is obviously a dramatic simplification of reality. There is no
-treatment of cancelled trips, of distinctions among drivers, of
-information asymmetries and special driver incentives, or of many other
-factors that go to make up the complex world of ridehailing. The
-distribution of trip durations is roughly normal, which is different
-from the actual distribution. Most simulations are run with no account
-taken for different driver speed when idle compared to when engaged on a
-trip. But in some ways this oversimplification is a strength: there is
-so little public data available regarding the specifics of ridehail
-markets that any more complex model would be overfitted. Many published
-reports and papers have relied either on access to Uber's data or on
-driver surveys to collect data. The former has obvious conflict of
-interest problems and the latter is always going to be partial. The
-challenge, in fact, is to find enough reliable data to calibrate even
-this simplified model against reality. A second benefit is that by
-having a small number of parameters we can address some of the questions
-asked in public and policy circles, which relate to overall gross
-features of the system. How does wait time depend on demand? What are
-the likely consequences of a price increase? More generally, how to the
-basic variables of the system affect each other. Finally, a simple model
-should allow comparison among cities, based on their values of the basic
-parameters.
-
 \hypertarget{implementation}{%
-\subsection{Implementation}\label{implementation}}
+\subsection{Implementations}\label{implementation}}
 
 The simulation is implemented in the Python programming language, and
 the code is available on GitHub at
@@ -617,45 +537,84 @@ almost 50 configuration parameters governing (beyond the basic
 simulation), logging, animation, sequence, equilibration, shocks and
 more.
 
-A subset of the simulation is also available at a web site, where the
-configuration is set in the browser. The simulation runs in the browser
-(not at a server), using the Pyodide python distribution (The Pyodide
-development team 2022), and is the same code as the desktop. The web
-site is currently a ``laboratory'', which allows experimentation but
-does not provide a way to save results. All results in this paper are
-taken from desktop simulations.
+A subset of the simulations is also available on the web at
+\url{https://tomslee.github.io/ridehail/lab/} , where the configuration
+is set in the browser. The simulations run in the browser (not at a
+server), using the Pyodide python distribution (The Pyodide development
+team 2022), using the same underlying code as the desktop but with
+different configuration and animation options. The web site is currently
+a playground or laboratory, which allows experimentation but does not
+provide a way to save results. All results in this paper are taken from
+desktop simulations.
+
+\hypertarget{justifications}{%
+\subsection{Justifications}\label{justifications}}
+
+The simulations are obviously dramatic simplifications of reality. There
+is no treatment of cancelled trips, no distinctions among drivers, no
+consideration of information asymmetries and special driver incentives,
+or of many other factors that go to make up the complex world of
+ridehailing. The distribution of trip durations is roughly normal, which
+is different from the actual distribution. Most simulations are run with
+no account taken for different driver speed when idle compared to when
+engaged on a trip.
+
+In some ways this oversimplification is a strength: there is so little
+public data available regarding the specifics of ridehail markets that
+any more complex model would be overfitted. Many published reports and
+papers have relied either on access to Uber's data or on driver surveys
+to collect data. The former has obvious conflict of interest problems
+and the latter is always going to be partial. The challenge, in fact, is
+to find enough reliable data to calibrate even this simplified model
+against reality.
+
+A second benefit is that by having a small number of parameters we can
+address some of the questions asked in public and policy circles, which
+relate to overall gross features of the system. How does wait time
+depend on demand? What are the likely consequences of a price increase?
+More generally, how to the basic variables of the system affect each
+other. Finally, a simple model should allow comparison among cities,
+based on their values of the basic parameters.
 
 \hypertarget{simulating-ridehail-in-toronto}{%
-\section{Simulating ridehail in
-Toronto}\label{simulating-ridehail-in-toronto}}
+\section{Ridehail in Toronto}\label{simulating-ridehail-in-toronto}}
 
 The ridehail market in Metropolitan Toronto was chosen as a test arena.
 The city has released important data in a 2019 study by the City of
 Toronto (Policy \& Innovation Transportation Services 2019) and an
 update in 2021 (Policy \& Innovation Transportation Services 2021), here
-called \emph{Toronto 2019} and \emph{Toronto 2021}.
+called \emph{Toronto 2019} and \emph{Toronto 2021}, which provide a
+valuable set of high-level data that can help validate the simulation
+approach.
 
 Metro Toronto has a population of 3 million people. It consists of the
 City of Toronto and surrounding urban areas (Scarborough, Etobicoke,
 York, East York, and North York and is intermediate in size between the
 old City of Toronto and the Greater Toronto Area (population 6 million).
 Metro Toronto (henceforth just ``Toronto'') has an area of 630 square
-kilometres ( \(\approx 25 \times 25 km\))
+kilometres. For the purposes of these simulations, Metro Toronto is
+considered as a square, with sides of 25 km and hence an area of 625
+km\^{}2.
 
 \hypertarget{reference-values}{%
 \subsection{Reference values}\label{reference-values}}
 
 In \emph{Toronto 2021}, the authors chose Thursday Feb 6, 2020 as a
 representative day to assess the overall state of ridehail in Toronto,
-pre-pandemic (p25). Can the model reproduce important aspects of this
-day? Although the date is now three years in the past, any reference to
-``Toronto'' here implies ``Toronto on February 6, 2020''. Relevant
-statistics from this study are shown in Table 1.
+pre-pandemic (p25). The first question we ask is: can the model
+reproduce important aspects of this day?
 
+Although the date is now three years in the past, any reference to
+``Toronto'' here implies ``Toronto on February 6, 2020''. Relevant
+statistics from this study are shown in
+Table~\ref{tbl-reference-values}.
+
+\hypertarget{tbl-reference-values}{}
 \begin{longtable}[]{@{}lr@{}}
-\caption{Table 1: Statistics for Uber trips in Toronto on Feb 6, 2020.
-The values come from the City of Toronto study on platform transit
-companies.}\tabularnewline
+\caption{\label{tbl-reference-values}Statistics for Uber trips in
+Toronto on Feb 6, 2020. The values come from the City of Toronto study
+on platform transit companies. The average vehicle speed comes from
+correspondence with the authors.}\tabularnewline
 \toprule()
 Quantity & Value \\
 \midrule()
@@ -674,26 +633,26 @@ Active vehicles per hour & 6200 \\
 \bottomrule()
 \end{longtable}
 
-Several adjustments are needed to turn these raw values into quantities
-that can be used to calibrate the model.
-
 There is a regular churn of active vehicles, so the reported number of
-active vehicles per hour overestimates the number on the streets at any
-one time. Using the distribution of vehicle hours from the Toronto 2021
-report suggests that 40\% of all vehicles will leave during any given
-hour, so that to maintain a steady volume of traffic a corresponding
-number will enter. The number of active vehicles at any one time is
-therefore 6200 * 100 / 140 = 4400.
+active vehicles, which is the total number recorded in a given hour,
+overestimates the number on the streets at any one time. Using the
+distribution of vehicle hours from the \emph{Toronto 2021} report
+suggests that 40\% of all vehicles will leave during any given hour. To
+maintain a steady volume of traffic a corresponding number will enter.
+The number of active vehicles at any one time is therefore more like
+6200 * 100 / 140 = 4400.
 
-For these numbers to fit Identity I, we take the following as reference
-values:
+We demand that the numbers fit Equation~\ref{eq-NP3}. After these
+adjustments we take the values in Table~\ref{tbl-reference-2} as
+reference values:
 
+\hypertarget{tbl-reference-2}{}
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4722}}
-  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2639}}
-  >{\raggedleft\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2639}}@{}}
-\caption{Reference values for an average hour of ridehail traffic in
-Toronto on Feb 6, 2020}\tabularnewline
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5616}}
+  >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2192}}
+  >{\raggedleft\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2192}}@{}}
+\caption{\label{tbl-reference-2}Reference values for an average hour of
+ridehail traffic in Toronto on Feb 6, 2020.}\tabularnewline
 \toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
 Quantity
@@ -850,15 +809,12 @@ rates}\label{application-ii-demand-and-utilization-rates}}
 
 In 2017, the New York Times published a story that highlighted the
 tradeoff between wait times and utilization rates, including an
-animation that inspired the model presented here. Uber responded with a
-blog post claiming that the story missed the effect of demand: that with
-additional demand, both wait times and utilization rates could increase
-in a virtuous cycle. While Uber provided charts to back up the claim,
-they noticeably lacked any numbers on the Y axes. Since that time, there
-has been little discussion of the claim.
-
-Figure~\ref{fig-fixed-wait-time} shows the utilization rates and vehicle
-counts required to sustain a 3.7 minute wait time \$W\$ in Toronto.
+animation that inspired the model presented here (Scheiber 2017). Uber
+responded with a blog post claiming that the story missed the effect of
+demand: that with additional demand, both wait times and utilization
+rates could increase in a virtuous cycle. While Uber provided charts to
+back up the claim, they noticeably lacked any numbers on the Y axes.
+Since that time, there has been little discussion of the claim.
 
 \begin{figure}
 
@@ -876,15 +832,16 @@ axis).}
 
 \end{figure}
 
+\hypertarget{tbl-utilization}{}
 \begin{longtable}[]{@{}lllr@{}}
-\caption{Table 2: Utilization rates for Uber in USA cities. Rates
-measured by distance will be higher than those measured by time as
-drivers cover more distance in a given time when engaged in a trip. 2019
-values are from an Uber-commissioned report (Balding et al. 2019); 2017
-values from a report by Bruce Schaller (Schaller 2017), and 2015 values
-from an NBER report by (Cramer and Krueger 2016). The 2020 values for
-Seattle come from reports by (Hyman et al. 2020) and by (Parrott and
-Reich 2020).}\tabularnewline
+\caption{\label{tbl-utilization}Utilization rates for Uber in USA
+cities. Rates measured by distance will be higher than those measured by
+time as drivers cover more distance in a given time when engaged in a
+trip. 2019 values are from an Uber-commissioned report (Balding et al.
+2019); 2017 values from a report by Bruce Schaller (Schaller 2017), and
+2015 values from an NBER report by (Cramer and Krueger 2016). The 2020
+values for Seattle come from reports by (Hyman et al. 2020) and by
+(Parrott and Reich 2020).}\tabularnewline
 \toprule()
 City & Year & Time or distance? & Utilization rate \\
 \midrule()
@@ -912,15 +869,21 @@ Washington DC & 2019 & Distance & 55\% \\
 \bottomrule()
 \end{longtable}
 
-Figure~\ref{fig-fixed-wait-time} shows that an increase in demand does
-increase utilization, but that utilization levels off as demand
-increases. Even if the trip volume in Toronto were to increase to
-200,000 per day (a 50\% increase over the pre-pandemic numbers), the
+Figure~\ref{fig-fixed-wait-time} shows the utilization rates and vehicle
+counts required to sustain a 3.7 minute wait time \(W\) in Toronto, and
+sheds some light on Uber's counter-claim. As Uber claimed, an increase
+in demand does increase vehicle utilization even at a constant wait
+time. However, that utilization increase fades away at higher demand
+rates. As a result, even if the trip volume in Toronto were to increase
+to 200,000 per day (a 50\% increase over the pre-pandemic numbers), the
 utilization rate would still increase to only 54\% if wait time were
-kept at the same value. Other cities, with New York City and San
-Francisco as outliers, have utilization rates (by time) of 50 to 60\%.
-Toronto has a level of demand that is lower than Chicago, which may
-provide a reasonable upper bound to what can be expected of around 60\%.
+kept at the same value.
+
+As Table~\ref{tbl-utilization} shows, other cities have utilization
+rates (by time) of 50 to 60\% , with New York City and San Francisco as
+outliers. Toronto has a level of demand that is lower than Chicago,
+which may provide a reasonable upper bound to what can be expected of
+around 60\%.
 
 There are two ways that utilization rates may exceed these estimates.
 The first is for the number of drivers to be limited, so that wait times
@@ -928,16 +891,92 @@ are longer. The second is for trips to concentrate even more heavily
 into the high traffic central zone. But this central core is well served
 by mass transit, and any gain in ridehail trips would be achieved by
 taking riders away from mass transit and putting them in cars (Young,
-Allen, and Farber 2020), and adding to problems of congestion (Erhardt
-et al. 2019).
+Allen, and Farber 2020), adding to problems of congestion (Erhardt et
+al. 2019).
 
 Without these changes, the ridehail system has at least 40\% excess
 capacity (vehicles not engaged in driving passengers or en route to pick
 passengers). There is no efficient solution to emissions through ride
 hailing.
 
+\hypertarget{equilibration}{%
+\section{Equilibration}\label{equilibration}}
+
+A distinguishing feature of the gig economy model is that, once drivers
+are signed up to the platform, they control their hours of work: they
+are generally free to start or stop work simply by logging in or out
+from the application. The platforms' ability to expand or shrink the
+supply of drivers in response to demand, whether in the short term
+(``surge pricing'' and its descendants) or in the longer term through
+changes in commission and incentives, has been central to their success.
+The ridehail simulation has been extended to accommodate entry and exit.
+
+Using the model to make quantitative predictions of ridehail system
+behaviour would require more data than is publicly available. At this
+point, the equilibration serves mainly as a pedagogical tool to
+illustrate the interdependencies between the different facets of
+ridehail markets.
+
+\hypertarget{an-equilibration-model}{%
+\subsection{An equilibration model}\label{an-equilibration-model}}
+
+A simplified formula for average net driver income \(I\) is as follows:
+
+\begin{equation}\protect\hypertarget{eq-income}{}{
+I = I_0 - c
+  = P3 \cdot p \cdot (1 - m) - c
+}\label{eq-income}\end{equation}
+
+where:
+
+\begin{itemize}
+\item
+  \(I_0\) is gross income
+\item
+  \(p\) is the price of a trip (fare per block)
+\item
+  \(m\) is the platform commission, as a fraction of the fare
+\item
+  \(c\) is the marginal cost of operating the vehicle
+\end{itemize}
+
+If the average net income is above a threshold \(w_0\), called the
+\emph{reservation wage}, then there is money to be made and vehicles
+will enter the market. If the average net income is below the
+reservation wage, some vehicles will leave. The reservation wage is
+determined by external factors such as the state of the labour market,
+which determines what other options are open to drivers apart from
+ridehail and hence how much they have to earn in order to find ridehail
+worthwhile.
+
+If vehicles enter, the additional supply of drivers provides additional
+competition for the available rides, the utilization rate \(P3\) falls,
+and so the average income also falls. If vehicles leave, there is less
+competition for the available rides, the utilization rate and average
+income increase. When the average income matches the reservation wage,
+the system is at equilibrium.
+
+Vehicles entering and leaving the arena looks like a dynamic process,
+but there is no attempt to model time in the approach to equilibrium.
+The rate at which vehicles enter and leave is set purely for
+convenience. In principle, the parameters could be set to describe short
+term (surge pricing) or longer term equilibration (drivers deciding to
+sign up to the platform or leaving it).
+
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
+
+\hypertarget{psychological-tricks-and-opacity}{%
+\subsection{Psychological tricks and
+opacity}\label{psychological-tricks-and-opacity}}
+
+\hypertarget{costs-and-driver-pay}{%
+\subsection{Costs and driver pay}\label{costs-and-driver-pay}}
+
 \hypertarget{conclusions}{%
 \section{Conclusions}\label{conclusions}}
+
+The simple simulation of a ridehail system may provide
 
 \hypertarget{references}{%
 \section*{References}\label{references}}
@@ -993,9 +1032,19 @@ Schaller, Bruce. 2017. {``Unsustainable? The Growth of App-Based Ride
 Services and Traffic, Travel and the Future of New York City.''}
 \url{http://www.schallerconsult.com/rideservices/unsustainable.pdf}.
 
+\leavevmode\vadjust pre{\hypertarget{ref-scheiber2017}{}}%
+Scheiber, Noam. 2017. {``How Uber Uses Psychological Tricks to Push Its
+Drivers{'} Buttons.''} \emph{The New York Times}, April.
+\url{https://www.nytimes.com/interactive/2017/04/02/technology/uber-drivers-psychological-tricks.html}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-thepyodidedevelopmentteam2022}{}}%
 The Pyodide development team. 2022. \emph{Pyodide/Pyodide}. Zenodo.
 \url{https://doi.org/10.5281/zenodo.5156931}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-uberinc.2023}{}}%
+Uber, Inc. 2023. {``Review My Cancellation Fee \textbar{} Rider - Uber
+Help.''}
+\url{https://help.uber.com/riders/article/review-my-cancellation-fee?nodeId=6bec690f-ee35-40ba-96ee-c38a8ae796e0}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-young2020}{}}%
 Young, Mischa, Jeff Allen, and Steven Farber. 2020. {``Measuring When
