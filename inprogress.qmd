@@ -1,5 +1,5 @@
 ---
-title: "In progress"
+title: "Sketches & Scraps"
 listing:
   contents: inprogress
   type: grid
@@ -8,4 +8,4 @@ listing:
   categories: false
 ---
 
-Sketches, scraps, and so on. Prone to revision at any time.
+Mostly incomplete, and prone to revision at any time, these may or may not become finished pieces.

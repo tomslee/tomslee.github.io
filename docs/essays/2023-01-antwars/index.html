@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -21,7 +21,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -59,15 +59,17 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://hypothes.is/embed.js"></script>
 <style>
-    .quarto-title-block .quarto-title-banner {
-      background: DarkCyan;
-    }
-    </style>
+
+      .quarto-title-block .quarto-title-banner {
+        background: DarkCyan;
+      }
+</style>
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -88,49 +90,51 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Tom Slee</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../essays.html">
+    <a class="nav-link" href="../../essays.html" rel="" target="">
  <span class="menu-text">Essays</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../inprogress.html">
- <span class="menu-text">In Progress</span></a>
+    <a class="nav-link" href="../../inprogress.html" rel="" target="">
+ <span class="menu-text">Sketches &amp; Scraps</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://tomslee.github.io/ridehail/lab/">
+    <a class="nav-link" href="https://tomslee.github.io/ridehail/lab/" rel="" target="">
  <span class="menu-text">Ridehail Lab</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html">
+    <a class="nav-link" href="../../blog.html" rel="" target="">
  <span class="menu-text">Whimsley (blog)</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/tomslee"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/tomslee" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/whimsley"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/whimsley" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -188,29 +192,29 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#ants-fight-wars" id="toc-ants-fight-wars" class="nav-link active" data-scroll-target="#ants-fight-wars"><span class="toc-section-number">1</span>  Ants fight wars</a>
+  <li><a href="#ants-fight-wars" id="toc-ants-fight-wars" class="nav-link active" data-scroll-target="#ants-fight-wars"><span class="header-section-number">1</span> Ants fight wars</a>
   <ul class="collapse">
-  <li><a href="#weaver-ant-wars" id="toc-weaver-ant-wars" class="nav-link" data-scroll-target="#weaver-ant-wars"><span class="toc-section-number">1.1</span>  Weaver ant wars</a></li>
-  <li><a href="#other-ant-wars" id="toc-other-ant-wars" class="nav-link" data-scroll-target="#other-ant-wars"><span class="toc-section-number">1.2</span>  Other ant wars</a></li>
+  <li><a href="#weaver-ant-wars" id="toc-weaver-ant-wars" class="nav-link" data-scroll-target="#weaver-ant-wars"><span class="header-section-number">1.1</span> Weaver ant wars</a></li>
+  <li><a href="#other-ant-wars" id="toc-other-ant-wars" class="nav-link" data-scroll-target="#other-ant-wars"><span class="header-section-number">1.2</span> Other ant wars</a></li>
   </ul></li>
-  <li><a href="#asking-questions-about-wars" id="toc-asking-questions-about-wars" class="nav-link" data-scroll-target="#asking-questions-about-wars"><span class="toc-section-number">2</span>  Asking questions about wars</a>
+  <li><a href="#asking-questions-about-wars" id="toc-asking-questions-about-wars" class="nav-link" data-scroll-target="#asking-questions-about-wars"><span class="header-section-number">2</span> Asking questions about wars</a>
   <ul class="collapse">
-  <li><a href="#the-international-relations-of-ant-colonies" id="toc-the-international-relations-of-ant-colonies" class="nav-link" data-scroll-target="#the-international-relations-of-ant-colonies"><span class="toc-section-number">2.1</span>  The international relations of ant colonies</a>
+  <li><a href="#the-international-relations-of-ant-colonies" id="toc-the-international-relations-of-ant-colonies" class="nav-link" data-scroll-target="#the-international-relations-of-ant-colonies"><span class="header-section-number">2.1</span> The international relations of ant colonies</a>
   <ul class="collapse">
   <li><a href="#ant-colonies-are-neo-realist-states" id="toc-ant-colonies-are-neo-realist-states" class="nav-link" data-scroll-target="#ant-colonies-are-neo-realist-states">Ant colonies are neo-realist states</a></li>
   <li><a href="#ants-are-diplomats" id="toc-ants-are-diplomats" class="nav-link" data-scroll-target="#ants-are-diplomats">Ants are diplomats</a></li>
   </ul></li>
-  <li><a href="#war-and-ant-society" id="toc-war-and-ant-society" class="nav-link" data-scroll-target="#war-and-ant-society"><span class="toc-section-number">2.2</span>  War and ant society</a>
+  <li><a href="#war-and-ant-society" id="toc-war-and-ant-society" class="nav-link" data-scroll-target="#war-and-ant-society"><span class="header-section-number">2.2</span> War and ant society</a>
   <ul class="collapse">
   <li><a href="#the-military-industrial-complex" id="toc-the-military-industrial-complex" class="nav-link" data-scroll-target="#the-military-industrial-complex">The military industrial complex</a></li>
   <li><a href="#culture-wars" id="toc-culture-wars" class="nav-link" data-scroll-target="#culture-wars">Culture wars</a></li>
   </ul></li>
-  <li><a href="#the-psychology-of-ant-war" id="toc-the-psychology-of-ant-war" class="nav-link" data-scroll-target="#the-psychology-of-ant-war"><span class="toc-section-number">2.3</span>  The psychology of ant war</a></li>
+  <li><a href="#the-psychology-of-ant-war" id="toc-the-psychology-of-ant-war" class="nav-link" data-scroll-target="#the-psychology-of-ant-war"><span class="header-section-number">2.3</span> The psychology of ant war</a></li>
   </ul></li>
-  <li><a href="#so-what" id="toc-so-what" class="nav-link" data-scroll-target="#so-what"><span class="toc-section-number">3</span>  So what?</a>
+  <li><a href="#so-what" id="toc-so-what" class="nav-link" data-scroll-target="#so-what"><span class="header-section-number">3</span> So what?</a>
   <ul class="collapse">
-  <li><a href="#bright-lines-or-spectrum-of-conflict" id="toc-bright-lines-or-spectrum-of-conflict" class="nav-link" data-scroll-target="#bright-lines-or-spectrum-of-conflict"><span class="toc-section-number">3.1</span>  Bright lines or spectrum of conflict?</a></li>
-  <li><a href="#coda" id="toc-coda" class="nav-link" data-scroll-target="#coda"><span class="toc-section-number">3.2</span>  Coda</a></li>
+  <li><a href="#bright-lines-or-spectrum-of-conflict" id="toc-bright-lines-or-spectrum-of-conflict" class="nav-link" data-scroll-target="#bright-lines-or-spectrum-of-conflict"><span class="header-section-number">3.1</span> Bright lines or spectrum of conflict?</a></li>
+  <li><a href="#coda" id="toc-coda" class="nav-link" data-scroll-target="#coda"><span class="header-section-number">3.2</span> Coda</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -221,7 +225,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="callout-note callout callout-style-simple">
+<div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -231,15 +235,13 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<div>
-<div class="callout-note callout callout-style-simple">
+<div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
 <p>A PDF version of this essay can be found <a href="./antwars.pdf">here</a></p>
-</div>
 </div>
 </div>
 </div>
@@ -250,56 +252,56 @@ ul.task-list li input[type="checkbox"] {
 <section id="weaver-ant-wars" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="weaver-ant-wars"><span class="header-section-number">1.1</span> Weaver ant wars</h2>
 <p>Here’s an example: a two-minute video in which David Attenborough describes a colony of weaver ants in the Australian tropics battling to “protect its fortress” from another colony.</p>
-<div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/SdpGAdB_zpc?start=94" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/SdpGAdB_zpc?start=94" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <p>This conflict not only looks like a war, it also fits the definitions of war commonly used by social scientists when they talk of human wars. The key elements of most definitions are scale, lethality (through the use of weapons), organization, and the fact that the conflict takes place between “political units”: the violence is mutual and it serves a purpose for each of the communities involved.</p>
 <p>Let’s walk through the weaver ant video again, and see how each of these qualities is satisfied. Attenborough’s narration is in the captions, and our commentary follows each scene.</p>
 <p>To set the scene: weaver ants live in colonies with populations that may reach half a million. The colonies are in the tree canopies of tropical jungles, and are dense enough that their well-marked and patrolled borders butt up against each other, filling the available space just as nation state territories fill out the continents of the world. This territorialilty is one aspect of being a political unit.</p>
 <div id="fig-weaver-ants-1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="weaver_ants_1.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: The rich territory of a successful colony draws … destructive enemies. Raiders from a neighbouring weaver ant colony looking to expand their own empire…</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;1: The rich territory of a successful colony draws … destructive enemies. Raiders from a neighbouring weaver ant colony looking to expand their own empire…</figcaption>
 </figure>
 </div>
 <p><a href="#fig-weaver-ants-1">Figure&nbsp;1</a> shows ants from one colony intentionally crossing the border into the territory of another in a coordinated fashion. (We will come back to that word “intention”.) Here is the first indication of organized violence.</p>
 <div id="fig-weaver-ants-2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="weaver_ants_2.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: Invaders are quickly spotted! The guard releases pheromones to alert the rest of the colony.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Invaders are quickly spotted! The guard releases pheromones to alert the rest of the colony.</figcaption>
 </figure>
 </div>
 <p><a href="#fig-weaver-ants-2">Figure&nbsp;2</a> shows how the weaver ants of the home colony are organized to play specialized roles. Specialization is even built into their bodies. The queen has a special role as the layer of eggs, but even though they are all half-sisters there are two distinct sizes of worker ant. The “minors” mainly look after the brood, while the “majors”, which are twice as big and sometimes called “soldiers”, carry out other tasks. Older major ants act as border guards. Again, these are all aspects of organization, one of the characteristics of war.</p>
 <div id="fig-weaver-ants-3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="weaver_ants_3.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3: They stream out of the nest to defend their home…</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;3: They stream out of the nest to defend their home…</figcaption>
 </figure>
 </div>
 <p><a href="#fig-weaver-ants-3">Figure&nbsp;3</a> shows communication at work, another aspect of organization. The guard’s pheromone signal alerts other ants, “recruiting” them to defend the colony in a form of efficient and effective purposeful communication between different groups of ants within the colony.</p>
 <div id="fig-weaver-ants-4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="weaver_ants_4.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4: If the home defences fail, the colony will be wiped out!</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;4: If the home defences fail, the colony will be wiped out!</figcaption>
 </figure>
 </div>
 <p>In her 2021 book <em>War: How Conflict Shaped Us</em>, historian Margaret MacMillan says that wars are distinguished from bar fights by their scale. In narrating <a href="#fig-weaver-ants-4">Figure&nbsp;4</a>, Attenborough tells us that the colony might be wiped out. That’s the potential for, and sometimes the reality of, hundreds of thousands of deaths – surely enough to qualify as “mass” violence.</p>
 <div id="fig-weaver-ants-5" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="weaver_ants_5.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;5: Some of the defenders deploy their most potent weapon. They squirt formic acid. The stinging liquid halts the invaders in their tracks.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;5: Some of the defenders deploy their most potent weapon. They squirt formic acid. The stinging liquid halts the invaders in their tracks.</figcaption>
 </figure>
 </div>
 <p><a href="#fig-weaver-ants-5">Figure&nbsp;5</a> brings us to weapons. Ant weapons differ from human weapons in that they are part of the body rather than being a prosthetic device. Still, this targeted adaptation equips the ant with the ability to inflict damage on multiple enemies, at a distance. The level of lethality at work is enough that we would agree with Attenborough when he calls these adaptations “weapons”.</p>
 <div id="fig-weaver-ants-6" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="weaver_ants_6.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;6: And now the home guard can go on the offensive.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;6: And now the home guard can go on the offensive.</figcaption>
 </figure>
 </div>
 <p>One not-so-obvious component of definitions of war is that the violence (or at least the potential for it) is <em>mutual</em>. One-sided violence in the ant world is usually called predation: war takes <u>between</u> political units. In <a href="#fig-weaver-ants-6">Figure&nbsp;6</a>, the home guard goes on the offensive. The organized violence in this conflict is indeed mutual.</p>
 <div id="fig-weaver-ants-7" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="weaver_ants_7.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;7: Home and territory are secure once again. A colony may lose many workers in defence of its home, but their sacrifice helps safeguard the next generation.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;7: Home and territory are secure once again. A colony may lose many workers in defence of its home, but their sacrifice helps safeguard the next generation.</figcaption>
 </figure>
 </div>
 <p>For decades, the late E. O. Wilson and Bert Holldobler were the foremost authorities in the study of ants. They wrote that “The colony is the unit of meaning in the lives of ants. The workers’ loyalty to it is nearly total”, and in <a href="#fig-weaver-ants-7">Figure&nbsp;7</a> we see worker ants that have died for the greater good and for the future of the colony. Surely these colonies count as political units.</p>
@@ -316,7 +318,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-leafcutter-ants" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="Hitchiking_leafcutter_ant.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;8: Two leafcutter ants of the genus <em>Atta</em>. Credit: Kathy &amp; sam from Beaverton OR, USA, CC BY 2.0 <a href="https://creativecommons.org/licenses/by/2.0" class="uri">https://creativecommons.org/licenses/by/2.0</a>, via Wikimedia Commons</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;8: Two leafcutter ants of the genus <em>Atta</em>. Credit: Kathy &amp; sam from Beaverton OR, USA, CC BY 2.0 <a href="https://creativecommons.org/licenses/by/2.0" class="uri">https://creativecommons.org/licenses/by/2.0</a>, via Wikimedia Commons</figcaption>
 </figure>
 </div>
 <p>One difference between ant wars and human wars is that all human wars are between members of the same species, but some ant wars, like those between the leafcutters and army ants, are between different species. Is this still a war? If you watched the <em>Lord of the Rings</em> and didn’t complain about the phrase “the War of the Ring”, you’ve already accepted the principle. Perhaps it makes sense to think of inter-species ant wars as “asymmetric warfare” between armies using different technologies and resource bases, like that carried out in Afghanistan over the last 20 years.</p>
@@ -434,9 +436,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -501,6 +517,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -544,6 +646,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">2023, Tom Slee</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 

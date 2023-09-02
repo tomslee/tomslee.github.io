@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,14 +20,15 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -41,8 +42,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -77,10 +77,12 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
@@ -101,49 +103,51 @@ div.csl-indent {
     <span class="navbar-title">Tom Slee</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../essays.html">
+    <a class="nav-link" href="../../essays.html" rel="" target="">
  <span class="menu-text">Essays</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../inprogress.html">
- <span class="menu-text">In Progress</span></a>
+    <a class="nav-link" href="../../inprogress.html" rel="" target="">
+ <span class="menu-text">Sketches &amp; Scraps</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://tomslee.github.io/ridehail/lab/">
+    <a class="nav-link" href="https://tomslee.github.io/ridehail/lab/" rel="" target="">
  <span class="menu-text">Ridehail Lab</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html">
+    <a class="nav-link" href="../../blog.html" rel="" target="">
  <span class="menu-text">Whimsley (blog)</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/tomslee"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/tomslee" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/whimsley"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/whimsley" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -193,49 +197,50 @@ div.csl-indent {
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#executive-summary" id="toc-executive-summary" class="nav-link active" data-scroll-target="#executive-summary"><span class="toc-section-number">1</span>  Executive summary</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="toc-section-number">2</span>  Introduction</a></li>
-  <li><a href="#computer-simulation" id="toc-computer-simulation" class="nav-link" data-scroll-target="#computer-simulation"><span class="toc-section-number">3</span>  Computer simulation</a>
+  <li><a href="#executive-summary" id="toc-executive-summary" class="nav-link active" data-scroll-target="#executive-summary"><span class="header-section-number">1</span> Executive summary</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">2</span> Introduction</a></li>
+  <li><a href="#computer-simulation" id="toc-computer-simulation" class="nav-link" data-scroll-target="#computer-simulation"><span class="header-section-number">3</span> Computer simulation</a>
   <ul class="collapse">
-  <li><a href="#city" id="toc-city" class="nav-link" data-scroll-target="#city"><span class="toc-section-number">3.1</span>  City</a></li>
-  <li><a href="#vehicles" id="toc-vehicles" class="nav-link" data-scroll-target="#vehicles"><span class="toc-section-number">3.2</span>  Vehicles</a></li>
-  <li><a href="#trips" id="toc-trips" class="nav-link" data-scroll-target="#trips"><span class="toc-section-number">3.3</span>  Trips</a></li>
-  <li><a href="#the-simulation" id="toc-the-simulation" class="nav-link" data-scroll-target="#the-simulation"><span class="toc-section-number">3.4</span>  The simulation</a></li>
-  <li><a href="#extensions" id="toc-extensions" class="nav-link" data-scroll-target="#extensions"><span class="toc-section-number">3.5</span>  Extensions</a></li>
-  <li><a href="#implementation" id="toc-implementation" class="nav-link" data-scroll-target="#implementation"><span class="toc-section-number">3.6</span>  Implementation</a></li>
-  <li><a href="#simulating-ridehail-in-toronto" id="toc-simulating-ridehail-in-toronto" class="nav-link" data-scroll-target="#simulating-ridehail-in-toronto"><span class="toc-section-number">3.7</span>  Simulating ridehail in Toronto</a></li>
+  <li><a href="#city" id="toc-city" class="nav-link" data-scroll-target="#city"><span class="header-section-number">3.1</span> City</a></li>
+  <li><a href="#vehicles" id="toc-vehicles" class="nav-link" data-scroll-target="#vehicles"><span class="header-section-number">3.2</span> Vehicles</a></li>
+  <li><a href="#trips" id="toc-trips" class="nav-link" data-scroll-target="#trips"><span class="header-section-number">3.3</span> Trips</a></li>
+  <li><a href="#the-simulation" id="toc-the-simulation" class="nav-link" data-scroll-target="#the-simulation"><span class="header-section-number">3.4</span> The simulation</a></li>
+  <li><a href="#extensions" id="toc-extensions" class="nav-link" data-scroll-target="#extensions"><span class="header-section-number">3.5</span> Extensions</a></li>
+  <li><a href="#implementation" id="toc-implementation" class="nav-link" data-scroll-target="#implementation"><span class="header-section-number">3.6</span> Implementation</a></li>
+  <li><a href="#simulating-ridehail-in-toronto" id="toc-simulating-ridehail-in-toronto" class="nav-link" data-scroll-target="#simulating-ridehail-in-toronto"><span class="header-section-number">3.7</span> Simulating ridehail in Toronto</a></li>
   </ul></li>
-  <li><a href="#ride-hailing-cannot-provide-low-emissions-transit" id="toc-ride-hailing-cannot-provide-low-emissions-transit" class="nav-link" data-scroll-target="#ride-hailing-cannot-provide-low-emissions-transit"><span class="toc-section-number">4</span>  Ride Hailing cannot provide low-emissions transit</a>
+  <li><a href="#ride-hailing-cannot-provide-low-emissions-transit" id="toc-ride-hailing-cannot-provide-low-emissions-transit" class="nav-link" data-scroll-target="#ride-hailing-cannot-provide-low-emissions-transit"><span class="header-section-number">4</span> Ride Hailing cannot provide low-emissions transit</a>
   <ul class="collapse">
-  <li><a href="#the-limits-of-ridehail-efficiency" id="toc-the-limits-of-ridehail-efficiency" class="nav-link" data-scroll-target="#the-limits-of-ridehail-efficiency"><span class="toc-section-number">4.1</span>  The limits of ridehail efficiency</a></li>
-  <li><a href="#wait-times-what-is-a-minute-worth" id="toc-wait-times-what-is-a-minute-worth" class="nav-link" data-scroll-target="#wait-times-what-is-a-minute-worth"><span class="toc-section-number">4.2</span>  Wait times: what is a minute worth?</a></li>
+  <li><a href="#the-limits-of-ridehail-efficiency" id="toc-the-limits-of-ridehail-efficiency" class="nav-link" data-scroll-target="#the-limits-of-ridehail-efficiency"><span class="header-section-number">4.1</span> The limits of ridehail efficiency</a></li>
+  <li><a href="#wait-times-what-is-a-minute-worth" id="toc-wait-times-what-is-a-minute-worth" class="nav-link" data-scroll-target="#wait-times-what-is-a-minute-worth"><span class="header-section-number">4.2</span> Wait times: what is a minute worth?</a></li>
   </ul></li>
-  <li><a href="#full-time-drivers-earn-less-than-8-per-hour" id="toc-full-time-drivers-earn-less-than-8-per-hour" class="nav-link" data-scroll-target="#full-time-drivers-earn-less-than-8-per-hour"><span class="toc-section-number">5</span>  Full-time drivers earn less than $8 per hour</a>
+  <li><a href="#full-time-drivers-earn-less-than-8-per-hour" id="toc-full-time-drivers-earn-less-than-8-per-hour" class="nav-link" data-scroll-target="#full-time-drivers-earn-less-than-8-per-hour"><span class="header-section-number">5</span> Full-time drivers earn less than $8 per hour</a>
   <ul class="collapse">
-  <li><a href="#income-calculation" id="toc-income-calculation" class="nav-link" data-scroll-target="#income-calculation"><span class="toc-section-number">5.1</span>  Income calculation</a></li>
-  <li><a href="#inclusion-of-p1-time-and-costs" id="toc-inclusion-of-p1-time-and-costs" class="nav-link" data-scroll-target="#inclusion-of-p1-time-and-costs"><span class="toc-section-number">5.2</span>  Inclusion of P1 time and costs</a></li>
-  <li><a href="#driver-revenues-summary" id="toc-driver-revenues-summary" class="nav-link" data-scroll-target="#driver-revenues-summary"><span class="toc-section-number">5.3</span>  Driver revenues: summary</a></li>
+  <li><a href="#income-calculation" id="toc-income-calculation" class="nav-link" data-scroll-target="#income-calculation"><span class="header-section-number">5.1</span> Income calculation</a></li>
+  <li><a href="#inclusion-of-p1-time-and-costs" id="toc-inclusion-of-p1-time-and-costs" class="nav-link" data-scroll-target="#inclusion-of-p1-time-and-costs"><span class="header-section-number">5.2</span> Inclusion of P1 time and costs</a></li>
+  <li><a href="#driver-revenues-summary" id="toc-driver-revenues-summary" class="nav-link" data-scroll-target="#driver-revenues-summary"><span class="header-section-number">5.3</span> Driver revenues: summary</a></li>
   </ul></li>
-  <li><a href="#engaged-time-standards-do-not-work-for-gig-workers" id="toc-engaged-time-standards-do-not-work-for-gig-workers" class="nav-link" data-scroll-target="#engaged-time-standards-do-not-work-for-gig-workers"><span class="toc-section-number">6</span>  “Engaged time” standards do not work for gig workers</a>
+  <li><a href="#engaged-time-standards-do-not-work-for-gig-workers" id="toc-engaged-time-standards-do-not-work-for-gig-workers" class="nav-link" data-scroll-target="#engaged-time-standards-do-not-work-for-gig-workers"><span class="header-section-number">6</span> “Engaged time” standards do not work for gig workers</a>
   <ul class="collapse">
-  <li><a href="#entry-and-exit" id="toc-entry-and-exit" class="nav-link" data-scroll-target="#entry-and-exit"><span class="toc-section-number">6.1</span>  Entry and exit</a></li>
-  <li><a href="#pay-is-not-affected-by-fare-changes" id="toc-pay-is-not-affected-by-fare-changes" class="nav-link" data-scroll-target="#pay-is-not-affected-by-fare-changes"><span class="toc-section-number">6.2</span>  Pay is not affected by fare changes</a></li>
-  <li><a href="#model-validation" id="toc-model-validation" class="nav-link" data-scroll-target="#model-validation"><span class="toc-section-number">6.3</span>  Model validation</a></li>
+  <li><a href="#entry-and-exit" id="toc-entry-and-exit" class="nav-link" data-scroll-target="#entry-and-exit"><span class="header-section-number">6.1</span> Entry and exit</a></li>
+  <li><a href="#pay-is-not-affected-by-fare-changes" id="toc-pay-is-not-affected-by-fare-changes" class="nav-link" data-scroll-target="#pay-is-not-affected-by-fare-changes"><span class="header-section-number">6.2</span> Pay is not affected by fare changes</a></li>
+  <li><a href="#model-validation" id="toc-model-validation" class="nav-link" data-scroll-target="#model-validation"><span class="header-section-number">6.3</span> Model validation</a></li>
   </ul></li>
-  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions"><span class="toc-section-number">7</span>  Conclusions</a>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions"><span class="header-section-number">7</span> Conclusions</a>
   <ul class="collapse">
-  <li><a href="#the-contagion-problem" id="toc-the-contagion-problem" class="nav-link" data-scroll-target="#the-contagion-problem"><span class="toc-section-number">7.1</span>  The contagion problem</a></li>
-  <li><a href="#better-paths-forward" id="toc-better-paths-forward" class="nav-link" data-scroll-target="#better-paths-forward"><span class="toc-section-number">7.2</span>  Better paths forward</a></li>
+  <li><a href="#the-contagion-problem" id="toc-the-contagion-problem" class="nav-link" data-scroll-target="#the-contagion-problem"><span class="header-section-number">7.1</span> The contagion problem</a></li>
+  <li><a href="#better-paths-forward" id="toc-better-paths-forward" class="nav-link" data-scroll-target="#better-paths-forward"><span class="header-section-number">7.2</span> Better paths forward</a></li>
   </ul></li>
-  <li><a href="#the-author" id="toc-the-author" class="nav-link" data-scroll-target="#the-author"><span class="toc-section-number">8</span>  The author</a></li>
+  <li><a href="#the-author" id="toc-the-author" class="nav-link" data-scroll-target="#the-author"><span class="header-section-number">8</span> The author</a></li>
   </ul>
 </nav>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
@@ -245,7 +250,7 @@ div.csl-indent {
 
 
 
-<div class="callout-note callout callout-style-simple">
+<div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -291,7 +296,7 @@ div.csl-indent {
 <div id="fig-1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="fig1.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: A City in the simulation is simply a square, with C blocks on each side.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;1: A City in the simulation is simply a square, with C blocks on each side.</figcaption>
 </figure>
 </div>
 <p>The ridehail simulation has three components, each of which is described below:</p>
@@ -336,7 +341,7 @@ div.csl-indent {
 <div id="fig-2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="fig2.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: A city of 20 by 20 blocks, showing 160 vehicles (triangles) in phases P1 (red), P2 (orange), and P3 (green). The red diamonds are trip origins, and the green circles are trip destinations.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;2: A city of 20 by 20 blocks, showing 160 vehicles (triangles) in phases P1 (red), P2 (orange), and P3 (green). The red diamonds are trip origins, and the green circles are trip destinations.</figcaption>
 </figure>
 </div>
 <p>At the end of each move, the simulation records and optionally plots the state of each vehicle and statistics about the overall system (fraction of vehicles in each phase, for example). Figure 2 illustrates a simulation in progress.</p>
@@ -349,7 +354,7 @@ div.csl-indent {
 <div id="fig-3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="fig3.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3: The red dots show the origin of trips in a small “two-zone” city if eight blocks. The central area has a higher demand than outlying suburbs.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;3: The red dots show the origin of trips in a small “two-zone” city if eight blocks. The central area has a higher demand than outlying suburbs.</figcaption>
 </figure>
 </div>
 <p>The second extension, discussed in the section on Engaged Time standards below, is to allow vehicles to enter and leave the system in response to price and demand.</p>
@@ -427,7 +432,7 @@ div.csl-indent {
 <div id="fig-4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="fig4.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4: Simulating Toronto: Wait times and vehicle phases for Feb 6, 2020. The figures at 6000 vehicles match the reported values for that day.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;4: Simulating Toronto: Wait times and vehicle phases for Feb 6, 2020. The figures at 6000 vehicles match the reported values for that day.</figcaption>
 </figure>
 </div>
 <p>Figure 4 highlights the trade-off at the heart of the ground transportation industry.</p>
@@ -437,7 +442,7 @@ div.csl-indent {
 <div id="fig-5" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="fig5.jpg" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;5: The Australian Cycling Promotion Fund is one of several groups to have produced photos like this, showing the relative space efficiency of different modes of transport. This is reproduced from the Human Transit blog of Jarrett Walker.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;5: The Australian Cycling Promotion Fund is one of several groups to have produced photos like this, showing the relative space efficiency of different modes of transport. This is reproduced from the Human Transit blog of Jarrett Walker.</figcaption>
 </figure>
 </div>
 <p>The tension between driver and passenger interests here is clear. Passengers want a short wait time, but this requires a high proportion of drivers waiting for a trip, not being paid.</p>
@@ -449,7 +454,7 @@ div.csl-indent {
 <div id="fig-6" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="fig6.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;6: Uber’s losses over the last 7 years.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;6: Uber’s losses over the last 7 years.</figcaption>
 </figure>
 </div>
 <p>It is true that with higher demand, a ridehail system can support a given wait time with fewer vehicles per trip: it generates higher utilization rates, but there are limits to this argument.</p>
@@ -568,7 +573,7 @@ div.csl-indent {
 <div id="fig-7" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="fig7.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;7: The number of vehicles N and utilization rate P3 required to support a wait time of 6 minutes (w=0.30). While the utilization rate (P3) does increase with demand, the improvements level off as demand increases. Meanwhile, the number of vehicles required keeps growing (green line, at left).</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;7: The number of vehicles N and utilization rate P3 required to support a wait time of 6 minutes (w=0.30). While the utilization rate (P3) does increase with demand, the improvements level off as demand increases. Meanwhile, the number of vehicles required keeps growing (green line, at left).</figcaption>
 </figure>
 </div>
 <p>Without these changes, at least 40% of a vehicle’s time will be spent deadheading. There is no efficient solution to emissions through ride hailing.</p>
@@ -610,7 +615,7 @@ div.csl-indent {
 <div id="fig-8" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="fig8.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;8: In Chicago, full-time drivers (defined as those who drive over 275 trips per month), make up only about one in six drivers, but are responsible for over 40% of trips.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;8: In Chicago, full-time drivers (defined as those who drive over 275 trips per month), make up only about one in six drivers, but are responsible for over 40% of trips.</figcaption>
 </figure>
 </div>
 <p>Despite Uber’s popular image as a platform for casual drivers, full-time drivers provide the core of the service. Figure 8, based on Chicago data <span class="citation" data-cites="cityofchicago2022">(<a href="#ref-cityofchicago2022" role="doc-biblioref">City of Chicago 2022</a>)</span>, shows that full-time drivers provide between a third and a half of all trips.</p>
@@ -653,7 +658,7 @@ div.csl-indent {
 <div id="fig-9" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="fig9.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;9: “Before” and “After” a change in fare. While the change affects the number of vehicles and passenger wait times, driver income does not change.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;9: “Before” and “After” a change in fare. While the change affects the number of vehicles and passenger wait times, driver income does not change.</figcaption>
 </figure>
 </div>
 <p>As Uber and other gig-economy platforms do not limit driver supply, a rise in “engaged time” pay increases the number of drivers on the platform, but does not translate into increased earnings for individual drivers.</p>
@@ -698,101 +703,101 @@ div.csl-indent {
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-balding_estimated_2019" class="csl-entry" role="doc-biblioentry">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-balding_estimated_2019" class="csl-entry" role="listitem">
 Balding, Melissa, Teresa Whinery, Eleanor Leshner, and Eric Womeldohrf. 2019. <span>“Estimated <span>TNC</span> <span>Share</span> of <span>VMT</span> in <span>Six</span> <span>US</span> <span>Metropolitan</span> <span>Regions</span>.”</span> Fehr &amp; Peers. <a href="https://drive.google.com/file/d/1FIUskVkj9lsAnWJQ6kLhAhNoVLjfFdx3/view?usp=embed_facebook">https://drive.google.com/file/d/1FIUskVkj9lsAnWJQ6kLhAhNoVLjfFdx3/view?usp=embed_facebook</a>.
 </div>
-<div id="ref-berg2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-berg2019" class="csl-entry" role="listitem">
 Berg, Janine, and Hannah Johnston. 2019. <span>“Too Good to Be True? A Comment on Hall and Krueger<span>’</span>s Analysis of the Labor Market for Uber<span>’</span>s Driver-Partners.”</span> <em>ILR Review</em> 72 (1): 39–68. <a href="https://doi.org/10.1177/0019793918798593">https://doi.org/10.1177/0019793918798593</a>.
 </div>
-<div id="ref-cityofchicago2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-cityofchicago2022" class="csl-entry" role="listitem">
 City of Chicago. 2022. <span>“Transportation Network Providers - Trips.”</span> <a href="https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips/m6dm-c72p">https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips/m6dm-c72p</a>.
 </div>
-<div id="ref-city_of_toronto_update_2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-city_of_toronto_update_2021" class="csl-entry" role="listitem">
 City of Toronto. 2021. <span>“Update on <span>Outstanding</span> <span>Vehicle</span>-for-<span>Hire</span> <span>Directives</span>.”</span> <a href="http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2021.GL27.19">http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2021.GL27.19</a>.
 </div>
-<div id="ref-cramer_disruptive_2016" class="csl-entry" role="doc-biblioentry">
+<div id="ref-cramer_disruptive_2016" class="csl-entry" role="listitem">
 Cramer, Judd, and Alan B Krueger. 2016. <span>“Disruptive <span>Change</span> in the <span>Taxi</span> <span>Business</span>: <span>The</span> <span>Case</span> of <span>Uber</span>.”</span> 22083.
 </div>
-<div id="ref-erhardt2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-erhardt2019" class="csl-entry" role="listitem">
 Erhardt, Gregory D., Sneha Roy, Drew Cooper, Bhargava Sana, Mei Chen, and Joe Castiglione. 2019. <span>“Do Transportation Network Companies Decrease or Increase Congestion?”</span> <em>Science Advances</em> 5 (5): eaau2670. <a href="https://doi.org/10.1126/sciadv.aau2670">https://doi.org/10.1126/sciadv.aau2670</a>.
 </div>
-<div id="ref-eurofound_collective_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-eurofound_collective_2022" class="csl-entry" role="listitem">
 Eurofound. 2022. <span>“Collective Agreement Between <span>Foodora</span> and the <span>United</span> <span>Federation</span> of <span>Trade</span> <span>Unions</span> (<span>Fellesforbundet</span>).”</span> <a href="https://www.eurofound.europa.eu/fi/data/platform-economy/initiatives/collective-agreement-between-foodora-and-the-united-federation-of-trade-unions-fellesforbundet">https://www.eurofound.europa.eu/fi/data/platform-economy/initiatives/collective-agreement-between-foodora-and-the-united-federation-of-trade-unions-fellesforbundet</a>.
 </div>
-<div id="ref-hall2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-hall2018" class="csl-entry" role="listitem">
 Hall, Jonathan D., Craig Palsson, and Joseph Price. 2018. <span>“Is Uber a Substitute or Complement for Public Transit?”</span> <em>Journal of Urban Economics</em> 108 (November): 36–50. <a href="https://doi.org/10.1016/j.jue.2018.09.003">https://doi.org/10.1016/j.jue.2018.09.003</a>.
 </div>
-<div id="ref-hall_pricing_2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-hall_pricing_2021" class="csl-entry" role="listitem">
 Hall, Jonathan V, John J Horton, and Daniel T Knoepﬂe. 2021. <span>“Pricing in <span>Designed</span> <span>Markets</span>: <span>The</span> <span>Case</span> of <span>Ride</span>-<span>Sharing</span>,”</span> January, 54.
 </div>
-<div id="ref-herbold_payup_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-herbold_payup_2022" class="csl-entry" role="listitem">
 Herbold, Lisa, and Andrew Lewis. 2022. <span>“<span>PayUp</span> <span>Legislation</span> - <span>Council</span> <span></span> Seattle.gov.”</span> <em>Seattle City Council</em>. <a href="https://www.seattle.gov/council/issues/payup">https://www.seattle.gov/council/issues/payup</a>.
 </div>
-<div id="ref-horan2017" class="csl-entry" role="doc-biblioentry">
+<div id="ref-horan2017" class="csl-entry" role="listitem">
 Horan, Hubert. 2017. <span>“Will the Growth of Uber Increase Economic Welfare?”</span> Rochester, NY. <a href="https://papers.ssrn.com/abstract=2933177">https://papers.ssrn.com/abstract=2933177</a>.
 </div>
-<div id="ref-hyman_platform_2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-hyman_platform_2020" class="csl-entry" role="listitem">
 Hyman, Louis, Erica L. Groshen, Adam Seth Litwin, Martin T. Wells, Kwelina P. Thompson, and Kyrylo Chernyshov. 2020a. <span>“Platform <span>Driving</span> <span>In</span> <span>Seattle</span>,”</span> July. <a href="https://ecommons.cornell.edu/handle/1813/74305">https://ecommons.cornell.edu/handle/1813/74305</a>.
 </div>
-<div id="ref-hyman2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-hyman2020" class="csl-entry" role="listitem">
 ———. 2020b. <span>“Platform Driving In Seattle,”</span> July. <a href="https://ecommons.cornell.edu/handle/1813/74305">https://ecommons.cornell.edu/handle/1813/74305</a>.
 </div>
-<div id="ref-policy__innovation_transportation_services_transportation_2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-policy__innovation_transportation_services_transportation_2019" class="csl-entry" role="listitem">
 Innovation Transportation Services, Policy &amp;. 2019. <span>“The <span>Transportation</span> <span>Impacts</span> of <span>Vehicle</span>-for-<span>Hire</span> in the <span>City</span> of <span>Toronto</span>.”</span> City of Toronto. <a href="https://www.toronto.ca/wp-content/uploads/2019/06/96c7-Report_v1.0_2019-06-21.pdf">https://www.toronto.ca/wp-content/uploads/2019/06/96c7-Report_v1.0_2019-06-21.pdf</a>.
 </div>
-<div id="ref-just_eat_takeawaycom_annual_2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-just_eat_takeawaycom_annual_2021" class="csl-entry" role="listitem">
 Just Eat Takeaway.com. 2021. <span>“Annual <span>Report</span> 2021.”</span> Just Eat Takeaway.com. <a href="https://s3.eu-central-1.amazonaws.com/takeaway-corporatewebsite-dev/JET-JV2021-080322.pdf#page=7">https://s3.eu-central-1.amazonaws.com/takeaway-corporatewebsite-dev/JET-JV2021-080322.pdf#page=7</a>.
 </div>
-<div id="ref-lawrence2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-lawrence2022" class="csl-entry" role="listitem">
 Lawrence, Felicity. 2022. <span>“Uber Paid Academics Six-Figure Sums for Research to Feed to the Media.”</span> <em>The Guardian</em>, July. <a href="https://www.theguardian.com/news/2022/jul/12/uber-paid-academics-six-figure-sums-for-research-to-feed-to-the-media">https://www.theguardian.com/news/2022/jul/12/uber-paid-academics-six-figure-sums-for-research-to-feed-to-the-media</a>.
 </div>
-<div id="ref-legislative_assembly_of_ontario_working_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-legislative_assembly_of_ontario_working_2022" class="csl-entry" role="listitem">
 Legislative Assembly of Ontario. 2022. <span>“Working for <span>Workers</span> <span>Act</span>, 2022.”</span> <a href="https://www.ola.org/en/legislative-business/bills/parliament-42/session-2/bill-88">https://www.ola.org/en/legislative-business/bills/parliament-42/session-2/bill-88</a>.
 </div>
-<div id="ref-mccullough_prop_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-mccullough_prop_2022" class="csl-entry" role="listitem">
 McCullough, Eliza, Brian Dolber, Justin Scoggins, Edward-Michael Muña, and Sarah Treuhaft. 2022. <span>“Prop 22 <span>Depresses</span> <span>Wages</span> and <span>Deepens</span> <span>Inequities</span> for <span>California</span> <span>Workers</span>.”</span> National Equity Atlas. <a href="https://nationalequityatlas.org/prop22-paystudy">https://nationalequityatlas.org/prop22-paystudy</a>.
 </div>
-<div id="ref-mojtehedzadeh_uber_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-mojtehedzadeh_uber_2022" class="csl-entry" role="listitem">
 Mojtehedzadeh, Sara. 2022. <span>“The <span>Uber</span> <span>Files</span>: <span>A</span> Kill Switch, Intense Lobbying and Driver Exploitation. <span>Leaked</span> Documents Reveal <span>‘Cutthroat’</span> Tactics That Built Ride-Hailing Empire.”</span> <em>The Toronto Star</em>, July. <a href="https://www.thestar.com/news/investigations/2022/07/10/uber-files-reveal-playbook-that-fueled-ride-share-firms-rise.html">https://www.thestar.com/news/investigations/2022/07/10/uber-files-reveal-playbook-that-fueled-ride-share-firms-rise.html</a>.
 </div>
-<div id="ref-new_york_city_open_data_uber_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-new_york_city_open_data_uber_2022" class="csl-entry" role="listitem">
 New York City Open Data. 2022. <span>“Uber <span>Data</span>.”</span> <em>New York City Open Data</em>. <a href="https://data.cityofnewyork.us/Transportation/uber-Data/gre9-vvjv">https://data.cityofnewyork.us/Transportation/uber-Data/gre9-vvjv</a>.
 </div>
-<div id="ref-nyc_taxi_and_limousine_commission_august_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-nyc_taxi_and_limousine_commission_august_2022" class="csl-entry" role="listitem">
 NYC Taxi and Limousine Commission. 2022. <span>“August 2022 <span>For</span>-<span>Hire</span> <span>Vehicle</span> <span>License</span> <span>Review</span>.”</span> New York City Taxi; Limousine Commission; Department of Transportation. <a href="https://www1.nyc.gov/assets/tlc/downloads/pdf/license-pause-report-2022-08.pdf">https://www1.nyc.gov/assets/tlc/downloads/pdf/license-pause-report-2022-08.pdf</a>.
 </div>
-<div id="ref-parrott_minimum_2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-parrott_minimum_2020" class="csl-entry" role="listitem">
 Parrott, James A., and Michael Reich. 2020a. <span>“A <span>Minimum</span> <span>Compensation</span> <span>Standard</span> for <span>Seattle</span> <span>TNC</span> <span>Drivers</span>.”</span> Cnter for New York City Affairs. <a href="https://irle.berkeley.edu/files/2020/07/Parrott-Reich-Seattle-Report_July-2020.pdf">https://irle.berkeley.edu/files/2020/07/Parrott-Reich-Seattle-Report_July-2020.pdf</a>.
 </div>
-<div id="ref-parrott2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-parrott2020" class="csl-entry" role="listitem">
 ———. 2020b. <span>“A Minimum Compensation Standard for Seattle TNC Drivers.”</span> <a href="https://irle.berkeley.edu/files/2020/07/Parrott-Reich-Seattle-Report_July-2020.pdf">https://irle.berkeley.edu/files/2020/07/Parrott-Reich-Seattle-Report_July-2020.pdf</a>.
 </div>
-<div id="ref-policyinnovationtransportationservices2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-policyinnovationtransportationservices2019" class="csl-entry" role="listitem">
 Policy &amp; Innovation Transportation Services. 2019. <span>“The Transportation Impacts of Vehicle-for-Hire in the City of Toronto.”</span> <a href="https://www.toronto.ca/wp-content/uploads/2019/06/96c7-Report_v1.0_2019-06-21.pdf">https://www.toronto.ca/wp-content/uploads/2019/06/96c7-Report_v1.0_2019-06-21.pdf</a>.
 </div>
-<div id="ref-policyinnovationtransportationservices2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-policyinnovationtransportationservices2021" class="csl-entry" role="listitem">
 ———. 2021. <span>“The Transportation Impacts of Vehicle-for-Hire in the City of Toronto: October 2018 to July 2021.”</span> <a href="https://www.toronto.ca/wp-content/uploads/2021/11/98cd-VFHTransportationImpacts2021-11-23.pdf">https://www.toronto.ca/wp-content/uploads/2021/11/98cd-VFHTransportationImpacts2021-11-23.pdf</a>.
 </div>
-<div id="ref-schaller_empty_2017" class="csl-entry" role="doc-biblioentry">
+<div id="ref-schaller_empty_2017" class="csl-entry" role="listitem">
 Schaller, Bruce. 2017. <span>“Empty <span>Seats</span>, <span>Full</span> <span>Streets</span> - <span>Fixing</span> <span>Manhattan</span>’s <span>Traffic</span> <span>Problem</span>.”</span> Schaller Consulting. <a href="http://schallerconsult.com/rideservices/emptyseats.htm">http://schallerconsult.com/rideservices/emptyseats.htm</a>.
 </div>
-<div id="ref-the_international_consortium_of_investigative_journalists_uber_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-the_international_consortium_of_investigative_journalists_uber_2022" class="csl-entry" role="listitem">
 The International Consortium of Investigative Journalists. 2022. <span>“The <span>Uber</span> <span>Files</span>.”</span> <a href="https://www.icij.org/investigations/uber-files/">https://www.icij.org/investigations/uber-files/</a>.
 </div>
-<div id="ref-thepyodidedevelopmentteam2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-thepyodidedevelopmentteam2022" class="csl-entry" role="listitem">
 The Pyodide development team. 2022. <em>Pyodide/Pyodide</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.5156931">https://doi.org/10.5281/zenodo.5156931</a>.
 </div>
-<div id="ref-uber_inc_uber_2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-uber_inc_uber_2021" class="csl-entry" role="listitem">
 Uber, Inc. 2021. <span>“Uber <span>Announces</span> <span>Results</span> for <span>First</span> <span>Quarter</span> 2021.”</span> <a href="https://investor.uber.com/news-events/news/press-release-details/2021/Uber-Announces-Results-for-First-Quarter-2021/">https://investor.uber.com/news-events/news/press-release-details/2021/Uber-Announces-Results-for-First-Quarter-2021/</a>.
 </div>
-<div id="ref-uber_inc_our_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-uber_inc_our_2022" class="csl-entry" role="listitem">
 ———. 2022a. <span>“Our <span>Road</span> to <span>Zero</span> <span>Emissions</span>.”</span> <em>Uber</em>. <a href="https://www.uber.com/ca/en/about/sustainability/">https://www.uber.com/ca/en/about/sustainability/</a>.
 </div>
-<div id="ref-uber_inc_frequently_2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-uber_inc_frequently_2022" class="csl-entry" role="listitem">
 ———. 2022b. <span>“Frequently <span>Asked</span> <span>Questions</span> - <span>Worker</span> <span>Protections</span>.”</span> <em>Uber Blog</em>. <a href="https://www.uber.com/blog/driver-worker-faq/">https://www.uber.com/blog/driver-worker-faq/</a>.
 </div>
-<div id="ref-young2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-young2020" class="csl-entry" role="listitem">
 Young, Mischa, Jeff Allen, and Steven Farber. 2020. <span>“Measuring When Uber Behaves as a Substitute or Supplement to Transit: An Examination of Travel-Time Differences in Toronto.”</span> <em>Journal of Transport Geography</em> 82 (January): 102629. <a href="https://doi.org/10.1016/j.jtrangeo.2019.102629">https://doi.org/10.1016/j.jtrangeo.2019.102629</a>.
 </div>
 </div></section></div></main> <!-- /main -->
@@ -823,9 +828,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -890,6 +909,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -933,6 +1038,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">2023, Tom Slee</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 

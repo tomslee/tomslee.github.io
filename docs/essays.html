@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -57,7 +57,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script>
@@ -90,12 +91,14 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 <meta name="twitter:title" content="Tom Slee - Essays">
-<meta name="twitter:description" content="Finished, or nearly so. Some published elsewhere, some not.">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="./essays/2023-01-ridehail/front_image.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed">
@@ -109,49 +112,51 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Tom Slee</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html">
+    <a class="nav-link" href="./about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./essays.html" aria-current="page">
+    <a class="nav-link active" href="./essays.html" rel="" target="" aria-current="page">
  <span class="menu-text">Essays</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./inprogress.html">
- <span class="menu-text">In Progress</span></a>
+    <a class="nav-link" href="./inprogress.html" rel="" target="">
+ <span class="menu-text">Sketches &amp; Scraps</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://tomslee.github.io/ridehail/lab/">
+    <a class="nav-link" href="https://tomslee.github.io/ridehail/lab/" rel="" target="">
  <span class="menu-text">Ridehail Lab</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html">
+    <a class="nav-link" href="./blog.html" rel="" target="">
  <span class="menu-text">Whimsley (blog)</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/tomslee"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/tomslee" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/whimsley"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/whimsley" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -190,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Essays" data-listing-date-sort="1675054800000" data-listing-file-modified-sort="1679851377475" data-listing-reading-time-sort="40.22">
+<div class="g-col-1" data-index="0" data-categories="Essays" data-listing-date-sort="1675054800000" data-listing-file-modified-sort="1679851377475" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="41">
 <a href="./essays/2023-01-ridehail/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -201,7 +206,7 @@ ul.task-list li input[type="checkbox"] {
 High Emissions and Low Pay: Uber is Still Taking Regulators for a Ride
 </h5>
 <div class="listing-reading-time card-text text-muted">
-40 min
+41 min
 </div>
 <div class="card-text listing-description">
 A report for RideFairTO
@@ -218,7 +223,7 @@ Jan 30, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Essays,Ant Wars" data-listing-date-sort="1673845200000" data-listing-file-modified-sort="1679851376981" data-listing-reading-time-sort="25.495">
+<div class="g-col-1" data-index="1" data-categories="Essays,Ant Wars" data-listing-date-sort="1673845200000" data-listing-file-modified-sort="1679851376981" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26">
 <a href="./essays/2023-01-antwars/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -229,7 +234,7 @@ Jan 30, 2023
 From Ant Wars to Human Wars
 </h5>
 <div class="listing-reading-time card-text text-muted">
-25 min
+26 min
 </div>
 <div class="card-text listing-description">
 <p>What do wars between ant colonies tell us about human wars?</p>
@@ -246,7 +251,7 @@ Jan 16, 2023
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Essays,Ant Wars" data-listing-date-sort="1667361600000" data-listing-file-modified-sort="1675602984082" data-listing-reading-time-sort="95.84">
+<div class="g-col-1" data-index="2" data-categories="Essays,Ant Wars" data-listing-date-sort="1667361600000" data-listing-file-modified-sort="1675602984082" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="96">
 <a href="./essays/2022-12-antwar/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -257,7 +262,7 @@ Jan 16, 2023
 War as a system in nature
 </h5>
 <div class="listing-reading-time card-text text-muted">
-95 min
+96 min
 </div>
 <div class="card-text listing-description">
 <p>We take wars between ant colonies seriously, and ask: “How should ant wars change how we think of war itself?”</p>
@@ -274,7 +279,7 @@ Nov 2, 2022
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="Essays" data-listing-date-sort="1616990400000" data-listing-file-modified-sort="1672166973020" data-listing-reading-time-sort="3.52">
+<div class="g-col-1" data-index="3" data-categories="Essays" data-listing-date-sort="1616990400000" data-listing-file-modified-sort="1672166973020" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
 <a href="./essays/2021-03-29-ubertransit/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -285,7 +290,7 @@ Nov 2, 2022
 Uber transit pitch misses the mark
 </h5>
 <div class="listing-reading-time card-text text-muted">
-3 min
+4 min
 </div>
 <div class="card-text listing-description">
 An op-ed, published in the Toronto Star on March 29, 2021
@@ -302,18 +307,16 @@ Mar 29, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="4" data-categories="Essays" data-listing-date-sort="1566273600000" data-listing-file-modified-sort="1672167512038" data-listing-reading-time-sort="36.07">
+<div class="g-col-1" data-index="4" data-categories="Essays" data-listing-date-sort="1566273600000" data-listing-file-modified-sort="1672167512038" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="37">
 <a href="./essays/2019-08-oup_private_sector_ai/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./essays/2019-08-oup_private_sector_ai/2019-ai-incentives.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img src="essays\2019-08-oup_private_sector_ai\2019-ai-incentives.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 The incompatible incentives of private sector AI
 </h5>
 <div class="listing-reading-time card-text text-muted">
-36 min
+37 min
 </div>
 <div class="card-text listing-description">
 A contribution to The Oxford Handbook of Ethics of Artificial Intelligence, Oxford University Press 2019
@@ -330,18 +333,16 @@ Aug 20, 2019
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="5" data-categories="Essays" data-listing-date-sort="1564977600000" data-listing-file-modified-sort="1672169141902" data-listing-reading-time-sort="11.325">
+<div class="g-col-1" data-index="5" data-categories="Essays" data-listing-date-sort="1564977600000" data-listing-file-modified-sort="1672169141902" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12">
 <a href="./essays/2019-08-05_workaround_medical/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./essays/2019-08-05_workaround_medical/2019-ai-adversarial-macaw.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<p class="card-img-top"><img src="essays\2019-08-05_workaround_medical\2019-ai-adversarial-macaw.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Workarounds and Medical Machine Learning
 </h5>
 <div class="listing-reading-time card-text text-muted">
-11 min
+12 min
 </div>
 <div class="card-text listing-description">
 <p>Adversarial examples are surprisingly similar to workarounds that fix mistakes. There are consequences.</p>
@@ -358,7 +359,7 @@ Aug 5, 2019
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="6" data-categories="Essays" data-listing-date-sort="1542949200000" data-listing-file-modified-sort="1672167716966" data-listing-reading-time-sort="32.77">
+<div class="g-col-1" data-index="6" data-categories="Essays" data-listing-date-sort="1542949200000" data-listing-file-modified-sort="1672167716966" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="33">
 <a href="./essays/2018-11-23_rise_and_fall/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -369,7 +370,7 @@ Aug 5, 2019
 The Rise and Fall of the Sharing Economy
 </h5>
 <div class="listing-reading-time card-text text-muted">
-32 min
+33 min
 </div>
 <div class="card-text listing-description">
 <p>A presentation to the Symposium of the Ernst Schmidheiny Foundation, Friday November 23, 2018.</p>
@@ -386,7 +387,7 @@ Nov 23, 2018
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="7" data-categories="Essays,Reputation" data-listing-date-sort="1412546940000" data-listing-file-modified-sort="1675625089450" data-listing-reading-time-sort="22.075">
+<div class="g-col-1" data-index="7" data-categories="Essays,Reputation" data-listing-date-sort="1412546940000" data-listing-file-modified-sort="1675625089450" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="23">
 <a href="./essays/2014-10-05-in-praise-of-fake-reviews/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -397,7 +398,7 @@ Nov 23, 2018
 In Praise of Fake Reviews
 </h5>
 <div class="listing-reading-time card-text text-muted">
-22 min
+23 min
 </div>
 <div class="card-text listing-description">
 Fake reviews can be a legitimate response to predatory reputation systems
@@ -446,9 +447,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -513,6 +528,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -556,6 +657,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">2023, Tom Slee</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 

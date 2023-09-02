@@ -6,6 +6,7 @@ project:
     browser: true
   render:
     - "*.qmd"
+    - "*.ipynb"
     - "!inprogress/ridehail-driver-earnings/"
 
 website:
@@ -25,7 +26,7 @@ website:
         href: about.qmd
       - text: Essays
         href: essays.qmd
-      - text: In Progress
+      - text: Sketches & Scraps
         href: inprogress.qmd
       - text: "Ridehail Lab"
         href: https://tomslee.github.io/ridehail/lab/

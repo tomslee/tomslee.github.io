@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,14 +20,15 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -41,8 +42,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -77,15 +77,17 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://hypothes.is/embed.js"></script>
 <style>
-    .quarto-title-block .quarto-title-banner {
-      background: DarkCyan;
-    }
-    </style>
+
+      .quarto-title-block .quarto-title-banner {
+        background: DarkCyan;
+      }
+</style>
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -106,49 +108,51 @@ div.csl-indent {
     <span class="navbar-title">Tom Slee</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../essays.html">
+    <a class="nav-link" href="../../essays.html" rel="" target="">
  <span class="menu-text">Essays</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../inprogress.html">
- <span class="menu-text">In Progress</span></a>
+    <a class="nav-link" href="../../inprogress.html" rel="" target="">
+ <span class="menu-text">Sketches &amp; Scraps</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://tomslee.github.io/ridehail/lab/">
+    <a class="nav-link" href="https://tomslee.github.io/ridehail/lab/" rel="" target="">
  <span class="menu-text">Ridehail Lab</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html">
+    <a class="nav-link" href="../../blog.html" rel="" target="">
  <span class="menu-text">Whimsley (blog)</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/tomslee"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/tomslee" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/whimsley"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/whimsley" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -199,16 +203,16 @@ div.csl-indent {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#the-ridehail-market-has-not-recovered-from-covid" id="toc-the-ridehail-market-has-not-recovered-from-covid" class="nav-link active" data-scroll-target="#the-ridehail-market-has-not-recovered-from-covid"><span class="toc-section-number">1</span>  The ridehail market has not recovered from Covid</a>
+  <li><a href="#the-ridehail-market-has-not-recovered-from-covid" id="toc-the-ridehail-market-has-not-recovered-from-covid" class="nav-link active" data-scroll-target="#the-ridehail-market-has-not-recovered-from-covid"><span class="header-section-number">1</span> The ridehail market has not recovered from Covid</a>
   <ul class="collapse">
-  <li><a href="#trips-are-at-about-two-thirds-of-pre-covid-volume" id="toc-trips-are-at-about-two-thirds-of-pre-covid-volume" class="nav-link" data-scroll-target="#trips-are-at-about-two-thirds-of-pre-covid-volume"><span class="toc-section-number">1.1</span>  Trips are at about two-thirds of pre-Covid volume</a></li>
-  <li><a href="#active-drivers-are-also-at-about-two-thirds-of-pre-covid-numbers" id="toc-active-drivers-are-also-at-about-two-thirds-of-pre-covid-numbers" class="nav-link" data-scroll-target="#active-drivers-are-also-at-about-two-thirds-of-pre-covid-numbers"><span class="toc-section-number">1.2</span>  Active drivers are also at about two-thirds of pre-Covid numbers</a></li>
-  <li><a href="#loss-of-rush-hour-trips-is-a-big-contributor" id="toc-loss-of-rush-hour-trips-is-a-big-contributor" class="nav-link" data-scroll-target="#loss-of-rush-hour-trips-is-a-big-contributor"><span class="toc-section-number">1.3</span>  Loss of rush-hour trips is a big contributor</a></li>
+  <li><a href="#trips-are-at-about-two-thirds-of-pre-covid-volume" id="toc-trips-are-at-about-two-thirds-of-pre-covid-volume" class="nav-link" data-scroll-target="#trips-are-at-about-two-thirds-of-pre-covid-volume"><span class="header-section-number">1.1</span> Trips are at about two-thirds of pre-Covid volume</a></li>
+  <li><a href="#active-drivers-are-also-at-about-two-thirds-of-pre-covid-numbers" id="toc-active-drivers-are-also-at-about-two-thirds-of-pre-covid-numbers" class="nav-link" data-scroll-target="#active-drivers-are-also-at-about-two-thirds-of-pre-covid-numbers"><span class="header-section-number">1.2</span> Active drivers are also at about two-thirds of pre-Covid numbers</a></li>
+  <li><a href="#loss-of-rush-hour-trips-is-a-big-contributor" id="toc-loss-of-rush-hour-trips-is-a-big-contributor" class="nav-link" data-scroll-target="#loss-of-rush-hour-trips-is-a-big-contributor"><span class="header-section-number">1.3</span> Loss of rush-hour trips is a big contributor</a></li>
   </ul></li>
-  <li><a href="#the-diverse-driver-population" id="toc-the-diverse-driver-population" class="nav-link" data-scroll-target="#the-diverse-driver-population"><span class="toc-section-number">2</span>  The diverse driver population</a>
+  <li><a href="#the-diverse-driver-population" id="toc-the-diverse-driver-population" class="nav-link" data-scroll-target="#the-diverse-driver-population"><span class="header-section-number">2</span> The diverse driver population</a>
   <ul class="collapse">
-  <li><a href="#full-time-drivers-provide-about-40-of-all-trips" id="toc-full-time-drivers-provide-about-40-of-all-trips" class="nav-link" data-scroll-target="#full-time-drivers-provide-about-40-of-all-trips"><span class="toc-section-number">2.1</span>  Full-time drivers provide about 40% of all trips</a></li>
-  <li><a href="#many-drivers-are-new" id="toc-many-drivers-are-new" class="nav-link" data-scroll-target="#many-drivers-are-new"><span class="toc-section-number">2.2</span>  Many drivers are new</a></li>
+  <li><a href="#full-time-drivers-provide-about-40-of-all-trips" id="toc-full-time-drivers-provide-about-40-of-all-trips" class="nav-link" data-scroll-target="#full-time-drivers-provide-about-40-of-all-trips"><span class="header-section-number">2.1</span> Full-time drivers provide about 40% of all trips</a></li>
+  <li><a href="#many-drivers-are-new" id="toc-many-drivers-are-new" class="nav-link" data-scroll-target="#many-drivers-are-new"><span class="header-section-number">2.2</span> Many drivers are new</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -219,7 +223,7 @@ div.csl-indent {
 
 
 
-<div class="callout-note callout callout-style-simple">
+<div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -235,7 +239,7 @@ div.csl-indent {
 <p>The data for December 2022 was just released a couple of days ago. Let’s take a look.</p>
 <section id="the-ridehail-market-has-not-recovered-from-covid" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> The ridehail market has not recovered from Covid</h1>
-<div class="callout-note callout callout-style-simple">
+<div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -251,7 +255,7 @@ div.csl-indent {
 <div id="fig-monthly-trips" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="monthly_trips.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: The number of trips per month in Chicago<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;1: The number of trips per month in Chicago<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></figcaption>
 </figure>
 </div>
 </section>
@@ -261,7 +265,7 @@ div.csl-indent {
 <div id="fig-active-drivers" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="active_drivers.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: The number of active drivers in Chicago<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;2: The number of active drivers in Chicago<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></figcaption>
 </figure>
 </div>
 <p>So when Uber CEO Dara Khosrowshaki, in August 2022, <a href="https://www.bbc.com/news/business-62396648">says</a> that “more people are earning on Uber today than before the pandemic”, it’s easy to think that there are more Uber ridehail drivers than before, but city-on-city that’s not the case.</p>
@@ -272,7 +276,7 @@ div.csl-indent {
 <div id="fig-trips-per-hour" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="trips_per_hour.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3: Trips per hour, on February 6 of each year.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;3: Trips per hour, on February 6 of each year.</figcaption>
 </figure>
 </div>
 <p>In short: the ridehail market was hit hard by the pandemic and, like many other aspects of city centre working life, has not recovered.</p>
@@ -287,7 +291,7 @@ div.csl-indent {
 <div id="fig-driver-trips-per-month" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="driver_trips_per_month.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4: The number of trips per month driven by active drivers in Chicago</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;4: The number of trips per month driven by active drivers in Chicago</figcaption>
 </figure>
 </div>
 <p>From Chicago trip data, the average trip duration is just under 20 minutes. There’s no information provided on how much of each hour a driver is engaged with a passenger and how much is “dead-heading”, but in other cities it’s between 50% and 60% of the time, so on average a driver can undertake about two trips per hour. If we think of a 32 hour work week as the dividing line for “full-time” work, then we can say that full-time drivers are those who take 275 trips or more in a month.</p>
@@ -295,7 +299,7 @@ div.csl-indent {
 <div id="fig-driver-fulltime-parttime" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="driver_fulltime_parttime.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;5: Only one-in-eight active Uber drivers in Chicago are full-time, but they provide about 40% of the trips</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;5: Only one-in-eight active Uber drivers in Chicago are full-time, but they provide about 40% of the trips</figcaption>
 </figure>
 </div>
 <p>In reports on Uber driver earnings, one of the big questions is how to evaluate driver costs. Gas, tolls, per-kilometre wear-and-tear and cleaning are common to all drivers, but should we include the other costs of car ownership? And what about insurance? There’s a case to be made that casual drivers who already own a car for personal use would have to pay these costs anyway, so they should not count towards cost of work (for example, <span class="citation" data-cites="hyman_platform_2020">Hyman et al. (<a href="#ref-hyman_platform_2020" role="doc-biblioref">2020</a>)</span>). But at least for full-time drivers, many of whom buy or lease a vehicle specifically for their gig work, these costs must be considered. That’s how we came up with our figure of $8 per hour for full-time driver income in Toronto in our recent report <span class="citation" data-cites="slee_tom_2023">(<a href="#ref-slee_tom_2023" role="doc-biblioref">Slee 2023</a>)</span>, which was written up in the Globe and Mail last week <span class="citation" data-cites="subramaniam_uber_2023">(<a href="#ref-subramaniam_uber_2023" role="doc-biblioref">Subramaniam 2023</a>)</span>.</p>
@@ -308,21 +312,21 @@ div.csl-indent {
 <div id="fig-driver-longevity" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="driver_longevity.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;6: Longevity distribution of active drivers in Chicago</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;6: Longevity distribution of active drivers in Chicago</figcaption>
 </figure>
 </div>
 <p>The numbers have changed over time – in the early days when many drivers tried Uber and dropped it the quit rate was even higher – but <a href="#fig-driver-longevity-trips">Figure&nbsp;7</a> shows that half of all trips are provided by drivers with less than a year’s experience.</p>
 <div id="fig-driver-longevity-trips" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="driver_longevity_trips.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;7: Many trips are provided by new drivers</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;7: Many trips are provided by new drivers</figcaption>
 </figure>
 </div>
 <p>A third way to look at driver churn is through the fraction of drivers still active after a year. <a href="#fig-driver-churn">Figure&nbsp;8</a> shows that only about one in six drivers remains active after a year. (This may seem to contradict the numbers above, but it doesn’t. The proportion of drivers that start in a given month and are still active after a year is different to the proportion of drivers in a given month who have been on the platform for more than a year.)</p>
 <div id="fig-driver-churn" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="driver_churn.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;8: Driver churn</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;8: Driver churn</figcaption>
 </figure>
 </div>
 
@@ -332,17 +336,17 @@ div.csl-indent {
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-hyman_platform_2020" class="csl-entry" role="doc-biblioentry">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-hyman_platform_2020" class="csl-entry" role="listitem">
 Hyman, Louis, Erica L. Groshen, Adam Seth Litwin, Martin T. Wells, Kwelina P. Thompson, and Kyrylo Chernyshov. 2020. <span>“Platform <span>Driving</span> <span>In</span> <span>Seattle</span>,”</span> July. <a href="https://ecommons.cornell.edu/handle/1813/74305">https://ecommons.cornell.edu/handle/1813/74305</a>.
 </div>
-<div id="ref-policy__innovation_transportation_services_transportation_2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-policy__innovation_transportation_services_transportation_2021" class="csl-entry" role="listitem">
 Policy &amp; Innovation Transportation Services. 2021. <span>“The <span>Transportation</span> <span>Impacts</span> of <span>Vehicle</span>-for-<span>Hire</span> in the <span>City</span> of <span>Toronto</span>: <span>October</span> 2018 to <span>July</span> 2021.”</span> City of Toronto. <a href="https://www.toronto.ca/wp-content/uploads/2021/11/98cd-VFHTransportationImpacts2021-11-23.pdf">https://www.toronto.ca/wp-content/uploads/2021/11/98cd-VFHTransportationImpacts2021-11-23.pdf</a>.
 </div>
-<div id="ref-slee_tom_2023" class="csl-entry" role="doc-biblioentry">
+<div id="ref-slee_tom_2023" class="csl-entry" role="listitem">
 Slee, Tom. 2023. <span>“Tom <span>Slee</span> - <span>High</span> <span>Emissions</span> and <span>Low</span> <span>Pay</span>: <span>Uber</span> Is <span>Still</span> <span>Taking</span> <span>Regulators</span> for a <span>Ride</span>.”</span> <a href="https://tomslee.github.io/essays/2023-01-ridehail/">https://tomslee.github.io/essays/2023-01-ridehail/</a>.
 </div>
-<div id="ref-subramaniam_uber_2023" class="csl-entry" role="doc-biblioentry">
+<div id="ref-subramaniam_uber_2023" class="csl-entry" role="listitem">
 Subramaniam, Vanmala. 2023. <span>“Uber Drivers Earn Less Than $8 Per Hour, Says New Report from Gig Worker Advocacy Group - <span>The</span> <span>Globe</span> and <span>Mail</span>.”</span> <em>The Globe and Mail</em>, January, B1. <a href="https://www.theglobeandmail.com/business/article-uber-drivers-pay-toronto/">https://www.theglobeandmail.com/business/article-uber-drivers-pay-toronto/</a>.
 </div>
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
@@ -387,9 +391,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -454,6 +472,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -497,6 +601,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">2023, Tom Slee</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 

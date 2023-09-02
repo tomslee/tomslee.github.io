@@ -1,0 +1,96 @@
+---
+title: The Alignment Mistake
+author: "Tom Slee"
+date: last-modified
+categories:
+- In Progress
+- Technology
+description: >
+    The 'Alignment Problem' is the wrong way to think about the hazards of Generative AI
+abstract: >
+  [Under construction]
+# formatting
+toc: true
+toc-title: Contents
+reading-time: true
+number-sections: false
+callout-appearance: simple
+number-depth: 2
+fig-cap-location: bottom
+# reference-location: margin
+image: cyan.png
+comments:
+    hypothesis: true
+format:
+    html:
+        title-block-banner: DarkCyan
+        published-title: Last updated
+#    pdf: 
+#      papersize: letter
+#      toc: true
+#      number-sections: true
+#      colorlinks: true
+    # arxiv-pdf: 
+    #  latex-engine: pdflatex
+    #  papersize: letter
+    #  doublespacing: false # Double space the PDF output?
+    #  toc: true
+    #  number-sections: true
+    #  colorlinks: true
+    #  keep-tex: true
+# bibliography: references.bib
+---
+
+::: {.content-visible when-format="html"}
+::: {.callout-note appearance="simple"}
+[Download a PDF version of this essay](./ai-alignment.pdf).
+:::
+:::
+
+# The Perils of a New Box
+
+A few years ago I was lucky enough to hear law professor [Kiel Brennan-Marquez](https://law.uconn.edu/person/kiel-brennan-marquez/) talk about *"Fair Notice" in the age of Big Data*. Except he had been asked to expand his talk to fill in the gap caused by a missing speaker, I think, so he started off by talking more generally about the way law works in a section he called "nothing new under the sun". (It turns out the talk was recorded! You can find it [here](https://c4ejournal.net/2019/03/08/kiel-brennan-marquez-fair-notice-in-the-age-of-big-data-2019-c4ej-18/).)
+
+The law, he says -- and I hope I'm not misrepresenting him too badly -- is all about putting things in boxes (and not too many boxes). For example, there are two boxes for property. Some things are Real Property, like houses, and they get taxed heavily; other things are Other Property, like tables or hats or boats, and they don't get taxed, or at least not as much. But every now and then something comes along that doesn't fit obviously into one box or the other, like a house boat. Is it a house or is it a boat? Here, British readers should be saying to themselves "[Jaffa cakes](https://www.kerseys.co.uk/jaffa-cakes-cakes-biscuits/)".
+
+There are, Kiel went on to say, three options. One is that lawyers argue about which box the house boat belongs in and the winner sets a precedent. A second is to say that we need a New Box, for things that are neither houses or boats. And a third thing is to redesign the whole set of boxes, perhaps according to some new principle, at some higher level of the justice system.
+
+The technology industry, he said, always argues for the New Box. Innovation brings the new & different; and new & different can't be confined by the rather old-fashioned Old Boxes currently in place. Innovation deserves its own New Box. Conveniently, a New Box means you don't have to look back at what we have learned in countries around the globe from centuries of precedent because those precedents only applied to the Old Boxes, and have nothing to say about the New Box.
+
+Also, he said, the New Box is almost always a bad idea. So in tort law (harms), one box is "negligence". If the case fits in this box they the question is: did you do the thing you should have done? So when driving, for example, you might end up in a crash but you didn't do anything wrong. Another box is "strict liability", and if the case fits in this box then we don't care what you did, you're still responsible for the outcome.[^1] Making explosives, as an example. So what about self-driving cars? Negligence or Strict Liability? His point is, its one or the other. Technological systems almost always fall into one or other of these boxes.
+
+[^1]: A rough statement only: the specifics vary from country to country.
+
+\-\-\--
+
+Now we have Generative AI: an important set of innovations with far-reaching implications. Technology leaders and commentators differ on how to approach the challenges of Generative AI, but both proponents and many critics-inside-the-room argue that these new problems deserve a New Box and they have given it a name: "alignment". Geoffrey Hinton, on leaving Google, said "What we want is some way of making sure that even if they're smarter than us, they're going to do things that are beneficial for us - that's called the alignment problem," he said. "I wish I had a nice simple solution I can push for that, but I don't." ChatGPT creator OpenAI has a page on their web site with the title [Our approach to alignment research](https://openai.com/blog/our-approach-to-alignment-research), and it starts off saying "Our alignment research aims to make artificial general intelligence (AGI) aligned with human values and follow human intent."
+
+If Kiel Brennan-Marquez is right, then looking to build a new box called "alignment" is probably a bad idea. And he's not the only one: in [an essay published last week](https://www.cigionline.org/articles/the-best-way-to-govern-ai-emulate-it/) Elizabeth M. Renieris aims a variation of the argument squarely at the Generative AI challenge. Here's an excerpt;
+
+> In general, we can respond to new technologies in three ways. We can apply the letter of existing laws "as is," effectively ensuring that new technologies remain out of scope (the "law of the horse" problem). We can start from scratch and craft new, technology-specific laws each time, which would effectively require an unlimited supply of resources. Or, we can apply existing laws in new ways, adapting them to fit the spirit of the law and its objectives. Despite the fact that many existing laws, including the GDPR, are meant to be technology-neutral --- meaning that the rules should apply equally irrespective of how a technology works or operates --- we often forget in practice to adhere to this principle.
+
+But what if this time is different? The now-famous [Pause Giant AI Experiments open letter](https://futureoflife.org/open-letter/pause-giant-ai-experiments/) says "Advanced AI could represent a profound change in the history of life on Earth". If the end of humanity ([Wikipedia link](https://en.wikipedia.org/wiki/Existential_risk_from_artificial_general_intelligence)) doesn't deserve a New Box, nothing does; but if that New Box turns out to be Pandora's, then the consequences could be huge too. So before addressing the Alignment New Box directly, and even though this time might be different, let's look back at how previous New Boxes have worked out and see what we might learn from them.
+
+# The New Box Holds Everything
+
+The technology industry has not only argued for a New Box with each new round of innovation, but also claims that their New Box is more capacious than all those old boxes.
+
+An obvious case is the box called "content". All around the world, countries had laws in place to govern written words, spoken words, and images. There are separate rules for different kinds of speech: journalistic content, political speech, advertising to children, pornography, gossip, local notices, speech inside a doctor's office: boxes within boxes in jurisdiction after jurisdiction. But the social media platforms took all these forms of speech, added on video and music for good measure, and called it all "content". And they got to avoid many of the rules and institutions that newspaper publishers, doctors, advertisers, and pornographers have to navigate, most notably in the US by virtue of [Section 230](https://en.wikipedia.org/wiki/Section_230) of the US Communications Decency Act (which basically applies to Canada also by way of NAFTA).
+
+> No provider or user of an interactive computer service shall be treated as the publisher or speaker of any information provided by another information content provider.
+
+Around ten years ago, sharing economy companies did the same thing. There is a rich history of rules about work, but Uber argued that their drivers were engaged in something different. There is a history of rules about offering accommodation for money, but Airbnb claimed that "sharing" was different, their hosts were [micro-entrepreneurs](https://medium.com/@bchesky/shared-city-db9746750a3a), and that those old rules didn't apply.
+
+Crypto-currency investors and advocates likewise claimed that bitcoin, ethereum and other crypto-coins need a separate box from other forms of currency.
+
+While it has not had the same legal impact, another example is the world of "makers", who have taken their niche of technology-based DIY and appropriated the universal word for creating things as their own, as if knitters, carpenters, blacksmiths, cooks and so on never existed, or were just insufficiently ambitious.
+
+These universalized New Boxes are, perhaps by neglect and perhaps by design, ill-defined and without clear boundaries. I can't help but think the lack of precision reflects a hubris at the heart of many of these developments. Technology leaders who believe themselves to be the smartest in the room, and who believe that their room is the only room that matters, position themselves as the only qualified stewards of the technology they created, and seem to think the questions of law and norms and so on are new but secondary problems that can be solved once the smart people get around to thinking hard about them.
+
+The technology companies have often won themselves time and space by convincing legislators, but have repeatedly failed to solve the pressing problems that their platforms have created. Having constructed these universalizing New Boxes that subsume all kinds of speech and act into "content", they embarked on devising rules for it and found, much to their surprise, that it is a set of tangled and wicked problems. Cryptocurrency promoters found that those who put rules in place to prevent fraud and mismanagement were not dimmer than blockchain wizards. And so on.
+
+What has happened has been that legislators' willingness to allow a space to innovate has become a method for liability laundering.
+
+Liability laundering comes from the separation between the company and the technology it develops.
+
+We want to be regulated! says Facebook and the others. But what form should that regulation take? Risk-based assessment.

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -21,7 +21,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -59,14 +59,15 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
 
 <link rel="stylesheet" href="../../styles.css">
 <meta name="twitter:title" content="Tom Slee - War as a system in nature">
-<meta name="twitter:description" content="We take wars between ant colonies seriously, and ask: &quot;How should ant wars change how we think of war itself?&quot;">
+<meta name="twitter:description" content="We take wars between ant colonies seriously, and ask: “How should ant wars change how we think of war itself?”">
 <meta name="twitter:image" content="ant.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -82,49 +83,51 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Tom Slee</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../essays.html">
+    <a class="nav-link" href="../../essays.html" rel="" target="">
  <span class="menu-text">Essays</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../inprogress.html">
- <span class="menu-text">In Progress</span></a>
+    <a class="nav-link" href="../../inprogress.html" rel="" target="">
+ <span class="menu-text">Sketches &amp; Scraps</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://tomslee.github.io/ridehail/lab/">
+    <a class="nav-link" href="https://tomslee.github.io/ridehail/lab/" rel="" target="">
  <span class="menu-text">Ridehail Lab</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html">
+    <a class="nav-link" href="../../blog.html" rel="" target="">
  <span class="menu-text">Whimsley (blog)</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/tomslee"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/tomslee" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/whimsley"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/whimsley" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -182,11 +185,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">1</span>  Introduction</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a>
   <ul class="collapse">
   <li><a href="#preliminaries" id="toc-preliminaries" class="nav-link" data-scroll-target="#preliminaries">Preliminaries</a></li>
   </ul></li>
-  <li><a href="#what-makes-a-war" id="toc-what-makes-a-war" class="nav-link" data-scroll-target="#what-makes-a-war"><span class="toc-section-number">2</span>  What makes a war?</a>
+  <li><a href="#what-makes-a-war" id="toc-what-makes-a-war" class="nav-link" data-scroll-target="#what-makes-a-war"><span class="header-section-number">2</span> What makes a war?</a>
   <ul class="collapse">
   <li><a href="#mass-violence" id="toc-mass-violence" class="nav-link" data-scroll-target="#mass-violence">Mass violence</a></li>
   <li><a href="#lethal-violence" id="toc-lethal-violence" class="nav-link" data-scroll-target="#lethal-violence">Lethal violence</a></li>
@@ -195,7 +198,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#organized-violence" id="toc-organized-violence" class="nav-link" data-scroll-target="#organized-violence">Organized violence</a></li>
   <li><a href="#definitions-of-war" id="toc-definitions-of-war" class="nav-link" data-scroll-target="#definitions-of-war">Definitions of war</a></li>
   </ul></li>
-  <li><a href="#war-as-a-system" id="toc-war-as-a-system" class="nav-link" data-scroll-target="#war-as-a-system"><span class="toc-section-number">3</span>  War as a system</a>
+  <li><a href="#war-as-a-system" id="toc-war-as-a-system" class="nav-link" data-scroll-target="#war-as-a-system"><span class="header-section-number">3</span> War as a system</a>
   <ul class="collapse">
   <li><a href="#a-brief-history-of-an-idea" id="toc-a-brief-history-of-an-idea" class="nav-link" data-scroll-target="#a-brief-history-of-an-idea">A brief history of an idea</a></li>
   <li><a href="#agriculture-as-a-system-in-nature" id="toc-agriculture-as-a-system-in-nature" class="nav-link" data-scroll-target="#agriculture-as-a-system-in-nature">Agriculture as a system in nature</a></li>
@@ -203,37 +206,37 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#slavery-as-a-system-in-nature" id="toc-slavery-as-a-system-in-nature" class="nav-link" data-scroll-target="#slavery-as-a-system-in-nature">Slavery as a system in nature</a></li>
   <li><a href="#war-as-a-system-in-nature" id="toc-war-as-a-system-in-nature" class="nav-link" data-scroll-target="#war-as-a-system-in-nature">War as a system in nature</a></li>
   </ul></li>
-  <li><a href="#territory-the-politics-of-nation-states" id="toc-territory-the-politics-of-nation-states" class="nav-link" data-scroll-target="#territory-the-politics-of-nation-states"><span class="toc-section-number">4</span>  Territory: the politics of nation states</a></li>
-  <li><a href="#us-and-them-the-sociology-of-identity" id="toc-us-and-them-the-sociology-of-identity" class="nav-link" data-scroll-target="#us-and-them-the-sociology-of-identity"><span class="toc-section-number">5</span>  Us and them: the sociology of identity</a>
+  <li><a href="#territory-the-politics-of-nation-states" id="toc-territory-the-politics-of-nation-states" class="nav-link" data-scroll-target="#territory-the-politics-of-nation-states"><span class="header-section-number">4</span> Territory: the politics of nation states</a></li>
+  <li><a href="#us-and-them-the-sociology-of-identity" id="toc-us-and-them-the-sociology-of-identity" class="nav-link" data-scroll-target="#us-and-them-the-sociology-of-identity"><span class="header-section-number">5</span> Us and them: the sociology of identity</a>
   <ul class="collapse">
   <li><a href="#subtleties-in-group-distinctions" id="toc-subtleties-in-group-distinctions" class="nav-link" data-scroll-target="#subtleties-in-group-distinctions">Subtleties in group distinctions</a></li>
   </ul></li>
-  <li><a href="#warriors-the-psychology-of-combat" id="toc-warriors-the-psychology-of-combat" class="nav-link" data-scroll-target="#warriors-the-psychology-of-combat"><span class="toc-section-number">6</span>  Warriors: the psychology of combat</a>
+  <li><a href="#warriors-the-psychology-of-combat" id="toc-warriors-the-psychology-of-combat" class="nav-link" data-scroll-target="#warriors-the-psychology-of-combat"><span class="header-section-number">6</span> Warriors: the psychology of combat</a>
   <ul class="collapse">
   <li><a href="#the-flight-from-psychology" id="toc-the-flight-from-psychology" class="nav-link" data-scroll-target="#the-flight-from-psychology">The flight from psychology</a></li>
   </ul></li>
-  <li><a href="#the-militarized-state" id="toc-the-militarized-state" class="nav-link" data-scroll-target="#the-militarized-state"><span class="toc-section-number">7</span>  The militarized state</a>
+  <li><a href="#the-militarized-state" id="toc-the-militarized-state" class="nav-link" data-scroll-target="#the-militarized-state"><span class="header-section-number">7</span> The militarized state</a>
   <ul class="collapse">
   <li><a href="#lanchesters-laws-and-military-investment" id="toc-lanchesters-laws-and-military-investment" class="nav-link" data-scroll-target="#lanchesters-laws-and-military-investment">Lanchester’s laws and military investment</a></li>
   <li><a href="#the-costs-of-maintaining-an-army" id="toc-the-costs-of-maintaining-an-army" class="nav-link" data-scroll-target="#the-costs-of-maintaining-an-army">The costs of maintaining an army</a></li>
   </ul></li>
-  <li><a href="#technology-and-innovation" id="toc-technology-and-innovation" class="nav-link" data-scroll-target="#technology-and-innovation"><span class="toc-section-number">8</span>  Technology and innovation</a>
+  <li><a href="#technology-and-innovation" id="toc-technology-and-innovation" class="nav-link" data-scroll-target="#technology-and-innovation"><span class="header-section-number">8</span> Technology and innovation</a>
   <ul class="collapse">
   <li><a href="#technologies-of-deceit" id="toc-technologies-of-deceit" class="nav-link" data-scroll-target="#technologies-of-deceit">Technologies of deceit</a></li>
   </ul></li>
-  <li><a href="#limited-war-and-ethics" id="toc-limited-war-and-ethics" class="nav-link" data-scroll-target="#limited-war-and-ethics"><span class="toc-section-number">9</span>  Limited war and ethics</a>
+  <li><a href="#limited-war-and-ethics" id="toc-limited-war-and-ethics" class="nav-link" data-scroll-target="#limited-war-and-ethics"><span class="header-section-number">9</span> Limited war and ethics</a>
   <ul class="collapse">
   <li><a href="#negotiations-and-intelligence-gathering" id="toc-negotiations-and-intelligence-gathering" class="nav-link" data-scroll-target="#negotiations-and-intelligence-gathering">Negotiations and intelligence gathering</a></li>
   <li><a href="#combination-and-colonization" id="toc-combination-and-colonization" class="nav-link" data-scroll-target="#combination-and-colonization">Combination and colonization</a></li>
   <li><a href="#from-limited-war-to-ethics" id="toc-from-limited-war-to-ethics" class="nav-link" data-scroll-target="#from-limited-war-to-ethics">From limited war to ethics</a></li>
   </ul></li>
-  <li><a href="#asymmetric-and-unilateral-violence" id="toc-asymmetric-and-unilateral-violence" class="nav-link" data-scroll-target="#asymmetric-and-unilateral-violence"><span class="toc-section-number">10</span>  Asymmetric and unilateral violence</a>
+  <li><a href="#asymmetric-and-unilateral-violence" id="toc-asymmetric-and-unilateral-violence" class="nav-link" data-scroll-target="#asymmetric-and-unilateral-violence"><span class="header-section-number">10</span> Asymmetric and unilateral violence</a>
   <ul class="collapse">
   <li><a href="#predation" id="toc-predation" class="nav-link" data-scroll-target="#predation">Predation</a></li>
   <li><a href="#slavery" id="toc-slavery" class="nav-link" data-scroll-target="#slavery">Slavery</a></li>
   <li><a href="#what-armies-do" id="toc-what-armies-do" class="nav-link" data-scroll-target="#what-armies-do">What armies do</a></li>
   </ul></li>
-  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="toc-section-number">11</span>  Discussion</a>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="header-section-number">11</span> Discussion</a>
   <ul class="collapse">
   <li><a href="#symbiosis" id="toc-symbiosis" class="nav-link" data-scroll-target="#symbiosis">Symbiosis</a></li>
   <li><a href="#war-triggers" id="toc-war-triggers" class="nav-link" data-scroll-target="#war-triggers">War triggers</a></li>
@@ -242,8 +245,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#the-superorganism" id="toc-the-superorganism" class="nav-link" data-scroll-target="#the-superorganism">The superorganism</a></li>
   <li><a href="#grey-zone-and-spectrum-of-conflict-theories" id="toc-grey-zone-and-spectrum-of-conflict-theories" class="nav-link" data-scroll-target="#grey-zone-and-spectrum-of-conflict-theories">Grey zone and spectrum of conflict theories</a></li>
   </ul></li>
-  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions"><span class="toc-section-number">12</span>  Conclusions</a></li>
-  <li><a href="#bibliography" id="toc-bibliography" class="nav-link" data-scroll-target="#bibliography"><span class="toc-section-number">13</span>  Bibliography</a></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions"><span class="header-section-number">12</span> Conclusions</a></li>
+  <li><a href="#bibliography" id="toc-bibliography" class="nav-link" data-scroll-target="#bibliography"><span class="header-section-number">13</span> Bibliography</a></li>
   </ul>
 </nav>
     </div>
@@ -253,7 +256,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="callout-note callout callout-style-simple">
+<div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -263,7 +266,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<div class="callout-note callout callout-style-simple">
+<div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -863,9 +866,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -930,6 +947,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -973,6 +1076,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">2023, Tom Slee</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 

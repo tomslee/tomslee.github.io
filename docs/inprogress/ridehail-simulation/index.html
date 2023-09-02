@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.280">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,14 +20,15 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -41,8 +42,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -77,16 +77,19 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://hypothes.is/embed.js"></script>
 <style>
-    .quarto-title-block .quarto-title-banner {
-      background: DarkCyan;
-    }
-    </style>
 
+      .quarto-title-block .quarto-title-banner {
+        background: DarkCyan;
+      }
+</style>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
@@ -107,49 +110,51 @@ div.csl-indent {
     <span class="navbar-title">Tom Slee</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../essays.html">
+    <a class="nav-link" href="../../essays.html" rel="" target="">
  <span class="menu-text">Essays</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../inprogress.html">
- <span class="menu-text">In Progress</span></a>
+    <a class="nav-link" href="../../inprogress.html" rel="" target="">
+ <span class="menu-text">Sketches &amp; Scraps</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://tomslee.github.io/ridehail/lab/">
+    <a class="nav-link" href="https://tomslee.github.io/ridehail/lab/" rel="" target="">
  <span class="menu-text">Ridehail Lab</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html">
+    <a class="nav-link" href="../../blog.html" rel="" target="">
  <span class="menu-text">Whimsley (blog)</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/tomslee"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/tomslee" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/whimsley"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/whimsley" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -206,37 +211,37 @@ div.csl-indent {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">1</span>  Introduction</a></li>
-  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods"><span class="toc-section-number">2</span>  Methods</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods"><span class="header-section-number">2</span> Methods</a>
   <ul class="collapse">
-  <li><a href="#city" id="toc-city" class="nav-link" data-scroll-target="#city"><span class="toc-section-number">2.1</span>  Cities</a></li>
-  <li><a href="#vehicles" id="toc-vehicles" class="nav-link" data-scroll-target="#vehicles"><span class="toc-section-number">2.2</span>  Vehicles</a></li>
-  <li><a href="#trips" id="toc-trips" class="nav-link" data-scroll-target="#trips"><span class="toc-section-number">2.3</span>  Trips</a></li>
-  <li><a href="#the-simulation" id="toc-the-simulation" class="nav-link" data-scroll-target="#the-simulation"><span class="toc-section-number">2.4</span>  Simulations</a></li>
-  <li><a href="#identities" id="toc-identities" class="nav-link" data-scroll-target="#identities"><span class="toc-section-number">2.5</span>  Identities</a></li>
-  <li><a href="#extensions" id="toc-extensions" class="nav-link" data-scroll-target="#extensions"><span class="toc-section-number">2.6</span>  Regions</a></li>
-  <li><a href="#implementation" id="toc-implementation" class="nav-link" data-scroll-target="#implementation"><span class="toc-section-number">2.7</span>  Implementations</a></li>
-  <li><a href="#justifications" id="toc-justifications" class="nav-link" data-scroll-target="#justifications"><span class="toc-section-number">2.8</span>  Justifications</a></li>
+  <li><a href="#city" id="toc-city" class="nav-link" data-scroll-target="#city"><span class="header-section-number">2.1</span> Cities</a></li>
+  <li><a href="#vehicles" id="toc-vehicles" class="nav-link" data-scroll-target="#vehicles"><span class="header-section-number">2.2</span> Vehicles</a></li>
+  <li><a href="#trips" id="toc-trips" class="nav-link" data-scroll-target="#trips"><span class="header-section-number">2.3</span> Trips</a></li>
+  <li><a href="#the-simulation" id="toc-the-simulation" class="nav-link" data-scroll-target="#the-simulation"><span class="header-section-number">2.4</span> Simulations</a></li>
+  <li><a href="#identities" id="toc-identities" class="nav-link" data-scroll-target="#identities"><span class="header-section-number">2.5</span> Identities</a></li>
+  <li><a href="#extensions" id="toc-extensions" class="nav-link" data-scroll-target="#extensions"><span class="header-section-number">2.6</span> Regions</a></li>
+  <li><a href="#implementation" id="toc-implementation" class="nav-link" data-scroll-target="#implementation"><span class="header-section-number">2.7</span> Implementations</a></li>
+  <li><a href="#justifications" id="toc-justifications" class="nav-link" data-scroll-target="#justifications"><span class="header-section-number">2.8</span> Justifications</a></li>
   </ul></li>
-  <li><a href="#simulating-ridehail-in-toronto" id="toc-simulating-ridehail-in-toronto" class="nav-link" data-scroll-target="#simulating-ridehail-in-toronto"><span class="toc-section-number">3</span>  Ridehail in Toronto</a>
+  <li><a href="#simulating-ridehail-in-toronto" id="toc-simulating-ridehail-in-toronto" class="nav-link" data-scroll-target="#simulating-ridehail-in-toronto"><span class="header-section-number">3</span> Ridehail in Toronto</a>
   <ul class="collapse">
-  <li><a href="#reference-values" id="toc-reference-values" class="nav-link" data-scroll-target="#reference-values"><span class="toc-section-number">3.1</span>  Reference values</a></li>
-  <li><a href="#calibration-i-supply-demand-and-utilization-rate" id="toc-calibration-i-supply-demand-and-utilization-rate" class="nav-link" data-scroll-target="#calibration-i-supply-demand-and-utilization-rate"><span class="toc-section-number">3.2</span>  Calibration I: supply, demand, and utilization rate</a></li>
-  <li><a href="#calibration-ii-wait-times-and-dispatch-times" id="toc-calibration-ii-wait-times-and-dispatch-times" class="nav-link" data-scroll-target="#calibration-ii-wait-times-and-dispatch-times"><span class="toc-section-number">3.3</span>  Calibration II: wait times and dispatch times</a></li>
-  <li><a href="#application-i-wait-times-and-excess-capacity" id="toc-application-i-wait-times-and-excess-capacity" class="nav-link" data-scroll-target="#application-i-wait-times-and-excess-capacity"><span class="toc-section-number">3.4</span>  Application I: wait times and excess capacity</a></li>
-  <li><a href="#application-ii-demand-and-utilization-rates" id="toc-application-ii-demand-and-utilization-rates" class="nav-link" data-scroll-target="#application-ii-demand-and-utilization-rates"><span class="toc-section-number">3.5</span>  Application II: demand and utilization rates</a></li>
+  <li><a href="#reference-values" id="toc-reference-values" class="nav-link" data-scroll-target="#reference-values"><span class="header-section-number">3.1</span> Reference values</a></li>
+  <li><a href="#calibration-i-supply-demand-and-utilization-rate" id="toc-calibration-i-supply-demand-and-utilization-rate" class="nav-link" data-scroll-target="#calibration-i-supply-demand-and-utilization-rate"><span class="header-section-number">3.2</span> Calibration I: supply, demand, and utilization rate</a></li>
+  <li><a href="#calibration-ii-wait-times-and-dispatch-times" id="toc-calibration-ii-wait-times-and-dispatch-times" class="nav-link" data-scroll-target="#calibration-ii-wait-times-and-dispatch-times"><span class="header-section-number">3.3</span> Calibration II: wait times and dispatch times</a></li>
+  <li><a href="#application-i-wait-times-and-excess-capacity" id="toc-application-i-wait-times-and-excess-capacity" class="nav-link" data-scroll-target="#application-i-wait-times-and-excess-capacity"><span class="header-section-number">3.4</span> Application I: wait times and excess capacity</a></li>
+  <li><a href="#application-ii-demand-and-utilization-rates" id="toc-application-ii-demand-and-utilization-rates" class="nav-link" data-scroll-target="#application-ii-demand-and-utilization-rates"><span class="header-section-number">3.5</span> Application II: demand and utilization rates</a></li>
   </ul></li>
-  <li><a href="#equilibration" id="toc-equilibration" class="nav-link" data-scroll-target="#equilibration"><span class="toc-section-number">4</span>  Equilibration</a>
+  <li><a href="#equilibration" id="toc-equilibration" class="nav-link" data-scroll-target="#equilibration"><span class="header-section-number">4</span> Equilibration</a>
   <ul class="collapse">
-  <li><a href="#an-equilibration-model" id="toc-an-equilibration-model" class="nav-link" data-scroll-target="#an-equilibration-model"><span class="toc-section-number">4.1</span>  An equilibration model</a></li>
+  <li><a href="#an-equilibration-model" id="toc-an-equilibration-model" class="nav-link" data-scroll-target="#an-equilibration-model"><span class="header-section-number">4.1</span> An equilibration model</a></li>
   </ul></li>
-  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="toc-section-number">5</span>  Discussion</a>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="header-section-number">5</span> Discussion</a>
   <ul class="collapse">
-  <li><a href="#psychological-tricks-and-opacity" id="toc-psychological-tricks-and-opacity" class="nav-link" data-scroll-target="#psychological-tricks-and-opacity"><span class="toc-section-number">5.1</span>  Psychological tricks and opacity</a></li>
-  <li><a href="#costs-and-driver-pay" id="toc-costs-and-driver-pay" class="nav-link" data-scroll-target="#costs-and-driver-pay"><span class="toc-section-number">5.2</span>  Costs and driver pay</a></li>
+  <li><a href="#psychological-tricks-and-opacity" id="toc-psychological-tricks-and-opacity" class="nav-link" data-scroll-target="#psychological-tricks-and-opacity"><span class="header-section-number">5.1</span> Psychological tricks and opacity</a></li>
+  <li><a href="#costs-and-driver-pay" id="toc-costs-and-driver-pay" class="nav-link" data-scroll-target="#costs-and-driver-pay"><span class="header-section-number">5.2</span> Costs and driver pay</a></li>
   </ul></li>
-  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions"><span class="toc-section-number">6</span>  Conclusions</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="toc-section-number">7</span>  References</a></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions"><span class="header-section-number">6</span> Conclusions</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">7</span> References</a></li>
   </ul>
 </nav>
     </div>
@@ -246,15 +251,13 @@ div.csl-indent {
 
 
 
-<div>
-<div class="callout-note callout callout-style-simple">
+<div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
 <p><a href="./ridehail.pdf">Download a PDF version of this essay</a>.</p>
-</div>
 </div>
 </div>
 </div>
@@ -287,7 +290,7 @@ div.csl-indent {
 <div id="fig-1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="fig1.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: A City in the simulation is simply a square of uniform streets, with C blocks on each side.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;1: A City in the simulation is simply a square of uniform streets, with C blocks on each side.</figcaption>
 </figure>
 </div>
 <p>In this simplest model of a city, all locations are identical.</p>
@@ -323,7 +326,7 @@ div.csl-indent {
 <div id="fig-2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="fig2.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: A city of 20 by 20 blocks, showing 160 vehicles (triangles) in phases <span class="math inline">\(P1\)</span> (red), <span class="math inline">\(P2\)</span> (orange), and <span class="math inline">\(P3\)</span> (green). The red diamonds are trip origins, and the green circles are trip destinations.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;2: A city of 20 by 20 blocks, showing 160 vehicles (triangles) in phases <span class="math inline">\(P1\)</span> (red), <span class="math inline">\(P2\)</span> (orange), and <span class="math inline">\(P3\)</span> (green). The red diamonds are trip origins, and the green circles are trip destinations.</figcaption>
 </figure>
 </div>
 <p><a href="#fig-2">Figure&nbsp;2</a> illustrates a simulation in progress. At the end of each move, the simulation records and optionally plots the state of each vehicle and statistics about the overall system (fraction of vehicles in each phase, for example).</p>
@@ -360,7 +363,7 @@ N \times P2 = D \times W
 <div id="fig-3" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="fig3.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3: The red dots show the origin of trips in a small “two-zone” city if eight blocks. The central area has a higher demand than outlying suburbs.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;3: The red dots show the origin of trips in a small “two-zone” city if eight blocks. The central area has a higher demand than outlying suburbs.</figcaption>
 </figure>
 </div>
 <p>The second extension, discussed in the section on Engaged Time standards below, is to allow vehicles to enter and leave the system in response to price and demand.</p>
@@ -496,7 +499,7 @@ N \times P2 = D \times W
 <div id="fig-toronto-homogeneous" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="toronto_calibration_homogeneous.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4: First calibration of Toronto ridehail simulation: homogeneous model</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;4: First calibration of Toronto ridehail simulation: homogeneous model</figcaption>
 </figure>
 </div>
 <p><a href="#fig-toronto-homogeneous">Figure&nbsp;4</a> shows the results of a sequence of simulations, in which the number of vehicles <span class="math inline">\(N\)</span> is varied from 2000 to 7,000. For each value of <span class="math inline">\(N\)</span>, a simulation of 500 blocks duration was carried out, with the results averaged over the final 100 blocks. The time for each simulation depends on the number of vehicles: for 5000 vehicles the simulation takes about 15 minutes on a Dell XPS 13 9380 laptop. The first result is that this simplified model can simulate an environment the scale of Toronto on a single laptop computer.</p>
@@ -510,7 +513,7 @@ N \times P2 = D \times W
 <div id="fig-inhomog" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="toronto_calibration_inhomogeneous.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;5: Second step of Toronto ridehail calibration: wait times and inhomogeneity</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;5: Second step of Toronto ridehail calibration: wait times and inhomogeneity</figcaption>
 </figure>
 </div>
 <p><a href="#fig-inhomog">Figure&nbsp;5</a> shows the vehicle phases as a function of inhomogeneity, using the fixed demand of 135 trips per minute and a fixed supply of 4500 vehicles derived from <a href="#fig-toronto-homogeneous">Figure&nbsp;4</a>. The Figure shows that the utilization rate <span class="math inline">\(P3\)</span> is independent of inhomogeneity, as expected, while the other values change. An inhomogeneity of 0.4 reproduces the observed values of <span class="math inline">\(P2\)</span> and <span class="math inline">\(W\)</span>, and hence <span class="math inline">\(P1\)</span>, completing the essential descriptive statistics of Toronto’s ridehail market.</p>
@@ -522,7 +525,7 @@ N \times P2 = D \times W
 <div id="fig-toronto-final" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="toronto_vehicle_count.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;6: How things depend on vehicle count</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;6: How things depend on vehicle count</figcaption>
 </figure>
 </div>
 <p>The model makes explicit and quantitative the trade-off between short wait times and additional vehicles on the streets. <a href="#fig-toronto-final">Figure&nbsp;6</a> shows that a decrease in wait times of one minute (from 4.2 to 3.2 minutes, or <span class="math inline">\(W\)</span> = 0.26 to 0.20, bracketing the observed average of 3.7 minutes), at a fixed demand of 135 trips per minute, adds approximately 1500 vehicles to the streets (from 3800 to 5300) with attendant congestion and pollution.</p>
@@ -533,7 +536,7 @@ N \times P2 = D \times W
 <div id="fig-fixed-wait-time" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="wait_times.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;7: The number of vehicles <span class="math inline">\(N\)</span> and utilization rate <span class="math inline">\(P3\)</span> required to support a wait time of 3.7 minutes (<span class="math inline">\(W =0.23\)</span>). While the utilization rate (<span class="math inline">\(P3\)</span>) does increase with demand, the improvements level off at levels of demand far below the current Toronto level of 135 requests per minute. Meanwhile, the number of vehicles required keeps growing linearly (purple line: different axis).</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;7: The number of vehicles <span class="math inline">\(N\)</span> and utilization rate <span class="math inline">\(P3\)</span> required to support a wait time of 3.7 minutes (<span class="math inline">\(W =0.23\)</span>). While the utilization rate (<span class="math inline">\(P3\)</span>) does increase with demand, the improvements level off at levels of demand far below the current Toronto level of 135 requests per minute. Meanwhile, the number of vehicles required keeps growing linearly (purple line: different axis).</figcaption>
 </figure>
 </div>
 <div id="tbl-utilization" class="anchored">
@@ -696,47 +699,47 @@ I = I_0 - c
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">7 References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-balding2019" class="csl-entry" role="doc-biblioentry">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">7 References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-balding2019" class="csl-entry" role="listitem">
 Balding, Melissa, Teresa Whinery, Eleanor Leshner, and Eric Womeldohrf. 2019. <span>“Estimated TNC Share of VMT in Six US Metropolitan Regions.”</span> <a href="https://drive.google.com/file/d/1FIUskVkj9lsAnWJQ6kLhAhNoVLjfFdx3/view?usp=embed_facebook">https://drive.google.com/file/d/1FIUskVkj9lsAnWJQ6kLhAhNoVLjfFdx3/view?usp=embed_facebook</a>.
 </div>
-<div id="ref-cityofchicago2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-cityofchicago2022" class="csl-entry" role="listitem">
 City of Chicago. 2022. <span>“Transportation Network Providers - Trips.”</span> <a href="https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips/m6dm-c72p">https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips/m6dm-c72p</a>.
 </div>
-<div id="ref-cramer2016" class="csl-entry" role="doc-biblioentry">
+<div id="ref-cramer2016" class="csl-entry" role="listitem">
 Cramer, Judd, and Alan B Krueger. 2016. <span>“Disruptive Change in the Taxi Business: The Case of Uber.”</span>
 </div>
-<div id="ref-erhardt2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-erhardt2019" class="csl-entry" role="listitem">
 Erhardt, Gregory D., Sneha Roy, Drew Cooper, Bhargava Sana, Mei Chen, and Joe Castiglione. 2019. <span>“Do Transportation Network Companies Decrease or Increase Congestion?”</span> <em>Science Advances</em> 5 (5): eaau2670. <a href="https://doi.org/10.1126/sciadv.aau2670">https://doi.org/10.1126/sciadv.aau2670</a>.
 </div>
-<div id="ref-hyman2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-hyman2020" class="csl-entry" role="listitem">
 Hyman, Louis, Erica L. Groshen, Adam Seth Litwin, Martin T. Wells, Kwelina P. Thompson, and Kyrylo Chernyshov. 2020. <span>“Platform Driving In Seattle,”</span> July. <a href="https://ecommons.cornell.edu/handle/1813/74305">https://ecommons.cornell.edu/handle/1813/74305</a>.
 </div>
-<div id="ref-newyorkcityopendata2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-newyorkcityopendata2022" class="csl-entry" role="listitem">
 New York City Open Data. 2022. <span>“Uber Data.”</span> <a href="https://data.cityofnewyork.us/Transportation/uber-Data/gre9-vvjv">https://data.cityofnewyork.us/Transportation/uber-Data/gre9-vvjv</a>.
 </div>
-<div id="ref-parrott2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-parrott2020" class="csl-entry" role="listitem">
 Parrott, James A., and Michael Reich. 2020. <span>“A Minimum Compensation Standard for Seattle TNC Drivers.”</span> <a href="https://irle.berkeley.edu/files/2020/07/Parrott-Reich-Seattle-Report_July-2020.pdf">https://irle.berkeley.edu/files/2020/07/Parrott-Reich-Seattle-Report_July-2020.pdf</a>.
 </div>
-<div id="ref-policyinnovationtransportationservices2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-policyinnovationtransportationservices2019" class="csl-entry" role="listitem">
 Policy &amp; Innovation Transportation Services. 2019. <span>“The Transportation Impacts of Vehicle-for-Hire in the City of Toronto.”</span> <a href="https://www.toronto.ca/wp-content/uploads/2019/06/96c7-Report_v1.0_2019-06-21.pdf">https://www.toronto.ca/wp-content/uploads/2019/06/96c7-Report_v1.0_2019-06-21.pdf</a>.
 </div>
-<div id="ref-policyinnovationtransportationservices2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-policyinnovationtransportationservices2021" class="csl-entry" role="listitem">
 ———. 2021. <span>“The Transportation Impacts of Vehicle-for-Hire in the City of Toronto: October 2018 to July 2021.”</span> <a href="https://www.toronto.ca/wp-content/uploads/2021/11/98cd-VFHTransportationImpacts2021-11-23.pdf">https://www.toronto.ca/wp-content/uploads/2021/11/98cd-VFHTransportationImpacts2021-11-23.pdf</a>.
 </div>
-<div id="ref-schaller2017" class="csl-entry" role="doc-biblioentry">
+<div id="ref-schaller2017" class="csl-entry" role="listitem">
 Schaller, Bruce. 2017. <span>“Unsustainable? The Growth of App-Based Ride Services and Traffic, Travel and the Future of New York City.”</span> <a href="http://www.schallerconsult.com/rideservices/unsustainable.pdf">http://www.schallerconsult.com/rideservices/unsustainable.pdf</a>.
 </div>
-<div id="ref-scheiber2017" class="csl-entry" role="doc-biblioentry">
+<div id="ref-scheiber2017" class="csl-entry" role="listitem">
 Scheiber, Noam. 2017. <span>“How Uber Uses Psychological Tricks to Push Its Drivers<span>’</span> Buttons.”</span> <em>The New York Times</em>, April. <a href="https://www.nytimes.com/interactive/2017/04/02/technology/uber-drivers-psychological-tricks.html">https://www.nytimes.com/interactive/2017/04/02/technology/uber-drivers-psychological-tricks.html</a>.
 </div>
-<div id="ref-thepyodidedevelopmentteam2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-thepyodidedevelopmentteam2022" class="csl-entry" role="listitem">
 The Pyodide development team. 2022. <em>Pyodide/Pyodide</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.5156931">https://doi.org/10.5281/zenodo.5156931</a>.
 </div>
-<div id="ref-uberinc.2023" class="csl-entry" role="doc-biblioentry">
+<div id="ref-uberinc.2023" class="csl-entry" role="listitem">
 Uber, Inc. 2023. <span>“Review My Cancellation Fee | Rider - Uber Help.”</span> <a href="https://help.uber.com/riders/article/review-my-cancellation-fee?nodeId=6bec690f-ee35-40ba-96ee-c38a8ae796e0">https://help.uber.com/riders/article/review-my-cancellation-fee?nodeId=6bec690f-ee35-40ba-96ee-c38a8ae796e0</a>.
 </div>
-<div id="ref-young2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-young2020" class="csl-entry" role="listitem">
 Young, Mischa, Jeff Allen, and Steven Farber. 2020. <span>“Measuring When Uber Behaves as a Substitute or Supplement to Transit: An Examination of Travel-Time Differences in Toronto.”</span> <em>Journal of Transport Geography</em> 82 (January): 102629. <a href="https://doi.org/10.1016/j.jtrangeo.2019.102629">https://doi.org/10.1016/j.jtrangeo.2019.102629</a>.
 </div>
 </div></section></div></main> <!-- /main -->
@@ -767,9 +770,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -834,6 +851,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -877,6 +980,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">2023, Tom Slee</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
 

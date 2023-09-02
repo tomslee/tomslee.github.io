@@ -3,8 +3,8 @@
 listing:
   contents: 
   - posts
+  # - inprogress No need for scraps on the front page
   - essays
-  - inprogress
   sort: "date desc"
   type: default
   categories: false
@@ -16,6 +16,6 @@ title-block-banner: true
 toc: false
 ---
 
-Welcome to my web site. Here is a list of new and recently-updated essays, posts, and "in progress" writing.
+Welcome to my web site. Here is a record of recent or recently-reworked writing. Some even more rough-and-ready unpolished material is hidden in the [Sketches & Scraps](inprogress.qmd) section.
 
 -- Tom Slee
