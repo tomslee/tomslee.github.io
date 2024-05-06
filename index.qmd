@@ -2,7 +2,7 @@
 # title: "Tom Slee"
 listing:
   contents: 
-  - posts
+  # - posts
   # - inprogress No need for scraps on the front page
   - essays
   sort: "date desc"
@@ -16,6 +16,6 @@ title-block-banner: true
 toc: false
 ---
 
-Welcome to my web site. Here is a record of recent or recently-reworked writing. Some even more rough-and-ready unpolished material is hidden in the [Sketches & Scraps](inprogress.qmd) section.
+Welcome to my web site. Recently completed pieces are listed on this page and on the [Essays](essays.qmd) page. Unpolished and in-progress material is hidden in the [Sketches & Scraps](inprogress.qmd) section. This site also contains an archive of my one-time blog, [Whimsley](blog.qmd).
 
 -- Tom Slee
