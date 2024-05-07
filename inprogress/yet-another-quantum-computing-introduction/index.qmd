@@ -1,0 +1,229 @@
+---
+title: "Yet Another Quantum Computing Introduction"
+author: "Tom Slee"
+date: last-modified
+categories:
+- In Progress
+- Quantum Computing
+description: >
+    What is says on the tin
+# formatting
+toc: true
+toc-title: Contents
+reading-time: true
+number-sections: true
+callout-appearance: simple
+number-depth: 2
+fig-cap-location: bottom
+# reference-location: margin
+image: monthly_trips.png
+bibliography: bibliography.bib
+comments:
+    hypothesis: true
+format:
+    html:
+        title-block-banner: DarkCyan
+        published-title: Last updated
+---
+
+# Yet Another Quantum Computing Introduction
+
+Quantum Computing is having a moment. Here is a *Time* Magazine front page from last year and you can see headlines like “The future of computing is here”.
+
+Here is some text from the article.
+
+> Quantum’s unique ability to crunch stacks of data is already optimising the routes of thousands of fuel tankers traversing the globe, helping decide which ICU patients require the most urgent care, and mimicking chemical processes at the atomic level to better design new materials. – TIME (January 2023).
+
+So if you think of quantum computing as still a speculative experiment then this is a bit of a shock. It’s out there in the real world, doing things, and this would be impressive…
+
+… if it were true. But unfortunately you can’t believe everything you read. Like this: “Physicists reverse time using quantum computer”.
+
+I hope that in twenty minutes time you’ll have some idea about these topics:
+
+-   What a quantum computer is like. Are we going to have quantum laptops?
+
+-   Why should we care? What advantages, if any, does quantum computing offer?
+
+-   What is its status now? and what are its prospects?
+
+-   What a quantum computer is like
+
+## How to build a quantum computer
+
+You’ve probably heard that whereas regular computers are built around bits, quantum computers are built around qubits. So what does that look like?
+
+A qubit can be any two-state quantum system. The archetypal example is an atomic nucleus with a spin of ½. The spin can be either “up” or “down”, corresponding to a magnet pointing one way or the other.
+
+But it could be something else entirely.
+
+Some groups have built quantum computers with these atomic-scale qubits, like arrays of neutral atoms trapped in space by electromagnetic fields.
+
+Superconductivity is a macroscopic quantum phenomenon in that current is quantized. Some used superconductivity to create qubits, maybe a micrometre in size.
+
+## How quantum computers compute
+
+Whatever approach you choose, you want to build a computer out of these qubits. So the next thing you want for a computer is logic gates. In a classical computer the simplest gate is this NOT gate.
+
+The NOT gate has one input and one output. If the input is 0, then the output is 1. In classical computers, the lines are wires and the shield-symbol is etched into a chip and the bits are charges moving through the gates.
+
+In QC, the qubits stay where they are: it’s called “in-place computing”. If you can shine a laser at one particular qubit and cause it to flip, then that’s like a NOT gate: it turns the 0 into 1 and the 1 into 0.
+
+In quantum computing circuit diagrams, the lines are not wires, they are before and after states of the qubit.
+
+Now most classical gates have two inputs, like XOR and NAND, and quantum gates can also have two inputs. Here is a “Controlled NOT gate” or CNOT gate, which is an important component of quantum computers. If the top qubit is spin down, the bottom qubit is unchanged. If the top qubit is spin up, the bottom qubit is flipped.
+
+Again, if this were a classical computing gate, the bits would travel along the wires, going in from the left and out on the right.
+
+But in quantum computing, as we said, the gate is not an etched feature of a circuit. It’s an operation – a combination of laser or microwave pulses that changes the state of the qubits, and the qubits stay in place.
+
+The next thing you want to do is implement algorithms. In classical computers you have a fixed circuit and programming instructions send bits through these fixed gates to implement an algorithm. In a quantum computer you start with a set of qubits in a prepared state, and you apply a sequence of gate operations and then measure the output. So a circuit is how you implement an algorithm.
+
+Here is a bigger circuit diagram for a three-bit quantum fourier transform, which turns out to be important in the Shor algorithm for factoring integers.
+
+You have n qubits, you prepare them in some initial state \|xi\>, you subject them to a series of gates, and you end up with some outputs which you measure.
+
+### Quantum computers as “general purpose”
+
+When I started looking at circuit diagrams like this I thought it contradicted the idea of quantum computers as general purpose computers, because it looked like you had to have different circuits for different algorithms. But once you realise that a circuit is not a permanent thing but is how you implement an algorithm, then it’s not a contradiction at all.
+
+So are quantum computers general purpose? Well yes and no.
+
+Formally they are. That is, there is a set of gates (different to the gates for classical computing) which satisfy the requirements for Turing completeness. So that’s nice.
+
+But what about general purpose in the practical sense?
+
+Let’s go back to how you build quantum computers.
+
+No matter what approach you take, the set of qubits must exist in a single quantum state. Quantum states fall apart or decohere when interacting with the wider world, so they have to be isolated. Also, thermal energy will jiggle these qubits among the states and you can’t have that, so quantum computers of whatever type have to be operated at very low temperatures, meaning about 1K.
+
+This has consequences:
+
+-   You won’t, in the foreseeable future, have a quantum computing laptop. Quantum computers need cooling and will be built in fixed locations.
+
+-   It’s going to be expensive to build them. And so your company won’t be buying many quantum computers any time soon. It makes sense to have specialised providers who will provide time on them through a cloud service. Timesharing on a mainframe.
+
+-   For any algorithm that can be executed either classically or in a quantum computer, classical is going to be roughly a gazillion times cheaper for the foreseeable future. You won’t be running most of your code on a quantum computer.
+
+BUT there are certain tasks that may be done more quickly on a quantum computer than on a classical one. So specific function calls within a larger program may be executed on a quantum computer, and the rest will be done on a classical one.
+
+The emerging paradigm is that there is a cloud hosted data centre where an application can use classical computers but have access to quantum computers to run these specific functions. Perhaps it’s not surprising that Microsoft, IBM, and Google are at the forefront and AWS is now investing heavily: they want to host them, and rent them out to their cloud users. And SAP as well.
+
+### Quantum computing libraries
+
+The companies providing quantum computers want people to use them, so they provide libraries or modules that you can use which do two things:
+
+-   Provide an interface to their quantum computers
+
+-   Provide simulation of quantum computing on a local classical computer, for small cases.
+
+So here is Google’s “cirq” library for python in a Jupyter notebook. It let’s you do a few things:
+
+Define some qubits.
+
+Define a list of gates.
+
+Create a circuit
+
+Look at it (print it)
+
+Run simulations on the circuit.
+
+## Quantum computing algorithms
+
+This is all a lot of work. Why would you bother? We haven’t talked about quantum computing advantage yet!
+
+Let’s get into this idea of quantum computing as having an intrinsic advantage over classical computing for certain kinds of problem.
+
+### Superposition and interference
+
+The idea of quantum advantage relies on a combination of two phenomena that are consequences from the wave/particle nature of quantum systems.
+
+One is that qubits exist in superpositions of states.
+
+\|\> = \|0\> + \|1\>
+
+Here, alpha and beta represent probability amplitudes. This is where the idea of quantum parallelism comes from: that you can act on 0 and 1 at the same time because it’s in a superposition of states. But it’s not enough, because you only ever see either 0 or 1 at measurement: you can only ever get one bit of information out of the state.
+
+A second is interference: that even if the whole array is represented by a single quantum state, we can address pairs of qubits in such a way that the states interfere with each other, and so become, as they say, entangled.
+
+For example, here is a “Bell state”. The individual qubits may be spin up or spin down. But if you measure one of them, you know the second.
+
+### Aside
+
+If you prepare a qubit in state \|0\> then there is a gate called the Hadamard gate that can put it into a superposition, with alpha and beta both (½ \^.5). You often want to start things that way so that you can take advantage of this superposition.
+
+## The Deutsch algorithm
+
+Let’s look at the first algorithm that suggested we could use these two phenomena to get something useful, which is the Deutsch algorithm. The idea was to pose a question, no matter how artificial and useless, which quantum computers might be able to answer quicker than classical computers. And then maybe that will give us insights we can use to get to some useful questions later on.
+
+Here is the problem.
+
+There are four functions that act on a bit data type and produce a bit output.
+
+| Input |       f0 |       f1 |       fx |      fx' |
+|------:|---------:|---------:|---------:|---------:|
+|     0 |        0 |        1 |        0 |        1 |
+|     1 |        0 |        1 |        1 |        0 |
+|       | Constant | Constant | Balanced | Balanced |
+
+: The four functions that take a bit as input and produce a bit as output
+
+One question would be: if you have a black box and just look at the inputs and outputs, can you tell which function is in the black box? But Deutsch picked out an even more obscure question: f0 and f1 are constant and fx and fx\^ are “balanced”, which is that they have one of each. If you have a black box and just look at the inputs and outputs, can you tell if the function inside is one of the even functions or one of the balanced functions?
+
+Classically you need to pose two queries: what’s f(0) and what’s f(1)? And in a quantum circuit the naive way would also take two queries:
+
+As the measurement will only give either f(0) or f(1) with probability a\^2 or b\^2, you still need to make at least two measurements to find out whether f is constant or balanced.
+
+But Deutsch came up with an idea that you could use an extra cubit and combine the effects of superposition and interference to get the answer with just one query.
+
+And here is the algorithm to solve it, represented by a circuit as we said.
+
+We can’t go through this now, but with this circuit just one measurement of the top qubit will tell you whether the black box, labelled here as an Oracle, represents a constant or a balanced function. So you can use a combination of superposition and interference to do things you can’t do on a classical computer.
+
+## The canonical algorithms
+
+Since then, a handful of algorithms have been developed that are particularly interesting. A recent book calls them the canon. So here’s a list of things you might do on a quantum computer.
+
+These are algorithms for which it has been proved that an ideal quantum computer would offer an algorithm of less complexity than a classical computer.
+
+The big one is the Shor algorithm, which shows how to factor a large number in polynomial time rather than exponential time. And as that is the root of public key encryption schemes there is a lot of excitement.
+
+Others include Variational Quantum Eigensolvers and search things and optimization steps and machine learning things. So when you see statements like “qc plays a role in drug discovery and business computing” and all those things at the beginning of the talk, this is what they are talking about. But let’s be clear: none of these shows real-world benefit compared to classical computing yet.
+
+And just a side note here, but you may see some bigger numbers reported for D-Wave systems. There’s no time to talk about that here, but D-Wave is a Canadian company that has done some really interesting work, but it’s not quantum computing in the sense of gates and circuits that we see here. I’ll make the slides available, and you can follow up if you want.
+
+## Quantum computing in 2024
+
+So where are we when it comes to building real quantum computers that can handle problems of interest?
+
+### Current state of the art
+
+I’ve put some numbers on the left here. Leading implementations have about 1000 qubits with gate times of 10 ns. And what is called “gate fidelity” of three nines. These have all come a long way in the last decade.
+
+Google made big claims four years ago with a 53-noisy qubit processor. They said it could do this task which it would take a classical computer 10,000 years to accomplish. But it’s fundamentally not a very useful task, so no one has really thought much about the best way to do the task on a classical computer. And people at IBM, who are competing with Google of course, came back a short time later and said “we could do that in 2 ½ days”. So not convincing yet.
+
+But scale is an important open question. Because we need to get up to at least 10,000 logical qubits to be of any use, and probably into the millions. And despite what Time Magazine says, we are not there yet. The largest number being factored by Shor’s algorithm is 21.
+
+Error correction: a tension at the heart of quantum computing
+
+Progress is progress, but we can’t assume a Moore’s Law progress yet.
+
+There is a tension relevant for building quantum computers. You need the whole circuit to be a single state, which means no interference from the environment. Yet at the same time you are poking it and prodding it with these gates, which are very explicit interactions with the environment.
+
+Also: no quantum state is really just two states that you can pick between. There are higher energy states that start to get populated as the temperature increases, and which mess things up.
+
+So error correction is a big part of any quantum computing effort. And typically the answer is the same as any other error correction system: redundancy. So there is a distinction between physical qubits (which are the building blocks we have talked about) and logical qubits, which are collections of physical qubits that you can trust to behave in the way the theory needs. So how many logical qubits to a single physical qubit? Depends on the approach, but the leading work https://www.nature.com/articles/s41586-023-06927-3 at least 50.
+
+## The big question
+
+So the claims made at the beginning are simply not true. What we’ve seen is a set of proofs of concept, and road maps for scaling up that give an overly-optimistic sense of predictability when there are still fundamental unknowns to resolve.
+
+We know there are problems for which there is quantum advantage. We know we can build some of these, like the Google sampling problem, but like the Deutsch algorithm these are mainly artificial. And we know there are problems we care about that have the potential for quantum advantage.
+
+What we don’t know is whether we are on the left or the right side of this diagram. Or, to put it differently, how long we will be on the left side.
+
+### Quotation
+
+And I would emphasise: don’t take this from me! Here is a recent quotation from Scott Aaronson, who did a postdoc here are the University of Waterloo before going on to become one of the leaders in the field of quantum algorithms.
+
+“Billions of dollars \[are\] being invested in quantum computing… in the hope that a quantum computer would accelerate machine learning, optimization, financial problems, AI problems…. As here, as a quantum algorithms person, honesty compels me to report to you that the situation is much, much iffier.”
