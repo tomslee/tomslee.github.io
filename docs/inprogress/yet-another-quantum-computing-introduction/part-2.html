@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Tom Slee">
+<meta name="dcterms.date" content="2024-05-16">
+<meta name="description" content="Quantum computing: the difficult bits">
 
-<title>Tom Slee - Essays</title>
+<title>Tom Slee - Yet Another Introduction to Quantum Computing, Part II</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./logo.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -61,43 +62,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<style>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
+      .quarto-title-block .quarto-title-banner {
+        background: DarkCyan;
+      }
+</style>
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-description','listing-image','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
-    };
 
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<link rel="stylesheet" href="styles.css">
-<meta name="twitter:title" content="Tom Slee - Essays">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="./essays/2023-01-ridehail/front_image.png">
+<link rel="stylesheet" href="../../styles.css">
+<meta name="twitter:title" content="Tom Slee - Yet Another Introduction to Quantum Computing, Part II">
+<meta name="twitter:description" content="Quantum computing: the difficult bits">
+<meta name="twitter:image" content="images/clipboard-3934556282.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -108,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Tom Slee</span>
     </a>
   </div>
@@ -119,19 +96,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./essays.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../essays.html" rel="" target="">
  <span class="menu-text">Essays</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./inprogress.html" rel="" target="">
+    <a class="nav-link" href="../../inprogress.html" rel="" target="">
  <span class="menu-text">Sketches &amp; Scraps</span></a>
   </li>  
   <li class="nav-item">
@@ -139,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Ridehail Lab</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html" rel="" target="">
+    <a class="nav-link" href="../../blog.html" rel="" target="">
  <span class="menu-text">Whimsley (blog archive)</span></a>
   </li>  
 </ul>
@@ -162,264 +139,68 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Yet Another Introduction to Quantum Computing, Part II</h1>
+                  <div>
+        <div class="description">
+          <p>Quantum computing: the difficult bits</p>
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">In Progress</div>
+                <div class="quarto-category">Quantum Computing</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Tom Slee </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Last updated</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 16, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Essays</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-</header>
-
-<p>Finished, or nearly so. Some published elsewhere, some not.</p>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="Essays" data-listing-date-sort="1675054800000" data-listing-file-modified-sort="1715086376829" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="41">
-<a href="./essays/2023-01-ridehail/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./essays/2023-01-ridehail/front_image.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-High Emissions and Low Pay: Uber is Still Taking Regulators for a Ride
-</h5>
-<div class="listing-reading-time card-text text-muted">
-41 min
-</div>
-<div class="card-text listing-description">
-A report for RideFairTO
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Tom Slee
-</div>
-<div class="listing-date">
-Jan 30, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="Essays,Ant Wars" data-listing-date-sort="1673845200000" data-listing-file-modified-sort="1715086376663" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26">
-<a href="./essays/2023-01-antwars/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./essays/2023-01-antwars/weaver_ants_5.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-From Ant Wars to Human Wars
-</h5>
-<div class="listing-reading-time card-text text-muted">
-26 min
-</div>
-<div class="card-text listing-description">
-<p>What do wars between ant colonies tell us about human wars?</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Graeme MacQueen, Tom Slee
-</div>
-<div class="listing-date">
-Jan 16, 2023
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="Essays,Ant Wars" data-listing-date-sort="1667361600000" data-listing-file-modified-sort="1715086376597" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="96">
-<a href="./essays/2022-12-antwar/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./essays/2022-12-antwar/ant.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-War as a system in nature
-</h5>
-<div class="listing-reading-time card-text text-muted">
-96 min
-</div>
-<div class="card-text listing-description">
-<p>We take wars between ant colonies seriously, and ask: “How should ant wars change how we think of war itself?”</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Graeme MacQueen, Tom Slee
-</div>
-<div class="listing-date">
-Nov 2, 2022
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="Essays" data-listing-date-sort="1616990400000" data-listing-file-modified-sort="1715086376583" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
-<a href="./essays/2021-03-29-ubertransit/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./essays/2021-03-29-ubertransit/rpjscarboroughbusstop01.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Uber transit pitch misses the mark
-</h5>
-<div class="listing-reading-time card-text text-muted">
-4 min
-</div>
-<div class="card-text listing-description">
-An op-ed, published in the Toronto Star on March 29, 2021
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Tom Slee
-</div>
-<div class="listing-date">
-Mar 29, 2021
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="Essays" data-listing-date-sort="1566273600000" data-listing-file-modified-sort="1715086376573" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="37">
-<a href="./essays/2019-08-oup_private_sector_ai/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="essays\2019-08-oup_private_sector_ai\2019-ai-incentives.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-The incompatible incentives of private sector AI
-</h5>
-<div class="listing-reading-time card-text text-muted">
-37 min
-</div>
-<div class="card-text listing-description">
-A contribution to The Oxford Handbook of Ethics of Artificial Intelligence, Oxford University Press 2019
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Tom Slee
-</div>
-<div class="listing-date">
-Aug 20, 2019
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="5" data-categories="Essays" data-listing-date-sort="1564977600000" data-listing-file-modified-sort="1715086376570" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12">
-<a href="./essays/2019-08-05_workaround_medical/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="essays\2019-08-05_workaround_medical\2019-ai-adversarial-macaw.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Workarounds and Medical Machine Learning
-</h5>
-<div class="listing-reading-time card-text text-muted">
-12 min
-</div>
-<div class="card-text listing-description">
-<p>Adversarial examples are surprisingly similar to workarounds that fix mistakes. There are consequences.</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Tom Slee
-</div>
-<div class="listing-date">
-Aug 5, 2019
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="6" data-categories="Essays" data-listing-date-sort="1542949200000" data-listing-file-modified-sort="1715086376567" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="33">
-<a href="./essays/2018-11-23_rise_and_fall/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./essays/2018-11-23_rise_and_fall/Hotel_Victoria-Jungfrau.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-The Rise and Fall of the Sharing Economy
-</h5>
-<div class="listing-reading-time card-text text-muted">
-33 min
-</div>
-<div class="card-text listing-description">
-<p>A presentation to the Symposium of the Ernst Schmidheiny Foundation, Friday November 23, 2018.</p>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Tom Slee
-</div>
-<div class="listing-date">
-Nov 23, 2018
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="7" data-categories="Essays,Reputation" data-listing-date-sort="1412546940000" data-listing-file-modified-sort="1715086376485" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="23">
-<a href="./essays/2014-10-05-in-praise-of-fake-reviews/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./essays/2014-10-05-in-praise-of-fake-reviews/fivestars.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-In Praise of Fake Reviews
-</h5>
-<div class="listing-reading-time card-text text-muted">
-23 min
-</div>
-<div class="card-text listing-description">
-Fake reviews can be a legitimate response to predatory reputation systems
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Tom Slee
-</div>
-<div class="listing-date">
-Oct 5, 2014
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

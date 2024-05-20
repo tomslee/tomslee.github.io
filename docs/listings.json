@@ -2,10 +2,12 @@
   {
     "listing": "/inprogress.html",
     "items": [
-      "/inprogress/advertising-houses-of-cards/index.html",
-      "/inprogress/ai-alignment/index.html",
+      "/inprogress/yet-another-quantum-computing-introduction/index.html",
+      "/inprogress/yet-another-quantum-computing-introduction/part-2.html",
       "/inprogress/ridehail-chicago/index.html",
       "/inprogress/ridehail-simulation/index.html",
+      "/inprogress/advertising-houses-of-cards/index.html",
+      "/inprogress/ai-alignment/index.html",
       "/inprogress/provider-reputation/provider-reputation.html",
       "/inprogress/ai-is-not-an-organism/index.html"
     ]

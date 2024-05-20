@@ -1,0 +1,43 @@
+<mxfile host="app.diagrams.net" modified="2024-05-10T17:36:35.184Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="b_wrp1f8hdP9jsBO6FSg" version="24.3.1" type="device">
+  <diagram id="3228e29e-7158-1315-38df-8450db1d8a1d" name="Page-1">
+    <mxGraphModel dx="2390" dy="1287" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="21531" value="" style="ellipse;fillColor=#F08705;opacity=60;strokeColor=none;html=1;fontColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="339.5" y="308.5" width="500" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="21532" value="" style="ellipse;fillColor=#12AAB5;opacity=60;strokeColor=none;html=1;fontColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="40.5" y="18.5" width="500" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="21533" value="" style="ellipse;fillColor=#e85642;opacity=60;strokeColor=none;html=1;fontColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="576.5" y="18.5" width="500" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="21534" value="We can&lt;br&gt;build it" style="text;fontSize=44;align=center;verticalAlign=middle;html=1;fontColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="182.5" y="228.5" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="21535" value="We care&lt;br&gt;about it" style="text;fontSize=44;align=center;verticalAlign=middle;html=1;fontColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="730.5" y="228.5" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="21536" value="Quantum&lt;br&gt;beats&lt;br&gt;classical" style="text;fontSize=44;align=center;verticalAlign=middle;html=1;fontColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="499.5" y="558.5" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="21538" value="Supremacy" style="text;align=center;html=1;fontColor=#FFFFFF;fontSize=32;" parent="1" vertex="1">
+          <mxGeometry x="419.5" y="397.5" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="21539" value="Canonical&lt;br&gt;algorithms" style="text;align=center;html=1;fontColor=#FFFFFF;fontSize=32;" parent="1" vertex="1">
+          <mxGeometry x="699.5" y="373.5" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="D6C0VKuRRBmlL2urOWEn-21540" value="" style="ellipse;fillColor=#F08705;opacity=60;strokeColor=none;html=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="1449.5" y="309.5" width="500" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="D6C0VKuRRBmlL2urOWEn-21541" value="" style="ellipse;fillColor=#12AAB5;opacity=60;strokeColor=none;html=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="1289.5" y="19.5" width="500" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="D6C0VKuRRBmlL2urOWEn-21542" value="" style="ellipse;fillColor=#e85642;opacity=60;strokeColor=none;html=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="1599.5" y="19.5" width="500" height="500" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
