@@ -78,6 +78,14 @@ Perhaps one thing that we can infer from the large number of qubit "modalities" 
 
 Whatever approach you choose, you want to build a computer out of these qubits. So the next thing you want for a computer is logic gates. In a classical computer the simplest gate is this NOT gate.
 
+```{mermaid}
+flowchart LR;
+  A["|0>"] --> O;
+  B --> O;
+  O --> C;
+  O --> D;
+```
+
 ![A NOT gate, which turns 0 into 1 and vice versa](images/clipboard-1114991653.png){fig-alt="A NOT gate, which turns 0 into 1 and vice versa" width="300"}
 
 The NOT gate has one input and one output. If the input is 0, then the output is 1. In classical computers, the lines are wires and the shield-symbol is etched into a chip and the bits are charges moving through the gates.

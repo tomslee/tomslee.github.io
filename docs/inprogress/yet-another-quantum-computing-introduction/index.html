@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Tom Slee">
-<meta name="dcterms.date" content="2024-05-17">
+<meta name="dcterms.date" content="2024-05-22">
 <meta name="description" content="Quantum computing without the difficult bits">
 
 <title>Tom Slee - Yet Another Introduction to Quantum Computing, Part I</title>
@@ -122,6 +122,9 @@ div.csl-indent {
         background: DarkCyan;
       }
 </style>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -222,7 +225,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Last updated</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 17, 2024</p>
+        <p class="date">May 22, 2024</p>
       </div>
     </div>
     
@@ -318,6 +321,20 @@ div.csl-indent {
 <section id="how-quantum-computers-compute" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> How quantum computers compute</h1>
 <p>Whatever approach you choose, you want to build a computer out of these qubits. So the next thing you want for a computer is logic gates. In a classical computer the simplest gate is this NOT gate.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR;
+  A["|0&gt;"] --&gt; O;
+  B --&gt; O;
+  O --&gt; C;
+  O --&gt; D;
+</pre>
+</div>
+</div>
+</div>
+</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/clipboard-1114991653.png" class="img-fluid figure-img" alt="A NOT gate, which turns 0 into 1 and vice versa" width="300"></p>

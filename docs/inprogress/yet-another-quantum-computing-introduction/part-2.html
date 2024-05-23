@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Tom Slee">
-<meta name="dcterms.date" content="2024-05-16">
+<meta name="dcterms.date" content="2024-05-20">
 <meta name="description" content="Quantum computing: the difficult bits">
 
 <title>Tom Slee - Yet Another Introduction to Quantum Computing, Part II</title>
@@ -23,7 +23,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -70,6 +89,8 @@ ul.task-list li input[type="checkbox"] {
       }
 </style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
 <meta name="twitter:title" content="Tom Slee - Yet Another Introduction to Quantum Computing, Part II">
@@ -168,7 +189,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Last updated</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 16, 2024</p>
+        <p class="date">May 20, 2024</p>
       </div>
     </div>
     
@@ -184,7 +205,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a>
+  <ul class="collapse">
+  <li><a href="#superposition-and-interference-recap" id="toc-superposition-and-interference-recap" class="nav-link" data-scroll-target="#superposition-and-interference-recap"><span class="header-section-number">1.1</span> Superposition and interference (recap)</a></li>
+  </ul></li>
+  <li><a href="#h-cnot" id="toc-h-cnot" class="nav-link" data-scroll-target="#h-cnot"><span class="header-section-number">2</span> H + CNOT</a></li>
   </ul>
 </nav>
     </div>
@@ -196,11 +221,57 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="introduction" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>Part I described how quantum computers work, to the extent that they do, but skipped lightly over the question of why people are putting so much work into building them. This essay is an attempt to explain, in language as plain as possible, what it is about quantum phenomena that might make quantum computing worthwhile.</p>
+<section id="superposition-and-interference-recap" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="superposition-and-interference-recap"><span class="header-section-number">1.1</span> Superposition and interference (recap)</h2>
+<p>The idea of quantum advantage relies on a combination of two phenomena that are consequences from the wave/particle nature of quantum systems.</p>
+<p>One is that qubits exist in <em>superpositions</em> of states. That is, although any measurement of the qubit will show it to be in state <span class="math inline">\(| \uparrow \rangle\)</span> or <span class="math inline">\(| \downarrow \rangle\)</span>, in general the qubit can be in a state that is a superposition of these two, and it has what is called a wavefunction or (equivalently) a state vector <span class="math inline">\(| \psi \rangle\)</span> (the Greek letter <em>psi</em>) given by:</p>
+<p><span class="math display">\[ | \psi \rangle = \alpha | \uparrow \rangle + \beta | \downarrow \rangle \]</span></p>
+<p>The <span class="math inline">\(| \uparrow \rangle\)</span> and <span class="math inline">\(| \downarrow \rangle\)</span> states, which are the possible outcomes of measurement, are called <em>basis states</em> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> or <em>eigenstates</em>. The coefficients <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> are <em>probability amplitudes</em>, meaning that in any measurement of the state of <span class="math inline">\(| \psi \rangle\)</span> the probability of seeing state <span class="math inline">\(|\uparrow \rangle\)</span> is <span class="math inline">\(\alpha^2\)</span> and the probability of seeing state <span class="math inline">\(| \downarrow \rangle\)</span> is <span class="math inline">\(\beta^2\)</span>. Sometimes these are also called <em>phases</em>. This is something you just have to take on trust unless you want to dive properly into quantum mechanics.</p>
+<p>You may have heard that quantum computers carry out many calculations in parallel, and this notion of superposition is where the idea of quantum parallelism comes from: that you can act on <span class="math inline">\(| \uparrow \rangle\)</span> and <span class="math inline">\(| \downarrow \rangle\)</span> at the same time because the qubit is in a superposition of states. You may even have heard some people talk about “many worlds” interpretations of quantum mechanics in which qubits are simultaneously “computing” each possible value of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> in different universes.</p>
+<p>It is best to put these aside as unnecessary (and unjustified) science-fiction-inspired enthusiasms. Practically, superposition alone is not enough to deliver massive parallelism, because you only ever see either one of the two eigenstates at measurement: you can only ever get one bit of information out of qubit.</p>
+<p>The second quantum phenomenon is <em>interference.</em> Even if the whole array is represented by a single quantum state, you can address pairs of qubits in such a way that the states interfere with each other, and so become, as they say, entangled.</p>
+<p>For example, here is a “Bell state”. The individual qubits may be spin up or spin down. But if you measure one of them, you know the second.</p>
+<p><span class="math display">\[ | \psi \rangle = \alpha | \uparrow \uparrow \rangle + \beta | \downarrow \downarrow \rangle  \]</span></p>
+<p>The system exists in a superposition of the two states, so neither qubit has a fixed value until it is measured. But if you measure the value of the spin for one particle (for example, the first) then you know the value for the other particle. Said this way, there is no more to this than “if I pull a left-footed shoe out of the box, then I know that the other shoe is right-footed”. There is more to it than this, but we can ignore it for most purposes.</p>
+<p>Quantum computing relies on some clever ideas to combine the effects of superposition and interference so as to extract information from a set of qubits (by applying a sequence of gates and ending in measurements) that you could not get from classical bits.</p>
+</section>
+</section>
+<section id="h-cnot" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> H + CNOT</h1>
+<p>This draws heavily from the presentation in <span class="citation" data-cites="cleve1998">(<a href="#ref-cleve1998" role="doc-biblioref">Cleve et al. 1998</a>)</span>. Throughout, there should really be factors of <span class="math inline">\(1/\sqrt{2}\)</span> in front of some vectors, but I’m going to leave those out for simplicity.</p>
+<p>Start with a qubit in state <span class="math inline">\(|0\rangle\)</span> and apply a Hadamard gate. The qubit is now in a superposition state. We are also going to have a second qubit (a qubit in the second register) in state <span class="math inline">\(|1\rangle\)</span> which is not touched</p>
+<p><span class="math display">\[
+|0\rangle \longrightarrow \fbox{H} \longrightarrow (|0\rangle + |1\rangle) \\
+|1\rangle \longrightarrow \longrightarrow \longrightarrow \longrightarrow \longrightarrow |1\rangle
+\]</span></p>
+<p>Although this is a single quantum system, described initially by a wavefunction <span class="math inline">\(|01\rangle\)</span> and at the end by <span class="math inline">\(|+1\rangle\)</span>, the two qubits are independent, and a measurement of the first qubit can be carried out without any effect from the second qubit. The result of measuring has a 50% chance of giving 0 and a 50% chance of giving 1.</p>
+<p>Now we add a CNOT gate, which addresses both qubits and flips the second if and only if the first is in state <span class="math inline">\(|1\rangle\)</span>. We can no longer treat each qubit separately, although we can measure a single qubit’s value. Perhaps this seems contradictory? I think it’s OK. The two-qubit system is now a correlated combination of the two qubits.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/clipboard-1803941032.png" class="img-fluid figure-img" alt="A Hadamard gate followed by a CNOT gate."></p>
+<figcaption class="figure-caption">A Hadamard gate followed by a CNOT gate.</figcaption>
+</figure>
+</div>
+<p>When we measure the value of the first qubit, it tells us something about the second qubit. If we see <span class="math inline">\(|0\rangle\)</span>, then we know the second qubit is in state <span class="math inline">\(|1\rangle\)</span>; if we see <span class="math inline">\(|1\rangle\)</span> then we know the second qubit must have been flipped, and will be in state <span class="math inline">\(|0\rangle\)</span>.</p>
+<p>So far, so good, but no new information here.</p>
+<p>Now we do another step.</p>
+
 
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-cleve1998" class="csl-entry" role="listitem">
+Cleve, Richard, Artur Ekert, Chiara Macchiavello, and Michele Mosca. 1998. <span>“Quantum Algorithms Revisited.”</span> <em>Proceedings of the Royal Society of London. Series A: Mathematical, Physical and Engineering Sciences</em> 454 (1969): 339–54. <a href="https://doi.org/10.1098/rspa.1998.0164">https://doi.org/10.1098/rspa.1998.0164</a>.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>The phrase “basis states” has somewhat different meanings in other areas of quantum mechanics, but usually in quantum computing it refers to the measurement states.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
