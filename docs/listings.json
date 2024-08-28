@@ -15,6 +15,8 @@
   {
     "listing": "/essays.html",
     "items": [
+      "/essays/qcintro/index.html",
+      "/essays/qcintro/part-2.html",
       "/essays/2023-01-ridehail/index.html",
       "/essays/2023-01-antwars/index.html",
       "/essays/2022-12-antwar/index.html",
@@ -511,6 +513,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/essays/qcintro/index.html",
+      "/essays/qcintro/part-2.html",
       "/essays/2023-01-ridehail/index.html",
       "/essays/2023-01-antwars/index.html",
       "/essays/2022-12-antwar/index.html",

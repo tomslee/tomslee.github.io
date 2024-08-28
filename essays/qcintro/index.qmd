@@ -3,10 +3,10 @@ title: "Yet Another Introduction to Quantum Computing, Part I"
 author: "Tom Slee"
 date: last-modified
 categories:
-- In Progress
+- Essays
 - Quantum Computing
 description: >
-    Quantum computing without the difficult bits
+    A sceptical perspective, version 0.1
 # formatting
 toc: true
 toc-title: Contents
@@ -14,6 +14,7 @@ reading-time: true
 number-sections: true
 callout-appearance: simple
 number-depth: 2
+lightbox: true
 fig-cap-location: bottom
 # reference-location: margin
 image: images/clipboard-3934556282.png
@@ -28,39 +29,31 @@ format:
 
 # Introduction
 
-In February 2023, *Time* Magazine displayed a quantum computer overlaid with the words "The Quantum Leap" [@charliecampbell2023]. In smaller print on each side were headlines “The future of computing is here” and "This machine can solve problems in seconds that used to take years". This is just one of many recent popular investigations reflecting an increasingly bullish outlook for quantum computing.
+If there is any justification for Yet Another Introduction to Quantum Computing, it is that this one tries to avoid the mystification that often comes with discussion of quantum phenomena.
 
-It's an outlook bolstered by new funding announcements. On April 30 Australia announced an investment of almost \$1B in PsiQuantum "to build a groundbreaking utility-scale fault tolerant quantum computer" [@departmentofindustryscienceandresources2024]. The state of Illinois may be looking to build a \$20B campus). McKinsey & Company report a leap in start-up investment in quantum computing to \$1.8B in 2022, about ten times the investment of three years previous [@mckinseycompany2023].
+This introduction assumes no knowledge of quantum computing, but does assume some familiarity with general (classical) computing.
 
-All this builds on research results coming from both universities and from major technology companies. If there is a single event that prompted the new excitement it was the publication of a provocatively-titled paper from researchers at Google: "Quantum supremacy using a programmable superconducting processor" [@arute2019]. "Quantum supremacy" is a claim that a quantum computer can carry out tasks that no classical computer could carry out.
+Here are some questions I hope to answer:
 
-> Our Sycamore processor takes about 200 seconds to sample one instance of a quantum circuit a million times—our benchmarks currently indicate that the equivalent task for a state-of-the-art classical supercomputer would take approximately 10,000 years. This dramatic increase in speed compared to all known classical algorithms is an experimental realization of quantum supremacy for this specific computational task, heralding a much anticipated computing paradigm.
+-   How are quantum computers built? In particular, are we going to have quantum laptops any time soon?
 
-![Time Magazine cover, January 2023](images/clipboard-3934556282.png){fig-alt="Time Magazine cover, January 2023, title \"The Quantum Leap\"" width="300"}
+-   How can I get my hands dirty with quantum computing today? What do I need to understand to write my first "Hello world" quantum computing program?
 
-The TIME magazine article suggests that this much-anticipated paradigm is already bearing fruit:
+-   What advantages, if any, does quantum computing offer? This topic is skipped over very lightly here, but a Part II will discuss it in more depth (but still not deeply).
 
-> Quantum’s unique ability to crunch stacks of data is already optimising the routes of thousands of fuel tankers traversing the globe, helping decide which ICU patients require the most urgent care, and mimicking chemical processes at the atomic level to better design new materials..
+-   What is the status of quantum computing today? and what are its prospects? Well, an answer is too much to hope for, but I'll offer some reflections.
 
-So if you have been thinking of quantum computing as a still-speculative research program with no short-term implications then this might come as a bit of a shock. It’s out there in the real world, doing things! And this would be impressive…if it were true.
+Let's start with the basics, though, which is the idea of a qubit...
 
-But we shall come to that later on. Regardless of the rights and wrongs of these claims, there is no doubt that quantum computing has moved from the fringes of academic research to claim the attention of business boards and government policymakers.
+# Qubits
 
-There have been many introductions to quantum computing. If there is justification for yet another one, it is that I will try to dodge some of the mystification that often comes with discussion of quantum phenomena and instead answer these questions:
+You have probably heard that whereas regular computers are built around bits, quantum computers are built around qubits. So what does that mean?
 
--   How do you build a quantum computer? And are we going to have quantum laptops?
+The archetypal example of a qubit is an atomic nucleus with a spin of ½, like the ^89^Y isotope of Yttrium. The spin means that the nucleus acts as if it were an electrical charge spinning in one direction or the other, and this spinning electrical charge creates a little magnet that can be pointing either “up” or “down”.
 
--   How does a quantum computer compute? In what ways is it different to a "normal" classical computer?
+It's a quantum property, which you just have to get used to, that the nucleus cannot spin at any speed, but only at discrete values (hence "quanta"), so that any measurement of the spin of the nucleus along a given axis gives either the value +½ (up) or -½ (down). These two values can represent $0$ and $1$, just as a classical "bit" might be a transistor that can take on a state of "on" or "off".
 
--   Why should we care? What advantages, if any, does quantum computing offer?
-
--   What is its status now? and what are its prospects?
-
-# How to build a quantum computer
-
-You have probably heard that whereas regular computers are built around bits, quantum computers are built around qubits. So what does that look like?
-
-The archetypal example of a qubit is an atomic nucleus with a spin of ½, like the ^89^Y isotope of Yttrium. The nucleus acts as if it were an electrical charge spinning in one direction or the other, and this spinning electrical charge creates a little magnet that can be pointing either “up” or “down”. Any measurement of the spin of the nucleus along a given axis will give the value +½ (up) or -½ (down)—two values that can represent $0$ and $1$, just as a classical "bit" might be a transistor that can take on a state of "on" or "off". You may have heard that qubits can exist in combinations of 0 and 1, but let's leave that to one side for now.
+You may have heard that qubits can exist in combinations of 0 and 1, but let's leave that to one side for now.
 
 ![An archetypal qubit: an atom with nuclear spin up or down](images/clipboard-2996633943.png){fig-alt="An archetypal qubit: an atom with nuclear spin up or down" width="300"}
 
@@ -74,7 +67,7 @@ A feature of quantum computing is that it has divided into two areas: building a
 
 Perhaps one thing that we can infer from the large number of qubit "modalities" being pursued is the uncertainty that remains regarding progress. If there were a clear path from a particular design to a general purpose quantum computer, then the industry would coalesce around that modality. The fact that is hasn't suggests that each modality has challenges that remain, and reasons for optimism that its proponents will champion.
 
-# How quantum computers compute
+# Gates and circuits
 
 Whatever approach you choose, you want to build a computer out of these qubits. So the next thing you want for a computer is logic gates. In a classical computer the simplest gate is this NOT gate.
 
@@ -96,17 +89,15 @@ Here is a bigger circuit diagram for a three-bit quantum fourier transform, whic
 
 ![A circuit for a quantum Fourier transform. Source: Wikimedia Commons](images/clipboard-1213033795.png){fig-alt="A circuit for a quantum Fourier transform"}
 
-## Quantum computers as “general purpose”
+# Are quantum computers "general purpose"?
 
-When I started looking at circuit diagrams like this I thought it contradicted the idea of quantum computers as general purpose computers, because it looked like you had to have different circuits for different algorithms. But once you realise that a circuit is not a permanent thing but is instead a sequence of operations (gates) that implement an algorithm, then it’s not a contradiction at all.
+When I started looking at quantum circuit diagrams I thought it contradicted the idea of quantum computers as general purpose computers, because you need different circuits for different algorithms and I assumed that any computer would have a fixed set of circuits (like CPU circuits are etched into silicon) and hence be limited in what algorithms it can execute.
 
-So are quantum computers general purpose? Well yes and no.
+But once you realise that a circuit is not a permanent thing but is instead a sequence of operations (gates) that implement an algorithm, then it’s not a contradiction at all.
 
-Formally they are. That is, there is a set of gates (different to the gates for classical computing) which satisfy the requirements for Turing completeness. So that’s nice.
+So are quantum computers general purpose? Well yes and no. Formally they are. That is, there is a set of gates (different to the gates for classical computing) which satisfy the requirements for Turing completeness. So that’s nice.
 
-But what about general purpose in the practical sense? Let’s go back to how you build quantum computers.
-
-No matter what approach you take, the set of qubits must exist in a single quantum state. Quantum states fall apart or decohere when interacting with the wider world, so they have to be isolated. Also, thermal energy will jiggle these qubits among the states and you can’t have that, so quantum computers of whatever type have to be operated at very low temperatures, meaning about 1K.[^1]
+But what about general purpose in the practical sense? Let’s go back to how you build quantum computers. No matter what approach you take, the set of qubits must exist in a single quantum state. Quantum states fall apart or "decohere" when interacting with the wider world, so they have to be isolated. Also, thermal energy will jiggle these qubits among the states and you can’t have that, so quantum computers of whatever type have to be operated at very low temperatures, meaning about 1K.[^1]
 
 [^1]: This is not quite true for all modalities: computers built using photonic qubits are not subject to this low-temperature requirement, but they do have other challenges.
 
@@ -124,7 +115,7 @@ This has consequences:
 
 The emerging paradigm is of a cloud-hosted data centre where an application can use classical computers but have access to quantum computers to run these specific functions. Perhaps it’s not surprising that Microsoft, IBM, and Google are at the forefront and Amazon (AWS) is now investing heavily: they want to host them, and rent them out to their cloud users.
 
-## Quantum computing libraries
+# Quantum computing libraries
 
 The companies providing quantum computers want people to use them, so they provide libraries or modules that you can use. For example, Google and IBM provide python libraries (cirq and Qiskit, respectively) and Microsoft provides the Q# .NET programming language. These libraries provide an interface to the host quantum computers and, more practically for most of us, provide a way to simulate quantum computing on a local classical computer, for small cases.
 
@@ -134,14 +125,18 @@ So here is some code that uses Google’s *cirq* library for python. It defines 
 import cirq
 
 # Define two qubits
-qa = cirq.NamedQubit('source')
-qb = cirq.NamedQubit('target')
+q_control = cirq.NamedQubit('control')
+q_target = cirq.NamedQubit('target')
 
 # Define a list of gates: a "Hadamard" gate on each qubit, 
-# followed by a CNOT gate, and then a measurement of qubit qa.
+# followed by a CNOT gate, and then a measurement of the 
+# control qubit q_control.
 gates = [
-  cirq.H(qa), cirq.H(qb), cirq.CNOT(qa, qb), cirq.measure(qa)
-]
+        cirq.H(q_control), 
+        cirq.H(q_target), 
+        cirq.CNOT(q_control, q_target), 
+        cirq.measure(q_control)
+        ]
 
 # Create a circuit from this list of gates
 circuit = cirq.Circuit(gates)
@@ -155,7 +150,7 @@ print(result)
 
 The "print" instructions display an ascii-art rendering of the circuit and the results.
 
-# Quantum computing algorithms
+# Why might quantum computing matter?
 
 Building a new kind of computer, defining new ways to express algorithms, providing new coding libraries, integrating computers with existing cloud services... This is all a lot of work. Why would you bother? The approach is of interest only because quantum computing has been shown to have an intrinsic advantage over classical computing, at least in principle, for certain kinds of problem. Part II of this introduction (link to come) is an attempt to describe this advantage in detail, but here we shall skip lightly over the essential details. It won't be enough to understand what's going on, but it may be enough to orient you to some of the descriptions you see elsewhere.
 
@@ -191,9 +186,9 @@ Quantum computing relies on some clever ideas to combine the effects of superpos
 
 ## Aside: the Hadamard gate
 
-If you prepare a qubit in state $| \uparrow \rangle$ then there is a gate called the Hadamard gate that can put it into a superposition, with $\alpha$ and $\beta$ both $1/\sqrt{2}$. Many circuits start with Hadamard gates way to take advantage of this superposition.
+If you prepare a qubit in state $| \uparrow \rangle$ then there is a gate called the Hadamard gate that can put it into a superposition, with $\alpha$ and $\beta$ both $1/\sqrt{2}$. Many circuits start with Hadamard gates way to take advantage of this superposition. See
 
-![A Hadamard gate takes a pure state as input and converts it into a superposition of eigenstates](images/clipboard-2752364083.png){fig-alt="A Hadamard gate takes a pure state as input and converts it into a superposition of states" width="300"}
+![A Hadamard gate takes a pure state as input and converts it into a superposition of eigenstates](images/clipboard-2752364083.png){#hadamard fig-alt="A Hadamard gate takes a pure state as input and converts it into a superposition of states" width="300"}
 
 ## The Deutsch algorithm
 
