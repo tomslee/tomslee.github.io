@@ -15,7 +15,7 @@ website:
   twitter-card: true
   favicon: logo.png
   page-footer: 
-    left: "2023, Tom Slee" 
+    left: "2023 -- 2024, Tom Slee" 
   navbar:
     background: DarkCyan
     pinned: true
@@ -30,7 +30,7 @@ website:
         href: inprogress.qmd
       - text: "Ridehail Lab"
         href: https://tomslee.github.io/ridehail/lab/
-      - text: "Whimsley (blog)"
+      - text: "Whimsley (blog archive)"
         href: blog.qmd
     right:
       - icon: github
