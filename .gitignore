@@ -3,7 +3,16 @@
 .RData
 .Ruserdata
 *.docx
+*.aux
+*.log
+*.tex
+*.toc
+*.bbl
 
+# Python virtual environment
+/.venv/
+
+# For quarto publish (via gh-pages branch)
 /.quarto/
 /_site/
 

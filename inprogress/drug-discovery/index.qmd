@@ -1,0 +1,59 @@
+---
+title: Is Quantum Computing the Next Drug Discovery Disappointment?
+author: Tom Slee
+date: last-modified
+categories:
+- In Progress
+- Quantum Computing
+description: > 
+    AI and Quantum computing are often touted as revolutionary
+    for Drug Discovery. With AI failing to deliver, what are the
+    prospects for quantum computing?
+abstract-title: Is QC any good?
+image: header.jpg
+toc: true
+toc-title: Contents
+toc-location: left
+reference-location: margin
+# citation-location: margin
+# cap-location: margin
+title-block-banner: true
+reading-time: true
+number-sections: true
+number-depth: 2
+callout-appearance: simple
+bibliography: ./test.bib
+fig-cap-location: bottom
+comments:
+  hypothesis: true
+format: html
+---
+
+::: {.callout-note appearance="simple"}
+State: very rough first draft.
+It is also available in [PDF format](index.pdf).
+:::
+
+# Drug discovery 
+
+Thirty-plus years ago I worked for a quantum chemistry startup company, and one of the target markets for our software was the pharmaceutical industry. Even then, we joked that quantum chemistry was going to revolutionize drug discovery in five years, and had been going to for the last decade.
+
+See [@a.jonesQuantumComputingNuclear2001]. 
+
+# The AI disappointment 
+
+Globe and Mail wrote about this [@castaldoRevolutionInterruptedWhy2024, requires a subscription].
+
+# QC promises 
+
+And more. See @
+
+# Appendix: Quantum Computing drug discovery claims
+
+
+
+A list...
+
+# Bibliography
+
+

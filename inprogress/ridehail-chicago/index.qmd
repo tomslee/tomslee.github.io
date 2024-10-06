@@ -29,7 +29,7 @@ format:
 ::: callout-note
 State: working draft.
 
-Reader highlights and annotations enabled through [hypothes.is](https://web.hypothes.is/) - see the floating annotation sidebar at the top right.
+ Reader highlights and annotations enabled through [hypothes.is](https://web.hypothes.is/) - see the floating annotation sidebar at the top right.
 :::
 
 The City of Chicago collects data from ridehail platforms and makes it available as open data. The data cover all transportation network company or "TNC" trips, but the TNC market is mainly Uber, so that's what I am going to call it.
