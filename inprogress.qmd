@@ -1,5 +1,5 @@
 ---
-title: "Sketches & Scraps"
+title: "Uncertainties"
 listing:
   contents: inprogress
   type: grid
@@ -8,4 +8,4 @@ listing:
   categories: false
 ---
 
-Mostly incomplete, and prone to revision at any time, these may or may not become finished pieces.
+Mostly incomplete explorations, prone to revision at any time.
