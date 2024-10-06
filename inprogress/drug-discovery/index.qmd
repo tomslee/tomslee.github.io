@@ -2,6 +2,7 @@
 title: Is Quantum Computing the Next Drug Discovery Disappointment?
 author: Tom Slee
 date: last-modified
+draft: true
 categories:
 - In Progress
 - Quantum Computing
@@ -22,7 +23,7 @@ reading-time: true
 number-sections: true
 number-depth: 2
 callout-appearance: simple
-bibliography: ./test.bib
+# bibliography: ./test.bib
 fig-cap-location: bottom
 comments:
   hypothesis: true
