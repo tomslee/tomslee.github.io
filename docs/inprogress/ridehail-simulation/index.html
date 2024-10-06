@@ -2,15 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Tom Slee">
-<meta name="dcterms.date" content="2024-05-07">
+<meta name="dcterms.date" content="2023-09-03">
 <meta name="description" content="Computer simulations of ridehail traffic and trips in a simplified city">
 
-<title>Tom Slee - Simple Simulations of Ridehail Traffic and Trips</title>
+<title>Simple Simulations of Ridehail Traffic and Trips – Tom Slee</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -27,6 +27,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -67,7 +68,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -76,12 +83,18 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 <script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
 <style>
 
       .quarto-title-block .quarto-title-banner {
@@ -89,11 +102,38 @@ div.csl-indent {
       }
 </style>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="../../styles.css">
-<meta name="twitter:title" content="Tom Slee - Simple Simulations of Ridehail Traffic and Trips">
+<meta name="twitter:title" content="Simple Simulations of Ridehail Traffic and Trips – Tom Slee">
 <meta name="twitter:description" content="Computer simulations of ridehail traffic and trips in a simplified city">
 <meta name="twitter:image" content="header.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -102,60 +142,60 @@ div.csl-indent {
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Tom Slee</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../essays.html" rel="" target="">
- <span class="menu-text">Essays</span></a>
+    <a class="nav-link" href="../../essays.html"> 
+<span class="menu-text">Essays</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../inprogress.html" rel="" target="">
- <span class="menu-text">Sketches &amp; Scraps</span></a>
+    <a class="nav-link" href="../../inprogress.html"> 
+<span class="menu-text">Uncertainties</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://tomslee.github.io/ridehail/lab/" rel="" target="">
- <span class="menu-text">Ridehail Lab</span></a>
+    <a class="nav-link" href="https://tomslee.github.io/ridehail/lab/"> 
+<span class="menu-text">Ridehail Lab</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html" rel="" target="">
- <span class="menu-text">Whimsley (blog archive)</span></a>
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Whimsley (blog archive)</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/tomslee" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/tomslee"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/whimsley" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/whimsley"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -189,7 +229,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Last updated</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 7, 2024</p>
+        <p class="date">September 3, 2023</p>
       </div>
     </div>
     
@@ -198,7 +238,7 @@ div.csl-indent {
     
   <div>
     <div class="abstract">
-      <div class="abstract-title">Abstract</div>
+      <div class="block-title">Abstract</div>
       <p>Simple simulations of ridehailing traffic and trips in a city are presented, with the goal of informing policy choices and discussions in the contentious but data-poor topic of ridehailing. In the simplest simulation, a city is composed of a square grid of uniform blocks, ridehail vehicles travel randomly around the streets until assigned to a trip, and trips start and end at random locations. Extensions describe equilibration of supply under price changes, and the impact of inhomogeneous demand. Despite the many approximations employed, the simulations allow the relationships between quantities of interest to city planners and others to be explored: vehicle utilization rates, vehicle “idle” time, passenger wait time, and trip demand.</p>
     </div>
   </div>
@@ -251,6 +291,7 @@ div.csl-indent {
 
 
 
+
 <div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -287,10 +328,14 @@ div.csl-indent {
 <h2 data-number="2.1" class="anchored" data-anchor-id="city"><span class="header-section-number">2.1</span> Cities</h2>
 <p>A city is a square grid of identical streets, creating uniformly-sized “blocks”.</p>
 <p>The square is, “wrapped”, so that a vehicle going off the top of the city appears at the bottom, and a vehicle going off the right of the city appears on the left (topologically, it is a torus). This is not as unrealistic as it may first appear: in the real world, drivers are not bound by city boundaries: some trips begin inside the city and finish outside, while others start outside and terminate inside the boundaries. The “wrapped” layout can be thought of as an area with a constant population of vehicles, sustained through a flux of vehicles leaving and entering through the edges of the area under consideration.</p>
-<div id="fig-1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig1.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: A City in the simulation is simply a square of uniform streets, with C blocks on each side.</figcaption>
+<div id="fig-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: A City in the simulation is simply a square of uniform streets, with C blocks on each side.
+</figcaption>
 </figure>
 </div>
 <p>In this simplest model of a city, all locations are identical.</p>
@@ -323,13 +368,17 @@ div.csl-indent {
 <li><p>Vehicles move from one intersection to the next. Each vehicle chooses a direction and moving a block to the next intersection. For vehicles in <span class="math inline">\(P1\)</span>, the direction is random; for vehicles in <span class="math inline">\(P2\)</span> and <span class="math inline">\(P3\)</span>, the direction is towards the trip origin or destination, as applicable.</p></li>
 <li><p>Any trip that reaches its destination terminates.</p></li>
 </ul>
-<div id="fig-2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig2.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;2: A city of 20 by 20 blocks, showing 160 vehicles (triangles) in phases <span class="math inline">\(P1\)</span> (red), <span class="math inline">\(P2\)</span> (orange), and <span class="math inline">\(P3\)</span> (green). The red diamonds are trip origins, and the green circles are trip destinations.</figcaption>
+<div id="fig-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig2.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: A city of 20 by 20 blocks, showing 160 vehicles (triangles) in phases <span class="math inline">\(P1\)</span> (red), <span class="math inline">\(P2\)</span> (orange), and <span class="math inline">\(P3\)</span> (green). The red diamonds are trip origins, and the green circles are trip destinations.
+</figcaption>
 </figure>
 </div>
-<p><a href="#fig-2">Figure&nbsp;2</a> illustrates a simulation in progress. At the end of each move, the simulation records and optionally plots the state of each vehicle and statistics about the overall system (fraction of vehicles in each phase, for example).</p>
+<p><a href="#fig-2" class="quarto-xref">Figure&nbsp;2</a> illustrates a simulation in progress. At the end of each move, the simulation records and optionally plots the state of each vehicle and statistics about the overall system (fraction of vehicles in each phase, for example).</p>
 <p>This framework is sufficient to simulate a city with a fixed supply of vehicles, and fixed demand (rate of requests). For some of the results below, this is all that is needed. For some other topics, the simulation has to be extended.</p>
 </section>
 <section id="identities" class="level2" data-number="2.5">
@@ -359,11 +408,15 @@ N \times P2 = D \times W
 <section id="extensions" class="level2" data-number="2.6">
 <h2 data-number="2.6" class="anchored" data-anchor-id="extensions"><span class="header-section-number">2.6</span> Regions</h2>
 <p>The spirit of the simulations is to be as simple as possible, so that they can be calibrated using the very limited high-level public data available and so that they can be used comparatively. However, two extensions are necessary for some applications.</p>
-<p>Many cities have a central “downtown” zone where the demand for ridehail traffic is high, surrounded by suburban areas where demand is lower. For example, 60% of trips in Metro Toronto originate within “Old Toronto” and East York, even though these two make up less than 20% of the total Metro area. This inhomogeneity is built into the model as two <em>zones</em>. A central zone has sides <span class="math inline">\(C/2\)</span> (so, one quarter of the city’s area) and has a higher rate of trip requests than the surrounding area, as shown in <a href="#fig-3">Figure&nbsp;3</a> below. The trip destinations remain randomly distributed around the whole city. With an inhomogeneity of zero, the central zone is the same as the rest, with an inhomogeneity of one all trip requests take place in the central zone. In this way, and in the spirit of keeping the model as simple and parsimonious as possible, a single inhomogeneity parameter between zero and one captures the two zones.</p>
-<div id="fig-3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="fig3.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;3: The red dots show the origin of trips in a small “two-zone” city if eight blocks. The central area has a higher demand than outlying suburbs.</figcaption>
+<p>Many cities have a central “downtown” zone where the demand for ridehail traffic is high, surrounded by suburban areas where demand is lower. For example, 60% of trips in Metro Toronto originate within “Old Toronto” and East York, even though these two make up less than 20% of the total Metro area. This inhomogeneity is built into the model as two <em>zones</em>. A central zone has sides <span class="math inline">\(C/2\)</span> (so, one quarter of the city’s area) and has a higher rate of trip requests than the surrounding area, as shown in <a href="#fig-3" class="quarto-xref">Figure&nbsp;3</a> below. The trip destinations remain randomly distributed around the whole city. With an inhomogeneity of zero, the central zone is the same as the rest, with an inhomogeneity of one all trip requests take place in the central zone. In this way, and in the spirit of keeping the model as simple and parsimonious as possible, a single inhomogeneity parameter between zero and one captures the two zones.</p>
+<div id="fig-3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig3.png" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: The red dots show the origin of trips in a small “two-zone” city if eight blocks. The central area has a higher demand than outlying suburbs.
+</figcaption>
 </figure>
 </div>
 <p>The second extension, discussed in the section on Engaged Time standards below, is to allow vehicles to enter and leave the system in response to price and demand.</p>
@@ -389,10 +442,14 @@ N \times P2 = D \times W
 <section id="reference-values" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="reference-values"><span class="header-section-number">3.1</span> Reference values</h2>
 <p>In <em>Toronto 2021</em>, the authors chose Thursday Feb 6, 2020 as a representative day to assess the overall state of ridehail in Toronto, pre-pandemic (p25). The first question we ask is: can the model reproduce important aspects of this day?</p>
-<p>Although the date is now three years in the past, any reference to “Toronto” here implies “Toronto on February 6, 2020”. Relevant statistics from this study are shown in <a href="#tbl-reference-values">Table&nbsp;1</a>.</p>
-<div id="tbl-reference-values" class="anchored">
-<table class="table">
-<caption>Table&nbsp;1: Statistics for Uber trips in Toronto on Feb 6, 2020. The values come from the City of Toronto study on platform transit companies. The average vehicle speed comes from correspondence with the authors.</caption>
+<p>Although the date is now three years in the past, any reference to “Toronto” here implies “Toronto on February 6, 2020”. Relevant statistics from this study are shown in <a href="#tbl-reference-values" class="quarto-xref">Table&nbsp;1</a>.</p>
+<div id="tbl-reference-values" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-reference-values-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Statistics for Uber trips in Toronto on Feb 6, 2020. The values come from the City of Toronto study on platform transit companies. The average vehicle speed comes from correspondence with the authors.
+</figcaption>
+<div aria-describedby="tbl-reference-values-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Quantity</th>
@@ -431,11 +488,17 @@ N \times P2 = D \times W
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 <p>There is a regular churn of active vehicles, so the reported number of active vehicles, which is the total number recorded in a given hour, overestimates the number on the streets at any one time. Using the distribution of vehicle hours from the <em>Toronto 2021</em> report suggests that 40% of all vehicles will leave during any given hour. To maintain a steady volume of traffic a corresponding number will enter. The number of active vehicles at any one time is therefore more like 6200 * 100 / 140 = 4400.</p>
-<p>We demand that the numbers fit <a href="#eq-NP3">Equation&nbsp;1</a>. After these adjustments we take the values in <a href="#tbl-reference-2">Table&nbsp;2</a> as reference values:</p>
-<div id="tbl-reference-2" class="anchored">
-<table class="table">
-<caption>Table&nbsp;2: Reference values for an average hour of ridehail traffic in Toronto on Feb 6, 2020.</caption>
+<p>We demand that the numbers fit <a href="#eq-NP3" class="quarto-xref">Equation&nbsp;1</a>. After these adjustments we take the values in <a href="#tbl-reference-2" class="quarto-xref">Table&nbsp;2</a> as reference values:</p>
+<div id="tbl-reference-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-reference-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Reference values for an average hour of ridehail traffic in Toronto on Feb 6, 2020.
+</figcaption>
+<div aria-describedby="tbl-reference-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 56%">
 <col style="width: 21%">
@@ -492,17 +555,23 @@ N \times P2 = D \times W
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 </section>
 <section id="calibration-i-supply-demand-and-utilization-rate" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="calibration-i-supply-demand-and-utilization-rate"><span class="header-section-number">3.2</span> Calibration I: supply, demand, and utilization rate</h2>
 <p>At 31 km/hour, it takes 48 minutes to cross the city. In the simulation Toronto is represented as a 48 by 48 grid, so that each block represents a minute of travel. Trips start and finish at random locations but with a maximum duration of 32 minutes, which yields an average duration of 16 minutes to match the observed duration. The demand for trips was fixed at the observed average value of 135 trips per minute.</p>
-<div id="fig-toronto-homogeneous" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="toronto_calibration_homogeneous.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;4: First calibration of Toronto ridehail simulation: homogeneous model</figcaption>
+<div id="fig-toronto-homogeneous" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-toronto-homogeneous-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="toronto_calibration_homogeneous.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-toronto-homogeneous-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: First calibration of Toronto ridehail simulation: homogeneous model
+</figcaption>
 </figure>
 </div>
-<p><a href="#fig-toronto-homogeneous">Figure&nbsp;4</a> shows the results of a sequence of simulations, in which the number of vehicles <span class="math inline">\(N\)</span> is varied from 2000 to 7,000. For each value of <span class="math inline">\(N\)</span>, a simulation of 500 blocks duration was carried out, with the results averaged over the final 100 blocks. The time for each simulation depends on the number of vehicles: for 5000 vehicles the simulation takes about 15 minutes on a Dell XPS 13 9380 laptop. The first result is that this simplified model can simulate an environment the scale of Toronto on a single laptop computer.</p>
+<p><a href="#fig-toronto-homogeneous" class="quarto-xref">Figure&nbsp;4</a> shows the results of a sequence of simulations, in which the number of vehicles <span class="math inline">\(N\)</span> is varied from 2000 to 7,000. For each value of <span class="math inline">\(N\)</span>, a simulation of 500 blocks duration was carried out, with the results averaged over the final 100 blocks. The time for each simulation depends on the number of vehicles: for 5000 vehicles the simulation takes about 15 minutes on a Dell XPS 13 9380 laptop. The first result is that this simplified model can simulate an environment the scale of Toronto on a single laptop computer.</p>
 <p>At low vehicle counts, there are too few vehicles to sustain a steady state. Vehicles are busy all the time (<span class="math inline">\(P1 = 0\)</span>), trip requests go unanswered for longer and longer (the wait fraction <span class="math inline">\(W\)</span> is literally off the chart. Things fall apart: the drivers cannot keep up with the requests.</p>
 <p>At vehicle counts above 3000, the drivers can keep up with requests and the system achieves a steady state. As <span class="math inline">\(N\)</span> is increased further, the utilization rate <span class="math inline">\(P3\)</span> falls and the excess capacity <span class="math inline">\(P1\)</span> rises, as more vehicles compete for the available trips. The wait time <span class="math inline">\(W\)</span> decreases as the number of vehicles increases, but is a small fraction of the trip duration even at 3000 vehicles, and the dispatch time <span class="math inline">\(P2\)</span> is correspondingly low.</p>
 <p>This model correctly reproduces the <span class="math inline">\(P3\)</span> value of 0.48 with a supply of <span class="math inline">\(N = 4500\)</span> vehicles. In some ways this is just a check that eliminates some bugs: the identity is satisfied by any steady-state behavior, regardless of geometry. The chart confirms that the utilization rate depends solely on vehicle supply <span class="math inline">\(N\)</span>, trip demand <span class="math inline">\(D\)</span>, and trip duration <span class="math inline">\(L\)</span>, but not on finer features of the city geography.</p>
@@ -510,38 +579,54 @@ N \times P2 = D \times W
 <section id="calibration-ii-wait-times-and-dispatch-times" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="calibration-ii-wait-times-and-dispatch-times"><span class="header-section-number">3.3</span> Calibration II: wait times and dispatch times</h2>
 <p>The homogeneous model of Toronto, with trip origins and destinations distributed randomly over the whole city, delivers the correct ratio of <span class="math inline">\(P3\)</span> to <span class="math inline">\(N\)</span>. However, the homogeneous model underestimates dispatch time <span class="math inline">\(P2\)</span> and wait time <span class="math inline">\(W\)</span> compared to the observed values. Identity II fixes the <span class="math inline">\(W/P2\)</span> ratio, but not the absolute value of either of those quantities. To get this value correct we must allow inhomogeneity of trip distributions.</p>
-<div id="fig-inhomog" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="toronto_calibration_inhomogeneous.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;5: Second step of Toronto ridehail calibration: wait times and inhomogeneity</figcaption>
+<div id="fig-inhomog" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inhomog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="toronto_calibration_inhomogeneous.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inhomog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Second step of Toronto ridehail calibration: wait times and inhomogeneity
+</figcaption>
 </figure>
 </div>
-<p><a href="#fig-inhomog">Figure&nbsp;5</a> shows the vehicle phases as a function of inhomogeneity, using the fixed demand of 135 trips per minute and a fixed supply of 4500 vehicles derived from <a href="#fig-toronto-homogeneous">Figure&nbsp;4</a>. The Figure shows that the utilization rate <span class="math inline">\(P3\)</span> is independent of inhomogeneity, as expected, while the other values change. An inhomogeneity of 0.4 reproduces the observed values of <span class="math inline">\(P2\)</span> and <span class="math inline">\(W\)</span>, and hence <span class="math inline">\(P1\)</span>, completing the essential descriptive statistics of Toronto’s ridehail market.</p>
+<p><a href="#fig-inhomog" class="quarto-xref">Figure&nbsp;5</a> shows the vehicle phases as a function of inhomogeneity, using the fixed demand of 135 trips per minute and a fixed supply of 4500 vehicles derived from <a href="#fig-toronto-homogeneous" class="quarto-xref">Figure&nbsp;4</a>. The Figure shows that the utilization rate <span class="math inline">\(P3\)</span> is independent of inhomogeneity, as expected, while the other values change. An inhomogeneity of 0.4 reproduces the observed values of <span class="math inline">\(P2\)</span> and <span class="math inline">\(W\)</span>, and hence <span class="math inline">\(P1\)</span>, completing the essential descriptive statistics of Toronto’s ridehail market.</p>
 <p>An inhomogeneity of 0.4 means that 60% of trip origins are distributed randomly over the entire city, while 40% are constrained to within the central square, of size <span class="math inline">\(C/2 \times C/2\)</span>. Hence, 55% of all trips start in the central “downtown area”. This corresponds roughly to the old City of Toronto (reference needed for travel times).</p>
 </section>
 <section id="application-i-wait-times-and-excess-capacity" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="application-i-wait-times-and-excess-capacity"><span class="header-section-number">3.4</span> Application I: wait times and excess capacity</h2>
-<p><a href="#fig-toronto-final">Figure&nbsp;6</a> shows simulations for the calibrated Metro Toronto model, with varying numbers of vehicles <span class="math inline">\(N\)</span> from 2000 to 7000. The actual number on Feb 6, 2020 was <span class="math inline">\(N=4500\)</span>, as discussed above.</p>
-<div id="fig-toronto-final" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="toronto_vehicle_count.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;6: How things depend on vehicle count</figcaption>
+<p><a href="#fig-toronto-final" class="quarto-xref">Figure&nbsp;6</a> shows simulations for the calibrated Metro Toronto model, with varying numbers of vehicles <span class="math inline">\(N\)</span> from 2000 to 7000. The actual number on Feb 6, 2020 was <span class="math inline">\(N=4500\)</span>, as discussed above.</p>
+<div id="fig-toronto-final" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-toronto-final-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="toronto_vehicle_count.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-toronto-final-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: How things depend on vehicle count
+</figcaption>
 </figure>
 </div>
-<p>The model makes explicit and quantitative the trade-off between short wait times and additional vehicles on the streets. <a href="#fig-toronto-final">Figure&nbsp;6</a> shows that a decrease in wait times of one minute (from 4.2 to 3.2 minutes, or <span class="math inline">\(W\)</span> = 0.26 to 0.20, bracketing the observed average of 3.7 minutes), at a fixed demand of 135 trips per minute, adds approximately 1500 vehicles to the streets (from 3800 to 5300) with attendant congestion and pollution.</p>
+<p>The model makes explicit and quantitative the trade-off between short wait times and additional vehicles on the streets. <a href="#fig-toronto-final" class="quarto-xref">Figure&nbsp;6</a> shows that a decrease in wait times of one minute (from 4.2 to 3.2 minutes, or <span class="math inline">\(W\)</span> = 0.26 to 0.20, bracketing the observed average of 3.7 minutes), at a fixed demand of 135 trips per minute, adds approximately 1500 vehicles to the streets (from 3800 to 5300) with attendant congestion and pollution.</p>
 </section>
 <section id="application-ii-demand-and-utilization-rates" class="level2" data-number="3.5">
 <h2 data-number="3.5" class="anchored" data-anchor-id="application-ii-demand-and-utilization-rates"><span class="header-section-number">3.5</span> Application II: demand and utilization rates</h2>
 <p>In 2017, the New York Times published a story that highlighted the tradeoff between wait times and utilization rates, including an animation that inspired the model presented here <span class="citation" data-cites="scheiber2017">(<a href="#ref-scheiber2017" role="doc-biblioref">Scheiber 2017</a>)</span>. Uber responded with a blog post claiming that the story missed the effect of demand: that with additional demand, both wait times and utilization rates could increase in a virtuous cycle. While Uber provided charts to back up the claim, they noticeably lacked any numbers on the Y axes. Since that time, there has been little discussion of the claim.</p>
-<div id="fig-fixed-wait-time" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="wait_times.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;7: The number of vehicles <span class="math inline">\(N\)</span> and utilization rate <span class="math inline">\(P3\)</span> required to support a wait time of 3.7 minutes (<span class="math inline">\(W =0.23\)</span>). While the utilization rate (<span class="math inline">\(P3\)</span>) does increase with demand, the improvements level off at levels of demand far below the current Toronto level of 135 requests per minute. Meanwhile, the number of vehicles required keeps growing linearly (purple line: different axis).</figcaption>
+<div id="fig-fixed-wait-time" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fixed-wait-time-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="wait_times.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fixed-wait-time-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: The number of vehicles <span class="math inline">\(N\)</span> and utilization rate <span class="math inline">\(P3\)</span> required to support a wait time of 3.7 minutes (<span class="math inline">\(W =0.23\)</span>). While the utilization rate (<span class="math inline">\(P3\)</span>) does increase with demand, the improvements level off at levels of demand far below the current Toronto level of 135 requests per minute. Meanwhile, the number of vehicles required keeps growing linearly (purple line: different axis).
+</figcaption>
 </figure>
 </div>
-<div id="tbl-utilization" class="anchored">
-<table class="table">
-<caption>Table&nbsp;3: Utilization rates for Uber in USA cities. Rates measured by distance will be higher than those measured by time as drivers cover more distance in a given time when engaged in a trip. 2019 values are from an Uber-commissioned report <span class="citation" data-cites="balding2019">(<a href="#ref-balding2019" role="doc-biblioref">Balding et al. 2019</a>)</span>; 2017 values from a report by Bruce Schaller <span class="citation" data-cites="schaller2017">(<a href="#ref-schaller2017" role="doc-biblioref">Schaller 2017</a>)</span>, and 2015 values from an NBER report by <span class="citation" data-cites="cramer2016">(<a href="#ref-cramer2016" role="doc-biblioref">Cramer and Krueger 2016</a>)</span>. The 2020 values for Seattle come from reports by <span class="citation" data-cites="hyman2020">(<a href="#ref-hyman2020" role="doc-biblioref">Hyman et al. 2020</a>)</span> and by <span class="citation" data-cites="parrott2020">(<a href="#ref-parrott2020" role="doc-biblioref">Parrott and Reich 2020</a>)</span>.</caption>
+<div id="tbl-utilization" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-utilization-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Utilization rates for Uber in USA cities. Rates measured by distance will be higher than those measured by time as drivers cover more distance in a given time when engaged in a trip. 2019 values are from an Uber-commissioned report <span class="citation" data-cites="balding2019">(<a href="#ref-balding2019" role="doc-biblioref">Balding et al. 2019</a>)</span>; 2017 values from a report by Bruce Schaller <span class="citation" data-cites="schaller2017">(<a href="#ref-schaller2017" role="doc-biblioref">Schaller 2017</a>)</span>, and 2015 values from an NBER report by <span class="citation" data-cites="cramer2016">(<a href="#ref-cramer2016" role="doc-biblioref">Cramer and Krueger 2016</a>)</span>. The 2020 values for Seattle come from reports by <span class="citation" data-cites="hyman2020">(<a href="#ref-hyman2020" role="doc-biblioref">Hyman et al. 2020</a>)</span> and by <span class="citation" data-cites="parrott2020">(<a href="#ref-parrott2020" role="doc-biblioref">Parrott and Reich 2020</a>)</span>.
+</figcaption>
+<div aria-describedby="tbl-utilization-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th>City</th>
@@ -650,8 +735,10 @@ N \times P2 = D \times W
 </tbody>
 </table>
 </div>
-<p><a href="#fig-fixed-wait-time">Figure&nbsp;7</a> shows the utilization rates and vehicle counts required to sustain a 3.7 minute wait time <span class="math inline">\(W\)</span> in Toronto, and sheds some light on Uber’s counter-claim. As Uber claimed, an increase in demand does increase vehicle utilization even at a constant wait time. However, that utilization increase fades away at higher demand rates. As a result, even if the trip volume in Toronto were to increase to 200,000 per day (a 50% increase over the pre-pandemic numbers), the utilization rate would still increase to only 54% if wait time were kept at the same value.</p>
-<p>As <a href="#tbl-utilization">Table&nbsp;3</a> shows, other cities have utilization rates (by time) of 50 to 60% , with New York City and San Francisco as outliers. Toronto has a level of demand that is lower than Chicago, which may provide a reasonable upper bound to what can be expected of around 60%.</p>
+</figure>
+</div>
+<p><a href="#fig-fixed-wait-time" class="quarto-xref">Figure&nbsp;7</a> shows the utilization rates and vehicle counts required to sustain a 3.7 minute wait time <span class="math inline">\(W\)</span> in Toronto, and sheds some light on Uber’s counter-claim. As Uber claimed, an increase in demand does increase vehicle utilization even at a constant wait time. However, that utilization increase fades away at higher demand rates. As a result, even if the trip volume in Toronto were to increase to 200,000 per day (a 50% increase over the pre-pandemic numbers), the utilization rate would still increase to only 54% if wait time were kept at the same value.</p>
+<p>As <a href="#tbl-utilization" class="quarto-xref">Table&nbsp;3</a> shows, other cities have utilization rates (by time) of 50 to 60% , with New York City and San Francisco as outliers. Toronto has a level of demand that is lower than Chicago, which may provide a reasonable upper bound to what can be expected of around 60%.</p>
 <p>There are two ways that utilization rates may exceed these estimates. The first is for the number of drivers to be limited, so that wait times are longer. The second is for trips to concentrate even more heavily into the high traffic central zone. But this central core is well served by mass transit, and any gain in ridehail trips would be achieved by taking riders away from mass transit and putting them in cars <span class="citation" data-cites="young2020">(<a href="#ref-young2020" role="doc-biblioref">Young, Allen, and Farber 2020</a>)</span>, adding to problems of congestion <span class="citation" data-cites="erhardt2019">(<a href="#ref-erhardt2019" role="doc-biblioref">Erhardt et al. 2019</a>)</span>.</p>
 <p>Without these changes, the ridehail system has at least 40% excess capacity (vehicles not engaged in driving passengers or en route to pick passengers). There is no efficient solution to emissions through ride hailing.</p>
 </section>
@@ -699,7 +786,7 @@ I = I_0 - c
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">7 References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">7 References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-balding2019" class="csl-entry" role="listitem">
 Balding, Melissa, Teresa Whinery, Eleanor Leshner, and Eric Womeldohrf. 2019. <span>“Estimated TNC Share of VMT in Six US Metropolitan Regions.”</span> <a href="https://drive.google.com/file/d/1FIUskVkj9lsAnWJQ6kLhAhNoVLjfFdx3/view?usp=embed_facebook">https://drive.google.com/file/d/1FIUskVkj9lsAnWJQ6kLhAhNoVLjfFdx3/view?usp=embed_facebook</a>.
 </div>
@@ -778,18 +865,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -821,11 +897,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -835,8 +950,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -848,7 +972,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -892,6 +1139,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -917,6 +1165,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -979,7 +1253,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">2023 – 2024, Tom Slee</div>   
+    <div class="nav-footer-left">
+<p>2023 – 2024, Tom Slee</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
@@ -988,6 +1264,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 
