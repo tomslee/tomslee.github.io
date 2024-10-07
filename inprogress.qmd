@@ -8,4 +8,4 @@ listing:
   categories: false
 ---
 
-Mostly incomplete explorations, prone to revision at any time.
+Mostly incomplete explorations and open questions, prone to revision at any time.

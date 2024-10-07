@@ -16,12 +16,14 @@ title-block-banner: true
 toc: false
 ---
 
-Completed pieces are listed on this page and on the [Essays](essays.qmd) page. 
+-   Completed pieces are listed on the [Essays](essays.qmd) page.
 
-Unpolished material is hidden in the [Uncertainties](inprogress.qmd) section.
+-   Unpolished material is hidden in the [Uncertainties](inprogress.qmd) section.
 
-This site also contains an archive of my one-time blog, [Whimsley](blog.qmd).
+-   This site also contains an archive of my one-time blog, [Whimsley](blog.qmd).
 
-There's a bit of information about me on [the About Page](about.qmd).
+-   There's a bit of information about me on [the About Page](about.qmd).
+
+-   Recently-changed pages are listed below.
 
 -- Tom Slee
