@@ -3,7 +3,7 @@
 listing:
   contents: 
   # - posts
-  # - inprogress No need for scraps on the front page
+  - inprogress
   - essays
   sort: "date desc"
   type: default
