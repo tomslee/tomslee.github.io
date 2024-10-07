@@ -511,6 +511,7 @@
   {
     "listing": "/inprogress.html",
     "items": [
+      "/inprogress/qcintro/index.html",
       "/inprogress/ridehail-chicago/index.html",
       "/inprogress/advertising-houses-of-cards/index.html",
       "/inprogress/ai-alignment/index.html",
