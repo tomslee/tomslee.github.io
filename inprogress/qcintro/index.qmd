@@ -25,6 +25,14 @@ format:
     wordcount-html:
         title-block-banner: DarkCyan
         published-title: Last updated
+    #arxiv-pdf: 
+    #  latex-engine: pdflatex
+    #  papersize: letter
+    #  doublespacing: false # Double space the PDF output?
+    #  toc: true
+    #  number-sections: true
+    #  colorlinks: true
+    #  keep-tex: true  
 ---
 
 # Introduction

@@ -228,7 +228,7 @@ There is a regular churn of active vehicles, so the reported number of active ve
 We demand that the numbers fit @eq-NP3. After these adjustments we take the values in @tbl-reference-2 as reference values:
 
 | Quantity                                                   | Symbol  |          Value |
-|-----------------------------------------|:--------------:|---------------:|
+|------------------------------------------------------------|:-------:|---------------:|
 | Average number of active vehicles                          |   $N$   |           4500 |
 | Demand (trip requests per minute)                          |   $D$   | 135 per minute |
 | Average trip duration                                      |   $L$   |     16 minutes |

@@ -8,7 +8,6 @@ project:
     - "*.qmd"
     - "*.ipynb"
     - "!inprogress/ridehail-driver-earnings/"
-
 website:
   title: "Tom Slee"
   description: "Personal web site"
@@ -37,12 +36,12 @@ website:
         href: https://github.com/tomslee
       - icon: twitter
         href: https://twitter.com/whimsley
-
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
-
+execute:
+    freeze: auto
 editor: visual
 
