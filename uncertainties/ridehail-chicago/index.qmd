@@ -3,7 +3,7 @@ title: "Uber in Chicago"
 author: "Tom Slee"
 date: last-modified
 categories:
-- In Progress
+- Uncertainties
 - Uber
 description: >
     What open data from Chicago tells us about the Uber driver population.

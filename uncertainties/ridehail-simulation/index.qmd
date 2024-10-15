@@ -3,7 +3,7 @@ title: "Simple Simulations of Ridehail Traffic and Trips"
 author: "Tom Slee"
 date: last-modified
 categories:
-- In Progress
+- Uncertainties
 - Uber
 description: >
     Computer simulations of ridehail traffic and trips in a simplified city
@@ -40,6 +40,20 @@ format:
       colorlinks: true
       output-file: "ridehail-simulation"
       output-ext:  "pdf"
+      # sansfont: "Latin Modern Roman"
+      # systemfonts::system_fonts()
+      # mainfont: "TeX Gyre Pagella"
+      # mainfont: Lato
+      # monofont: Roboto
+      mainfont: "CharterBT-Roman"
+      fontsize: 12pt
+      linestretch: 1.1
+      keep-tex: true
+      include-in-header:
+        text: |
+          \usepackage{mdframed}
+      # fig-env: mdframed
+
 
     # arxiv-pdf: 
     #  latex-engine: pdflatex
@@ -180,7 +194,7 @@ The spirit of the simulations is to be as simple as possible, so that they can b
 
 Many cities have a central "downtown" zone where the demand for ridehail traffic is high, surrounded by suburban areas where demand is lower. For example, 60% of trips in Metro Toronto originate within "Old Toronto" and East York, even though these two make up less than 20% of the total Metro area. This inhomogeneity is built into the model as two *zones*. A central zone has sides $C/2$ (so, one quarter of the city's area) and has a higher rate of trip requests than the surrounding area, as shown in @fig-3 below. The trip destinations remain randomly distributed around the whole city. With an inhomogeneity of zero, the central zone is the same as the rest, with an inhomogeneity of one all trip requests take place in the central zone. In this way, and in the spirit of keeping the model as simple and parsimonious as possible, a single inhomogeneity parameter between zero and one captures the two zones.
 
-![The red dots show the origin of trips in a small "two-zone" city if eight blocks. The central area has a higher demand than outlying suburbs.](fig3.png){#fig-3 width="50%"}
+![The red dots show the origin of trips in a small "two-zone" city if eight blocks. The central area has a higher demand than outlying suburbs.](fig3.png){#fig-3 width="50%}
 
 The second extension, discussed in the section on Engaged Time standards below, is to allow vehicles to enter and leave the system in response to price and demand.
 

@@ -3,7 +3,7 @@ title: The Alignment Mistake
 author: "Tom Slee"
 date: last-modified
 categories:
-- In Progress
+- Uncertainties
 - Technology
 description: >
     The 'Alignment Problem' is the wrong way to think about the hazards of Generative AI

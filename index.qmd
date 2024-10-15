@@ -3,8 +3,8 @@
 listing:
   contents: 
   # - posts
-  - inprogress
   - essays
+  - uncertainties
   sort: "date desc"
   type: default
   categories: false
@@ -18,12 +18,12 @@ toc: false
 
 -   Completed pieces are listed on the [Essays](essays.qmd) page.
 
--   Unpolished material is hidden in the [Uncertainties](inprogress.qmd) section.
+-   Unpolished material is hidden in the [Uncertainties](uncertainties.qmd) section.
 
 -   This site also contains an archive of my one-time blog, [Whimsley](blog.qmd).
 
--   There's a bit of information about me on [the About Page](about.qmd).
+-   There's a little about me on [the About Page](about.qmd).
 
--   Recently-changed pages are listed below.
+-   Recently-changed pages on the site are listed below.
 
 -- Tom Slee

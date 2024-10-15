@@ -4,7 +4,7 @@ author: Tom Slee
 date: last-modified
 draft: true
 categories:
-- In Progress
+- Uncertainties
 - Quantum Computing
 description: > 
     AI and Quantum computing are often touted as revolutionary

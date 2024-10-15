@@ -3,7 +3,7 @@ title: "Yet Another Introduction to Quantum Computing, Part I"
 author: "Tom Slee"
 date: last-modified
 categories:
-- In Progress
+- Uncertainties
 - Quantum Computing
 description: >
     A sceptical introduction, version 0.1
@@ -22,9 +22,9 @@ bibliography: QC.bib
 comments:
     hypothesis: true
 format:
-    wordcount-html:
-        title-block-banner: DarkCyan
-        published-title: Last updated
+    html:
+      title-block-banner: DarkCyan
+      published-title: Last updated
     #arxiv-pdf: 
     #  latex-engine: pdflatex
     #  papersize: letter

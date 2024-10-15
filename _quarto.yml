@@ -7,7 +7,7 @@ project:
   render:
     - "*.qmd"
     - "*.ipynb"
-    - "!inprogress/ridehail-driver-earnings/"
+    - "!uncertainties/ridehail-driver-earnings/"
 website:
   title: "Tom Slee"
   description: "Personal web site"
@@ -26,7 +26,7 @@ website:
       - text: Essays
         href: essays.qmd
       - text: Uncertainties
-        href: inprogress.qmd
+        href: uncertainties.qmd
       - text: "Ridehail Lab"
         href: https://tomslee.github.io/ridehail/lab/
       - text: "Whimsley (blog archive)"
@@ -43,5 +43,6 @@ format:
     toc: true
 execute:
     freeze: auto
+    cache: true
 editor: visual
 

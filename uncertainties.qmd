@@ -1,7 +1,7 @@
 ---
 title: "Uncertainties"
 listing:
-  contents: inprogress
+  contents: uncertainties
   type: grid
   sort: "date desc"
   fields: [date, title, author, description, image, reading-time]

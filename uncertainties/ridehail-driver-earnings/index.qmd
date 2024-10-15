@@ -1,6 +1,9 @@
 ---
 title: "Uber driver earnings"
 author: "Tom Slee"
+categories:
+- Uncertainties
+- Uber
 ---
 
 Estimates of Uber driver earnings depend on whether the researcher gets access to Uber data.
