@@ -2,7 +2,7 @@
 title: "Yet Another Introduction to Quantum Computing"
 author: "Tom Slee"
 date: last-modified
-published-title: Last modified
+published-title: Last updated
 categories:
 - Uncertainties
 - Quantum Computing
@@ -25,7 +25,6 @@ comments:
 format:
     html:
       title-block-banner: DarkCyan
-      published-title: Last updated
     pdf: 
       papersize: letter
       toc: true
@@ -37,19 +36,17 @@ format:
       fontsize: 12pt
       linestretch: 1.1
       keep-tex: true
-format-links: pdf
+      template-partials:
+      - ../../title.tex
+      geometry:
+      - top=30mm
+      - left=30mm
+      - heightrounded
     #include-in-header:
     #  text: |
     #    \usepackage{mdframed}
     # fig-env: mdframed
-    #arxiv-pdf: 
-    #  latex-engine: pdflatex
-    #  papersize: letter
-    #  doublespacing: false # Double space the PDF output?
-    #  toc: true
-    #  number-sections: true
-    #  colorlinks: true
-    #  keep-tex: true  
+format-links: pdf
 ---
 
 ::: {.callout-note title="About this page"}
@@ -72,7 +69,7 @@ In as few words as possible, I hope to answer some practical questions I had whe
 
 But let's start with three building blocks of quantum computers: qubits, gates, and circuits.
 
-# The building block
+# Building blocks
 
 ## Qubits
 
