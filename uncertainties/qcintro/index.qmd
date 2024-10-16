@@ -17,6 +17,7 @@ number-sections: true
 number-depth: 2
 lightbox: true
 fig-cap-location: bottom
+format-links: pdf
 # reference-location: margin
 image: images/clipboard-3934556282.png
 bibliography: QC.bib
@@ -26,6 +27,7 @@ format:
     html:
       title-block-banner: DarkCyan
     pdf: 
+      documentclass: scrartcl
       papersize: letter
       toc: true
       number-sections: true
@@ -42,11 +44,18 @@ format:
       - top=30mm
       - left=30mm
       - heightrounded
+      include-in-header:
+        text: |
+          \newfontfamily\sectionfont[Color=MidnightBlue]{Latin Modern Sans}
+          \newfontfamily\subsectionfont[Color=MidnightBlue]{Latin Modern Sans}
+          \newfontfamily\subsubsectionfont[Color=MidnightBlue]{Latin Modern Sans}
+          \addtokomafont{section}{\sectionfont}
+          \addtokomafont{subsection}{\subsectionfont}
+          \addtokomafont{subsubsection}{\subsubsectionfont}
     #include-in-header:
     #  text: |
     #    \usepackage{mdframed}
     # fig-env: mdframed
-format-links: pdf
 ---
 
 ::: {.callout-note title="About this page"}

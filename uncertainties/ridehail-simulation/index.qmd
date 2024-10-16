@@ -35,6 +35,7 @@ format:
         title-block-banner: DarkCyan
         published-title: Last updated
     pdf: 
+      documentclass: scrartcl
       papersize: letter
       toc: true
       number-sections: true
@@ -45,16 +46,22 @@ format:
       fontsize: 12pt
       linestretch: 1.1
       keep-tex: true
-      include-in-header:
-        text: |
-          \usepackage{mdframed}
-      # fig-env: mdframed
       template-partials:
       - ../../title.tex
       geometry:
       - top=30mm
       - left=30mm
       - heightrounded
+      include-in-header:
+        text: |
+          \newfontfamily\sectionfont[Color=MidnightBlue]{Latin Modern Sans}
+          \newfontfamily\subsectionfont[Color=MidnightBlue]{Latin Modern Sans}
+          \newfontfamily\subsubsectionfont[Color=MidnightBlue]{Latin Modern Sans}
+          \addtokomafont{section}{\sectionfont}
+          \addtokomafont{subsection}{\subsectionfont}
+          \addtokomafont{subsubsection}{\subsubsectionfont}
+          \usepackage{mdframed}
+      #fig-env: mdframed
 bibliography: references.bib
 ---
 
@@ -231,7 +238,7 @@ There is a regular churn of active vehicles, so the reported number of active ve
 We demand that the numbers fit @eq-NP3. After these adjustments we take the values in @tbl-reference-2 as reference values:
 
 | Quantity                                                   | Symbol  |          Value |
-|--------------------------------------|:---------------:|----------------:|
+|-------------------------------------|:----------------:|-----------------:|
 | Average number of active vehicles                          |   $N$   |           4500 |
 | Demand (trip requests per minute)                          |   $D$   | 135 per minute |
 | Average trip duration                                      |   $L$   |     16 minutes |

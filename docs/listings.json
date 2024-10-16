@@ -498,8 +498,8 @@
   {
     "listing": "/index.html",
     "items": [
-      "/uncertainties/ridehail-simulation/index.html",
       "/uncertainties/qcintro/index.html",
+      "/uncertainties/ridehail-simulation/index.html",
       "/essays/2023-01-ridehail/index.html",
       "/essays/2023-01-antwars/index.html",
       "/essays/2022-12-antwar/index.html",
@@ -513,8 +513,8 @@
   {
     "listing": "/uncertainties.html",
     "items": [
-      "/uncertainties/ridehail-simulation/index.html",
       "/uncertainties/qcintro/index.html",
+      "/uncertainties/ridehail-simulation/index.html",
       "/uncertainties/provider-reputation/provider-reputation.html",
       "/uncertainties/ai-alignment/index.html",
       "/uncertainties/ridehail-chicago/index.html",
