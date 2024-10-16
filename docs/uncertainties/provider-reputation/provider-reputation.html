@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Tom Slee">
-<meta name="dcterms.date" content="2023-08-06">
-<meta name="description" content="Some ideas about reputation systems, backed up by some simulations. First draft 2015-11-08; picked up again 2023-08-06.">
+<meta name="dcterms.date" content="2024-10-16">
+<meta name="description" content="Some ideas about reputation systems, backed up by some simulations.">
 
 <title>Lake Wobegon and the Panopticon – Tom Slee</title>
 <style>
@@ -107,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <link rel="stylesheet" href="../../styles.css">
 <meta name="twitter:title" content="Lake Wobegon and the Panopticon – Tom Slee">
-<meta name="twitter:description" content="Some ideas about reputation systems, backed up by some simulations. First draft 2015-11-08; picked up again 2023-08-06.">
+<meta name="twitter:description" content="Some ideas about reputation systems, backed up by some simulations.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -177,45 +177,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#a-jupyter-notebook" id="toc-a-jupyter-notebook" class="nav-link" data-scroll-target="#a-jupyter-notebook">A Jupyter notebook</a></li>
-  <li><a href="#a-model-reputation-system" id="toc-a-model-reputation-system" class="nav-link" data-scroll-target="#a-model-reputation-system">A model reputation system</a></li>
-  <li><a href="#code-walkthrough" id="toc-code-walkthrough" class="nav-link" data-scroll-target="#code-walkthrough">Code walkthrough</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">0.1</span> Introduction</a></li>
+  <li><a href="#a-jupyter-notebook" id="toc-a-jupyter-notebook" class="nav-link" data-scroll-target="#a-jupyter-notebook"><span class="header-section-number">0.2</span> A Jupyter notebook</a></li>
+  <li><a href="#a-model-reputation-system" id="toc-a-model-reputation-system" class="nav-link" data-scroll-target="#a-model-reputation-system"><span class="header-section-number">0.3</span> A model reputation system</a></li>
+  <li><a href="#code-walkthrough" id="toc-code-walkthrough" class="nav-link" data-scroll-target="#code-walkthrough"><span class="header-section-number">1</span> Code walkthrough</a>
   <ul class="collapse">
-  <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
-  <li><a href="#actors" id="toc-actors" class="nav-link" data-scroll-target="#actors">Actors</a></li>
-  <li><a href="#customers-and-providers" id="toc-customers-and-providers" class="nav-link" data-scroll-target="#customers-and-providers">Customers and providers</a></li>
-  <li><a href="#a-customer-provider-interaction" id="toc-a-customer-provider-interaction" class="nav-link" data-scroll-target="#a-customer-provider-interaction">A customer-provider interaction</a></li>
-  <li><a href="#a-customer-provider-exchange" id="toc-a-customer-provider-exchange" class="nav-link" data-scroll-target="#a-customer-provider-exchange">A customer-provider exchange</a></li>
-  <li><a href="#a-rating-period" id="toc-a-rating-period" class="nav-link" data-scroll-target="#a-rating-period">A rating period</a></li>
-  <li><a href="#a-complete-simulation-run" id="toc-a-complete-simulation-run" class="nav-link" data-scroll-target="#a-complete-simulation-run">A complete simulation run</a></li>
-  <li><a href="#plotting-functions" id="toc-plotting-functions" class="nav-link" data-scroll-target="#plotting-functions">Plotting functions</a></li>
+  <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters"><span class="header-section-number">1.1</span> Parameters</a></li>
+  <li><a href="#actors" id="toc-actors" class="nav-link" data-scroll-target="#actors"><span class="header-section-number">1.2</span> Actors</a></li>
+  <li><a href="#customers-and-providers" id="toc-customers-and-providers" class="nav-link" data-scroll-target="#customers-and-providers"><span class="header-section-number">1.3</span> Customers and providers</a></li>
+  <li><a href="#a-customer-provider-interaction" id="toc-a-customer-provider-interaction" class="nav-link" data-scroll-target="#a-customer-provider-interaction"><span class="header-section-number">1.4</span> A customer-provider interaction</a></li>
+  <li><a href="#a-customer-provider-exchange" id="toc-a-customer-provider-exchange" class="nav-link" data-scroll-target="#a-customer-provider-exchange"><span class="header-section-number">1.5</span> A customer-provider exchange</a></li>
+  <li><a href="#a-rating-period" id="toc-a-rating-period" class="nav-link" data-scroll-target="#a-rating-period"><span class="header-section-number">1.6</span> A rating period</a></li>
+  <li><a href="#a-complete-simulation-run" id="toc-a-complete-simulation-run" class="nav-link" data-scroll-target="#a-complete-simulation-run"><span class="header-section-number">1.7</span> A complete simulation run</a></li>
+  <li><a href="#plotting-functions" id="toc-plotting-functions" class="nav-link" data-scroll-target="#plotting-functions"><span class="header-section-number">1.8</span> Plotting functions</a></li>
   </ul></li>
-  <li><a href="#simulations" id="toc-simulations" class="nav-link" data-scroll-target="#simulations">Simulations</a>
+  <li><a href="#simulations" id="toc-simulations" class="nav-link" data-scroll-target="#simulations"><span class="header-section-number">2</span> Simulations</a>
   <ul class="collapse">
-  <li><a href="#simulation-1-commodity-exchange" id="toc-simulation-1-commodity-exchange" class="nav-link" data-scroll-target="#simulation-1-commodity-exchange">Simulation 1: commodity exchange</a>
+  <li><a href="#simulation-1-commodity-exchange" id="toc-simulation-1-commodity-exchange" class="nav-link" data-scroll-target="#simulation-1-commodity-exchange"><span class="header-section-number">2.1</span> Simulation 1: commodity exchange</a>
   <ul class="collapse">
   <li><a href="#simulation-1-commentary" id="toc-simulation-1-commentary" class="nav-link" data-scroll-target="#simulation-1-commentary">Simulation 1 commentary</a></li>
   </ul></li>
-  <li><a href="#simulation-2-lake-wobegon-ratings" id="toc-simulation-2-lake-wobegon-ratings" class="nav-link" data-scroll-target="#simulation-2-lake-wobegon-ratings">Simulation 2: Lake Wobegon ratings</a>
+  <li><a href="#simulation-2-lake-wobegon-ratings" id="toc-simulation-2-lake-wobegon-ratings" class="nav-link" data-scroll-target="#simulation-2-lake-wobegon-ratings"><span class="header-section-number">2.2</span> Simulation 2: Lake Wobegon ratings</a>
   <ul class="collapse">
   <li><a href="#simulation-2-commentary" id="toc-simulation-2-commentary" class="nav-link" data-scroll-target="#simulation-2-commentary">Simulation 2 commentary</a></li>
   </ul></li>
-  <li><a href="#simulation-3-introducing-entitled-customers" id="toc-simulation-3-introducing-entitled-customers" class="nav-link" data-scroll-target="#simulation-3-introducing-entitled-customers">Simulation 3: introducing entitled customers</a>
+  <li><a href="#simulation-3-introducing-entitled-customers" id="toc-simulation-3-introducing-entitled-customers" class="nav-link" data-scroll-target="#simulation-3-introducing-entitled-customers"><span class="header-section-number">2.3</span> Simulation 3: introducing entitled customers</a>
   <ul class="collapse">
   <li><a href="#simulation-3-commentary" id="toc-simulation-3-commentary" class="nav-link" data-scroll-target="#simulation-3-commentary">Simulation 3 commentary</a></li>
   </ul></li>
-  <li><a href="#simulation-4-more-honest-customers" id="toc-simulation-4-more-honest-customers" class="nav-link" data-scroll-target="#simulation-4-more-honest-customers">Simulation 4: more “honest” customers</a>
+  <li><a href="#simulation-4-more-honest-customers" id="toc-simulation-4-more-honest-customers" class="nav-link" data-scroll-target="#simulation-4-more-honest-customers"><span class="header-section-number">2.4</span> Simulation 4: more “honest” customers</a>
   <ul class="collapse">
   <li><a href="#simulation-4-commentary" id="toc-simulation-4-commentary" class="nav-link" data-scroll-target="#simulation-4-commentary">Simulation 4 commentary</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">3</span> Conclusion</a></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="provider-reputation.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -224,11 +224,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-title">
 <h1 class="title">Lake Wobegon and the Panopticon</h1>
 <p class="subtitle lead">Simulations of reputation systems</p>
-</div>
+  <div class="quarto-categories">
+    <div class="quarto-category">Uncertainties</div>
+  </div>
+  </div>
 
 <div>
   <div class="description">
-    <p>Some ideas about reputation systems, backed up by some simulations. First draft 2015-11-08; picked up again 2023-08-06.</p>
+    <p>Some ideas about reputation systems, backed up by some simulations.</p>
   </div>
 </div>
 
@@ -243,9 +246,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
     
     <div>
-    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-heading">Last modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 6, 2023</p>
+      <p class="date">October 16, 2024</p>
     </div>
   </div>
   
@@ -263,8 +266,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<section id="introduction" class="level2" data-number="0.1">
+<h2 data-number="0.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">0.1</span> Introduction</h2>
 <p>A two-sided reputation system is a rating system in which each party rates the other (directly or indirectly). On Uber, Airbnb, eBay and other “sharing economy” platforms, customers rate service providers, and service providers rate customers. Sites such as Yelp and TripAdvisor also rely on customer ratings to recommend service providers such as hotels or restaurants, and weight ratings by the influence of the rater.</p>
 <p>Netflix, Amazon and others provide product recommender systems, in which the ratings go only one way.</p>
 <p>On the surface, two-sided reputation systems may look like product recommender systems. In each case the user typically enters a rating (out of five stars, perhaps) to show their opinion of the thing they are rating. But while a movie does not change in response to ratings, people can and do respond to being rated: they may get offended by a low rating, or may be grateful for a high rating. Those doing the rating are aware of this difference, and may take it into account as they make their rating.</p>
@@ -287,8 +290,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>In summary, reputation systems do not improve quality so much as they impose a regime of servility on service providers.</p></li>
 </ul>
 </section>
-<section id="a-jupyter-notebook" class="level2">
-<h2 class="anchored" data-anchor-id="a-jupyter-notebook">A Jupyter notebook</h2>
+<section id="a-jupyter-notebook" class="level2" data-number="0.2">
+<h2 data-number="0.2" class="anchored" data-anchor-id="a-jupyter-notebook"><span class="header-section-number">0.2</span> A Jupyter notebook</h2>
 <p>This document is a <a href="http://jupyter.org/">Jupyter notebook</a> (previously called an iPython notebook). The code for the model is included as part of the document, and the graphs that show the results are generated using the code in the document. If you want to reproduce or extend this model, you can save the notebook, install the right packages in a Python distribution, and run it on your own computer. In addition to the requirements for Jupyter, you will need to install the following packages in a Python 3 environment:</p>
 <div id="cell-2" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># imports and setup</span></span>
@@ -302,8 +305,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>, category<span class="op">=</span><span class="pp">UserWarning</span>, module<span class="op">=</span><span class="st">'pandas'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="a-model-reputation-system" class="level2">
-<h2 class="anchored" data-anchor-id="a-model-reputation-system">A model reputation system</h2>
+<section id="a-model-reputation-system" class="level2" data-number="0.3">
+<h2 data-number="0.3" class="anchored" data-anchor-id="a-model-reputation-system"><span class="header-section-number">0.3</span> A model reputation system</h2>
 <p>Rating people is different to rating movies. When we watch a movie the relationship is one way (the movie does not interact with us), but when we interact with others we enter into a two-way relationship. In some cases this relationship is brief and not likely to be repeated: taking a taxi or an Uber ride, eating in a fast-food restaurant in a city you are passing through. In other cases the relationship is richer and repeated: a stay at a Bed &amp; Breakfast or an Airbnb (in a case where the host is present) may extend over days; a regular customer at a restaurant may get to know the staff; a relationship with a hairdresser or car mechanic may extend over years.</p>
 <p>We now know, empirically, that the richer the customer-provider relationship, the more likely the reputation system is to show a large number of high ratings. When customers engage in a social relationship rather than a simple market transaction, they are reluctant to give negative ratings no matter what ther experience. The rating becomes, in effect, one part of the customer-provider relationship rather than an objective review.</p>
 <p>Here, I try to build a model that captures the essence of customer and provider behaviour in a simple reputation system. Customers have the opportunity to rate providers after each exchange. Each exchange, in turn, has components:</p>
@@ -314,11 +317,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Most reputation systems use five-star ratings, but I simplify this to a simple “thumbs up/thumbs down” binary option. Some reputation systems allow providers to rate customers as well, and there are other variants (are ratings private? do actors see the rating before they give their own?) but even when service providers can rate customers there is an asymmetry at work, in that the service provider has more at stake in the rating. Adopting a one-way system is, I contend, a reasonable simplification to produce a simple and generic model.</p>
 <p>With that summary, the next section (<em>Code walkthrough</em>) spells out the details of the model, and the following section (<em>Simulations</em>) runs several simulations of customers rating providers under various conditions. The document then concludes.</p>
 </section>
-<section id="code-walkthrough" class="level1">
-<h1>Code walkthrough</h1>
+<section id="code-walkthrough" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Code walkthrough</h1>
 <p>Here is an annotated implementation of the model. If you don’t know python and are not interested in reading the code, the commentary should spell out what’s going on in this model reputation system. If you are really not interested in this, the next section should be comprehensible without reading this.</p>
-<section id="parameters" class="level2">
-<h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
+<section id="parameters" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="parameters"><span class="header-section-number">1.1</span> Parameters</h2>
 <p>Start with some constants that define the various things used elsewhere, in an attempt to make the rest of the code more legible. You can probably ignore these for now.</p>
 <div id="cell-5" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The choices available to the customer and provider in their social exchange</span></span>
@@ -341,8 +344,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>RATING_THUMBS_DOWN <span class="op">=</span> <span class="op">-</span><span class="fl">1.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="actors" class="level2">
-<h2 class="anchored" data-anchor-id="actors">Actors</h2>
+<section id="actors" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="actors"><span class="header-section-number">1.2</span> Actors</h2>
 <p>Each customer or provider is an <em>actor</em>. The Actor() object represents the basic things we need to know about each customer and provider.</p>
 <p>Each actor has an <em>attitude</em>, which is expressed in their choices. (In game theoretic terms, each has a strategy expressed in the method called choose()). An actor’s attitude is fixed for the course of a simulation. The attitude determines how the actor behaves during each customer-provider interaction.</p>
 <p>In each interaction, both actors choose one of GIVE or TAKE. Then they actors gain or lose satisfaction depending on the choices, with the “payoffs” of satisfaction corresponding to the prisoner’s dilemma outcomes. If each actor chooses GIVE, that is better for each of them than if both choose TAKE. However, the best of all for an actor is to choose TAKE while the other actor chooses GIVE. To keep things simple, only a very few attitudes are considered:</p>
@@ -384,8 +387,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> choice</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="customers-and-providers" class="level2">
-<h2 class="anchored" data-anchor-id="customers-and-providers">Customers and providers</h2>
+<section id="customers-and-providers" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="customers-and-providers"><span class="header-section-number">1.3</span> Customers and providers</h2>
 <p>Customers and providers are both Actors, but the provider has additional characteristics: a <em>competence</em> in providing their service, and a <em>reputation</em> (from the customers’ assessments). The rating system used here is a simple thumbs up or thumbs down choice, and it is also helpful to track the number of each that a provider has accumulated: the reputation can be computed from these as the fraction of thumbs up ratings.</p>
 <div id="cell-9" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Customer(Actor):</span>
@@ -409,8 +412,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="dv">0</span> <span class="co"># no ratings, no reputation</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="a-customer-provider-interaction" class="level2">
-<h2 class="anchored" data-anchor-id="a-customer-provider-interaction">A customer-provider interaction</h2>
+<section id="a-customer-provider-interaction" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="a-customer-provider-interaction"><span class="header-section-number">1.4</span> A customer-provider interaction</h2>
 <p>Now we have customer and provider objects, we can model an interaction between the two. Each individual interaction between a customer and a provider is modelled as a single play of the prisoner’s dilemma. The end result of each interaction is a score for the customer and for the provider representing their overall satisfaction with the interaction.</p>
 <p>We’ll see what kind of experience an interaction may represent after the next definition, of an <em>exchange</em>. Here is a function for an individual interaction:</p>
 <div id="cell-11" class="cell" data-execution_count="17">
@@ -438,8 +441,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (customer_choice, provider_choice, customer_score, provider_score)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="a-customer-provider-exchange" class="level2">
-<h2 class="anchored" data-anchor-id="a-customer-provider-exchange">A customer-provider exchange</h2>
+<section id="a-customer-provider-exchange" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="a-customer-provider-exchange"><span class="header-section-number">1.5</span> A customer-provider exchange</h2>
 <p>Each customer-provider exchange has a transactional component and a social exchange component. The social exchange is made up of a number of interactions (see above).</p>
 <p>During each exchange the customer and provider gain or lose <em>satisfaction</em>. This satisfaction has a social component, which marks their satisfaction (or otherwise) at the interaction itself, and a transactional component, which is based on the provider’s competence. If the exchange is a guest staying with a host, then each interaction might be the welcome, a meal, a conversation. If the exchange is a hairdresser and a customer, then the exchange may represent a long relationship, with each interaction being a visit. Of course, this is very schematic, but the idea is that rich exchanges can be modelled with many interactions, while a thin exchange may be a simple interaction.</p>
 <p>At the end of the exchange, the customer has the opportunity to rate the provider (THUMBS_UP or THUMBS_DOWN). How the customer rates depends on the experience, and also on what kind of person the customer is (their attitude).</p>
@@ -509,8 +512,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>    provider.satisfaction <span class="op">+=</span> provider.exchange_score</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="a-rating-period" class="level2">
-<h2 class="anchored" data-anchor-id="a-rating-period">A rating period</h2>
+<section id="a-rating-period" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="a-rating-period"><span class="header-section-number">1.6</span> A rating period</h2>
 <p>Each simulation is run over a number of <em>rating periods</em>. In each rating period, every customer chooses a provider and they have an exchange. Depending on the number of customers and providers, this may mean that a provider undertakes several exchanges, one, or none.</p>
 <p>The customer ratings are collected together as a <em>reputation</em> score for each provider, and the higher a provider’s reputation, the better their chance of being chosen by a customer in the next rating period. In this way, the reputation feeds into the provider’s life story.</p>
 <p>Here is the function that describes a rating period:</p>
@@ -538,8 +541,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>                 sim.interactions_per_exchange)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="a-complete-simulation-run" class="level2">
-<h2 class="anchored" data-anchor-id="a-complete-simulation-run">A complete simulation run</h2>
+<section id="a-complete-simulation-run" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="a-complete-simulation-run"><span class="header-section-number">1.7</span> A complete simulation run</h2>
 <p>To run a complete simulation,the parameters that govern the simulation are specified in the constructor for the Simulation oject, and then Simulation.simulate() is called to carry out the simulation. The results of the simulation are stored in the Simulation object so they can be analyzed:</p>
 <div id="cell-17" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Simulation():</span>
@@ -580,8 +583,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>            rating_period(period, <span class="va">self</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="plotting-functions" class="level2">
-<h2 class="anchored" data-anchor-id="plotting-functions">Plotting functions</h2>
+<section id="plotting-functions" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="plotting-functions"><span class="header-section-number">1.8</span> Plotting functions</h2>
 <p>These plotting functions generate graphs to help make sense of the simulations. You can ignore them.</p>
 <div id="cell-19" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_by_competence(sim):</span>
@@ -665,15 +668,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="simulations" class="level1">
-<h1>Simulations</h1>
+<section id="simulations" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Simulations</h1>
 <p>The model description is now complete, and we can run some simulations. Recall that the point of this exercise is to investigate reputation systems that display two seemingly-contradictory phenomena seen in the real world: the Lake Wobegon effect in which (almost) everybody is given a high rating, and the Panopticon effect in which service providers live in fear of a bad rating. In particular:</p>
 <ul>
 <li>what qualities does such a system encourage in providers? (level of competence, attitude)</li>
 <li>which customers are getting what they want?</li>
 </ul>
-<section id="simulation-1-commodity-exchange" class="level2">
-<h2 class="anchored" data-anchor-id="simulation-1-commodity-exchange">Simulation 1: commodity exchange</h2>
+<section id="simulation-1-commodity-exchange" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="simulation-1-commodity-exchange"><span class="header-section-number">2.1</span> Simulation 1: commodity exchange</h2>
 <p>In the first simulation there is no social aspect to the exchange (<em>interactions_per_exchange = 0</em>) so the reputation of each provider depends on their competence. The exchange is just like a market transaction for a commodity: there is no back and forth between customer and provider. The following code block assigns 240 customers to the Take attitude (they will rate positive experiences and negative experiences), distributes 80 providers evenly between “Give &amp; Take” and the more indulgent “Give” attitudes, and runs them through 100 rating periods.</p>
 <p>(Please ignore the pink warning box: this is a bug in matplotlib that will be fixed soon).</p>
 <div id="cell-21" class="cell" data-execution_count="34">
@@ -709,8 +712,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This is how reputation systems are supposed to work, but it is not how reputation systems work in the real world, where most providers get good reputations and where the correlation of competence and reputation is weak. Figure A1 shows a distribution of ratings in which many providers have been given a bad reputation, completely unlike most real-world reputation systems.</p>
 </section>
 </section>
-<section id="simulation-2-lake-wobegon-ratings" class="level2">
-<h2 class="anchored" data-anchor-id="simulation-2-lake-wobegon-ratings">Simulation 2: Lake Wobegon ratings</h2>
+<section id="simulation-2-lake-wobegon-ratings" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="simulation-2-lake-wobegon-ratings"><span class="header-section-number">2.2</span> Simulation 2: Lake Wobegon ratings</h2>
 <p>This simulation looks at the other extreme, where the provider’s competence is unimportant and the social relationship is all that matters. Just as we don’t rate friends based on their skills (except perhaps in extreme circumstances), but on their personality and integrity, so competence is not important here.</p>
 <p>The simulation again has 240 customers and 80 providers (as weill all the simulations) and the providers are again evenly distributed between being “Give &amp; Take”, and being servile (“Give”). Again there are 100 rating periods, but this time there are 25 interactions to every exchange, so the social aspect of the exchange overwhelms the market aspect.</p>
 <div id="cell-24" class="cell" data-execution_count="35">
@@ -744,8 +747,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>But that does not mean that things are bad. B1 shows that customers get a high level of satisfaction (0.9) from the relationship aspect of the exchange - the mutual cooperation of provider and customer. B2 shows that providers also do well (0.7 or more). So things are good, but different. This describes a self-governing system, where reputation does not matter, but customer and provider each induce the other to be generous.</p>
 </section>
 </section>
-<section id="simulation-3-introducing-entitled-customers" class="level2">
-<h2 class="anchored" data-anchor-id="simulation-3-introducing-entitled-customers">Simulation 3: introducing entitled customers</h2>
+<section id="simulation-3-introducing-entitled-customers" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="simulation-3-introducing-entitled-customers"><span class="header-section-number">2.3</span> Simulation 3: introducing entitled customers</h2>
 <p>Now make one change: instead of all customers displaying a Give &amp; Take attitude, one in ten will be demanding, and will play TAKE on all aspects of the exchange. Even though the exchange is primarily social, they may rate positively if they get a good outcome (which means, if the provider is compliant) or badly if they do not.</p>
 <div id="cell-27" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>sim <span class="op">=</span> Simulation(</span>
@@ -782,8 +785,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Seen from anywhere other than the perspective of the platform provider, this setup panders to demanding consumers by requiring service providers to engage in emotional labour.</p>
 </section>
 </section>
-<section id="simulation-4-more-honest-customers" class="level2">
-<h2 class="anchored" data-anchor-id="simulation-4-more-honest-customers">Simulation 4: more “honest” customers</h2>
+<section id="simulation-4-more-honest-customers" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="simulation-4-more-honest-customers"><span class="header-section-number">2.4</span> Simulation 4: more “honest” customers</h2>
 <p>This final simulation increases the proportion of entitled customers (or “honest raters” as the platform provider would see it) to see what happens as the rating system “improves”.</p>
 <p>If Simulation 3 describes the way that reputation systems currently work, Simulation 4 describes the way that the platform owners (sharing economy companies and rating providers) would like them to work: they expect customers to be “honest” - report good and bad experiences, and to maintain an emotional distance from their service provider (to avoid “bias”). These ideal customers are not committed to the social exchange (not “Give &amp; Take”), but instead treat the experience as one to be judged.</p>
 <div id="cell-30" class="cell" data-execution_count="37">
@@ -817,8 +820,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 </section>
-<section id="conclusion" class="level1">
-<h1>Conclusion</h1>
+<section id="conclusion" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Conclusion</h1>
 <p>The fact that Simulation 2 gives a rating distribution far more like current sharing economy reputation systems than Simulation 1 demonstrates the important role of social exchange compared to a pure market or transactional exchange in most customer–service provider exchanges. It is this social exchange that is at the root of the Lake Wobegon effect, where all providers are above average. Reputation systems do indeed fail to discriminate on the basis of competence (quality).</p>
 <p>Simulation 3 shows that a small number of entitled customers can induce a Panopticon effect. Service providers who engage in Give &amp; Take exchanges with their customers (even very competent ones) risk being given a negative review, which will damage their business. The incentives of the reputation system encourage providers to indulge their customers, in order to avoid this unlikely but damaging judgement.</p>
 <p>Simulation 4 shows that, if reputation systems spread and customers become used to rating people in an “honest” fashion, we are building a terrible world for service providers. They must engage in emotional labour, catering to customer whims, or risk their livelihood. The Panopticon is here. The reputation systems continue to fail, it should be noted, to discriminate based on the competence of the service provider – instead of changing quality, they change attitude.</p>

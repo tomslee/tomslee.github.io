@@ -2,6 +2,7 @@
 title: "Yet Another Introduction to Quantum Computing"
 author: "Tom Slee"
 date: last-modified
+published-title: Last modified
 categories:
 - Uncertainties
 - Quantum Computing
@@ -55,20 +56,19 @@ format-links: pdf
 Notes to myself, as I try to understand quantum computing without succumbing to mystification.
 :::
 
-
 # Introduction
 
 In as few words as possible, I hope to answer some practical questions I had when I started reading up on the topic. Like these:
 
-- How are quantum computers built? 
+-   How are quantum computers built?
 
-- Are we going to have quantum laptops any time soon?
+-   Are we going to have quantum laptops any time soon?
 
-- How can I get my hands dirty with quantum computing today? What do I need to understand to write my first "Hello world" quantum computing program?
+-   How can I get my hands dirty with quantum computing today? What do I need to understand to write my first "Hello world" quantum computing program?
 
-- What advantages, if any, does quantum computing offer? This topic is key to the whole thing, but I'm going to skip over it very lightly here. Maybe a Part II will discuss it in more depth.
+-   What advantages, if any, does quantum computing offer? This topic is key to the whole thing, but I'm going to skip over it very lightly here. Maybe a Part II will discuss it in more depth.
 
-- What is the status and prospects of quantum computing today? Well, an answer is too much to hope for, but I'll offer some reflections.
+-   What is the status and prospects of quantum computing today? Well, an answer is too much to hope for, but I'll offer some reflections.
 
 But let's start with three building blocks of quantum computers: qubits, gates, and circuits.
 
@@ -80,7 +80,7 @@ Regular computers are built around bits, quantum computers are built around qubi
 
 The archetypal example of a qubit is an atomic nucleus with a spin of ½, like the ^89^Y isotope of Yttrium (although many quantum computers don't actually use spin-½ nuclei, but let's put that aside for now). The spin means that the nucleus has angular momentum, as if it were an electrical charge spinning in one direction or the other. This spinning electrical charge creates a little magnet that can be pointing either “up” or “down”.
 
-(Aside: classically, the axis around which the rotation happens is the "direction" of angular momentum, which is a bit odd when you first come across it. Angular momentum in quantum mechanics follows the same rule. Similarly, a classical electric current moving in a circle creates a magnetic field. So quantum spin, a form of angular momentum, is following similar rules as classical angular momentum. A big difference, though, is that classical angular momentum can take any value--a bicycle wheel can spin at any speed--but quantum spin can take only specific discrete values (it is "quantized"): in the case of a spin-½ particle that is +½ or -½, which we usually call "spin up" or "spin down". These two values can represent $0$ and $1$ when used as a qubit in a quantum computer, just as a classical "bit" might be a transistor that can take on a state of "on" or "off".  It's often said that an electron or nucleus with angular momentum is like a little ball spinning around an axis, except that it’s not a ball and it’s not spinning.)
+(Aside: classically, the axis around which the rotation happens is the "direction" of angular momentum, which is a bit odd when you first come across it. Angular momentum in quantum mechanics follows the same rule. Similarly, a classical electric current moving in a circle creates a magnetic field. So quantum spin, a form of angular momentum, is following similar rules as classical angular momentum. A big difference, though, is that classical angular momentum can take any value--a bicycle wheel can spin at any speed--but quantum spin can take only specific discrete values (it is "quantized"): in the case of a spin-½ particle that is +½ or -½, which we usually call "spin up" or "spin down". These two values can represent $0$ and $1$ when used as a qubit in a quantum computer, just as a classical "bit" might be a transistor that can take on a state of "on" or "off". It's often said that an electron or nucleus with angular momentum is like a little ball spinning around an axis, except that it’s not a ball and it’s not spinning.)
 
 Qubits, as has often been said, exist in a state that is a *superposition* of 0 and 1, but let's leave that to one side for now as well.
 
@@ -98,10 +98,9 @@ Whatever approach you choose, you want to build a computer out of these qubits. 
 
 ![A NOT gate, which turns 0 into 1 and vice versa](images/clipboard-1114991653.png){#fig-not fig-alt="A NOT gate, which turns 0 into 1 and vice versa" width="300"}
 
-The NOT gate has one input and one output. If the input is 0, then the output is 1, and if the input is 1 then the output is 0. 
+The NOT gate has one input and one output. If the input is 0, then the output is 1, and if the input is 1 then the output is 0.
 
-In classical computers, the lines are wires and the shield-symbol is etched into a chip and the bits are charges moving through the gates. 
-In the world of quantum computers, the qubits stay where they are: it’s called “in-place computing”. If you shine a laser at one particular qubit and cause it to flip from one of its states to the other, then that’s like a NOT gate: it turns a 0 into 1 or a 1 into 0. In quantum computing circuit diagrams, the lines are not wires, they are *before* and *after* states of the qubit.
+In classical computers, the lines are wires and the shield-symbol is etched into a chip and the bits are charges moving through the gates. In the world of quantum computers, the qubits stay where they are: it’s called “in-place computing”. If you shine a laser at one particular qubit and cause it to flip from one of its states to the other, then that’s like a NOT gate: it turns a 0 into 1 or a 1 into 0. In quantum computing circuit diagrams, the lines are not wires, they are *before* and *after* states of the qubit.
 
 (In the figure above, the state of each qubit is represented in what's called the "Dirac ket notation", like $| \uparrow \rangle$ or, equivalently, $| 1 \rangle$. This notation is really useful and standard in all areas of quantum mechanics, but here it's just a symbol that shows the value of a qubit.)
 
@@ -222,7 +221,7 @@ The system exists in a superposition of the two states, so neither qubit has a f
 
 (I am of a generation that was taught quantum mechanics without ever hearing the word "entanglement" outside evening pub talk, so I have something of an inbuilt reservation to using it unless it is really needed. I feel that much of what is meant by "entanglement" can be described as interference. But I may be wrong!)
 
-If you do want to go into the world of entanglement, the best popular treatment I have read is [Beyond Weird](https://press.uchicago.edu/ucp/books/book/chicago/B/bo28254471.html), by Philip Ball. 
+If you do want to go into the world of entanglement, the best popular treatment I have read is [Beyond Weird](https://press.uchicago.edu/ucp/books/book/chicago/B/bo28254471.html), by Philip Ball.
 
 Quantum computing relies on some clever ideas to combine the effects of superposition and interference so as to extract information from a set of qubits (by applying a sequence of gates and ending in measurements) that you could not get from classical bits.
 
@@ -256,13 +255,13 @@ Since then, a handful of algorithms have been developed that are particularly in
 
 These are algorithms for which it has been proved that an ideal quantum computer would offer an algorithm of less complexity than a classical computer.
 
-* The big one is the Shor algorithm, which shows how to factor a large number in polynomial time rather than exponential time. And as that is the root of public key encryption schemes there is a lot of excitement.
+-   The big one is the Shor algorithm, which shows how to factor a large number in polynomial time rather than exponential time. And as that is the root of public key encryption schemes there is a lot of excitement.
 
-* Another algorithm is the Variational Quantum Eigensolver (VQE). When you see statements like “Quantum computing plays a role in drug discovery and the design of new materials”, this is the technique most aligned with that goal.
+-   Another algorithm is the Variational Quantum Eigensolver (VQE). When you see statements like “Quantum computing plays a role in drug discovery and the design of new materials”, this is the technique most aligned with that goal.
 
-* A third is the Quantum Approximate Optimization Algorithm (QAOA). When you see claims that "quantum computing will revolutionize logistics and financial portfolio management" this is the technique to think of.
+-   A third is the Quantum Approximate Optimization Algorithm (QAOA). When you see claims that "quantum computing will revolutionize logistics and financial portfolio management" this is the technique to think of.
 
-* And a fourth is the Grover search algorithm for finding an item in an unstructured database.
+-   And a fourth is the Grover search algorithm for finding an item in an unstructured database.
 
 But let’s be clear: *none of these shows real-world benefit compared to classical computing yet*. In particular, despite the progress of quantum computing so far, the biggest number to be factored by a quantum computer a manner that may scale to large numbers seems to be a less-than-impressive 21. And while quantum computing experts say that this does not matter, and that there are technical reasons to focus on other metrics for progress, to me this sounds a bit like they are [looking under the street light for their keys](https://en.wikipedia.org/wiki/Streetlight_effect).
 
@@ -278,17 +277,17 @@ D-Wave have build computers, or simulators, using this approach with superconduc
 
 So where are we when it comes to building real quantum computers that can handle problems of interest? There are several metrics of interest: here are three (I'm sure there are others).
 
-* Number of qubits. But implicit in the discussion above is that a qubit behaves well: that it is in one well-defined quantum state and stays there. In practice, a distinction is needed between "physical qubits" which may be less-than-perfect, and "logical" or "error-corrected" qubits, which behave properly. 
-* Number of gates. To be able to operate on an array of qubits with a succession of gates is demanding. Not all systems can stay "coherent" for the length of time it takes to apply a number of gates. So it is not at all clear that once you have a large number of qubits, even if they are properly error-corrected, you have a successful quantum computer.
+-   Number of qubits. But implicit in the discussion above is that a qubit behaves well: that it is in one well-defined quantum state and stays there. In practice, a distinction is needed between "physical qubits" which may be less-than-perfect, and "logical" or "error-corrected" qubits, which behave properly.
 
-* Connectivity. Not all quantum computers allow you to implement the same set of gates, and even if you can, for some a "gate" may be a complex, multi-step operation in practice. And in some architectures / modalities, only qubits "near" each other can be used in a particular gate. And some algorithms assume three-qubit gates, which introduces even more complexity. So you may see reference to "transpiling" algorithms, which means taking a quantum circuit and re-expressing it in terms of the gates that you have at hand on a particular quantum computer.
+-   Number of gates. To be able to operate on an array of qubits with a succession of gates is demanding. Not all systems can stay "coherent" for the length of time it takes to apply a number of gates. So it is not at all clear that once you have a large number of qubits, even if they are properly error-corrected, you have a successful quantum computer.
+
+-   Connectivity. Not all quantum computers allow you to implement the same set of gates, and even if you can, for some a "gate" may be a complex, multi-step operation in practice. And in some architectures / modalities, only qubits "near" each other can be used in a particular gate. And some algorithms assume three-qubit gates, which introduces even more complexity. So you may see reference to "transpiling" algorithms, which means taking a quantum circuit and re-expressing it in terms of the gates that you have at hand on a particular quantum computer.
 
 There is a tension relevant for building quantum computers. You need the whole circuit to be a single state, which means no interference from the environment. Yet at the same time you are poking it and prodding it with these gates, which are very explicit interactions with the environment.
 
 Also: no quantum state is really just two states that you can pick between. There are higher energy states that start to get populated as the temperature increases, and which mess things up.
 
 So error correction is a big part of any quantum computing effort. And typically the answer is the same as any other error correction system: redundancy. So there is a distinction between physical qubits (which are the building blocks we have talked about) and logical qubits, which are collections of physical qubits that you can trust to behave in the way the theory needs. So how many logical qubits to a single physical qubit? Depends on the approach, but [the leading work](https://www.nature.com/articles/s41586-023-06927-3) says at least 50.
-
 
 ## Current state of the art
 

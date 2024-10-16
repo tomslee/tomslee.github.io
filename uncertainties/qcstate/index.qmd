@@ -1,8 +1,9 @@
 ---
-title: "Quantum Computing in flux"
+title: "Quantum Computing in Flux"
 author: "Tom Slee"
 draft: true
 date: last-modified
+published-title: Last modified
 categories:
 - Uncertainties
 - Quantum Computing

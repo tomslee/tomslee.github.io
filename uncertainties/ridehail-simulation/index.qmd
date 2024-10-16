@@ -2,6 +2,7 @@
 title: "Simple Simulations of Ridehail Traffic and Trips"
 author: "Tom Slee"
 date: last-modified
+published-title: Last modified
 categories:
 - Uncertainties
 - Uber
