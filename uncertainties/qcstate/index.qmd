@@ -1,0 +1,42 @@
+---
+title: "Quantum Computing in flux"
+author: "Tom Slee"
+draft: true
+date: last-modified
+categories:
+- Uncertainties
+- Quantum Computing
+description: >
+    What's going on?
+# formatting
+toc: true
+toc-title: Contents
+reading-time: true
+number-sections: true
+callout-appearance: simple
+number-depth: 2
+lightbox: true
+fig-cap-location: bottom
+# reference-location: margin
+image: images/clipboard-3934556282.png
+# bibliography: QC.bib
+comments:
+    hypothesis: true
+format:
+    html:
+      title-block-banner: DarkCyan
+      published-title: Last updated
+    pdf: 
+      papersize: letter
+      doublespacing: false # Double space the PDF output?
+      toc: true
+      number-sections: true
+      colorlinks: true
+      keep-tex: true  
+---
+
+# Quantum Computing: Industry or Discipline?
+
+what is it.
+
+# What's Going On?
