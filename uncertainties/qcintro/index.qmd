@@ -13,7 +13,7 @@ description: >
 # formatting
 toc: true
 toc-title: Contents
-tod-depth: 1
+toc-depth: 1
 reading-time: true
 number-sections: true
 # callout-appearance: simple
@@ -92,7 +92,7 @@ The archetypal example of a qubit is an atomic nucleus with a spin of ½, like t
 
 Qubits, as has often been said, exist in a state that is a *superposition* of 0 and 1, but let's leave that to one side for now as well.
 
-![An archetypal qubit: an atom with nuclear spin up or down](images/clipboard-2996633943.png){#fig-spin fig-alt="An archetypal qubit: an atom with nuclear spin up or down" width="300"}
+![An archetypal qubit: an atom with nuclear spin up or down](images/clipboard-2996633943.png){#fig-spin fig-alt="An archetypal qubit: an atom with nuclear spin up or down" width="50%"}
 
 Qubits may be atomic nuclear spins, using nuclear magnetic resonance, but in principle any other system that displays this two-level behaviour can be used as a qubit. Some research groups have built quantum computers with atomic-scale qubits, like arrays of charged ions trapped in space by electromagnetic fields (e.g., [Quantinuum](https://www.quantinuum.com/) or [IonQ](https://ionq.com/)) or arrays of neutral atoms (e.g. [QuEra](https://www.quera.com/)). Others (e.g. Google and IBM) are exploiting macroscopic quantum phenomena -- for example, qubits based on superconductivity in circuits of maybe a micrometre in size: the current in a superconductor is macroscopic (although still small by our standards) but is quantized. And there are other approaches too : photonics (e.g. [Photonic](https://photonic.com/) and [Xanadu](https://www.xanadu.ai)), topological "anyons" (Microsoft) and more. These different approaches are often called "modalities" in industry jargon.
 
@@ -160,7 +160,7 @@ This fragility of quantum states has consequences:
 
 The emerging paradigm, at least as at October 2024, is of a cloud-hosted data centre where an application can use classical computers for many parts of an application, but have access to quantum computers to run specific functions. Perhaps it’s not surprising that Microsoft, IBM, and Google are at the forefront and Amazon (AWS) is now investing heavily: they want to host them, and rent them out to their cloud users.
 
-# How to program a quantum computer
+# How do I program a quantum computer?
 
 The companies providing quantum computers want people to use them, so they provide libraries or modules that you can use. For example, Google and IBM provide python libraries ([cirq](https://quantumai.google/cirq) and [Qiskit](https://www.ibm.com/quantum/qiskit), respectively) and Microsoft provides its own [Quantum Development Kit](https://learn.microsoft.com/en-ca/azure/quantum/install-overview-qdk). These libraries provide an interface to the host quantum computers and, more practically for most of us, provide a way to simulate quantum computing on a local classical computer, for small cases.
 
@@ -305,7 +305,7 @@ Google made big claims four years ago with a 53-noisy qubit processor. They said
 
 But scale is an important open question. Because we need to get up to at least 10,000 logical qubits to be of any use, and probably into the millions. And despite what Time Magazine says, we are a long way away. And progress is progress, but we can’t assume a Moore's Law progression yet.
 
-# The big question
+## The big question
 
 So far quantum computing has delivered a set of proofs of concept, together with road maps for scaling up that give an optimistic sense of predictability, when there are still fundamental unknowns to resolve.
 

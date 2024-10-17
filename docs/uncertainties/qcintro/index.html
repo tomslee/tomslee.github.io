@@ -263,26 +263,11 @@ window.Quarto = {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
-  <li><a href="#building-blocks" id="toc-building-blocks" class="nav-link" data-scroll-target="#building-blocks"><span class="header-section-number">2</span> Building blocks</a>
-  <ul class="collapse">
-  <li><a href="#qubits" id="toc-qubits" class="nav-link" data-scroll-target="#qubits"><span class="header-section-number">2.1</span> Qubits</a></li>
-  <li><a href="#gates" id="toc-gates" class="nav-link" data-scroll-target="#gates"><span class="header-section-number">2.2</span> Gates</a></li>
-  <li><a href="#circuits" id="toc-circuits" class="nav-link" data-scroll-target="#circuits"><span class="header-section-number">2.3</span> Circuits</a></li>
-  </ul></li>
+  <li><a href="#building-blocks" id="toc-building-blocks" class="nav-link" data-scroll-target="#building-blocks"><span class="header-section-number">2</span> Building blocks</a></li>
   <li><a href="#will-i-have-a-quantum-laptop-no" id="toc-will-i-have-a-quantum-laptop-no" class="nav-link" data-scroll-target="#will-i-have-a-quantum-laptop-no"><span class="header-section-number">3</span> Will I have a quantum laptop? (No)</a></li>
-  <li><a href="#how-to-program-a-quantum-computer" id="toc-how-to-program-a-quantum-computer" class="nav-link" data-scroll-target="#how-to-program-a-quantum-computer"><span class="header-section-number">4</span> How to program a quantum computer</a></li>
-  <li><a href="#why-might-quantum-computing-matter" id="toc-why-might-quantum-computing-matter" class="nav-link" data-scroll-target="#why-might-quantum-computing-matter"><span class="header-section-number">5</span> Why might quantum computing matter?</a>
-  <ul class="collapse">
-  <li><a href="#superposition-and-interference" id="toc-superposition-and-interference" class="nav-link" data-scroll-target="#superposition-and-interference"><span class="header-section-number">5.1</span> Superposition and interference</a></li>
-  <li><a href="#the-deutsch-algorithm" id="toc-the-deutsch-algorithm" class="nav-link" data-scroll-target="#the-deutsch-algorithm"><span class="header-section-number">5.2</span> The Deutsch algorithm</a></li>
-  <li><a href="#the-canonical-algorithms" id="toc-the-canonical-algorithms" class="nav-link" data-scroll-target="#the-canonical-algorithms"><span class="header-section-number">5.3</span> The canonical algorithms</a></li>
-  <li><a href="#quantum-simulation" id="toc-quantum-simulation" class="nav-link" data-scroll-target="#quantum-simulation"><span class="header-section-number">5.4</span> Quantum simulation</a></li>
-  </ul></li>
-  <li><a href="#quantum-computing-in-2024" id="toc-quantum-computing-in-2024" class="nav-link" data-scroll-target="#quantum-computing-in-2024"><span class="header-section-number">6</span> Quantum computing in 2024</a>
-  <ul class="collapse">
-  <li><a href="#current-state-of-the-art" id="toc-current-state-of-the-art" class="nav-link" data-scroll-target="#current-state-of-the-art"><span class="header-section-number">6.1</span> Current state of the art</a></li>
-  </ul></li>
-  <li><a href="#the-big-question" id="toc-the-big-question" class="nav-link" data-scroll-target="#the-big-question"><span class="header-section-number">7</span> The big question</a></li>
+  <li><a href="#how-do-i-program-a-quantum-computer" id="toc-how-do-i-program-a-quantum-computer" class="nav-link" data-scroll-target="#how-do-i-program-a-quantum-computer"><span class="header-section-number">4</span> How do I program a quantum computer?</a></li>
+  <li><a href="#why-might-quantum-computing-matter" id="toc-why-might-quantum-computing-matter" class="nav-link" data-scroll-target="#why-might-quantum-computing-matter"><span class="header-section-number">5</span> Why might quantum computing matter?</a></li>
+  <li><a href="#quantum-computing-in-2024" id="toc-quantum-computing-in-2024" class="nav-link" data-scroll-target="#quantum-computing-in-2024"><span class="header-section-number">6</span> Quantum computing in 2024</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="qcintro.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
@@ -329,7 +314,7 @@ About this page
 <div id="fig-spin" class="quarto-float quarto-figure quarto-figure-center anchored" alt="An archetypal qubit: an atom with nuclear spin up or down">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-spin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="images/clipboard-2996633943.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: An archetypal qubit: an atom with nuclear spin up or down"><img src="images/clipboard-2996633943.png" class="img-fluid figure-img" alt="An archetypal qubit: an atom with nuclear spin up or down" width="300"></a>
+<a href="images/clipboard-2996633943.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: An archetypal qubit: an atom with nuclear spin up or down"><img src="images/clipboard-2996633943.png" class="img-fluid figure-img" style="width:50.0%" alt="An archetypal qubit: an atom with nuclear spin up or down"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: An archetypal qubit: an atom with nuclear spin up or down
@@ -423,8 +408,8 @@ Figure&nbsp;6: Quantum computers are most likely to be made available as cloud s
 </div>
 <p>The emerging paradigm, at least as at October 2024, is of a cloud-hosted data centre where an application can use classical computers for many parts of an application, but have access to quantum computers to run specific functions. Perhaps it’s not surprising that Microsoft, IBM, and Google are at the forefront and Amazon (AWS) is now investing heavily: they want to host them, and rent them out to their cloud users.</p>
 </section>
-<section id="how-to-program-a-quantum-computer" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> How to program a quantum computer</h1>
+<section id="how-do-i-program-a-quantum-computer" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> How do I program a quantum computer?</h1>
 <p>The companies providing quantum computers want people to use them, so they provide libraries or modules that you can use. For example, Google and IBM provide python libraries (<a href="https://quantumai.google/cirq">cirq</a> and <a href="https://www.ibm.com/quantum/qiskit">Qiskit</a>, respectively) and Microsoft provides its own <a href="https://learn.microsoft.com/en-ca/azure/quantum/install-overview-qdk">Quantum Development Kit</a>. These libraries provide an interface to the host quantum computers and, more practically for most of us, provide a way to simulate quantum computing on a local classical computer, for small cases.</p>
 <p>So here is some code that uses Google’s <em>cirq</em> library for python. It defines two qubits and a list of gates that operate on those qubits. Then it creates a circuit from the gates, and runs the circuit on a simulator on your local computer. As the algorithm is very simple, the quantum computation can easily be simulated on a classical computer. If you’re familiar with the python programming language, you can easily install <code>cirq</code> by typing <code>pip install cirq</code> at a command prompt. Here is a “hello world” example to give you an idea of what the code looks like, which each step described by a comment.</p>
 <p>Providing quantum computing at the level of a library makes it possible to implement hybrid applications (which, as the last section showed, are the most likely form) with the quantum components implemented as functions of a largely-classical application.</p>
@@ -566,9 +551,8 @@ Figure&nbsp;7: The circuit diagram for an algorithm to solve Deutsch’s problem
 <p>Google made big claims four years ago with a 53-noisy qubit processor. They said it could do this task which it would take a classical computer 10,000 years to accomplish. But it’s fundamentally not a very useful task, so no one has really thought much about the best way to do the task on a classical computer. IBM, who is competing with Google of course, came back a short time later and said “we could do that in 2 ½ days”, and another group claimed five minutes. So not convincing yet.</p>
 <p>But scale is an important open question. Because we need to get up to at least 10,000 logical qubits to be of any use, and probably into the millions. And despite what Time Magazine says, we are a long way away. And progress is progress, but we can’t assume a Moore’s Law progression yet.</p>
 </section>
-</section>
-<section id="the-big-question" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> The big question</h1>
+<section id="the-big-question" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="the-big-question"><span class="header-section-number">6.2</span> The big question</h2>
 <p>So far quantum computing has delivered a set of proofs of concept, together with road maps for scaling up that give an optimistic sense of predictability, when there are still fundamental unknowns to resolve.</p>
 <div id="fig-venn" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Are there problems for which quantum computers have an advantage, and which we care about?">
 <figure class="quarto-float quarto-float-fig figure">
@@ -587,6 +571,7 @@ Figure&nbsp;8: Are there problems for which quantum computers have an advantage,
 </blockquote>
 
 
+</section>
 </section>
 
 
@@ -1031,7 +1016,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","loop":false,"openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
