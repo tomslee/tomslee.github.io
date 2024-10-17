@@ -1,3 +1,17 @@
 \title{$title$}
-\author{$author$}
-\date{Last updated: $date$}
+\author{\normalsize $author$ ($email$)}
+\date{\normalsize Last updated: $date$}
+
+$if(title)$
+\title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
+$endif$
+
+$if(subtitle)$
+\subtitle{$subtitle$}
+$endif$
+
+$for(by-author)$
+  \author{\normalsize $by-author.name.literal$}
+$endfor$
+
+\date{\normalsize Last updated: $date$}

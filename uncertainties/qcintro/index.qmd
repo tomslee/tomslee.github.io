@@ -1,16 +1,19 @@
 ---
 title: "Yet Another Introduction to Quantum Computing"
-author: "Tom Slee"
+author: 
+- name: "Tom Slee"
+  email: "slee.tom@gmail.com"
 date: last-modified
 published-title: Last updated
 categories:
 - Uncertainties
 - Quantum Computing
 description: >
-    A sceptical one, version 0.1
+    ...as plainly as I can, attempt 0.1
 # formatting
 toc: true
 toc-title: Contents
+tod-depth: 1
 reading-time: true
 number-sections: true
 # callout-appearance: simple
@@ -18,6 +21,7 @@ number-depth: 2
 lightbox: true
 fig-cap-location: bottom
 format-links: pdf
+highlight-style: arrow
 # reference-location: margin
 image: images/clipboard-3934556282.png
 bibliography: QC.bib
@@ -52,9 +56,7 @@ format:
           \addtokomafont{section}{\sectionfont}
           \addtokomafont{subsection}{\subsectionfont}
           \addtokomafont{subsubsection}{\subsubsectionfont}
-    #include-in-header:
-    #  text: |
-    #    \usepackage{mdframed}
+          \usepackage{mdframed}
     # fig-env: mdframed
 ---
 
@@ -74,7 +76,7 @@ In as few words as possible, I hope to answer some practical questions I had whe
 
 -   What advantages, if any, does quantum computing offer? This topic is key to the whole thing, but I'm going to skip over it very lightly here. Maybe a Part II will discuss it in more depth.
 
--   What is the status and prospects of quantum computing today? Well, an answer is too much to hope for, but I'll offer some reflections.
+-   What is the status and what are the prospects of quantum computing today? Well, an answer is too much to hope for, but I'll offer some reflections.
 
 But let's start with three building blocks of quantum computers: qubits, gates, and circuits.
 

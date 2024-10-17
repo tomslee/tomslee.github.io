@@ -1,6 +1,8 @@
 ---
 title: "Quantum Computing in Flux"
-author: "Tom Slee"
+author: 
+- name: "Tom Slee"
+  email: "slee.tom@gmail.com"
 draft: true
 date: last-modified
 published-title: Last updated
