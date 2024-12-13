@@ -1,0 +1,15 @@
+{
+  "hash": "c917cb93f57a37e1278e841705eb9e21",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Quantum Computing Timeline\"\nauthor: \"Tom Slee\"\ndraft: true\n---\n\n\n# Timeline\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stderr}\n\n```\nSkipping install of 'milestones' from a github remote, the SHA1 (8d946d04) has not changed since last install.\n  Use `force = TRUE` to force installation\n```\n\n\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

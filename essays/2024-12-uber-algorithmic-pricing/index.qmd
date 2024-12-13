@@ -1,0 +1,660 @@
+---
+title: Some questions about Uber's "upfront" pricing
+subtitle: Why are airport fares out of whack?
+description: >
+  A first attempt at deconstructing Uber's algorithmic "upfront pricing" with data from Chicago.
+abstract: >
+  What can open data from Chicago tell us about the factors that influence "upfront" fares?
+  Passengers traveling from O'Hare International Airport may be interested.
+author: 
+  - name: "Tom Slee"
+    url: https://tomslee.github.io
+    email: tom@tomslee.net
+draft: true
+title-block-banner: true
+date: last-modified
+date-format: long
+published-title: Last updated
+categories:
+- Essays
+- Uber
+appendix-style: none
+bibliography: references.bib
+toc: true
+toc-depth: 2
+toc-title: Contents
+knitr:
+  opts_chunk:
+    out.width: "100%"
+number-sections: false
+number-depth: 1
+callout-appearance: default
+execute: 
+  freeze: auto
+format:
+  html:
+    html-math-method: katex
+    # css: styles.css
+    anchor-sections: true
+    citations-hover: true
+    footnotes-hover: true
+    crossrefs-hover: true
+    citation-location: document
+    toc-location: left
+    lightbox: true
+  pdf: 
+    documentclass: scrartcl
+    papersize: letter
+    toc: true
+    number-sections: true
+    colorlinks: true
+    output-file: "algorithmic_pricing_draft"
+    output-ext:  "pdf"
+    mainfont: "CharterBT-Roman"
+    fontsize: 12pt
+    linestretch: 1.1
+    keep-tex: true
+    template-partials:
+    - title.tex
+    geometry:
+    - top=30mm
+    - left=30mm
+    - heightrounded
+    include-in-header:
+      text: |
+        \definecolor{TealHeading}{RGB}{27, 158, 119}
+        \newfontfamily\sectionfont[Color=TealHeading]{RobotoCondensed-Regular}
+        \newfontfamily\subsectionfont[Color=TealHeading]{RobotoCondensed-Regular}
+        \newfontfamily\subsubsectionfont[Color=TealHeading]{RobotoCondensed-Regular}
+        \addtokomafont{section}{\sectionfont}
+        \addtokomafont{subsection}{\subsectionfont}
+        \addtokomafont{subsubsection}{\subsubsectionfont}
+        \usepackage{mdframed}
+# pdf-font: "ETbb"
+# editor: visual
+---
+
+```{r}
+#| label: setup
+#| echo: false
+librarian::shelf(tidyverse, janitor, RColorBrewer, RPostgres, patchwork, sf, ggthemes)
+update_geom_defaults("line", aes(linewidth=1.5, alpha=1.0))
+update_geom_defaults("point", aes(size=2, alpha=1.0))
+# Uncomment the line below to prevent warnings appearing in the output
+options(warn=-1)
+# The password is stored in a pgpass file (~/.pgpass, or %APPDATA%\postgresql\pgpass.conf on Windows)
+con <- dbConnect(RPostgres::Postgres(),
+                 host="database-1.cxkc40qycf2y.us-east-2.rds.amazonaws.com",
+                 port=5432,
+                 dbname="postgres",
+                 user="rhreader")
+```
+
+# Algorithmic "upfront" pricing
+
+Uber just introduced "upfront pricing for drivers" in Ontario, replacing time-and-distance rates with algorithmically-determined pay for each trip. There are many questions about upfront pricing: Is Uber using personal data to set the rates? Is it just a "rebalancing" as Uber reassuringly puts it?
+
+Chicago is one of the few cities to make ridehail data available. It does not include driver pay, but I thought I'd at least see what it can tell us about passenger fares, and in particular if it has anything to say about "upfront" fares.
+
+For the charts in this post, I used a data set taken from the Chicago Trips data sets ([2018--2022](https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips-2018-2022-/m6dm-c72p) and [2023--](https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips-2023-/n26f-ihde/about_data)). To get something of a reasonable size for experimenting, I downloaded the data for the first Thursday in the month, for every other month from the beginning of 2019 to August 2024.
+
+# Uber increased fares in 2021 and has kept them higher
+
+As prologue, here is a check on the overall level of fares over time. [@fig-trip-fare] shows the average fare for a trip, with ("Total Fare") and without additional charges such as the booking fee and tolls. Tips are not included. The trend for each is the same, so from here we can look at the fare without additional charges.
+
+The chart shows relatively constant fares from 2019 to the beginning of 2021, with an average of \$11.40 per trip, and a 50% higher fare for 2021 onwards, with an average of \$17.50 per trip. Even though this observation is based only on Chicago fares, the conclusion that Uber has increased fares overall is consistent with that described by [@lenshermanUberCEOHides2023] and [@smithHubertHoranCan2023].
+
+
+```{r}
+#| label: fig-trip-fare
+#| echo: false
+#| fig-cap: "Average fares per trip, with and without \"additional charges\""
+#| fig-scap: "Average fares"
+
+pickup_community_area_list = list(0)
+index = 0
+for(pickup_community_area in pickup_community_area_list){
+  index = index + 1
+  sql <- {"select pickup_community_area, 
+    model_date,
+  	-- cast(trip_count as numeric) as trip_count, 
+  	mean_total_fare as \"Average Total Fare\",
+  	mean_fare as \"Average Fare\"
+  	-- mean_trip_miles as \"Average Distance (miles)\",
+  	-- mean_trip_minutes as \"Average Time (mins)\" 
+  	--coeff_per_mile,
+  	--coeff_per_minute,
+  	--coeff_intercept,
+  	--rse
+  	from ridehail.trip_model
+  	where pickup_community_area = $1
+    and model_type = 'zero'"
+  } 
+  rs <- dbSendQuery(con,sql)
+  dbBind(rs, list(pickup_community_area))
+  tb_tmp <- as_tibble(dbFetch(rs, n=-1))
+  dbClearResult(rs)
+  if(index > 1){
+    tb <- union(tb, tb_tmp)
+  } else {
+    tb <- tb_tmp
+  }
+}
+
+#trip_count,coeff_per_mile,coeff_per_minute,coeff_intercept,rse,mean_trip_miles,mean_trip_minutes,mean_fare
+                 
+tb <- tb %>%
+  pivot_longer(!c(pickup_community_area, 
+                  model_date),
+               names_to="category", values_to="measure"
+               ) %>%
+  arrange(category)
+
+tb$category = factor(tb$category, 
+                     levels=c("Average Total Fare", "Average Fare"))
+  
+p <- ggplot(data=tb, 
+            mapping=aes(x=model_date, 
+                        y=measure, 
+                        colour=category))
+
+p +
+  geom_line() +
+  labs(x="Date", y="Fare ($/trip)") +
+  geom_smooth(data=tb %>% filter(model_date<as.Date("2021-01-01")), 
+              formula = y ~x, method="lm", se=FALSE, fullrange=FALSE, 
+              level=0.95, linetype=2) +
+  geom_smooth(data=tb %>% filter(model_date>as.Date("2021-01-01")), 
+              formula = y ~x, method="lm", se=FALSE, fullrange=FALSE,
+              level=0.95, linetype=2) +
+  theme(legend.position = "inside", 
+        legend.position.inside=c(0.2, 0.8),
+        legend.title=element_blank()) +
+  scale_y_continuous(limits=c(0, NA)) +
+  scale_colour_brewer(palette = "Dark2")
+```
+
+[@fig-trip-stats] shows that the 50% fare increase is not an artifact caused by longer trips, whether measured in distance or time. The average distance from 2021 onwards is a modest 7% higher than before, increasing from 5.9 to 6.3 miles (I would guess the small increase is a pandemic-induced fall-off in the number of short and slow downtown rush-hour trips.) Likewise, the average trip duration increased by only 9%. Gas prices have increased by \$1.50 per gallon in the Chicago area since 2020, and gas prices can cut significantly into drivers' net earnings, but the contribution to a typical 6-mile trip would be measured in cents rather than dollars.
+
+```{r}
+#| label: fig-trip-stats
+#| echo: false
+#| fig-cap: "Sample statistics for trips in Chicago"
+#| fig-scap: "Sample statistics"
+pickup_community_area_list = list(0)
+index = 0
+for(pickup_community_area in pickup_community_area_list){
+  index = index + 1
+  sql <- {"select pickup_community_area, 
+    model_date,
+  	-- cast(trip_count as numeric) as trip_count, 
+  	-- mean_total_fare as \"Average Total Fare ($)\",
+  	mean_fare as \"Average Fare ($)\",
+  	mean_trip_miles as \"Average Distance (miles)\",
+  	mean_trip_minutes as \"Average Time (mins)\" 
+  	--coeff_per_mile,
+  	--coeff_per_minute,
+  	--coeff_intercept,
+  	--rse
+  	from ridehail.trip_model
+  	where pickup_community_area = $1
+    and model_type = 'zero'"
+  } 
+  rs <- dbSendQuery(con,sql)
+  dbBind(rs, list(pickup_community_area))
+  tb_tmp <- as_tibble(dbFetch(rs, n=-1))
+  dbClearResult(rs)
+  if(index > 1){
+    tb <- union(tb, tb_tmp)
+  } else {
+    tb <- tb_tmp
+  }
+}
+
+#trip_count,coeff_per_mile,coeff_per_minute,coeff_intercept,rse,mean_trip_miles,mean_trip_minutes,mean_fare
+                 
+tb <- tb %>%
+  pivot_longer(!c(pickup_community_area, 
+                  model_date),
+               names_to="category", values_to="measure"
+               ) 
+
+p <- ggplot(data=tb, 
+            mapping=aes(x=model_date, 
+                        y=measure, 
+                        colour=as.factor(pickup_community_area)),
+                        fill=as.factor(pickup_community_area))
+
+p +
+  facet_wrap(vars(factor(category, levels=c("Average Fare ($)",
+                                            "Average Distance (miles)",
+                                            "Average Time (mins)",
+                                            "Average Total Fare ($)"))),
+             scales = "free_y") +
+  geom_line() +
+  labs(# title="Chicago ridehail trends",
+       x="Date",
+       y=NULL,
+       colour="Pickup Community Area") +
+  theme(legend.position="none") +
+  scale_y_continuous(limits=c(0, NA)) +
+  scale_colour_brewer(palette = "Dark2")
+```
+
+
+# Algorithmic pricing drove the fare increases
+
+Now let's start to look at upfront fares. In its early years, Uber set its fares based on a combination of time and distance. For example, a 6 mile, 18 minute trip with base rates of \$1 per mile and \$0.20 per minute would cost \$6 + \$3.60 = \$9.60. More recently, Uber moved away from this time-and-distance model and adopted "upfront" fares. The price for a trip is given "upfront", but the factors that set the price are hidden. "Upfront pricing" is not an all-or-nothing system: the inputs to the model and their importance may change over time as Uber refines and revises its pricing algorithms.
+
+Uber has promoted upfront pricing as a transparency move that enables peace of mind: "Before you request a ride, the app shows an estimated upfront price to your destination every time—so you can sit back and enjoy the trip" [@RidePricesRates].
+
+The charts here show only the fares paid by riders. Unfortunately, Chicago data does not include driver income so we cannot see directly how upfront pricing for riders affected driver income, or directly see impact of "upfront pricing for drivers", a separate initiative introduced to American cities including Chicago in September 2022 [@uberMoreTransparencyUpfront2022].
+
+For each recorded month of fares, I found the best-fit time-and-distance line. The best-fit per-mile and per-minute values for each date are shown in @fig-model-fit. The best-fit values show that the average fare increase has been driven primarily by an increase in the per-minute portion of the fare.
+
+@fig-model-fit also shows the difference between the best-fit fare and the actual fare for each trip (Residual Standard Error). You can think of this as, roughly, "the actual fare is likely to be the best-fit fare, plus or minus anything up to the residual standard error". The RSE increases from a average pre-2021 value of about \$3.60 per trip to a post-January-2021 average of \$8.50 per trip.
+
+This "RSE" is a measure of how much Uber has moved the price away from the time-and-distance baseline. Regardless of when Uber formally introduced upfront fares (and I cannot find a date for Chicago), the RSE is a measure of how aggressively Uber has implemented its upfront fare strategy.
+
+```{r}
+#| label: fig-model-fit
+#| echo: false
+#| fig-cap: "Best-fit time-and-distance fare components, and the residual error of the fit"
+#| fig-scap: "Best fit values"
+pickup_community_area_list = list(0)
+index = 0
+for(pickup_community_area in pickup_community_area_list){
+  index = index + 1
+  sql <- {"select pickup_community_area, 
+    model_date,
+  	-- cast(trip_count as numeric) as trip_count, 
+  	-- mean_trip_miles,
+  	-- mean_trip_minutes, 
+  	-- mean_fare as \"Average Fare\",
+  	coeff_per_mile as \"Best Fit Fare Per Mile\",
+  	coeff_per_minute as \"Best Fit Fare Per Minute\",
+  	-- coeff_intercept,
+  	rse as \"Residual Standard Error\"
+  	from ridehail.trip_model
+  	where pickup_community_area = $1
+    and model_type = 'zero'"
+  } 
+  rs <- dbSendQuery(con,sql)
+  dbBind(rs, list(pickup_community_area))
+  tb_tmp <- as_tibble(dbFetch(rs, n=-1))
+  dbClearResult(rs)
+  if(index > 1){
+    tb <- union(tb, tb_tmp)
+  } else {
+    tb <- tb_tmp
+  }
+}
+
+#trip_count,coeff_per_mile,coeff_per_minute,coeff_intercept,rse,mean_trip_miles,mean_trip_minutes,mean_fare
+                 
+tb <- tb %>%
+  pivot_longer(!c(pickup_community_area, 
+                  model_date),
+               names_to="category", values_to="measure"
+               ) 
+
+p <- ggplot(data=tb, 
+            mapping=aes(x=model_date, 
+                        y=measure, 
+                        colour=as.factor(pickup_community_area)),
+                        fill=as.factor(pickup_community_area))
+
+p +
+  facet_wrap(vars(category), scales="free_y") +
+  geom_line() +
+  #geom_smooth(method="lm", se=FALSE, fullrange=FALSE, level=0.95) +
+  labs(# title="Chicago ridehail model trends",
+       x="Date",
+       y="Value ($)",
+       colour="Pickup Community Area") +
+  theme(legend.position="none") +
+  scale_y_continuous(limits=c(0, NA)) +
+  scale_colour_brewer(palette = "Dark2")
+```
+
+@fig-model-fare-variability shows that the timing of the increase in RSE matches that of average fares. Best fit lines and error ribbons have been added for 2019--2020 and 2021--2024 time periods.
+
+The increase in RSE marks Uber's effective implementation of upfront fares: an increased decoupling of fares from a time-and-distance model. Implementation coincides exactly with the increase in average fares, strongly suggesting that the application of upfront fares accompanied the average fare increase. Despite Uber's "peace of mind" message, these results show that higher prices for riders arrived in tandem with the upfront fare move away from time-and-distance fares.
+
+If Uber is using upfront pricing for riders to increase fares, it is likely that it is also using upfront pricing for drivers to cut driver pay. Drivers in the USA have already claimed that their earnings have decreased over time, and analysis of data from third-party sources supports those claims [@lenshermanUberCEOHides2023]. Paying drivers different amounts for the same work amounts to "algorithmic pay discrimination" [@dubalAlgorithmic2023]: these results emphasize that it is not just a matter of paying some drivers more than others, it is a way to drive down Uber's overall commitment to drivers. Now Uber is introducing "upfront fares for drivers" in Canada, there is good reason to fear that it will reduce driver pay.
+
+```{r}
+#| label: fig-model-fare-variability
+#| echo: false
+#| fig-cap: "Fares and RSE variability"
+#| fig-scap: "Fare and variability"
+pickup_community_area_list = list(0)
+index = 0
+for(pickup_community_area in pickup_community_area_list){
+  index = index + 1
+  sql <- {"select pickup_community_area, 
+    model_date,
+  	-- cast(trip_count as numeric) as trip_count, 
+  	-- mean_trip_miles,
+  	-- mean_trip_minutes, 
+  	mean_fare as \"Average Fare ($)\",
+  	-- coeff_per_mile as \"Fare Per Mile ($)\",
+  	-- coeff_per_minute as \"Fare Per Minute ($)\",
+  	-- coeff_intercept,
+  	rse as \"Residual Standard Error ($)\"
+  	from ridehail.trip_model
+  	where pickup_community_area = $1
+    and model_type = 'zero'"
+  } 
+  rs <- dbSendQuery(con,sql)
+  dbBind(rs, list(pickup_community_area))
+  tb_tmp <- as_tibble(dbFetch(rs, n=-1))
+  dbClearResult(rs)
+  if(index > 1){
+    tb <- union(tb, tb_tmp)
+  } else {
+    tb <- tb_tmp
+  }
+}
+
+#trip_count,coeff_per_mile,coeff_per_minute,coeff_intercept,rse,mean_trip_miles,mean_trip_minutes,mean_fare
+                 
+tb <- tb %>%
+  pivot_longer(!c(pickup_community_area, 
+                  model_date),
+               names_to="category", values_to="measure"
+               ) 
+
+p <- ggplot(data=tb, 
+            mapping=aes(x=model_date, 
+                        y=measure, 
+                        colour=as.factor(pickup_community_area)),
+                        fill=as.factor(pickup_community_area))
+
+p <- p +
+  facet_wrap(vars(category), scales="free_y", ncol = 1) +
+  geom_line() +
+  geom_smooth(data=subset(tb, model_date<as.Date("2021-01-01")), 
+              formula = y ~x, method="lm", se=TRUE, fullrange=FALSE, 
+              level=0.95, linetype=2, linewidth=0.5) +
+  geom_smooth(data=subset(tb, model_date>as.Date("2021-01-01")), 
+              formula = y ~x, method="lm", se=TRUE, fullrange=FALSE,
+              level=0.95, linetype=2, linewidth=0.5) +
+  labs(#title="Chicago ridehail model trends: variability and average fare go together",
+       x="Date",
+       y="Value ($)",
+       colour="Pickup Community Area") +
+  theme(legend.position="none") +
+  scale_y_continuous(limits=c(0, NA)) +
+  scale_colour_brewer(palette = "Dark2")
+
+# (p / p_operations) + plot_layout(heights=c(2,1))
+p
+```
+
+```{=html}
+<!--
+# Upfront pricing and Uber's road to operating profit
+
+Operating profit or loss is, roughly, the everyday revenue of a company minus the everyday cost of running the company (so leaving out things like interest and investments). @fig-uber-operations is a chart of Uber's operating profit/loss, showing a steady improvement from 2021 onwards, beginning at the same time upfront pricing for riders was introduced in the USA (which makes up roughly half of Uber's revenue).
+-->
+```
+```{r}
+#| label: fig-uber-operations
+#| include: false
+#| fig-cap: Uber's operation profit/loss balance from 2019--2024
+
+ops <- c(-1.03,-5.49, -1.11, -0.97, -1.26, -1.61,
+         -1.12, -0.88, -1.52, -1.19, -0.57, -0.55,
+         -0.48, -0.71, -0.50, -0.14, -0.26, 0.33,
+         0.39,  0.65,  0.17,  0.80 )
+quarter_end <- c("2019-04-01","2019-07-01","2019-10-01","2020-01-01",
+              "2020-04-01","2020-07-01","2020-10-01","2021-01-01","2021-04-01",
+              "2021-07-01","2021-10-01","2022-01-01","2022-04-01","2022-07-01",
+              "2022-10-01","2023-01-01","2023-04-01","2023-07-01","2023-10-01",
+              "2024-01-01","2024-04-01","2024-07-01")
+tb_ops <- tibble(quarter_end=quarter_end, ops=ops) %>% mutate(quarter_end=as.Date(quarter_end) - 1)
+
+p <- ggplot(data=tb_ops %>% filter(ops > -2), 
+            mapping=aes(x=quarter_end, 
+                        y=ops, 
+                        colour="dummy"))
+
+p_operations <- p +
+  geom_line(data=tb_ops%>% filter(quarter_end > "2019-09-01")) +
+  geom_point() +
+  labs(#title="Uber profit or loss from operations",
+       x="Date",
+       y="Uber profit from operations ($B)",
+       caption="A loss of $5.5B in Q2 2019 is omitted") +
+  theme(legend.position="none") +
+  scale_y_continuous(limits=c(-2, NA)) +
+  scale_colour_brewer(palette = "Dark2")
+p_operations
+```
+
+# Algorithmically-targeted surcharges: the case of location
+
+Uber has said that upfront prices depend on factors beyond time and distance. The public data available does not include personal factors, but it does include location data. By comparing the prices for different locations to the best-fit time-and-distance model we can see whether location is being used as a factor. In other words, "are different community areas treated differently?"
+
+@fig-community-area-map shows that a small number of community areas have trip prices significantly above what would be expected from the time-and-distance model. (Trips are identified by the community area where pickup happens). They fall into two categories:
+
+-   Central areas (8, 28, 32, 33). These are high-traffic areas (large dots) in central Chicago, where average trip distances are short (to the left of the plot @fig-community-area-map (b)). Because trips are short, Uber has already raised prices here relative to the pre-Upfront "rate card" prices. But in these areas there is an additional price hike: it is essentially a permanent surge pricing for riders in these areas, although unlike surge pricing only Uber knows whether it passes the price increase on to drivers.
+
+-   Airports (56, 76). Community area 76 is O'Hare airport, and area 56 is the older Midway airport. Trips from here are generally longer than average (to the right of the plot), but are marked up from the time-and-distance model. Again, there is no way to know whether the elevated prices are passed on to drivers.
+
+This is just one way in which Uber is using upfront algorithmic prices to segment the ride-hail market into different, smaller markets where they can test out how high they can set their prices without losing too many riders, and how low they can set pay without losing too many drivers.
+
+```{r}
+#| label: fig-community-area-map
+#| echo: false
+#| fig-cap: "Deviations from time-and-distance pricing by community area (June 2024)"
+#| fig-scap: "Deviations from time-and-distance"
+# From https://thisisdaryn.netlify.app/post/intro-to-making-maps-with-ggplot2/#using-read_sf-to-read-in-a-geojson-file
+
+this_year = 2024
+this_month = 6
+label_cutoff = 1.5
+
+sql <- {"select F.year, F.month,
+  F.pickup_community_area, 
+  CA.name,
+  cast(count(*) as decimal) as trips, 
+  avg(fare) as mean_fare, 
+  avg(trip_miles) as mean_miles, 
+  avg(trip_minutes) as mean_minutes, 
+  avg(fare - (coeff_per_mile * trip_miles + coeff_per_minute * trip_minutes + coeff_intercept)) as deviation
+from ridehail.trip_fares F 
+inner join ridehail.community_area CA
+  on F.pickup_community_area = CA.id
+inner join ridehail.trip_model M
+  on F.year = M.year and F.month = M.month
+where M.model_type = 'lm' and M.pickup_community_area = 0
+and F.year = $1 and F.month = $2
+group by F.year, F.month, F.pickup_community_area, CA.name
+having count(*) > 100
+order by deviation desc;"}
+
+rs <- dbSendQuery(con,sql)
+dbBind(rs, list(this_year, this_month))
+tb <- as_tibble(dbFetch(rs, n=-1))
+dbClearResult(rs)
+
+tbp <- tb %>% 
+  # filter(year==this_year, month==this_month) %>%
+  mutate(this_date=as.Date(sprintf("%s-%s-01", year, month)),
+         area_num_1 = as.character(pickup_community_area)) %>%
+  mutate(map_label=ifelse(deviation > label_cutoff, area_num_1, "")) 
+
+map <- read_sf("https://raw.githubusercontent.com/thisisdaryn/data/master/geo/chicago/Comm_Areas.geojson") 
+
+trips_map <- left_join(map, tbp, by = "area_num_1") %>%
+  pivot_longer(c(mean_fare, mean_miles, mean_minutes, deviation), 
+               names_to="category", 
+               values_to="measure") %>%
+  filter(category == "deviation")
+
+p_map <- ggplot(data=trips_map, 
+            mapping=aes(fill=measure)) 
+
+p_map <- p_map + 
+  geom_sf() +
+  geom_sf_text(aes(label = map_label)) +
+  labs(fill="Deviation\n($/trip)") +
+  scale_fill_continuous(low = "ivory", high = "#1b9e77") +
+  theme_map() 
+
+
+tbp <- tb %>% 
+  filter(year==this_year, month==this_month) %>% 
+  mutate(deviation_scale = deviation * as.numeric(trips))
+
+p_dist <- ggplot(data=tbp, 
+            mapping=aes(x=mean_miles, 
+                        y=deviation, 
+                        colour="dummy",
+                        fill="dummy",
+                        size=trips))
+
+highlight <- tbp %>% filter(deviation > label_cutoff)
+
+p_dist <- p_dist +
+  geom_point() +
+  geom_hline(yintercept=0, colour="darkgrey") +
+  theme(legend.position="none") +
+  labs(caption="Dot size shows the number of trips",
+       x="Average trip distance (miles)",
+       y="Deviation ($/trip)") +
+  geom_text(data=highlight, label=highlight$pickup_community_area, size=4, vjust=2, colour="black") +
+  # theme(legend.title=element_blank()) +
+  scale_colour_brewer(palette="Dark2") +
+  scale_fill_brewer(palette="Dark2")
+
+( p_map | p_dist) +
+  # plot_layout(ncol=2) + 
+  plot_annotation(tag_levels = "a")
+```
+
+# Why algorithmic prices matter
+
+While "RSE" may measure the deviation from a time-and-distance model, and although it has accompanied and probably caused an increase in the average fare, RSE is a separate measure to the average best-fit fare. The fare a rider can expect to pay is, roughly, the average fare "plus or minus" the RSE. It is tempting to wonder: if the RSE is independent of the average, and if some riders pay less than the average even as others pay more, does the variability of pricing as measured by the RSE, actually matter in and of itself? The answer is "yes".
+
+In a competitive market, companies have to lower their prices to meet those of the competition. The ideal result is that prices are lowered so that supply meets demand. Some consumers would be prepared to pay more than this price (the Demand line) and so there is a large "consumer surplus" -- the area in red in @fig-supply-demand (a).
+
+In the absence of competition, a monopolist can set its own prices. The result is shown in @fig-supply-demand (b). A monopolist may lose a few customers who are not able or prepared to pay the higher price, but the extra money it gains from the higher prices the remaining consumers pay makes it worth the monopolist's while. Meanwhile, the consumer surplus shrinks. Competition law exists, in part, to protect consumers from this kind of monopoly behaviour.
+
+Uber and other platform companies look to go beyond what normal monopolists can do, as shown in @fig-supply-demand-2 (b). By fine-tuning prices for each trip, they can make the most out of each transaction: set a high price for those trips where the rider is prepared to pay, and set a lower price to keep those who would not be prepared to pay the higher average fare. By simply presenting the price "upfront", consumers do not know where they have been placed on this range.
+
+```{r}
+#| label: fig-supply-demand
+#| echo: FALSE
+#| fig-cap: Monopolists (b) can take more of the surplus from transactions than companies in a competitive market (a).
+#| 
+f_supply <- function(x){
+  x
+}
+f_demand <- function(x){
+  10 - x
+}
+mydata <- data.frame(x=seq(0, 7, 0.5))
+mydata <- data.frame(x=seq(0, 7, 0.5),
+                    supply = sapply(mydata$x, FUN = f_supply),
+                    demand = sapply(mydata$x, FUN = f_demand))
+
+
+label_size=3
+title_size=4
+
+p_competition <-  ggplot(mydata, aes(x=x)) + xlim(0, 7)
+
+p_competition <- p_competition + 
+  annotate("label", x = 3.5, y = 10, label = "Competitive", size=title_size) +
+  geom_function(fun = f_supply) +
+  geom_function(fun = f_demand) + 
+  labs(x="Quantity", y="Price") +
+  geom_ribbon(data=subset(mydata, x<=5), 
+              aes(ymin=5, ymax=demand), fill="#1b9e77", alpha=0.2,) + 
+  geom_ribbon(data=subset(mydata, x<=5), 
+              aes(ymin=supply, ymax=5), fill="#d95f02", alpha=0.2,) + 
+  annotate("segment", x = 0, y = 5, xend = 5, yend = 5, linetype="dashed", colour="#5c5c5c") +
+  annotate("segment", x = 5, y = 0, xend = 5, yend = 5, linetype="dashed", colour="#5c5c5c")  +
+  annotate("text", x = 6, y = 3, label = "Demand", size=label_size) + #, label.size=0) +
+  annotate("text", x = 6, y = 7, label = "Supply", size=label_size) +
+  # annotate("label", x = 5, y = 5, hjust="left", label = "Competition", colour="red") +
+  annotate("text", x = 0.25, y = 6, hjust="left", label = "Consumer\nsurplus", size=label_size, colour="#0a523e") +
+  annotate("text", x = 0.25, y = 4, hjust="left", label = "Producer\nsurplus", size=label_size, colour="#321000") +
+  theme(axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank())
+
+p_monopoly <-  ggplot(mydata, aes(x=x, y = supply)) + xlim(0, 7)
+
+p_monopoly <- p_monopoly + 
+  annotate("label", x = 3.5, y = 10, label = "Monopoly", size=title_size) +
+  geom_function(fun = f_supply) +
+  geom_function(fun = f_demand) + 
+  labs(x="Quantity", y="Price") +
+  geom_ribbon(data=subset(mydata, x<=2.5), 
+              aes(ymin=7.5, ymax=demand), fill="#1b9e77", alpha=0.2,) +
+  geom_ribbon(data=subset(mydata, x<=2.5), 
+              aes(ymin=supply, ymax=7.5), fill="#d95f02", alpha=0.2,) + 
+  annotate("segment", x = 0, y = 7.5, xend = 2.5, yend = 7.5, linetype="dashed", colour="#5c5c5c") +
+  annotate("segment", x = 2.5, y = 0, xend = 2.5, yend = 7.5, linetype="dashed", colour="#5c5c5c")  +
+  annotate("text", x = 6, y = 3, label = "Demand", size=label_size) + #, label.size=0) +
+  annotate("text", x = 6, y = 7, label = "Supply", size=label_size) +
+  # annotate("label", x = 2.5, y = 7.5, hjust="left", label = "Monopoly", colour="blue") +
+  annotate("text", x = 0.25, y = 8.5, hjust="left", label = "Consumer surplus", size=label_size, colour="#0a523e") +
+  annotate("text", x = 0.25, y = 5, hjust="left", label = "Producer\nsurplus", size=label_size, colour="#321000") +
+  theme(axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank())
+
+p_competition + p_monopoly +
+  # plot_layout(ncol=2) + 
+  plot_annotation(tag_levels = "a")
+```
+
+```{r}
+#| label: fig-supply-demand-2
+#| echo: false
+#| fig-cap: Monopolies who can unbundle their prices (b), like Uber, can take even more of the surplus than traditional monopolies (a).
+p_uber <-  ggplot(mydata, aes(x=x, y = supply)) + xlim(0, 7)
+
+p_uber <- p_uber + 
+  annotate("label", x = 3.5, y = 9.5, label = "Unbundled\nmonopoly", size=title_size) +
+  geom_function(fun = f_supply) +
+  geom_function(fun = f_demand) + 
+  labs(x="Quantity", y="Price") +
+  geom_ribbon(data=subset(mydata, x<=5), 
+              aes(ymin=supply, ymax=demand), fill="#d95f02", alpha=0.2,) + 
+  annotate("segment", x = 0, y = 9.9, xend = 5, yend = 4.9, linetype="dashed", colour="#5c5c5c") +
+  #annotate("segment", x = 2.5, y = 0, xend = 2.5, yend = 7.5, linetype="dashed")  +
+  annotate("text", x = 6, y = 3, label = "Demand", size=label_size) +
+  annotate("text", x = 6, y = 7, label = "Supply", size=label_size) +
+  # annotate("label", x = 2.5, y = 7.5, hjust="left", label = "Monopoly", colour="blue") +
+  #annotate("label", x = 0.25, y = 8.5, hjust="left", label = "Consumer surplus") +
+  annotate("text", x = 0.25, y = 5, hjust="left", label = "Producer\nsurplus", size=label_size, colour="#321000") +
+  theme(axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank())
+
+p_monopoly + p_uber +
+  plot_annotation(tag_levels = "a")
+
+```
+
+# Conclusions
+
+Uber's adoption of upfront fares for riders in Chicago increased the average fare for riders. Despite Uber's presentation of upfront fares as delivering "peace of mind" and "predictability", they have been used to charge consumers more, to Uber's own benefit. Uber's ability to raise prices is typical of monopolists within a market.
+
+The ability to fine-tune prices in a trip-by-trip manner shows that Uber has not only displayed monopolistic price-setting behaviour, but has increased its revenue from each transaction beyond what "normal" monopolists can take. This is a reason for the Competition Bureau to investigate Uber's pricing activities.
+
+While Chicago data tells us only about "upfront pricing for riders", the results raise a red flag as "upfront pricing for drivers" comes to Canada. Will this algorithmic payment be used to cut driver pay, as "upfront pricing for riders" has been used to increase rider fares? Reports of driver earnings cuts in American cities where upfront pay has been introduced suggest it already has been.
+
+# References
+
+::: {#refs}
+:::

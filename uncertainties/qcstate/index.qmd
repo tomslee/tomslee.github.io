@@ -1,9 +1,9 @@
 ---
-title: "Quantum Computing in Flux"
+title: "State of Quantum Computing Notes"
 author: 
 - name: "Tom Slee"
   email: "slee.tom@gmail.com"
-draft: true
+draft: false
 date: last-modified
 published-title: Last updated
 categories:
@@ -14,6 +14,7 @@ description: >
 # formatting
 toc: true
 toc-title: Contents
+toc-depth: 2
 reading-time: true
 number-sections: true
 callout-appearance: simple
@@ -23,7 +24,7 @@ fig-cap-location: bottom
 format-links: pdf
 # reference-location: margin
 image: images/clipboard-3934556282.png
-# bibliography: QC.bib
+bibliography: references.bib
 comments:
     hypothesis: true
 format:
@@ -38,9 +39,9 @@ format:
       colorlinks: true
       output-file: "qcstate"
       output-ext:  "pdf"
-      mainfont: "CharterBT-Roman"
+      # mainfont: "CharterBT-Roman"
       fontsize: 12pt
-      linestretch: 1.1
+      # linestretch: 1.1
       keep-tex: true  
       template-partials:
       - ../../title.tex
@@ -49,27 +50,155 @@ format:
       - left=30mm
       - heightrounded
       include-in-header:
-        text: |
-          \newfontfamily\sectionfont[Color=MidnightBlue]{Latin Modern Sans}
-          \newfontfamily\subsectionfont[Color=MidnightBlue]{Latin Modern Sans}
-          \newfontfamily\subsubsectionfont[Color=MidnightBlue]{Latin Modern Sans}
-          \addtokomafont{section}{\sectionfont}
-          \addtokomafont{subsection}{\subsectionfont}
-          \addtokomafont{subsubsection}{\subsubsectionfont}
+       text: |
+         \newfontfamily\sectionfont[Color=MidnightBlue]{RobotoCondensed-Regular}
+         \newfontfamily\subsectionfont[Color=Brown]{RobotoCondensed-Regular}
+         \newfontfamily\subsubsectionfont[Color=MidnightBlue]{RobotoCondensed-Regular}
+         \addtokomafont{section}{\sectionfont}
+         \addtokomafont{subsection}{\subsectionfont}
+         \addtokomafont{subsubsection}{\subsubsectionfont}
 ---
 
-# Quantum Computing: Industry or Discipline?
+```{r}
+#| label: setup
+#| include: false
+librarian::shelf(tidyverse, gt)
+```
 
-what is it.
+# Quantum Computing: modality by modality
 
-# What's Going On?
+Limited to gate-based quantum computing companies.
 
-some more text
+| Company       | Modality          | Section              |
+|---------------|-------------------|----------------------|
+| Atom          | Neutral atom (Sr) | [-@sec-atom]         |
+| QuEra         | Neutral atom (Rb) | [-@sec-quera]        |
+| PsiQuantum    | Photonics         | [-@sec-psiquantum]   |
+| Xanadu        | Photonics         | [-@sec-xanadu]       |
+| D-Wave        | Simulation        |                      |
+| Google        | Superconductor    | [-@sec-google]       |
+| IBM           | Superconductor    | [-@sec-ibm]          |
+| Rigetti       |                   |                      |
+| Microsoft     | Topological       |                      |
+| ionQ          | Trapped Ion (Yb)  | [-@sec-ionq]         |
+| Oxford Ionics | Trapped Ion       | [-@sec-oxfordionics] |
+| Quantinuum    | Trapped Ion (Yb)  | [-@sec-quantinuum]   |
+| Diraq         |                   |                      |
 
-## Heading 2
+: Quantum computing companies, and the modalities they use {#tbl-qc-companies tbl-colwidths="\[40,40,20\]" .striped}
 
-and more text
+# Superconducting qubits
 
-### Heading 3
+## Google {#sec-google}
 
-and finish.
+## IBM {#sec-ibm}
+
+# Photonics
+
+## PsiQuantum {#sec-psiquantum}
+
+[PsiQuantum](https://www.psiquantum.com/): "Building the world’s first useful quantum computer"
+
+## Xanadu {#sec-xanadu}
+
+# Trapped Ions
+
+## IonQ {#sec-ionq}
+
+IonQ uses Ytterbium (Yb) trapped ions, although it is also experimenting with Barium ions (Ba).
+
+## Oxford Ionics {#sec-oxfordionics}
+
+Like IonQ and Quantinuum, Oxford Ionics uses trapped ions, but it [makes an interesting claim](https://www.oxionics.com/tech) about IonQ and Quantinuum's use of lasers to control the qubits:
+
+> Until now, trapped ion-computers have largely relied on lasers to control the qubits. This approach performs well for small processors, but becomes untenable and error-prone as the size of the processor scales, and the number of qubits increases.
+
+Oxford Ionics approach is described in [@loschnauerScalableHighfidelityAllelectronic2024]. Co-founder Chris Ballance [says](https://innovation.ox.ac.uk/news/oxford-ionics-and-the-race-towards-quantum-computers/): "ours are controlled using electronics integrated into silicon chips. These chips are built at a large semiconductor foundry alongside those we use in our laptops and mobile phones. The difference is that our chips control individual atoms for quantum computing. They’re doing this an order of magnitude better than any other system on the market."
+
+## Quantinuum {#sec-quantinuum}
+
+[Quantinuum](https://quantinuum.com) uses a trapped ion modality and, at least as of October 2024, [claims](https://www.quantinuum.com/products-solutions/system-model-h2-series) that its System Model H2 is "the most powerful quantum computer in the world". Specifically, the [qubits in H2](https://arxiv.org/pdf/2406.02501) are each encoded in the hyperfine states of $^{171}Yb^+$ ion.
+
+Quantinuum's research is described in [@decrossComputationalPowerRandom2024].
+
+![Quantinuum's claims for its System H2 computer](images/clipboard-3339676893.png){#fig-quantinuum-most-powerful width="40%"}
+
+### Quantinuum roadmap
+
+In a September 2024 blog post, Quantinuum [claims](https://www.quantinuum.com/blog/technical-perspective-by-the-end-of-the-decade-we-will-deliver-universal-fault-tolerant-quantum-computing) that "by the end of the decade, we will deliver universal, fully fault-tolerant quantum computing" and present the roadmap shown in @fig-quantinuum-roadmap.
+
+![Quantinuum roadmap, as of October 2024](./images/clipboard-3612023931.png){#fig-quantinuum-roadmap}
+
+### Microsoft agreement 2024
+
+On April 3 2024, [Quantinuum](https://www.quantinuum.com/press-releases/quantinuum-and-microsoft-announce-new-era-in-quantum-computing-with-breakthrough-demonstration-of-reliable-qubits) and [Microsoft](https://azure.microsoft.com/en-us/blog/quantum/2024/04/03/how-microsoft-and-quantinuum-achieved-reliable-quantum-computing/) announced a partnership and also, in Microsoft's words, "a critical breakthrough that advances the field of quantum computing by improving the logical error rate by 800x when compared to the error rate on corresponding physical qubits, thus creating the most reliable logical qubits to date."
+
+### Logical error rate advance 2024
+
+Quantinuum and Microsoft announced an improvement in quantum computing reliability based on Quantinuum's trapped ion computers [@dasilvaDemonstrationLogicalQubits2024].
+
+# Neutral atoms
+
+## Atom Computing {#sec-atom}
+
+[Atom Computing](https://atom-computing.com/) "builds highly scalable, gate-based quantum computers with arrays of optically-trapped neutral atoms, which will empower unprecedented breakthroughs." It uses strontium atoms (Sr), cooled, trapped and controlled with lasers. The energy gap needed to create a qubit is a change in the spin of the strontium nucleus. The benefits, it claims, are "[effectively-infinite](https://atom-computing.com/establishing-world-record-coherence-times-on-nuclear-spin-qubits-made-from-neutral-atoms/)" long coherence times (accompanied by long T1 spin-relaxation times).
+
+Atom [presents](https://atom-computing.com/quantum-computing-technology/) the benefits of their neutral atom approach as follows:
+
+- Massive scalability: Neutral atom qubits, held only microns apart with focused laser light, lack electrical charge and can be tightly packed into an array. The atomic array can be expanded to thousands or millions of qubits without substantially changing the overall footprint of the system.
+- Fidelity: Neutral atoms are intrinsically identical, have been extensively characterized, and present no fundamental physics obstacles to achieving sufficiently high fidelity to enable fault tolerance at scale.
+- Reduced complexity: All of the control functions of neutral atom qubits are mediated by light propagating through free space rather than individual electrical cables attached to each qubit.
+- Long coherence: The closed outer electron shell of alkaline-earth metal atoms provides insensitivity to environmental perturbations, enabling our qubits to achieve >40 second coherence times.
+
+Each of these is, of course, also a criticism of alternative approaches, which in turn present criticisms of Atom's technology. For example, QuEra claim the ability to achieve shorter circuit depths by implementing native multi-qubit gates such as the Toffoli gate (which is basically an AND gate). Presumably if Atom could implement these, it would say so.
+
+## QuEra {#sec-quera}
+
+[QuEra](https://www.quera.com/) uses a "neutral atom" modality (although it also hedges its bets with an analogue approach to quantum computing, which I'm not considering here). According to its [platform description](https://www.quera.com/neutral-atom-platform), it uses rubidium atoms (Rb), positioned and cooled to nearly absolute zero by lasers. The energy gap needed to create a qubit is not a spin flip of the nucleus, but is an excitation of an electron to a Rydberg state (although it says many electronic states are available: perhaps it uses others?) and claim that this yields "huge coherence times exceeding one second".
+
+To implement gates, it claims this:
+
+> The interaction mechanism between Rydberg atoms is known as the 'van der Waals' interaction, which originates from the strong dipole moments of the expanded atoms. This interaction diminishes with the sixth power of the interatomic distance, implying that atoms interact intensely only when they are in close proximity. In fact, this interaction can become so powerful that it can induce the 'Rydberg blockade' effect, whereby no two adjacent atoms can be excited simultaneously. This mechanism enables the implementation of conditional quantum logic and two-qubit gates...
+
+> Unlike most quantum computers that can only implement native 1-qubit and 2-qubit gates, the Rydberg blockade mechanism facilitates the development of native multi-qubit gates \[such as the Toffoli gate\]... . By natively encoding these multi-qubit gates, the circuit depth of the algorithm can be substantially reduced, thereby significantly mitigating errors. A prime example of this is the constant-depth implementation of Shor’s algorithm.
+
+### Roadmap
+
+On its [roadmap page](https://www.quera.com/our-quantum-roadmap) QuEra promotes a "hybrid approach":
+
+> Most quantum computing prototypes today are small and susceptible to errors with little evidence for broad business advantage. Utility-scale gate-based quantum computers with millions of qubits are 5-10 years away. The path to useful quantum computing clearly requires going beyond finer engineering: a reimagination of approach and technology is necessary. That's why we chose a hybrid analog and digital approach: analog quantum computing that can deliver value today, followed by a high-performance digital mode that provides the ultimate flexibility and quantum advantage.
+
+As of October 18, 2024 its roadmap says this:
+
+1.  Quantum Value Creation Today. Solving hard problems at the edge of computation with
+    -   256 entangled qubits. Coherence throughout the full computation.
+    -   Field-programmable qubit arrays (FPQA™): Programmable connectivity of near-arbitrary qubit layout configurations
+2.  Early quantum error correction. Flexible features for low gate overhead:
+    -   Logical qubits: Allow for detection and correction of errors
+    -   Gate-based operations: Allowing universal utility
+    -   Native multi-qubit gates: For low gate overhead and flexible design
+    -   Long coherence: Allowing longer and reliable quantum calculations
+    -   Field-programmable qubit arrays (FPQA™): Programmable connectivity of near-arbitrary qubit layout configurations
+3.  Large-scale fault-tolerance: A modular design for the scalability of neutral atoms
+    -   Efficient error correction through controlled interactions
+    -   Scalable control based on photonic integrated circuits
+    -   Small footprint: 10,000's of atoms in a mm\^2
+    -   Quantum advantage: Go where no classical machine can go
+
+There are no dates associated with any of these statements.
+
+### Google investment 2024
+
+On October 15, 2024, Quera [announced](https://www.quera.com/press-releases/quera-computing-announces-investment-from-key-strategic-partner-to-accelerate-development-of-large-scale-fault-tolerant-quantum-computers) an investment by Google.
+
+### Error correction advance 2023
+
+The 2023 publication [@bluvsteinLogicalQuantumProcessor2023] by "a Harvard/MIT/QuEra team led by Misha Lukin and Vlad Vuletic" (Scott Aaronson), which showed improved error correction, was widely seen as a significant advance.
+
+> These experiments demonstrate key ingredients of scalable error correction and quantum information processing with logical qubits... Future work can explore whether these methods can be generalized, for example, to more robust, higher-distance codes and if such highly entangled, non-Clifford states could be used in practical algorithms... Our observations open the door for exploration of large-scale logical qubit devices.
+
+Scott Aaronson [commented](https://scottaaronson.blog/?p=7651) [@aaronsonStaggeringQuantumFaulttolerance2023]:
+
+> I think it’s plausibly the top experimental quantum computing advance of 2023 (coming in just under the deadline!). We clearly still have a long way to go until “actually useful” fault-tolerant QC, which might require thousands of logical qubits and millions of logical gates. But this is already beyond what I expected to be done this year, and (to use the AI doomers' lingo) it \`\`moves my timelines forward'' for quantum fault-tolerance. It should now be possible, among other milestones, to perform the first demonstrations of Shor's factoring algorithm with logically encoded qubits (though still to factor tiny numbers, of course).
+
+# References

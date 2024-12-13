@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Tom Slee">
-<meta name="dcterms.date" content="2024-10-16">
+<meta name="dcterms.date" content="2024-10-18">
 <meta name="description" content="…as plainly as I can, attempt 0.1">
 
 <title>Yet Another Introduction to Quantum Computing – Tom Slee</title>
@@ -246,7 +246,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Last updated</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 16, 2024</p>
+        <p class="date">October 18, 2024</p>
       </div>
     </div>
     
@@ -352,7 +352,7 @@ Figure&nbsp;3: A CNOT gate (conditional NOT) which flips the state of the target
 </figcaption>
 </figure>
 </div>
-<p>Again, if this were a classical computing gate, the “bits” would be charges travelling along wires, going in to the gate from the left and out on the right. But in quantum computing the gate is not a feature of a circuit etched into a chip. It’s an operation—a combination of laser or microwave pulses that changes the state of the qubits from a before state (on the left) to an after state (on the right)—and the qubits stay in place.</p>
+<p>Again, if this were a classical computing gate, the “bits” would be charges travelling along wires, going in to the gate from the left and out on the right. But in quantum computing the gate is not a feature of a circuit etched into a chip. It’s an operation—a combination of laser or microwave pulses that changes the state of the qubits from a before state (on the left) to an after state (on the right)—and the qubits stay in place.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>Before moving on, I should mention one gate you will see all the time in quantum computing, but not in classical computing. It’s called the Hadamard gate. If you prepare an input qubit in state <span class="math inline">\(| \uparrow \rangle\)</span> then a Hadamard gate puts it into a superposition of states. Many circuits start with Hadamard gates way to take advantage of this superposition. I just mention this because it is useful and ubiquitous, and also because it is needed in the next section.</p>
 <div id="fig-hadamard" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A Hadamard gate takes a pure state as input and converts it into a superposition of states">
 <figure class="quarto-float quarto-float-fig figure">
@@ -388,7 +388,7 @@ Figure&nbsp;5: A circuit for a quantum Fourier transform. Source: Wikimedia Comm
 <p>But once I realised that a circuit is not a permanent thing but is instead a sequence of operations (gates) that implement an algorithm, then I realised it’s not a contradiction at all.</p>
 <p>Perhaps I’m belabouring this point, but for some reason, many introductions to quantum computing seem to skip over this difference between regular electrical circuits, and “quantum circuits”. I read several before I realized what was going on.</p>
 <p>So are quantum computers general purpose? Well yes and no. Formally, they are. That is, there is a set of gates (different to the gates for classical computing) which satisfy the requirements for Turing completeness. So that’s nice.</p>
-<p>But what about “general purpose” in the more everyday, practical sense? Let’s go back to how you build quantum computers. No matter what approach you take, the set of qubits must exist in what is called a single “quantum state”, and quantum states fall apart or “decohere” if they interact with the wider world, so they have to be isolated. Also, thermal energy (which is just one form of interaction with the wider world, of course) will jiggle these qubits among the states and you can’t have that, so quantum computers have to be operated at very low temperatures, meaning about 1K.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>But what about “general purpose” in the more everyday, practical sense? Let’s go back to how you build quantum computers. No matter what approach you take, the set of qubits must exist in what is called a single “quantum state”, and quantum states fall apart or “decohere” if they interact with the wider world, so they have to be isolated. Also, thermal energy (which is just one form of interaction with the wider world, of course) will jiggle these qubits among the states and you can’t have that, so quantum computers have to be operated at very low temperatures, meaning about 1K.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p>This fragility of quantum states has consequences:</p>
 <ul>
 <li><p>You won’t, in the foreseeable future, have a quantum computing laptop. Quantum computers need cooling and will be built in fixed locations.</p></li>
@@ -449,7 +449,7 @@ Figure&nbsp;6: Quantum computers are most likely to be made available as cloud s
 <p><span class="math display">\[
 | \psi \rangle = \alpha | \uparrow \rangle + \beta | \downarrow \rangle
 \]</span></p>
-<p>The <span class="math inline">\(| \uparrow \rangle\)</span> and <span class="math inline">\(| \downarrow \rangle\)</span> states, which are the only possible outcomes of measurement, are called <em>eigenstates</em> or, sometimes, <em>basis states</em> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. The coefficients <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> are <em>probability amplitudes</em>, meaning that in any measurement of the state of <span class="math inline">\(| \psi \rangle\)</span> the probability of seeing state <span class="math inline">\(|\uparrow \rangle\)</span> is <span class="math inline">\(\alpha^2\)</span> and the probability of seeing state <span class="math inline">\(| \downarrow \rangle\)</span> is <span class="math inline">\(\beta^2\)</span>. Sometimes these are also called <em>phases</em>. This is something you just have to take on trust unless you want to dive properly into quantum mechanics.</p>
+<p>The <span class="math inline">\(| \uparrow \rangle\)</span> and <span class="math inline">\(| \downarrow \rangle\)</span> states, which are the only possible outcomes of measurement, are called <em>eigenstates</em> or, sometimes, <em>basis states</em> <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. The coefficients <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> are <em>probability amplitudes</em>, meaning that in any measurement of the state of <span class="math inline">\(| \psi \rangle\)</span> the probability of seeing state <span class="math inline">\(|\uparrow \rangle\)</span> is <span class="math inline">\(\alpha^2\)</span> and the probability of seeing state <span class="math inline">\(| \downarrow \rangle\)</span> is <span class="math inline">\(\beta^2\)</span>. Sometimes these are also called <em>phases</em>. This is something you just have to take on trust unless you want to dive properly into quantum mechanics.</p>
 <p>Some influential descriptions say that quantum computers carry out many calculations in parallel, and this notion of superposition is where the idea of quantum parallelism comes from: that you can act on <span class="math inline">\(| \uparrow \rangle\)</span> and <span class="math inline">\(| \downarrow \rangle\)</span> at the same time because the qubit is in a superposition of states. You may even have heard some people talk about “many worlds” interpretations of quantum mechanics in which qubits are simultaneously “computing” each possible value of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> in different universes.</p>
 <p>I really think it is best to put these aside as unnecessary (and unjustified) science-fiction-inspired enthusiasms. Practically, from what I can see, superposition alone does not deliver massive parallelism. First, the qubit is not “in both states at once”, it is in one state with one probability, and the other state with a different probability, and in any measurement you only ever see either one of the two eigenstates <span class="math inline">\(| 0 \rangle\)</span> or <span class="math inline">\(| 1 \rangle\)</span>: you can only ever get one bit of information out of qubit. (This is far from an original observation.)</p>
 <p>The second quantum phenomenon is <em>interference</em>, and here things get more messy. First, there is the notion of a quantum “state”: a system is only “in a (pure) quantum state” if it is isolated from the rest of the world. So quantum computing requires that the whole array of qubits be represented by a single quantum state. But the requirement is stronger than that: individual qubits have to be isolated from each other except when subjected to the operations of a gate. And the operations of a gate must be able to address pairs of qubits in such a way that none of the other qubits are touched, but the two addressed make up a pure quantum state. Under these circumstances, the two qubits interfere with each other, and so become, as they say, entangled. For example, here is a two-particle state called a “Bell state”. The individual qubits may be spin up or spin down, and the very fact that we can write a state vector for the two qubits implies that they are effectively isolated from other qubits. But if you measure one of them, you know the second.</p>
@@ -578,8 +578,9 @@ Figure&nbsp;8: Are there problems for which quantum computers have an advantage,
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>This is not quite true for all modalities: computers built using photonic qubits are not subject to this low-temperature requirement, but they do have other challenges.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>The phrase “basis states” has somewhat different meanings in other areas of quantum mechanics, but usually in quantum computing it refers to the measurement states.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>There are exceptions: QuEra builds neutral atom quantum computers and <a href="https://www.quera.com/neutral-atom-platform">says</a> “With an appropriate selection of atomic energy levels for qubit encoding, atoms can even be coherently moved during a calculation”.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>This is not quite true for all modalities: computers built using photonic qubits are not subject to this low-temperature requirement, but they do have other challenges.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>The phrase “basis states” has somewhat different meanings in other areas of quantum mechanics, but usually in quantum computing it refers to the measurement states.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1016,7 +1017,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","loop":false,"openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false,"closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

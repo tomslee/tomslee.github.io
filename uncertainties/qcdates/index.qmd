@@ -1,0 +1,14 @@
+---
+title: "Quantum Computing Timeline"
+author: "Tom Slee"
+draft: true
+---
+
+# Timeline
+
+```{r}
+#| label: fig-timeline
+#| echo: FALSE
+librarian::shelf(tidyverse, gt, devtools)
+install_github("kimbridges/milestones")
+```

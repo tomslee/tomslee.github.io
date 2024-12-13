@@ -1,18 +1,5 @@
 [
   {
-    "listing": "/essays.html",
-    "items": [
-      "/essays/2023-01-ridehail/index.html",
-      "/essays/2023-01-antwars/index.html",
-      "/essays/2022-12-antwar/index.html",
-      "/essays/2021-03-29-ubertransit/index.html",
-      "/essays/2019-08-oup_private_sector_ai/index.html",
-      "/essays/2019-08-05_workaround_medical/index.html",
-      "/essays/2018-11-23_rise_and_fall/index.html",
-      "/essays/2014-10-05-in-praise-of-fake-reviews/index.html"
-    ]
-  },
-  {
     "listing": "/blog.html",
     "items": [
       "/posts/2021-02-10-uber-earnings/index.html",
@@ -496,10 +483,25 @@
     ]
   },
   {
+    "listing": "/essays.html",
+    "items": [
+      "/essays/2024-12-advance-maid/index.html",
+      "/essays/2023-01-ridehail/index.html",
+      "/essays/2023-01-antwars/index.html",
+      "/essays/2022-12-antwar/index.html",
+      "/essays/2021-03-29-ubertransit/index.html",
+      "/essays/2019-08-oup_private_sector_ai/index.html",
+      "/essays/2019-08-05_workaround_medical/index.html",
+      "/essays/2018-11-23_rise_and_fall/index.html",
+      "/essays/2014-10-05-in-praise-of-fake-reviews/index.html"
+    ]
+  },
+  {
     "listing": "/index.html",
     "items": [
-      "/uncertainties/qcintro/index.html",
+      "/essays/2024-12-advance-maid/index.html",
       "/uncertainties/ridehail-simulation/index.html",
+      "/uncertainties/qcintro/index.html",
       "/essays/2023-01-ridehail/index.html",
       "/essays/2023-01-antwars/index.html",
       "/essays/2022-12-antwar/index.html",
@@ -513,8 +515,9 @@
   {
     "listing": "/uncertainties.html",
     "items": [
-      "/uncertainties/qcintro/index.html",
+      "/uncertainties/qcstate/index.html",
       "/uncertainties/ridehail-simulation/index.html",
+      "/uncertainties/qcintro/index.html",
       "/uncertainties/provider-reputation/provider-reputation.html",
       "/uncertainties/ai-alignment/index.html",
       "/uncertainties/ridehail-chicago/index.html",

@@ -50,9 +50,9 @@ format:
       - heightrounded
       include-in-header:
         text: |
-          \newfontfamily\sectionfont[Color=MidnightBlue]{Latin Modern Sans}
-          \newfontfamily\subsectionfont[Color=MidnightBlue]{Latin Modern Sans}
-          \newfontfamily\subsubsectionfont[Color=MidnightBlue]{Latin Modern Sans}
+          \newfontfamily\sectionfont[Color=MidnightBlue]{RobotoCondensed-Regular}
+          \newfontfamily\subsectionfont[Color=MidnightBlue]{RobotoCondensed-Regular}
+          \newfontfamily\subsubsectionfont[Color=MidnightBlue]{RobotoCondensed-Regular}
           \addtokomafont{section}{\sectionfont}
           \addtokomafont{subsection}{\subsectionfont}
           \addtokomafont{subsubsection}{\subsubsectionfont}
@@ -116,7 +116,9 @@ Most classical gates, like XOR and NAND, have two inputs, and many quantum gates
 
 ![A CNOT gate (conditional NOT) which flips the state of the target qubit only if the state of the control qubit is 1.](images/clipboard-2084024626.png){#fig-cnot fig-alt="A CNOT gate (conditional NOT) which flips the state of the target qubit only if the state of the control qubit is 1." width="300"}
 
-Again, if this were a classical computing gate, the "bits" would be charges travelling along wires, going in to the gate from the left and out on the right. But in quantum computing the gate is not a feature of a circuit etched into a chip. It’s an operation---a combination of laser or microwave pulses that changes the state of the qubits from a before state (on the left) to an after state (on the right)---and the qubits stay in place.
+Again, if this were a classical computing gate, the "bits" would be charges travelling along wires, going in to the gate from the left and out on the right. But in quantum computing the gate is not a feature of a circuit etched into a chip. It’s an operation---a combination of laser or microwave pulses that changes the state of the qubits from a before state (on the left) to an after state (on the right)---and the qubits stay in place.[^1]
+
+[^1]: There are exceptions: QuEra builds neutral atom quantum computers and [says](https://www.quera.com/neutral-atom-platform) "With an appropriate selection of atomic energy levels for qubit encoding, atoms can even be coherently moved during a calculation".
 
 Before moving on, I should mention one gate you will see all the time in quantum computing, but not in classical computing. It's called the Hadamard gate. If you prepare an input qubit in state $| \uparrow \rangle$ then a Hadamard gate puts it into a superposition of states. Many circuits start with Hadamard gates way to take advantage of this superposition. I just mention this because it is useful and ubiquitous, and also because it is needed in the next section.
 
@@ -142,9 +144,9 @@ Perhaps I'm belabouring this point, but for some reason, many introductions to q
 
 So are quantum computers general purpose? Well yes and no. Formally, they are. That is, there is a set of gates (different to the gates for classical computing) which satisfy the requirements for Turing completeness. So that’s nice.
 
-But what about "general purpose" in the more everyday, practical sense? Let’s go back to how you build quantum computers. No matter what approach you take, the set of qubits must exist in what is called a single "quantum state", and quantum states fall apart or "decohere" if they interact with the wider world, so they have to be isolated. Also, thermal energy (which is just one form of interaction with the wider world, of course) will jiggle these qubits among the states and you can’t have that, so quantum computers have to be operated at very low temperatures, meaning about 1K.[^1]
+But what about "general purpose" in the more everyday, practical sense? Let’s go back to how you build quantum computers. No matter what approach you take, the set of qubits must exist in what is called a single "quantum state", and quantum states fall apart or "decohere" if they interact with the wider world, so they have to be isolated. Also, thermal energy (which is just one form of interaction with the wider world, of course) will jiggle these qubits among the states and you can’t have that, so quantum computers have to be operated at very low temperatures, meaning about 1K.[^2]
 
-[^1]: This is not quite true for all modalities: computers built using photonic qubits are not subject to this low-temperature requirement, but they do have other challenges.
+[^2]: This is not quite true for all modalities: computers built using photonic qubits are not subject to this low-temperature requirement, but they do have other challenges.
 
 This fragility of quantum states has consequences:
 
@@ -211,9 +213,9 @@ $$
 | \psi \rangle = \alpha | \uparrow \rangle + \beta | \downarrow \rangle
 $$
 
-The $| \uparrow \rangle$ and $| \downarrow \rangle$ states, which are the only possible outcomes of measurement, are called *eigenstates* or, sometimes, *basis states* [^2]. The coefficients $\alpha$ and $\beta$ are *probability amplitudes*, meaning that in any measurement of the state of $| \psi \rangle$ the probability of seeing state $|\uparrow \rangle$ is $\alpha^2$ and the probability of seeing state $| \downarrow \rangle$ is $\beta^2$. Sometimes these are also called *phases*. This is something you just have to take on trust unless you want to dive properly into quantum mechanics.
+The $| \uparrow \rangle$ and $| \downarrow \rangle$ states, which are the only possible outcomes of measurement, are called *eigenstates* or, sometimes, *basis states* [^3]. The coefficients $\alpha$ and $\beta$ are *probability amplitudes*, meaning that in any measurement of the state of $| \psi \rangle$ the probability of seeing state $|\uparrow \rangle$ is $\alpha^2$ and the probability of seeing state $| \downarrow \rangle$ is $\beta^2$. Sometimes these are also called *phases*. This is something you just have to take on trust unless you want to dive properly into quantum mechanics.
 
-[^2]: The phrase "basis states" has somewhat different meanings in other areas of quantum mechanics, but usually in quantum computing it refers to the measurement states.
+[^3]: The phrase "basis states" has somewhat different meanings in other areas of quantum mechanics, but usually in quantum computing it refers to the measurement states.
 
 Some influential descriptions say that quantum computers carry out many calculations in parallel, and this notion of superposition is where the idea of quantum parallelism comes from: that you can act on $| \uparrow \rangle$ and $| \downarrow \rangle$ at the same time because the qubit is in a superposition of states. You may even have heard some people talk about "many worlds" interpretations of quantum mechanics in which qubits are simultaneously "computing" each possible value of $\alpha$ and $\beta$ in different universes.
 
