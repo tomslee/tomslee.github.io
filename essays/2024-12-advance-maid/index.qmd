@@ -1,13 +1,12 @@
 ---
 title: "Advance MAID requests: we need to talk about the day of death"
-subtitle: A response to Quebec's law permitting advance requests for assisted dying
+subtitle: Will Advance MAID requests bring the relief that people are looking for?
 # description: >
 abstract: >
   The Province of Quebec has recently created procedures that allow advance requests
   for assisted dying. But do they really?
-  I sent this to the Globe and Mail as an opinion piece. They decided not to publish it,
-  so I thought I'd save it here. It was a response to [a Globe and Mail article](https://www.theglobeandmail.com/canada/article-quebec-maid-advance-request-law/) and followed a 
-  short exchange on the Letters page.
+  I sent this to the Globe and Mail as an opinion piece, but they decided not to publish
+  it so I thought I'd save it here. It was a response to [a Globe and Mail article](https://www.theglobeandmail.com/canada/article-quebec-maid-advance-request-law/) and followed a short exchange on the Letters page.
 abstract-title: ""
 author: 
   - name: "Tom Slee"
@@ -73,7 +72,6 @@ format:
         \usepackage{mdframed}
 # pdf-font: "ETbb"
 # editor: visual
-
 ---
 
 Some years ago my mother told my sister: “My greatest fear is losing my mind. If that happens you’re to give me poison and I’ll drink it.” Still, Mum died in March of this year at the age of 93, after several grim years clouded by dementia, so I share the impulse behind [Quebec’s decision to allow “advance requests for assisted dying”](https://www.quebec.ca/en/health/health-system-and-services/end-of-life-care/medical-aid-in-dying/advance-request-medical-aid-dying) and sympathize with the woman in this [Globe and Mail article](https://www.theglobeandmail.com/canada/article-quebec-maid-advance-request-law/).

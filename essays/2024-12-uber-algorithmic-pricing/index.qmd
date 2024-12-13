@@ -92,11 +92,13 @@ con <- dbConnect(RPostgres::Postgres(),
 
 # Algorithmic "upfront" pricing
 
-Uber just introduced "upfront pricing for drivers" in Ontario, replacing time-and-distance rates with algorithmically-determined pay for each trip. There are many questions about upfront pricing: Is Uber using personal data to set the rates? Is it just a "rebalancing" as Uber reassuringly puts it?
+Uber just introduced "upfront pricing for drivers" in Ontario, replacing time-and-distance rates with algorithmically-determined pay for each trip. There are questions about upfront prices: Is Uber using personal data to set the rates? Is it just a "rebalancing" as Uber reassuringly puts it?
 
-Chicago is one of the few cities to make ridehail data available. It does not include driver pay, but I thought I'd at least see what it can tell us about passenger fares, and in particular if it has anything to say about "upfront" fares.
+Chicago is one of the few cities to make ridehail data available. It does not include driver pay, but I thought I'd at least see what it can tell us about passenger fares, and in particular if it has anything to say about "upfront" fares (Uber promotes "upfront" pricing as a transparency move that enables peace of mind: "Before you request a ride, the app shows an estimated upfront price to your destination every time---so you can sit back and enjoy the trip" [@RidePricesRates]. The irony, and why it deserves those quotation marks, is that it simultaneously hides the factors that make up that fare/pay. Point made, I hope, so I'll stop with the quotation marks now.)
 
 For the charts in this post, I used a data set taken from the Chicago Trips data sets ([2018--2022](https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips-2018-2022-/m6dm-c72p) and [2023--](https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips-2023-/n26f-ihde/about_data)). To get something of a reasonable size for experimenting, I downloaded the data for the first Thursday in the month, for every other month from the beginning of 2019 to August 2024.
+
+So, as the kids say, let's get going.
 
 # Uber increased fares in 2021 and has kept them higher
 
@@ -174,7 +176,7 @@ p +
   scale_colour_brewer(palette = "Dark2")
 ```
 
-[@fig-trip-stats] shows that the 50% fare increase is not an artifact caused by longer trips, whether measured in distance or time. The average distance from 2021 onwards is a modest 7% higher than before, increasing from 5.9 to 6.3 miles (I would guess the small increase is a pandemic-induced fall-off in the number of short and slow downtown rush-hour trips.) Likewise, the average trip duration increased by only 9%. Gas prices have increased by \$1.50 per gallon in the Chicago area since 2020, and gas prices can cut significantly into drivers' net earnings, but the contribution to a typical 6-mile trip would be measured in cents rather than dollars.
+As a check, [@fig-trip-stats] shows that the 50% fare increase is not an artifact caused by longer trips, whether measured in distance or time. The average distance from 2021 onwards is a modest 7% higher than before, increasing from 5.9 to 6.3 miles (I would guess the small increase is a pandemic-induced fall-off in the number of short and slow downtown rush-hour trips.) Likewise, the average trip duration increased by only 9%. It's true that gas prices have increased by \$1.50 per gallon in the Chicago area since 2020, and gas prices can cut significantly into drivers' net earnings, but the contribution to a typical 6-mile trip would be measured in cents rather than dollars. So I think it's reasonable to say that this change is mainly a price hike by Uber.
 
 ```{r}
 #| label: fig-trip-stats
@@ -242,19 +244,17 @@ p +
 ```
 
 
-# Algorithmic pricing drove the fare increases
+# Uber moves away from time-and-distance rates. So what?
 
-Now let's start to look at upfront fares. In its early years, Uber set its fares based on a combination of time and distance. For example, a 6 mile, 18 minute trip with base rates of \$1 per mile and \$0.20 per minute would cost \$6 + \$3.60 = \$9.60. More recently, Uber moved away from this time-and-distance model and adopted "upfront" fares. The price for a trip is given "upfront", but the factors that set the price are hidden. "Upfront pricing" is not an all-or-nothing system: the inputs to the model and their importance may change over time as Uber refines and revises its pricing algorithms.
-
-Uber has promoted upfront pricing as a transparency move that enables peace of mind: "Before you request a ride, the app shows an estimated upfront price to your destination every time—so you can sit back and enjoy the trip" [@RidePricesRates].
+Let's start to look at algorithmic upfront fares. In its early years, Uber set its fares based on a combination of time and distance. For example, a 6 mile, 18 minute trip with base rates of \$1 per mile and \$0.20 per minute would cost \$6 + \$3.60 = \$9.60. More recently, Uber moved away from this time-and-distance model and adopted upfront fares. The price for a trip is given upfront, but the factors that set the price are hidden. Upfront pricing is not an all-or-nothing system: the inputs to the model and their importance may change over time as Uber refines and revises its pricing algorithms.
 
 The charts here show only the fares paid by riders. Unfortunately, Chicago data does not include driver income so we cannot see directly how upfront pricing for riders affected driver income, or directly see impact of "upfront pricing for drivers", a separate initiative introduced to American cities including Chicago in September 2022 [@uberMoreTransparencyUpfront2022].
 
-For each recorded month of fares, I found the best-fit time-and-distance line. The best-fit per-mile and per-minute values for each date are shown in @fig-model-fit. The best-fit values show that the average fare increase has been driven primarily by an increase in the per-minute portion of the fare.
+For each recorded month of fares, I calculated the best-fit time-and-distance line. The best-fit per-mile and per-minute values for each date are shown in the first two charts of @fig-model-fit. The best-fit values show that the average fare increase has been driven primarily by an increase in the per-minute portion of the fare. This change will increase prices for slow trips (e.g. downtown) relative to fast trips (e.g. highway trips).
 
 @fig-model-fit also shows the difference between the best-fit fare and the actual fare for each trip (Residual Standard Error). You can think of this as, roughly, "the actual fare is likely to be the best-fit fare, plus or minus anything up to the residual standard error". The RSE increases from a average pre-2021 value of about \$3.60 per trip to a post-January-2021 average of \$8.50 per trip.
 
-This "RSE" is a measure of how much Uber has moved the price away from the time-and-distance baseline. Regardless of when Uber formally introduced upfront fares (and I cannot find a date for Chicago), the RSE is a measure of how aggressively Uber has implemented its upfront fare strategy.
+This "RSE" is a measure of how much Uber has moved the price away from the time-and-distance baseline. Regardless of when Uber formally introduced upfront fares (and I cannot find a date for Chicago), the RSE is a measure of how aggressively Uber has implemented its upfront fare strategy. I think this is a new observation: at least, if someone else has looked at deviation from time-and-distance fares I'm not aware of it. The question is, can we learn anything from this? I think we can. In fact, two things.
 
 ```{r}
 #| label: fig-model-fit
@@ -316,6 +316,8 @@ p +
   scale_y_continuous(limits=c(0, NA)) +
   scale_colour_brewer(palette = "Dark2")
 ```
+
+# Algorithmic pricing drove the fare increases
 
 @fig-model-fare-variability shows that the timing of the increase in RSE matches that of average fares. Best fit lines and error ribbons have been added for 2019--2020 and 2021--2024 time periods.
 
