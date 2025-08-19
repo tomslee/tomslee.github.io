@@ -1,7 +1,9 @@
 .Rproj.user
 .Rhistory
-.RData
+*.RData
 .Ruserdata
+*.rdb
+*.rdx
 *.docx
 *.aux
 *.log
@@ -15,5 +17,6 @@
 # For quarto publish (via gh-pages branch)
 /.quarto/
 /_site/
+/site_libs/
 
 /.luarc.json

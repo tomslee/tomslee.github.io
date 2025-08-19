@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta charset="utf-8" />
+<meta name="generator" content="quarto-1.5.56" />
 
-<meta name="author" content="Tom Slee">
-<meta name="dcterms.date" content="2025-08-19">
-<meta name="description" content="A first attempt at deconstructing Uber’s algorithmic “upfront pricing” with data from Chicago.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="author" content="Tom Slee" />
+<meta name="dcterms.date" content="2025-08-19" />
+<meta name="description" content="A first attempt at deconstructing Uber’s algorithmic “upfront pricing” with data from Chicago." />
 
 <title>Some questions about Uber’s “upfront” pricing – Tom Slee</title>
 <style>
@@ -45,26 +47,7 @@ div.csl-indent {
   margin-left: 2em;
 }</style>
 
-
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../logo.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<!-- htmldependencies:E3FAD763 -->
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -95,43 +78,42 @@ div.csl-indent {
 <meta name="quarto:status" content="draft">
 
 
-<link rel="stylesheet" href="../../styles.css">
-<meta name="twitter:title" content="Some questions about Uber’s “upfront” pricing – Tom Slee">
-<meta name="twitter:description" content="A first attempt at deconstructing Uber’s algorithmic “upfront pricing” with data from Chicago.">
-<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../styles.css" />
 </head>
 
-<body class="floating nav-fixed">
+<body>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="/index.html">
     <span class="navbar-title">Tom Slee</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+  aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation"
+  onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="/index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
+    <a class="nav-link" href="/about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../essays.html"> 
+    <a class="nav-link" href="/essays.html"> 
 <span class="menu-text">Essays</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../uncertainties.html"> 
+    <a class="nav-link" href="/uncertainties.html"> 
 <span class="menu-text">Uncertainties</span></a>
   </li>  
   <li class="nav-item">
@@ -139,18 +121,24 @@ div.csl-indent {
 <span class="menu-text">Ridehail Lab</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html"> 
+    <a class="nav-link" href="/blog.html"> 
 <span class="menu-text">Whimsley (blog archive)</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/tomslee"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/tomslee"> <i 
+  class="bi bi-github" 
+  role="img" 
+>
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/whimsley"> <i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/whimsley"> <i 
+  class="bi bi-twitter" 
+  role="img" 
+>
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -162,8 +150,21 @@ div.csl-indent {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div id="quarto-toc-target"></div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" ></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default toc-left">
+  <div class="quarto-title-banner">
     <div class="quarto-title column-body">
       <h1 class="title">Some questions about Uber’s “upfront” pricing</h1>
             <p class="subtitle lead">Why are airport fares out of whack?</p>
@@ -206,35 +207,22 @@ div.csl-indent {
     </div>
   </div>
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active">
+  </header>
+
+<nav id="TOC" role="doc-toc">
     <h2 id="toc-title">Contents</h2>
    
-  <ul class="collapse">
-  <li><a href="#algorithmic-upfront-pricing" id="toc-algorithmic-upfront-pricing" class="nav-link active" data-scroll-target="#algorithmic-upfront-pricing">Algorithmic “upfront” pricing</a></li>
-  <li><a href="#uber-increased-fares-in-2021-and-has-kept-them-higher" id="toc-uber-increased-fares-in-2021-and-has-kept-them-higher" class="nav-link" data-scroll-target="#uber-increased-fares-in-2021-and-has-kept-them-higher">Uber increased fares in 2021 and has kept them higher</a></li>
-  <li><a href="#uber-moves-away-from-time-and-distance-rates.-so-what" id="toc-uber-moves-away-from-time-and-distance-rates.-so-what" class="nav-link" data-scroll-target="#uber-moves-away-from-time-and-distance-rates.-so-what">Uber moves away from time-and-distance rates. So what?</a></li>
-  <li><a href="#algorithmic-pricing-drove-the-fare-increases" id="toc-algorithmic-pricing-drove-the-fare-increases" class="nav-link" data-scroll-target="#algorithmic-pricing-drove-the-fare-increases">Algorithmic pricing drove the fare increases</a></li>
-  <li><a href="#algorithmically-targeted-surcharges-the-case-of-location" id="toc-algorithmically-targeted-surcharges-the-case-of-location" class="nav-link" data-scroll-target="#algorithmically-targeted-surcharges-the-case-of-location">Algorithmically-targeted surcharges: the case of location</a></li>
-  <li><a href="#why-algorithmic-prices-matter" id="toc-why-algorithmic-prices-matter" class="nav-link" data-scroll-target="#why-algorithmic-prices-matter">Why algorithmic prices matter</a></li>
-  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <ul>
+  <li><a href="#algorithmic-upfront-pricing" id="toc-algorithmic-upfront-pricing">Algorithmic “upfront” pricing</a></li>
+  <li><a href="#uber-increased-fares-in-2021-and-has-kept-them-higher" id="toc-uber-increased-fares-in-2021-and-has-kept-them-higher">Uber increased fares in 2021 and has kept them higher</a></li>
+  <li><a href="#uber-moves-away-from-time-and-distance-rates.-so-what" id="toc-uber-moves-away-from-time-and-distance-rates.-so-what">Uber moves away from time-and-distance rates. So what?</a></li>
+  <li><a href="#algorithmic-pricing-drove-the-fare-increases" id="toc-algorithmic-pricing-drove-the-fare-increases">Algorithmic pricing drove the fare increases</a></li>
+  <li><a href="#algorithmically-targeted-surcharges-the-case-of-location" id="toc-algorithmically-targeted-surcharges-the-case-of-location">Algorithmically-targeted surcharges: the case of location</a></li>
+  <li><a href="#why-algorithmic-prices-matter" id="toc-why-algorithmic-prices-matter">Why algorithmic prices matter</a></li>
+  <li><a href="#conclusions" id="toc-conclusions">Conclusions</a></li>
+  <li><a href="#references" id="toc-references">References</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="algorithmic_pricing_draft.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-    </div>
-<!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
-
-
-
-
-
 <section id="algorithmic-upfront-pricing" class="level1">
 <h1>Algorithmic “upfront” pricing</h1>
 <p>Uber just introduced “upfront pricing for drivers” in Ontario, replacing time-and-distance rates with algorithmically-determined pay for each trip. There are questions about upfront prices: Is Uber using personal data to set the rates? Is it just a “rebalancing” as Uber reassuringly puts it?</p>
@@ -244,32 +232,32 @@ div.csl-indent {
 </section>
 <section id="uber-increased-fares-in-2021-and-has-kept-them-higher" class="level1">
 <h1>Uber increased fares in 2021 and has kept them higher</h1>
-<p>As prologue, here is a check on the overall level of fares over time. <a href="#fig-trip-fare" class="quarto-xref">Figure&nbsp;1</a> shows the average fare for a trip, with (“Total Fare”) and without additional charges such as the booking fee and tolls. Tips are not included. The trend for each is the same, so from here we can look at the fare without additional charges.</p>
+<p>As prologue, here is a check on the overall level of fares over time. <a href="#fig-trip-fare" class="quarto-xref">Figure 1</a> shows the average fare for a trip, with (“Total Fare”) and without additional charges such as the booking fee and tolls. Tips are not included. The trend for each is the same, so from here we can look at the fare without additional charges.</p>
 <p>The chart shows relatively constant fares from 2019 to the beginning of 2021, with an average of $11.40 per trip, and a 50% higher fare for 2021 onwards, with an average of $17.50 per trip. Even though this observation is based only on Chicago fares, the conclusion that Uber has increased fares overall is consistent with that described by <span class="citation" data-cites="lenshermanUberCEOHides2023">(<a href="#ref-lenshermanUberCEOHides2023" role="doc-biblioref">Sherman 2023</a>)</span> and <span class="citation" data-cites="smithHubertHoranCan2023">(<a href="#ref-smithHubertHoranCan2023" role="doc-biblioref">Horan 2023</a>)</span>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-trip-fare" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-scap="Average fares">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-trip-fare" class="quarto-float quarto-figure quarto-figure-center" data-fig-scap="Average fares">
+<figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-trip-fare-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-trip-fare-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Average fares per trip, with and without “additional charges”"><img src="index_files/figure-html/fig-trip-fare-1.png" class="img-fluid figure-img" style="width:100.0%" data-fig-scap="Average fares"></a>
+<a href="index_files/figure-html/fig-trip-fare-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure 1: Average fares per trip, with and without “additional charges”"><img src="index_files/figure-html/fig-trip-fare-1.png" class="img-fluid" style="width:100.0%" data-fig-scap="Average fares" /></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-trip-fare-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Average fares per trip, with and without “additional charges”
+Figure 1: Average fares per trip, with and without “additional charges”
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>As a check, <a href="#fig-trip-stats" class="quarto-xref">Figure&nbsp;2</a> shows that the 50% fare increase is not an artifact caused by longer trips, whether measured in distance or time. The average distance from 2021 onwards is a modest 7% higher than before, increasing from 5.9 to 6.3 miles (I would guess the small increase is a pandemic-induced fall-off in the number of short and slow downtown rush-hour trips.) Likewise, the average trip duration increased by only 9%. It’s true that gas prices have increased by $1.50 per gallon in the Chicago area since 2020, and gas prices can cut significantly into drivers’ net earnings, but the contribution to a typical 6-mile trip would be measured in cents rather than dollars. So I think it’s reasonable to say that this change is mainly a price hike by Uber.</p>
+<p>As a check, <a href="#fig-trip-stats" class="quarto-xref">Figure 2</a> shows that the 50% fare increase is not an artifact caused by longer trips, whether measured in distance or time. The average distance from 2021 onwards is a modest 7% higher than before, increasing from 5.9 to 6.3 miles (I would guess the small increase is a pandemic-induced fall-off in the number of short and slow downtown rush-hour trips.) Likewise, the average trip duration increased by only 9%. It’s true that gas prices have increased by $1.50 per gallon in the Chicago area since 2020, and gas prices can cut significantly into drivers’ net earnings, but the contribution to a typical 6-mile trip would be measured in cents rather than dollars. So I think it’s reasonable to say that this change is mainly a price hike by Uber.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-trip-stats" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-scap="Sample statistics">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-trip-stats" class="quarto-float quarto-figure quarto-figure-center" data-fig-scap="Sample statistics">
+<figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-trip-stats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-trip-stats-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Sample statistics for trips in Chicago"><img src="index_files/figure-html/fig-trip-stats-1.png" class="img-fluid figure-img" style="width:100.0%" data-fig-scap="Sample statistics"></a>
+<a href="index_files/figure-html/fig-trip-stats-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure 2: Sample statistics for trips in Chicago"><img src="index_files/figure-html/fig-trip-stats-1.png" class="img-fluid" style="width:100.0%" data-fig-scap="Sample statistics" /></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-trip-stats-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Sample statistics for trips in Chicago
+Figure 2: Sample statistics for trips in Chicago
 </figcaption>
 </figure>
 </div>
@@ -280,18 +268,18 @@ Figure&nbsp;2: Sample statistics for trips in Chicago
 <h1>Uber moves away from time-and-distance rates. So what?</h1>
 <p>Let’s start to look at algorithmic upfront fares. In its early years, Uber set its fares based on a combination of time and distance. For example, a 6 mile, 18 minute trip with base rates of $1 per mile and $0.20 per minute would cost $6 + $3.60 = $9.60. More recently, Uber moved away from this time-and-distance model and adopted upfront fares. The price for a trip is given upfront, but the factors that set the price are hidden. Upfront pricing is not an all-or-nothing system: the inputs to the model and their importance may change over time as Uber refines and revises its pricing algorithms.</p>
 <p>The charts here show only the fares paid by riders. Unfortunately, Chicago data does not include driver income so we cannot see directly how upfront pricing for riders affected driver income, or directly see impact of “upfront pricing for drivers”, a separate initiative introduced to American cities including Chicago in September 2022 <span class="citation" data-cites="uberMoreTransparencyUpfront2022">(<a href="#ref-uberMoreTransparencyUpfront2022" role="doc-biblioref">Uber, Inc. 2022</a>)</span>.</p>
-<p>For each recorded month of fares, I calculated the best-fit time-and-distance line. The best-fit per-mile and per-minute values for each date are shown in the first two charts of <a href="#fig-model-fit" class="quarto-xref">Figure&nbsp;3</a>. The best-fit values show that the average fare increase has been driven primarily by an increase in the per-minute portion of the fare. This change will increase prices for slow trips (e.g.&nbsp;downtown) relative to fast trips (e.g.&nbsp;highway trips).</p>
-<p><a href="#fig-model-fit" class="quarto-xref">Figure&nbsp;3</a> also shows the difference between the best-fit fare and the actual fare for each trip (Residual Standard Error). You can think of this as, roughly, “the actual fare is likely to be the best-fit fare, plus or minus anything up to the residual standard error”. The RSE increases from a average pre-2021 value of about $3.60 per trip to a post-January-2021 average of $8.50 per trip.</p>
+<p>For each recorded month of fares, I calculated the best-fit time-and-distance line. The best-fit per-mile and per-minute values for each date are shown in the first two charts of <a href="#fig-model-fit" class="quarto-xref">Figure 3</a>. The best-fit values show that the average fare increase has been driven primarily by an increase in the per-minute portion of the fare. This change will increase prices for slow trips (e.g. downtown) relative to fast trips (e.g. highway trips).</p>
+<p><a href="#fig-model-fit" class="quarto-xref">Figure 3</a> also shows the difference between the best-fit fare and the actual fare for each trip (Residual Standard Error). You can think of this as, roughly, “the actual fare is likely to be the best-fit fare, plus or minus anything up to the residual standard error”. The RSE increases from a average pre-2021 value of about $3.60 per trip to a post-January-2021 average of $8.50 per trip.</p>
 <p>This “RSE” is a measure of how much Uber has moved the price away from the time-and-distance baseline. Regardless of when Uber formally introduced upfront fares (and I cannot find a date for Chicago), the RSE is a measure of how aggressively Uber has implemented its upfront fare strategy. I think this is a new observation: at least, if someone else has looked at deviation from time-and-distance fares I’m not aware of it. The question is, can we learn anything from this? I think we can. In fact, two things.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-model-fit" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-scap="Best fit values">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-model-fit" class="quarto-float quarto-figure quarto-figure-center" data-fig-scap="Best fit values">
+<figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-model-fit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-model-fit-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Best-fit time-and-distance fare components, and the residual error of the fit"><img src="index_files/figure-html/fig-model-fit-1.png" class="img-fluid figure-img" style="width:100.0%" data-fig-scap="Best fit values"></a>
+<a href="index_files/figure-html/fig-model-fit-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure 3: Best-fit time-and-distance fare components, and the residual error of the fit"><img src="index_files/figure-html/fig-model-fit-1.png" class="img-fluid" style="width:100.0%" data-fig-scap="Best fit values" /></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-model-fit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Best-fit time-and-distance fare components, and the residual error of the fit
+Figure 3: Best-fit time-and-distance fare components, and the residual error of the fit
 </figcaption>
 </figure>
 </div>
@@ -300,18 +288,18 @@ Figure&nbsp;3: Best-fit time-and-distance fare components, and the residual erro
 </section>
 <section id="algorithmic-pricing-drove-the-fare-increases" class="level1">
 <h1>Algorithmic pricing drove the fare increases</h1>
-<p><a href="#fig-model-fare-variability" class="quarto-xref">Figure&nbsp;4</a> shows that the timing of the increase in RSE matches that of average fares. Best fit lines and error ribbons have been added for 2019–2020 and 2021–2024 time periods.</p>
+<p><a href="#fig-model-fare-variability" class="quarto-xref">Figure 4</a> shows that the timing of the increase in RSE matches that of average fares. Best fit lines and error ribbons have been added for 2019–2020 and 2021–2024 time periods.</p>
 <p>The increase in RSE marks Uber’s effective implementation of upfront fares: an increased decoupling of fares from a time-and-distance model. Implementation coincides exactly with the increase in average fares, strongly suggesting that the application of upfront fares accompanied the average fare increase. Despite Uber’s “peace of mind” message, these results show that higher prices for riders arrived in tandem with the upfront fare move away from time-and-distance fares.</p>
 <p>If Uber is using upfront pricing for riders to increase fares, it is likely that it is also using upfront pricing for drivers to cut driver pay. Drivers in the USA have already claimed that their earnings have decreased over time, and analysis of data from third-party sources supports those claims <span class="citation" data-cites="lenshermanUberCEOHides2023">(<a href="#ref-lenshermanUberCEOHides2023" role="doc-biblioref">Sherman 2023</a>)</span>. Paying drivers different amounts for the same work amounts to “algorithmic pay discrimination” <span class="citation" data-cites="dubalAlgorithmic2023">(<a href="#ref-dubalAlgorithmic2023" role="doc-biblioref">Dubal 2023</a>)</span>: these results emphasize that it is not just a matter of paying some drivers more than others, it is a way to drive down Uber’s overall commitment to drivers. Now Uber is introducing “upfront fares for drivers” in Canada, there is good reason to fear that it will reduce driver pay.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-model-fare-variability" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-scap="Fare and variability">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-model-fare-variability" class="quarto-float quarto-figure quarto-figure-center" data-fig-scap="Fare and variability">
+<figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-model-fare-variability-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-model-fare-variability-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: Fares and RSE variability"><img src="index_files/figure-html/fig-model-fare-variability-1.png" class="img-fluid figure-img" style="width:100.0%" data-fig-scap="Fare and variability"></a>
+<a href="index_files/figure-html/fig-model-fare-variability-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure 4: Fares and RSE variability"><img src="index_files/figure-html/fig-model-fare-variability-1.png" class="img-fluid" style="width:100.0%" data-fig-scap="Fare and variability" /></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-model-fare-variability-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Fares and RSE variability
+Figure 4: Fares and RSE variability
 </figcaption>
 </figure>
 </div>
@@ -326,21 +314,21 @@ Operating profit or loss is, roughly, the everyday revenue of a company minus th
 <section id="algorithmically-targeted-surcharges-the-case-of-location" class="level1">
 <h1>Algorithmically-targeted surcharges: the case of location</h1>
 <p>Uber has said that upfront prices depend on factors beyond time and distance. The public data available does not include personal factors, but it does include location data. By comparing the prices for different locations to the best-fit time-and-distance model we can see whether location is being used as a factor. In other words, “are different community areas treated differently?”</p>
-<p><a href="#fig-community-area-map" class="quarto-xref">Figure&nbsp;5</a> shows that a small number of community areas have trip prices significantly above what would be expected from the time-and-distance model. (Trips are identified by the community area where pickup happens). They fall into two categories:</p>
+<p><a href="#fig-community-area-map" class="quarto-xref">Figure 5</a> shows that a small number of community areas have trip prices significantly above what would be expected from the time-and-distance model. (Trips are identified by the community area where pickup happens). They fall into two categories:</p>
 <ul>
-<li><p>Central areas (8, 28, 32, 33). These are high-traffic areas (large dots) in central Chicago, where average trip distances are short (to the left of the plot <a href="#fig-community-area-map" class="quarto-xref">Figure&nbsp;5</a> (b)). Because trips are short, Uber has already raised prices here relative to the pre-Upfront “rate card” prices. But in these areas there is an additional price hike: it is essentially a permanent surge pricing for riders in these areas, although unlike surge pricing only Uber knows whether it passes the price increase on to drivers.</p></li>
+<li><p>Central areas (8, 28, 32, 33). These are high-traffic areas (large dots) in central Chicago, where average trip distances are short (to the left of the plot <a href="#fig-community-area-map" class="quarto-xref">Figure 5</a> (b)). Because trips are short, Uber has already raised prices here relative to the pre-Upfront “rate card” prices. But in these areas there is an additional price hike: it is essentially a permanent surge pricing for riders in these areas, although unlike surge pricing only Uber knows whether it passes the price increase on to drivers.</p></li>
 <li><p>Airports (56, 76). Community area 76 is O’Hare airport, and area 56 is the older Midway airport. Trips from here are generally longer than average (to the right of the plot), but are marked up from the time-and-distance model. Again, there is no way to know whether the elevated prices are passed on to drivers.</p></li>
 </ul>
 <p>This is just one way in which Uber is using upfront algorithmic prices to segment the ride-hail market into different, smaller markets where they can test out how high they can set their prices without losing too many riders, and how low they can set pay without losing too many drivers.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-community-area-map" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-scap="Deviations from time-and-distance">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-community-area-map" class="quarto-float quarto-figure quarto-figure-center" data-fig-scap="Deviations from time-and-distance">
+<figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-community-area-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-community-area-map-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: Deviations from time-and-distance pricing by community area (June 2024)"><img src="index_files/figure-html/fig-community-area-map-1.png" class="img-fluid figure-img" style="width:100.0%" data-fig-scap="Deviations from time-and-distance"></a>
+<a href="index_files/figure-html/fig-community-area-map-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure 5: Deviations from time-and-distance pricing by community area (June 2024)"><img src="index_files/figure-html/fig-community-area-map-1.png" class="img-fluid" style="width:100.0%" data-fig-scap="Deviations from time-and-distance" /></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-community-area-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Deviations from time-and-distance pricing by community area (June 2024)
+Figure 5: Deviations from time-and-distance pricing by community area (June 2024)
 </figcaption>
 </figure>
 </div>
@@ -350,18 +338,18 @@ Figure&nbsp;5: Deviations from time-and-distance pricing by community area (June
 <section id="why-algorithmic-prices-matter" class="level1">
 <h1>Why algorithmic prices matter</h1>
 <p>While “RSE” may measure the deviation from a time-and-distance model, and although it has accompanied and probably caused an increase in the average fare, RSE is a separate measure to the average best-fit fare. The fare a rider can expect to pay is, roughly, the average fare “plus or minus” the RSE. It is tempting to wonder: if the RSE is independent of the average, and if some riders pay less than the average even as others pay more, does the variability of pricing as measured by the RSE, actually matter in and of itself? The answer is “yes”.</p>
-<p>In a competitive market, companies have to lower their prices to meet those of the competition. The ideal result is that prices are lowered so that supply meets demand. Some consumers would be prepared to pay more than this price (the Demand line) and so there is a large “consumer surplus” – the area in red in <a href="#fig-supply-demand" class="quarto-xref">Figure&nbsp;6</a> (a).</p>
-<p>In the absence of competition, a monopolist can set its own prices. The result is shown in <a href="#fig-supply-demand" class="quarto-xref">Figure&nbsp;6</a> (b). A monopolist may lose a few customers who are not able or prepared to pay the higher price, but the extra money it gains from the higher prices the remaining consumers pay makes it worth the monopolist’s while. Meanwhile, the consumer surplus shrinks. Competition law exists, in part, to protect consumers from this kind of monopoly behaviour.</p>
-<p>Uber and other platform companies look to go beyond what normal monopolists can do, as shown in <a href="#fig-supply-demand-2" class="quarto-xref">Figure&nbsp;7</a> (b). By fine-tuning prices for each trip, they can make the most out of each transaction: set a high price for those trips where the rider is prepared to pay, and set a lower price to keep those who would not be prepared to pay the higher average fare. By simply presenting the price “upfront”, consumers do not know where they have been placed on this range.</p>
+<p>In a competitive market, companies have to lower their prices to meet those of the competition. The ideal result is that prices are lowered so that supply meets demand. Some consumers would be prepared to pay more than this price (the Demand line) and so there is a large “consumer surplus” – the area in red in <a href="#fig-supply-demand" class="quarto-xref">Figure 6</a> (a).</p>
+<p>In the absence of competition, a monopolist can set its own prices. The result is shown in <a href="#fig-supply-demand" class="quarto-xref">Figure 6</a> (b). A monopolist may lose a few customers who are not able or prepared to pay the higher price, but the extra money it gains from the higher prices the remaining consumers pay makes it worth the monopolist’s while. Meanwhile, the consumer surplus shrinks. Competition law exists, in part, to protect consumers from this kind of monopoly behaviour.</p>
+<p>Uber and other platform companies look to go beyond what normal monopolists can do, as shown in <a href="#fig-supply-demand-2" class="quarto-xref">Figure 7</a> (b). By fine-tuning prices for each trip, they can make the most out of each transaction: set a high price for those trips where the rider is prepared to pay, and set a lower price to keep those who would not be prepared to pay the higher average fare. By simply presenting the price “upfront”, consumers do not know where they have been placed on this range.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-supply-demand" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-supply-demand" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-supply-demand-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-supply-demand-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: Monopolists (b) can take more of the surplus from transactions than companies in a competitive market (a)."><img src="index_files/figure-html/fig-supply-demand-1.png" class="img-fluid figure-img" style="width:100.0%"></a>
+<a href="index_files/figure-html/fig-supply-demand-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure 6: Monopolists (b) can take more of the surplus from transactions than companies in a competitive market (a)."><img src="index_files/figure-html/fig-supply-demand-1.png" class="img-fluid" style="width:100.0%" /></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-supply-demand-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Monopolists (b) can take more of the surplus from transactions than companies in a competitive market (a).
+Figure 6: Monopolists (b) can take more of the surplus from transactions than companies in a competitive market (a).
 </figcaption>
 </figure>
 </div>
@@ -369,13 +357,13 @@ Figure&nbsp;6: Monopolists (b) can take more of the surplus from transactions th
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-supply-demand-2" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
+<div id="fig-supply-demand-2" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-supply-demand-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-supply-demand-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;7: Monopolies who can unbundle their prices (b), like Uber, can take even more of the surplus than traditional monopolies (a)."><img src="index_files/figure-html/fig-supply-demand-2-1.png" class="img-fluid figure-img" style="width:100.0%"></a>
+<a href="index_files/figure-html/fig-supply-demand-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure 7: Monopolies who can unbundle their prices (b), like Uber, can take even more of the surplus than traditional monopolies (a)."><img src="index_files/figure-html/fig-supply-demand-2-1.png" class="img-fluid" style="width:100.0%" /></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-supply-demand-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: Monopolies who can unbundle their prices (b), like Uber, can take even more of the surplus than traditional monopolies (a).
+Figure 7: Monopolies who can unbundle their prices (b), like Uber, can take even more of the surplus than traditional monopolies (a).
 </figcaption>
 </figure>
 </div>
@@ -407,12 +395,19 @@ Uber, Inc. 2022. <span>“More Transparency with <span>Upfront Fares</span>.”<
 ———. n.d. <span>“Ride <span>Prices</span> and <span>Rates</span> - <span>How It Works</span>.”</span> https://www.uber.com/ca/en/ride/how-it-works/upfront-pricing/. Accessed October 11, 2024.
 </div>
 </div>
-
-
+<div id="quarto-navigation-envelope" class="hidden">
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar-title">Tom Slee</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar-title">Tom Slee</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Home">Home</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/index.html">/index.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:About">About</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/about.html">/about.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Essays">Essays</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/essays.html">/essays.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Uncertainties">Uncertainties</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/uncertainties.html">/uncertainties.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Ridehail Lab">Ridehail Lab</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:https://tomslee.github.io/ridehail/lab/">https://tomslee.github.io/ridehail/lab/</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:Whimsley (blog archive)">Whimsley (blog archive)</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:/blog.html">/blog.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:https://github.com/tomslee">https://github.com/tomslee</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar:https://twitter.com/whimsley">https://twitter.com/whimsley</span></p>
+<div class="hidden quarto-markdown-envelope-contents" data-render-id="footer-left">
+<p>2023 – 2024, Tom Slee</p>
+</div>
+</div>
+<div id="quarto-meta-markdown" class="hidden">
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-metatitle">Some questions about Uber’s “upfront” pricing – Tom Slee</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-twittercardtitle">Some questions about Uber’s “upfront” pricing – Tom Slee</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-ogcardtitle">Some questions about Uber’s “upfront” pricing – Tom Slee</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-metasitename">Tom Slee</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-twittercarddesc">A first attempt at deconstructing Uber’s algorithmic “upfront pricing” with data from Chicago.</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-ogcardddesc">A first attempt at deconstructing Uber’s algorithmic “upfront pricing” with data from Chicago.</span></p>
+</div>
 </section>
 
 </main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+<script id = "quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -836,8 +831,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>2023 – 2024, Tom Slee</p>
-</div>   
+      <div class='footer-contents'>2023 -- 2024, Tom Slee</div>  
+    </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
@@ -846,7 +841,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","openEffect":"zoom","loop":false});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
@@ -879,7 +874,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 })();
           </script>
 
+</body>
 
-
-
-</body></html>
+</html>

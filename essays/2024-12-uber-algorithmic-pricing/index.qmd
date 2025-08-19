@@ -55,7 +55,7 @@ format:
     linestretch: 1.1
     keep-tex: true
     template-partials:
-    - title.tex
+    - ../../title.tex
     geometry:
     - top=30mm
     - left=30mm
@@ -105,7 +105,6 @@ So, as the kids say, let's get going.
 As prologue, here is a check on the overall level of fares over time. [@fig-trip-fare] shows the average fare for a trip, with ("Total Fare") and without additional charges such as the booking fee and tolls. Tips are not included. The trend for each is the same, so from here we can look at the fare without additional charges.
 
 The chart shows relatively constant fares from 2019 to the beginning of 2021, with an average of \$11.40 per trip, and a 50% higher fare for 2021 onwards, with an average of \$17.50 per trip. Even though this observation is based only on Chicago fares, the conclusion that Uber has increased fares overall is consistent with that described by [@lenshermanUberCEOHides2023] and [@smithHubertHoranCan2023].
-
 
 ```{r}
 #| label: fig-trip-fare
@@ -242,7 +241,6 @@ p +
   scale_y_continuous(limits=c(0, NA)) +
   scale_colour_brewer(palette = "Dark2")
 ```
-
 
 # Uber moves away from time-and-distance rates. So what?
 
@@ -401,6 +399,7 @@ p
 Operating profit or loss is, roughly, the everyday revenue of a company minus the everyday cost of running the company (so leaving out things like interest and investments). @fig-uber-operations is a chart of Uber's operating profit/loss, showing a steady improvement from 2021 onwards, beginning at the same time upfront pricing for riders was introduced in the USA (which makes up roughly half of Uber's revenue).
 -->
 ```
+
 ```{r}
 #| label: fig-uber-operations
 #| include: false

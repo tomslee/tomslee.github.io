@@ -55,7 +55,7 @@ format:
     linestretch: 1.1
     keep-tex: true
     template-partials:
-    - ../title.tex
+    - ../../title.tex
     geometry:
     - top=30mm
     - left=30mm
