@@ -2,7 +2,6 @@
   {
     "listing": "/essays.html",
     "items": [
-      "/essays/2025-08-25-fouraly/index.html",
       "/essays/2024-12-advance-maid/index.html",
       "/essays/2023-01-ridehail/index.html",
       "/essays/2023-01-antwars/index.html",
@@ -500,7 +499,6 @@
   {
     "listing": "/index.html",
     "items": [
-      "/essays/2025-08-25-fouraly/index.html",
       "/uncertainties/ridehail-simulation/index.html",
       "/essays/2024-12-advance-maid/index.html",
       "/uncertainties/qcintro/index.html",
