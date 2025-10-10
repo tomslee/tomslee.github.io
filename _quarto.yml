@@ -28,7 +28,7 @@ website:
       - text: Uncertainties
         href: uncertainties.qmd
       - text: "Ridehail Lab"
-        href: https://tomslee.github.io/ridehail/lab/
+        href: https://tomslee.github.io/ridehail/
       - text: "Whimsley (blog archive)"
         href: blog.qmd
     right:
