@@ -48,9 +48,9 @@ format:
     toc: false
     number-sections: false
     colorlinks: true
-    output-file: "algorithmic_pricing_draft"
+    # output-file: "algorithmic_pricing_draft"
     output-ext:  "pdf"
-    mainfont: "CharterBT-Roman"
+    mainfont: "Charter BT Roman"
     fontsize: 12pt
     linestretch: 1.1
     keep-tex: true
