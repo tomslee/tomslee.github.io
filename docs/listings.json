@@ -2,9 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
-      "/essays/2024-12-advance-maid/index.html",
-      "/uncertainties/ridehail-simulation/index.html",
       "/uncertainties/qcintro/index.html",
+      "/uncertainties/ridehail-simulation/index.html",
+      "/essays/2024-12-advance-maid/index.html",
       "/essays/2023-01-ridehail/index.html",
       "/essays/2023-01-antwars/index.html",
       "/essays/2022-12-antwar/index.html",
@@ -515,11 +515,11 @@
   {
     "listing": "/uncertainties.html",
     "items": [
-      "/uncertainties/ridehail-chicago/index.html",
+      "/uncertainties/qcintro/index.html",
       "/uncertainties/ridehail-simulation/index.html",
+      "/uncertainties/ridehail-chicago/index.html",
       "/uncertainties/advertising-houses-of-cards/index.html",
       "/uncertainties/ai-alignment/index.html",
-      "/uncertainties/qcintro/index.html",
       "/uncertainties/qcstate/index.html",
       "/uncertainties/provider-reputation/provider-reputation.html",
       "/uncertainties/ai-is-not-an-organism/index.html"

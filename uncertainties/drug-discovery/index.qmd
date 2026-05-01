@@ -1,5 +1,5 @@
 ---
-title: Is Quantum Computing the Next Drug Discovery Disappointment?
+title: Quantum Computing and Quantum Chemistry
 author: Tom Slee
 date: last-modified
 draft: true
@@ -7,9 +7,9 @@ categories:
 - Uncertainties
 - Quantum Computing
 description: > 
-    AI and Quantum computing are often touted as revolutionary
-    for Drug Discovery. With AI failing to deliver, what are the
-    prospects for quantum computing?
+   Many popular and scientific articles about quantum computing highlight
+   chemistry applications as one of the early potential benefits, specifically
+   drug design and new materials. I don't get it. 
 abstract-title: Is QC any good?
 image: header.jpg
 toc: true
@@ -23,38 +23,93 @@ reading-time: true
 number-sections: true
 number-depth: 2
 callout-appearance: simple
-# bibliography: ./test.bib
+bibliography: ./references.bib
 fig-cap-location: bottom
 comments:
   hypothesis: true
-format: html
+format:
+    html:
+      title-block-banner: DarkCyan
+    pdf: 
+      documentclass: scrartcl
+      papersize: letter
+      toc: true
+      number-sections: true
+      colorlinks: true
+      mainfont: "CharterBT-Roman"
+      fontsize: 12pt
+      linestretch: 1.1
+      keep-tex: true
+      template-partials:
+      - ../../title.tex
+      geometry:
+      - top=30mm
+      - left=30mm
+      - heightrounded
+      include-in-header:
+        text: |
+          \newfontfamily\sectionfont[Color=MidnightBlue]{RobotoCondensed-Regular}
+          \newfontfamily\subsectionfont[Color=MidnightBlue]{RobotoCondensed-Regular}
+          \newfontfamily\subsubsectionfont[Color=MidnightBlue]{RobotoCondensed-Regular}
+          \addtokomafont{section}{\sectionfont}
+          \addtokomafont{subsection}{\subsectionfont}
+          \addtokomafont{subsubsection}{\subsubsectionfont}
+          \usepackage{mdframed}
 ---
 
 ::: {.callout-note appearance="simple"}
 State: very rough first draft.
-It is also available in [PDF format](index.pdf).
 :::
 
-# Drug discovery 
+# Introduction
 
-Thirty-plus years ago I worked for a quantum chemistry startup company, and one of the target markets for our software was the pharmaceutical industry. Even then, we joked that quantum chemistry was going to revolutionize drug discovery in five years, and had been going to for the last decade.
+Chemistry occupies a prominent place in the list of potential applications of quantum computing. Particularly promising is the simulation of the quantum-mechanical aspects of chemistry: the structure and behaviour of molecules. And the top applications of this kind of simulation would be better drug design and new materials. But is this a realistic future? I have my doubts.
 
-See [@a.jonesQuantumComputingNuclear2001]. 
+Here, though, are some typical mentions, from general audience public writing and from scientific research papers:
 
-# The AI disappointment 
+-   "\[A\]ccurate quantum chemical calculations represent one of the most anticipated practical applications of quantum computers" [@caesuraFasterQuantumChemistry2025]
+-   "Accurate electronic structure calculations are considered one of the most anticipated applications of quantum computing that will revolutionize theoretical chemistry and other related fields." [@aruteHartreeFockSuperconductingQubit2020]
+-   "Quantum computers are ideal for getting precise simulations of how potential drugs interact with complex biological molecules. This may help researchers better identify drug candidates – and ultimately improve healthcare worldwide." [@googlequantumaiQuantumApplications]
+-   "Puzzles like drug discovery or chemical synthesis could be rapidly accelerated by prototyping on a quantum computer. Quantum simulation would allow scientists to model complex molecules and simulate a drug’s reaction inside the human body, or run advanced test on chemicals without risk of harm or waste." [@hazanNextTechRevolution]
+-   "A quantum computer’s inherently quantum mechanical behavior can provide the exact solution to the Schrödinger equation mapped onto the qubits, without resorting to approximate methods." [@anderssonQuantumComputingChemical2022]
+-   "One of the most promising suggested applications of quantum computing is solving classically intractable chemistry problems." [@mcardleQuantumComputationalChemistry2020]
+-   "Chemical simulation is one of the most promising applications for future quantum computers. It is thought that quantum computers may enable accurate simulation for complex molecules that are otherwise impossible to simulate classically" [@goingsReliablyAssessingElectronic2022]
 
-Globe and Mail wrote about this [@castaldoRevolutionInterruptedWhy2024, requires a subscription].
+Others I might want to use
 
-# QC promises 
+Currently, these claims are made on the basis of plausibility arguments and extrapolations, at various levels of detail and specificity. So, as an ex-chemist, I wondered, do they hold water?
 
-And more. See @
+# Feynman
 
-# Appendix: Quantum Computing drug discovery claims
+In a 1982 talk speculating on the possibility of quantum computers, Richard Feynman exclaimed that "\[N\]ature isn't classical, dammit, and if you want to make a simulation of nature, you'd better make it quantum mechanical." [@feynmanSimulatingPhysicsComputers] This talk has been cited almost 15,000 times. It is, in some sense, the founding statement of quantum computing
 
+Still, like many good quotations, we should not look at it too closely or take it too literally. The design and potential usefulness of actual quantum computers did not come into focus for another decade. Feynman's vision of quantum computing was not what has come to dominate the current mainstream: there was no mention of quantum circuits, gates, qubits, or entanglement. And, of course, few people argue that, just because optimization problems like packing problems or shortest-path problems are obviously classical, they are off limits to quantum computers. So, for all of his genius, let's put Mr. Feynman to one side.
 
+# Storage
 
-A list...
+Let's move on to the general landscape of today's quantum computers and quantum algorithms, with their circuits and operators and qubits. The general plausibility argument for quantum advantage goes something like this:
+
+Let's imagine an approximate calculation of a molecule's electronic structure that gives a set of molecular orbitals $\phi_i$. In this approximate calculation, the lowest energy orbitals will be occupied and the higher energy unoccupied. So let's represent that approximate state like this: $| 1 1 1 1 0 0 0 0\rangle$.
+
+But the exact state is (within the bounds of this set of molecular orbitals) a combination of each and every permutation of states with different orbitals occupied. That is, the number of terms in the following equation grows exponentially with the number of orbitals and electrons
+
+$$
+|\Psi\rangle = \Sigma_i a_i |\Phi_0\rangle
+$$ {#eq-ci}
+
+Example:
+
+For two electrons in a four-orbital model:
+
+$$
+|\Psi\rangle = a_1 | 1 1 0 0 > + a_2 | 1 0 1 0\rangle + a_3 | 1 0 0 1\rangle + a_4 | 0 1 1 0 \rangle + a_5 | 0 1 0 1\rangle + a_6 | 0 0 1 1 \rangle
+$$ {#eq-ci-example}
+
+For a quantum computer, however, we can set up one qubit per orbital (so four cubits in this case) and by suitably mixing them up using operators, cover all the possibilities of equation @eq-ci-example. Four is not a lot less than six, but as the number of orbitals and electrons grows, the number of terms that a classical computer needs to store grows exponentially, while the number of qubits is just the number of orbitals.
+
+Here is how various publications express this advantage:
+
+-   On classical computers, resource requirements for complete simulation of the time-independent Schrödinger equation scale exponentially with the number of atoms in a molecule, limiting such full configuration interaction (FCI) calculations to diatomic and triatomic molecules... The calculation time for the energy of atoms and molecules scales exponentially with system size on a classical computer but polynomially using quantum algorithms. @aspuru-guzikSimulatedQuantumComputation2005
+-   
 
 # Bibliography
-
-
