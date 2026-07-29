@@ -1,9 +1,0 @@
----
-title: "Whimsley: Blog Archive"
-listing:
-  contents: posts
-  type: table
-  sort: "date desc"
----
-
-An archive of my blog "Whimsley", which I maintained roughly from 2005 to 2016, tapering off rapidly thereafter.

@@ -6,9 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2021-02-10">
+<meta name="author" content="Tom Slee">
+<meta name="dcterms.date" content="2019-08-05">
+<meta name="description" content="Adversarial examples are surprisingly similar to workarounds that fix mistakes. There are consequences.">
 
-<title>Uber-optimistic – Tom Slee</title>
+<title>Workarounds and Medical Machine Learning – Tom Slee</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -72,9 +74,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta name="twitter:title" content="Uber-optimistic – Tom Slee">
-<meta name="twitter:description" content="Personal web site">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Workarounds and Medical Machine Learning – Tom Slee">
+<meta name="twitter:description" content="Adversarial examples are surprisingly similar to workarounds that fix mistakes. There are consequences.">
+<meta name="twitter:image" content="https://tomslee.github.io/essays/2019-08-05_workaround_medical/2019-ai-adversarial-macaw.png">
+<meta name="twitter:image-height" content="456">
+<meta name="twitter:image-width" content="1150">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -143,9 +148,14 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Uber-optimistic</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">blog archive</div>
+      <h1 class="title">Workarounds and Medical Machine Learning</h1>
+                  <div>
+        <div class="description">
+          <p>Adversarial examples are surprisingly similar to workarounds that fix mistakes. There are consequences.</p>
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Essays</div>
               </div>
                   </div>
   </div>
@@ -153,23 +163,44 @@ ul.task-list li input[type="checkbox"] {
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Tom Slee </p>
+            </div>
+    </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 10, 2021</p>
+        <p class="date">August 5, 2019</p>
       </div>
     </div>
     
       
     </div>
     
+  <div>
+    <div class="abstract">
+      <div class="block-title">Abstract</div>
+      <p>A recent paper highlights “adversarial attacks” by physicians as a threat to medical machine learning. Its recommendations may do more harm than good.</p>
+    </div>
+  </div>
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#adversarial-examples" id="toc-adversarial-examples" class="nav-link active" data-scroll-target="#adversarial-examples"><span class="header-section-number">1</span> Adversarial examples</a></li>
+  <li><a href="#workarounds" id="toc-workarounds" class="nav-link" data-scroll-target="#workarounds"><span class="header-section-number">2</span> Workarounds</a></li>
+  <li><a href="#two-sides-of-the-same-coin" id="toc-two-sides-of-the-same-coin" class="nav-link" data-scroll-target="#two-sides-of-the-same-coin"><span class="header-section-number">3</span> Two sides of the same coin</a></li>
+  <li><a href="#governing-machine-learning" id="toc-governing-machine-learning" class="nav-link" data-scroll-target="#governing-machine-learning"><span class="header-section-number">4</span> Governing machine learning</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -178,45 +209,91 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="adversarial-examples" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Adversarial examples</h1>
+<p>The rise of deep learning has been accompanied by a fascination with “adversarial examples”: the classic cases are striking because they cause amazingly accurate machine learning models to make amazingly stupid mistakes. A carefully designed tweak invisible to the human eye may cause an image-recognition system to mistake what is “obviously” a picture of a macaw for a picture of a bookcase.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./2019-ai-adversarial-macaw.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 1: A slight perturbation of this picture of a macaw causes it to be classified as a bookcase.</figcaption>
+</figure>
 </div>
-<div class="callout-title-container flex-fill">
-Note
+<p>In the few years since their discovery, adversarial examples have been shown to be both ubiquitous and difficult to prevent. These “adversarial attacks”, as they are also called, cast a doubt over whether deep learning systems can survive in the real world. Deep learning systems seem to have the potential for great accuracy over some dimensions, but also great fragility in others.</p>
+<p>The real-world implications of adversarial examples are going to be important topics over the next few years. One example of things to come is a recent paper in the prestigious Science magazine warning about <a href="https://science.sciencemag.org/content/363/6433/1287">Adversarial attacks on medical machine learning</a> (<a href="https://www.ehidc.org/sites/default/files/resources/files/Adversarial%20attacks%20on%20medical%20machine%20learning.pdf">full text PDF</a>)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. It’s no surprise that healthcare has been highlighted: investment in deep learning systems for healthcare is already massive. High-profile successes in “better than human” diagnosis from medical images, and the potential for extracting useful information from electronic health records have made for something of a gold rush. Eric Topol’s new book <a href="https://www.basicbooks.com/titles/eric-topol/deep-medicine/9781541644649/">Deep Medicine</a> charts some of the potential. However, the authors of the Science paper warn, the billions of dollars flowing through healthcare systems provide obvious incentives for “attackers” to corrupt the system for fraudulent purposes. If adversarial attacks are easy to make and difficult to defend against, then the promise of medical machine learning may never be realized.</p>
+<p>The Science paper, by researchers from Harvard and MIT, is my main topic here, but first we need to talk about a seemingly-humdrum topic that gets much less attention, but which turns out to be closely related.</p>
+</section>
+<section id="workarounds" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Workarounds</h1>
+<p>An adversarial attack is an input crafted intentionally to force a model to make a mistake. A workaround is the opposite: an input crafted intentionally to force a model to <em>correct</em> a mistake.</p>
+<p>A schematic example is shown below. The data points are shown with their “true” values of blue or orange, and the background shade marks the regions categorized by the model as “blue” or “orange”. The model has a high accuracy: most of the actually-blue dots lie in the categorized-as-blue region, and most of the actually-orange points lie in the categorized-as-orange region. But even the best machine learning systems are statistical engines with non-zero error rates, so you can see a few incorrectly classified examples in the diagram too.</p>
+<p>The adversarial example (red arrow) changes the input for a correctly-classified “orange” data point so that it is incorrectly classified as blue. The workaround (green arrow) changes the input for an “orange” data point that is incorrectly classified as “blue” so that it is classified correctly.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./tensorflow-playground.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 2: Schematic view of a machine learning model, showing an adversarial example and a workaround. The image was built from <a href="https://playground.tensorflow.org">Tensorflow Playground</a>).</figcaption>
+</figure>
 </div>
+<p>Adversarial examples may be novel, but workaroudns have become routine in the automated workplace. Automation shifts decision-making from “front line” workers to computerized systems, but as these systems have entered the workplace, many professionals have learned a new and often unacknowledged skill: they have become experts at making automated decision systems work properly.</p>
+<p>As just one example, legal scholar Jennifer Raso explored the changing jobs of Ontario welfare case workers when an automated decision system was introduced in a <a href="https://ssrn.com/abstract=3062620">prize-winning paper</a>. Instead of making their own judgments about client needs, the role of case workers is now to enter data into an algorithmic scoring system (not deep learning), which makes entitlement decisions according to well-defined rules. She writes about how social service case workers responded:</p>
+<blockquote class="blockquote">
+<p>While new technologies may attempt to deskill and decentre front-line decision-makers, transforming them into data entry clerks, caseworkers learn how to expertly translate and input client data to produce decisions that more closely match their interpretation of clients’ needs and welfare laws.</p>
+</blockquote>
+<p>The importance of workarounds will be familiar to anyone who has read James C. Scott’s <a href="https://yalebooks.yale.edu/book/9780300078152/seeing-state">Seeing Like a State</a>. Heavily designed schemes to improve the human condition assume, and impose, a simplified and idealized representation of working and living that neglects the unruly irregularities of real life. These systems rely on a certain level of workaround to function: people prepared to bend the official rules in order to get their work done. There is a reason that the “work to rule” has been successful in labour disputes as a form of protest.</p>
+<p>The American healthcare system is no exception. The rigidities of automated billing systems recently produced a memorable essay by Atul Gawande entitled <a href="https://www.newyorker.com/magazine/2018/11/12/why-doctors-hate-their-computers">Why Doctors Hate Their Computers</a>, documenting many of the challenges experienced by physicians as new decision support systems have been introduced, and the ingenious but often costly workarounds they have had to undertake in order to deliver high quality care to their patients.</p>
+<p>Will workarounds be needed for the next generation of deep learning medical systems? History suggests that they will. There is a long history of technical innovations that are designed around idealized and simplified models of behaviour, and which underestimate the complexities of “edge cases” in real life. Witness the over-enthusiasm around self-driving cars a couple of years ago, that is now being confronted with the messiness of reality.</p>
+<p>From a researcher’s point of view, adversarial examples are fascinating cases that raise a multitude of new questions: so much so that several papers <em>per day</em> are now published on the topic. Workarounds, in contrast, are boring. They raise few questions. They are merely machine learning residue—what’s left over after the algorithm has made its best attempt, hopefully cleared up by the next iteration of the model.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./david-evans-paper-count.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 3: The rise in “adversarial example” publications, from <a href="https://www.youtube.com/watch?v=sFhD6ABghf8">this talk by David Evans</a>.</figcaption>
+</figure>
 </div>
-<div class="callout-body-container callout-body">
-<p>This page has been migrated from an earlier version of this site. Links and images may be broken.</p>
+<p>From an end user’s point of view, things look different. Faced with getting their job done and a decision system that seems to have taken a bad decision, they are not in a position to improve the model: they can either follow often a maze of twisty passages in an attempt to get an exception or they can fudge the input and move on. Workarounds are far more interesting than adversarial examples, for all their exoticism.</p>
+</section>
+<section id="two-sides-of-the-same-coin" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Two sides of the same coin</h1>
+<p>The previous section presented adversarial attacks and workarounds as opposites, whcih holds true in a laboratory environment where the “correct” result for each individual data point is known and particularly in the classic cases where the “correct” result is, to a human, obvious and uncontroversial. In real-world environments things are different. Machine learning systems are statistical beasts, and however accurate they may be over a large data set, statistics cannot tell us whether any one individual data point is handled correctly or not. In many cases the “true” value for an individual case is not available at all. This difference between the world of the laboratory and that of production environments is noted by the Harvard / MIT researchers:</p>
+<blockquote class="blockquote">
+<p>[T]he ground truth in medical diagnoses is often ambiguous, meaning that for many cases no individual human can definitively assign the true label between, say, “benign” and “cancerous” on a photograph of a mole.</p>
+</blockquote>
+<p>The figure below is the same as the previous one, but now the two individual data points are coloured grey, showing that we do not know their “true” value. All of a sudden, instead of being opposites, there is no difference between the adversarial example and the workaround.</p>
+<p>(The diagram is misleading in an important way: in a two-dimensional space only a few of the dots are close to a boundary, and that boundarey is with just one other class. It would be reasonable to think that the problem is irrelevant for most inputs that lie comfortably within one region or another. In the many-dimensional space in which machine-learning models operate, it turns out that <em>all</em> dots are close to boundaries with <em>all other classes</em>: the situation for machine learning is therefore much <em>more</em> severe than the diagram suggests.)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./tensorflow-playground-2.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 4: In a real-world deployment, it may be impossible to distinguish between an input that is “truly orange” and one that is “truly blue”.</figcaption>
+</figure>
 </div>
-</div>
-<p>As Uber loses more money, CEO Dara Khosrowshahi continues cross his fingers and dream.</p>
-<p>Uber <a href="https://investor.uber.com/news-events/news/press-release-details/2021/Uber-Announces-Results-for-Fourth-Quarter-and-Full-Year-2020/default.aspx">just announced</a> its Q4 2020 earnings on February 10: a net loss of $968 million, or an “Adjusted EBITDA loss of $(454) million”.</p>
-<p>Here’s Uber’s revenue (blue), profitability (orange) and number of trips (green).</p>
-{{&lt; figure src="/ox-hugo/uber-earnings-2020-q4.png" &gt;}}
-<p>The company still says it’s going to be profitable by the end of 2021. What’s the track record for such predictions? Let’s take a look…</p>
-<ul>
-<li>When Gawker saw a leaked document in <a href="https://www.businessinsider.com/ubers-revenue-profit-and-loss-2015-8">August 2015</a>, showing losses at Uber, the company shrugged it off. “It’s the case of business 101: you raise money, you invest money, you grow (hopefully), you make a profit and that generates a return for investors.” Turns out the “investment” part is the easy part.</li>
-<li>In <a href="https://www.theinformation.com/articles/ubers-losses-grow-but-so-do-its-profit-projections">January 2016</a>, Amir Efrati of <em>The Information</em> saw some internal projections. “The projection suggested Uber would generate an $8.2 billion profit in 2019 from $22.7 billion in net revenue. During the next four years, according to the projection, Uber would expect to generate nearly $14 billion in profit in developed markets.” A little excess of enthusiasm there: actual revenue $14B, actual profit -$8.5 billion. Maybe they got a sign wrong.</li>
-<li>On <a href="https://techcrunch.com/2016/02/18/uber-ceo-travis-kalanick-says-company-is-profitable-in-u-s/#:~:text=Uber%20is%20officially%20profitable%20in,publication%20BetaKit%20earlier%20this%20week.&amp;text=%E2%80%9CWe're%20profitable%20in%20the,China%2C%E2%80%9D%20Kalanick%20told%20BetaKit.">February 18 2016</a>, then-CEO Travis Kalanick said Uber is “profitable in the USA, but we’re losing over $1 billion a year in China”. Uber sold its China operations in August 2016; still not profitable.</li>
-<li>In <a href="https://www.cnbc.com/2016/03/24/uber-ceo-sees-profits-in-china-in-2-yearss-time.html">March 2016</a>, Kalanick “sees profits in China in 2 years’ time”. He claimed that “the company, which currently operates in 400 cities around the world, will not be able to scale up without investing and being unprofitable for a while.” Five years of scaling later, “for a while” is stretching it.</li>
-<li>In <a href="https://fortune.com/2016/06/16/uber-profitable-markets/">June 2016</a>, Kalanick “revealed” that Uber is profitable (excluding interest and taxes) in “several markets”. No evidence yet.</li>
-<li>At <a href="https://www.bloomberg.com/news/articles/2018-01-23/uber-to-be-profitable-within-three-years-khosrowshahi-says">Davos in January 2018,</a> CEO Dara Khosrowshahi says Uber will be “profitable in three years”. And here we are, three years later. OK, give them a break because of Covid, but it was Khosrowshahi himself who said, in <a href="https://www.wsj.com/articles/ubers-first-quarter-loss-balloons-on-coronavirus-impact-11588882349">May 2020</a>, “We believe the disruption caused by Covid-19 will impact our time line by a matter of quarters and not years”.</li>
-<li>In <a href="https://www.newyorker.com/magazine/2018/04/09/at-uber-a-new-ceo-shifts-gears">April 2018</a>, Eric Meyhofer, head of the autonomous-driving unit, said “This is all about building autonomous ride-sharing, at scale, as a product. This is our future… The question now isn’t whether the company can make a self-driving vehicle but whether it can make one quickly and cheaply enough to solve [Uber’s] revenue problems.” Answer apparently in the negative.</li>
-<li>In <a href="https://www.cnbc.com/2018/05/30/uber-ceo-on-ipo-plans-and-warren-buffett.html">May 2018</a>, he said “We’re in a good position in terms of the company’s profile, in terms of profitability and margins continue to get better”. The chart above begs to differ.</li>
-<li>In <a href="https://www.theverge.com/2018/5/15/17340064/uber-ceo-dara-khosrowshahi-interview-elevate-flying-cars">May 2018</a> Dara saw a commercial “urban air mobility” service by 2023. Because why not?</li>
-<li>In <a href="https://techcrunch.com/2018/09/06/uber-ceo-ride-hailing-will-be-eclipsed-by-scooters-bikes-and-even-flying-taxis/">September 2018</a>, he said that “ride hailing will be eclipsed by scooters, bikes and even flying taxis”. Solid grasp of the fundamentals.</li>
-<li>In <a href="https://www.bbc.com/news/technology-52832791">May 2020</a>, Uber destroyed “thousands of electric bikes and scooters, after selling its Jump business to Lime.” Can’t fault Dara for trying?</li>
-<li>In <a href="https://www.npr.org/2020/12/07/944004278/after-once-touting-self-driving-cars-uber-sells-unit-to-refocus-on-core-business#:~:text=in%20Los%20Angeles.-,Uber%20said%20it%20will%20sell%20its%20self,research%20unit%20to%20startup%20Aurora.&amp;text=Ride%2Dhailing%20giant%20Uber%20is,the%20self%2Ddriving%20startup%20Aurora.&amp;text=Uber%20hasn't%20given%20up%20on%20the%20promise%20of%20autonomous%20vehicles.">December 2020</a>, Uber sold its self-driving unit. But did not change the optimistic story, even though autonomous cars were seen as central to the company’s future for years.</li>
-<li><a href="https://www.cnbc.com/2020/12/08/air-taxi-start-up-joby-acquires-uber-elevate-.html">And</a> its flying taxi business. Not so central.</li>
-<li>A year ago, on <a href="https://www.reuters.com/article/us-uber-results/uber-sees-profit-by-end-of-2020-but-still-expects-full-year-loss-idINKBN2002UQ">February 6 2020</a>, Uber said it had a target “to achieve a measure of profitability to the fourth quarter of 2020, but the ride-hailing company still expects to lose a total of more than $1 billion this year”. It lost $6.8B.</li>
-</ul>
-<p>So, still not profitable.</p>
+<p>Surprisingly, machine learning gives no definition to distinguish unambiguously between an adversarial example and a workaround. A standard definition in papers is something like “an input to a machine learning model that an attacker has intentionally designed to cause the model to make a mistake”, but assigning “intent” is outside the scope of machine learning, and a “mistake” is, as we have seen, often not decidable in any individual case.</p>
+<p>Some machine learning practitioners have gone so far as to define “attacks” as any attempt by a subject to influence the outcome of a machine learning system, but that makes an attacker of anyone who has put effort into writing an appealing resume in the hopes of getting a job. Adversarial examples and workarounds are both just optimization attempts: intentional changes to inputs in order to generate desired outputs.</p>
+<p>But don’t take all this from me: if you want to hear an expert opinion on the definition problem, see <a href="https://www.youtube.com/watch?v=sFhD6ABghf8">this keynote talk by David Evans</a> (especially the first ten minutes) from which much of the last few paragraphs is taken.</p>
+<p>When it comes to medicine, physicians face incentives to engage in workarounds as well as in adversarial attacks. The Science article is not completely silent on the topic of workarounds: it references a survey carried out by the American Medical Association from almost 20 years ago, described in a titled <a href="https://jamanetwork.com/journals/jama/fullarticle/192577">Physician Manipulation of Reimbursement Rules for Patients: Between a Rock and a Hard Place</a>, but the remainder of the Science article focuses almost exclusively on the problem of adversarial attacks by healthcare providers.</p>
+<p>The “physician manipulation” article outlines the frustrations physicians face when trying to provide care for their patients:</p>
+<blockquote class="blockquote">
+<p>In some cases, physicians may feel trapped between professional obligations to advocate for their patients and conflicting contractual obligations to follow coverage rules. It has been suggested that some insurers are “gaming” patients and physicians—tricking them into paying for covered services by routinely denying coverage but then approving services that are subsequently appealed, knowing that time and other constraints will prevent some appeals.</p>
+</blockquote>
+<p>Any attempt to tackle the threat of adversarial attacks will also penalize workarounds: designing proper rules for machine learning systems starts with recognizing the problems, and an exclusive focus on adversarial attacks fails to do so.</p>
+</section>
+<section id="governing-machine-learning" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Governing machine learning</h1>
+<p>When it comes to interventions, the Harvard / MIT researchers make two recommendations. The first is to procrastinate: to avoid stifling innovation by prematurely enforcing demands for robustness. The second is to increase IT-driven supervision of medical practitioners, storing “hashes” of images to check that they are not “tampered” with during processing.</p>
+<p>To take the second suggestion first: the proposal will crack down on “adversarial attacks” but will also prevent workarounds. As such, it removes room for doctors’ discretion and judgement. Good physician performance will be measured by accurate data entry rather than creative problem solving, and such measures would prevent physician pushback against any payment-minimizing moves by insurance companies. It reduces the role of physician from a professional responsible for diagnosis and prescription (which most would see as their primary roles), to that of a managed and supervised data entry technician. Any assessment of medical machine learning must address the potential consequences of deskilling among physicians.</p>
+<p>The billing system, whether or not it is driven by deep learning, is a site of tension, at which <em>all</em> parties seek to find their best outcomes. To treat the problems around billing systems as security problems in which the healthcare provider is the most likely attacker is to adopt the perspective of the insurance company or the vendor that provides them with a deep learning system.</p>
+<p>In fairness, the authors do point out that the American medical claims approval process is plagued by many competing financial interests, “providers [i.e.&nbsp;doctors and hospitals] seeking to maximize and payers [insurance companies] seeking to minimize reinbursement”, but for the bulk of the article, and in the recommendations, the problem of “attacks” by insurance companies is neglected.</p>
+<p>A more productive approach would be to adopt a game-theoretical perspective, where strategic considerations by all parties lead to some equilibrium outcome. As I’ve <a href="https://ssrn.com/abstract=3363342">written elsewhere</a>, most machine learning systems of any interest are <em>incentive incompatible</em>, and medical systems are no different. The subjects who provide the inputs and the consumers of the outputs have different and conflicting interests.</p>
+<p>In such an arrangement costly governance measures are not just likely, but inevitable, and that leads us to what’s wrong with the first recommendation: procrastination. To encourage deployment without proper costing of governance is to underestimate implementation costs: it’s building in debt, committing institutions that deploy these systems to unknown but significant future costs, and painting a false picture of efficiency gains. It tilts the cost comparison between physician-diagnosis and machine-diagnosis in favour of the machine (or, more accurately, its vendor), and more-or-less guarantees buyer’s remorse.</p>
+<p>There is no one-size fits all solution, of course. The right form of governance for EHR-based methods would be different to that for medical image diagnostics. But a prerequisite for any progress must be to acknowledge all the incentives in the system, to attempt to estimate the true costs of implementation, and not to overlook the humble but essential role of the workaround.</p>
 
 
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Samuel G. Finlayson, John D. Bowers, Joichi Ito, Jonathan L. Zittrain, Andrew L. Beam, Isaac S. Kohane, “Adversarial attacks on medical machine learning”, Science, 22 March 2019, p 1287.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

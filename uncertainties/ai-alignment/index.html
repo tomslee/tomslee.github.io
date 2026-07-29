@@ -6,9 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2021-02-10">
+<meta name="author" content="Tom Slee">
+<meta name="dcterms.date" content="2025-11-12">
+<meta name="description" content="The ‘Alignment Problem’ is the wrong way to think about the hazards of Generative AI">
 
-<title>Uber-optimistic – Tom Slee</title>
+<title>The Alignment Mistake – Tom Slee</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,12 +71,27 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+<style>
+
+      .quarto-title-block .quarto-title-banner {
+        background: DarkCyan;
+      }
+</style>
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta name="twitter:title" content="Uber-optimistic – Tom Slee">
-<meta name="twitter:description" content="Personal web site">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Alignment Mistake – Tom Slee">
+<meta name="twitter:description" content="The ‘Alignment Problem’ is the wrong way to think about the hazards of Generative AI">
+<meta name="twitter:image" content="https://tomslee.github.io/uncertainties/ai-alignment/cyan.png">
+<meta name="twitter:image-height" content="256">
+<meta name="twitter:image-width" content="446">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -143,9 +160,15 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Uber-optimistic</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">blog archive</div>
+      <h1 class="title">The Alignment Mistake</h1>
+                  <div>
+        <div class="description">
+          <p>The ‘Alignment Problem’ is the wrong way to think about the hazards of Generative AI</p>
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Uncertainties</div>
+                <div class="quarto-category">Technology</div>
               </div>
                   </div>
   </div>
@@ -153,23 +176,42 @@ ul.task-list li input[type="checkbox"] {
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Tom Slee </p>
+            </div>
+    </div>
       
       <div>
-      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-heading">Last updated</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 10, 2021</p>
+        <p class="date">November 12, 2025</p>
       </div>
     </div>
     
       
     </div>
     
+  <div>
+    <div class="abstract">
+      <div class="block-title">Abstract</div>
+      <p>[Under construction]</p>
+    </div>
+  </div>
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#the-perils-of-a-new-box" id="toc-the-perils-of-a-new-box" class="nav-link active" data-scroll-target="#the-perils-of-a-new-box">The Perils of a New Box</a></li>
+  <li><a href="#the-new-box-holds-everything" id="toc-the-new-box-holds-everything" class="nav-link" data-scroll-target="#the-new-box-holds-everything">The New Box Holds Everything</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -178,45 +220,57 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Note
+<div class="callout-body-container">
+<p><a href="./ai-alignment.pdf">Download a PDF version of this essay</a>.</p>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>This page has been migrated from an earlier version of this site. Links and images may be broken.</p>
 </div>
-</div>
-<p>As Uber loses more money, CEO Dara Khosrowshahi continues cross his fingers and dream.</p>
-<p>Uber <a href="https://investor.uber.com/news-events/news/press-release-details/2021/Uber-Announces-Results-for-Fourth-Quarter-and-Full-Year-2020/default.aspx">just announced</a> its Q4 2020 earnings on February 10: a net loss of $968 million, or an “Adjusted EBITDA loss of $(454) million”.</p>
-<p>Here’s Uber’s revenue (blue), profitability (orange) and number of trips (green).</p>
-{{&lt; figure src="/ox-hugo/uber-earnings-2020-q4.png" &gt;}}
-<p>The company still says it’s going to be profitable by the end of 2021. What’s the track record for such predictions? Let’s take a look…</p>
-<ul>
-<li>When Gawker saw a leaked document in <a href="https://www.businessinsider.com/ubers-revenue-profit-and-loss-2015-8">August 2015</a>, showing losses at Uber, the company shrugged it off. “It’s the case of business 101: you raise money, you invest money, you grow (hopefully), you make a profit and that generates a return for investors.” Turns out the “investment” part is the easy part.</li>
-<li>In <a href="https://www.theinformation.com/articles/ubers-losses-grow-but-so-do-its-profit-projections">January 2016</a>, Amir Efrati of <em>The Information</em> saw some internal projections. “The projection suggested Uber would generate an $8.2 billion profit in 2019 from $22.7 billion in net revenue. During the next four years, according to the projection, Uber would expect to generate nearly $14 billion in profit in developed markets.” A little excess of enthusiasm there: actual revenue $14B, actual profit -$8.5 billion. Maybe they got a sign wrong.</li>
-<li>On <a href="https://techcrunch.com/2016/02/18/uber-ceo-travis-kalanick-says-company-is-profitable-in-u-s/#:~:text=Uber%20is%20officially%20profitable%20in,publication%20BetaKit%20earlier%20this%20week.&amp;text=%E2%80%9CWe're%20profitable%20in%20the,China%2C%E2%80%9D%20Kalanick%20told%20BetaKit.">February 18 2016</a>, then-CEO Travis Kalanick said Uber is “profitable in the USA, but we’re losing over $1 billion a year in China”. Uber sold its China operations in August 2016; still not profitable.</li>
-<li>In <a href="https://www.cnbc.com/2016/03/24/uber-ceo-sees-profits-in-china-in-2-yearss-time.html">March 2016</a>, Kalanick “sees profits in China in 2 years’ time”. He claimed that “the company, which currently operates in 400 cities around the world, will not be able to scale up without investing and being unprofitable for a while.” Five years of scaling later, “for a while” is stretching it.</li>
-<li>In <a href="https://fortune.com/2016/06/16/uber-profitable-markets/">June 2016</a>, Kalanick “revealed” that Uber is profitable (excluding interest and taxes) in “several markets”. No evidence yet.</li>
-<li>At <a href="https://www.bloomberg.com/news/articles/2018-01-23/uber-to-be-profitable-within-three-years-khosrowshahi-says">Davos in January 2018,</a> CEO Dara Khosrowshahi says Uber will be “profitable in three years”. And here we are, three years later. OK, give them a break because of Covid, but it was Khosrowshahi himself who said, in <a href="https://www.wsj.com/articles/ubers-first-quarter-loss-balloons-on-coronavirus-impact-11588882349">May 2020</a>, “We believe the disruption caused by Covid-19 will impact our time line by a matter of quarters and not years”.</li>
-<li>In <a href="https://www.newyorker.com/magazine/2018/04/09/at-uber-a-new-ceo-shifts-gears">April 2018</a>, Eric Meyhofer, head of the autonomous-driving unit, said “This is all about building autonomous ride-sharing, at scale, as a product. This is our future… The question now isn’t whether the company can make a self-driving vehicle but whether it can make one quickly and cheaply enough to solve [Uber’s] revenue problems.” Answer apparently in the negative.</li>
-<li>In <a href="https://www.cnbc.com/2018/05/30/uber-ceo-on-ipo-plans-and-warren-buffett.html">May 2018</a>, he said “We’re in a good position in terms of the company’s profile, in terms of profitability and margins continue to get better”. The chart above begs to differ.</li>
-<li>In <a href="https://www.theverge.com/2018/5/15/17340064/uber-ceo-dara-khosrowshahi-interview-elevate-flying-cars">May 2018</a> Dara saw a commercial “urban air mobility” service by 2023. Because why not?</li>
-<li>In <a href="https://techcrunch.com/2018/09/06/uber-ceo-ride-hailing-will-be-eclipsed-by-scooters-bikes-and-even-flying-taxis/">September 2018</a>, he said that “ride hailing will be eclipsed by scooters, bikes and even flying taxis”. Solid grasp of the fundamentals.</li>
-<li>In <a href="https://www.bbc.com/news/technology-52832791">May 2020</a>, Uber destroyed “thousands of electric bikes and scooters, after selling its Jump business to Lime.” Can’t fault Dara for trying?</li>
-<li>In <a href="https://www.npr.org/2020/12/07/944004278/after-once-touting-self-driving-cars-uber-sells-unit-to-refocus-on-core-business#:~:text=in%20Los%20Angeles.-,Uber%20said%20it%20will%20sell%20its%20self,research%20unit%20to%20startup%20Aurora.&amp;text=Ride%2Dhailing%20giant%20Uber%20is,the%20self%2Ddriving%20startup%20Aurora.&amp;text=Uber%20hasn't%20given%20up%20on%20the%20promise%20of%20autonomous%20vehicles.">December 2020</a>, Uber sold its self-driving unit. But did not change the optimistic story, even though autonomous cars were seen as central to the company’s future for years.</li>
-<li><a href="https://www.cnbc.com/2020/12/08/air-taxi-start-up-joby-acquires-uber-elevate-.html">And</a> its flying taxi business. Not so central.</li>
-<li>A year ago, on <a href="https://www.reuters.com/article/us-uber-results/uber-sees-profit-by-end-of-2020-but-still-expects-full-year-loss-idINKBN2002UQ">February 6 2020</a>, Uber said it had a target “to achieve a measure of profitability to the fourth quarter of 2020, but the ride-hailing company still expects to lose a total of more than $1 billion this year”. It lost $6.8B.</li>
-</ul>
-<p>So, still not profitable.</p>
+<section id="the-perils-of-a-new-box" class="level1">
+<h1>The Perils of a New Box</h1>
+<p>A few years ago I was lucky enough to hear law professor <a href="https://law.uconn.edu/person/kiel-brennan-marquez/">Kiel Brennan-Marquez</a> talk about <em>“Fair Notice” in the age of Big Data</em>. Except he had been asked to expand his talk to fill in the gap caused by a missing speaker, I think, so he started off by talking more generally about the way law works in a section he called “nothing new under the sun”. (It turns out the talk was recorded! You can find it <a href="https://c4ejournal.net/2019/03/08/kiel-brennan-marquez-fair-notice-in-the-age-of-big-data-2019-c4ej-18/">here</a>.)</p>
+<p>The law, he says – and I hope I’m not misrepresenting him too badly – is all about putting things in boxes (and not too many boxes). For example, there are two boxes for property. Some things are Real Property, like houses, and they get taxed heavily; other things are Other Property, like tables or hats or boats, and they don’t get taxed, or at least not as much. But every now and then something comes along that doesn’t fit obviously into one box or the other, like a house boat. Is it a house or is it a boat? Here, British readers should be saying to themselves “<a href="https://www.kerseys.co.uk/jaffa-cakes-cakes-biscuits/">Jaffa cakes</a>”.</p>
+<p>There are, Kiel went on to say, three options. One is that lawyers argue about which box the house boat belongs in and the winner sets a precedent. A second is to say that we need a New Box, for things that are neither houses or boats. And a third thing is to redesign the whole set of boxes, perhaps according to some new principle, at some higher level of the justice system.</p>
+<p>The technology industry, he said, always argues for the New Box. Innovation brings the new &amp; different; and new &amp; different can’t be confined by the rather old-fashioned Old Boxes currently in place. Innovation deserves its own New Box. Conveniently, a New Box means you don’t have to look back at what we have learned in countries around the globe from centuries of precedent because those precedents only applied to the Old Boxes, and have nothing to say about the New Box.</p>
+<p>Also, he said, the New Box is almost always a bad idea. So in tort law (harms), one box is “negligence”. If the case fits in this box they the question is: did you do the thing you should have done? So when driving, for example, you might end up in a crash but you didn’t do anything wrong. Another box is “strict liability”, and if the case fits in this box then we don’t care what you did, you’re still responsible for the outcome.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Making explosives, as an example. So what about self-driving cars? Negligence or Strict Liability? His point is, its one or the other. Technological systems almost always fall into one or other of these boxes.</p>
+<p>----</p>
+<p>Now we have Generative AI: an important set of innovations with far-reaching implications. Technology leaders and commentators differ on how to approach the challenges of Generative AI, but both proponents and many critics-inside-the-room argue that these new problems deserve a New Box and they have given it a name: “alignment”. Geoffrey Hinton, on leaving Google, said “What we want is some way of making sure that even if they’re smarter than us, they’re going to do things that are beneficial for us - that’s called the alignment problem,” he said. “I wish I had a nice simple solution I can push for that, but I don’t.” ChatGPT creator OpenAI has a page on their web site with the title <a href="https://openai.com/blog/our-approach-to-alignment-research">Our approach to alignment research</a>, and it starts off saying “Our alignment research aims to make artificial general intelligence (AGI) aligned with human values and follow human intent.”</p>
+<p>If Kiel Brennan-Marquez is right, then looking to build a new box called “alignment” is probably a bad idea. And he’s not the only one: in <a href="https://www.cigionline.org/articles/the-best-way-to-govern-ai-emulate-it/">an essay published last week</a> Elizabeth M. Renieris aims a variation of the argument squarely at the Generative AI challenge. Here’s an excerpt;</p>
+<blockquote class="blockquote">
+<p>In general, we can respond to new technologies in three ways. We can apply the letter of existing laws “as is,” effectively ensuring that new technologies remain out of scope (the “law of the horse” problem). We can start from scratch and craft new, technology-specific laws each time, which would effectively require an unlimited supply of resources. Or, we can apply existing laws in new ways, adapting them to fit the spirit of the law and its objectives. Despite the fact that many existing laws, including the GDPR, are meant to be technology-neutral — meaning that the rules should apply equally irrespective of how a technology works or operates — we often forget in practice to adhere to this principle.</p>
+</blockquote>
+<p>But what if this time is different? The now-famous <a href="https://futureoflife.org/open-letter/pause-giant-ai-experiments/">Pause Giant AI Experiments open letter</a> says “Advanced AI could represent a profound change in the history of life on Earth”. If the end of humanity (<a href="https://en.wikipedia.org/wiki/Existential_risk_from_artificial_general_intelligence">Wikipedia link</a>) doesn’t deserve a New Box, nothing does; but if that New Box turns out to be Pandora’s, then the consequences could be huge too. So before addressing the Alignment New Box directly, and even though this time might be different, let’s look back at how previous New Boxes have worked out and see what we might learn from them.</p>
+</section>
+<section id="the-new-box-holds-everything" class="level1">
+<h1>The New Box Holds Everything</h1>
+<p>The technology industry has not only argued for a New Box with each new round of innovation, but also claims that their New Box is more capacious than all those old boxes.</p>
+<p>An obvious case is the box called “content”. All around the world, countries had laws in place to govern written words, spoken words, and images. There are separate rules for different kinds of speech: journalistic content, political speech, advertising to children, pornography, gossip, local notices, speech inside a doctor’s office: boxes within boxes in jurisdiction after jurisdiction. But the social media platforms took all these forms of speech, added on video and music for good measure, and called it all “content”. And they got to avoid many of the rules and institutions that newspaper publishers, doctors, advertisers, and pornographers have to navigate, most notably in the US by virtue of <a href="https://en.wikipedia.org/wiki/Section_230">Section 230</a> of the US Communications Decency Act (which basically applies to Canada also by way of NAFTA).</p>
+<blockquote class="blockquote">
+<p>No provider or user of an interactive computer service shall be treated as the publisher or speaker of any information provided by another information content provider.</p>
+</blockquote>
+<p>Around ten years ago, sharing economy companies did the same thing. There is a rich history of rules about work, but Uber argued that their drivers were engaged in something different. There is a history of rules about offering accommodation for money, but Airbnb claimed that “sharing” was different, their hosts were <a href="https://medium.com/@bchesky/shared-city-db9746750a3a">micro-entrepreneurs</a>, and that those old rules didn’t apply.</p>
+<p>Crypto-currency investors and advocates likewise claimed that bitcoin, ethereum and other crypto-coins need a separate box from other forms of currency.</p>
+<p>While it has not had the same legal impact, another example is the world of “makers”, who have taken their niche of technology-based DIY and appropriated the universal word for creating things as their own, as if knitters, carpenters, blacksmiths, cooks and so on never existed, or were just insufficiently ambitious.</p>
+<p>These universalized New Boxes are, perhaps by neglect and perhaps by design, ill-defined and without clear boundaries. I can’t help but think the lack of precision reflects a hubris at the heart of many of these developments. Technology leaders who believe themselves to be the smartest in the room, and who believe that their room is the only room that matters, position themselves as the only qualified stewards of the technology they created, and seem to think the questions of law and norms and so on are new but secondary problems that can be solved once the smart people get around to thinking hard about them.</p>
+<p>The technology companies have often won themselves time and space by convincing legislators, but have repeatedly failed to solve the pressing problems that their platforms have created. Having constructed these universalizing New Boxes that subsume all kinds of speech and act into “content”, they embarked on devising rules for it and found, much to their surprise, that it is a set of tangled and wicked problems. Cryptocurrency promoters found that those who put rules in place to prevent fraud and mismanagement were not dimmer than blockchain wizards. And so on.</p>
+<p>What has happened has been that legislators’ willingness to allow a space to innovate has become a method for liability laundering.</p>
+<p>Liability laundering comes from the separation between the company and the technology it develops.</p>
+<p>We want to be regulated! says Facebook and the others. But what form should that regulation take? Risk-based assessment.</p>
 
 
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>A rough statement only: the specifics vary from country to country.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

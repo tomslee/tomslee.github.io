@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2021-02-10">
+<meta name="author" content="Tom Slee">
+<meta name="dcterms.date" content="2009-01-19">
 
-<title>Uber-optimistic – Tom Slee</title>
+<title>Tumbleweed blogs (firstname challenge again) – Tom Slee</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -72,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta name="twitter:title" content="Uber-optimistic – Tom Slee">
+<meta name="twitter:title" content="Tumbleweed blogs (firstname challenge again) – Tom Slee">
 <meta name="twitter:description" content="Personal web site">
 <meta name="twitter:card" content="summary">
 </head>
@@ -143,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Uber-optimistic</h1>
+      <h1 class="title">Tumbleweed blogs (firstname challenge again)</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">blog archive</div>
               </div>
@@ -153,11 +154,17 @@ ul.task-list li input[type="checkbox"] {
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Tom Slee </p>
+            </div>
+    </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 10, 2021</p>
+        <p class="date">January 19, 2009</p>
       </div>
     </div>
     
@@ -191,28 +198,118 @@ Note
 <p>This page has been migrated from an earlier version of this site. Links and images may be broken.</p>
 </div>
 </div>
-<p>As Uber loses more money, CEO Dara Khosrowshahi continues cross his fingers and dream.</p>
-<p>Uber <a href="https://investor.uber.com/news-events/news/press-release-details/2021/Uber-Announces-Results-for-Fourth-Quarter-and-Full-Year-2020/default.aspx">just announced</a> its Q4 2020 earnings on February 10: a net loss of $968 million, or an “Adjusted EBITDA loss of $(454) million”.</p>
-<p>Here’s Uber’s revenue (blue), profitability (orange) and number of trips (green).</p>
-{{&lt; figure src="/ox-hugo/uber-earnings-2020-q4.png" &gt;}}
-<p>The company still says it’s going to be profitable by the end of 2021. What’s the track record for such predictions? Let’s take a look…</p>
+<p>So some bloke called Graham emails me about <a href="http://whimsley.typepad.com/whimsley/2009/01/firstnameblogspotcom-a-challenge.html">my competition</a> and he says, like, why don’t you do it yourself then? And here’s a list of names: http://bel-epa.com/area51/library/names.txt.</p>
+<p>So I says, OK then. I will. And I write myself a little python like this:</p>
+<pre><code>&lt;span style="font-size: 15px; font-family: Courier;"&gt;import httplib&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt;import re&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt;import sys&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt;conn = httplib.HTTPConnection("bel-epa.com")&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt;conn.request("GET", "/area51/library/names.txt")&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt;namelist = conn.getresponse().read().split()&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt;conn.close()&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt;activenames = {}&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt;inactivenames = {}&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt;print len(namelist)&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt;for name in namelist:&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt; try:&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt; host = name + ".blogspot.com"&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt; p = re.compile('200[0-9]&lt;')&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt; conn = httplib.HTTPConnection(host)&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt; conn.request("GET", "")&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt; response = conn.getresponse()&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt; body = response.read()&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt; mo = p.search(body) &lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt; if mo:&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt; activenames[name] = mo.group().rstrip('&lt;')&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt; print name, mo.group().rstrip('&lt;')&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt; else:&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt; inactivenames[name] = "null" &lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt; print name, "null"&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt; except:&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt; print "Failure on " + name &lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt;conn.close()&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt;f = open("blogdeath.csv", "w")&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt;f.write("name,year\n")&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt;for name, year in activenames.iteritems():&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt; f.write(name + "," + year + "\n")&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt;for name, year in inactivenames.iteritems():&lt;/span&gt;&lt;br&gt;&lt;/br&gt;&lt;span style="font-size: 15px; font-family: Courier;"&gt;  f.write(name + ",1900\n")&lt;/span&gt;&lt;br&gt;&lt;/br&gt;</code></pre>
+<p>And then I plot the results and they look like this.<br>
+<a href="http://whimsley.typepad.com/.a/6a00d83451d3b369e2010536e5d40d970c-popup"><img src="http://whimsley.typepad.com/.a/6a00d83451d3b369e2010536e5d40d970c-320wi.png" class="img-fluid" alt="Blogs"></a><br>
+Which means that of the 7489 potential firstname.blogspot.com URLs:</p>
 <ul>
-<li>When Gawker saw a leaked document in <a href="https://www.businessinsider.com/ubers-revenue-profit-and-loss-2015-8">August 2015</a>, showing losses at Uber, the company shrugged it off. “It’s the case of business 101: you raise money, you invest money, you grow (hopefully), you make a profit and that generates a return for investors.” Turns out the “investment” part is the easy part.</li>
-<li>In <a href="https://www.theinformation.com/articles/ubers-losses-grow-but-so-do-its-profit-projections">January 2016</a>, Amir Efrati of <em>The Information</em> saw some internal projections. “The projection suggested Uber would generate an $8.2 billion profit in 2019 from $22.7 billion in net revenue. During the next four years, according to the projection, Uber would expect to generate nearly $14 billion in profit in developed markets.” A little excess of enthusiasm there: actual revenue $14B, actual profit -$8.5 billion. Maybe they got a sign wrong.</li>
-<li>On <a href="https://techcrunch.com/2016/02/18/uber-ceo-travis-kalanick-says-company-is-profitable-in-u-s/#:~:text=Uber%20is%20officially%20profitable%20in,publication%20BetaKit%20earlier%20this%20week.&amp;text=%E2%80%9CWe're%20profitable%20in%20the,China%2C%E2%80%9D%20Kalanick%20told%20BetaKit.">February 18 2016</a>, then-CEO Travis Kalanick said Uber is “profitable in the USA, but we’re losing over $1 billion a year in China”. Uber sold its China operations in August 2016; still not profitable.</li>
-<li>In <a href="https://www.cnbc.com/2016/03/24/uber-ceo-sees-profits-in-china-in-2-yearss-time.html">March 2016</a>, Kalanick “sees profits in China in 2 years’ time”. He claimed that “the company, which currently operates in 400 cities around the world, will not be able to scale up without investing and being unprofitable for a while.” Five years of scaling later, “for a while” is stretching it.</li>
-<li>In <a href="https://fortune.com/2016/06/16/uber-profitable-markets/">June 2016</a>, Kalanick “revealed” that Uber is profitable (excluding interest and taxes) in “several markets”. No evidence yet.</li>
-<li>At <a href="https://www.bloomberg.com/news/articles/2018-01-23/uber-to-be-profitable-within-three-years-khosrowshahi-says">Davos in January 2018,</a> CEO Dara Khosrowshahi says Uber will be “profitable in three years”. And here we are, three years later. OK, give them a break because of Covid, but it was Khosrowshahi himself who said, in <a href="https://www.wsj.com/articles/ubers-first-quarter-loss-balloons-on-coronavirus-impact-11588882349">May 2020</a>, “We believe the disruption caused by Covid-19 will impact our time line by a matter of quarters and not years”.</li>
-<li>In <a href="https://www.newyorker.com/magazine/2018/04/09/at-uber-a-new-ceo-shifts-gears">April 2018</a>, Eric Meyhofer, head of the autonomous-driving unit, said “This is all about building autonomous ride-sharing, at scale, as a product. This is our future… The question now isn’t whether the company can make a self-driving vehicle but whether it can make one quickly and cheaply enough to solve [Uber’s] revenue problems.” Answer apparently in the negative.</li>
-<li>In <a href="https://www.cnbc.com/2018/05/30/uber-ceo-on-ipo-plans-and-warren-buffett.html">May 2018</a>, he said “We’re in a good position in terms of the company’s profile, in terms of profitability and margins continue to get better”. The chart above begs to differ.</li>
-<li>In <a href="https://www.theverge.com/2018/5/15/17340064/uber-ceo-dara-khosrowshahi-interview-elevate-flying-cars">May 2018</a> Dara saw a commercial “urban air mobility” service by 2023. Because why not?</li>
-<li>In <a href="https://techcrunch.com/2018/09/06/uber-ceo-ride-hailing-will-be-eclipsed-by-scooters-bikes-and-even-flying-taxis/">September 2018</a>, he said that “ride hailing will be eclipsed by scooters, bikes and even flying taxis”. Solid grasp of the fundamentals.</li>
-<li>In <a href="https://www.bbc.com/news/technology-52832791">May 2020</a>, Uber destroyed “thousands of electric bikes and scooters, after selling its Jump business to Lime.” Can’t fault Dara for trying?</li>
-<li>In <a href="https://www.npr.org/2020/12/07/944004278/after-once-touting-self-driving-cars-uber-sells-unit-to-refocus-on-core-business#:~:text=in%20Los%20Angeles.-,Uber%20said%20it%20will%20sell%20its%20self,research%20unit%20to%20startup%20Aurora.&amp;text=Ride%2Dhailing%20giant%20Uber%20is,the%20self%2Ddriving%20startup%20Aurora.&amp;text=Uber%20hasn't%20given%20up%20on%20the%20promise%20of%20autonomous%20vehicles.">December 2020</a>, Uber sold its self-driving unit. But did not change the optimistic story, even though autonomous cars were seen as central to the company’s future for years.</li>
-<li><a href="https://www.cnbc.com/2020/12/08/air-taxi-start-up-joby-acquires-uber-elevate-.html">And</a> its flying taxi business. Not so central.</li>
-<li>A year ago, on <a href="https://www.reuters.com/article/us-uber-results/uber-sees-profit-by-end-of-2020-but-still-expects-full-year-loss-idINKBN2002UQ">February 6 2020</a>, Uber said it had a target “to achieve a measure of profitability to the fourth quarter of 2020, but the ride-hailing company still expects to lose a total of more than $1 billion this year”. It lost $6.8B.</li>
+<li><p>2692 don’t seem to have anything going on ever or have weird styling so I can’t catch the date headers blogger templates usually use. A quick scan suggests that most are stillborn. See http://ned.blogspot.com/ or http://karim.blogspot.com/ for a couple of examples.</p></li>
+<li><p>361 were born and died in 2000.</p></li>
+<li><p>2001 and 2002 were the peak years for firstname blogs, with over 900 dying off each year. Not surprising that this is an early peak: the firstname places would be picked up quickly. Perhaps more surprising is that these blogs have been sitting there for 7 or 8 years, unattended, and blogger hasn’t done anything with them.</p></li>
+<li><p>The number of dying blogs falls off - meaning that the number of active ones does as well probably. Until now, only 96 blogs have been updated in the first three weeks of 2009.</p></li>
 </ul>
-<p>So, still not profitable.</p>
+<p>96 out of 7489. That’s about one in 75 that are active. Pretty small numbers.</p>
+<p>How does this silly survey compare with a bigger picture? The Technorati annual review of blogging for 2008 <a href="http://technorati.com/blogging/state-of-the-blogosphere/">says</a> that about 7.5 million blogs were updated in the 120 days before their report of 133 million that they have ever indexed: about one in 20 or so. Given the longer timeframe, not too bad a match. So 19 out of 20 blogs that have ever been started are now moribund.</p>
+<p>And here, for those of you who are interested, the 96 firstname blogs still going strong are listed at the end of this post.</p>
+<p>My technorati ranking is about 33 at the moment but I have been as high as 90. That puts me, they say, in the top 1% of blogs. I get about 50 readers a day, many of whom are googlers who probably land here and don’t find what they are looking for. And, on generous average, about one comment per post, so 99 out of a hundred bloggers get few readers and no comments. If these people are a typical sample, maybe one of them gets a comment per post. Maybe you should choose one and say hello.</p>
+<p>elvina<br>
+adger<br>
+minta<br>
+cindi<br>
+worden<br>
+doretta<br>
+grover<br>
+carmen<br>
+charlton<br>
+hildagarde<br>
+melesa<br>
+lillian<br>
+miranda<br>
+delcina<br>
+barbette<br>
+urbanus<br>
+tina<br>
+jess<br>
+roland<br>
+bonny<br>
+madalyn<br>
+vivi<br>
+corabella<br>
+nikoletta<br>
+faunie<br>
+cherey<br>
+henka<br>
+terrill<br>
+olive<br>
+valli<br>
+kamila<br>
+cherice<br>
+lorette<br>
+daune<br>
+orville<br>
+sella<br>
+johnathon<br>
+aleecia<br>
+madelina<br>
+dottie<br>
+dario<br>
+roselyn<br>
+merrie<br>
+amalea<br>
+ephraim<br>
+trey<br>
+werner<br>
+antonino<br>
+levon<br>
+lavina<br>
+saxe<br>
+douglas<br>
+meira<br>
+danila<br>
+winston<br>
+lavinie<br>
+teresita<br>
+clovis<br>
+chas<br>
+letti<br>
+anders<br>
+edythe<br>
+aileen<br>
+luanna<br>
+huntlee<br>
+bancroft<br>
+sidonnie<br>
+fancie<br>
+marcelline<br>
+joella<br>
+pauline<br>
+engracia<br>
+oran<br>
+kirk<br>
+rhonda<br>
+leonardo<br>
+claudia<br>
+evette<br>
+kris<br>
+bird<br>
+zia<br>
+wilmette<br>
+merrel<br>
+fitz<br>
+cain<br>
+lindy<br>
+hope<br>
+dwain<br>
+mareah<br>
+sara<br>
+berkley<br>
+pinchas<br>
+josselyn<br>
+robinett<br>
+oprah<br>
+heidi</p>
 
 
 
