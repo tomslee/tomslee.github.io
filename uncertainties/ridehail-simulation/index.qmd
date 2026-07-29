@@ -196,11 +196,11 @@ The use of random locations for trip destinations implies an average trip length
 
 ## Implementations {#implementation}
 
-The simulation is implemented in the Python programming language, and the code is available on GitHub at <https://github.com/tomslee/ridehail>. It can be run as a desktop application from a command line (tested on Windows and on Linux) and a subset can be explored more interactively online at <https://tomslee.github.io/ridehail/lab/>.
+The simulation is implemented in the Python programming language, and the code is available on GitHub at <https://github.com/tomslee/ridehail>. It can be run as a desktop application from a command line (tested on Windows and on Linux) and a subset can be explored more interactively online at the [Ridehail Lab](/ridehail/lab/).
 
 Simulations using the desktop application are controlled by a configuration file, which at its simplest specifies the size of the city (number of blocks on each side), the base demand rate (number of trip requests each move), and the number of vehicles. Currently there are almost 50 configuration parameters governing (beyond the basic simulation), logging, animation, sequence, equilibration, shocks and more.
 
-A subset of the simulations is also available on the web at <https://tomslee.github.io/ridehail/lab/> , where the configuration is set in the browser. The simulations run in the browser (not at a server), using the Pyodide python distribution [@thepyodidedevelopmentteam2022], using the same underlying code as the desktop but with different configuration and animation options. The web site is currently a playground or laboratory, which allows experimentation but does not provide a way to save results. All results in this paper are taken from desktop simulations.
+A subset of the simulations is also available on the web at the [Ridehail Lab](/ridehail/lab/), where the configuration is set in the browser. The simulations run in the browser (not at a server), using the Pyodide python distribution [@thepyodidedevelopmentteam2022], using the same underlying code as the desktop but with different configuration and animation options. The web site is currently a playground or laboratory, which allows experimentation but does not provide a way to save results. All results in this paper are taken from desktop simulations.
 
 ## Justifications
 

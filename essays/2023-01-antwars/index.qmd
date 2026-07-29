@@ -38,7 +38,7 @@ comments:
 ---
 
 ::: {.callout-note appearance="simple"}
-References and sources for this essay can be found in the much longer companion piece, *War as a system in nature* ([SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4262518 "SSRN version of War as a System in Nature"), [personal site](https://tomslee.github.io/essays/2022-12-antwar/ "personal site")).
+References and sources for this essay can be found in the much longer companion piece, *War as a system in nature* ([SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4262518 "SSRN version of War as a System in Nature"), [personal site](/essays/2022-12-antwar/ "personal site")).
 :::
 
 ::: {.content-visible when-format="html"}

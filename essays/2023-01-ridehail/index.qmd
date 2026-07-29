@@ -149,7 +149,7 @@ The use of random locations for trip destinations implies an average trip length
 
 ## Implementation {#implementation}
 
-The simulation is implemented in the Python programming language, and the code is available on GitHub [here](https://github.com/tomslee/ridehail). It can be run as a desktop application from a command line but is also available at a web site, [here](https://tomslee.github.io/ridehail/lab/).
+The simulation is implemented in the Python programming language, and the code is available on GitHub [here](https://github.com/tomslee/ridehail). It can be run as a desktop application from a command line but is also available at a web site, [here](/ridehail/lab/).
 
 Simulations using the desktop application are controlled by a configuration file, which at its simplest specifies the size of the city (number of blocks on each side), the base demand rate (number of trip requests each move), and the number of vehicles.
 
