@@ -28,6 +28,8 @@ website:
         href: uncertainties.qmd
       - text: "Ridehail Lab"
         href: https://tomslee.github.io/ridehail/
+      - text: "Ridehail Dashboard"
+        href: https://tomslee.github.io/ridehail-toronto/
       - text: "Whimsley (blog archive)"
         href: blog.qmd
     right:
