@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Tom Slee">
-<meta name="dcterms.date" content="2025-11-12">
+<meta name="dcterms.date" content="2026-07-29">
 <meta name="description" content="Computer simulations of ridehail traffic and trips in a simplified city">
 
 <title>Simple Simulations of Ridehail Traffic and Trips – Tom Slee</title>
@@ -179,12 +179,12 @@ window.Quarto = {
 <span class="menu-text">Uncertainties</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://tomslee.github.io/ridehail/"> 
+    <a class="nav-link" href="../../ridehail/"> 
 <span class="menu-text">Ridehail Lab</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://tomslee.github.io/ridehail-toronto/"> 
-<span class="menu-text">Ridehail Dashboard</span></a>
+    <a class="nav-link" href="../../ridehail-toronto/"> 
+<span class="menu-text">Ridehail Dashboards</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../blog.html"> 
@@ -239,7 +239,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Last updated</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">November 12, 2025</p>
+        <p class="date">July 29, 2026</p>
       </div>
     </div>
     
@@ -400,9 +400,9 @@ Figure&nbsp;3: The red dots show the origin of trips in a small “two-zone” c
 </section>
 <section id="implementation" class="level2" data-number="2.7">
 <h2 data-number="2.7" class="anchored" data-anchor-id="implementation"><span class="header-section-number">2.7</span> Implementations</h2>
-<p>The simulation is implemented in the Python programming language, and the code is available on GitHub at <a href="https://github.com/tomslee/ridehail" class="uri">https://github.com/tomslee/ridehail</a>. It can be run as a desktop application from a command line (tested on Windows and on Linux) and a subset can be explored more interactively online at <a href="https://tomslee.github.io/ridehail/lab/" class="uri">https://tomslee.github.io/ridehail/lab/</a>.</p>
+<p>The simulation is implemented in the Python programming language, and the code is available on GitHub at <a href="https://github.com/tomslee/ridehail" class="uri">https://github.com/tomslee/ridehail</a>. It can be run as a desktop application from a command line (tested on Windows and on Linux) and a subset can be explored more interactively online at the <a href="../../ridehail/lab/">Ridehail Lab</a>.</p>
 <p>Simulations using the desktop application are controlled by a configuration file, which at its simplest specifies the size of the city (number of blocks on each side), the base demand rate (number of trip requests each move), and the number of vehicles. Currently there are almost 50 configuration parameters governing (beyond the basic simulation), logging, animation, sequence, equilibration, shocks and more.</p>
-<p>A subset of the simulations is also available on the web at <a href="https://tomslee.github.io/ridehail/lab/" class="uri">https://tomslee.github.io/ridehail/lab/</a> , where the configuration is set in the browser. The simulations run in the browser (not at a server), using the Pyodide python distribution <span class="citation" data-cites="thepyodidedevelopmentteam2022">(<a href="#ref-thepyodidedevelopmentteam2022" role="doc-biblioref">The Pyodide development team 2022</a>)</span>, using the same underlying code as the desktop but with different configuration and animation options. The web site is currently a playground or laboratory, which allows experimentation but does not provide a way to save results. All results in this paper are taken from desktop simulations.</p>
+<p>A subset of the simulations is also available on the web at the <a href="../../ridehail/lab/">Ridehail Lab</a>, where the configuration is set in the browser. The simulations run in the browser (not at a server), using the Pyodide python distribution <span class="citation" data-cites="thepyodidedevelopmentteam2022">(<a href="#ref-thepyodidedevelopmentteam2022" role="doc-biblioref">The Pyodide development team 2022</a>)</span>, using the same underlying code as the desktop but with different configuration and animation options. The web site is currently a playground or laboratory, which allows experimentation but does not provide a way to save results. All results in this paper are taken from desktop simulations.</p>
 </section>
 <section id="justifications" class="level2" data-number="2.8">
 <h2 data-number="2.8" class="anchored" data-anchor-id="justifications"><span class="header-section-number">2.8</span> Justifications</h2>
