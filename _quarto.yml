@@ -26,10 +26,12 @@ website:
         href: essays.qmd
       - text: Uncertainties
         href: uncertainties.qmd
-      - text: "Ridehail Lab"
-        href: /ridehail/
-      - text: "Ridehail Dashboards"
-        href: /ridehail-toronto/
+      - text: "Ridehail"
+        menu:
+        - text: "Ridehail Lab"
+          href: /ridehail/
+        - text: "Ridehail Charts"
+          href: /ridehail-toronto/
       - text: "Whimsley (blog archive)"
         href: blog.qmd
     right:
