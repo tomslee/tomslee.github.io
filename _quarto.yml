@@ -22,18 +22,20 @@ website:
         href: index.qmd
       - text: About
         href: about.qmd
-      - text: Essays
-        href: essays.qmd
-      - text: Uncertainties
-        href: uncertainties.qmd
+      - text: "Writing"
+      - menu:
+        - text: Essays
+          href: essays.qmd
+        - text: Uncertainties
+          href: uncertainties.qmd
+        - text: "Whimsley (blog archive)"
+          href: blog.qmd
       - text: "Ridehail"
         menu:
         - text: "Ridehail Lab"
           href: /ridehail/
         - text: "Ridehail Charts"
           href: /ridehail-toronto/
-      - text: "Whimsley (blog archive)"
-        href: blog.qmd
     right:
       - icon: github
         href: https://github.com/tomslee
