@@ -14,7 +14,7 @@ toc-title: Contents
 # reference-location: margin
 # citation-location: margin
 # cap-location: margin
-image: weaver_ants_5.png
+image: weaver_ants_5.jpg
 title-block-banner: true
 reading-time: true
 number-sections: true

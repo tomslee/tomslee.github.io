@@ -23,7 +23,7 @@ callout-appearance: simple
 
 The rise of deep learning has been accompanied by a fascination with "adversarial examples": the classic cases are striking because they cause amazingly accurate machine learning models to make amazingly stupid mistakes. A carefully designed tweak invisible to the human eye may cause an image-recognition system to mistake what is "obviously" a picture of a macaw for a picture of a bookcase.
 
-![Figure 1: A slight perturbation of this picture of a macaw causes it to be classified as a bookcase.](./2019-ai-adversarial-macaw.png)
+![Figure 1: A slight perturbation of this picture of a macaw causes it to be classified as a bookcase.](./2019-ai-adversarial-macaw.jpg)
 
 In the few years since their discovery, adversarial examples have been shown to be both ubiquitous and difficult to prevent. These "adversarial attacks", as they are also called, cast a doubt over whether deep learning systems can survive in the real world. Deep learning systems seem to have the potential for great accuracy over some dimensions, but also great fragility in others.
 

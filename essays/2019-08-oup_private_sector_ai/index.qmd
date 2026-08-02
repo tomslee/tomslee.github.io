@@ -142,9 +142,9 @@ There is growing evidence that the remarkable accuracy of deep learning models m
 
 [^29]: Adi Shamir et al., "A Simple Explanation for the Existence of Adversarial Examples with Small Hamming Distance," *ArXiv:1901.10861 \[Cs, Stat\]*, January 30, 2019, <http://arxiv.org/abs/1901.10861>; Alexandru Constantin Serban and Erik Poll, "Adversarial Examples - A Complete Characterisation of the Phenomenon," *ArXiv:1810.01185 \[Cs\]*, October 2, 2018, <http://arxiv.org/abs/1810.01185>; Ali Shafahi et al., "Are Adversarial Examples Inevitable?," September 27, 2018, <https://openreview.net/forum?id=r1lWUoA9FQ>; David Stutz, Matthias Hein, and Bernt Schiele, "Disentangling Adversarial Robustness and Generalization," *ArXiv:1812.00740 \[Cs, Stat\]*, December 3, 2018, <http://arxiv.org/abs/1812.00740>; Dimitris Tsipras et al., "Robustness May Be at Odds with Accuracy," May 30, 2018, <https://arxiv.org/abs/1805.12152v3>.
 
-{{< figure src="/ox-hugo/2019-ai-adversarial-macaw.png" caption="Figure 2: A slight perturbation of this picture of a macaw causes it to be classified as a bookcase.[fn:30]" >}}
+{{< figure src="/ox-hugo/2019-ai-adversarial-macaw.jpg" caption="Figure 2: A slight perturbation of this picture of a macaw causes it to be classified as a bookcase.[fn:30]" >}}
 
-![Figure 2: A slight perturbation of this picture of a macaw causes it to be classified as a bookcase.[fn:30]](2019-ai-adversarial-macaw.png)
+![Figure 2: A slight perturbation of this picture of a macaw causes it to be classified as a bookcase.[fn:30]](2019-ai-adversarial-macaw.jpg)
 
 Many machine learning systems have high impact because they are deployed at scale. We may not want to invest in optimizing our LinkedIn profile, but if we are seeking work and that's where employers look we have little alternative but to put our best foot forward. Scale also creates market opportunities for cost-lowering intermediaries who can assist with optimization, as with search-engine optimization, reputation management or, come to that, tax accountancy. Scale makes algorithmic flaws matter more than those of any one human.
 
