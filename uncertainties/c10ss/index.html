@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Tom Slee">
+<meta name="dcterms.date" content="2026-08-31">
+<meta name="description" content="What’s going on?">
+
+<title>Notes on self – Tom Slee</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-d0e51d601bbc9652e923fef3cd0732d8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+<style>
+
+      .quarto-title-block .quarto-title-banner {
+        background: DarkCyan;
+      }
+</style>
+<meta name="quarto:status" content="draft">
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Tom Slee</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <span class="nav-link">
+<span class="menu-text">Writing</span>
+    </span>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text"></span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../../essays.html">
+ <span class="dropdown-text">Essays</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../uncertainties.html">
+ <span class="dropdown-text">Uncertainties</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../blog.html">
+ <span class="dropdown-text">Whimsley (blog archive)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-ridehail" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Ridehail</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-ridehail">    
+        <li>
+    <a class="dropdown-item" href="../../ridehail/">
+ <span class="dropdown-text">Ridehail Lab</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../ridehail-toronto/">
+ <span class="dropdown-text">Ridehail Charts</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/tomslee"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/whimsley"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Notes on self</h1>
+                  <div>
+        <div class="description">
+          <p>What’s going on?</p>
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Uncertainties</div>
+                <div class="quarto-category">c10ss</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Tom Slee <a href="mailto:slee.tom@gmail.com" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Last updated</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 31, 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a>
+  <ul class="collapse">
+  <li><a href="#why-these-notes" id="toc-why-these-notes" class="nav-link" data-scroll-target="#why-these-notes"><span class="header-section-number">1.1</span> Why these notes?</a></li>
+  <li><a href="#what-we-lose" id="toc-what-we-lose" class="nav-link" data-scroll-target="#what-we-lose"><span class="header-section-number">1.2</span> What we lose</a></li>
+  </ul></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">2</span> </a></li>
+  <li><a href="#what-we-mean-by-self" id="toc-what-we-mean-by-self" class="nav-link" data-scroll-target="#what-we-mean-by-self"><span class="header-section-number">3</span> What we mean by Self</a></li>
+  <li><a href="#the-subject-of-experience" id="toc-the-subject-of-experience" class="nav-link" data-scroll-target="#the-subject-of-experience"><span class="header-section-number">4</span> The Subject of Experience</a>
+  <ul class="collapse">
+  <li><a href="#examples-of-awareness" id="toc-examples-of-awareness" class="nav-link" data-scroll-target="#examples-of-awareness"><span class="header-section-number">4.1</span> Examples of awareness</a></li>
+  <li><a href="#physical-and-conscious-experience" id="toc-physical-and-conscious-experience" class="nav-link" data-scroll-target="#physical-and-conscious-experience"><span class="header-section-number">4.2</span> Physical and conscious experience</a></li>
+  </ul></li>
+  <li><a href="#are-experiences-what-matter" id="toc-are-experiences-what-matter" class="nav-link" data-scroll-target="#are-experiences-what-matter"><span class="header-section-number">5</span> Are experiences “what matter”?</a></li>
+  <li><a href="#chronicler-of-experience" id="toc-chronicler-of-experience" class="nav-link" data-scroll-target="#chronicler-of-experience"><span class="header-section-number">6</span> Chronicler of experience?</a></li>
+  <li><a href="#agency-experience-prediction" id="toc-agency-experience-prediction" class="nav-link" data-scroll-target="#agency-experience-prediction"><span class="header-section-number">7</span> Agency, experience, prediction</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="qcstate.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<section id="why-these-notes" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="why-these-notes"><span class="header-section-number">1.1</span> Why these notes?</h2>
+<p>It’s not possible to say it without sounding pretentious and/or cliched and/or morbid, so I might as well just say bluntly that these notes are basically about fear of death. Philip Larkin captures how I feel about it in his 1977 poem <a href="https://www.poetryfoundation.org/poems/48422/aubade-56d229a6e2f07"><em>Aubade</em></a>.</p>
+<p>I work all day, and get half-drunk at night.<br>
+Waking at four to soundless dark, I stare.<br>
+In time the curtain-edges will grow light.<br>
+Till then I see what’s really always there:<br>
+Unresting death, a whole day nearer now,<br>
+Making all thought impossible but how<br>
+And where and when I shall myself die.<br>
+Arid interrogation: yet the dread<br>
+Of dying, and being dead,<br>
+Flashes afresh to hold and horrify.</p>
+<p>The mind blanks at the glare. Not in remorse<br>
+—The good not done, the love not given, time<br>
+Torn off unused—nor wretchedly because<br>
+An only life can take so long to climb<br>
+Clear of its wrong beginnings, and may never;<br>
+But at the total emptiness for ever,<br>
+The sure extinction that we travel to<br>
+And shall be lost in always. Not to be here,<br>
+Not to be anywhere,<br>
+And soon; nothing more terrible, nothing more true.</p>
+<p>This is a special way of being afraid<br>
+No trick dispels. Religion used to try,<br>
+That vast moth-eaten musical brocade<br>
+Created to pretend we never die,<br>
+And specious stuff that says No rational being<br>
+Can fear a thing it will not feel, not seeing<br>
+That this is what we fear—no sight, no sound,<br>
+No touch or taste or smell, nothing to think with,<br>
+Nothing to love or link with,<br>
+The anaesthetic from which none come round.</p>
+<p>And so it stays just on the edge of vision,<br>
+A small unfocused blur, a standing chill<br>
+That slows each impulse down to indecision.<br>
+Most things may never happen: this one will,<br>
+And realisation of it rages out<br>
+In furnace-fear when we are caught without<br>
+People or drink. Courage is no good:<br>
+It means not scaring others. Being brave<br>
+Lets no one off the grave.<br>
+Death is no different whined at than withstood.</p>
+<p>Slowly light strengthens, and the room takes shape.<br>
+It stands plain as a wardrobe, what we know,<br>
+Have always known, know that we can’t escape,<br>
+Yet can’t accept. One side will have to go.<br>
+Meanwhile telephones crouch, getting ready to ring<br>
+In locked-up offices, and all the uncaring<br>
+Intricate rented world begins to rouse.<br>
+The sky is white as clay, with no sun.<br>
+Work has to be done.<br>
+Postmen like doctors go from house to house.</p>
+<p>So that’s not good.</p>
+<p>As for many others, fear of death has been an occasional companion for most of my life, ambushing me periodically to remind me that it’s still here, and that death is coming. “Nothing more terrible, nothing more true”.</p>
+<p>These notes are an attempt to reconcile myself with death, starting from the atheist assumption that after death there is nothing, and from the materialist assumption that there is no separate soul beyond my body. No “ghost in the machine”.</p>
+<p>Given that I can’t reconcile myself by convincing myself of an afterlife, I try to face the question of what is being lost, which inevitably leads to the topics of consciousness and the self. Perhaps, if the materialist idea of death is a stark binary “one to zero” – having a self to not – and if a spiritual idea of death is “one to something” – this life to an afterlife – will it feel better if it turns out that a more realistic idea of death is “less than one to slightly more than zero”?</p>
+<p>I make no pretense of new insights here, after thousands of years of people addressing these same topics, but I still find this is something I have had to work through myself rather than simply studying a text. If only there was such a text!</p>
+</section>
+<section id="what-we-lose" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="what-we-lose"><span class="header-section-number">1.2</span> What we lose</h2>
+<p>I use the word “consciousness” but like so much else, that is not a precise word. It’s a rough-and-ready word that has evolved to be used in different contexts. It overlaps with “self”, “the mind”, and more. I use it because others have.</p>
+<p>The particular use I have in mind is what we lose, or what is lost, when we die. In the famous words of Thomas Nagel, author of “<a href="https://www.jstor.org/stable/2183914">What Is It Like to Be a Bat?</a>” there is “something it is like” to be me, or you, while we are alive, until there is not. Philosophers call this “phenomenal consciousness” as opposed to other adjectival variants which we may meet later. We are the “subject of experiences” until we are not.</p>
+<p>The question “What is it like to be a bat?” is perhaps a follow-on question from “Why is it like anything?” It is not, we can assume, “like anything” to be a thermostat, or a smartphone, even though they respond to their environments and take actions, like we do.</p>
+<p>We know that heart and brain stop functioning when we die, but that does not capture the essence of what we lose. If a machine breaks down, it stops working but does not lose anything. To the extent that a neuroscientific description of brain function is a third-person description of how the brain works, it is not obvious why anything should be lost when our brain breaks down. Francoise Wemelsfelder, who studies animal consciousness, asks the question this way: “Can a particular functional property of a machine lift that machine out of its machine-like existence? This seems incoherent.” (p 22 of <a href="https://researchonline.lse.ac.uk/id/eprint/115949/1/art00001.pdf">this collection</a>).</p>
+<p>We seem to be stuck. At least I do:</p>
+<ol type="1">
+<li>I take materialism as a starting point (we have no separate “soul” or “mind”. There is no “ghost in the machine”).</li>
+<li>Materialism promises a complete scientific or third-person description of “how we work”. Neuroscientific descriptions of brain processes could be, in principle, a complete description of how the brain works.</li>
+<li>Yet there is something it is like to be me. I am a “subject of experience” which demands a first-person description, not a third-person description.</li>
+</ol>
+<p>The animated comedy South Park introduced the underpants gnomes, who have a three-phase program to make money:</p>
+<ol type="1">
+<li>Collect underpants</li>
+<li>?</li>
+<li>Profit!</li>
+</ol>
+<p>To anticipate some later notes, the neuroscientific program set in motion, perhaps, by Francis Crick and Christof Koch in 1990, focuses on the “correlates of consciousness” – things that happen in the brain when we experience something consciously. After 35 years this approach still seems something of an “Underpants Gnome theory”.</p>
+<ol type="1">
+<li>Intricate and sophisticated neurochemical description of the “correlates of consciousness”</li>
+<li>?</li>
+<li>Consciousness!</li>
+</ol>
+<p>Global Workspace Theory and other neuroscience programs all seem to have this problem.</p>
+<p>So how to proceed? It seems the only way out is through: pick apart the rough-and-ready notions of consciousness and “the self” into some component parts to at least make it more clear what we lose, and then try to piece those parts together into a coherent whole story. I don’t think I’ll get to the end of that, but at least I can spell out what I’ve been doing and hope it at least makes the challenges more clear to me.</p>
+</section>
+</section>
+<section id="section" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> </h1>
+</section>
+<section id="what-we-mean-by-self" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> What we mean by Self</h1>
+<p>“What it is to be like” is just part of the bigger question of what we mean by “self”. I can think of three aspects of “self-hood”:</p>
+<ul>
+<li>Experience - which we have just been discussing.</li>
+<li>Agency - bundled up with free will: we are actors in the world, who take decisions and make choices</li>
+<li>Continuity - there is something that is “me” that has persisted from my childhood to my current self. Whether that is something concrete or, like a river or a city, something that is ever-changing yet still exhibits continuity, is another question.</li>
+</ul>
+<p>Each of these will come up below, but here let’s just notice that they are different. I found Daniel Wegner and Kurt Gray ’s “The Mind Club” helpful. Today’s robots, they point out, have agency but no experience, while babies have rich experiences but little agency. Dementia and amnesia rob us of our sense of continuity but not so much experience or agency.</p>
+</section>
+<section id="the-subject-of-experience" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> The Subject of Experience</h1>
+<p>Even within the context of “phenomenal consciousness” we use the word “conscious” in several ways (for examples, see Gilbert Ryle, <em>The Concept of Mind</em>, p. 156) but they mainly fall into two categories:</p>
+<ul>
+<li>Being awake, as opposed to being asleep or anaesthetized (unconscious)</li>
+<li>Being aware, as in noticing or heeding something, as opposed to (for example) being unaware of the sensations in your feet as you walk.</li>
+</ul>
+<p>There are many degrees and variants of these. But let’s not be distracted: we want to focus here on what it is we lose upon death. Let’s adopt Derek Parfit’s phrase and call this “what matters”. And let’s focus on awareness for now.</p>
+<section id="examples-of-awareness" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="examples-of-awareness"><span class="header-section-number">4.1</span> Examples of awareness</h2>
+<p>The closer we look, the less we seem to be the “subject of experience” at least to the extent that means we are “aware of” or “conscious of” our experiences.</p>
+<p>(This is going to raise the question, postponed to later, of what “being aware of” means – who is this “conscious self” that is aware? and can one “be aware of” something without being able to talk about it? in which case, how much of consciousness do we share with animals? Let’s take it as a starting point without asking too much about what “being aware” means beyond commonplace use).</p>
+<p>Some phenomena seem to be experiences, yet we are unaware of experiencing them. Examples come from both everyday experience and from psychology experiments and observations of people with particular brain problems.</p>
+<p>Samuel Taylor Coleridge famously wrote “Kubla Khan” after a night of opium-induced dreaming. He woke with the awareness that lines of poetry had come to him from the dream, and he wrote them down until he was interrupted, after which he could not recapture the memory. Was Coleridge aware of composing the lines? Apparently not.</p>
+<p>Margaret Atwood (Introduction to “Book of Lives” p xix) reflects that every writer is at least two beings, the one who lives and the one who writes. She goes on:</p>
+<p>The one doing the writing has access to everything in the memory bank. The one doing the living might have some idea of what the writing self has been up to, but less than you’d think. While you’re writing, you aren’t observing yourself doing it, because if you start studying your so-called process while in full flight, you’ll freeze.</p>
+<p>[Is writing a trance state, as Coleridge’s story about Kubla Khan? Not quite: you can break off, answer the phone etc.] Yet the sensation of something else taking over can’t be ignored; too many writers have testified to it.</p>
+<p>“Blindsight” is a famous example of unconscious experience. Patients with some kinds of brain damage are shown pictures (in one eye) of either dots or stripes. They are asked what is in the picture, and say “I have no idea, I didn’t see anything”. Pressed to guess, it turns out they guess better than half the time. They know whether the picture is dots or stripes without being aware that they know it.</p>
+<p>The Libet experiment is another example: people think they are making a decision, but the brain activity happens before they are aware of making the decision.</p>
+<p>Habits are often reduced to subconscious or unconscious experience: many people have stood in the shower wondering “have I washed my hair or not?” or arrived at a regular destination in their car (a workplace perhaps) with no recollection of driving along the route.</p>
+<p>Gilbert Ryle makes the more general claim that to be aware of an experience demands attention on “having the experience”, which precludes attention on the experience itself. It is generally not possible, I think he argues, to have an experience and be aware of having it at the same time. Stare out of the window at a nearby building. Really focus on a part of the building – a window or door perhaps. Now pay attention to yourself focusing, and you lose focus.</p>
+</section>
+<section id="physical-and-conscious-experience" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="physical-and-conscious-experience"><span class="header-section-number">4.2</span> Physical and conscious experience</h2>
+<p>There is a biological perspective on this too. Let’s take pain. We certainly feel that we are “the subject of experience” when kicked in the shin, but the path from boot to conscious experience is more complex. In three phases (to simplify Lisa Feldman Barrett’s ideas of constructed emotion):</p>
+<ol type="1">
+<li>There is a local reaction in the leg. Muscular (flinching) and so on.</li>
+<li>The brain detects that the leg is doing something odd and sets all kinds of processes in train to deal with it (adrenaline, heart rate etc).</li>
+<li>Another aspect of the brain (interoception) detects and responds to the body’s changed state, constructing an instance of a feeling (pain, distress, anger).</li>
+</ol>
+<p>The theory is a modern descendant of an old idea, credited among others to William James (19th century) who phrased it memorably as “we do not cry because we are sorry, we are sorry because we cry”. Our emotions are reactions to happenings in the body. He puts it another way: If we remove all the bodily symptoms of rage, for example – increased heart beat, adrenaline, and so on, then there is nothing left. “The rage is evaporated without its bodily expressions”.</p>
+<p>In “Seeing Red”, Nicholas Humphrey follows a similar line of thought. He distinguishes <em>perception</em>, which is an interaction between the external world and the brain via the eye, from <em>sensation</em>, which is a purely internal event – a wider reaction to perception. And then there is “awareness of the sensation” which is another layer too.</p>
+<p>Consciousness, then, is not “consciousness of external happenings” so much as “consciousness of our body’s state”. It’s an internal phenomenon.</p>
+<p>This perhaps explains, or at least is consistent with, the fact that our body reacts to many external events without our being aware of it. We (body) are the subject of experiences perhaps, but we (consciousness) are the subject of our bodily responses.</p>
+<p>Some philosophers and neuroscientists seem to think of humans as a “brain on a stick” or a “brain in a vat” as if all the important things about us happen inside our skulls. Some computer scientists seem to think that, to the extent an LLM is like a brain, it may have everything needed for consciousness: the body (or the computer hardware) is reduced to a “substrate” on which the interesting building blocks of consciousness rest. But the examples here suggest that much more is going on in the body than may be obvious, and much more is going on in the subconscious brain than we might like to think.</p>
+<p>Some think that the small amount of information that makes its way to what we call “working memory” is what we might become aware of, tentatively. If this is so, then our sense of “now” is more like a window of about half a second in the recent past (which Humphrey calls the “thick now”), and our conscious awareness is not so much the subject of experiences as the chronicler of them, sifting through what our bodies have been up to and holding on to a few of those things, bringing them to conscious awareness and perhaps saving them for later.</p>
+<p>Ryle, again, approaches it from a different point of view and decides that “introspection” is more “retrospection”: we have no more awareness of what we are doing right now than we have of what others are doing: we notice the after-effects.</p>
+<p>Susan Blackmore has a compelling image for this scenario: she refers to consciousness as a “refrigerator illusion”. Is the light on? We open the door to find out, and there it is, turned on. It seems to us that the light is always on, but of course it is only on when we pay attention to it, and in between times we have no way to know if it is on or not.</p>
+<p>“Were you conscious just now, of reading that sentence?” Maybe, maybe not.</p>
+<p>If this is accurate, it prompts new questions. Which aspects of experience matter? If all our experiences were subconscious, would death still induce fear? What would we be losing (and who, in fact, would be losing it?) These questions remain open.</p>
+</section>
+</section>
+<section id="are-experiences-what-matter" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Are experiences “what matter”?</h1>
+<p>We have seen that we are less the “subject of experience” than I thought. It’s difficult to get your head around (what does it mean to live with this being true)? But let’s put that to one side and ask another question: is this focus on immediate experience (perception, sensation, emotion) the right focus?</p>
+<p>Derek Parfit designs a sequence of thought experiments in <em>Reasons and Persons</em> (1984). Two in particular ask us whether the focus on the experiences is “what matters”.</p>
+<p>Some sleeping pills (p 287) cause retrograde amnesia. Take such a pill and you remain awake for an hour, but in the morning will have no memories of the second half of the hour. Suppose you have been worrying at a problem, and see the answer during that second half hour: you must write a note to your tomorrow-self if you are to know, tomorrow, what the answer is. When you awake, you see the note, having no recollection of having written it.</p>
+<p>There are other cases.</p>
+<p>At the age of eight I was (I later found out) hit by a lorry on the way home from school, and knocked unconscious, waking in an ambulance on the way to the hospital. I have no recollection of the lorry. Further, I was later told that, between being hit and the ambulance coming, a man had asked me my name, where I lived, and I had told him. Somehow that gap is much more a complete blank than episodes that I simply forget: it is as if it never happened to me. Obviously it had an impact (the cut on my head, for example, was very much present the next day, complete with five stitches).</p>
+<p>Some anaesthetics (e.g.&nbsp;<a href="https://www.mayoclinic.org/drugs-supplements/midazolam-injection-route/description/drg-20064813">midazolam</a>, a benzodiazepine, which slow the central nervous system) produce drowsiness but leave the patient sufficiently aware to respond to commands. They also suppress memory, so the patient has no recollection of what happened during the surgery, even if they were not completely unconscious at the time.</p>
+<p>In each of these cases, a person may be the “subject of experiences” during a window of time, but will later have no recollection of those experiences. It is natural to ask: do those experiences matter? Let’s say an experience leaves no lasting bodily damage and that any subconscious changes are not lasting (aversion to certain things, without knowing why). Does being the subject of that experience matter?</p>
+<p>Parfit goes further with a well-known thought experiment of a (Star Trek-like) transporter, which “transports” you from an origin to a destination. Suppose such a transporter goes wrong: the “new you” appears at the destination but the “old you” is still present at the origin. And further, that the operator tells you “I’m sorry, the malfunction means that you are still here, but it is not without effects. You are going to die within an hour.” Should you be dismayed? There will, after all, be a “copy” of you continuing to live a life? Is the case, in fact, very different from being in the second half-hour after taking the sleeping pill. A “you” will wake in the morning, but will not remember what is happening now. Or is this a death?</p>
+<p>Parfit’s resolution is that “what fundamentally matters, in our concern about our own future, is the holding of Relation R, with any cause” (p. 289). In this cryptic sentence, “relation R” is “psychological connectedness and/or psychological continuity”, with any cause (p. 262). Personal identity, which is how he refers to the “subject of experience” is not, from this perspective, important.</p>
+<p>Events happen: experiences come and go. Parfit is suggesting that, if the experience is not a lasting one, it is not (from one perspective) “what matters”, and that in important ways “I” am not a persisting entity (a “further fact” beyond the events themselves), but more a set of connections among experiences.</p>
+<p>He suggests that this has given him a different perspective, which I quote here at some length:</p>
+<p>Is the truth depressing? Some may find it so. But I find it liberating, and consoling. When I believed that my existence was such a further fact, I seemed imprisoned in myself. My life seemed like a glass tunnel, through which I was moving faster every year, and at the end of which there was darkness. When I changed my view, the walls of my glass tunnel disappeared. I now live in the open air. There is still a difference between my life and the lives of other people. But the difference is less. Other people are closer. I am less concerned about the rest of my own life, and more concerned about the lives of others.</p>
+<p>When I believed the Non-Reductionist View, I also cared more about my inevitable death. After my death, there will be no one living who will be me. I can now redescribe this fact. Though there will later be many experiences, none of these experiences will be connected to my present experiences by chains of such direct connection as those involved in experience-memory, or in the carrying out of an earlier intention. Some of these future experiences may be related to my present experiences unless direct ways. There will later be some memories about my life. And there may later be thoughts that are influenced by mine, or things done as the result of my advice. My death will break the more direct relations between my present experiences and future experiences, but it will not break various other relations. This is all there is to the fact that there will be no one living will will be me. Now that I have seen this, my death seems to me less bad. (p. 281)</p>
+<p>I am not yet able to adopt Parfit’s perspective, but it seems worth trying for.</p>
+</section>
+<section id="chronicler-of-experience" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Chronicler of experience?</h1>
+<p>Let’s pick up from the section “Physical and conscious experience”. When we left, we had demoted the “subject of experience” to a more active but more indirect “detector of bodily changes in response to experience” or something like that, and had broadened the “now” of experience to a “think now” which extended something like half a second between a bodily event (a decision, perhaps, or a kick in the shins) and a conscious response (perhaps in the sense of “access consciousness” – something one can report on). But if that response vanishes immediately, it is of little use. We have to hold on to a response, to an experience, for at least a short while, if we are to make use of it. For that purpose, apparently we have this thing called “working memory”, which is a module that holds a small number (three? five? Something like that) of items for immediate use.</p>
+<p>Some (<a href="https://theconversation.com/consciousness-how-working-memory-may-mysteriously-give-rise-to-it-283823">Henry Taylor</a>, <a href="https://www.ovid.com/jnls/cogbehavneurol/pdf/10.1097/wnn.0000000000000319~consciousness-as-a-memory-system">Budson, RIchman and Kensinger</a>) have suggested that short-term memory is essential for consciousness, although (to set expectations), the “hard problem” will remain after this section: it’s not a silver bullet for consciousness.</p>
+<p>The idea is related to the <a href="https://digitalcommons.memphis.edu/cgi/viewcontent.cgi?article=1111&amp;context=ccrg_papers">Global Workspace Theory</a>, which suggests that while some events are managed by particular local modules in the brain (“modules” here being simply a widely-used synonym for “things” with no implication of locality or structure), others become “broadcast” to a bigger set of modules and then these become the contents of consciousness, or something like that. Here, working memory becomes that place where events are brought together.</p>
+<p>But like every other structure we have seen, working memory turns out to be more than a passive recipient and store of information, it is also an active sense-maker, compressing information into storage form.</p>
+<p>Budson et al highlight what they call “postdictive” effects. The “rabbit illusion” is one of these. Have a friend tap you on your arm while you look away. If they tap five times near the wrist, then five times near the elbow, and finally five times near the shoulder, the experience is instead one of a continuous track of taps from the wrist to the shoulder. We construct the sensations between the wrist and elbow (for example) to make sense of the taps, but can only do so after the elbow taps have happened. So we are reconstructing an experience earlier in time, out of sequence. Again, Susan Blackmore has an excellent description in “A Very Short Introduction to Consciousness”.</p>
+<p>We had already found that our “conscious” experience – the experience we can talk about a few seconds after it happens, perhaps – is a manifest image, shaped by our predicting brain and by the concepts it brings to bear on our expectations of the world in order to make sense of what matters in the moment. Now we see it’s actively constructed from a “thick now” as we go through life, looking back and forwards to make sense of the stimulations our body experiences.</p>
+<p>Again, it feels like being the “subject of experience” is becoming more and more inaccurate. We are the active chronicler of our own experiences, shaping them in ways that make sense to us given the concepts we have built up. This does not resolve the hard problem (who is it, after all, who is doing this chronicling, and who is experiencing the chronicle? Why is the thing doing and experiencing the chronicling like anything, like us, and not like a complex recording device, neither experiencing nor aware of building anything?) But it does rephrase it perhaps.</p>
+</section>
+<section id="agency-experience-prediction" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Agency, experience, prediction</h1>
+<p>This section is going to revisit several of the discussions above with, perhaps, a slightly different perspective. There is a common distinction made between being the subject of experience, and being an agent. The subject of experience is essentially passive: an experience is something that happens <em>to</em> you. Being an agent is active: it’s tied up with free will, decisions, choices, and so on. But as we’ve picked apart some of the inner workings of experience, the boundary between these two has become blurred. With the “predictive brain” understanding, it seems that we (let’s not look too closely at that pronoun just yet) actively shape our perceptions, or at least our sensations. We live in a world of what Daniel Dennett calls “manifest image” - a world with meaning. We don’t receive a bunch of photons and distill them into an image and then recognize a chair, we much more directly carry expectations of “chairness” into our perceptions, where “chair” is a concept that we have grown to understand over the course of our lives. When it comes to postdictive effects, our working memory (perhaps) is reassembling the events that make up an experience to interpret them before we are ever conscious of the events. And so on.</p>
+<p>In the same way, agency becomes somewhat passive. If Libet is right (and other examples?? They would be helpful here) then our decisions and act operate in similar ways to our sensations: our conscious self is a constructor of descriptions of the acts we took largely because we have become the kind of thing that behaves that way.</p>
+<p>So the juxtaposition of agency and experience, active and passive, cause and effect, becomes muddled. Perhaps we need instead to think of nodes in a network.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/tomslee\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>2023 – 2026, Tom Slee</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
