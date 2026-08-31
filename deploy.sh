@@ -19,7 +19,8 @@ set -euo pipefail
 # Destination server and docroot. Examples:
 #   SSH_TARGET="tom@example.com"
 #   DOCROOT="/var/www/tomslee/"          # absolute path, keep the trailing slash
-SSH_TARGET="tomslee@salticus.web.net"                            # FILL IN: user@host
+# SSH_TARGET="tomslee@salticus.web.net"                            # FILL IN: user@host
+SSH_TARGET="tomslee@tomslee.net"                            # FILL IN: user@host
 DOCROOT="/home/tomslee/public_html"                               # FILL IN: absolute path, trailing slash
 
 # Local render output of THIS site (Quarto default output dir).

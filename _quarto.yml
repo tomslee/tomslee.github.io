@@ -10,10 +10,11 @@ project:
 website:
   title: "Tom Slee"
   description: "Personal web site"
-  twitter-card: true
+  twitter-card: false
   favicon: logo.png
+  draft-mode: unlinked
   page-footer: 
-    left: "2023 -- 2024, Tom Slee" 
+    left: "2023 -- 2026, Tom Slee" 
   navbar:
     background: DarkCyan
     pinned: true
