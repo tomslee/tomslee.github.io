@@ -15,10 +15,10 @@ description: >
 toc: true
 toc-title: Contents
 toc-depth: 2
-reading-time: true
-number-sections: true
-callout-appearance: simple
+number-sections: false
 number-depth: 2
+reading-time: true
+callout-appearance: simple
 lightbox: true
 fig-cap-location: bottom
 format-links: [pdf]
@@ -35,7 +35,6 @@ format:
     documentclass: scrartcl
     papersize: letter
     toc: true
-    number-sections: false
     colorlinks: true
     output-file: "c10ss"
     output-ext: "pdf"
@@ -67,66 +66,70 @@ format:
 It's not possible to say it without sounding pretentious and/or cliched and/or morbid, so I might as well just say bluntly that these notes are basically about fear of death.
 Philip Larkin captures how I feel about it in his 1977 poem [*Aubade*](https://www.poetryfoundation.org/poems/48422/aubade-56d229a6e2f07).
 
-I work all day, and get half-drunk at night.\
-Waking at four to soundless dark, I stare.\
-In time the curtain-edges will grow light.\
-Till then I see what's really always there:\
-Unresting death, a whole day nearer now,\
-Making all thought impossible but how\
-And where and when I shall myself die.\
-Arid interrogation: yet the dread\
-Of dying, and being dead,\
-Flashes afresh to hold and horrify.
+--------------------------------------------------------------------------------
 
-The mind blanks at the glare.
-Not in remorse\
----The good not done, the love not given, time\
-Torn off unused---nor wretchedly because\
-An only life can take so long to climb\
-Clear of its wrong beginnings, and may never;\
-But at the total emptiness for ever,\
-The sure extinction that we travel to\
-And shall be lost in always.
-Not to be here,\
-Not to be anywhere,\
-And soon; nothing more terrible, nothing more true.
+| I work all day, and get half-drunk at night.
+| Waking at four to soundless dark, I stare.
+| In time the curtain-edges will grow light.
+| Till then I see what's really always there:
+| Unresting death, a whole day nearer now,
+| Making all thought impossible but how
+| And where and when I shall myself die.
+| Arid interrogation: yet the dread
+| Of dying, and being dead,
+| Flashes afresh to hold and horrify.
+|
+| The mind blanks at the glare.
+| Not in remorse
+| ---The good not done, the love not given, time
+| Torn off unused---nor wretchedly because
+| An only life can take so long to climb
+| Clear of its wrong beginnings, and may never;
+| But at the total emptiness for ever,
+| The sure extinction that we travel to
+| And shall be lost in always.
+| Not to be here,
+| Not to be anywhere,
+| And soon; nothing more terrible, nothing more true.
+|
+| This is a special way of being afraid
+| No trick dispels.
+| Religion used to try,
+| That vast moth-eaten musical brocade
+| Created to pretend we never die,
+| And specious stuff that says No rational being
+| Can fear a thing it will not feel, not seeing
+| That this is what we fear---no sight, no sound,
+| No touch or taste or smell, nothing to think with,
+| Nothing to love or link with,
+| The anaesthetic from which none come round.
+|
+| And so it stays just on the edge of vision,
+| A small unfocused blur, a standing chill
+| That slows each impulse down to indecision.
+| Most things may never happen: this one will,
+| And realisation of it rages out
+| In furnace-fear when we are caught without
+| People or drink.
+| Courage is no good:
+| It means not scaring others.
+| Being brave
+| Lets no one off the grave.
+| Death is no different whined at than withstood.
+|
+| Slowly light strengthens, and the room takes shape.
+| It stands plain as a wardrobe, what we know,
+| Have always known, know that we can't escape,
+| Yet can't accept.
+| One side will have to go.
+| Meanwhile telephones crouch, getting ready to ring
+| In locked-up offices, and all the uncaring
+| Intricate rented world begins to rouse.
+| The sky is white as clay, with no sun.
+| Work has to be done.
+| Postmen like doctors go from house to house.
 
-This is a special way of being afraid\
-No trick dispels.
-Religion used to try,\
-That vast moth-eaten musical brocade\
-Created to pretend we never die,\
-And specious stuff that says No rational being\
-Can fear a thing it will not feel, not seeing\
-That this is what we fear---no sight, no sound,\
-No touch or taste or smell, nothing to think with,\
-Nothing to love or link with,\
-The anaesthetic from which none come round.
-
-And so it stays just on the edge of vision,\
-A small unfocused blur, a standing chill\
-That slows each impulse down to indecision.\
-Most things may never happen: this one will,\
-And realisation of it rages out\
-In furnace-fear when we are caught without\
-People or drink.
-Courage is no good:\
-It means not scaring others.
-Being brave\
-Lets no one off the grave.\
-Death is no different whined at than withstood.
-
-Slowly light strengthens, and the room takes shape.\
-It stands plain as a wardrobe, what we know,\
-Have always known, know that we can't escape,\
-Yet can't accept.
-One side will have to go.\
-Meanwhile telephones crouch, getting ready to ring\
-In locked-up offices, and all the uncaring\
-Intricate rented world begins to rouse.\
-The sky is white as clay, with no sun.\
-Work has to be done.\
-Postmen like doctors go from house to house.
+--------------------------------------------------------------------------------
 
 So that's not good.
 
@@ -242,12 +245,12 @@ Apparently not.
 Margaret Atwood (Introduction to "Book of Lives" p xix) reflects that every writer is at least two beings, the one who lives and the one who writes.
 She goes on:
 
-The one doing the writing has access to everything in the memory bank.
-The one doing the living might have some idea of what the writing self has been up to, but less than you'd think.
-While you're writing, you aren't observing yourself doing it, because if you start studying your so-called process while in full flight, you'll freeze.
+> The one doing the writing has access to everything in the memory bank.
+> The one doing the living might have some idea of what the writing self has been up to, but less than you'd think.
+> While you're writing, you aren't observing yourself doing it, because if you start studying your so-called process while in full flight, you'll freeze.
 
-\[Is writing a trance state, as Coleridge's story about Kubla Khan?
-Not quite: you can break off, answer the phone etc.\] Yet the sensation of something else taking over can't be ignored; too many writers have testified to it.
+> \[Is writing a trance state, as Coleridge's story about Kubla Khan?
+> Not quite: you can break off, answer the phone etc.\] Yet the sensation of something else taking over can't be ignored; too many writers have testified to it.
 
 "Blindsight" is a famous example of unconscious experience.
 Patients with some kinds of brain damage are shown pictures (in one eye) of either dots or stripes.
@@ -324,11 +327,12 @@ But let's put that to one side and ask another question: is this focus on immedi
 
 Derek Parfit designs a sequence of thought experiments in *Reasons and Persons* (1984).
 Two in particular ask us whether the focus on the experiences is "what matters".
+The first is the case of amnesia.
 
-Some sleeping pills (p 287\) cause retrograde amnesia.
-Take such a pill and you remain awake for an hour, but in the morning will have no memories of the second half of the hour.
-Suppose you have been worrying at a problem, and see the answer during that second half hour: you must write a note to your tomorrow-self if you are to know, tomorrow, what the answer is.
-When you awake, you see the note, having no recollection of having written it.
+> Some sleeping pills (p 287\) cause retrograde amnesia.
+> Take such a pill and you remain awake for an hour, but in the morning will have no memories of the second half of the hour.
+> Suppose you have been worrying at a problem, and see the answer during that second half hour: you must write a note to your tomorrow-self if you are to know, tomorrow, what the answer is.
+> When you awake, you see the note, having no recollection of having written it.
 
 There are other cases.
 
@@ -367,30 +371,30 @@ Parfit is suggesting that, if the experience is not a lasting one, it is not (fr
 
 He suggests that this has given him a different perspective, which I quote here at some length:
 
-Is the truth depressing?
-Some may find it so.
-But I find it liberating, and consoling.
-When I believed that my existence was such a further fact, I seemed imprisoned in myself.
-My life seemed like a glass tunnel, through which I was moving faster every year, and at the end of which there was darkness.
-When I changed my view, the walls of my glass tunnel disappeared.
-I now live in the open air.
-There is still a difference between my life and the lives of other people.
-But the difference is less.
-Other people are closer.
-I am less concerned about the rest of my own life, and more concerned about the lives of others.
+> Is the truth depressing?
+> Some may find it so.
+> But I find it liberating, and consoling.
+> When I believed that my existence was such a further fact, I seemed imprisoned in myself.
+> My life seemed like a glass tunnel, through which I was moving faster every year, and at the end of which there was darkness.
+> When I changed my view, the walls of my glass tunnel disappeared.
+> I now live in the open air.
+> There is still a difference between my life and the lives of other people.
+> But the difference is less.
+> Other people are closer.
+> I am less concerned about the rest of my own life, and more concerned about the lives of others.
 
-When I believed the Non-Reductionist View, I also cared more about my inevitable death.
-After my death, there will be no one living who will be me.
-I can now redescribe this fact.
-Though there will later be many experiences, none of these experiences will be connected to my present experiences by chains of such direct connection as those involved in experience-memory, or in the carrying out of an earlier intention.
-Some of these future experiences may be related to my present experiences unless direct ways.
-There will later be some memories about my life.
-And there may later be thoughts that are influenced by mine, or things done as the result of my advice.
-My death will break the more direct relations between my present experiences and future experiences, but it will not break various other relations.
-This is all there is to the fact that there will be no one living will will be me.
-Now that I have seen this, my death seems to me less bad.
-(p.
-281\)
+> When I believed the Non-Reductionist View, I also cared more about my inevitable death.
+> After my death, there will be no one living who will be me.
+> I can now redescribe this fact.
+> Though there will later be many experiences, none of these experiences will be connected to my present experiences by chains of such direct connection as those involved in experience-memory, or in the carrying out of an earlier intention.
+> Some of these future experiences may be related to my present experiences unless direct ways.
+> There will later be some memories about my life.
+> And there may later be thoughts that are influenced by mine, or things done as the result of my advice.
+> My death will break the more direct relations between my present experiences and future experiences, but it will not break various other relations.
+> This is all there is to the fact that there will be no one living will be me.
+> Now that I have seen this, my death seems to me less bad.
+> (p.
+> 281\)
 
 I am not yet able to adopt Parfit's perspective, but it seems worth trying for.
 
