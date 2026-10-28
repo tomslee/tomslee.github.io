@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,16 @@
 
 <title>Quantum Computing and Quantum Chemistry – Tom Slee</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -27,7 +33,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -55,15 +60,14 @@ div.csl-indent {
 <link href="../../logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-d0e51d601bbc9652e923fef3cd0732d8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-35ec73b779c18004cd8ed79c7312c640.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -106,7 +110,7 @@ div.csl-indent {
 <meta name="quarto:status" content="draft">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -145,8 +149,6 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Tom Slee</span>
     </a>
@@ -208,11 +210,6 @@ window.Quarto = {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/tomslee"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/whimsley"> <i class="bi bi-twitter" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -303,7 +300,7 @@ window.Quarto = {
 <ul>
 <li>“[A]ccurate quantum chemical calculations represent one of the most anticipated practical applications of quantum computers” <span class="citation" data-cites="caesuraFasterQuantumChemistry2025">(<a href="#ref-caesuraFasterQuantumChemistry2025" role="doc-biblioref">Caesura et al. 2025</a>)</span></li>
 <li>“Accurate electronic structure calculations are considered one of the most anticipated applications of quantum computing that will revolutionize theoretical chemistry and other related fields.” <span class="citation" data-cites="aruteHartreeFockSuperconductingQubit2020">(<a href="#ref-aruteHartreeFockSuperconductingQubit2020" role="doc-biblioref">Arute et al. 2020</a>)</span></li>
-<li>“Quantum computers are ideal for getting precise simulations of how potential drugs interact with complex biological molecules. This may help researchers better identify drug candidates – and ultimately improve healthcare worldwide.” <span class="citation" data-cites="googlequantumaiQuantumApplications">(<a href="#ref-googlequantumaiQuantumApplications" role="doc-biblioref">Google Quantum AI n.d.</a>)</span></li>
+<li>“Quantum computers are ideal for getting precise simulations of how potential drugs interact with complex biological molecules. This may help researchers better identify drug candidates – and ultimately improve healthcare worldwide.” <span class="citation" data-cites="googlequantumaiQuantumApplications">(<a href="#ref-googlequantumaiQuantumApplications" role="doc-biblioref">Google Quantum AI, n.d.</a>)</span></li>
 <li>“Puzzles like drug discovery or chemical synthesis could be rapidly accelerated by prototyping on a quantum computer. Quantum simulation would allow scientists to model complex molecules and simulate a drug’s reaction inside the human body, or run advanced test on chemicals without risk of harm or waste.” <span class="citation" data-cites="hazanNextTechRevolution">(<a href="#ref-hazanNextTechRevolution" role="doc-biblioref">Hazan et al., n.d.</a>)</span></li>
 <li>“A quantum computer’s inherently quantum mechanical behavior can provide the exact solution to the Schrödinger equation mapped onto the qubits, without resorting to approximate methods.” <span class="citation" data-cites="anderssonQuantumComputingChemical2022">(<a href="#ref-anderssonQuantumComputingChemical2022" role="doc-biblioref">Andersson et al. 2022</a>)</span></li>
 <li>“One of the most promising suggested applications of quantum computing is solving classically intractable chemistry problems.” <span class="citation" data-cites="mcardleQuantumComputationalChemistry2020">(<a href="#ref-mcardleQuantumComputationalChemistry2020" role="doc-biblioref">McArdle et al. 2020</a>)</span></li>
@@ -344,27 +341,27 @@ window.Quarto = {
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">4 Bibliography</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">4 Bibliography</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-anderssonQuantumComputingChemical2022" class="csl-entry" role="listitem">
 Andersson, Martin P, Mark N Jones, Kurt V Mikkelsen, Fengqi You, and Seyed Soheil Mansouri. 2022. <span>“Quantum Computing for Chemical and Biomolecular Product Design.”</span> <em>Current Opinion in Chemical Engineering</em> 36 (June): 100754. <a href="https://doi.org/10.1016/j.coche.2021.100754">https://doi.org/10.1016/j.coche.2021.100754</a>.
 </div>
 <div id="ref-aruteHartreeFockSuperconductingQubit2020" class="csl-entry" role="listitem">
-Arute, Frank, Kunal Arya, Ryan Babbush, Dave Bacon, Joseph C. Bardin, Rami Barends, Sergio Boixo, et al. 2020. <span>“Hartree-<span>Fock</span> on a Superconducting Qubit Quantum Computer.”</span> <em>Science</em> 369 (6507): 1084–89. <a href="https://doi.org/10.1126/science.abb9811">https://doi.org/10.1126/science.abb9811</a>.
+Arute, Frank, Kunal Arya, Ryan Babbush, et al. 2020. <span>“Hartree-<span>Fock</span> on a Superconducting Qubit Quantum Computer.”</span> <em>Science</em> 369 (6507): 1084–89. <a href="https://doi.org/10.1126/science.abb9811">https://doi.org/10.1126/science.abb9811</a>.
 </div>
 <div id="ref-caesuraFasterQuantumChemistry2025" class="csl-entry" role="listitem">
-Caesura, Athena, Cristian L. Cortes, William Pol, Sukin Sim, Mark Steudtner, Gian-Luca R. Anselmetti, Matthias Degroote, et al. 2025. <span>“Faster Quantum Chemistry Simulations on a Quantum Computer with Improved Tensor Factorization and Active Volume Compilation.”</span> arXiv. <a href="https://doi.org/10.48550/arXiv.2501.06165">https://doi.org/10.48550/arXiv.2501.06165</a>.
+Caesura, Athena, Cristian L. Cortes, William Pol, et al. 2025. <em>Faster Quantum Chemistry Simulations on a Quantum Computer with Improved Tensor Factorization and Active Volume Compilation</em>. arXiv:2501.06165. arXiv. <a href="https://doi.org/10.48550/arXiv.2501.06165">https://doi.org/10.48550/arXiv.2501.06165</a>.
 </div>
 <div id="ref-feynmanSimulatingPhysicsComputers" class="csl-entry" role="listitem">
-Feynman, Richard P. n.d. <span>“Simulating <span>Physics</span> with <span>Computers</span>.”</span>
+Feynman, Richard P. n.d. <em>Simulating <span>Physics</span> with <span>Computers</span></em>.
 </div>
 <div id="ref-goingsReliablyAssessingElectronic2022" class="csl-entry" role="listitem">
-Goings, Joshua J., Alec White, Joonho Lee, Christofer S. Tautermann, Matthias Degroote, Craig Gidney, Toru Shiozaki, Ryan Babbush, and Nicholas C. Rubin. 2022. <span>“Reliably Assessing the Electronic Structure of Cytochrome <span>P450</span> on Today’s Classical Computers and Tomorrow’s Quantum Computers.”</span> <em>Proceedings of the National Academy of Sciences</em> 119 (38): e2203533119. <a href="https://doi.org/10.1073/pnas.2203533119">https://doi.org/10.1073/pnas.2203533119</a>.
+Goings, Joshua J., Alec White, Joonho Lee, et al. 2022. <span>“Reliably Assessing the Electronic Structure of Cytochrome <span>P450</span> on Today’s Classical Computers and Tomorrow’s Quantum Computers.”</span> <em>Proceedings of the National Academy of Sciences</em> 119 (38): e2203533119. <a href="https://doi.org/10.1073/pnas.2203533119">https://doi.org/10.1073/pnas.2203533119</a>.
 </div>
 <div id="ref-googlequantumaiQuantumApplications" class="csl-entry" role="listitem">
-Google Quantum AI. n.d. <span>“Quantum <span>Applications</span>.”</span> https://quantumai.google/applications. Accessed December 17, 2024.
+Google Quantum AI. n.d. <em>Quantum <span>Applications</span></em>. Https://quantumai.google/applications.
 </div>
 <div id="ref-hazanNextTechRevolution" class="csl-entry" role="listitem">
-Hazan, Eric, Alexandre Ménard, Ivan Ostojic, and Mark Patel. n.d. <span>“The Next Tech Revolution: Quantum Computing.”</span> McKinsey &amp; Company.
+Hazan, Eric, Alexandre Ménard, Ivan Ostojic, and Mark Patel. n.d. <em>The Next Tech Revolution: Quantum Computing</em>. McKinsey &amp; Company.
 </div>
 <div id="ref-mcardleQuantumComputationalChemistry2020" class="csl-entry" role="listitem">
 McArdle, Sam, Suguru Endo, Alan Aspuru-Guzik, Simon Benjamin, and Xiao Yuan. 2020. <span>“Quantum Computational Chemistry.”</span> <em>Reviews of Modern Physics</em> 92 (1): 015003. <a href="https://doi.org/10.1103/RevModPhys.92.015003">https://doi.org/10.1103/RevModPhys.92.015003</a>.

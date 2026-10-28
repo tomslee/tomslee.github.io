@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,16 @@
 
 <title>Some questions about Uber’s “upfront” pricing – Tom Slee</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -27,7 +33,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -55,15 +60,14 @@ div.csl-indent {
 <link href="../../logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-d0e51d601bbc9652e923fef3cd0732d8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-35ec73b779c18004cd8ed79c7312c640.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -107,8 +111,6 @@ div.csl-indent {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Tom Slee</span>
     </a>
@@ -170,11 +172,6 @@ div.csl-indent {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/tomslee"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/whimsley"> <i class="bi bi-twitter" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -262,7 +259,7 @@ div.csl-indent {
 <section id="algorithmic-upfront-pricing" class="level1">
 <h1>Algorithmic “upfront” pricing</h1>
 <p>Uber just introduced “upfront pricing for drivers” in Ontario, replacing time-and-distance rates with algorithmically-determined pay for each trip. There are questions about upfront prices: Is Uber using personal data to set the rates? Is it just a “rebalancing” as Uber reassuringly puts it?</p>
-<p>Chicago is one of the few cities to make ridehail data available. It does not include driver pay, but I thought I’d at least see what it can tell us about passenger fares, and in particular if it has anything to say about “upfront” fares (Uber promotes “upfront” pricing as a transparency move that enables peace of mind: “Before you request a ride, the app shows an estimated upfront price to your destination every time—so you can sit back and enjoy the trip” <span class="citation" data-cites="RidePricesRates">(<a href="#ref-RidePricesRates" role="doc-biblioref">Uber, Inc. n.d.</a>)</span>. The irony, and why it deserves those quotation marks, is that it simultaneously hides the factors that make up that fare/pay. Point made, I hope, so I’ll stop with the quotation marks now.)</p>
+<p>Chicago is one of the few cities to make ridehail data available. It does not include driver pay, but I thought I’d at least see what it can tell us about passenger fares, and in particular if it has anything to say about “upfront” fares (Uber promotes “upfront” pricing as a transparency move that enables peace of mind: “Before you request a ride, the app shows an estimated upfront price to your destination every time—so you can sit back and enjoy the trip” <span class="citation" data-cites="RidePricesRates">(<a href="#ref-RidePricesRates" role="doc-biblioref">Uber, Inc., n.d.</a>)</span>. The irony, and why it deserves those quotation marks, is that it simultaneously hides the factors that make up that fare/pay. Point made, I hope, so I’ll stop with the quotation marks now.)</p>
 <p>For the charts in this post, I used a data set taken from the Chicago Trips data sets (<a href="https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips-2018-2022-/m6dm-c72p">2018–2022</a> and <a href="https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips-2023-/n26f-ihde/about_data">2023–</a>). To get something of a reasonable size for experimenting, I downloaded the data for the first Thursday in the month, for every other month from the beginning of 2019 to August 2024.</p>
 <p>So, as the kids say, let’s get going.</p>
 </section>
@@ -414,21 +411,21 @@ Figure&nbsp;7: Monopolies who can unbundle their prices (b), like Uber, can take
 </section>
 <section id="references" class="level1">
 <h1>References</h1>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-dubalAlgorithmic2023" class="csl-entry" role="listitem">
 Dubal, Veena. 2023. <span>“On Algorithmic Wage Discrimination.”</span> <em>Columbia Law Review</em> 123 (7): 1929–92.
 </div>
 <div id="ref-smithHubertHoranCan2023" class="csl-entry" role="listitem">
-Horan, Hubert. 2023. <span>“<span>Can Uber Ever Deliver</span>? <span>Part Thirty-Three</span>: <span>Uber Isn</span>’t <span>Really Profitable Yet But</span> Is <span>Getting Closer</span>; <span>The Antitrust Case Against Uber</span>.”</span> <em>Naked Capitalism</em>.
+Horan, Hubert. 2023. <span>“<span>Can Uber Ever Deliver</span>? <span>Part Thirty-Three</span>: <span>Uber Isn</span>’t <span>Really Profitable Yet But</span> Is <span>Getting Closer</span>; <span>The Antitrust Case Against Uber</span>.”</span> In <em>Naked Capitalism</em>.
 </div>
 <div id="ref-lenshermanUberCEOHides2023" class="csl-entry" role="listitem">
 Sherman, Len. 2023. <span>“Uber’s <span>CEO Hides Driver Pay Cuts To Boost Profits</span>.”</span> <em>Forbes</em>, December.
 </div>
 <div id="ref-uberMoreTransparencyUpfront2022" class="csl-entry" role="listitem">
-Uber, Inc. 2022. <span>“More Transparency with <span>Upfront Fares</span>.”</span> <em>Uber Blog</em>. https://www.uber.com/blog/more-transparent-earnings.
+Uber, Inc. 2022. <span>“More Transparency with <span>Upfront Fares</span>.”</span> In <em>Uber Blog</em>. Https://www.uber.com/blog/more-transparent-earnings.
 </div>
 <div id="ref-RidePricesRates" class="csl-entry" role="listitem">
-———. n.d. <span>“Ride <span>Prices</span> and <span>Rates</span> - <span>How It Works</span>.”</span> https://www.uber.com/ca/en/ride/how-it-works/upfront-pricing/. Accessed October 11, 2024.
+Uber, Inc. n.d. <em>Ride <span>Prices</span> and <span>Rates</span> - <span>How It Works</span></em>. Https://www.uber.com/ca/en/ride/how-it-works/upfront-pricing/.
 </div>
 </div>
 

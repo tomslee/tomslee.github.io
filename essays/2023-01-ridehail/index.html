@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,16 @@
 
 <title>High Emissions and Low Pay: Uber is Still Taking Regulators for a Ride – Tom Slee</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -27,7 +33,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -55,15 +60,14 @@ div.csl-indent {
 <link href="../../logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-d0e51d601bbc9652e923fef3cd0732d8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-35ec73b779c18004cd8ed79c7312c640.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -93,7 +97,7 @@ div.csl-indent {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -132,8 +136,6 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Tom Slee</span>
     </a>
@@ -195,11 +197,6 @@ window.Quarto = {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/tomslee"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/whimsley"> <i class="bi bi-twitter" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -324,7 +321,7 @@ window.Quarto = {
 <p>The “Uber Files” revelations of summer 2022 showed that the company “broke laws, duped police and secretly lobbied governments” of all levels to achieve its aggressive expansion goals.</p>
 <p>Unfortunately, Uber continues to take governments for a ride. This report addresses two topics:</p>
 <ul>
-<li><p><strong>Emissions.</strong> Uber makes big but vague promises about its impact on the environment, with its tagline “Your city. Our promise. Uber will be a zero-emission platform by 2040” <span class="citation" data-cites="uber_inc_our_2022">(<a href="#ref-uber_inc_our_2022" role="doc-biblioref">Uber, Inc. 2022a</a>)</span>). The City of Toronto takes this claim seriously by pursuing collaborative “emissions reductions targets” <span class="citation" data-cites="city_of_toronto_update_2021">(<a href="#ref-city_of_toronto_update_2021" role="doc-biblioref">City of Toronto 2021</a>)</span>.</p>
+<li><p><strong>Emissions.</strong> Uber makes big but vague promises about its impact on the environment, with its tagline “Your city. Our promise. Uber will be a zero-emission platform by 2040” <span class="citation" data-cites="uber_inc_our_2022">(<a href="#ref-uber_inc_our_2022" role="doc-biblioref">Uber, Inc. 2022b</a>)</span>). The City of Toronto takes this claim seriously by pursuing collaborative “emissions reductions targets” <span class="citation" data-cites="city_of_toronto_update_2021">(<a href="#ref-city_of_toronto_update_2021" role="doc-biblioref">City of Toronto 2021</a>)</span>.</p>
 <p>Our computer simulations show that Uber vehicles in Toronto, which had a passenger in the car less than half the time in 2020, are unlikely to ever have passengers in the car for more than 60% of the time. At least 40% of the time, Uber vehicles in Toronto will be driving empty.</p>
 <p>Further, Uber vehicles are most highly occupied in busy, congested areas such as central Toronto, which are well suited to and well served by public transit. The expansion of Uber services in these areas can only add to congestion and draw passengers away from more sustainable and efficient public transit.</p>
 <p>The pursuit of short wait times, essential to Uber’s popularity with riders, is incompatible with emissions goals. A difference of one minute in wait times adds another 1600 vehicles to Toronto roads, with their attendant congestion and emissions.</p></li>
@@ -652,7 +649,7 @@ Figure&nbsp;6: Uber’s losses over the last 7 years.
 </tr>
 </tbody>
 </table>
-<p>There are two ways that utilization rates may exceed these estimates. The first is for the number of drivers to be limited, so that wait times are longer. The second is for trips to concentrate even more heavily into the high traffic central zone. But this central core is well served by mass transit, and any gain in ridehail trips would be achieved by taking riders away from mass transit and putting them in cars <span class="citation" data-cites="young2020">(<a href="#ref-young2020" role="doc-biblioref">Young, Allen, and Farber 2020</a>)</span>, and adding to problems of congestion <span class="citation" data-cites="erhardt2019">(<a href="#ref-erhardt2019" role="doc-biblioref">Erhardt et al. 2019</a>)</span>.</p>
+<p>There are two ways that utilization rates may exceed these estimates. The first is for the number of drivers to be limited, so that wait times are longer. The second is for trips to concentrate even more heavily into the high traffic central zone. But this central core is well served by mass transit, and any gain in ridehail trips would be achieved by taking riders away from mass transit and putting them in cars <span class="citation" data-cites="young2020">(<a href="#ref-young2020" role="doc-biblioref">Young et al. 2020</a>)</span>, and adding to problems of congestion <span class="citation" data-cites="erhardt2019">(<a href="#ref-erhardt2019" role="doc-biblioref">Erhardt et al. 2019</a>)</span>.</p>
 <div id="fig-7" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -669,7 +666,7 @@ Figure&nbsp;7: The number of vehicles N and utilization rate P3 required to supp
 <h2 data-number="4.2" class="anchored" data-anchor-id="wait-times-what-is-a-minute-worth"><span class="header-section-number">4.2</span> Wait times: what is a minute worth?</h2>
 <p>The short wait time has been one of the main reasons for Uber’s popularity. But cities also need to ask how short wait times fit with other transit goals?</p>
 <p>Figure 4, above, shows that a wait time of 6.4 minutes rather than 5.4 minutes would remove 1200 vehicles from the system, and increase utilization rate to 60%. If Uber seeks to reduce wait time by another minute, to 4.4 minutes, it will add another 2000 vehicles to Toronto roads, with their attendant congestion and emissions. As an average, we can say that each minute of reduced wait time adds 1600 vehicles to the streets of Toronto.</p>
-<p>Uber could add thousands of empty vehicles to the streets of Toronto at a time when the city is looking to achieve a 65% reduction in transportation emissions by 2030 (City of Toronto 2021a). It is known that, broadly speaking, Uber competes with public transit for ridership <span class="citation" data-cites="hall2018">(<a href="#ref-hall2018" role="doc-biblioref">J. D. Hall, Palsson, and Price 2018</a>)</span>.</p>
+<p>Uber could add thousands of empty vehicles to the streets of Toronto at a time when the city is looking to achieve a 65% reduction in transportation emissions by 2030 (City of Toronto 2021a). It is known that, broadly speaking, Uber competes with public transit for ridership <span class="citation" data-cites="hall2018">(<a href="#ref-hall2018" role="doc-biblioref">Hall et al. 2018</a>)</span>.</p>
 <p>To meet its environmental goals, the City of Toronto should limit the role of Uber and Lyft to services that are ancillary to, not competitive with, public transit.</p>
 </section>
 </section>
@@ -681,7 +678,7 @@ Figure&nbsp;7: The number of vehicles N and utilization rate P3 required to supp
 <p>We estimate that Uber driver pay in Toronto (pre-pandemic) for “full-time” drivers was $7.90 per hour.</p>
 <p>If passengers are charged an effective price per minute fare <em>p</em>, with the ridehail platform taking a fraction of that price as a commission (<em>m</em>), then driver gross income before expenses is their income from trips, multiplied by their utilization rate (the proportion of time spent driving passengers, <em>P<sub>3</sub></em>)</p>
 <p><span class="math display">\[I\  = \ P_{3}\ .\ p\ .\ (1\ –\ m)\]</span></p>
-<p>Prices for a trip (again, pre-pandemic) were taken from taxi aggregation sites and media reports. These are Uber’s “up-front” fare structure <span class="citation" data-cites="uber_inc_frequently_2022">(<a href="#ref-uber_inc_frequently_2022" role="doc-biblioref">Uber, Inc. 2022b</a>)</span>. Of these, the base fare and booking fee go to Uber, and the company also takes a commission on the cost per minute and per km.</p>
+<p>Prices for a trip (again, pre-pandemic) were taken from taxi aggregation sites and media reports. These are Uber’s “up-front” fare structure <span class="citation" data-cites="uber_inc_frequently_2022">(<a href="#ref-uber_inc_frequently_2022" role="doc-biblioref">Uber, Inc. 2022a</a>)</span>. Of these, the base fare and booking fee go to Uber, and the company also takes a commission on the cost per minute and per km.</p>
 <p>From these figures, the fare for the average 16-minute, 8 km ride would be</p>
 <p><span class="math display">\[\$ 2.50\  + \ \$ 2.75\  + \ (16\ *\ \$ 0.18)\  + \ (8\ *\ \$ 0.81)\  = \ \$ 14.61\]</span></p>
 <p>For pay purposes, this needs to be converted into a total fare per hour:</p>
@@ -729,7 +726,7 @@ Figure&nbsp;8: In Chicago, full-time drivers (defined as those who drive over 27
 <section id="engaged-time-standards-do-not-work-for-gig-workers" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> “Engaged time” standards do not work for gig workers</h1>
 <p>The approach of the Digital Platform Workers’ Rights Act <span class="citation" data-cites="legislative_assembly_of_ontario_working_2022">(<a href="#ref-legislative_assembly_of_ontario_working_2022" role="doc-biblioref">Legislative Assembly of Ontario 2022</a>)</span> to a “right to minimum wage” for gig-workers fails, not just because the numbers are too low, but because the principle of addressing only “engaged time” is mistaken.</p>
-<p>The question of “engaged time” wage extends far beyond Ontario. Seattle recently introduced a minimum wage for Uber drivers based on engaged time <span class="citation" data-cites="herbold_payup_2022">(<a href="#ref-herbold_payup_2022" role="doc-biblioref">Herbold and Lewis 2022</a>)</span>. In its “Frequently Asked Questions – Worker Protections”, Uber UK explains its approach to the National Living Wage <span class="citation" data-cites="uber_inc_frequently_2022">(<a href="#ref-uber_inc_frequently_2022" role="doc-biblioref">Uber, Inc. 2022b</a>)</span>:</p>
+<p>The question of “engaged time” wage extends far beyond Ontario. Seattle recently introduced a minimum wage for Uber drivers based on engaged time <span class="citation" data-cites="herbold_payup_2022">(<a href="#ref-herbold_payup_2022" role="doc-biblioref">Herbold and Lewis 2022</a>)</span>. In its “Frequently Asked Questions – Worker Protections”, Uber UK explains its approach to the National Living Wage <span class="citation" data-cites="uber_inc_frequently_2022">(<a href="#ref-uber_inc_frequently_2022" role="doc-biblioref">Uber, Inc. 2022a</a>)</span>:</p>
 <blockquote class="blockquote">
 <p>You earn the National Living Wage from the time you accept a trip on the app to the point at which the trip is completed: this is called the engaged time.&nbsp;</p>
 <p>Time waiting for a trip to be offered to you is not included in your National Living Wage calculation. This is because there is no requirement to accept any trips during this period.&nbsp;</p>
@@ -765,7 +762,7 @@ Figure&nbsp;9: “Before” and “After” a change in fare. While the change a
 <section id="model-validation" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="model-validation"><span class="header-section-number">6.3</span> Model validation</h2>
 <p>A recent study from California provides validation of the model’s findings <span class="citation" data-cites="mccullough_prop_2022">(<a href="#ref-mccullough_prop_2022" role="doc-biblioref">McCullough et al. 2022</a>)</span>. There, a platform-company funded ballot initiative (Proposition 22) at least temporarily classified ride-hail drivers as independent contractors, ensuring that compensation and benefits were based on engaged time rather than hours worked. The National Equity Atlas partnered with a drivers’ union, Rideshare Drivers United, to obtain real-time measures of earnings and benefits in key markets. They found that drivers took home, on average, net earnings of US$6.20 per hour; half that amount if drivers had to pay health benefits out of pocket. Only 10% of drivers were able to access the company’s portable health benefits plan, as eligibility was set at a minimum of 25 hours engaged time per week.</p>
-<p>The insensitivity of driver income to the fare per trip is consistent with research from Uber itself <span class="citation" data-cites="hall_pricing_2021">(<a href="#ref-hall_pricing_2021" role="doc-biblioref">J. V. Hall, Horton, and Knoepﬂe 2021</a>)</span>. With minor differences, the same principle applies to other “gig-economy” platforms, whether it is meal delivery, food delivery, or another task. The “engaged rate” has little to do with the actual hourly rate. Workers in a gig-economy model can never advance so long as entry and exit is free.</p>
+<p>The insensitivity of driver income to the fare per trip is consistent with research from Uber itself <span class="citation" data-cites="hall_pricing_2021">(<a href="#ref-hall_pricing_2021" role="doc-biblioref">Hall et al. 2021</a>)</span>. With minor differences, the same principle applies to other “gig-economy” platforms, whether it is meal delivery, food delivery, or another task. The “engaged rate” has little to do with the actual hourly rate. Workers in a gig-economy model can never advance so long as entry and exit is free.</p>
 </section>
 </section>
 <section id="conclusions" class="level1" data-number="7">
@@ -798,99 +795,99 @@ Figure&nbsp;9: “Before” and “After” a change in fare. While the change a
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-balding_estimated_2019" class="csl-entry" role="listitem">
-Balding, Melissa, Teresa Whinery, Eleanor Leshner, and Eric Womeldohrf. 2019. <span>“Estimated <span>TNC</span> <span>Share</span> of <span>VMT</span> in <span>Six</span> <span>US</span> <span>Metropolitan</span> <span>Regions</span>.”</span> Fehr &amp; Peers. <a href="https://drive.google.com/file/d/1FIUskVkj9lsAnWJQ6kLhAhNoVLjfFdx3/view?usp=embed_facebook">https://drive.google.com/file/d/1FIUskVkj9lsAnWJQ6kLhAhNoVLjfFdx3/view?usp=embed_facebook</a>.
+Balding, Melissa, Teresa Whinery, Eleanor Leshner, and Eric Womeldohrf. 2019. <em>Estimated <span>TNC</span> <span>Share</span> of <span>VMT</span> in <span>Six</span> <span>US</span> <span>Metropolitan</span> <span>Regions</span></em>. Fehr &amp; Peers. <a href="https://drive.google.com/file/d/1FIUskVkj9lsAnWJQ6kLhAhNoVLjfFdx3/view?usp=embed_facebook">https://drive.google.com/file/d/1FIUskVkj9lsAnWJQ6kLhAhNoVLjfFdx3/view?usp=embed_facebook</a>.
 </div>
 <div id="ref-berg2019" class="csl-entry" role="listitem">
 Berg, Janine, and Hannah Johnston. 2019. <span>“Too Good to Be True? A Comment on Hall and Krueger<span>’</span>s Analysis of the Labor Market for Uber<span>’</span>s Driver-Partners.”</span> <em>ILR Review</em> 72 (1): 39–68. <a href="https://doi.org/10.1177/0019793918798593">https://doi.org/10.1177/0019793918798593</a>.
 </div>
 <div id="ref-cityofchicago2022" class="csl-entry" role="listitem">
-City of Chicago. 2022. <span>“Transportation Network Providers - Trips.”</span> <a href="https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips/m6dm-c72p">https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips/m6dm-c72p</a>.
+City of Chicago. 2022. <em>Transportation Network Providers - Trips</em>. <a href="https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips/m6dm-c72p">https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips/m6dm-c72p</a>.
 </div>
 <div id="ref-city_of_toronto_update_2021" class="csl-entry" role="listitem">
-City of Toronto. 2021. <span>“Update on <span>Outstanding</span> <span>Vehicle</span>-for-<span>Hire</span> <span>Directives</span>.”</span> <a href="http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2021.GL27.19">http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2021.GL27.19</a>.
+City of Toronto. 2021. <em>Update on <span>Outstanding</span> <span>Vehicle</span>-for-<span>Hire</span> <span>Directives</span></em>. <a href="http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2021.GL27.19">http://app.toronto.ca/tmmis/viewAgendaItemHistory.do?item=2021.GL27.19</a>.
 </div>
 <div id="ref-cramer_disruptive_2016" class="csl-entry" role="listitem">
-Cramer, Judd, and Alan B Krueger. 2016. <span>“Disruptive <span>Change</span> in the <span>Taxi</span> <span>Business</span>: <span>The</span> <span>Case</span> of <span>Uber</span>.”</span> 22083.
+Cramer, Judd, and Alan B Krueger. 2016. <em>Disruptive <span>Change</span> in the <span>Taxi</span> <span>Business</span>: <span>The</span> <span>Case</span> of <span>Uber</span></em>. No. 22083.
 </div>
 <div id="ref-erhardt2019" class="csl-entry" role="listitem">
 Erhardt, Gregory D., Sneha Roy, Drew Cooper, Bhargava Sana, Mei Chen, and Joe Castiglione. 2019. <span>“Do Transportation Network Companies Decrease or Increase Congestion?”</span> <em>Science Advances</em> 5 (5): eaau2670. <a href="https://doi.org/10.1126/sciadv.aau2670">https://doi.org/10.1126/sciadv.aau2670</a>.
 </div>
 <div id="ref-eurofound_collective_2022" class="csl-entry" role="listitem">
-Eurofound. 2022. <span>“Collective Agreement Between <span>Foodora</span> and the <span>United</span> <span>Federation</span> of <span>Trade</span> <span>Unions</span> (<span>Fellesforbundet</span>).”</span> <a href="https://www.eurofound.europa.eu/fi/data/platform-economy/initiatives/collective-agreement-between-foodora-and-the-united-federation-of-trade-unions-fellesforbundet">https://www.eurofound.europa.eu/fi/data/platform-economy/initiatives/collective-agreement-between-foodora-and-the-united-federation-of-trade-unions-fellesforbundet</a>.
+Eurofound. 2022. <em>Collective Agreement Between <span>Foodora</span> and the <span>United</span> <span>Federation</span> of <span>Trade</span> <span>Unions</span> (<span>Fellesforbundet</span>)</em>. <a href="https://www.eurofound.europa.eu/fi/data/platform-economy/initiatives/collective-agreement-between-foodora-and-the-united-federation-of-trade-unions-fellesforbundet">https://www.eurofound.europa.eu/fi/data/platform-economy/initiatives/collective-agreement-between-foodora-and-the-united-federation-of-trade-unions-fellesforbundet</a>.
 </div>
 <div id="ref-hall2018" class="csl-entry" role="listitem">
 Hall, Jonathan D., Craig Palsson, and Joseph Price. 2018. <span>“Is Uber a Substitute or Complement for Public Transit?”</span> <em>Journal of Urban Economics</em> 108 (November): 36–50. <a href="https://doi.org/10.1016/j.jue.2018.09.003">https://doi.org/10.1016/j.jue.2018.09.003</a>.
 </div>
 <div id="ref-hall_pricing_2021" class="csl-entry" role="listitem">
-Hall, Jonathan V, John J Horton, and Daniel T Knoepﬂe. 2021. <span>“Pricing in <span>Designed</span> <span>Markets</span>: <span>The</span> <span>Case</span> of <span>Ride</span>-<span>Sharing</span>,”</span> January, 54.
+Hall, Jonathan V, John J Horton, and Daniel T Knoepﬂe. 2021. <em>Pricing in <span>Designed</span> <span>Markets</span>: <span>The</span> <span>Case</span> of <span>Ride</span>-<span>Sharing</span></em>. January, 54.
 </div>
 <div id="ref-herbold_payup_2022" class="csl-entry" role="listitem">
-Herbold, Lisa, and Andrew Lewis. 2022. <span>“<span>PayUp</span> <span>Legislation</span> - <span>Council</span> <span></span> Seattle.gov.”</span> <em>Seattle City Council</em>. <a href="https://www.seattle.gov/council/issues/payup">https://www.seattle.gov/council/issues/payup</a>.
+Herbold, Lisa, and Andrew Lewis. 2022. <span>“<span>PayUp</span> <span>Legislation</span> - <span>Council</span> <span></span> Seattle.gov.”</span> In <em>Seattle City Council</em>. <a href="https://www.seattle.gov/council/issues/payup">https://www.seattle.gov/council/issues/payup</a>.
 </div>
 <div id="ref-horan2017" class="csl-entry" role="listitem">
-Horan, Hubert. 2017. <span>“Will the Growth of Uber Increase Economic Welfare?”</span> Rochester, NY. <a href="https://papers.ssrn.com/abstract=2933177">https://papers.ssrn.com/abstract=2933177</a>.
+Horan, Hubert. 2017. <em>Will the Growth of Uber Increase Economic Welfare?</em> Rochester, NY. <a href="https://papers.ssrn.com/abstract=2933177">https://papers.ssrn.com/abstract=2933177</a>.
 </div>
 <div id="ref-hyman_platform_2020" class="csl-entry" role="listitem">
-Hyman, Louis, Erica L. Groshen, Adam Seth Litwin, Martin T. Wells, Kwelina P. Thompson, and Kyrylo Chernyshov. 2020a. <span>“Platform <span>Driving</span> <span>In</span> <span>Seattle</span>,”</span> July. <a href="https://ecommons.cornell.edu/handle/1813/74305">https://ecommons.cornell.edu/handle/1813/74305</a>.
+Hyman, Louis, Erica L. Groshen, Adam Seth Litwin, Martin T. Wells, Kwelina P. Thompson, and Kyrylo Chernyshov. 2020a. <em>Platform <span>Driving</span> <span>In</span> <span>Seattle</span></em>. July. <a href="https://ecommons.cornell.edu/handle/1813/74305">https://ecommons.cornell.edu/handle/1813/74305</a>.
 </div>
 <div id="ref-hyman2020" class="csl-entry" role="listitem">
-———. 2020b. <span>“Platform Driving In Seattle,”</span> July. <a href="https://ecommons.cornell.edu/handle/1813/74305">https://ecommons.cornell.edu/handle/1813/74305</a>.
+Hyman, Louis, Erica L. Groshen, Adam Seth Litwin, Martin T. Wells, Kwelina P. Thompson, and Kyrylo Chernyshov. 2020b. <em>Platform Driving In Seattle</em>. July 6. <a href="https://ecommons.cornell.edu/handle/1813/74305">https://ecommons.cornell.edu/handle/1813/74305</a>.
 </div>
 <div id="ref-policy__innovation_transportation_services_transportation_2019" class="csl-entry" role="listitem">
-Innovation Transportation Services, Policy &amp;. 2019. <span>“The <span>Transportation</span> <span>Impacts</span> of <span>Vehicle</span>-for-<span>Hire</span> in the <span>City</span> of <span>Toronto</span>.”</span> City of Toronto. <a href="https://www.toronto.ca/wp-content/uploads/2019/06/96c7-Report_v1.0_2019-06-21.pdf">https://www.toronto.ca/wp-content/uploads/2019/06/96c7-Report_v1.0_2019-06-21.pdf</a>.
+Innovation Transportation Services, Policy &amp;. 2019. <em>The <span>Transportation</span> <span>Impacts</span> of <span>Vehicle</span>-for-<span>Hire</span> in the <span>City</span> of <span>Toronto</span></em>. City of Toronto. <a href="https://www.toronto.ca/wp-content/uploads/2019/06/96c7-Report_v1.0_2019-06-21.pdf">https://www.toronto.ca/wp-content/uploads/2019/06/96c7-Report_v1.0_2019-06-21.pdf</a>.
 </div>
 <div id="ref-just_eat_takeawaycom_annual_2021" class="csl-entry" role="listitem">
-Just Eat Takeaway.com. 2021. <span>“Annual <span>Report</span> 2021.”</span> Just Eat Takeaway.com. <a href="https://s3.eu-central-1.amazonaws.com/takeaway-corporatewebsite-dev/JET-JV2021-080322.pdf#page=7">https://s3.eu-central-1.amazonaws.com/takeaway-corporatewebsite-dev/JET-JV2021-080322.pdf#page=7</a>.
+Just Eat Takeaway.com. 2021. <em>Annual <span>Report</span> 2021</em>. Just Eat Takeaway.com. <a href="https://s3.eu-central-1.amazonaws.com/takeaway-corporatewebsite-dev/JET-JV2021-080322.pdf#page=7">https://s3.eu-central-1.amazonaws.com/takeaway-corporatewebsite-dev/JET-JV2021-080322.pdf#page=7</a>.
 </div>
 <div id="ref-lawrence2022" class="csl-entry" role="listitem">
-Lawrence, Felicity. 2022. <span>“Uber Paid Academics Six-Figure Sums for Research to Feed to the Media.”</span> <em>The Guardian</em>, July. <a href="https://www.theguardian.com/news/2022/jul/12/uber-paid-academics-six-figure-sums-for-research-to-feed-to-the-media">https://www.theguardian.com/news/2022/jul/12/uber-paid-academics-six-figure-sums-for-research-to-feed-to-the-media</a>.
+Lawrence, Felicity. 2022. <span>“Uber Paid Academics Six-Figure Sums for Research to Feed to the Media.”</span> <em>The Guardian</em>, July 12. <a href="https://www.theguardian.com/news/2022/jul/12/uber-paid-academics-six-figure-sums-for-research-to-feed-to-the-media">https://www.theguardian.com/news/2022/jul/12/uber-paid-academics-six-figure-sums-for-research-to-feed-to-the-media</a>.
 </div>
 <div id="ref-legislative_assembly_of_ontario_working_2022" class="csl-entry" role="listitem">
-Legislative Assembly of Ontario. 2022. <span>“Working for <span>Workers</span> <span>Act</span>, 2022.”</span> <a href="https://www.ola.org/en/legislative-business/bills/parliament-42/session-2/bill-88">https://www.ola.org/en/legislative-business/bills/parliament-42/session-2/bill-88</a>.
+Legislative Assembly of Ontario. 2022. <em>Working for <span>Workers</span> <span>Act</span>, 2022</em>. <a href="https://www.ola.org/en/legislative-business/bills/parliament-42/session-2/bill-88">https://www.ola.org/en/legislative-business/bills/parliament-42/session-2/bill-88</a>.
 </div>
 <div id="ref-mccullough_prop_2022" class="csl-entry" role="listitem">
-McCullough, Eliza, Brian Dolber, Justin Scoggins, Edward-Michael Muña, and Sarah Treuhaft. 2022. <span>“Prop 22 <span>Depresses</span> <span>Wages</span> and <span>Deepens</span> <span>Inequities</span> for <span>California</span> <span>Workers</span>.”</span> National Equity Atlas. <a href="https://nationalequityatlas.org/prop22-paystudy">https://nationalequityatlas.org/prop22-paystudy</a>.
+McCullough, Eliza, Brian Dolber, Justin Scoggins, Edward-Michael Muña, and Sarah Treuhaft. 2022. <em>Prop 22 <span>Depresses</span> <span>Wages</span> and <span>Deepens</span> <span>Inequities</span> for <span>California</span> <span>Workers</span></em>. National Equity Atlas. <a href="https://nationalequityatlas.org/prop22-paystudy">https://nationalequityatlas.org/prop22-paystudy</a>.
 </div>
 <div id="ref-mojtehedzadeh_uber_2022" class="csl-entry" role="listitem">
-Mojtehedzadeh, Sara. 2022. <span>“The <span>Uber</span> <span>Files</span>: <span>A</span> Kill Switch, Intense Lobbying and Driver Exploitation. <span>Leaked</span> Documents Reveal <span>‘Cutthroat’</span> Tactics That Built Ride-Hailing Empire.”</span> <em>The Toronto Star</em>, July. <a href="https://www.thestar.com/news/investigations/2022/07/10/uber-files-reveal-playbook-that-fueled-ride-share-firms-rise.html">https://www.thestar.com/news/investigations/2022/07/10/uber-files-reveal-playbook-that-fueled-ride-share-firms-rise.html</a>.
+Mojtehedzadeh, Sara. 2022. <span>“The <span>Uber</span> <span>Files</span>: <span>A</span> Kill Switch, Intense Lobbying and Driver Exploitation. <span>Leaked</span> Documents Reveal <span>‘Cutthroat’</span> Tactics That Built Ride-Hailing Empire.”</span> <em>The Toronto Star</em> (Toronto), July. <a href="https://www.thestar.com/news/investigations/2022/07/10/uber-files-reveal-playbook-that-fueled-ride-share-firms-rise.html">https://www.thestar.com/news/investigations/2022/07/10/uber-files-reveal-playbook-that-fueled-ride-share-firms-rise.html</a>.
 </div>
 <div id="ref-new_york_city_open_data_uber_2022" class="csl-entry" role="listitem">
-New York City Open Data. 2022. <span>“Uber <span>Data</span>.”</span> <em>New York City Open Data</em>. <a href="https://data.cityofnewyork.us/Transportation/uber-Data/gre9-vvjv">https://data.cityofnewyork.us/Transportation/uber-Data/gre9-vvjv</a>.
+New York City Open Data. 2022. <span>“Uber <span>Data</span>.”</span> In <em>New York City Open Data</em>. <a href="https://data.cityofnewyork.us/Transportation/uber-Data/gre9-vvjv">https://data.cityofnewyork.us/Transportation/uber-Data/gre9-vvjv</a>.
 </div>
 <div id="ref-nyc_taxi_and_limousine_commission_august_2022" class="csl-entry" role="listitem">
-NYC Taxi and Limousine Commission. 2022. <span>“August 2022 <span>For</span>-<span>Hire</span> <span>Vehicle</span> <span>License</span> <span>Review</span>.”</span> New York City Taxi; Limousine Commission; Department of Transportation. <a href="https://www1.nyc.gov/assets/tlc/downloads/pdf/license-pause-report-2022-08.pdf">https://www1.nyc.gov/assets/tlc/downloads/pdf/license-pause-report-2022-08.pdf</a>.
+NYC Taxi and Limousine Commission. 2022. <em>August 2022 <span>For</span>-<span>Hire</span> <span>Vehicle</span> <span>License</span> <span>Review</span></em>. New York City Taxi; Limousine Commission; Department of Transportation. <a href="https://www1.nyc.gov/assets/tlc/downloads/pdf/license-pause-report-2022-08.pdf">https://www1.nyc.gov/assets/tlc/downloads/pdf/license-pause-report-2022-08.pdf</a>.
 </div>
 <div id="ref-parrott_minimum_2020" class="csl-entry" role="listitem">
-Parrott, James A., and Michael Reich. 2020a. <span>“A <span>Minimum</span> <span>Compensation</span> <span>Standard</span> for <span>Seattle</span> <span>TNC</span> <span>Drivers</span>.”</span> Cnter for New York City Affairs. <a href="https://irle.berkeley.edu/files/2020/07/Parrott-Reich-Seattle-Report_July-2020.pdf">https://irle.berkeley.edu/files/2020/07/Parrott-Reich-Seattle-Report_July-2020.pdf</a>.
+Parrott, James A., and Michael Reich. 2020a. <em>A <span>Minimum</span> <span>Compensation</span> <span>Standard</span> for <span>Seattle</span> <span>TNC</span> <span>Drivers</span></em>. Cnter for New York City Affairs. <a href="https://irle.berkeley.edu/files/2020/07/Parrott-Reich-Seattle-Report_July-2020.pdf">https://irle.berkeley.edu/files/2020/07/Parrott-Reich-Seattle-Report_July-2020.pdf</a>.
 </div>
 <div id="ref-parrott2020" class="csl-entry" role="listitem">
-———. 2020b. <span>“A Minimum Compensation Standard for Seattle TNC Drivers.”</span> <a href="https://irle.berkeley.edu/files/2020/07/Parrott-Reich-Seattle-Report_July-2020.pdf">https://irle.berkeley.edu/files/2020/07/Parrott-Reich-Seattle-Report_July-2020.pdf</a>.
+Parrott, James A., and Michael Reich. 2020b. <em>A Minimum Compensation Standard for Seattle TNC Drivers</em>. <a href="https://irle.berkeley.edu/files/2020/07/Parrott-Reich-Seattle-Report_July-2020.pdf">https://irle.berkeley.edu/files/2020/07/Parrott-Reich-Seattle-Report_July-2020.pdf</a>.
 </div>
 <div id="ref-policyinnovationtransportationservices2019" class="csl-entry" role="listitem">
-Policy &amp; Innovation Transportation Services. 2019. <span>“The Transportation Impacts of Vehicle-for-Hire in the City of Toronto.”</span> <a href="https://www.toronto.ca/wp-content/uploads/2019/06/96c7-Report_v1.0_2019-06-21.pdf">https://www.toronto.ca/wp-content/uploads/2019/06/96c7-Report_v1.0_2019-06-21.pdf</a>.
+Policy &amp; Innovation Transportation Services. 2019. <em>The Transportation Impacts of Vehicle-for-Hire in the City of Toronto</em>. <a href="https://www.toronto.ca/wp-content/uploads/2019/06/96c7-Report_v1.0_2019-06-21.pdf">https://www.toronto.ca/wp-content/uploads/2019/06/96c7-Report_v1.0_2019-06-21.pdf</a>.
 </div>
 <div id="ref-policyinnovationtransportationservices2021" class="csl-entry" role="listitem">
-———. 2021. <span>“The Transportation Impacts of Vehicle-for-Hire in the City of Toronto: October 2018 to July 2021.”</span> <a href="https://www.toronto.ca/wp-content/uploads/2021/11/98cd-VFHTransportationImpacts2021-11-23.pdf">https://www.toronto.ca/wp-content/uploads/2021/11/98cd-VFHTransportationImpacts2021-11-23.pdf</a>.
+Policy &amp; Innovation Transportation Services. 2021. <em>The Transportation Impacts of Vehicle-for-Hire in the City of Toronto: October 2018 to July 2021</em>. <a href="https://www.toronto.ca/wp-content/uploads/2021/11/98cd-VFHTransportationImpacts2021-11-23.pdf">https://www.toronto.ca/wp-content/uploads/2021/11/98cd-VFHTransportationImpacts2021-11-23.pdf</a>.
 </div>
 <div id="ref-schaller_empty_2017" class="csl-entry" role="listitem">
-Schaller, Bruce. 2017. <span>“Empty <span>Seats</span>, <span>Full</span> <span>Streets</span> - <span>Fixing</span> <span>Manhattan</span>’s <span>Traffic</span> <span>Problem</span>.”</span> Schaller Consulting. <a href="http://schallerconsult.com/rideservices/emptyseats.htm">http://schallerconsult.com/rideservices/emptyseats.htm</a>.
+Schaller, Bruce. 2017. <em>Empty <span>Seats</span>, <span>Full</span> <span>Streets</span> - <span>Fixing</span> <span>Manhattan</span>’s <span>Traffic</span> <span>Problem</span></em>. Schaller Consulting. <a href="http://schallerconsult.com/rideservices/emptyseats.htm">http://schallerconsult.com/rideservices/emptyseats.htm</a>.
 </div>
 <div id="ref-the_international_consortium_of_investigative_journalists_uber_2022" class="csl-entry" role="listitem">
-The International Consortium of Investigative Journalists. 2022. <span>“The <span>Uber</span> <span>Files</span>.”</span> <a href="https://www.icij.org/investigations/uber-files/">https://www.icij.org/investigations/uber-files/</a>.
+The International Consortium of Investigative Journalists. 2022. <em>The <span>Uber</span> <span>Files</span></em>. <a href="https://www.icij.org/investigations/uber-files/">https://www.icij.org/investigations/uber-files/</a>.
 </div>
 <div id="ref-thepyodidedevelopmentteam2022" class="csl-entry" role="listitem">
 The Pyodide development team. 2022. <em>Pyodide/Pyodide</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.5156931">https://doi.org/10.5281/zenodo.5156931</a>.
 </div>
 <div id="ref-uber_inc_uber_2021" class="csl-entry" role="listitem">
-Uber, Inc. 2021. <span>“Uber <span>Announces</span> <span>Results</span> for <span>First</span> <span>Quarter</span> 2021.”</span> <a href="https://investor.uber.com/news-events/news/press-release-details/2021/Uber-Announces-Results-for-First-Quarter-2021/">https://investor.uber.com/news-events/news/press-release-details/2021/Uber-Announces-Results-for-First-Quarter-2021/</a>.
-</div>
-<div id="ref-uber_inc_our_2022" class="csl-entry" role="listitem">
-———. 2022a. <span>“Our <span>Road</span> to <span>Zero</span> <span>Emissions</span>.”</span> <em>Uber</em>. <a href="https://www.uber.com/ca/en/about/sustainability/">https://www.uber.com/ca/en/about/sustainability/</a>.
+Uber, Inc. 2021. <em>Uber <span>Announces</span> <span>Results</span> for <span>First</span> <span>Quarter</span> 2021</em>. <a href="https://investor.uber.com/news-events/news/press-release-details/2021/Uber-Announces-Results-for-First-Quarter-2021/">https://investor.uber.com/news-events/news/press-release-details/2021/Uber-Announces-Results-for-First-Quarter-2021/</a>.
 </div>
 <div id="ref-uber_inc_frequently_2022" class="csl-entry" role="listitem">
-———. 2022b. <span>“Frequently <span>Asked</span> <span>Questions</span> - <span>Worker</span> <span>Protections</span>.”</span> <em>Uber Blog</em>. <a href="https://www.uber.com/blog/driver-worker-faq/">https://www.uber.com/blog/driver-worker-faq/</a>.
+Uber, Inc. 2022a. <span>“Frequently <span>Asked</span> <span>Questions</span> - <span>Worker</span> <span>Protections</span>.”</span> In <em>Uber Blog</em>. <a href="https://www.uber.com/blog/driver-worker-faq/">https://www.uber.com/blog/driver-worker-faq/</a>.
+</div>
+<div id="ref-uber_inc_our_2022" class="csl-entry" role="listitem">
+Uber, Inc. 2022b. <span>“Our <span>Road</span> to <span>Zero</span> <span>Emissions</span>.”</span> In <em>Uber</em>. <a href="https://www.uber.com/ca/en/about/sustainability/">https://www.uber.com/ca/en/about/sustainability/</a>.
 </div>
 <div id="ref-young2020" class="csl-entry" role="listitem">
 Young, Mischa, Jeff Allen, and Steven Farber. 2020. <span>“Measuring When Uber Behaves as a Substitute or Supplement to Transit: An Examination of Travel-Time Differences in Toronto.”</span> <em>Journal of Transport Geography</em> 82 (January): 102629. <a href="https://doi.org/10.1016/j.jtrangeo.2019.102629">https://doi.org/10.1016/j.jtrangeo.2019.102629</a>.

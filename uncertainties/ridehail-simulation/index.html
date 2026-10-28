@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,16 @@
 
 <title>Simple Simulations of Ridehail Traffic and Trips – Tom Slee</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -27,7 +33,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -55,15 +60,14 @@ div.csl-indent {
 <link href="../../logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-d0e51d601bbc9652e923fef3cd0732d8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-35ec73b779c18004cd8ed79c7312c640.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -105,7 +109,7 @@ div.csl-indent {
 </style>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -144,8 +148,6 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Tom Slee</span>
     </a>
@@ -207,11 +209,6 @@ window.Quarto = {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/tomslee"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/whimsley"> <i class="bi bi-twitter" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -728,7 +725,7 @@ Table&nbsp;3: Utilization rates for Uber in USA cities. Rates measured by distan
 </div>
 <p><a href="#fig-fixed-wait-time" class="quarto-xref">Figure&nbsp;7</a> shows the utilization rates and vehicle counts required to sustain a 3.7 minute wait time <span class="math inline">\(W\)</span> in Toronto, and sheds some light on Uber’s counter-claim. As Uber claimed, an increase in demand does increase vehicle utilization even at a constant wait time. However, that utilization increase fades away at higher demand rates. As a result, even if the trip volume in Toronto were to increase to 200,000 per day (a 50% increase over the pre-pandemic numbers), the utilization rate would still increase to only 54% if wait time were kept at the same value.</p>
 <p>As <a href="#tbl-utilization" class="quarto-xref">Table&nbsp;3</a> shows, other cities have utilization rates (by time) of 50 to 60% , with New York City and San Francisco as outliers. Toronto has a level of demand that is lower than Chicago, which may provide a reasonable upper bound to what can be expected of around 60%.</p>
-<p>There are two ways that utilization rates may exceed these estimates. The first is for the number of drivers to be limited, so that wait times are longer. The second is for trips to concentrate even more heavily into the high traffic central zone. But this central core is well served by mass transit, and any gain in ridehail trips would be achieved by taking riders away from mass transit and putting them in cars <span class="citation" data-cites="young2020">(<a href="#ref-young2020" role="doc-biblioref">Young, Allen, and Farber 2020</a>)</span>, adding to problems of congestion <span class="citation" data-cites="erhardt2019">(<a href="#ref-erhardt2019" role="doc-biblioref">Erhardt et al. 2019</a>)</span>.</p>
+<p>There are two ways that utilization rates may exceed these estimates. The first is for the number of drivers to be limited, so that wait times are longer. The second is for trips to concentrate even more heavily into the high traffic central zone. But this central core is well served by mass transit, and any gain in ridehail trips would be achieved by taking riders away from mass transit and putting them in cars <span class="citation" data-cites="young2020">(<a href="#ref-young2020" role="doc-biblioref">Young et al. 2020</a>)</span>, adding to problems of congestion <span class="citation" data-cites="erhardt2019">(<a href="#ref-erhardt2019" role="doc-biblioref">Erhardt et al. 2019</a>)</span>.</p>
 <p>Without these changes, the ridehail system has at least 40% excess capacity (vehicles not engaged in driving passengers or en route to pick passengers). There is no efficient solution to emissions through ride hailing.</p>
 </section>
 </section>
@@ -775,45 +772,45 @@ I = I_0 - c
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">7 References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">7 References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-balding2019" class="csl-entry" role="listitem">
-Balding, Melissa, Teresa Whinery, Eleanor Leshner, and Eric Womeldohrf. 2019. <span>“Estimated TNC Share of VMT in Six US Metropolitan Regions.”</span> <a href="https://drive.google.com/file/d/1FIUskVkj9lsAnWJQ6kLhAhNoVLjfFdx3/view?usp=embed_facebook">https://drive.google.com/file/d/1FIUskVkj9lsAnWJQ6kLhAhNoVLjfFdx3/view?usp=embed_facebook</a>.
+Balding, Melissa, Teresa Whinery, Eleanor Leshner, and Eric Womeldohrf. 2019. <em>Estimated TNC Share of VMT in Six US Metropolitan Regions</em>. <a href="https://drive.google.com/file/d/1FIUskVkj9lsAnWJQ6kLhAhNoVLjfFdx3/view?usp=embed_facebook">https://drive.google.com/file/d/1FIUskVkj9lsAnWJQ6kLhAhNoVLjfFdx3/view?usp=embed_facebook</a>.
 </div>
 <div id="ref-cityofchicago2022" class="csl-entry" role="listitem">
-City of Chicago. 2022. <span>“Transportation Network Providers - Trips.”</span> <a href="https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips/m6dm-c72p">https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips/m6dm-c72p</a>.
+City of Chicago. 2022. <em>Transportation Network Providers - Trips</em>. <a href="https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips/m6dm-c72p">https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips/m6dm-c72p</a>.
 </div>
 <div id="ref-cramer2016" class="csl-entry" role="listitem">
-Cramer, Judd, and Alan B Krueger. 2016. <span>“Disruptive Change in the Taxi Business: The Case of Uber.”</span>
+Cramer, Judd, and Alan B Krueger. 2016. <em>Disruptive Change in the Taxi Business: The Case of Uber</em>.
 </div>
 <div id="ref-erhardt2019" class="csl-entry" role="listitem">
 Erhardt, Gregory D., Sneha Roy, Drew Cooper, Bhargava Sana, Mei Chen, and Joe Castiglione. 2019. <span>“Do Transportation Network Companies Decrease or Increase Congestion?”</span> <em>Science Advances</em> 5 (5): eaau2670. <a href="https://doi.org/10.1126/sciadv.aau2670">https://doi.org/10.1126/sciadv.aau2670</a>.
 </div>
 <div id="ref-hyman2020" class="csl-entry" role="listitem">
-Hyman, Louis, Erica L. Groshen, Adam Seth Litwin, Martin T. Wells, Kwelina P. Thompson, and Kyrylo Chernyshov. 2020. <span>“Platform Driving In Seattle,”</span> July. <a href="https://ecommons.cornell.edu/handle/1813/74305">https://ecommons.cornell.edu/handle/1813/74305</a>.
+Hyman, Louis, Erica L. Groshen, Adam Seth Litwin, Martin T. Wells, Kwelina P. Thompson, and Kyrylo Chernyshov. 2020. <em>Platform Driving In Seattle</em>. July 6. <a href="https://ecommons.cornell.edu/handle/1813/74305">https://ecommons.cornell.edu/handle/1813/74305</a>.
 </div>
 <div id="ref-newyorkcityopendata2022" class="csl-entry" role="listitem">
-New York City Open Data. 2022. <span>“Uber Data.”</span> <a href="https://data.cityofnewyork.us/Transportation/uber-Data/gre9-vvjv">https://data.cityofnewyork.us/Transportation/uber-Data/gre9-vvjv</a>.
+New York City Open Data. 2022. <em>Uber Data</em>. <a href="https://data.cityofnewyork.us/Transportation/uber-Data/gre9-vvjv">https://data.cityofnewyork.us/Transportation/uber-Data/gre9-vvjv</a>.
 </div>
 <div id="ref-parrott2020" class="csl-entry" role="listitem">
-Parrott, James A., and Michael Reich. 2020. <span>“A Minimum Compensation Standard for Seattle TNC Drivers.”</span> <a href="https://irle.berkeley.edu/files/2020/07/Parrott-Reich-Seattle-Report_July-2020.pdf">https://irle.berkeley.edu/files/2020/07/Parrott-Reich-Seattle-Report_July-2020.pdf</a>.
+Parrott, James A., and Michael Reich. 2020. <em>A Minimum Compensation Standard for Seattle TNC Drivers</em>. <a href="https://irle.berkeley.edu/files/2020/07/Parrott-Reich-Seattle-Report_July-2020.pdf">https://irle.berkeley.edu/files/2020/07/Parrott-Reich-Seattle-Report_July-2020.pdf</a>.
 </div>
 <div id="ref-policyinnovationtransportationservices2019" class="csl-entry" role="listitem">
-Policy &amp; Innovation Transportation Services. 2019. <span>“The Transportation Impacts of Vehicle-for-Hire in the City of Toronto.”</span> <a href="https://www.toronto.ca/wp-content/uploads/2019/06/96c7-Report_v1.0_2019-06-21.pdf">https://www.toronto.ca/wp-content/uploads/2019/06/96c7-Report_v1.0_2019-06-21.pdf</a>.
+Policy &amp; Innovation Transportation Services. 2019. <em>The Transportation Impacts of Vehicle-for-Hire in the City of Toronto</em>. <a href="https://www.toronto.ca/wp-content/uploads/2019/06/96c7-Report_v1.0_2019-06-21.pdf">https://www.toronto.ca/wp-content/uploads/2019/06/96c7-Report_v1.0_2019-06-21.pdf</a>.
 </div>
 <div id="ref-policyinnovationtransportationservices2021" class="csl-entry" role="listitem">
-———. 2021. <span>“The Transportation Impacts of Vehicle-for-Hire in the City of Toronto: October 2018 to July 2021.”</span> <a href="https://www.toronto.ca/wp-content/uploads/2021/11/98cd-VFHTransportationImpacts2021-11-23.pdf">https://www.toronto.ca/wp-content/uploads/2021/11/98cd-VFHTransportationImpacts2021-11-23.pdf</a>.
+Policy &amp; Innovation Transportation Services. 2021. <em>The Transportation Impacts of Vehicle-for-Hire in the City of Toronto: October 2018 to July 2021</em>. <a href="https://www.toronto.ca/wp-content/uploads/2021/11/98cd-VFHTransportationImpacts2021-11-23.pdf">https://www.toronto.ca/wp-content/uploads/2021/11/98cd-VFHTransportationImpacts2021-11-23.pdf</a>.
 </div>
 <div id="ref-schaller2017" class="csl-entry" role="listitem">
-Schaller, Bruce. 2017. <span>“Unsustainable? The Growth of App-Based Ride Services and Traffic, Travel and the Future of New York City.”</span> <a href="http://www.schallerconsult.com/rideservices/unsustainable.pdf">http://www.schallerconsult.com/rideservices/unsustainable.pdf</a>.
+Schaller, Bruce. 2017. <em>Unsustainable? The Growth of App-Based Ride Services and Traffic, Travel and the Future of New York City</em>. <a href="http://www.schallerconsult.com/rideservices/unsustainable.pdf">http://www.schallerconsult.com/rideservices/unsustainable.pdf</a>.
 </div>
 <div id="ref-scheiber2017" class="csl-entry" role="listitem">
-Scheiber, Noam. 2017. <span>“How Uber Uses Psychological Tricks to Push Its Drivers<span>’</span> Buttons.”</span> <em>The New York Times</em>, April. <a href="https://www.nytimes.com/interactive/2017/04/02/technology/uber-drivers-psychological-tricks.html">https://www.nytimes.com/interactive/2017/04/02/technology/uber-drivers-psychological-tricks.html</a>.
+Scheiber, Noam. 2017. <span>“How Uber Uses Psychological Tricks to Push Its Drivers<span>’</span> Buttons.”</span> <em>The New York Times</em>, April 2. <a href="https://www.nytimes.com/interactive/2017/04/02/technology/uber-drivers-psychological-tricks.html">https://www.nytimes.com/interactive/2017/04/02/technology/uber-drivers-psychological-tricks.html</a>.
 </div>
 <div id="ref-thepyodidedevelopmentteam2022" class="csl-entry" role="listitem">
 The Pyodide development team. 2022. <em>Pyodide/Pyodide</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.5156931">https://doi.org/10.5281/zenodo.5156931</a>.
 </div>
 <div id="ref-uberinc.2023" class="csl-entry" role="listitem">
-Uber, Inc. 2023. <span>“Review My Cancellation Fee | Rider - Uber Help.”</span> <a href="https://help.uber.com/riders/article/review-my-cancellation-fee?nodeId=6bec690f-ee35-40ba-96ee-c38a8ae796e0">https://help.uber.com/riders/article/review-my-cancellation-fee?nodeId=6bec690f-ee35-40ba-96ee-c38a8ae796e0</a>.
+Uber, Inc. 2023. <em>Review My Cancellation Fee | Rider - Uber Help</em>. <a href="https://help.uber.com/riders/article/review-my-cancellation-fee?nodeId=6bec690f-ee35-40ba-96ee-c38a8ae796e0">https://help.uber.com/riders/article/review-my-cancellation-fee?nodeId=6bec690f-ee35-40ba-96ee-c38a8ae796e0</a>.
 </div>
 <div id="ref-young2020" class="csl-entry" role="listitem">
 Young, Mischa, Jeff Allen, and Steven Farber. 2020. <span>“Measuring When Uber Behaves as a Substitute or Supplement to Transit: An Examination of Travel-Time Differences in Toronto.”</span> <em>Journal of Transport Geography</em> 82 (January): 102629. <a href="https://doi.org/10.1016/j.jtrangeo.2019.102629">https://doi.org/10.1016/j.jtrangeo.2019.102629</a>.
