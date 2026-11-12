@@ -14,6 +14,9 @@ website:
   twitter-card: false
   favicon: logo.png
   draft-mode: unlinked
+  open-graph: true
+  plausible-analytics: |
+    _plausible_snippet.html
   page-footer:
     left: "2023 -- 2026, Tom Slee"
   navbar:
