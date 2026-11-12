@@ -1,1 +1,1 @@
-Sitemap: https://tomslee.github.io/sitemap.xml
+Sitemap: https://tomslee.net/sitemap.xml
