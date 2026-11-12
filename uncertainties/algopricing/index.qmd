@@ -1,0 +1,67 @@
+---
+title: How Uber is Using Algorithmic Pricing
+author: Tom Slee
+date: last-modified
+draft: true
+categories:
+  - Uncertainties
+  - Uber
+description: >
+   Drawing on open data from the City of Toronto, from driver receipts, and from a simulation model, we can see how Uber is using its algorithmic pricing to test ridehail drivers' limits for low pay, and pushing passengers' patience for wait times.
+   The one sector that benefits from their efforts is, of course, Uber itself.
+abstract-title: Uber is pushing the limits
+image: header.jpg
+toc: true
+toc-title: Contents
+toc-location: left
+reference-location: margin
+# citation-location: margin
+# cap-location: margin
+title-block-banner: true
+reading-time: true
+number-sections: true
+number-depth: 2
+callout-appearance: simple
+# bibliography: ./references.bib
+fig-cap-location: bottom
+comments:
+  hypothesis: true
+format:
+  html:
+    title-block-banner: DarkCyan
+  pdf:
+    documentclass: scrartcl
+    papersize: letter
+    toc: true
+    number-sections: true
+    colorlinks: true
+    mainfont: "CharterBT-Roman"
+    fontsize: 12pt
+    linestretch: 1.1
+    keep-tex: true
+    template-partials:
+      - ../../title.tex
+    geometry:
+      - top=30mm
+      - left=30mm
+      - heightrounded
+    include-in-header:
+      text: |
+          \newfontfamily\sectionfont[Color=MidnightBlue]{RobotoCondensed-Regular}
+          \newfontfamily\subsectionfont[Color=MidnightBlue]{RobotoCondensed-Regular}
+          \newfontfamily\subsubsectionfont[Color=MidnightBlue]{RobotoCondensed-Regular}
+          \addtokomafont{section}{\sectionfont}
+          \addtokomafont{subsection}{\subsectionfont}
+          \addtokomafont{subsubsection}{\subsubsectionfont}
+          \usepackage{mdframed}
+---
+
+::: {.callout-note appearance="simple"}
+State: very rough first draft.
+:::
+
+# Summary
+
+What we'll show
+
+# Bibliography

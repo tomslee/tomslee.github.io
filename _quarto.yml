@@ -10,11 +10,12 @@ project:
 website:
   title: "Tom Slee"
   description: "Personal web site"
+  site-url: https://tomslee.net
   twitter-card: false
   favicon: logo.png
   draft-mode: unlinked
-  page-footer: 
-    left: "2023 -- 2026, Tom Slee" 
+  page-footer:
+    left: "2023 -- 2026, Tom Slee"
   navbar:
     background: DarkCyan
     pinned: true
@@ -25,28 +26,29 @@ website:
         href: about.qmd
       - text: "Writing"
       - menu:
-        - text: Essays
-          href: essays.qmd
-        - text: Uncertainties
-          href: uncertainties.qmd
-        - text: "Whimsley (blog archive)"
-          href: blog.qmd
+          - text: Essays
+            href: essays.qmd
+          - text: Uncertainties
+            href: uncertainties.qmd
+          - text: "Whimsley (blog archive)"
+            href: blog.qmd
       - text: "Ridehail"
         menu:
-        - text: "Ridehail Lab"
-          href: /ridehail/
-        - text: "Ridehail Charts"
-          href: /ridehail-toronto/
+          - text: "Ridehail Lab"
+            href: /ridehail/
+          - text: "Ridehail Charts"
+            href: /ridehail-toronto/
     right:
       - icon: github
         href: https://github.com/tomslee
+      - icon: rss
+        href: index.xml
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
 execute:
-    freeze: auto
-    cache: true
+  freeze: auto
+  cache: true
 editor: visual
-
