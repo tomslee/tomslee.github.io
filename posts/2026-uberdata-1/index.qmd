@@ -32,7 +32,7 @@ format:
     toc: true
     number-sections: true
     colorlinks: true
-    mainfont: "CharterBT-Roman"
+    mainfont: "XCharter"
     fontsize: 12pt
     linestretch: 1.1
     keep-tex: true
@@ -53,23 +53,19 @@ format:
           \usepackage{mdframed}
 ---
 
-Uber drivers can request a copy of their account from Uber, and they get a zip file containing several CSV files.
-Of these, two are particularly important for Uber ridehail drivers.
-These are in the Driver folder:
+Uber ridehail and delivery drivers can request a copy of their complete account history from Uber, and they should receive a zip file containing several folders, each with several spreadsheets.
+Of these, two spreadsheets in the Driver folder are particularly important for Uber ridehail drivers.
 
 - *driver_payments-0.csv* ("Payments") contains payment records for each trip.
   Each trip has a set of line items, one on each row.
 
 - *driver_lifetime_trips-0.csv* ("Trips") contains summary information about each trip as a single row.
 
-The statements are complex and difficult to understand.
-This post is the first of a series that unpicks the details of these account statements to derive a picture of how Uber has decided to pay its drivers over the years.
-It draws from account statements passed to me by Uber drivers: thank you for sharing them with me!
+This post is the first of a series that unpicks the details of these account histories to derive a picture of how Uber has decided to pay its drivers over the years.
+It uses anonymized versions of trips from Ontario ridehail driver account histories: thank you to those drivers for sharing them with me.
 
-**(If you are an Uber driver and would like a report on your account to explain where the money goes, I would be happy to supply one.
-Please contact me.
-If you would let me use your data for research purposes, keeping the specifics confidential, that would be great.
-All trip examples displayed here are anonymized.)**
+*(If you are an Uber driver, have obtained your account history, and would like a report to make sense of where the money goes, please email info@tomslee.net.
+)*
 
 # Making sense of a 2016 trip {#trip-2016}
 
@@ -122,6 +118,14 @@ Nevertheless, this is what the driver records show.
 ![A "Sankey diagram" of the flow of money in a 2016 trip, according to the Uber account statements. The money flows from the passenger (at left) to Uber and the driver (at right).](img/trip_sankey_2016.png){#fig-sankey-2016 fig-alt="A \"Sankey diagram\" of the flow of money in a 2016 trip, according to the Uber account statements. The money flows from the passenger (at left) to Uber and the driver (at right)."}
 
 Now let's look at a trip record from 2025, using the same three views as for the 2016 trip.
+
+# How account statements have changed {#account-changes}
+
+The account history for a typical trip in 2016 includes four or five line items, but Uber's business has become more complicated over the years, and Uber itself has added more and more complexity to its payment schemes.
+
+@fig-line-item-count shows how the number of line items per trip has exploded, so that recent trips are difficult to decipher, and it is not easy to know where the money goes.
+
+![The number of line items for each trip has increased from five to twenty in the last decade.](img/line_item_count.png){#fig-line-item-count fig-alt="The average number of line items per trip, plotted for each month."}
 
 # Making sense of a 2025 trip {#trip-2025}
 

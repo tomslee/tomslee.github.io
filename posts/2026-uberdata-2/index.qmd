@@ -1,7 +1,7 @@
 ---
-title: What Do Driver Accounts Tell Us About Uber's Commission?
+title: Where does the money go from an Uber fare?
 author: Tom Slee
-date: 2026-11-13
+date: 2026-11-15
 draft: true
 categories:
   - Uber Data
@@ -32,7 +32,7 @@ format:
     toc: true
     number-sections: true
     colorlinks: true
-    mainfont: "CharterBT-Roman"
+    mainfont: "XCharter"
     fontsize: 12pt
     linestretch: 1.1
     keep-tex: true
@@ -59,6 +59,9 @@ Here we use the word "take" to refer to all the money that goes to Uber.
 
 The driver account statements show that the topic is a bit more complex than it seems.
 Let's look at some of the measures of Uber's take.
+
+*(If you are an Uber driver, have obtained your account history, and would like a report to make sense of where the money goes, please email info@tomslee.net.
+)*
 
 # Base commission
 
@@ -112,6 +115,10 @@ for trips that start or end at Pearson airport.
 
 ![](img/ubderdriver_report_2026_0.png){#fig-sankey-2026}
 
+Uber tends to deduct expenses like insurance (which are not listed separately in account histories) from the rates they describe to drivers, but insurance is just one cost of doing business.
+Both Uber and the drivers have many costs of doing business, and we do not deduct such costs when calculating the take rate.
+The question of driver earnings after their costs (fuel, maintenance, insurance, cleaning etc) and Uber's earnings after costs is separate.
+
 There are several ways we could calculate a "take rate" for Uber.
 
 - *Share of gross bookings.* The numbers shown in the figure are one way to calculate a take rate.
@@ -119,30 +126,28 @@ There are several ways we could calculate a "take rate" for Uber.
 
 - *Share of net fare.* Another approach is to leave the taxes and fees out of the calculation, which leaves Uber with about a third (32%) and the drivers with two-thirds (68%) of the total.
 
-Uber tends to deduct expenses like insurance (which are not listed separately in account statements) from the rates they describe to drivers, but insurance is just one cost of doing business.
-Both Uber and the drivers have many costs of doing business, and we do not deduct such costs when calculating the take rate.
-The question of driver earnings after their costs (fuel, maintenance, insurance, cleaning etc) and Uber's earnings after costs separate.
+- *Everything but the driver's earnings.* If the taxes and fees are seen as part of Uber's cost of operations, just as fuel is seen as part of a driver's cost of operations, then they could be seen as part of Uber's take.
+  Calculated this way, Uber's take is everything but the driver's 54.6%, which is 45.4% of the total.
+  However, the biggest contributor to taxes and fees is the HST, which (in Ontario at least) is, by regulation, the responsibility of the driver.
 
-Some would argue that the airport fees and city fees belong in Uber's "take", which would increase their share of gross bookings from 25.9% by about 4%.
-However, the biggest contributor to taxes and fees is the HST, which (in Ontario at least) is, by regulation, the responsibility of the driver.
+@fig-uber-share-gross-net and @tbl-share-by-year, show how Uber's take has changed over time, using all three measures, for trips in Toronto.
 
-@fig-uber-share-gross-net and @tbl-share-by-year, based on the small sample available, how Uber's take has changed over time, using both measures, for trips in Toronto.
-
-![Uber's take over time, both as a share of gross bookings and of net fare.](img/uber-share-gross-net.png){#fig-uber-share-gross-net}
+![Uber's take over time, as a share of net fare and of gross bookings.](img/uber-share-gross-net.png){#fig-uber-share-gross-net}
 
 ::: {#tbl-share-by-year}
-  | Year | Share of net fare | Share of gross bookings |
-  | ---- | ----------------- | ----------------------- |
-  | 2019 | 19.7              | 17.1                    |
-  | 2020 | 21.8              | 18.7                    |
-  | 2021 | 37.5              | 31.2                    |
-  | 2022 | 37.9              | 31.2                    |
-  | 2023 | 37.5              | 31.0                    |
-  | 2024 | 33.9              | 30.7                    |
-  | 2025 | 35.3              | 28.7                    |
-  | 2026 | 33.3              | 26.7                    |
+  | Year | Percent of net fare | Percent of gross bookings | All but earnings  |
+  | ---- | -----------------:  | -----------------:        | ----------------: |
+  | 2019 |                19.7 |                      17.1 |              30.3 |
+  | 2020 |                21.8 |                      18.7 |              32.9 |
+  | 2021 |                37.5 |                      31.2 |              48.0 |
+  | 2022 |                37.9 |                      31.2 |              48.9 |
+  | 2023 |                37.5 |                      31.0 |              48.3 |
+  | 2024 |                33.9 |                      30.7 |              40.1 |
+  | 2025 |                35.3 |                      28.7 |              47.4 |
+  | 2026 |                33.3 |                      26.7 |              46.5 |
 
-Uber's share of the net fare and of gross bookings, for a small sample of drivers in Toronto and Ottawa, averaged over each year.
+Uber's share of the net fare, of gross bookings, and of everything but the driver's earnings.
+The numbers are for a small sample of drivers in Toronto and Ottawa, averaged over each year.
 :::
 
 Perhaps the bigger story, to be tackled in a future post, is that Uber's take is now algorithmically tuned, trip by trip, and varies.
