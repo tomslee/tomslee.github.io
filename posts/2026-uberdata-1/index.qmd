@@ -71,7 +71,7 @@ Please contact me.
 If you would let me use your data for research purposes, keeping the specifics confidential, that would be great.
 All trip examples displayed here are anonymized.)**
 
-# Making sense of a 2016 trip
+# Making sense of a 2016 trip {#trip-2016}
 
 @tbl-2016-raw shows a typical record from the Payments file for a trip in 2016.
 It reflects Uber's business at the time.
@@ -123,32 +123,32 @@ Nevertheless, this is what the driver records show.
 
 Now let's look at a trip record from 2025, using the same three views as for the 2016 trip.
 
-# Making sense of a 2025 trip
+# Making sense of a 2025 trip {#trip-2025}
 
 @tbl-2025 shows the account statement for (an anonymized version of) a Toronto trip in 2025.
 Instead of the four or five line items we saw in 2016, this trip has eighteen distinct line items.
 
 ::: {#tbl-2025}
-  | Category                  | Classification                                                  | Local Amount  |
-  | :-------------------      | :------------------------------------------                     | ------------: |
-  | driver_payment_fares      | transport.fare.base                                             |        \$2.95 |
-  | driver_payment_fares      | transport.fare.distance                                         |        \$1.13 |
-  | driver_payment_fares      | transport.fare.time                                             |        \$5.34 |
-  | driver_payment_fares      | transport.fare.csp_adjustment                                   |        \$0.71 |
-  | driver_payment_fares      | transport.fare.ufp_adj                                          |        \$0.91 |
-  | driver_payment_fares      | transport.fare.adjustment                                       |       -\$0.63 |
-  | existing_driver_incentive | intermediary.fare.marketplace_adjustment_incentive              |        \$0.38 |
-  | airport_and_city_fee      | transport.fare.charges.toronto_accessibility_recovery_surcharge |        \$0.10 |
-  | airport_and_city_fee      | transport.fare.charges.toronto_accessibility_recovery_surcharge |       -\$0.10 |
-  | airport_and_city_fee      | transport.fare.charges.toronto_recovery_surcharge               |        \$0.35 |
-  | airport_and_city_fee      | transport.fare.charges.toronto_recovery_surcharge               |       -\$0.35 |
-  | commission                | intermediary.commission                                         |       -\$2.23 |
-  | commission                | intermediary.fare.ufp_service_adj                               |       -\$0.91 |
-  | tax                       | transport.hst.tax                                               |        \$1.52 |
-  | tax                       | intermediary.charges.passthrough.tax.vat                        |       -\$0.17 |
-  | tax                       | intermediary.commission.tax.vat                                 |       -\$0.36 |
-  | safe_rides_fee            | transport.fare.booking_fee                                      |        \$0.84 |
-  | safe_rides_fee            | transport.fare.booking_fee                                      |       -\$0.84 |
+  | Category                  | Classification                                                  | Local Amount      |
+  | :-----------------        | :-------------------------------------                          | ----------------: |
+  | driver_payment_fares      | transport.fare.base                                             |            \$2.95 |
+  | driver_payment_fares      | transport.fare.distance                                         |            \$1.13 |
+  | driver_payment_fares      | transport.fare.time                                             |            \$5.34 |
+  | driver_payment_fares      | transport.fare.csp_adjustment                                   |            \$0.71 |
+  | driver_payment_fares      | transport.fare.ufp_adj                                          |            \$0.91 |
+  | driver_payment_fares      | transport.fare.adjustment                                       |           -\$0.63 |
+  | existing_driver_incentive | intermediary.fare.marketplace_adjustment_incentive              |            \$0.38 |
+  | airport_and_city_fee      | transport.fare.charges.toronto_accessibility_recovery_surcharge |            \$0.10 |
+  | airport_and_city_fee      | transport.fare.charges.toronto_accessibility_recovery_surcharge |           -\$0.10 |
+  | airport_and_city_fee      | transport.fare.charges.toronto_recovery_surcharge               |            \$0.35 |
+  | airport_and_city_fee      | transport.fare.charges.toronto_recovery_surcharge               |           -\$0.35 |
+  | commission                | intermediary.commission                                         |           -\$2.23 |
+  | commission                | intermediary.fare.ufp_service_adj                               |           -\$0.91 |
+  | tax                       | transport.hst.tax                                               |            \$1.52 |
+  | tax                       | intermediary.charges.passthrough.tax.vat                        |           -\$0.17 |
+  | tax                       | intermediary.commission.tax.vat                                 |           -\$0.36 |
+  | safe_rides_fee            | transport.fare.booking_fee                                      |            \$0.84 |
+  | safe_rides_fee            | transport.fare.booking_fee                                      |           -\$0.84 |
 
 Driver Payment records for a 2025 trip.
 :::
@@ -176,26 +176,12 @@ Then there are two small deductions by Uber (tax on commission and city charges)
 
 ![A "Sankey diagram" of the flow of money in a 2025 trip, according to the Uber account statements. The money flows from the passenger (at left) to Uber and the driver (at right).](img/trip_sankey_2025.png){#fig-sankey-2025 fig-alt="A \"Sankey diagram\" of the flow of money in a 2025 trip, according to the Uber account statements. The money flows from the passenger (at left) to Uber and the driver and taxation (at right)."}
 
-Of the passenger fare, 69\% goes initially to the driver, with the remainder going to Uber.
+Of the passenger fare, 69% goes initially to the driver, with the remainder going to Uber.
 In this case, Uber tops up the driver fare with a small incentive (the *existing_driver_incentive* category).
 The driver then pays the HST and Uber makes its tax and fee payments, leaving the distribution at right.
 
-# What is Uber's "take rate"?
+# And more complexity...
 
-There are a few possibilities for how to report Uber's "take rate" or commission.
-When Uber discusses this, it often deducts all kinds of business expenses (insurance in particular), but this is misleading: the driver also has business expenses (fuel, vehicle operating and maintenance expenses, and their own insurance for example), so Uber would be comparing their *net* income with the driver *gross* income.
-Here, we should compare gross income with gross income.
-Another question is how to treat the taxes and fees: some would argue that city fees are part of Uber's cost of operations, and so should be included in their take.
-Yet that might then suggest that the HST (paid by the driver) should be included in the driver's earnings, which is unreasonable.
-It makes sense to me to report two numbers:
-
-- Uber's "share of gross bookings" is the 27.2\% value shown in @fig-sankey-2025.
-  It is Uber's share (after pass-through amounts collected on behalf of third parties) of the fare paid by the passenger.
-  The driver's share of gross bookings is 53.9\%.
-- Uber's "share of the net fare" (meaning the passenger fare, less the taxes and pass-through fees) is 27.2/(27.2+53.9) or 33.5\%, while the driver's is 66.5\%.
-
-In discussions of fairness, the "share of net fare" is the more relevant, as it shows how Uber is dividing the money left over after the pass-through fees have been paid.
-It is not always easily available, however, in the absence of the detailed records as shown in @fig-2025-record.
-
-The adjustments that Uber makes to the fare are marks of their move to "upfront fares for drivers", which in Toronto happened formally in October 2024 and which Uber fully had in place by February 2025.
-I hope to post more on this in future.
+These two trips highlight some of the complexity involved in making sense of Uber driver accounts over the years.
+There are inconsistencies, many more changes over time, and sometimes two different schemes being used at the same time.
+We shall see more of these in later posts.

@@ -1,0 +1,149 @@
+---
+title: What Do Driver Accounts Tell Us About Uber's Commission?
+author: Tom Slee
+date: 2026-11-13
+draft: true
+categories:
+  - Uber Data
+abstract-title: What is "take rate" anyway?
+image: header.jpg
+lightbox: true
+toc: true
+toc-title: Contents
+toc-location: left
+reference-location: margin
+# citation-location: margin
+# cap-location: margin
+title-block-banner: true
+reading-time: true
+number-sections: true
+number-depth: 2
+callout-appearance: simple
+# bibliography: ./references.bib
+fig-cap-location: bottom
+comments:
+  hypothesis: true
+format:
+  html:
+    title-block-banner: DarkCyan
+  pdf:
+    documentclass: scrartcl
+    papersize: letter
+    toc: true
+    number-sections: true
+    colorlinks: true
+    mainfont: "CharterBT-Roman"
+    fontsize: 12pt
+    linestretch: 1.1
+    keep-tex: true
+    template-partials:
+      - ../../title.tex
+    geometry:
+      - top=30mm
+      - left=30mm
+      - heightrounded
+    include-in-header:
+      text: |
+          \newfontfamily\sectionfont[Color=MidnightBlue]{RobotoCondensed-Regular}
+          \newfontfamily\subsectionfont[Color=MidnightBlue]{RobotoCondensed-Regular}
+          \newfontfamily\subsubsectionfont[Color=MidnightBlue]{RobotoCondensed-Regular}
+          \addtokomafont{section}{\sectionfont}
+          \addtokomafont{subsection}{\subsectionfont}
+          \addtokomafont{subsubsection}{\subsubsectionfont}
+          \usepackage{mdframed}
+---
+
+One of the perennial topics in ridehail systems is how much Uber (and others, but let's face it mainly Uber) takes from each fare.
+Uber refers to its share of the fare as a commission, as a service fee, and as a "take rate".
+Here we use the word "take" to refer to all the money that goes to Uber.
+
+The driver account statements show that the topic is a bit more complex than it seems.
+Let's look at some of the measures of Uber's take.
+
+# Base commission
+
+Every driver account statement (see [the previous post](../2026-uberdata-1/index.qmd)) has a line item that is labelled in the Payments file with the category *commission* and the classification *intermediary.commission*, which is a percentage of the fare (without tips, taxes or city fees).
+In more recent account statements the percentage is reported in the Trips file as a *service_fee_local*.
+
+The idea of a percentage commission originates from the early days of Uber, when the passenger fare went to the driver (in a "rate card" formula of base fare + distance + time) or to Uber (through the commission and the booking fee).
+Even with a small set of driver accounts we can get a good idea of how base commission has changed over the years.
+
+@fig-base-commission shows that Uber's commission has varied with time and place.
+For many years Toronto drivers experienced a commission of 20%.
+Drivers who joined the platform later experienced a higher commission of 25%.
+In October 2024 Uber introduced "upfront fares for drivers" which decoupled driver pay from the passenger fare, and with this they revised the commission rates, charging different rates for central Toronto, pickups at Pearson airport, and the remainder of the city.
+Since then Uber has periodically changed the base commission rate for each of these geographies.
+
+![The base commission rate that Uber charges as a service fee, for Toronto and Ottawa.](img/base_commission_lineitem.png){#fig-base-commission}
+
+# Booking fee
+
+Uber has been inconsistent in its bookkeeping and message regarding the booking fee, which they originally called a "safe rides fee".
+The previous post showed that in early years, the deduction from the driver was not recorded.
+Then from 2019 through mid-2021 (check) the booking fee was not listed at all on driver accounts.
+Since then it has been recorded more reliably as a payment (from the passenger) and then as an equal deduction (transferring the money to Uber).
+The driver, therefore, does not get any of the booking fee.
+
+@fig-booking-fee shows how the booking fee has changed over the years.
+From mid-2017 through to early 2023 it was a fixed fee of \$2.75.
+Since then, it has changed from a fixed fee to depending on distance.
+
+![The booking fee charged by Uber, over the years.](img/booking_fee.png){#fig-booking-fee fig-alt="The booking fee charged by Uber, over the years."}
+
+@fig-booking-fee-distance shows in more detail how the booking fee has become a function of distance.
+The name itself is now a misnomer: a "booking fee" suggests a fixed fee for handling a transaction, but now it's just one more dial on Uber's pricing algorithm.
+
+![The booking fee has become dependent on the trip distance.](img/booking_fee_distance.png){#fig-booking-fee-distance fig-alt="The booking fee has become dependent on the trip distance."}
+
+# Uber's overall take
+
+The base commission and the booking fee were the two major components of Uber's take until the introduction of upfront fares for drivers, in October 2024 (fully implemented in February 2025).
+Since then it has become an increasingly complex function, no longer just a fixed percentage.
+Various line items (presented in the previous post, and to be analyzed in more detail in following posts) add and subtract from Uber's take, from the driver pay, and from the passenger fare.
+While the specifics of those adjustments matter a lot, here we just look at the net result.
+
+@fig-sankey-2026 shows how the customer fare has flowed through the system, for a handful of drivers in 2026.
+The numbers in the diagram are not exact, but the overall shape of the flow should be reliable.
+Let's walk through it.
+
+Of the fare paid by the passenger, Uber takes an initial cut of 38.7% (including the base commission and the booking fee), but passes some of that back to drivers in the form of incentives for selected trips.
+It is the responsibility of the driver to pay the harmonized sales tax (13% of the passenger fare) and Uber has to pay some city fees (typically \$0.40 per trip) and there is a charge of \$6.75 (?)
+for trips that start or end at Pearson airport.
+
+![](img/ubderdriver_report_2026_0.png){#fig-sankey-2026}
+
+There are several ways we could calculate a "take rate" for Uber.
+
+- *Share of gross bookings.* The numbers shown in the figure are one way to calculate a take rate.
+  The customer fare is split between the driver, Uber, and third-parties (cities and airports and taxes), and for the trips here Uber's take rate is 25.9%, with the driver taking just over half of the fare (54.6%)
+
+- *Share of net fare.* Another approach is to leave the taxes and fees out of the calculation, which leaves Uber with about a third (32%) and the drivers with two-thirds (68%) of the total.
+
+Uber tends to deduct expenses like insurance (which are not listed separately in account statements) from the rates they describe to drivers, but insurance is just one cost of doing business.
+Both Uber and the drivers have many costs of doing business, and we do not deduct such costs when calculating the take rate.
+The question of driver earnings after their costs (fuel, maintenance, insurance, cleaning etc) and Uber's earnings after costs separate.
+
+Some would argue that the airport fees and city fees belong in Uber's "take", which would increase their share of gross bookings from 25.9% by about 4%.
+However, the biggest contributor to taxes and fees is the HST, which (in Ontario at least) is, by regulation, the responsibility of the driver.
+
+@fig-uber-share-gross-net and @tbl-share-by-year, based on the small sample available, how Uber's take has changed over time, using both measures, for trips in Toronto.
+
+![Uber's take over time, both as a share of gross bookings and of net fare.](img/uber-share-gross-net.png){#fig-uber-share-gross-net}
+
+::: {#tbl-share-by-year}
+  | Year | Share of net fare | Share of gross bookings |
+  | ---- | ----------------- | ----------------------- |
+  | 2019 | 19.7              | 17.1                    |
+  | 2020 | 21.8              | 18.7                    |
+  | 2021 | 37.5              | 31.2                    |
+  | 2022 | 37.9              | 31.2                    |
+  | 2023 | 37.5              | 31.0                    |
+  | 2024 | 33.9              | 30.7                    |
+  | 2025 | 35.3              | 28.7                    |
+  | 2026 | 33.3              | 26.7                    |
+
+Uber's share of the net fare and of gross bookings, for a small sample of drivers in Toronto and Ottawa, averaged over each year.
+:::
+
+Perhaps the bigger story, to be tackled in a future post, is that Uber's take is now algorithmically tuned, trip by trip, and varies.
+The average is not the only thing that matters.
