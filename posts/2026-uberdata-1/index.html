@@ -228,9 +228,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#making-sense-of-a-2016-trip" id="toc-making-sense-of-a-2016-trip" class="nav-link active" data-scroll-target="#making-sense-of-a-2016-trip"><span class="header-section-number">1</span> Making sense of a 2016 trip</a></li>
-  <li><a href="#making-sense-of-a-2025-trip" id="toc-making-sense-of-a-2025-trip" class="nav-link" data-scroll-target="#making-sense-of-a-2025-trip"><span class="header-section-number">2</span> Making sense of a 2025 trip</a></li>
-  <li><a href="#what-is-ubers-take-rate" id="toc-what-is-ubers-take-rate" class="nav-link" data-scroll-target="#what-is-ubers-take-rate"><span class="header-section-number">3</span> What is Uber’s “take rate”?</a></li>
+  <li><a href="#trip-2016" id="toc-trip-2016" class="nav-link active" data-scroll-target="#trip-2016"><span class="header-section-number">1</span> Making sense of a 2016 trip</a></li>
+  <li><a href="#account-changes" id="toc-account-changes" class="nav-link" data-scroll-target="#account-changes"><span class="header-section-number">2</span> How account statements have changed</a></li>
+  <li><a href="#trip-2025" id="toc-trip-2025" class="nav-link" data-scroll-target="#trip-2025"><span class="header-section-number">3</span> Making sense of a 2025 trip</a></li>
+  <li><a href="#and-more-complexity" id="toc-and-more-complexity" class="nav-link" data-scroll-target="#and-more-complexity"><span class="header-section-number">4</span> And more complexity…</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
 </nav>
@@ -245,14 +246,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>Uber drivers can request a copy of their account from Uber, and they get a zip file containing several CSV files. Of these, two are particularly important for Uber ridehail drivers. These are in the Driver folder:</p>
+<p>Uber ridehail and delivery drivers can request a copy of their complete account history from Uber, and they should receive a zip file containing several folders, each with several spreadsheets. Of these, two spreadsheets in the Driver folder are particularly important for Uber ridehail drivers.</p>
 <ul>
 <li><p><em>driver_payments-0.csv</em> (“Payments”) contains payment records for each trip. Each trip has a set of line items, one on each row.</p></li>
 <li><p><em>driver_lifetime_trips-0.csv</em> (“Trips”) contains summary information about each trip as a single row.</p></li>
 </ul>
-<p>The statements are complex and difficult to understand. This post is the first of a series that unpicks the details of these account statements to derive a picture of how Uber has decided to pay its drivers over the years. It draws from account statements passed to me by Uber drivers: thank you for sharing them with me!</p>
-<p><strong>(If you are an Uber driver and would like a report on your account to explain where the money goes, I would be happy to supply one. Please contact me. If you would let me use your data for research purposes, keeping the specifics confidential, that would be great. All trip examples displayed here are anonymized.)</strong></p>
-<section id="making-sense-of-a-2016-trip" class="level1" data-number="1">
+<p>This post is the first of a series that unpicks the details of these account histories to derive a picture of how Uber has decided to pay its drivers over the years. It uses anonymized versions of trips from Ontario ridehail driver account histories: thank you to those drivers for sharing them with me.</p>
+<p><em>(If you are an Uber driver, have obtained your account history, and would like a report to make sense of where the money goes, please email info@tomslee.net. )</em></p>
+<section id="trip-2016" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Making sense of a 2016 trip</h1>
 <p><a href="#tbl-2016-raw" class="quarto-xref">Table&nbsp;1</a> shows a typical record from the Payments file for a trip in 2016. It reflects Uber’s business at the time. I’m going to walk through it in a probably-unnecessarily-boring way to pick out what matters from these account statements.</p>
 <div id="tbl-2016-raw" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -333,8 +334,23 @@ Figure&nbsp;2: A “Sankey diagram” of the flow of money in a 2016 trip, accor
 </div>
 <p>Now let’s look at a trip record from 2025, using the same three views as for the 2016 trip.</p>
 </section>
-<section id="making-sense-of-a-2025-trip" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Making sense of a 2025 trip</h1>
+<section id="account-changes" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> How account statements have changed</h1>
+<p>The account history for a typical trip in 2016 includes four or five line items, but Uber’s business has become more complicated over the years, and Uber itself has added more and more complexity to its payment schemes.</p>
+<p><a href="#fig-line-item-count" class="quarto-xref">Figure&nbsp;3</a> shows how the number of line items per trip has exploded, so that recent trips are difficult to decipher, and it is not easy to know where the money goes.</p>
+<div id="fig-line-item-count" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The average number of line items per trip, plotted for each month.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-line-item-count-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/line_item_count.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: The number of line items for each trip has increased from five to twenty in the last decade."><img src="img/line_item_count.png" class="img-fluid figure-img" alt="The average number of line items per trip, plotted for each month."></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-line-item-count-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: The number of line items for each trip has increased from five to twenty in the last decade.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="trip-2025" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Making sense of a 2025 trip</h1>
 <p><a href="#tbl-2025" class="quarto-xref">Table&nbsp;2</a> shows the account statement for (an anonymized version of) a Toronto trip in 2025. Instead of the four or five line items we saw in 2016, this trip has eighteen distinct line items.</p>
 <div id="tbl-2025" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -344,9 +360,9 @@ Table&nbsp;2: Driver Payment records for a 2025 trip.
 <div aria-describedby="tbl-2025-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 26%">
-<col style="width: 56%">
-<col style="width: 17%">
+<col style="width: 24%">
+<col style="width: 52%">
+<col style="width: 23%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -456,37 +472,31 @@ Table&nbsp;2: Driver Payment records for a 2025 trip.
 <div id="fig-2025-record" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Driver records for a 2025 trip, with selected entries from the trips file (left) matched against line items from the payments file (right).">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-2025-record-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="img/trip_record_2025.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Driver records for a 2025 trip, with selected entries from the trips file (left) matched against line items from the payments file (right)."><img src="img/trip_record_2025.png" class="img-fluid figure-img" alt="Driver records for a 2025 trip, with selected entries from the trips file (left) matched against line items from the payments file (right)."></a>
+<a href="img/trip_record_2025.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: Driver records for a 2025 trip, with selected entries from the trips file (left) matched against line items from the payments file (right)."><img src="img/trip_record_2025.png" class="img-fluid figure-img" alt="Driver records for a 2025 trip, with selected entries from the trips file (left) matched against line items from the payments file (right)."></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2025-record-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Driver records for a 2025 trip, with selected entries from the trips file (left) matched against line items from the payments file (right).
+Figure&nbsp;4: Driver records for a 2025 trip, with selected entries from the trips file (left) matched against line items from the payments file (right).
 </figcaption>
 </figure>
 </div>
 <p>The Original Fare that the passenger pays includes the taxes and the HST, for a total of $13.22. Some of the fees and taxes are then deducted by Uber, which is responsible for paying them, but the driver is responsible for paying hST on the fare and so this stays in the driver’s account. Here I have added a line that does not appear in the Payments file with negative HST, as it is needed to make other entries match. You can see that the booking fee (which seems much smaller than in 2016, but we’ll return to that some other time) is now entered twice, once in the original fare and then as a deduction, showing that Uber takes it. A closer inspection shows that some of the other items seem to be related: the <em>transport.fare.ufp_adj</em> line item is $0.91 and the <em>intermediary.fare.ufp_service_adj</em> entry is -$0.91.</p>
 <p>The Trips file on the left serves as validation of the $13.22 fare paid by the passenger, the $7.65 fare collected by the driver (after paying HST). Then there are two small deductions by Uber (tax on commission and city charges) before we see the Driver Earnings of $7.12.</p>
-<p><a href="#fig-sankey-2025" class="quarto-xref">Figure&nbsp;4</a> may make the overall effect of these entries a bit more clear.</p>
+<p><a href="#fig-sankey-2025" class="quarto-xref">Figure&nbsp;5</a> may make the overall effect of these entries a bit more clear.</p>
 <div id="fig-sankey-2025" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A &quot;Sankey diagram&quot; of the flow of money in a 2025 trip, according to the Uber account statements. The money flows from the passenger (at left) to Uber and the driver and taxation (at right).">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sankey-2025-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="img/trip_sankey_2025.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: A “Sankey diagram” of the flow of money in a 2025 trip, according to the Uber account statements. The money flows from the passenger (at left) to Uber and the driver (at right)."><img src="img/trip_sankey_2025.png" class="img-fluid figure-img" alt="A &quot;Sankey diagram&quot; of the flow of money in a 2025 trip, according to the Uber account statements. The money flows from the passenger (at left) to Uber and the driver and taxation (at right)."></a>
+<a href="img/trip_sankey_2025.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: A “Sankey diagram” of the flow of money in a 2025 trip, according to the Uber account statements. The money flows from the passenger (at left) to Uber and the driver (at right)."><img src="img/trip_sankey_2025.png" class="img-fluid figure-img" alt="A &quot;Sankey diagram&quot; of the flow of money in a 2025 trip, according to the Uber account statements. The money flows from the passenger (at left) to Uber and the driver and taxation (at right)."></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sankey-2025-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: A “Sankey diagram” of the flow of money in a 2025 trip, according to the Uber account statements. The money flows from the passenger (at left) to Uber and the driver (at right).
+Figure&nbsp;5: A “Sankey diagram” of the flow of money in a 2025 trip, according to the Uber account statements. The money flows from the passenger (at left) to Uber and the driver (at right).
 </figcaption>
 </figure>
 </div>
 <p>Of the passenger fare, 69% goes initially to the driver, with the remainder going to Uber. In this case, Uber tops up the driver fare with a small incentive (the <em>existing_driver_incentive</em> category). The driver then pays the HST and Uber makes its tax and fee payments, leaving the distribution at right.</p>
 </section>
-<section id="what-is-ubers-take-rate" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> What is Uber’s “take rate”?</h1>
-<p>There are a few possibilities for how to report Uber’s “take rate” or commission. When Uber discusses this, it often deducts all kinds of business expenses (insurance in particular), but this is misleading: the driver also has business expenses (fuel, vehicle operating and maintenance expenses, and their own insurance for example), so Uber would be comparing their <em>net</em> income with the driver <em>gross</em> income. Here, we should compare gross income with gross income. Another question is how to treat the taxes and fees: some would argue that city fees are part of Uber’s cost of operations, and so should be included in their take. Yet that might then suggest that the HST (paid by the driver) should be included in the driver’s earnings, which is unreasonable. It makes sense to me to report two numbers:</p>
-<ul>
-<li>Uber’s “share of gross bookings” is the 27.2% value shown in <a href="#fig-sankey-2025" class="quarto-xref">Figure&nbsp;4</a>. It is Uber’s share (after pass-through amounts collected on behalf of third parties) of the fare paid by the passenger. The driver’s share of gross bookings is 53.9%.</li>
-<li>Uber’s “share of the net fare” (meaning the passenger fare, less the taxes and pass-through fees) is 27.2/(27.2+53.9) or 33.5%, while the driver’s is 66.5%.</li>
-</ul>
-<p>In discussions of fairness, the “share of net fare” is the more relevant, as it shows how Uber is dividing the money left over after the pass-through fees have been paid. It is not always easily available, however, in the absence of the detailed records as shown in <a href="#fig-2025-record" class="quarto-xref">Figure&nbsp;3</a>.</p>
-<p>The adjustments that Uber makes to the fare are marks of their move to “upfront fares for drivers”, which in Toronto happened formally in October 2024 and which Uber fully had in place by February 2025. I hope to post more on this in future.</p>
+<section id="and-more-complexity" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> And more complexity…</h1>
+<p>These two trips highlight some of the complexity involved in making sense of Uber driver accounts over the years. There are inconsistencies, many more changes over time, and sometimes two different schemes being used at the same time. We shall see more of these in later posts.</p>
 
 
 </section>
