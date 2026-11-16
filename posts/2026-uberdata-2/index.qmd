@@ -152,9 +152,20 @@ The numbers are for a small sample of drivers in Toronto and Ottawa, averaged ov
 Perhaps we should not get too caught up in the proper definition of take rate?
 Instead, we can make a couple of fairly clear observations:
 
-- In its early years of operation, drivers were able to earn a living from Uber because the company was essentially parasitic on the safe and reliable infrastructure on which it relies, and which are paid for by taxes and city fees.
+- In its early years of operation, drivers were able to earn a living from Uber because the company was essentially parasitic on the safe and reliable infrastructure on which it relies, and which is paid for by taxes and city fees.
 - Starting during the Covid crisis of 2021, Uber increased its share of the fare (in Toronto, at least) to an average of about a third of the net fare, cutting further into driver earnings.
 
-Driver earnings depend not only on the share of passenger fare that they take, but also on the amount of that fare: the size of the pie that gets divided.
-And we shall see in later posts that the average is not the whole story, especially when it comes to algorithmic pricing and upfront fares for drivers.
-But that's for another time...
+Of course driver earnings depend not only on the driver's share of the pie, but also on the size of the pie.
+And this post has focused on the average, but the average is not the whole story, especially when it comes to algorithmic pricing and upfront fares for drivers.
+
+For example, @fig-statement-airport and @fig-sankey-airport describe an anonymized 2025 trip with pickup at Pearson airport.
+Uber takes a lower base commission (18%) for airport trips than for others, but that is compensated for by an additional 3% *commission_adjustment*, and an "upfront adjustment" to the passenger fare of $4.82.
+Also, airport trips are longer than most so the distance-based booking fee is a hefty $9.55.
+
+The end result is that, despite an airport surcharge passthrough fee of $5.67 (which has since increased), Uber claims a higher-than average one-third of the gross bookings as revenue, and the driver gets earnings that are less than half of the gross bookings.
+
+![Driver account statement for a single trip in 2025 with pickup at Pearson International Airport.](img/trip_statement_2025_airport.png){#fig-statement-airport}
+
+![Where the money goes, for a single trip in 2025 with pickup at Pearson International Airport.](img/trip_sankey_2025_airport.png){#fig-sankey-airport}
+
+But further discussion of these topics must wait for later posts...
