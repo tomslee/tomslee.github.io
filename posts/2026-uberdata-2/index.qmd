@@ -98,7 +98,7 @@ The name itself is now a misnomer: a "booking fee" suggests a fixed fee for hand
 
 ![The booking fee has become dependent on the trip distance.](img/booking_fee_distance.png){#fig-booking-fee-distance fig-alt="The booking fee has become dependent on the trip distance."}
 
-# Uber's overall take
+# Where does the money go?
 
 The base commission and the booking fee were the two major components of Uber's take until the introduction of upfront fares for drivers, in October 2024 (fully implemented in February 2025).
 Since then it has become an increasingly complex function, no longer just a fixed percentage.
@@ -113,26 +113,16 @@ Of the fare paid by the passenger, Uber takes an initial cut of 38.7% (including
 It is the responsibility of the driver to pay the harmonized sales tax (13% of the passenger fare) and Uber has to pay some city fees (typically \$0.40 per trip) and there is a charge of \$6.75 (?)
 for trips that start or end at Pearson airport.
 
-![](img/ubderdriver_report_2026_0.png){#fig-sankey-2026}
+![](img/uberdriver_report_2026_0.png){#fig-sankey-2026}
 
-Uber tends to deduct expenses like insurance (which are not listed separately in account histories) from the rates they describe to drivers, but insurance is just one cost of doing business.
-Both Uber and the drivers have many costs of doing business, and we do not deduct such costs when calculating the take rate.
-The question of driver earnings after their costs (fuel, maintenance, insurance, cleaning etc) and Uber's earnings after costs is separate.
+The amount that Uber takes from fares has been a topic of continuing dispute.
+Uber [maintains](https://medium.com/uber-under-the-hood/understanding-ubers-share-of-driver-earnings-899d5eb733bd) that its take rate is ["around 20% in the U.S. and has remained at that level for years" and that its take has not increased in some time"](https://www.uber.com/us/en/newsroom/uber-comment-consumer-reports/) (see also [Let’s talk about where Uber fares go each week](https://www.uber.com/us/en/u/weekly-earnings/)), while [others](https://len-sherman.medium.com/ubers-long-and-winding-road-to-50-take-rates-1aaf4a574ae0) have said it is taking increasing amounts, up to 50% of the total.
 
-There are several ways we could calculate a "take rate" for Uber.
+Let's postpone asking "what is the right amount" for a moment and look at some different ways of describing the picture shown in @fig-sankey-2026.
 
-- *Share of gross bookings.* The numbers shown in the figure are one way to calculate a take rate.
-  The customer fare is split between the driver, Uber, and third-parties (cities and airports and taxes), and for the trips here Uber's take rate is 25.9%, with the driver taking just over half of the fare (54.6%)
+@fig-uber-share-gross-net and @tbl-share-by-year, show how Uber's take has changed over time, using different measures, for trips in Toronto.
 
-- *Share of net fare.* Another approach is to leave the taxes and fees out of the calculation, which leaves Uber with about a third (32%) and the drivers with two-thirds (68%) of the total.
-
-- *Everything but the driver's earnings.* If the taxes and fees are seen as part of Uber's cost of operations, just as fuel is seen as part of a driver's cost of operations, then they could be seen as part of Uber's take.
-  Calculated this way, Uber's take is everything but the driver's 54.6%, which is 45.4% of the total.
-  However, the biggest contributor to taxes and fees is the HST, which (in Ontario at least) is, by regulation, the responsibility of the driver.
-
-@fig-uber-share-gross-net and @tbl-share-by-year, show how Uber's take has changed over time, using all three measures, for trips in Toronto.
-
-![Uber's take over time, as a share of net fare and of gross bookings.](img/uber-share-gross-net.png){#fig-uber-share-gross-net}
+![Uber's take over time, for a small set of Toronto drivers, as a share of net fare and of gross bookings.](img/uber-share-gross-net.png){#fig-uber-share-gross-net}
 
 ::: {#tbl-share-by-year}
   | Year | Percent of net fare | Percent of gross bookings | All but earnings  |
@@ -150,5 +140,21 @@ Uber's share of the net fare, of gross bookings, and of everything but the drive
 The numbers are for a small sample of drivers in Toronto and Ottawa, averaged over each year.
 :::
 
-Perhaps the bigger story, to be tackled in a future post, is that Uber's take is now algorithmically tuned, trip by trip, and varies.
-The average is not the only thing that matters.
+- *Share of gross bookings.* The numbers shown in the figure are one way to calculate a take rate.
+  The customer fare is split between the driver, Uber, and third-parties (cities and airports and taxes), and for the trips here Uber's take rate is 25.9%, with the driver taking just over half of the fare (54.6%).
+  This maps reasonably well to Uber's claimed take rate.
+
+- *Share of net fare.* Another approach is to leave the taxes and fees out of the calculation, which leaves Uber with about a third (32%) and the drivers with two-thirds (68%) of the total.
+
+- *What the driver sees.* From the driver's point of view, the fraction of the passenger fare they get has shrunk from about 80% in 2016, to around 65% or 70% after Uber became part of the normal economy with sales taxes and other obligations, to about 55% now.
+  Calculated this way, Uber's take is everything but the driver's 54.6%, which is 45.4% of the total, which is similar to the figure spelled out by Len Sherman.
+
+Perhaps we should not get too caught up in the proper definition of take rate?
+Instead, we can make a couple of fairly clear observations:
+
+- In its early years of operation, drivers were able to earn a living from Uber because the company was essentially parasitic on the safe and reliable infrastructure on which it relies, and which are paid for by taxes and city fees.
+- Starting during the Covid crisis of 2021, Uber increased its share of the fare (in Toronto, at least) to an average of about a third of the net fare, cutting further into driver earnings.
+
+Driver earnings depend not only on the share of passenger fare that they take, but also on the amount of that fare: the size of the pie that gets divided.
+And we shall see in later posts that the average is not the whole story, especially when it comes to algorithmic pricing and upfront fares for drivers.
+But that's for another time...
