@@ -46,6 +46,16 @@ echo "   (sub-project directories are excluded, so --delete cannot remove them)"
 rsync "${RSYNC_OPTS[@]}" \
   --exclude='/ridehail/' \
   --exclude='/ridehail-toronto/' \
+  --exclude='/.well-known/' \
   "$SITE_DIR" "${SSH_TARGET}:${DOCROOT}"
+
+# Bluesky handle verification: Quarto doesn't copy dot-directories into _site,
+# so upload the local .well-known/atproto-did directly (and it is excluded
+# above so --delete never removes it).
+echo ">> Syncing .well-known/atproto-did (Bluesky handle verification)"
+WELLKNOWN_OPTS=(-avz --human-readable)
+[[ " ${RSYNC_OPTS[*]} " == *" --dry-run "* ]] && WELLKNOWN_OPTS+=(--dry-run)
+rsync "${WELLKNOWN_OPTS[@]}" \
+  .well-known/atproto-did "${SSH_TARGET}:${DOCROOT}/.well-known/atproto-did"
 
 echo ">> Done. (Sub-projects deploy separately — see their own deploy.sh.)"
