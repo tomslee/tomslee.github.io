@@ -1,1 +1,12 @@
 /* css styles */
+
+/* Tighten Quarto's default title banner (default is 2.5em top/bottom on desktop) */
+@media (min-width: 992px) {
+  .quarto-title-banner {
+    padding-top: 1.25em;
+    padding-bottom: 1.25em;
+  }
+}
+.quarto-title-banner .quarto-categories {
+  margin-top: 0.5em;
+}

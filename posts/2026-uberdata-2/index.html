@@ -230,7 +230,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#base-commission" id="toc-base-commission" class="nav-link active" data-scroll-target="#base-commission"><span class="header-section-number">1</span> Base commission</a></li>
   <li><a href="#booking-fee" id="toc-booking-fee" class="nav-link" data-scroll-target="#booking-fee"><span class="header-section-number">2</span> Booking fee</a></li>
-  <li><a href="#ubers-overall-take" id="toc-ubers-overall-take" class="nav-link" data-scroll-target="#ubers-overall-take"><span class="header-section-number">3</span> Uber’s overall take</a></li>
+  <li><a href="#where-does-the-money-go" id="toc-where-does-the-money-go" class="nav-link" data-scroll-target="#where-does-the-money-go"><span class="header-section-number">3</span> Where does the money go?</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
 </nav>
@@ -247,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
 
 <p>One of the perennial topics in ridehail systems is how much Uber (and others, but let’s face it mainly Uber) takes from each fare. Uber refers to its share of the fare as a commission, as a service fee, and as a “take rate”. Here we use the word “take” to refer to all the money that goes to Uber.</p>
 <p>The driver account statements show that the topic is a bit more complex than it seems. Let’s look at some of the measures of Uber’s take.</p>
-<p><em>(If you are an Uber driver, have obtained your account history, and would like a report to make sense of where the money goes, please email info@tomslee.net. )</em></p>
+<p><em>(If you are an Uber driver and you would be prepared to get your account history from Uber and share it with me, I’ll give you a report to make sense of where the money from your trips has gone. Also, your data would make a valuable addition to solving some of the puzzles set out here. I’d keep it confidential, although I would give you credit as a project contributor if you want. Please email me at info@tomslee.net. )</em></p>
 <section id="base-commission" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Base commission</h1>
 <p>Every driver account statement (see the previous post) has a line item that is labelled in the Payments file with the category <em>commission</em> and the classification <em>intermediary.commission</em>, which is a percentage of the fare (without tips, taxes or city fees). In more recent account statements the percentage is reported in the Trips file as a <em>service_fee_local</em>.</p>
@@ -290,36 +290,31 @@ Figure&nbsp;3: The booking fee has become dependent on the trip distance.
 </figure>
 </div>
 </section>
-<section id="ubers-overall-take" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Uber’s overall take</h1>
+<section id="where-does-the-money-go" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Where does the money go?</h1>
 <p>The base commission and the booking fee were the two major components of Uber’s take until the introduction of upfront fares for drivers, in October 2024 (fully implemented in February 2025). Since then it has become an increasingly complex function, no longer just a fixed percentage. Various line items (presented in the previous post, and to be analyzed in more detail in following posts) add and subtract from Uber’s take, from the driver pay, and from the passenger fare. While the specifics of those adjustments matter a lot, here we just look at the net result.</p>
 <p><a href="#fig-sankey-2026" class="quarto-xref">Figure&nbsp;4</a> shows how the customer fare has flowed through the system, for a handful of drivers in 2026. The numbers in the diagram are not exact, but the overall shape of the flow should be reliable. Let’s walk through it.</p>
 <p>Of the fare paid by the passenger, Uber takes an initial cut of 38.7% (including the base commission and the booking fee), but passes some of that back to drivers in the form of incentives for selected trips. It is the responsibility of the driver to pay the harmonized sales tax (13% of the passenger fare) and Uber has to pay some city fees (typically $0.40 per trip) and there is a charge of $6.75 (?) for trips that start or end at Pearson airport.</p>
 <div id="fig-sankey-2026" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sankey-2026-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="img/ubderdriver_report_2026_0.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: "><img src="img/ubderdriver_report_2026_0.png" id="fig-sankey-2026" class="img-fluid figure-img"></a>
+<a href="img/uberdriver_report_2026_0.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: "><img src="img/uberdriver_report_2026_0.png" id="fig-sankey-2026" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-sankey-2026-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4
 </figcaption>
 </figure>
 </div>
-<p>Uber tends to deduct expenses like insurance (which are not listed separately in account histories) from the rates they describe to drivers, but insurance is just one cost of doing business. Both Uber and the drivers have many costs of doing business, and we do not deduct such costs when calculating the take rate. The question of driver earnings after their costs (fuel, maintenance, insurance, cleaning etc) and Uber’s earnings after costs is separate.</p>
-<p>There are several ways we could calculate a “take rate” for Uber.</p>
-<ul>
-<li><p><em>Share of gross bookings.</em> The numbers shown in the figure are one way to calculate a take rate. The customer fare is split between the driver, Uber, and third-parties (cities and airports and taxes), and for the trips here Uber’s take rate is 25.9%, with the driver taking just over half of the fare (54.6%)</p></li>
-<li><p><em>Share of net fare.</em> Another approach is to leave the taxes and fees out of the calculation, which leaves Uber with about a third (32%) and the drivers with two-thirds (68%) of the total.</p></li>
-<li><p><em>Everything but the driver’s earnings.</em> If the taxes and fees are seen as part of Uber’s cost of operations, just as fuel is seen as part of a driver’s cost of operations, then they could be seen as part of Uber’s take. Calculated this way, Uber’s take is everything but the driver’s 54.6%, which is 45.4% of the total. However, the biggest contributor to taxes and fees is the HST, which (in Ontario at least) is, by regulation, the responsibility of the driver.</p></li>
-</ul>
-<p><a href="#fig-uber-share-gross-net" class="quarto-xref">Figure&nbsp;5</a> and <a href="#tbl-share-by-year" class="quarto-xref">Table&nbsp;1</a>, show how Uber’s take has changed over time, using all three measures, for trips in Toronto.</p>
+<p>The amount that Uber takes from fares has been a topic of continuing dispute. Uber <a href="https://medium.com/uber-under-the-hood/understanding-ubers-share-of-driver-earnings-899d5eb733bd">maintains</a> that its take rate is <a href="https://www.uber.com/us/en/newsroom/uber-comment-consumer-reports/">“around 20% in the U.S. and has remained at that level for years” and that its take has not increased in some time”</a> (see also <a href="https://www.uber.com/us/en/u/weekly-earnings/">Let’s talk about where Uber fares go each week</a>), while <a href="https://len-sherman.medium.com/ubers-long-and-winding-road-to-50-take-rates-1aaf4a574ae0">others</a> have said it is taking increasing amounts, up to 50% of the total.</p>
+<p>Let’s postpone asking “what is the right amount” for a moment and look at some different ways of describing the picture shown in <a href="#fig-sankey-2026" class="quarto-xref">Figure&nbsp;4</a>.</p>
+<p><a href="#fig-uber-share-gross-net" class="quarto-xref">Figure&nbsp;5</a> and <a href="#tbl-share-by-year" class="quarto-xref">Table&nbsp;1</a>, show how Uber’s take has changed over time, using different measures, for trips in Toronto.</p>
 <div id="fig-uber-share-gross-net" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-uber-share-gross-net-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="img/uber-share-gross-net.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: Uber’s take over time, as a share of net fare and of gross bookings."><img src="img/uber-share-gross-net.png" class="img-fluid figure-img"></a>
+<a href="img/uber-share-gross-net.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: Uber’s take over time, for a small set of Toronto drivers, as a share of net fare and of gross bookings."><img src="img/uber-share-gross-net.png" class="img-fluid figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-uber-share-gross-net-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Uber’s take over time, as a share of net fare and of gross bookings.
+Figure&nbsp;5: Uber’s take over time, for a small set of Toronto drivers, as a share of net fare and of gross bookings.
 </figcaption>
 </figure>
 </div>
@@ -331,10 +326,10 @@ Table&nbsp;1: Uber’s share of the net fare, of gross bookings, and of everythi
 <div aria-describedby="tbl-share-by-year-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 7%">
-<col style="width: 31%">
-<col style="width: 31%">
+<col style="width: 8%">
 <col style="width: 29%">
+<col style="width: 37%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -398,7 +393,40 @@ Table&nbsp;1: Uber’s share of the net fare, of gross bookings, and of everythi
 </div>
 </figure>
 </div>
-<p>Perhaps the bigger story, to be tackled in a future post, is that Uber’s take is now algorithmically tuned, trip by trip, and varies. The average is not the only thing that matters.</p>
+<ul>
+<li><p><em>Share of gross bookings.</em> The numbers shown in the figure are one way to calculate a take rate. The customer fare is split between the driver, Uber, and third-parties (cities and airports and taxes), and for the trips here Uber’s take rate is 25.9%, with the driver taking just over half of the fare (54.6%). This maps reasonably well to Uber’s claimed take rate.</p></li>
+<li><p><em>Share of net fare.</em> Another approach is to leave the taxes and fees out of the calculation, which leaves Uber with about a third (32%) and the drivers with two-thirds (68%) of the total.</p></li>
+<li><p><em>What the driver sees.</em> From the driver’s point of view, the fraction of the passenger fare they get has shrunk from about 80% in 2016, to around 65% or 70% after Uber became part of the normal economy with sales taxes and other obligations, to about 55% now. Calculated this way, Uber’s take is everything but the driver’s 54.6%, which is 45.4% of the total, which is similar to the figure spelled out by Len Sherman.</p></li>
+</ul>
+<p>Perhaps we should not get too caught up in the proper definition of take rate? Instead, we can make a couple of fairly clear observations:</p>
+<ul>
+<li>In its early years of operation, drivers were able to earn a living from Uber because the company was essentially parasitic on the safe and reliable infrastructure on which it relies, and which is paid for by taxes and city fees.</li>
+<li>Starting during the Covid crisis of 2021, Uber increased its share of the fare (in Toronto, at least) to an average of about a third of the net fare, cutting further into driver earnings.</li>
+</ul>
+<p>Of course driver earnings depend not only on the driver’s share of the pie, but also on the size of the pie. And this post has focused on the average, but the average is not the whole story, especially when it comes to algorithmic pricing and upfront fares for drivers.</p>
+<p>For example, <a href="#fig-statement-airport" class="quarto-xref">Figure&nbsp;6</a> and <a href="#fig-sankey-airport" class="quarto-xref">Figure&nbsp;7</a> describe an anonymized 2025 trip with pickup at Pearson airport. Uber takes a lower base commission (18%) for airport trips than for others, but that is compensated for by an additional 3% <em>commission_adjustment</em>, and an “upfront adjustment” to the passenger fare of $4.82. Also, airport trips are longer than most so the distance-based booking fee is a hefty $9.55.</p>
+<p>The end result is that, despite an airport surcharge passthrough fee of $5.67 (which has since increased), Uber claims a higher-than average one-third of the gross bookings as revenue, and the driver gets earnings that are less than half of the gross bookings.</p>
+<div id="fig-statement-airport" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-statement-airport-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/trip_statement_2025_airport.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: Driver account statement for a single trip in 2025 with pickup at Pearson International Airport."><img src="img/trip_statement_2025_airport.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-statement-airport-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Driver account statement for a single trip in 2025 with pickup at Pearson International Airport.
+</figcaption>
+</figure>
+</div>
+<div id="fig-sankey-airport" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sankey-airport-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="img/trip_sankey_2025_airport.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;7: Where the money goes, for a single trip in 2025 with pickup at Pearson International Airport."><img src="img/trip_sankey_2025_airport.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sankey-airport-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Where the money goes, for a single trip in 2025 with pickup at Pearson International Airport.
+</figcaption>
+</figure>
+</div>
+<p>But further discussion of these topics must wait for later posts…</p>
 
 
 </section>
