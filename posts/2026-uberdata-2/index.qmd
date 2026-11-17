@@ -60,7 +60,10 @@ Here we use the word "take" to refer to all the money that goes to Uber.
 The driver account statements show that the topic is a bit more complex than it seems.
 Let's look at some of the measures of Uber's take.
 
-*(If you are an Uber driver, have obtained your account history, and would like a report to make sense of where the money goes, please email info@tomslee.net.
+*(If you are an Uber driver and you would be prepared to get your account history from Uber and share it with me, I'll give you a report to make sense of where the money from your trips has gone.
+Also, your data would make a valuable addition to solving some of the puzzles set out here.
+I'd keep it confidential, although I would give you credit as a project contributor if you want.
+Please email me at info\@tomslee.net.
 )*
 
 # Base commission
@@ -125,16 +128,16 @@ Let's postpone asking "what is the right amount" for a moment and look at some d
 ![Uber's take over time, for a small set of Toronto drivers, as a share of net fare and of gross bookings.](img/uber-share-gross-net.png){#fig-uber-share-gross-net}
 
 ::: {#tbl-share-by-year}
-  | Year | Percent of net fare | Percent of gross bookings | All but earnings  |
-  | ---- | -----------------:  | -----------------:        | ----------------: |
-  | 2019 |                19.7 |                      17.1 |              30.3 |
-  | 2020 |                21.8 |                      18.7 |              32.9 |
-  | 2021 |                37.5 |                      31.2 |              48.0 |
-  | 2022 |                37.9 |                      31.2 |              48.9 |
-  | 2023 |                37.5 |                      31.0 |              48.3 |
-  | 2024 |                33.9 |                      30.7 |              40.1 |
-  | 2025 |                35.3 |                      28.7 |              47.4 |
-  | 2026 |                33.3 |                      26.7 |              46.5 |
+  | Year   | Percent of net fare   | Percent of gross bookings   | All but earnings   |
+  | ------ | --------------------: | --------------------------: | -----------------: |
+  | 2019   |                  19.7 |                        17.1 |               30.3 |
+  | 2020   |                  21.8 |                        18.7 |               32.9 |
+  | 2021   |                  37.5 |                        31.2 |               48.0 |
+  | 2022   |                  37.9 |                        31.2 |               48.9 |
+  | 2023   |                  37.5 |                        31.0 |               48.3 |
+  | 2024   |                  33.9 |                        30.7 |               40.1 |
+  | 2025   |                  35.3 |                        28.7 |               47.4 |
+  | 2026   |                  33.3 |                        26.7 |               46.5 |
 
 Uber's share of the net fare, of gross bookings, and of everything but the driver's earnings.
 The numbers are for a small sample of drivers in Toronto and Ottawa, averaged over each year.
@@ -159,10 +162,10 @@ Of course driver earnings depend not only on the driver's share of the pie, but 
 And this post has focused on the average, but the average is not the whole story, especially when it comes to algorithmic pricing and upfront fares for drivers.
 
 For example, @fig-statement-airport and @fig-sankey-airport describe an anonymized 2025 trip with pickup at Pearson airport.
-Uber takes a lower base commission (18%) for airport trips than for others, but that is compensated for by an additional 3% *commission_adjustment*, and an "upfront adjustment" to the passenger fare of $4.82.
-Also, airport trips are longer than most so the distance-based booking fee is a hefty $9.55.
+Uber takes a lower base commission (18%) for airport trips than for others, but that is compensated for by an additional 3% *commission_adjustment*, and an "upfront adjustment" to the passenger fare of \$4.82.
+Also, airport trips are longer than most so the distance-based booking fee is a hefty \$9.55.
 
-The end result is that, despite an airport surcharge passthrough fee of $5.67 (which has since increased), Uber claims a higher-than average one-third of the gross bookings as revenue, and the driver gets earnings that are less than half of the gross bookings.
+The end result is that, despite an airport surcharge passthrough fee of \$5.67 (which has since increased), Uber claims a higher-than average one-third of the gross bookings as revenue, and the driver gets earnings that are less than half of the gross bookings.
 
 ![Driver account statement for a single trip in 2025 with pickup at Pearson International Airport.](img/trip_statement_2025_airport.png){#fig-statement-airport}
 
